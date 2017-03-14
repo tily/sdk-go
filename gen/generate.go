@@ -132,24 +132,24 @@ func (g *Generator) processOperationList() {
 
 		g.APIModel.Operations[opHTML.OpName] = g.generateOperation(opHTML.OpName)
 
-		for name, _ := range g.APIModel.Operations {
-			g.DocsModel.Operations[name] = name
+		for opName, _ := range g.APIModel.Operations {
+			g.DocsModel.Operations[opName] = opName
 		}
 
-		for name, _ := range g.APIModel.Shapes {
-			g.DocsModel.Shapes[name] = DocsShape{Base: name}
+		for shapeName, _ := range g.APIModel.Shapes {
+			g.DocsModel.Shapes[shapeName] = DocsShape{Base: shapeName}
 		}
 	}
 }
 
-func (g *Generator) generateOperation(name string) (operation Operation) {
-	operation.OpName = name
+func (g *Generator) generateOperation(opName string) (operation Operation) {
+	operation.OpName = opName
 	operation.Input = &ShapeRef{ShapeName: fmt.Sprintf("%sRequest", operation.OpName)}
 
-	outputRefName := fmt.Sprintf("%sResult", operation.OpName)
+	outputShapeName := fmt.Sprintf("%sResult", operation.OpName)
 	// create output shape ref only when there is a result shape
-	if g.APIModel.Shapes[outputRefName].ShapeName == outputRefName {
-		operation.Output = &ShapeRef{ShapeName: outputRefName}
+	if g.APIModel.Shapes[outputShapeName].ShapeName == outputShapeName {
+		operation.Output = &ShapeRef{ShapeName: outputShapeName}
 	}
 
 	if g.HTTP.Method != "" && g.HTTP.RequestURI != "" {
@@ -183,8 +183,8 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 
 	doc.Find(g.RequestShapeSelector).Each(func(_ int, s *goquery.Selection) {
 		member := ShapeRef{}
-		name := s.Find(g.RequestShapeNameSelector).First().Text()
-		if name == "" {
+		shapeName := s.Find(g.RequestShapeNameSelector).First().Text()
+		if shapeName == "" {
 			return
 		}
 
@@ -196,14 +196,14 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		typeText := s.Find(g.RequestShapeTypeSelector).First().Text()
 		var _type string
 		switch {
-		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(name):
+		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
-			match := r.FindAllStringSubmatch(name, -1)
-			name = match[0][1]
+			match := r.FindAllStringSubmatch(shapeName, -1)
+			shapeName = match[0][1]
 			value := match[0][2]
 
-			_type = fmt.Sprintf("%sStructList", name)
-			structShapeName := fmt.Sprintf("%sStruct", name)
+			_type = fmt.Sprintf("%sStructList", shapeName)
+			structShapeName := fmt.Sprintf("%sStruct", shapeName)
 			structListShape := Shape{
 				ShapeName: _type,
 				Type:      "list",
@@ -243,8 +243,8 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			}
 			shapes = append(shapes, tstampShape)
 		case typeText == "文字配列":
-			name = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(name, "")
-			_type = fmt.Sprintf("%sStringList", name)
+			shapeName = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(shapeName, "")
+			_type = fmt.Sprintf("%sStringList", shapeName)
 			stringListShape := Shape{
 				ShapeName: _type,
 				Type:      "list",
@@ -256,10 +256,10 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 
 		requiredText := s.Find(g.RequestShapeRequiredSelector).First().Text()
 		if regexp.MustCompile(g.RequestShapeRequiredRegexp).MatchString(requiredText) {
-			required = append(required, name)
+			required = append(required, shapeName)
 		}
 
-		shape.Members[name] = member
+		shape.Members[shapeName] = member
 		shape.Required = required
 	})
 	shapes = append(shapes, shape)
