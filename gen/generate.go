@@ -298,33 +298,12 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 			shape := Shape{ShapeName: shapeName, Type: "timestamp"}
 			shapes = append(shapes, shape)
 		case typeText == "リスト":
-			child := goquery.NodeName(hintXML.Find(strings.ToLower(shapeName)).Children().First())
-			if pos := shapeNames.pos(child); pos != -1 {
-				shape := Shape{
-					ShapeName: shapeName,
-					Type:      "list",
-					Member:    &ShapeRef{ShapeName: shapeNames[pos], LocationName: shapeNames[pos]},
-				}
+			shape := g.generateResultListShape(shapeName, shapeNames, hintXML)
+			if shape.ShapeName != "" {
 				shapes = append(shapes, shape)
 			}
 		case typeText == "－" || typeText == "-" || typeText == "\u00a0":
-			children := hintXML.Find(strings.ToLower(shapeName)).Children()
-			members := map[string]ShapeRef{}
-			children.Each(func(_ int, s *goquery.Selection) {
-				nodeName := goquery.NodeName(s)
-				if nodeName == "responsemetadata" {
-					return
-				}
-				if pos := shapeNames.pos(nodeName); pos != -1 {
-					memberShapeName := shapeNames[pos]
-					members[memberShapeName] = ShapeRef{ShapeName: memberShapeName}
-				}
-			})
-			shape := Shape{
-				ShapeName: shapeName,
-				Type:      "structure",
-				Members:   members,
-			}
+			shape := g.generateResultStructShape(shapeName, shapeNames, hintXML)
 			shapes = append(shapes, shape)
 		}
 	})
@@ -348,6 +327,38 @@ func (g *Generator) extractHintXML(doc *goquery.Document) (hintXML *goquery.Docu
 	hintXML, err := goquery.NewDocumentFromReader(reader)
 	panicIfErr(err)
 	return hintXML
+}
+
+func (g *Generator) generateResultListShape(shapeName string, shapeNames ShapeNames, hintXML *goquery.Document) (shape Shape) {
+	child := goquery.NodeName(hintXML.Find(strings.ToLower(shapeName)).Children().First())
+	if pos := shapeNames.pos(child); pos != -1 {
+		shape = Shape{
+			ShapeName: shapeName,
+			Type:      "list",
+			Member:    &ShapeRef{ShapeName: shapeNames[pos], LocationName: shapeNames[pos]},
+		}
+	}
+	return shape
+}
+
+func (g *Generator) generateResultStructShape(shapeName string, shapeNames ShapeNames, hintXML *goquery.Document) (shape Shape) {
+	children := hintXML.Find(strings.ToLower(shapeName)).Children()
+	members := map[string]ShapeRef{}
+	children.Each(func(_ int, s *goquery.Selection) {
+		nodeName := goquery.NodeName(s)
+		if nodeName == "responsemetadata" {
+			return
+		}
+		if pos := shapeNames.pos(nodeName); pos != -1 {
+			memberShapeName := shapeNames[pos]
+			members[memberShapeName] = ShapeRef{ShapeName: memberShapeName}
+		}
+	})
+	return Shape{
+		ShapeName: shapeName,
+		Type:      "structure",
+		Members:   members,
+	}
 }
 
 type ShapeNames []string
