@@ -13,7 +13,7 @@
   },
   "s3CompatServices": [
     {
-      "serviceId": "storage",
+      "id": "storage",
       "metadata": {
         "apiVersion": "2006-03-01",
         "endpointPrefix": "storage",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "serviceId": "objectstorage",
+      "id": "objectstorage",
       "metadata": {
         "apiVersion": "2006-03-01",
         "endpointPrefix": "objectstorage",
