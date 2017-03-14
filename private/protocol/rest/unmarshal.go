@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 // UnmarshalHandler is a named request handler for unmarshaling rest protocol requests

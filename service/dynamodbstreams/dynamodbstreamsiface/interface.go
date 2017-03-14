@@ -9,8 +9,8 @@
 package dynamodbstreamsiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/dynamodbstreams"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/dynamodbstreams"
 )
 
 // DynamoDBStreamsAPI provides an interface to enable mocking the

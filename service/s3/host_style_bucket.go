@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 // an operationBlacklist is a list of operation names that should a

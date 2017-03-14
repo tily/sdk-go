@@ -9,8 +9,8 @@
 package codepipelineiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/codepipeline"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/codepipeline"
 )
 
 // CodePipelineAPI provides an interface to enable mocking the

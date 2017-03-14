@@ -9,8 +9,8 @@
 package marketplacemeteringiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/marketplacemetering"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/marketplacemetering"
 )
 
 // MarketplaceMeteringAPI provides an interface to enable mocking the

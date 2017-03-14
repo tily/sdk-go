@@ -4,8 +4,8 @@
 package dynamodb
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"github.com/tily/sdk-go/awstesting/integration/smoke"
+	"github.com/tily/sdk-go/service/dynamodb"
 	"github.com/gucumber/gucumber"
 )
 

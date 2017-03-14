@@ -9,8 +9,8 @@
 package rdsiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/rds"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/rds"
 )
 
 // RDSAPI provides an interface to enable mocking the

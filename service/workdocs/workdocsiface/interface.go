@@ -9,8 +9,8 @@
 package workdocsiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/workdocs"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/workdocs"
 )
 
 // WorkDocsAPI provides an interface to enable mocking the

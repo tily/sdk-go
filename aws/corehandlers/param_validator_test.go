@@ -6,14 +6,14 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/corehandlers"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/service/kinesis"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/aws/client"
+	"github.com/tily/sdk-go/aws/client/metadata"
+	"github.com/tily/sdk-go/aws/corehandlers"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/awstesting/unit"
+	"github.com/tily/sdk-go/service/kinesis"
 	"github.com/stretchr/testify/require"
 )
 

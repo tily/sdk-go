@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/elasticache"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/session"
+	"github.com/tily/sdk-go/service/elasticache"
 )
 
 var _ time.Duration

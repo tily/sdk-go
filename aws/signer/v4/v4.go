@@ -69,10 +69,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/private/protocol/rest"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/credentials"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/private/protocol/rest"
 )
 
 const (

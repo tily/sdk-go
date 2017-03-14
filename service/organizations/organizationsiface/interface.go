@@ -9,8 +9,8 @@
 package organizationsiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/organizations"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/organizations"
 )
 
 // OrganizationsAPI provides an interface to enable mocking the

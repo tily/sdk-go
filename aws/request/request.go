@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/aws/client/metadata"
 )
 
 // A Request is the service request to be made.

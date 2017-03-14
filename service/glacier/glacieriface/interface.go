@@ -9,8 +9,8 @@
 package glacieriface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/glacier"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/glacier"
 )
 
 // GlacierAPI provides an interface to enable mocking the

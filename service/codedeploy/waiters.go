@@ -3,7 +3,7 @@
 package codedeploy
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilDeploymentSuccessful uses the CodeDeploy API operation

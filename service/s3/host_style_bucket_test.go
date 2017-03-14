@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/awstesting/unit"
+	"github.com/tily/sdk-go/service/s3"
 )
 
 type s3BucketTest struct {

@@ -13,11 +13,11 @@ import (
 	"github.com/gucumber/gucumber"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/kms"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/aws/aws-sdk-go/service/s3/s3crypto"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/session"
+	"github.com/tily/sdk-go/service/kms"
+	"github.com/tily/sdk-go/service/s3"
+	"github.com/tily/sdk-go/service/s3/s3crypto"
 )
 
 func init() {

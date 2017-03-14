@@ -2,7 +2,7 @@
 
 package s3
 
-import "github.com/aws/aws-sdk-go/aws/request"
+import "github.com/tily/sdk-go/aws/request"
 
 func platformRequestHandlers(r *request.Request) {
 }

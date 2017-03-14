@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/service/sts"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/awstesting/unit"
+	"github.com/tily/sdk-go/service/sts"
 )
 
 var svc = sts.New(unit.Session, &aws.Config{

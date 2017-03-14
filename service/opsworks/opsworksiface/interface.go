@@ -9,8 +9,8 @@
 package opsworksiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/opsworks"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/opsworks"
 )
 
 // OpsWorksAPI provides an interface to enable mocking the

@@ -3,7 +3,7 @@
 package opsworks
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilAppExists uses the AWS OpsWorks API operation

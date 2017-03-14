@@ -4,8 +4,8 @@
 package support
 
 import (
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 const opAddAttachmentsToSet = "AddAttachmentsToSet"

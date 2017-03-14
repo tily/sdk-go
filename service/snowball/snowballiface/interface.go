@@ -9,8 +9,8 @@
 package snowballiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/snowball"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/snowball"
 )
 
 // SnowballAPI provides an interface to enable mocking the

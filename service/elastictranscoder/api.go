@@ -6,8 +6,8 @@ package elastictranscoder
 import (
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 const opCancelJob = "CancelJob"

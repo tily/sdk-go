@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/marketplacemetering"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/session"
+	"github.com/tily/sdk-go/service/marketplacemetering"
 )
 
 var _ time.Duration

@@ -3,7 +3,7 @@
 package cloudwatch
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilAlarmExists uses the CloudWatch API operation

@@ -9,8 +9,8 @@
 package appstreamiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/appstream"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/appstream"
 )
 
 // AppStreamAPI provides an interface to enable mocking the

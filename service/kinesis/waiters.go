@@ -3,7 +3,7 @@
 package kinesis
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilStreamExists uses the Kinesis API operation

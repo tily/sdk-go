@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/private/protocol"
-	"github.com/aws/aws-sdk-go/private/protocol/restxml"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/private/protocol"
+	"github.com/tily/sdk-go/private/protocol/restxml"
 )
 
 const opCreateCloudFrontOriginAccessIdentity = "CreateCloudFrontOriginAccessIdentity2016_11_25"

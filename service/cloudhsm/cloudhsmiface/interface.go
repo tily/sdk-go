@@ -9,8 +9,8 @@
 package cloudhsmiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/cloudhsm"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/cloudhsm"
 )
 
 // CloudHSMAPI provides an interface to enable mocking the

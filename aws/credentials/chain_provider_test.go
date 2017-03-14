@@ -3,7 +3,7 @@ package credentials
 import (
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
+	"github.com/tily/sdk-go/aws/awserr"
 	"github.com/stretchr/testify/assert"
 )
 

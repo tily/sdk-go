@@ -9,8 +9,8 @@
 package sfniface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/sfn"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/sfn"
 )
 
 // SFNAPI provides an interface to enable mocking the

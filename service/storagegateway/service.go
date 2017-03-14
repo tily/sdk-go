@@ -3,12 +3,12 @@
 package storagegateway
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/aws/signer/v4"
-	"github.com/aws/aws-sdk-go/private/protocol/jsonrpc"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/client"
+	"github.com/tily/sdk-go/aws/client/metadata"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws/signer/v4"
+	"github.com/tily/sdk-go/private/protocol/jsonrpc"
 )
 
 // AWS Storage Gateway is the service that connects an on-premises software

@@ -4,9 +4,9 @@
 package wafregional
 
 import (
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/waf"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/waf"
 )
 
 const opAssociateWebACL = "AssociateWebACL"

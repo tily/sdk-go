@@ -9,8 +9,8 @@
 package apigatewayiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/apigateway"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/apigateway"
 )
 
 // APIGatewayAPI provides an interface to enable mocking the

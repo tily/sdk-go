@@ -13,11 +13,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/aws/aws-sdk-go/service/s3/s3manager"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/awstesting/unit"
+	"github.com/tily/sdk-go/service/s3"
+	"github.com/tily/sdk-go/service/s3/s3manager"
 )
 
 func dlLoggingSvc(data []byte) (*s3.S3, *[]string, *[]string) {

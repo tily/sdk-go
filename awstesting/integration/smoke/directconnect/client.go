@@ -4,8 +4,8 @@
 package directconnect
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/directconnect"
+	"github.com/tily/sdk-go/awstesting/integration/smoke"
+	"github.com/tily/sdk-go/service/directconnect"
 	"github.com/gucumber/gucumber"
 )
 

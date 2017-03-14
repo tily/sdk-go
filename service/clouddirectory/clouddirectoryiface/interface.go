@@ -9,8 +9,8 @@
 package clouddirectoryiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/clouddirectory"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/clouddirectory"
 )
 
 // CloudDirectoryAPI provides an interface to enable mocking the

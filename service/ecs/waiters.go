@@ -3,7 +3,7 @@
 package ecs
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilServicesInactive uses the Amazon ECS API operation

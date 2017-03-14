@@ -9,8 +9,8 @@
 package applicationautoscalingiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/applicationautoscaling"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/applicationautoscaling"
 )
 
 // ApplicationAutoScalingAPI provides an interface to enable mocking the

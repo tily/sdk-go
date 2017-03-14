@@ -9,8 +9,8 @@
 package iamiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/iam"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/iam"
 )
 
 // IAMAPI provides an interface to enable mocking the

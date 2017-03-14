@@ -4,8 +4,8 @@
 package elasticbeanstalk
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/elasticbeanstalk"
+	"github.com/tily/sdk-go/awstesting/integration/smoke"
+	"github.com/tily/sdk-go/service/elasticbeanstalk"
 	"github.com/gucumber/gucumber"
 )
 

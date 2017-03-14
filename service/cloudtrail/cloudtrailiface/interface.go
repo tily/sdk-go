@@ -9,8 +9,8 @@
 package cloudtrailiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/cloudtrail"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/cloudtrail"
 )
 
 // CloudTrailAPI provides an interface to enable mocking the

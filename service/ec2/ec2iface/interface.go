@@ -9,8 +9,8 @@
 package ec2iface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/ec2"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/ec2"
 )
 
 // EC2API provides an interface to enable mocking the

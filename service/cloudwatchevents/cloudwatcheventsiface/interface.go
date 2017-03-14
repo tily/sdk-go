@@ -9,8 +9,8 @@
 package cloudwatcheventsiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/cloudwatchevents"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/cloudwatchevents"
 )
 
 // CloudWatchEventsAPI provides an interface to enable mocking the

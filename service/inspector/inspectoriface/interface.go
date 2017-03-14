@@ -9,8 +9,8 @@
 package inspectoriface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/inspector"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/inspector"
 )
 
 // InspectorAPI provides an interface to enable mocking the

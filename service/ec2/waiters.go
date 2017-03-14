@@ -3,7 +3,7 @@
 package ec2
 
 import (
-	"github.com/aws/aws-sdk-go/private/waiter"
+	"github.com/tily/sdk-go/private/waiter"
 )
 
 // WaitUntilBundleTaskComplete uses the Amazon EC2 API operation

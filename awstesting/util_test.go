@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/awstesting"
+	"github.com/tily/sdk-go/awstesting"
 )
 
 func TestReadCloserClose(t *testing.T) {

@@ -9,8 +9,8 @@
 package pinpointiface
 
 import (
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/service/pinpoint"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/service/pinpoint"
 )
 
 // PinpointAPI provides an interface to enable mocking the
