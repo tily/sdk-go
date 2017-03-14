@@ -173,3 +173,24 @@ docs:
 
 api_info:
 	@go run private/model/cli/api-info/api-info.go
+
+gen-sandbox:
+	docker build -f ./gen/Dockerfile -t "tily/sdk-go:gen" .
+
+gen-download: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go download ${args}
+
+gen-generate: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go generate ${args}
+
+gen-s3compat: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go s3compat ${args}
+
+gen-sdk: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen make generate
+
+gen-sdk-services: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen make gen-services
+
+gen-develop: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash
