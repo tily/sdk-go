@@ -12,6 +12,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/tily/sdk-go/aws"
 	"github.com/tily/sdk-go/aws/client"
 	"github.com/tily/sdk-go/aws/client/metadata"
@@ -23,7 +24,6 @@ import (
 	"github.com/tily/sdk-go/private/protocol/query"
 	"github.com/tily/sdk-go/private/protocol/xml/xmlutil"
 	"github.com/tily/sdk-go/private/util"
-	"github.com/stretchr/testify/assert"
 )
 
 var _ bytes.Buffer // always import bytes
