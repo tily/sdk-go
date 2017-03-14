@@ -271,11 +271,9 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 	reader := strings.NewReader(text)
 	xmlDoc, err := goquery.NewDocumentFromReader(reader)
 	panicIfErr(err)
-	shapeNames := ShapeNames{}
-	doc.Find(g.ResultShapeSelector).Each(func(_ int, s *goquery.Selection) {
-		name := s.Find(g.ResultShapeNameSelector).First().Text()
-		shapeNames = append(shapeNames, name)
-	})
+
+	shapeNames := g.extractShapeNames(doc)
+
 	doc.Find(g.ResultShapeSelector).Each(func(i int, s *goquery.Selection) {
 		shapeName := s.Find(g.ResultShapeNameSelector).First().Text()
 		shapeName = regexp.MustCompile(`(\s)+$`).ReplaceAllString(shapeName, "")
@@ -338,6 +336,14 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 	shapes = append(shapes, Shape{ShapeName: "String", Type: "string"})
 	shapes = append(shapes, Shape{ShapeName: "Boolean", Type: "boolean"})
 	return shapes
+}
+
+func (g *Generator) extractShapeNames(doc *goquery.Document) (names ShapeNames) {
+	doc.Find(g.ResultShapeSelector).Each(func(_ int, s *goquery.Selection) {
+		name := s.Find(g.ResultShapeNameSelector).First().Text()
+		names = append(names, name)
+	})
+	return names
 }
 
 type ShapeNames []string
