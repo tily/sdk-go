@@ -14,11 +14,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/awstesting/integration"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/aws/aws-sdk-go/service/s3/s3manager"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/awstesting/integration"
+	"github.com/tily/sdk-go/service/s3"
+	"github.com/tily/sdk-go/service/s3/s3manager"
 )
 
 var integBuf12MB = make([]byte, 1024*1024*12)

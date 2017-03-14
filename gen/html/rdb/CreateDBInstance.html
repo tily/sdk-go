@@ -1,0 +1,1576 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウドAPI（RDB：CreateDBInstance）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="クラウド,API,RDB,CreateDBInstance,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドAPI（RDB：CreateDBInstance） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="class" type="text" value="column2L" --><!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+
+<div id="container">
+
+    <div id="header" class="pkg">
+        <div id="headLogo" class="pkg">
+            <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+            <!-- InstanceBeginEditable name="h1" -->
+			<h1 id="tagline">クラウドAPI（RDB：CreateDBInstance）</h1>
+			<!-- InstanceEndEditable -->
+        </div><!-- /#headLogo -->
+        <div id="headInfo">
+          <ul class="pkg">
+            <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+            <li><a href="/inquiry/">各種お問い合わせ</a></li>
+          </ul>
+        <!-- /#headInfo --></div>
+				<!-- noscriptMSG -->
+        <noscript><div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div></noscript>
+    </div><!-- /#header -->
+
+				<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>    
+    <div class="lower-main">
+        <div class="inner pkg">
+            <h2><span>ニフティクラウド APIリファレンス</span></h2>
+            <div class="footpath">
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/rdb/">RDB</a>&gt;<strong>CreateDBInstance</strong><!-- InstanceEndEditable -->
+            </div><!-- /.footpath -->
+        </div><!-- /.inner -->
+    </div><!-- /#lower-main -->
+    
+    <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+			<div id="mainContents">
+				<h3 id="GetBucket" class="ttl-01"><span><span>RDB：CreateDBInstance</span></span></h3>
+				<h4 id="outline" class="ttl-02"><span><span>処理概要</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">DBサーバーを新規作成します。</p>
+				<!-- /.section --></div>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="リクエストパラメーター">
+						<tbody><tr>
+							<th class="col7-1">要素名</th>
+							<th class="col7-2">説明</th>
+							<th class="col7-3">必須</th>
+							<th class="col7-4">値</th>
+							<th class="col7-5">最大値</th>
+							<th class="col7-6">デフォルト値</th>
+							<th class="col7-7">備考</th>
+						</tr>
+						<tr>
+							<td class="col7-1">AllocatedStorage</td>
+							<td class="col7-2">ディスク容量(GB)<br/>値：50 | 100 | 150 | 200 | 250</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">AutoMinorVersionUpgrade</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">真偽値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">AvailabilityZone</td>
+							<td class="col7-2">指定可能なゾーンについては、<a href="/service/zone_table.htm">ニフティクラウド ゾーン別機能対応表</a>をご参照ください。</td>
+							<td class="col7-3">○(プライベートLANを利用している場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">自動割り当て</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">BackupRetentionPeriod</td>
+							<td class="col7-2">
+								<p class="pgh-01">バックアップ保持期間(日)</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※0を指定すると自動バックアップを行いません</li>
+								</ul>
+								<p>値：0～10</p>
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">1</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">CharacterSetName</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBInstanceClass</td>
+							<td class="col7-2">DBサーバータイプ<br/>
+								値 : db. mini | db. e-small | db. small | db. e-small2 | db. small2 | db. e-small4 | db. small4 | db. e-small8 | db. small8 | db. e-medium | db. medium | db. e-medium4 | db. medium4 | db. e-medium8 | db. medium8 | db. e-medium16 | db. medium16 | db. e-large | db. large | db. e-large8 | db. large8 | db. e-large16 | db. large16 | db. e-large24 | db. large24 | db. e-large32 | db. large32 | db. e-extra-large16 | db. extra-large16 | db. e-extra-large24 | db. extra-large24 | db. e-extra-large32 | db. extra-large32 | db. e-double-large32 | db. double-large32 | db. e-double-large48 | db. double-large48 | db. e-double-large64 | db. double-large64
+</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBInstanceIdentifier</td>
+							<td class="col7-2">
+								<p class="pgh-01">DBサーバー名</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※1～63字のアルファベット・数字・ハイフン(&#39;-&#39;)が使用できます</li>
+									<li>※最初の文字はアルファベットである必要があります</li>
+									<li>※末尾にハイフンをつけたりハイフンを2個連続させたりすることはできません</li>
+								</ul>
+							</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBName</td>
+							<td class="col7-2">
+								<p class="pgh-01">DB名</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※DBサーバー内に作成されるデータベースの名前です</li>
+									<li>※指定しない場合にはデータベースは作成されません</li>
+                  <li>※最初の文字はアルファベットである必要があります</li>
+                  <li>※MySQLの場合、1～64字のアルファベット・数字・アンダースコア(&#39;_&#39;)が使用できます</li>
+                  <li>※PostgreSQLの場合、1～63字のアルファベット・数字・アンダースコア(&#39;_&#39;)が使用できます</li>
+                  <li>※MariaDBの場合、1～64字のアルファベット・数字・アンダースコア(&#39;_&#39;)が使用できます</li>
+								</ul>
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6"> </td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBParameterGroupName</td>
+							<td class="col7-2">
+								<p class="pgh-01">DBパラメーターグループ名</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※このパラメーターを指定しない場合、デフォルトのDB パラメーターグループが使用されます</li>
+									<li>※1～255字のアルファベット・数字・ハイフンが使用できます</li>
+									<li>※最初の文字はアルファベットである必要があります</li>
+									<li>※末尾にハイフンをつけたりハイフンを2個連続させたりすることはできません</li>
+								</ul>
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">DBエンジンのDefaultParameterGroupName</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBSecurityGroups.member.N</td>
+							<td class="col7-2">DBファイアウォールグループのリスト</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字配列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">DBエンジンのDefaultSecurityGroup</td>
+							<td class="col7-7">1つのみ指定可能です。複数指定した場合、2つ目以降は無視されます。</td>
+						</tr>
+						<tr>
+							<td class="col7-1">DBSubnetGroupName</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">Engine</td>
+							<td class="col7-2">データベースエンジン<br/>値：MySQL | postgres | MariaDB</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">EngineVersion</td>
+							<td class="col7-2">データベースエンジンのバージョン<br/>
+							値(MySQL)：5.5.32 | 5.5.40 | 5.5.41 | 5.5.53 | 5.6.12 | 5.6.21 | 5.6.22 | 5.6.34 | 5.7.15<br/>値(PostgreSQL)：9.3.4<br/>値(MariaDB) : 10.1.14 | 10.1.18</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">Iops</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">LicenseModel</td>
+							<td class="col7-2">DBサーバーのライセンスモデル<br/>値(MySQL)：general-public-license<br/>値(PostgreSQL)：postgresql-license<br/>値(MariaDB) : general-public-license</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">MasterUserPassword</td>
+							<td class="col7-2">
+								<p class="pgh-01">マスターユーザーのパスワード</p>
+								<ul class="list-d01 lay-btm-00">
+									<li>MySQLの場合<br/>
+                  	&#34;/&#34; , &#34;@&#34; , &#34; &#34; &#34;, &#34; &#34;&#39;を除く、印字可能なASCII文字が使用できます。1～41文字。</li>
+                  <li>PostgreSQLの場合<br/>
+                  	&#34;/&#34; , &#34;@&#34; , &#34; &#34; &#34;, &#34; &#34;&#39;を除く、印刷可能なASCII文字が使用できます。1～128文字。</li>
+                  <li>MariaDBの場合<br/>
+                  	&#34;/&#34; , &#34;@&#34; , &#34; &#34; &#34;, &#34; &#34;&#39;を除く、印刷可能なASCII文字が使用できます。1～41文字。</li>
+								</ul>
+							</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">MasterUsername</td>
+							<td class="col7-2">
+								<p class="pgh-01">マスタユーザー名</p>
+                <ul class="list-d01 lay-btm-00">
+                  <li>MySQLの場合
+                    <ul class="list-d01 lay-btm-00">
+                      <li>アルファベット・数字・アンダースコア(&#39; _ &#39;) が使用できます</li>
+                      <li>最初の文字はアルファベットである必要があります</li>
+                      <li>MySQL の予約語は使用できません</li>
+                      <li>1～16文字</li>
+                    </ul></li>
+                    <li>PostgreSQLの場合
+                    <ul class="list-d01 lay-btm-00">
+                      <li>アルファベット・数字・アンダースコア(&#39; _ &#39;) が使用できます</li>
+                      <li>最初の文字はアルファベットである必要があります</li>
+                      <li>PostgreSQLの予約語は使用できません</li>
+                      <li>1～63文字</li>
+                    </ul></li>
+                    <li>MariaDBの場合
+                    <ul class="list-d01 lay-btm-00">
+                      <li>アルファベット・数字・アンダースコア(&#39; _ &#39;) が使用できます</li>
+                      <li>最初の文字はアルファベットである必要があります</li>
+                      <li>PostgreSQLの予約語は使用できません</li>
+                      <li>1～16文字</li>
+                    </ul></li>
+                </ul>
+							</td>
+							<td class="col7-3">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">MultiAZ</td>
+							<td class="col7-2">冗長化機能を有効にするかどうか</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">真偽値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyMultiAZType</td>
+							<td class="col7-2">冗長構成タイプ<br/>使用する冗長構成のタイプを指定<br/>値：0(データ優先) | 1(性能優先)</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">0</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyReadReplicaDBInstanceIdentifier</td>
+							<td class="col7-2">
+								<p class="pgh-01">リードレプリカのDBサーバー名</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※1～63字のアルファベット・数字・ハイフン(&#39;-&#39;)が使用できます</li>
+									<li>※最初の文字はアルファベットである必要があります</li>
+									<li>※末尾にハイフンをつけたりハイフンを2個連続させたりすることはできません</li>
+								</ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">OptionGroupName</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">Port</td>
+							<td class="col7-2">アクセス可能なポート番号<br/>値：1150～65535</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">MySQL:3306<br/>PostgreSQL:5432</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">PreferredBackupWindow</td>
+							<td class="col7-2">
+								<p class="pgh-01">バックアップ時間帯</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※自動バックアップが有効の場合に日次のバックアップが行われる時間帯を指定します</li>
+									<li>※30分間以上の時間帯を指定する必要があります</li>
+									<li>※指定がない場合には、リージョンごとに定められた10時間の中からランダムに30分間が決定されます<br/>時間帯については、<a href="/spec/rdb/snapshot_backup.htm">クラウド技術仕様（RDB：自動バックアップ）</a>をご参照ください</li>
+									<li>※時刻の指定はUTCで行ってください</li>
+									<li>※PreferredMaintenanceWIndowと重複した時間帯を設定することはできません</li>
+									<li>※バックアップは条件により30分を超えて行われることがあります</li>
+								</ul>
+								形式： hh24:mi-hh24:mi
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">地域ごとに決まった10時間の中からランダムに選ばれた30分間</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">PreferredMaintenanceWindow</td>
+							<td class="col7-2">
+								<p class="pgh-01">メンテナンス時間帯</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※週次のメンテナンスが行われる時間帯を指定します</li>
+									<li>※30分間以上23時間30分以内の時間帯を指定する必要があります</li>
+									<li>※指定がない場合には、リージョンごとに定められた10時間の中からランダムに30分間が決定されます(曜日もランダムで決定されます)<br/>時間帯については、<a href="/spec/rdb/server_maintenance.htm">クラウド技術仕様（RDB：メンテナンス）</a>をご参照ください</li>
+									<li>※時刻の指定はUTCで行ってください</li>
+									<li>※メンテナンスの内容によってはDBサーバーの停止やDBサービスの再起動が行われる場合があります(詳しくはユーザーガイドを参照してください)</li>
+									<li>※バックアップは条件により30分を超えて行われることがあります</li>
+								</ul>
+								形式：ddd:hh24:mi-ddd:hh24:mi<br/>
+								例. Sun:05:00-Sun:06:00<br/>
+								曜日部分の値: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">地域ごとに決まった8時間の中からランダムに選ばれた30分間</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">PubliclyAccessible</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">真偽値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">VpcSecurityGroupIds.member.N</td>
+							<td class="col7-2"><ul class="list-a01 lay-btm-00"><li>※指定不可</li></ul></td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字配列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyStorageType</td>
+							<td class="col7-2">ディスクタイプ<br/>値：0(HDD) | 1(フラッシュドライブ)</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">0</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyNetworkId</td>
+							<td class="col7-2">プライベートLANのネットワークユニークID</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyVirtualPrivateAddress</td>
+							<td class="col7-2">仮想ロードバランサー用のプライベートIPアドレス</td>
+							<td class="col7-3">○(プライベートLANを利用している場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様<br/>
+								</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyMasterPrivateAddress</td>
+							<td class="col7-2">主系DBサーバー用のプライベートIPアドレス</td>
+							<td class="col7-3">○(プライベートLANを利用している場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftySlavePrivateAddress</td>
+							<td class="col7-2">待機系DBサーバー用のプライベートIPアドレス</td>
+							<td class="col7-3">○(プライベートLANを利用している場合、かつ、NiftyMultiAZType = 0 の場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col7-1">NiftyReadReplicaPrivateAddress</td>
+							<td class="col7-2">リードレプリカ用のプライベートIPアドレス</td>
+							<td class="col7-3">○(プライベートLANを利用している場合、かつ、NiftyMultiAZType = 1 の場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7">ニフティクラウド独自仕様</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">XML</p>
+					<h5 class="ttl-03">status</h5>
+					<p class="pgh-01">statusは共通の応答メッセージを返却します。</p>
+					<h5 class="ttl-03">result</h5>
+					<table class="tbl-01" summary="レスポンス">
+						<tbody><tr>
+							<th width="20%" class="col4-1">要素名</th>
+							<th width="52%" class="col4-2">説明</th>
+							<th width="8%" class="tx_c">値</th>
+							<th width="20%" class="col4-3">備考</th>
+						</tr>
+						<tr>
+							<td class="col4-1">CreateDBInstanceResponse</td>
+							<td class="col4-2">ルート</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">CreateDBInstanceResult</td>
+							<td class="col4-2">結果</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBInstance</td>
+							<td class="col4-2">DBサーバー</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">AllocatedStorage</td>
+							<td class="col4-2">割り当てるディスク容量(GB)</td>
+							<td class="tx_c">数値</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">AutoMinorVersionUpgrade</td>
+							<td class="col4-2">マイナーバージョンの自動アップデートを行うかどうか</td>
+							<td class="tx_c">真偽値</td>
+							<td class="col4-3">固定値falseを返却</td>
+						</tr>
+						<tr>
+							<td class="col4-1">AvailabilityZone</td>
+							<td class="col4-2">DBサーバーのゾーン</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">BackupRetentionPeriod</td>
+							<td class="col4-2">バックアップ保持期間</td>
+							<td class="tx_c">数値</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBInstanceClass</td>
+							<td class="col4-2">DBサーバータイプ</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBInstanceIdentifier</td>
+							<td class="col4-2">DBサーバー名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBInstanceStatus</td>
+							<td class="col4-2">DBサーバーのステータス</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBName</td>
+							<td class="col4-2">DB名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBParameterGroups</td>
+							<td class="col4-2">DBパラメーターグループ情報リスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBParameterGroup</td>
+							<td class="col4-2">DBパラメーターグループ</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBParameterGroupName</td>
+							<td class="col4-2">DBパラメーターグループ名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">ParameterApplyStatus</td>
+							<td class="col4-2">DBパラメーターの適用ステータス<br/>値：applying(適用中) | pending-reboot(再起動待ち) | in-sync(適用済み)</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBSecurityGroups</td>
+							<td class="col4-2">DBファイアウォールグループ情報リスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBSecurityGroups</td>
+							<td class="col4-2">DBファイアウォールグループ</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DBSecurityGroupName</td>
+							<td class="col4-2">DBファイアウォールグループ名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Status</td>
+							<td class="col4-2">DBファイアウォールグループのステータス<br/>値：active(有効) | adding(適用中) | removing(取り外し中) | failed(変更失敗)</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Engine</td>
+							<td class="col4-2">データベースエンジン<br/>値：MySQL|postgres</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">EngineVersion</td>
+							<td class="col4-2">データベースエンジンのバージョン</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">LicenseModel</td>
+							<td class="col4-2">DBサーバーのライセンスモデル</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">MasterUsername</td>
+							<td class="col4-2">DBサーバーのマスタユーザー名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">MultiAZ</td>
+							<td class="col4-2">冗長化機能が有効かどうか</td>
+							<td class="tx_c">真偽値</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">NiftyMultiAZType</td>
+							<td class="col4-2">冗長構成タイプ</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col4-1">OptionGroupMemberships</td>
+							<td class="col4-2">オプショングループ情報リスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">OptionGroupMembership</td>
+							<td class="col4-2">オプショングループ情報</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">OptionGroupName</td>
+							<td class="col4-2"><p class="pgh-01">下記の固定値を返却</p>
+								<ul class="list-d01 lay-btm-00">
+									<li>DBエンジンがMySQL 5.5系の場合、default:mysql-5-5</li>
+									<li>DBエンジンがMySQL 5.6系の場合、default:mysql-5-6</li>
+									<li>DBエンジンがMySQL 5.7系の場合、default:mysql-5-7</li>
+									<li>DBエンジンがPostgreSQL9.3系の場合、default:postgres-9-3</li>
+									<li>DBエンジンがMariaDB10.1系の場合、default:mariadb-10-1</li>
+								</ul></td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Status</td>
+							<td class="col4-2">オプショングループのステータス</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3">固定値in-syncを返却</td>
+						</tr>
+						<tr>
+							<td class="col4-1">PendingModifiedValues</td>
+							<td class="col4-2">保留の修正情報</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">MasterUserPassword</td>
+							<td class="col4-2">保留中のDBサーバーのマスターユーザー名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">PreferredBackupWindow</td>
+							<td class="col4-2">バックアップ時間</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">PreferredMaintenanceWindow</td>
+							<td class="col4-2">メンテナンス時間</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">PubliclyAccessible</td>
+							<td class="col4-2">グローバルIPアドレスかプライベートIPアドレスか</td>
+							<td class="tx_c">真偽値</td>
+							<td class="col4-3">固定値trueを返却</td>
+						</tr>
+						<tr>
+							<td class="col4-1">ReadReplicaDBInstanceIdentifiers</td>
+							<td class="col4-2">リードレプリカ名</td>
+							<td class="tx_c">文字配列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">VpcSecurityGroups</td>
+							<td class="col4-2"><ul class="list-a01 lay-btm-00"><li>※返却値なし</li></ul></td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">NiftyStorageType</td>
+							<td class="col4-2">ディスクタイプ</td>
+							<td class="tx_c">数値</td>
+							<td class="col4-3">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col4-1">NiftyNetworkId</td>
+							<td class="col4-2">プライベートLANのネットワークユニークID</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3">ニフティクラウド独自仕様</td>
+						</tr>
+						<tr>
+							<td class="col4-1">ResponseMetadata</td>
+							<td class="col4-2">共通メタ情報</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="error" class="ttl-02"><span><span>エラー</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="エラー">
+						<tbody><tr>
+							<th width="20%" class="col5-1">コード</th>
+							<th width="30%" class="col5-2">メッセージ</th>
+							<th width="10%" class="col5-3">タイプ</th>
+							<th width="10%" class="col5-4">HTTP<br/>ステータスコード</th>
+							<th width="30%" class="col5-5">説明</th>
+						</tr>
+						<tr>
+							<td class="col5-1">DBInstanceAlreadyExists</td>
+							<td class="col5-2">DB Instance already exists</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">すでに存在するDBInstanceIdentifierを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">DBParameterGroupNotFound</td>
+							<td class="col5-2">DBParameterGroup not found: 1aaa</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">404</td>
+							<td class="col5-5">存在しないDBParameterGroupを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">DBSecurityGroupNotFound</td>
+							<td class="col5-2">DBSecurityGroup not found: aaa</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">404</td>
+							<td class="col5-5">存在しないDBSecurityGroupを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InstanceQuotaExceeded</td>
+							<td class="col5-2">Request would result in user exceeding the allowed number of DB Instances.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">作成可能なDBサーバーの個数に達している場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InsufficientDBInstanceCapacity</td>
+							<td class="col5-2">Specified DB Instance class is not available in the specified Availability Zone.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">指定されたゾーンに作成できないDBサーバータイプが指定されている場合</td>
+						</tr>
+						<tr>
+							<td rowspan="12" class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">Invalid storage size: 5000. The storage size for the specified instance class and database engine must be between 50 and 250 GB.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">AllocatedStorageに50～250でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2"><ul class="list-d01 lay-btm-00"><li>MySQLの場合<br/>
+							Cannot find version 5.5.32 for mysql</li>
+							<li>PostgreSQLの場合<br/>
+							Cannot find version 9.3.2 for postgres</li>
+							<li>MariaDBの場合<br/>
+							Cannot find version 10.1.10 for mariadb</li></ul>
+							</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">EngineVersionに対応していないバージョンを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2"><ul class="list-d01 lay-btm-00"><li>MySQLの場合<br/>
+							Invalid license model &#39;aaa&#39; for engine &#39;mysql&#39;. Valid license models are: general-public-license</li>
+							<li>PostgreSQLの場合<br/>
+							Invalid license model &#39;aaa&#39; for engine &#39;postgres&#39;. Valid license models are: postgresql-license</li>
+							<li>MariaDBの場合<br/>
+							Invalid license model &#39;aaa&#39; for engine &#39;mariadb&#39;. 
+Valid license models are: general-public-license</li></ul></td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">LicenseModelに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftySlavePrivateAddress must be provided and must not be blank for Multi-AZ instances.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">プライベートLANを利用している場合、かつ、multiAZ=trueの場合に、NiftySlavePrivateAddressの指定がないとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">DBSecurityGroup aaa cannot be used in east-11 zone. The availability zone of aaa is east12.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">指定されたゾーンと異なるゾーンに所属するDBファイアウォールグループを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2"><ul class="list-d01 lay-btm-00"><li>MySQLの場合<br/>
+              	The Parameter Group default.mysql5.1 with DBParameterGroupFamily mysql5.1 cannot be used for this instance. Please use a Parameter Group with DBParameterGroupFamily mysql5.5</li>
+                <li>PostgreSQLの場合<br/>
+                The Parameter Group default.postgresn.n with DBParameterGroupFamily postgresn.n cannot be used for this instance. Please use a Parameter Group with DBParameterGroupFamily postgres9.3</li>
+                <li>MariaDBの場合<br/>
+                The Parameter Group default.mariadbn.n with DBParameterGroupFamily mariadbn.n
+cannot be used for this instance. Please use a Parameter Group 
+with DBParameterGroupFamily mariadb10.1</li>
+                </ul></td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBParameterGroupNameにDBサーバーのDBParameterGroupFamilyと異なるパラメーターグループを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Multi-AZ deployment Type: 1 is not enabled for this database instance. To enable Multi-AZ deployment Type: 1, set the backup retention period to a non-zero value.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMultiAZTypeに1を指定した場合に、Engineにpostgresまたはmariadbを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyReadReplicaDBInstanceIdentifier must be provided and must not be blank for ReadReplica instances.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMultiAZTypeに1を指定した場合に、NiftyReadReplicaDBInstanceIdentifierの指定がない場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyReadReplicaDBInstanceIdentifier must be provided and must not be blank for ReadReplica instances.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMultiAZTypeに1を指定した場合に、NiftyReadReplicaPrivateAddressの指定がない場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">can not set the same value in DBInstanceIdentifier and NiftyReadReplicaDBInstanceIdentifier.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBInstanceIdentifierとNiftyReadReplicaDBInstanceIdentifierに、同じ値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Multi-AZ deployment Type: 1 is not enabled for this database instance. To enable Multi-AZ deployment Type: 1, set the engine to a mysql.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMultiAZTypeに1を指定した場合に、Engineにpostgresを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Private LAN net-0ewfh3mj does not belong to availability zone east-14.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">指定されたNiftyNetworkIdが所属するゾーンと指定されたAvailabilityZoneが一致しない場合</td>
+						</tr>
+						<tr>
+							<td rowspan="48" class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">The parameter AllocatedStorage must be provided and must not be null.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">必須のAllocatedStorageを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">aaa is not a valid availability zone.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">存在しないAvailabilityZoneを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid backup retention period: 100. Retention period must be between 0 and 10.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">BackupRetentionPeriodに35より大きい数字を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid DB instance class:aaa</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBInstanceClassに存在しないDBサーバータイプを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid DB instance class:null</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">必須パラメーターのDBInstanceClassを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter DBInstanceIdentifier is not a valid identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBInstanceIdentifierに数字から始まる値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter DBInstanceIdentifier is not a valid identifier because it is longer than 63 characters.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBInstanceIdentifierに63文字以上指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">DBName must begin with a letter and contain only alphanumeric characters.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBNameに<br/>数字から始まる値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">DBName must be less than 64 characters long.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBNameに<br/>64文字以上指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">DBName ADD cannot be used. It is a reserved word for this engine</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DBNameに<br/>予約語を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid DB engine: mysql5.5</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">Engineに有効でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter MasterUserPassword is not a valid password. Only printable ASCII characters besides &#39;/&#39;, &#39;@&#39;, &#39;&#34;&#39;, &#39; &#39; may be used.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MasterUserPasswordに@を使用した値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter MasterUserPassword must be provided and must not be blank.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MasterUserPasswordを空で値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter MasterUserPassword is not a valid password because it is longer than 41 characters.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MasterUserPasswordに41文字以上<br/>
+								値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid master user name</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MasterUsernameに数字から始まる値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid master user name</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">
+                            <ul>
+                            <li>MySQLでMasterUsernameに16文字以上指定した場合</li>
+                            <li>PostgreSQLでMasterUsernameに63文字以上指定した場合</li>
+                            <li>MariaDBでMasterUsernameに16文字以上指定した場合</li></ul></td>
+						</tr>
+						<tr>
+							<td class="col5-2">MasterUsername ADD cannot be used as it is a reserved word used by the engine</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MasterUsernameに予約語を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid endpoint port: 70000. Valid range is 1150-65535</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">Portに1150-65535でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid backup window time &#39;24:00&#39; specified. Should be specified as a time hh24:mi (24H Clock UTC). Example: 03:15</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredBackupWindowに24:00を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Backup window must be at least 30 minutes.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredBackupWindowに30分未満を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid backup window time &#39;1101:11&#39; specified. Should be specified as a time hh24:mi (24H Clock UTC). Example: 03:15</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredBackupWindowに無効なフォーマットで指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The backup window and maintenance window must not overlap.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredBackupWindowとPreferredMaintenanceWindowが重なるように指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid maintenance window format. Should be specified as a range ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). Example: Sun:23:45-Mon:00:15</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceWindowに無効な値（aaaaaaa）を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid maintenance window time &#39;aaa:01:11&#39; specified. Should be specified as a time ddd:hh24:mi (24H Clock UTC). Example: Mon:00:15</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceWindowに無効なフォーマットの値（aaa:01:11）を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Maintenance window must be at least 30 minutes.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceWindowに30分未満を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid Storage Type: 2</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">StorageTypeに 0,1以外を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid parameter group name:</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">ParameterGroupNameに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Maintenance window must be less than 24 hours.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceWindowに24時間を超える値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The specified backup window overlaps all available default maintenance windows. Shrink the backup window or specify a non-overlapping maintenance window.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredBackupWindowにPreferredMaintenanceを設定する余地がない時間を指定した場合(0:00-23:40など)</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The specified backup window overlaps all available default maintenance windows. Shrink the backup window or specify a non-overlapping maintenance window.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceにPreferredBackupWindowを設定する余地がない時間を指定した場合(0:00-23:40など)</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Maintenance window cannot end before it begins.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">PreferredMaintenanceのTOがFROMより前の場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">AllocatedStorage should specify the multiple of 50. </td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">AllocatedStorageに50の倍数でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyVirtualPrivateAddress must be provided and must not be blank.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">プライベートLANを利用している場合で、NiftyVirtualPrivateAddressの指定がないとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid NiftyVirtualPrivateAddress: aaa.bbb.ccc.ddd.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyVirtualPrivateAddressにIPアドレスとして無効な値を指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">NiftyVirtualPrivateAddress  is not allowed in the range of 10.0.0.0/8.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyVirtualPrivateAddressに許可されないIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyMasterPrivateAddress must be provided and must not be blank.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">プライベートLANを利用している場合で、NiftyMasterPrivateAddressの指定がないとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid NiftyMasterPrivateAddress aaa.bbb.ccc.ddd.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMasterPrivateAddressにIPアドレスとして無効な値を指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">NiftyMasterPrivateAddress  is not allowed in the range of 10.0.0.0/8.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMasterPrivateAddressに許可されないIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid NiftySlavePrivateAddress aaa.bbb.ccc.ddd.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftySlavePrivateAddressにIPアドレスとして無効な値を指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">NiftySlavePrivateAddress  is not allowed in the range of 10.0.0.0/8.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftySlavePrivateAddressに許可されないIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">AvailabilityZone is required.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">プライベートLANを利用している場合で、AvailabilityZoneの指定がないとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyReadReplicaDBInstanceIdentifier is not a valid identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must 
+not end with a hyphen or contain two consecutive hyphens.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyReadReplicaDBInstanceIdentifierに数字から始まる値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">The parameter NiftyReadReplicaDBInstanceIdentifier is not a valid identifier because it is longer than 63 characters.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyReadReplicaDBInstanceIdentifierに63文字以上指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid NiftyReadReplicaPrivateAddress aaa.bbb.ccc.ddd.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyReadReplicaPrivateAddressにIPアドレスとして無効な値を指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">NiftyReadReplicaPrivateAddress  is not allowed in the range of 10.0.0.0/8.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyReadReplicaPrivateAddressに許可されないIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Invalid Multi-AZ deployment Type: 2</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyMultiAZTypeに 0,1以外を指定した場合き</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Private addresses are not unique: 192.168.98.160</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyVirtualPrivateAddress,NiftyMasterPrivateAddress,NiftySlavePrivateAddress,NiftyReadReplicaDBPrivateAddressに重複したIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Private address is already in use: 192.168.98.160</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">NiftyVirtualPrivateAddress,NiftyMasterPrivateAddress,NiftySlavePrivateAddress,NiftyReadReplicaDBPrivateAddressに既に使用済みのIPアドレスを指定したとき</td>
+						</tr>
+						<tr>
+							<td class="col5-1">NetworkNotFound</td>
+							<td class="col5-2">Private LAN net-0ewfh3mj does not exist.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">404</td>
+							<td class="col5-5">指定されたNiftyNetWorkIdが存在しない場合</td>
+						</tr>
+						<tr>
+							<td rowspan="4" class="col5-1">MalformedInput</td>
+							<td class="col5-2">－</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">ApplyImmediatelyに真偽値型でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">－</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MultiAZに真偽値型でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">－</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">AllocatedStorageに数値でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">－</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">BackupRetentionPeriodに数値でない値を指定した場合</td>
+						</tr>
+						<tr>
+						  <td class="col5-1">InvalidDBSecurityGroupState</td>
+						  <td class="col5-2">DBSecurityGroup is not in available state.</td>
+						  <td class="col5-3">Sender</td>
+						  <td class="col5-4">400</td>
+						  <td class="col5-5">設定しようとしたDBファイアウォールグループのルールに、ステータス「authorizing」または「revoking」のルールが存在する場合</td>
+					  </tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="sample" class="ttl-02"><span><span>サンプル</span></span></h4>
+				<div class="section">
+					<h5 class="ttl-03">リクエストサンプル</h5>
+					<code class="cd-01">https://rdb.jp-east-1.api.cloud.nifty.com/<br/>
+    ?Action=CreateDBInstance<br/>
+    &amp;AllocatedStorage=50<br/>
+    &amp;AvailabilityZone=east-13<br/>
+    &amp;BackupRetentionPeriod=1<br/>
+    &amp;DBInstanceClass=db.mini<br/>
+    &amp;DBInstanceIdentifier=mydbinstance<br/>
+    &amp;DBName=mydb<br/>
+    &amp;DBParameterGroupName=default.mysql5.6<br/>
+    &amp;DBSecurityGroups.member.1=mydbsecuritygroup<br/>
+    &amp;Engine=mysql<br/>
+    &amp;EngineVersion=5.6.12<br/>
+    &amp;LicenseModel=general-public-license<br/>
+    &amp;MasterUserPassword=mydbpassword<br/>
+    &amp;MasterUsername=mydbuser<br/>
+    &amp;MultiAZ=true<br/>
+    &amp;Port=3306<br/>
+    &amp;PreferredBackupWindow=05%3A30-06%3A00<br/>
+    &amp;PreferredMaintenanceWindow=Mon%3A06%3A01-Mon%3A07%3A31<br/>
+    &amp;SignatureVersion=2<br/>
+    &amp;SignatureMethod=HmacSHA256<br/>
+    &amp;Timestamp=2013-12-09T00%3A00%3A00.000Z<br/>
+    &amp;AWSAccessKeyId=&lt;Nifty Cloud Access Key ID&gt;<br/>
+    &amp;Signature=&lt;Signature&gt;</code>
+					<h5 class="ttl-03">レスポンスサンプル</h5>
+					<code class="cd-01">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;<br/>
+					&lt;CreateDBInstanceResponse&gt;<br/>
+  &lt;CreateDBInstanceResult&gt;<br/>
+  &lt;DBInstance&gt;<br/>
+    &lt;AllocatedStorage&gt;50&lt;/AllocatedStorage&gt;<br/>
+    &lt;AutoMinorVersionUpgrade&gt;false&lt;/AutoMinorVersionUpgrade&gt;<br/>
+    &lt;AvailabilityZone&gt;east-13&lt;/AvailabilityZone&gt;<br/>
+    &lt;BackupRetentionPeriod&gt;1&lt;/BackupRetentionPeriod&gt;<br/>
+    &lt;DBInstanceClass&gt;db.mini&lt;/DBInstanceClass&gt;<br/>
+    &lt;DBInstanceIdentifier&gt;mydbinstance&lt;/DBInstanceIdentifier&gt;<br/>
+    &lt;DBInstanceStatus&gt;creating&lt;/DBInstanceStatus&gt;<br/>
+    &lt;DBName&gt;mydb&lt;/DBName&gt;<br/>
+    &lt;DBParameterGroups&gt;<br/>
+      &lt;DBParameterGroup&gt;<br/>
+        &lt;DBParameterGroupName&gt;default.mysql5.6&lt;/DBParameterGroupName&gt;<br/>
+        &lt;ParameterApplyStatus&gt;in-sync&lt;/ParameterApplyStatus&gt;<br/>
+      &lt;/DBParameterGroup&gt;<br/>
+    &lt;/DBParameterGroups&gt;<br/>
+    &lt;DBSecurityGroups&gt;<br/>
+      &lt;DBSecurityGroup&gt;<br/>
+        &lt;DBSecurityGroupName&gt;mydbsecuritygroup&lt;/DBSecurityGroupName&gt;<br/>
+        &lt;Status&gt;active&lt;/Status&gt;<br/>
+      &lt;/DBSecurityGroup&gt;<br/>
+    &lt;/DBSecurityGroups&gt;<br/>
+    &lt;Engine&gt;mysql&lt;/Engine&gt;<br/>
+    &lt;EngineVersion&gt;5.6.12&lt;/EngineVersion&gt;<br/>
+    &lt;LicenseModel&gt;general-public-license&lt;/LicenseModel&gt;<br/>
+    &lt;MasterUsername&gt;mydbuser&lt;/MasterUsername&gt;<br/>
+    &lt;MultiAZ&gt;true&lt;/MultiAZ&gt;<br/>
+    &lt;OptionGroupMemberships&gt;<br/>
+      &lt;OptionGroupMembership&gt;<br/>
+        &lt;OptionGroupName&gt;default:mysql-5-6&lt;/OptionGroupName&gt;<br/>
+        &lt;Status&gt;in-sync&lt;/Status&gt;<br/>
+      &lt;/OptionGroupMembership&gt;<br/>
+    &lt;/OptionGroupMemberships&gt;<br/>
+    &lt;PendingModifiedValues&gt;<br/>
+      &lt;MasterUserPassword&gt;****&lt;/MasterUserPassword&gt;<br/>
+    &lt;/PendingModifiedValues&gt;<br/>
+    &lt;PreferredBackupWindow&gt;05:30-06:00&lt;/PreferredBackupWindow&gt;<br/>
+    &lt;PreferredMaintenanceWindow&gt;mon:06:01-mon:07:31&lt;/PreferredMaintenanceWindow&gt;<br/>
+    &lt;PubliclyAccessible&gt;true&lt;/PubliclyAccessible&gt;<br/>
+    &lt;ReadReplicaDBInstanceIdentifiers/&gt;<br/>
+    &lt;SecondaryAvailabilityZone&gt;east-13&lt;/SecondaryAvailabilityZone&gt;<br/>
+    &lt;VpcSecurityGroups/&gt;<br/>
+    &lt;NiftyStorageType&gt;0&lt;/NiftyStorageType&gt;<br/>
+  &lt;/DBInstance&gt;<br/>
+  &lt;/CreateDBInstanceResult&gt;<br/>
+  &lt;ResponseMetadata&gt;<br/>
+    &lt;RequestId&gt;06f8640f-5112-4c0b-a99e-158412abd428&lt;/RequestId&gt;<br/>
+  &lt;/ResponseMetadata&gt;<br/>
+&lt;/CreateDBInstanceResponse&gt;</code>
+				</div>
+				<!-- /.section -->
+			</div>
+			<!-- /#mainContents -->
+			      <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/rdb/">利用可能なAPI一覧</a></li>
+                    <li><a href="/api/rdb/request.htm">共通リクエスト・レスポンス</a></li>
+                    <li><a href="/api/rdb/error.htm">共通エラー</a></li>
+                  </ul>
+                </li>
+                <li><span>DBサーバー</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBInstance.htm">CreateDBInstance</a></li>
+                    <li><a href="/api/rdb/CreateDBInstanceReadReplica.htm">CreateDBInstanceReadReplica</a></li>
+                    <li><a href="/api/rdb/DeleteDBInstance.htm">DeleteDBInstance</a></li>
+                    <li><a href="/api/rdb/RebootDBInstance.htm">RebootDBInstance</a></li>
+                    <li><a href="/api/rdb/DescribeDBInstances.htm">DescribeDBInstances</a></li>
+                    <li><a href="/api/rdb/ModifyDBInstance.htm">ModifyDBInstance</a></li>
+                    <li><a href="/api/rdb/NiftyFailoverDBInstance.htm">NiftyFailoverDBInstance</a></li>
+                  </ul>
+                </li>
+                <li><span>オプション</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeDBEngineVersions.htm">DescribeDBEngineVersions</a></li>
+                    <li><a href="/api/rdb/DescribeOrderableDBInstanceOptions.htm">DescribeOrderableDBInstanceOptions</a></li>
+                  </ul>
+                </li>
+                <li><span>DBスナップショット</span>
+                  <ul>
+                    <li><a href="/api/rdb/CopyDBSnapshot.htm">CopyDBSnapshot</a></li>
+                    <li><a href="/api/rdb/CreateDBSnapshot.htm">CreateDBSnapshot</a></li>
+                    <li><a href="/api/rdb/DeleteDBSnapshot.htm">DeleteDBSnapshot</a></li>
+                    <li><a href="/api/rdb/DescribeDBSnapshots.htm">DescribeDBSnapshots</a></li>
+                    <li><a href="/api/rdb/RestoreDBInstanceFromDBSnapshot.htm">RestoreDBInstanceFromDBSnapshot</a></li>
+                    <li><a href="/api/rdb/RestoreDBInstanceToPointInTime.htm">RestoreDBInstanceToPointInTime</a></li>
+                  </ul>
+                </li>
+                <li><span>DBパラメーターグループ</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBParameterGroup.htm">CreateDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/DeleteDBParameterGroup.htm">DeleteDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/DescribeDBParameters.htm">DescribeDBParameters</a></li>
+                    <li><a href="/api/rdb/DescribeEngineDefaultParameters.htm">DescribeEngineDefaultParameters</a></li>
+                    <li><a href="/api/rdb/DescribeDBParameterGroups.htm">DescribeDBParameterGroups</a></li>
+                    <li><a href="/api/rdb/ModifyDBParameterGroup.htm">ModifyDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/ResetDBParameterGroup.htm">ResetDBParameterGroup</a></li>
+                  </ul>
+                </li>
+                <li><span>DBファイアウォール</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBSecurityGroup.htm">CreateDBSecurityGroup</a></li>
+                    <li><a href="/api/rdb/AuthorizeDBSecurityGroupIngress.htm">AuthorizeDBSecurityGroupIngress</a></li>
+                    <li><a href="/api/rdb/DeleteDBSecurityGroup.htm">DeleteDBSecurityGroup</a></li>
+                    <li><a href="/api/rdb/DescribeDBSecurityGroups.htm">DescribeDBSecurityGroups</a></li>
+                    <li><a href="/api/rdb/RevokeDBSecurityGroupIngress.htm">RevokeDBSecurityGroupIngress</a></li>
+                  </ul>
+                </li>
+                <li><span>イベント</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeEvents.htm">DescribeEvents</a></li>
+                  </ul>
+                </li>
+                <li><span>イベント通知</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateEventSubscription.htm">CreateEventSubscription</a></li>
+                    <li><a href="/api/rdb/DescribeEventSubscriptions.htm">DescribeEventSubscriptions</a></li>
+                    <li><a href="/api/rdb/ModifyEventSubscription.htm">ModifyEventSubscription</a></li>
+                    <li><a href="/api/rdb/DeleteEventSubscription.htm">DeleteEventSubscription</a></li>
+                    <li><a href="/api/rdb/AddSourceIdentifierToSubscription.htm">AddSourceIdentifierToSubscription</a></li>
+                    <li><a href="/api/rdb/DescribeEventCategories.htm">DescribeEventCategories</a></li>
+                    <li><a href="/api/rdb/RemoveSourceIdentifierFromSubscription.htm">RemoveSourceIdentifierFromSubscription</a></li>
+                  </ul>
+                </li>
+                <li><span>DBログ</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeDBLogFiles.htm">DescribeDBLogFiles</a></li>
+                    <li><a href="/api/rdb/DownloadDBLogFilePortion.htm">DownloadDBLogFilePortion</a></li>
+                  </ul>
+                </li>
+                <li><span>モニタリング</span>
+                  <ul>
+                    <li><a href="/api/rdb/NiftyGetMetricStatistics.htm">NiftyGetMetricStatistics</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>			<!-- /#subContents -->
+			<!-- InstanceEndEditable --></div>
+  <!-- /.contentsInner --></div><!-- /#contents -->
+  
+<!-- InstanceBeginEditable name="footer" -->
+	<!-- #footer/ -->
+	    <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>	<!-- /#footer -->
+	<!-- InstanceEndEditable -->
+
+</div><!-- /#container -->
+
+<!-- 計測系// -->
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+</body><!-- InstanceEnd --></html>

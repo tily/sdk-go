@@ -14,9 +14,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/awstesting/integration"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/awstesting/integration"
+	"github.com/tily/sdk-go/service/s3"
 )
 
 var bucketName *string

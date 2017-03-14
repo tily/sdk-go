@@ -1,0 +1,662 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウドAPI（NAS：GetMetricStatistics）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="クラウド,ヘルプ,NAS,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドAPI（NAS：GetMetricStatistics） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="class" type="text" value="column2L" --><!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+
+<div id="container">
+
+    <div id="header" class="pkg">
+        <div id="headLogo" class="pkg">
+            <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+            <!-- InstanceBeginEditable name="h1" -->
+			<h1 id="tagline">クラウドAPI（NAS：GetMetricStatistics）</h1>
+			<!-- InstanceEndEditable -->
+        </div><!-- /#headLogo -->
+        <div id="headInfo">
+          <ul class="pkg">
+            <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+            <li><a href="/inquiry/">各種お問い合わせ</a></li>
+          </ul>
+        <!-- /#headInfo --></div>
+				<!-- noscriptMSG -->
+        <noscript><div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div></noscript>
+    </div><!-- /#header -->
+
+				<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>    
+    <div class="lower-main">
+        <div class="inner pkg">
+            <h2><span>ニフティクラウド APIリファレンス</span></h2>
+            <div class="footpath">
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/nas/">NAS</a>&gt;<strong>GetMetricStatistics</strong><!-- InstanceEndEditable -->
+            </div><!-- /.footpath -->
+        </div><!-- /.inner -->
+    </div><!-- /#lower-main -->
+    
+    <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+			<div id="mainContents">
+				<h3 id="GetBucket" class="ttl-01"><span><span>NAS：GetMetricStatistics</span></span></h3>
+				<h4 id="outline" class="ttl-02"><span><span>処理概要</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">NASサービスのモニタリング情報を取得します。<br/>モニタリング要素について、詳しくは下記ヘルプページをご確認ください。</p>
+          <p class="link-arr-01 pgh-01"><a href="/help/nas/monitoring.htm">ヘルプ：NAS：モニタリング</a></p>
+					<p class="pgh-01">StartTime、EndTimeの組み合わせによる情報の取得範囲は下記のようになります。</p>
+          <h5 class="ttl-03">StartTime・EndTimeの補足表</h5>
+					<table class="tbl-01" summary="StartTime・EndTimeの補足表">
+						<tbody><tr>
+							<th>要素名</th>
+							<th>説明</th>
+						</tr>
+						<tr>
+							<td>何も指定しない</td>
+							<td>すべてのモニタリング情報を取得（最大1週間分）</td>
+						</tr>
+						<tr>
+							<td>StartTimeのみ指定</td>
+							<td>StartTime～現在時刻のイベントを取得</td>
+						</tr>
+						<tr>
+							<td>EndTimeのみ指定</td>
+							<td>モニタリング情報が存在する最古の時刻～EndTimeのイベントを取得</td>
+						</tr>
+						<tr>
+							<td>StartTimeとEndTimeを指定</td>
+							<td>StartTime～EndTimeのイベントを取得</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="リクエストパラメーター">
+						<tbody><tr>
+							<th class="col7-1">要素名</th>
+							<th class="col7-2">説明</th>
+							<th class="col7-3">必須</th>
+							<th class="col7-4">値</th>
+							<th class="col7-5">最大値</th>
+							<th class="col7-6">デフォルト値</th>
+							<th class="col7-7">備考</th>
+						</tr>
+						<tr>
+							<td>Dimensions.member.N.Name</td>
+							<td>Dimensions.member.N.Valueとセットで要素を指定します。<br/>要素は「NASInstanceIdentifier」のみ指定可能です。</td>
+							<td>○</td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Dimensions.member.N.Value</td>
+							<td>Dimensions.member.N.NameとセットでNAS名を指定します。</td>
+							<td>○</td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>MetricName</td>
+							<td>取得対象のデータ名を指定します。<br/>指定可能なデータ名は下記「MetricName取得対象データ名一覧表」をご覧ください。</td>
+							<td>○</td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>StartTime</td>
+							<td>モニタリング情報の読み出し期間の開始時間<br/>例：2009-07-08 18:00<br/>形式：yyyy-mm-dd hh24:mi</td>
+							<td> </td>
+							<td>日付</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>EndTime</td>
+							<td>モニタリング情報の読み出し期間の終了時間<br/>例：2009-07-08 18:00<br/>形式：yyyy-mm-dd hh24:mi</td>
+							<td> </td>
+							<td>日付</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+					</tbody></table>
+                    <h5 class="ttl-03">MetricName取得対象データ名一覧表</h5>
+					<table class="tbl-01" summary="MetricName取得対象データ名一覧表">
+						<tbody><tr>
+							<th>要素名</th>
+							<th>説明</th>
+						</tr>
+						<tr>
+							<td>FreeStorageSpace</td>
+							<td>ディスクの空き容量</td>
+						</tr>
+						<tr>
+							<td>UsedStorageSpace</td>
+							<td>ディスクの使用量</td>
+						</tr>
+						<tr>
+							<td>ReadIOPS</td>
+							<td>ディスクの読み込みIOPS</td>
+						</tr>
+						<tr>
+							<td>WriteIOPS</td>
+							<td>ディスクの書き込みIOPS</td>
+						</tr>
+						<tr>
+							<td>ReadThroughput</td>
+							<td>ディスクの読み込みスループット</td>
+						</tr>
+						<tr>
+							<td>WriteThroughput</td>
+							<td>ディスクの書き込みスループット</td>
+						</tr>
+						<tr>
+							<td>ActiveConnections</td>
+							<td>アクティブなコネクション数</td>
+						</tr>
+						<tr>
+							<td>GlobalReadTraffic</td>
+							<td>グローバルの読み込みデータ流量</td>
+						</tr>
+						<tr>
+							<td>PrivateReadTraffic</td>
+							<td>プライベートの読み込みデータ流量</td>
+						</tr>
+						<tr>
+							<td>GlobalWriteTraffic</td>
+							<td>グローバルの書き込みデータ流量</td>
+						</tr>
+						<tr>
+							<td>PrivateWriteTraffic</td>
+							<td>プライベートの書き込みデータ流量</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">XML</p>
+                    <h5 class="ttl-03">status</h5>
+					<p class="pgh-01">statusは共通の応答メッセージを返却します。</p>
+                    <h5 class="ttl-03">result</h5>
+					<table class="tbl-01" summary="レスポンス">
+						<tbody><tr>
+							<th class="col4-1">要素名</th>
+							<th class="col4-2">説明</th>
+							<th class="tx_c">値</th>
+							<th class="col4-3">備考</th>
+						</tr>
+						<tr>
+							<td>GetMetricStatisticsResponse</td>
+							<td>ルート</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>GetMetricStatisticsResult</td>
+							<td>結果</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Datapoints</td>
+							<td>モニタリング情報リスト</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>member</td>
+							<td>モニタリング情報</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>TargetName</td>
+							<td>取得対象キュー名</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Timestamp</td>
+							<td>モニタリング日時</td>
+							<td>数値</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Sum</td>
+							<td>モニタリング値</td>
+							<td>数値</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>SampleCount</td>
+							<td>サンプル数（常に1）</td>
+							<td>数値</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Label</td>
+							<td>取得対象データ名</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>ResponseMetadata</td>
+							<td>共通メタ情報</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="hheader" class="ttl-02"><span><span>エラー</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="エラー">
+						<tbody><tr>
+							<th class="col5-1">コード</th>
+							<th class="col5-2">メッセージ</th>
+							<th class="col5-3">タイプ</th>
+							<th class="col5-4">HTTPステータスコード</th>
+							<th class="col5-5">説明</th>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Reqiured.Dimensions.member.Name</td>
+							<td>The parameter Dimensions.member.N.Name is required</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>必須のDimensions.member.N.Nameを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Reqiured.Dimensions.member.Value</td>
+							<td>The parameter Dimensions.member.N.Value is required</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>必須のDimensions.member.N.Valueを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Reqiured.MetricName</td>
+							<td>The parameter MetricName is required</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>必須のMetricNameを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.TooMany.Dimensions.member</td>
+							<td>The collection Dimensions must not have a size greater than 10.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>Dimensions.memberに11件以上指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.CannotSpecify.Dimensions.member.Name</td>
+							<td>The parameter Dimensions.member.N.Name must be a value in the set [ NASInstanceIdentifier ].</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>Dimensions.member.N.Nameに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.CannotSpecify.MetricName</td>
+							<td>The parameter MetricName must be a value in the set [ FreeStorageSpace,ReadIOPS,WriteIOPS,ReadThroughput,WriteThroughput,ActiveConnections,GlobalReadTraffic,PrivateReadTraffic,GlobalWriteTraffic,PrivateWriteTraffic ].</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>MetricNameに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.CannotSpecify.StartTime</td>
+							<td>Invalid value 2014/01/01 for StartTime.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>StartTimeに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.CannotSpecify.EndTime</td>
+							<td>Invalid value 2014/01/01 for EndTime.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>EndTimeに無効な値を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.CannotSpecify.TargetTime</td>
+							<td>The parameter EndTime must be greater than StartTime. </td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>GetMetircStatisticsの取得期間が開始日時より終了日時が早い時間だった場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Format.Dimensions.member.Value</td>
+							<td>The parameter Dimensions.member.N.Value is not a valid identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>Dimensions.member.N.Valueに数字から始まる値を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.TooLong.Dimensions.member.Value</td>
+							<td>The parameter Dimensions.member.N.Value is not a valid identifier because it is longer than 63 characters.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>Dimensions.member.N.Valueに63文字以上指定した場合</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				
+				<h4 id="hbody" class="ttl-02"><span><span>リクエストサンプル</span></span></h4>
+				<div class="section">
+                <code class="cd-01">
+                https://nas.jp-east-2.api.cloud.nifty.com/<br/>
+                  ?Action=GetMetricStatistics<br/>
+                    &amp;Dimensions.member.1.Name=NASInstanceIdentifier<br/>
+                    &amp;Dimensions.member.1.Value=example-nas-server<br/>
+                    &amp;MetricName=FreeStorageSpace<br/>
+                    &amp;SignatureVersion=2<br/>
+                    &amp;SignatureMethod=HmacSHA256<br/>
+                    &amp;Timestamp=2016-02-24T00%3A00%3A00.000Z<br/>
+                    &amp;AWSAccessKeyId=&lt;Nifty Cloud Access Key ID&gt;<br/>
+                    &amp;Signature=&lt;Signature&gt;</code>
+				<!-- /.section --></div>
+				<h4 id="hbody" class="ttl-02"><span><span>レスポンスサンプル</span></span></h4>
+				<div class="section">
+                <code class="cd-01">&lt;GetMetricStatisticsResponse&gt;<br/>
+  &lt;GetMetricStatisticsResult&gt;<br/>
+    &lt;Datapoints&gt;<br/>
+      &lt;member&gt;<br/>
+        &lt;TargetName&gt;example-nas-server&lt;/TargetName&gt;<br/>
+        &lt;Timestamp&gt;2016-02-02T09:34:22Z&lt;/Timestamp&gt;<br/>
+        &lt;Sum&gt;1002993983488.0&lt;/Sum&gt;<br/>
+        &lt;SampleCount&gt;1&lt;/SampleCount&gt;<br/>
+      &lt;/member&gt;<br/>
+      &lt;member&gt;<br/>
+        &lt;TargetName&gt;example-nas-server&lt;/TargetName&gt;<br/>
+        &lt;Timestamp&gt;2016-02-02T09:35:22Z&lt;/Timestamp&gt;<br/>
+        &lt;Sum&gt;1002993983488.0&lt;/Sum&gt;<br/>
+        &lt;SampleCount&gt;1&lt;/SampleCount&gt;<br/>
+      &lt;/member&gt;<br/>
+      &lt;member&gt;<br/>
+        &lt;TargetName&gt;example-nas-server&lt;/TargetName&gt;<br/>
+        &lt;Timestamp&gt;2016-02-02T09:36:22Z&lt;/Timestamp&gt;<br/>
+        &lt;Sum&gt;1002993983488.0&lt;/Sum&gt;<br/>
+        &lt;SampleCount&gt;1&lt;/SampleCount&gt;<br/>
+      &lt;/member&gt;<br/>
+      &lt;member&gt;<br/>
+        &lt;TargetName&gt;example-nas-server&lt;/TargetName&gt;<br/>
+        &lt;Timestamp&gt;2016-02-02T09:37:22Z&lt;/Timestamp&gt;<br/>
+        &lt;Sum&gt;1002993983488.0&lt;/Sum&gt;<br/>
+        &lt;SampleCount&gt;1&lt;/SampleCount&gt;<br/>
+      &lt;/member&gt;<br/>
+    &lt;/Datapoints&gt;<br/>
+    &lt;Label&gt;FreeStorageSpace&lt;/Label&gt;<br/>
+  &lt;/GetMetricStatisticsResult&gt;<br/>
+  &lt;ResponseMetadata&gt;<br/>
+    &lt;RequestId&gt;f22f7e78-4c17-4d1b-96f4-3aa8f145eacb&lt;/RequestId&gt;<br/>
+  &lt;/ResponseMetadata&gt;<br/>
+&lt;/GetMetricStatisticsResponse&gt;</code>
+				<!-- /.section --></div>
+			</div>
+			<!-- /#mainContents -->
+			      <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/nas/">利用可能なAPI一覧</a></li>
+                    <li><a href="/api/nas/request.htm">共通リクエスト・レスポンス</a></li>
+                    <li><a href="/api/nas/error.htm">共通エラー</a></li>
+                  </ul>
+                </li>
+                <li><span>NAS</span>
+                  <ul>
+                    <li><a href="/api/nas/CreateNASInstance.htm">CreateNASInstance</a></li>
+                    <li><a href="/api/nas/DeleteNASInstance.htm">DeleteNASInstance</a></li>
+                    <li><a href="/api/nas/DescribeNASInstance.htm">DescribeNASInstance</a></li>
+                    <li><a href="/api/nas/ModifyNASInstance.htm">ModifyNASInstance</a></li>
+                  </ul>
+                </li>
+                <li><span>NASファイアウォール</span>
+                  <ul>
+                    <li><a href="/api/nas/CreateNASSecurityGroup.htm">CreateNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/AuthorizeNASSecurityGroupIngress.htm">AuthorizeNASSecurityGroupIngress</a></li>
+                    <li><a href="/api/nas/DeleteNASSecurityGroup.htm">DeleteNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/DescribeNASSecurityGroup.htm">DescribeNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/ModifyNASSecurityGroup.htm">ModifyNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/RevokeNASSecurityGroupIngress.htm">RevokeNASSecurityGroupIngress</a></li>
+                  </ul>
+                </li>
+                <li><span>モニタリング</span>
+                  <ul>
+                    <li><a href="/api/nas/GetMetricStatistics.htm">GetMetricStatistics</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>			<!-- /#subContents -->
+			<!-- InstanceEndEditable --></div>
+  <!-- /.contentsInner --></div><!-- /#contents -->
+  
+<!-- InstanceBeginEditable name="footer" -->
+	<!-- #footer/ -->
+	    <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>	<!-- /#footer -->
+	<!-- InstanceEndEditable -->
+
+</div><!-- /#container -->
+
+<!-- 計測系// -->
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+</body><!-- InstanceEnd --></html>

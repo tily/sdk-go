@@ -1,0 +1,36 @@
+{
+  "s3ModelSource": {
+    "endpoint": "https://raw.githubusercontent.com/aws/aws-sdk-ruby/master/aws-sdk-core/apis/s3/2006-03-01/",
+    "version": "2006-03-01",
+    "urls": {
+      "api-2.json": "api-2.json",
+      "docs-2.json": "docs-2.json",
+      "examples-1.json": "examples-1.json",
+      "paginators-1.json": "paginators-1.json",
+      "resources-1.json": "resources-1.json",
+      "waiters-2.json": "waiters-2.json"
+    }
+  },
+  "s3CompatServices": [
+    {
+      "id": "storage",
+      "metadata": {
+        "apiVersion": "2006-03-01",
+        "endpointPrefix": "storage",
+        "serviceAbbreviation": "storage",
+        "serviceFullName": "storage",
+        "signatureVersion": "s3"
+      }
+    },
+    {
+      "id": "objectstorage",
+      "metadata": {
+        "apiVersion": "2006-03-01",
+        "endpointPrefix": "objectstorage",
+        "serviceAbbreviation": "objectstorage",
+        "serviceFullName": "NIFTYCloud ObjectStorage",
+        "signatureVersion": "s3"
+      }
+    }
+  ]
+}

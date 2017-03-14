@@ -11,10 +11,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/defaults"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/credentials"
+	"github.com/tily/sdk-go/aws/defaults"
+	"github.com/tily/sdk-go/service/s3"
 )
 
 func TestNewDefaultSession(t *testing.T) {

@@ -13,14 +13,14 @@ import (
 	"os"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/corehandlers"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds"
-	"github.com/aws/aws-sdk-go/aws/credentials/endpointcreds"
-	"github.com/aws/aws-sdk-go/aws/ec2metadata"
-	"github.com/aws/aws-sdk-go/aws/endpoints"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/corehandlers"
+	"github.com/tily/sdk-go/aws/credentials"
+	"github.com/tily/sdk-go/aws/credentials/ec2rolecreds"
+	"github.com/tily/sdk-go/aws/credentials/endpointcreds"
+	"github.com/tily/sdk-go/aws/ec2metadata"
+	"github.com/tily/sdk-go/aws/endpoints"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 // A Defaults provides a collection of default values for SDK clients.

@@ -3,8 +3,8 @@ package request
 import (
 	"reflect"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/awsutil"
 )
 
 //type Paginater interface {

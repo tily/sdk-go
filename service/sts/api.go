@@ -6,8 +6,8 @@ package sts
 import (
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/tily/sdk-go/aws/awsutil"
+	"github.com/tily/sdk-go/aws/request"
 )
 
 const opAssumeRole = "AssumeRole"
@@ -803,7 +803,7 @@ func (c *STS) GetFederationTokenRequest(input *GetFederationTokenInput) (req *re
 // For more information about how permissions work, see Permissions for GetFederationToken
 // (http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html).
 // For information about using GetFederationToken to create temporary security
-// credentials, see GetFederationToken—Federation Through a Custom Identity
+// credentials, see GetFederationToken窶認ederation Through a Custom Identity
 // Broker (http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -980,7 +980,7 @@ type AssumeRoleInput struct {
 	//
 	// The regex used to validated this parameter is a string of characters consisting
 	// of upper- and lower-case alphanumeric characters with no spaces. You can
-	// also include underscores or any of the following characters: =,.@:\/-
+	// also include underscores or any of the following characters: =,.@:¥/-
 	ExternalId *string `min:"2" type:"string"`
 
 	// An IAM policy in JSON format.
@@ -999,8 +999,8 @@ type AssumeRoleInput struct {
 	// The format for this parameter, as described by its regex pattern, is a string
 	// of characters up to 2048 characters in length. The characters can be any
 	// ASCII character from the space character to the end of the valid character
-	// list (\u0020-\u00FF). It can also include the tab (\u0009), linefeed (\u000A),
-	// and carriage return (\u000D) characters.
+	// list (¥u0020-¥u00FF). It can also include the tab (¥u0009), linefeed (¥u000A),
+	// and carriage return (¥u000D) characters.
 	//
 	// The policy plain text must be 2048 bytes or shorter. However, an internal
 	// conversion compresses it into a packed binary format with a separate limit.
@@ -1232,8 +1232,8 @@ type AssumeRoleWithSAMLInput struct {
 	// The format for this parameter, as described by its regex pattern, is a string
 	// of characters up to 2048 characters in length. The characters can be any
 	// ASCII character from the space character to the end of the valid character
-	// list (\u0020-\u00FF). It can also include the tab (\u0009), linefeed (\u000A),
-	// and carriage return (\u000D) characters.
+	// list (¥u0020-¥u00FF). It can also include the tab (¥u0009), linefeed (¥u000A),
+	// and carriage return (¥u000D) characters.
 	//
 	// The policy plain text must be 2048 bytes or shorter. However, an internal
 	// conversion compresses it into a packed binary format with a separate limit.
@@ -1482,8 +1482,8 @@ type AssumeRoleWithWebIdentityInput struct {
 	// The format for this parameter, as described by its regex pattern, is a string
 	// of characters up to 2048 characters in length. The characters can be any
 	// ASCII character from the space character to the end of the valid character
-	// list (\u0020-\u00FF). It can also include the tab (\u0009), linefeed (\u000A),
-	// and carriage return (\u000D) characters.
+	// list (¥u0020-¥u00FF). It can also include the tab (¥u0009), linefeed (¥u000A),
+	// and carriage return (¥u000D) characters.
 	//
 	// The policy plain text must be 2048 bytes or shorter. However, an internal
 	// conversion compresses it into a packed binary format with a separate limit.
@@ -2025,8 +2025,8 @@ type GetFederationTokenInput struct {
 	// The format for this parameter, as described by its regex pattern, is a string
 	// of characters up to 2048 characters in length. The characters can be any
 	// ASCII character from the space character to the end of the valid character
-	// list (\u0020-\u00FF). It can also include the tab (\u0009), linefeed (\u000A),
-	// and carriage return (\u000D) characters.
+	// list (¥u0020-¥u00FF). It can also include the tab (¥u0009), linefeed (¥u000A),
+	// and carriage return (¥u000D) characters.
 	//
 	// The policy plain text must be 2048 bytes or shorter. However, an internal
 	// conversion compresses it into a packed binary format with a separate limit.

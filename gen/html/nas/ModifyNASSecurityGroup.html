@@ -1,0 +1,566 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウドAPI（NAS：ModifyNASSecurityGroup）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="クラウド,ヘルプ,NAS,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドAPI（NAS：ModifyNASSecurityGroup） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="class" type="text" value="column2L" --><!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+
+<div id="container">
+
+    <div id="header" class="pkg">
+        <div id="headLogo" class="pkg">
+            <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+            <!-- InstanceBeginEditable name="h1" -->
+			<h1 id="tagline">クラウドAPI（NAS：ModifyNASSecurityGroup）</h1>
+			<!-- InstanceEndEditable -->
+        </div><!-- /#headLogo -->
+        <div id="headInfo">
+          <ul class="pkg">
+            <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+            <li><a href="/inquiry/">各種お問い合わせ</a></li>
+          </ul>
+        <!-- /#headInfo --></div>
+				<!-- noscriptMSG -->
+        <noscript><div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div></noscript>
+    </div><!-- /#header -->
+
+				<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>    
+    <div class="lower-main">
+        <div class="inner pkg">
+            <h2><span>ニフティクラウド APIリファレンス</span></h2>
+            <div class="footpath">
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/nas/">NAS</a>&gt;<strong>ModifyNASSecurityGroup</strong><!-- InstanceEndEditable -->
+            </div><!-- /.footpath -->
+        </div><!-- /.inner -->
+    </div><!-- /#lower-main -->
+    
+    <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+			<div id="mainContents">
+				<h3 id="GetBucket" class="ttl-01"><span><span>NAS：ModifyNASSecurityGroup</span></span></h3>
+				<h4 id="outline" class="ttl-02"><span><span>処理概要</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">NASファイアウォールグループの設定を変更します。<br/>一度に複数のNASファイアウォールグループ設定を変更することができます。</p>
+				<!-- /.section --></div>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="リクエストパラメーター">
+						<tbody><tr>
+							<th class="col7-1">要素名</th>
+							<th class="col7-2">説明</th>
+							<th class="col7-3">必須</th>
+							<th class="col7-4">値</th>
+							<th class="col7-5">最大値</th>
+							<th class="col7-6">デフォルト値</th>
+							<th class="col7-7">備考</th>
+						</tr>
+						<tr>
+							<td>NASSecurityGroupName</td>
+							<td>変更対象のNASファイアウォールグループ名</td>
+							<td>○</td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>NewNASSecurityGroupName</td>
+							<td><p class="pgh-01">新しいNASファイアウォールグループ名</p>
+                <ul class="list-a01 lay-btm-00">
+                  <li>※1～255字のアルファベット・数字・ハイフン(&#39;-&#39;)が使用できます</li>
+                  <li>※最初の文字はアルファベットである必要があります</li>
+                  <li>※末尾にハイフンをつけたりハイフンを2個連続させたりすることはできません</li>
+                  <li>※すでに存在するNASファイアウォールグループの名前は指定できません</li></ul></td>
+							<td> </td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>NASSecurityGroupDescription</td>
+							<td><p class="pgh-01">NASファイアウォールグループの説明</p><ul class="list-a01 lay-btm-00"><li>※1～255文字の印字可能なASCII文字が使用できます。</li></ul></td>
+							<td> </td>
+							<td>文字列</td>
+							<td>－</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">XML</p>
+                    <h5 class="ttl-03">status</h5>
+					<p class="pgh-01">statusは共通の応答メッセージを返却します。</p>
+                    <h5 class="ttl-03">result</h5>
+					<table class="tbl-01" summary="レスポンス">
+						<tbody><tr>
+							<th class="col4-1">要素名</th>
+							<th class="col4-2">説明</th>
+							<th class="tx_c">値</th>
+							<th class="col4-3">備考</th>
+						</tr>
+						<tr>
+							<td>ModifyNASSecurityGroupResponse</td>
+							<td>ルート</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>ModifyNASSecurityGroupResult</td>
+							<td>結果</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>NASSecurityGroup</td>
+							<td>NASファイアウォールグループ</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>NASSecurityGroupDescription</td>
+							<td>NASファイアウォールグループの説明</td>
+							<td nowrap="nowrap">文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>NASSecurityGroupName</td>
+							<td>NASファイアウォールグループ名</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>SecurityGroups</td>
+							<td>ニフクラファイアウォールグループ要素リスト</td>
+							<td>リスト</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>SecurityGroup</td>
+							<td>ニフクラファイアウォールグループ要素</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>SecurityGroupName</td>
+							<td>ニフクラファイアウォールグループ名</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>SecurityGroupOwnerId</td>
+							<td>ニフティクラウドのファイアウォールグループを所有している @nifty ID</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Status</td>
+							<td>ニフティクラウドのファイアウォールグループのステータス<br/>値：authorized(有効)|authorizing(追加中)|revoking(削除中)|auth-failed(追加エラー)|revoke-failed(削除エラー)|not-exists(追加エラー(グループが存在しません))</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>IPRanges</td>
+							<td>IP帯リスト</td>
+							<td>リスト</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>IPRange</td>
+							<td>IP帯</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>CIDRIP</td>
+							<td>CIDR</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>Status</td>
+							<td>IP帯のステータス<br/>値：authorized(有効)|authorizing(追加中)|revoking(削除中)|auth-failed(追加エラー)|revoke-failed(削除エラー))</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>OwnerId</td>
+							<td>NASファイアウォールグループを所有している @nifty ID</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>AvailabilityZone</td>
+							<td>NASファイアウォールグループのゾーン</td>
+							<td>文字列</td>
+							<td> </td>
+						</tr>
+						<tr>
+							<td>ResponseMetadata</td>
+							<td>共通メタ情報</td>
+							<td>－</td>
+							<td> </td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="hheader" class="ttl-02"><span><span>エラー</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="エラー">
+						<tbody><tr>
+							<th class="col5-1">コード</th>
+							<th class="col5-2">メッセージ</th>
+							<th class="col5-3">タイプ</th>
+							<th class="col5-4">HTTPステータスコード</th>
+							<th class="col5-5">説明</th>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.NotFound.NASSecurityGroupName</td>
+							<td>NASSecurityGroup aaaa not found.</td>
+							<td>Sender</td>
+							<td>404</td>
+							<td>NASSecurityGroupNameに存在しない名前を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.Resource.IncorrectState.NASSecurityGroup</td>
+							<td>The state of the NAS Security Group does not allow deletion.</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>指定したファイアウォールグループのステータスが有効な状態でない場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Reqiured.NASSecurityGroupName</td>
+              <td>NASSecurityGroupName is required</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>必須のNASSecurityGroupNameを指定しなかった場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.TooLong.NASSecurityGroupName</td>
+							<td>NewNASSecurityGroupName can be no longer than 255 characters</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>NewNASSecurityGroupNameに255文字以上指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.Format.NASSecurityGroupName</td>
+							<td>NewNASSecurityGroupName must not contain leading or trailing spaces</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>NewNASSecurityGroupNameの最初か最後に &#34; &#34;（半角スペース） を入力した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.NotAllowed.NASSecurityGroupName</td>
+							<td>Invalid security group: exampleSecurity</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>NewNASSecurityGroupNameに無効な値（全角文字、@など）を指定した場合</td>
+						</tr>
+						<tr>
+							<td>Client.InvalidParameter.TooLong.NASSecurityGroupDescription</td>
+							<td>NASSecurityGroupDescription can be no longer than 255 characters</td>
+							<td>Sender</td>
+							<td>400</td>
+							<td>NASSecurityGroupDescriptionに255文字以上指定した場合</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				
+				<h4 id="hbody" class="ttl-02"><span><span>リクエストサンプル</span></span></h4>
+				<div class="section">
+                <code class="cd-01">
+                https://nas.jp-east-2.api.cloud.nifty.com/<br/>
+                    ?Action=ModifyNASSecurityGroup<br/>
+                    &amp;NASSecurityGroupName=exsample-securitygroup<br/>
+                    &amp;NewNASSecurityGroupName=sample-securitygroup<br/>
+                    &amp;SignatureVersion=2<br/>
+                    &amp;SignatureMethod=HmacSHA256<br/>
+                    &amp;Timestamp=2016-02-24T00%3A00%3A00.000Z<br/>
+                    &amp;AWSAccessKeyId=&lt;Nifty Cloud Access Key ID&gt;<br/>
+                    &amp;Signature=&lt;Signature&gt;</code>
+				<!-- /.section --></div>
+				<h4 id="hbody" class="ttl-02"><span><span>レスポンスサンプル</span></span></h4>
+				<div class="section">
+                <code class="cd-01">&lt;ModifyNASSecurityGroupResponse&gt;<br/>
+  &lt;ModifyNASSecurityGroupResult&gt;<br/>
+    &lt;NASSecurityGroup&gt;<br/>
+      &lt;NASSecurityGroupName&gt;sample-securitygroup&lt;/NASSecurityGroupName&gt;<br/>
+      &lt;SecurityGroups/&gt;<br/>
+      &lt;IPRanges/&gt;<br/>
+      &lt;OwnerId&gt;ABC01234&lt;/OwnerId&gt;<br/>
+      &lt;AvailabilityZone&gt;east-21&lt;/AvailabilityZone&gt;<br/>
+    &lt;/NASSecurityGroup&gt;<br/>
+  &lt;/ModifyNASSecurityGroupResult&gt;<br/>
+  &lt;ResponseMetadata&gt;<br/>
+    &lt;RequestId&gt;34f5f93c-529b-4230-96e6-9324e07394ed&lt;/RequestId&gt;<br/>
+  &lt;/ResponseMetadata&gt;<br/>
+&lt;/ModifyNASSecurityGroupResponse&gt;</code>
+				<!-- /.section --></div>
+			</div>
+			<!-- /#mainContents -->
+			      <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/nas/">利用可能なAPI一覧</a></li>
+                    <li><a href="/api/nas/request.htm">共通リクエスト・レスポンス</a></li>
+                    <li><a href="/api/nas/error.htm">共通エラー</a></li>
+                  </ul>
+                </li>
+                <li><span>NAS</span>
+                  <ul>
+                    <li><a href="/api/nas/CreateNASInstance.htm">CreateNASInstance</a></li>
+                    <li><a href="/api/nas/DeleteNASInstance.htm">DeleteNASInstance</a></li>
+                    <li><a href="/api/nas/DescribeNASInstance.htm">DescribeNASInstance</a></li>
+                    <li><a href="/api/nas/ModifyNASInstance.htm">ModifyNASInstance</a></li>
+                  </ul>
+                </li>
+                <li><span>NASファイアウォール</span>
+                  <ul>
+                    <li><a href="/api/nas/CreateNASSecurityGroup.htm">CreateNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/AuthorizeNASSecurityGroupIngress.htm">AuthorizeNASSecurityGroupIngress</a></li>
+                    <li><a href="/api/nas/DeleteNASSecurityGroup.htm">DeleteNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/DescribeNASSecurityGroup.htm">DescribeNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/ModifyNASSecurityGroup.htm">ModifyNASSecurityGroup</a></li>
+                    <li><a href="/api/nas/RevokeNASSecurityGroupIngress.htm">RevokeNASSecurityGroupIngress</a></li>
+                  </ul>
+                </li>
+                <li><span>モニタリング</span>
+                  <ul>
+                    <li><a href="/api/nas/GetMetricStatistics.htm">GetMetricStatistics</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>			<!-- /#subContents -->
+			<!-- InstanceEndEditable --></div>
+  <!-- /.contentsInner --></div><!-- /#contents -->
+  
+<!-- InstanceBeginEditable name="footer" -->
+	<!-- #footer/ -->
+	    <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>	<!-- /#footer -->
+	<!-- InstanceEndEditable -->
+
+</div><!-- /#container -->
+
+<!-- 計測系// -->
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+</body><!-- InstanceEnd --></html>

@@ -1,0 +1,315 @@
+{
+  "version": "2",
+  "service": "nas",
+  "operations": {
+    "AuthorizeNASSecurityGroupIngress": "AuthorizeNASSecurityGroupIngress",
+    "CreateNASInstance": "CreateNASInstance",
+    "CreateNASSecurityGroup": "CreateNASSecurityGroup",
+    "DeleteNASInstance": "DeleteNASInstance",
+    "DeleteNASSecurityGroup": "DeleteNASSecurityGroup",
+    "DescribeNASInstances": "DescribeNASInstances",
+    "DescribeNASSecurityGroups": "DescribeNASSecurityGroups",
+    "GetMetricStatistics": "GetMetricStatistics",
+    "ModifyNASInstance": "ModifyNASInstance",
+    "ModifyNASSecurityGroup": "ModifyNASSecurityGroup",
+    "RevokeNASSecurityGroupIngress": "RevokeNASSecurityGroupIngress"
+  },
+  "shapes": {
+    "Address": {
+      "base": "Address",
+      "refs": null
+    },
+    "AllocatedStorage": {
+      "base": "AllocatedStorage",
+      "refs": null
+    },
+    "AuthenticationType": {
+      "base": "AuthenticationType",
+      "refs": null
+    },
+    "AuthorizeNASSecurityGroupIngressRequest": {
+      "base": "AuthorizeNASSecurityGroupIngressRequest",
+      "refs": null
+    },
+    "AuthorizeNASSecurityGroupIngressResult": {
+      "base": "AuthorizeNASSecurityGroupIngressResult",
+      "refs": null
+    },
+    "AvailabilityZone": {
+      "base": "AvailabilityZone",
+      "refs": null
+    },
+    "Boolean": {
+      "base": "Boolean",
+      "refs": null
+    },
+    "CIDRIP": {
+      "base": "CIDRIP",
+      "refs": null
+    },
+    "CreateNASInstanceRequest": {
+      "base": "CreateNASInstanceRequest",
+      "refs": null
+    },
+    "CreateNASInstanceResult": {
+      "base": "CreateNASInstanceResult",
+      "refs": null
+    },
+    "CreateNASSecurityGroupRequest": {
+      "base": "CreateNASSecurityGroupRequest",
+      "refs": null
+    },
+    "CreateNASSecurityGroupResult": {
+      "base": "CreateNASSecurityGroupResult",
+      "refs": null
+    },
+    "CreateTime": {
+      "base": "CreateTime",
+      "refs": null
+    },
+    "Datapoints": {
+      "base": "Datapoints",
+      "refs": null
+    },
+    "DeleteNASInstanceRequest": {
+      "base": "DeleteNASInstanceRequest",
+      "refs": null
+    },
+    "DeleteNASInstanceResult": {
+      "base": "DeleteNASInstanceResult",
+      "refs": null
+    },
+    "DeleteNASSecurityGroupRequest": {
+      "base": "DeleteNASSecurityGroupRequest",
+      "refs": null
+    },
+    "DescribeNASInstancesRequest": {
+      "base": "DescribeNASInstancesRequest",
+      "refs": null
+    },
+    "DescribeNASInstancesResult": {
+      "base": "DescribeNASInstancesResult",
+      "refs": null
+    },
+    "DescribeNASSecurityGroupsRequest": {
+      "base": "DescribeNASSecurityGroupsRequest",
+      "refs": null
+    },
+    "DescribeNASSecurityGroupsResult": {
+      "base": "DescribeNASSecurityGroupsResult",
+      "refs": null
+    },
+    "DimensionsStruct": {
+      "base": "DimensionsStruct",
+      "refs": null
+    },
+    "DimensionsStructList": {
+      "base": "DimensionsStructList",
+      "refs": null
+    },
+    "DirectoryServiceDomainName": {
+      "base": "DirectoryServiceDomainName",
+      "refs": null
+    },
+    "DomainController": {
+      "base": "DomainController",
+      "refs": null
+    },
+    "DomainControllersStruct": {
+      "base": "DomainControllersStruct",
+      "refs": null
+    },
+    "DomainControllersStructList": {
+      "base": "DomainControllersStructList",
+      "refs": null
+    },
+    "Endpoint": {
+      "base": "Endpoint",
+      "refs": null
+    },
+    "GetMetricStatisticsRequest": {
+      "base": "GetMetricStatisticsRequest",
+      "refs": null
+    },
+    "GetMetricStatisticsResult": {
+      "base": "GetMetricStatisticsResult",
+      "refs": null
+    },
+    "Hostname": {
+      "base": "Hostname",
+      "refs": null
+    },
+    "IPAddress": {
+      "base": "IPAddress",
+      "refs": null
+    },
+    "IPRange": {
+      "base": "IPRange",
+      "refs": null
+    },
+    "IPRanges": {
+      "base": "IPRanges",
+      "refs": null
+    },
+    "Integer": {
+      "base": "Integer",
+      "refs": null
+    },
+    "Label": {
+      "base": "Label",
+      "refs": null
+    },
+    "MasterUsername": {
+      "base": "MasterUsername",
+      "refs": null
+    },
+    "ModifyNASInstanceRequest": {
+      "base": "ModifyNASInstanceRequest",
+      "refs": null
+    },
+    "ModifyNASInstanceResult": {
+      "base": "ModifyNASInstanceResult",
+      "refs": null
+    },
+    "ModifyNASSecurityGroupRequest": {
+      "base": "ModifyNASSecurityGroupRequest",
+      "refs": null
+    },
+    "ModifyNASSecurityGroupResult": {
+      "base": "ModifyNASSecurityGroupResult",
+      "refs": null
+    },
+    "NASInstance": {
+      "base": "NASInstance",
+      "refs": null
+    },
+    "NASInstanceDescription": {
+      "base": "NASInstanceDescription",
+      "refs": null
+    },
+    "NASInstanceErrorCode": {
+      "base": "NASInstanceErrorCode",
+      "refs": null
+    },
+    "NASInstanceErrorInfo": {
+      "base": "NASInstanceErrorInfo",
+      "refs": null
+    },
+    "NASInstanceErrorMessage": {
+      "base": "NASInstanceErrorMessage",
+      "refs": null
+    },
+    "NASInstanceIdentifier": {
+      "base": "NASInstanceIdentifier",
+      "refs": null
+    },
+    "NASInstanceStatus": {
+      "base": "NASInstanceStatus",
+      "refs": null
+    },
+    "NASInstanceType": {
+      "base": "NASInstanceType",
+      "refs": null
+    },
+    "NASInstances": {
+      "base": "NASInstances",
+      "refs": null
+    },
+    "NASSecurityGroup": {
+      "base": "NASSecurityGroup",
+      "refs": null
+    },
+    "NASSecurityGroupDescription": {
+      "base": "NASSecurityGroupDescription",
+      "refs": null
+    },
+    "NASSecurityGroupName": {
+      "base": "NASSecurityGroupName",
+      "refs": null
+    },
+    "NASSecurityGroups": {
+      "base": "NASSecurityGroups",
+      "refs": null
+    },
+    "NASSecurityGroupsStringList": {
+      "base": "NASSecurityGroupsStringList",
+      "refs": null
+    },
+    "NetworkId": {
+      "base": "NetworkId",
+      "refs": null
+    },
+    "OwnerId": {
+      "base": "OwnerId",
+      "refs": null
+    },
+    "PrivateAddress": {
+      "base": "PrivateAddress",
+      "refs": null
+    },
+    "Protocol": {
+      "base": "Protocol",
+      "refs": null
+    },
+    "RevokeNASSecurityGroupIngressRequest": {
+      "base": "RevokeNASSecurityGroupIngressRequest",
+      "refs": null
+    },
+    "RevokeNASSecurityGroupIngressResult": {
+      "base": "RevokeNASSecurityGroupIngressResult",
+      "refs": null
+    },
+    "SampleCount": {
+      "base": "SampleCount",
+      "refs": null
+    },
+    "SecurityGroup": {
+      "base": "SecurityGroup",
+      "refs": null
+    },
+    "SecurityGroupName": {
+      "base": "SecurityGroupName",
+      "refs": null
+    },
+    "SecurityGroupOwnerId": {
+      "base": "SecurityGroupOwnerId",
+      "refs": null
+    },
+    "SecurityGroups": {
+      "base": "SecurityGroups",
+      "refs": null
+    },
+    "Status": {
+      "base": "Status",
+      "refs": null
+    },
+    "StorageType": {
+      "base": "StorageType",
+      "refs": null
+    },
+    "String": {
+      "base": "String",
+      "refs": null
+    },
+    "Sum": {
+      "base": "Sum",
+      "refs": null
+    },
+    "TStamp": {
+      "base": "TStamp",
+      "refs": null
+    },
+    "TargetName": {
+      "base": "TargetName",
+      "refs": null
+    },
+    "Timestamp": {
+      "base": "Timestamp",
+      "refs": null
+    },
+    "member": {
+      "base": "member",
+      "refs": null
+    }
+  }
+}

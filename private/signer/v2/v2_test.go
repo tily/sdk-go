@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/awstesting"
+	"github.com/tily/sdk-go/aws"
+	"github.com/tily/sdk-go/aws/credentials"
+	"github.com/tily/sdk-go/aws/request"
+	"github.com/tily/sdk-go/awstesting"
 	"github.com/stretchr/testify/assert"
 )
 

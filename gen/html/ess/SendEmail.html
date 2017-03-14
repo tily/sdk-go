@@ -1,0 +1,502 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウドAPI（ESS：SendEmail）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="クラウド,API,ESS,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドAPI（ESS：SendEmail） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="class" type="text" value="column2L" --><!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+
+<div id="container">
+
+    <div id="header" class="pkg">
+        <div id="headLogo" class="pkg">
+            <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+            <!-- InstanceBeginEditable name="h1" -->
+			<h1 id="tagline">クラウドAPI（ESS：SendEmail）</h1>
+			<!-- InstanceEndEditable -->
+        </div><!-- /#headLogo -->
+        <div id="headInfo">
+          <ul class="pkg">
+            <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+            <li><a href="/inquiry/">各種お問い合わせ</a></li>
+          </ul>
+        <!-- /#headInfo --></div>
+				<!-- noscriptMSG -->
+        <noscript><div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div></noscript>
+    </div><!-- /#header -->
+
+				<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>    
+    <div class="lower-main">
+        <div class="inner pkg">
+            <h2><span>ニフティクラウド APIリファレンス</span></h2>
+            <div class="footpath">
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/ess/">ESS</a>&gt;<strong>SendEmail</strong><!-- InstanceEndEditable -->
+            </div><!-- /.footpath -->
+        </div><!-- /.inner -->
+    </div><!-- /#lower-main -->
+    
+    <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+			<div id="mainContents">
+				<h3 id="GetBucket" class="ttl-01"><span><span>ESS：SendEmail</span></span></h3>
+				<h4 id="outline" class="ttl-02"><span><span>概要</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">入力データを基にしてメールメッセージを組み立てて、即時に作成したメッセージを送信します。
+</p>
+				<p class="pgh-01 cap">送信元のメールアドレスは、検証済みのメールアドレスもしくは検証済みのドメインのメールアドレスとしてください。</p>
+                <p class="pgh-01">メッセージの合計サイズ(Message.Body.Text.DataとMessage.Body.Html.Dataのデータ合計)は2MBを超えることはできない。<br/>1通のメッセージにおける TO：、CC：、BCC：のメールアドレス合計数は 50 を超えることはできません。<br/>より多くの人にメールメッセージを送信したい場合には、50個以下のグループに受信者リストを分割し、グループごとにそれぞれリクエストを出してメッセージを送信すれば可能です。</p>
+				<!-- /.section --></div>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="リクエストパラメーター">
+						<tbody><tr>
+							<th class="col7-1">要素名</th>
+							<th class="col7-2">説明</th>
+							<th class="col7-3">必須</th>
+							<th class="col7-4">値</th>
+							<th class="col7-5">最大値</th>
+							<th class="col7-6">デフォルト値</th>
+							<th class="col7-7">備考</th>
+						</tr>
+						<tr>
+							<td class="col7-1">Destination.ToAddresses.member.N</td>
+                            <td class="col7-2">メールの送信先：宛先TOの指定</td>
+                            <td rowspan="3" class="col7-3 tx_c">○</td>
+                            <td rowspan="3" class="col7-4">文字列</td>
+                            <td rowspan="3" class="tx_c">－</td>
+                            <td rowspan="3" class="tx_c">－</td>
+                            <td rowspan="3" class="col7-7"> MIME encodeされた (RFC 2047) で指定。合計 50件まで。</td>
+                            </tr>
+                        <tr>
+							<td class="col7-1">Destination.CcAddresses.member.N</td>
+							<td class="col7-2">メールの送信先：同報CCの設定</td>
+						</tr>
+                        <tr>
+                        	<td class="col7-1">Destination.BccAddresses.member.N</td>
+                        	<td class="col7-2">メールの送信先：隠された同報 BCCの設定</td>
+                        </tr>
+                        <tr>
+							<td class="col7-1">Message.Subject.Data</td>
+                            <td class="col7-2">送信するメッセージ内容：subjectデータ</td>
+                            <td rowspan="6" class="col7-3 tx_c">○</td>
+                            <td rowspan="6" class="col7-4">文字列</td>
+                            <td rowspan="6" class="tx_c">－</td>
+                            <td rowspan="6" class="tx_c">－</td>
+                            <td rowspan="6" class="col7-7"> </td>
+                            </tr>
+                        <tr>
+							<td class="col7-1">Message.Subject.Charset</td>
+							<td class="col7-2">送信するメッセージ内容：subjectの文字コード</td>
+						</tr>
+                        <tr>
+                        	<td class="col7-1">Message.Body.Text.Data</td>
+                        	<td class="col7-2">送信するメッセージ内容：メール本文txtデータ</td>
+                        </tr>
+                        <tr>
+                        	<td class="col7-1">Message.Body.Text.Charset</td>
+                        	<td class="col7-2">送信するメッセージ内容：メール本文txtデータの文字コード</td>
+                        </tr>
+                        <tr>
+                        	<td class="col7-1">Message.Body.Html.Data</td>
+                        	<td class="col7-2">送信するメッセージ内容：メール本文htmlデータ</td>
+                        </tr>
+                        <tr>
+                        	<td class="col7-1">Message.Body.Html.Charset</td>
+                        	<td class="col7-2">送信するメッセージ内容：メール本文htmlデータの文字コード</td>
+                        </tr>
+                        <tr>
+							<td class="col7-1">ReplyToAddresses.member.N</td>
+							<td class="col7-2">メールの返信先のリスト<br/>
+受信者がメッセージに返信した場合、それぞれの返信先アドレスに返信が届く。<br/>
+10件まで設定可能</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="tx_c">－</td>
+							<td class="tx_c">－</td>
+							<td class="col7-7"> </td>
+                      </tr>
+                            <tr>
+							<td class="col7-1">ReturnPath</td>
+							<td class="col7-2">送信不達の際の通知(バウンスメール)を転送するアドレス<br/>
+ReturnPathを指定した場合このアドレスにメッセージを転送する。</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="tx_c">－</td>
+							<td class="tx_c">－</td>
+							<td class="col7-7"> </td>
+						   </tr>
+                           <tr>
+							<td class="col7-1">Source</td>
+							<td class="col7-2">メールの送信元<br/>
+デフォルトでは、文字列は7ビットASCIIでなければならない。他の文字が含まれている場合には、MIME形式でエンコードする必要がある。MIME形式でエンコードすると次の形式になる =? charset?エンコーディング?エンコードされたテキスト?= 。詳細については、RFC 2047参照。</td>
+							<td class="col7-3 tx_c">○</td>
+							<td class="col7-4">文字列</td>
+							<td class="tx_c">－</td>
+							<td class="tx_c">－</td>
+							<td class="col7-7"> </td>
+                            </tr>
+                        </tbody></table>
+				<!-- /.section --></div>
+				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="レスポンス">
+						<tbody><tr>
+							<th width="20%" class="col4-1">要素名</th>
+							<th width="52%" class="col4-2">説明</th>
+							<th width="8%" class="col4-3 tx_c">値</th>
+							<th width="20%" class="col4-4">備考</th>
+						</tr>
+						<tr>
+							<td class="col4-1">SendEmailResponse</td>
+							<td class="col4-2">ルート</td>
+							<td class="tx_c">－</td>
+							<td class="col4-4"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">SendEmailResult</td>
+							<td class="col4-2">結果</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-4"> </td>
+						</tr>
+                        <tr>
+							<td class="col4-1">MessageId</td>
+							<td class="col4-2">メッセージを一意に特定するために生成されたメッセージID</td>
+							<td class="tx_c">－</td>
+							<td class="col4-4"> </td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="error" class="ttl-02"><span><span>エラー</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="エラー">
+						<tbody><tr>
+							<th class="col2-1">エラー種別</th>
+							<th class="col2-2">HTTPステータスコード</th>
+                            <th class="col2-2">説明</th>
+						</tr>
+						<tr>
+							<td class="col2-1">ValidationError</td>
+							<td class="col2-2">400</td>
+                            <td class="col2-3">パラメーターが不足です。</td>
+						</tr>
+                        <tr>
+							<td class="col2-1">InvalidParameterValue</td>
+							<td class="col2-2">400</td>
+                            <td class="col2-3">無効な値または範囲外の値を入力パラメーターに指定しています。</td>
+						</tr>
+                        <tr>
+							<td class="col2-1">MalformedInput</td>
+							<td class="col2-2">400</td>
+                            <td class="col2-3">パラメーターが不正です。</td>
+						</tr>
+                        <tr>
+							<td class="col2-1">MessageRejected</td>
+							<td class="col2-2">400</td>
+                            <td class="col2-3">アクションに失敗しメッセージは送信できませんでした。付帯するエラー情報を見て原因を確認してください。</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="sample" class="ttl-02"><span><span>サンプル</span></span></h4>
+			  <div class="section">
+					<h5 class="ttl-03">リクエストサンプル</h5>
+					<code class="cd-01">
+						POST / HTTP/1.1<br/>
+Authorization: NIFTY4-HMAC-SHA256 Credential=&lt;Credential&gt;/20140320/east-1/email/nifty4_request, SignedHeaders=host;x-nifty-date, Signature=&lt;Signature&gt;<br/>
+Host: ess.api.cloud.nifty.com<br/>
+X-Nifty-Date: 20140320T124420Z<br/>
+Content-Length: 196<br/><br/>
+
+Source=localpart1%40example.com&amp;Destination.ToAddresses.member.1=localpart%40example.com&amp;Action=SendEmail&amp;Message.Body.Text.Data=hello&amp;Version=2010-12-01&amp;Message.Subject.Data=test
+						</code>
+					<h5 class="ttl-03">レスポンスサンプル</h5>
+					<code class="cd-01">
+HTTP/1.1 200 OK<br/>
+Date: Thu, 20 Mar 2014 12:44:20 GMT<br/>
+x-amzn-RequestId: cd719149-4a57-4fddP-af69-b7bc3b653b0d<br/>
+X-Nifty-RequestId: cd719149-4a57-4fdd-af69-b7bc3b653b0d<br/>
+Content-Type:text/xml<br/>
+Content-Length: 266<br/>
+Connection: close<br/><br/>&lt;SendEmailResponse&gt;<br/>
+
+   &lt;SendEmailResult&gt;<br/>
+      &lt;MessageId&gt;000001fc4e1329-7ed7-4880-a35b-0ee09cc35776-000000&lt;/MessageId&gt;<br/>
+   &lt;/SendEmailResult&gt;<br/>
+   &lt;ResponseMetadata&gt;<br/>
+      &lt;RequestId&gt;cd719149-4a57-4fdd-af69-b7bc3b653b0d&lt;/RequestId&gt;<br/>
+   &lt;/ResponseMetadata&gt;<br/>
+&lt;SendEmailResult&gt;
+					</code>
+				</div>
+				<!-- /.section -->
+			</div>
+			<!-- /#mainContents -->
+			      <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/ess/">利用可能なAPI一覧</a></li>
+                    <li><a href="/api/ess/request.htm">共通リクエスト・レスポンス</a></li>
+                    <li><a href="/api/ess/error.htm">共通エラー</a></li>
+                  </ul>
+                </li>
+                <li><span>送信元メールアドレス・ドメイン管理</span>
+                  <ul>
+                    <li><a href="/api/ess/ListIdentities.htm">ListIdentities</a></li>
+                    <li><a href="/api/ess/VerifyDomainIdentity.htm">VerifyDomainIdentity</a></li>
+                    <li><a href="/api/ess/VerifyEmailIdentity.htm">VerifyEmailIdentity</a></li>
+                    <li><a href="/api/ess/GetIdentityVerificationAttributes.htm">GetIdentityVerificationAttributes</a></li>
+                    <li><a href="/api/ess/DeleteIdentity.htm">DeleteIdentity</a></li>
+                  </ul>
+                </li>
+                <li><span>メール送信</span>
+                  <ul>
+                    <li><a href="/api/ess/SendEmail.htm">SendEmail</a></li>
+                    <li><a href="/api/ess/SendRawEmail.htm">SendRawEmail</a></li>
+                  </ul>
+                </li>
+                <li><span>利用状況確認</span>
+                  <ul>
+                    <li><a href="/api/ess/GetSendQuota.htm">GetSendQuota</a></li>
+                    <li><a href="/api/ess/GetSendStatistics.htm">GetSendStatistics</a></li>
+                  </ul>
+                </li>
+                <li><span>DKIM設定管理</span>
+                  <ul>
+                    <li><a href="/api/ess/GetIdentityDkimAttributes.htm">GetIdentityDkimAttributes</a></li>
+                    <li><a href="/api/ess/VerifyDomainDkim.htm">VerifyDomainDkim</a></li>
+                    <li><a href="/api/ess/SetIdentityDkimEnabled.htm">SetIdentityDkimEnabled</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>			<!-- /#subContents -->
+			<!-- InstanceEndEditable --></div>
+  <!-- /.contentsInner --></div><!-- /#contents -->
+  
+<!-- InstanceBeginEditable name="footer" -->
+	<!-- #footer/ -->
+	    <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>	<!-- /#footer -->
+	<!-- InstanceEndEditable -->
+
+</div><!-- /#container -->
+
+<!-- 計測系// -->
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+</body><!-- InstanceEnd --></html>

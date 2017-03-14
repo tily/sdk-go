@@ -4,8 +4,8 @@
 package sts
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/sts"
+	"github.com/tily/sdk-go/awstesting/integration/smoke"
+	"github.com/tily/sdk-go/service/sts"
 	"github.com/gucumber/gucumber"
 )
 

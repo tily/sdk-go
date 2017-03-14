@@ -4,8 +4,8 @@
 package es
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/elasticsearchservice"
+	"github.com/tily/sdk-go/awstesting/integration/smoke"
+	"github.com/tily/sdk-go/service/elasticsearchservice"
 	"github.com/gucumber/gucumber"
 )
 
