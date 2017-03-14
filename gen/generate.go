@@ -267,11 +267,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 }
 
 func (g *Generator) generateResultShapes(operationName string, doc *goquery.Document) (shapes []Shape) {
-	text := doc.Find(g.ResultExampleSelector).Text()
-	reader := strings.NewReader(text)
-	xmlDoc, err := goquery.NewDocumentFromReader(reader)
-	panicIfErr(err)
-
+	hintXML := g.extractHintXML(doc)
 	shapeNames := g.extractShapeNames(doc)
 
 	doc.Find(g.ResultShapeSelector).Each(func(i int, s *goquery.Selection) {
@@ -302,7 +298,7 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 			shape := Shape{ShapeName: shapeName, Type: "timestamp"}
 			shapes = append(shapes, shape)
 		case typeText == "リスト":
-			child := goquery.NodeName(xmlDoc.Find(strings.ToLower(shapeName)).Children().First())
+			child := goquery.NodeName(hintXML.Find(strings.ToLower(shapeName)).Children().First())
 			if pos := shapeNames.pos(child); pos != -1 {
 				shape := Shape{
 					ShapeName: shapeName,
@@ -312,7 +308,7 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 				shapes = append(shapes, shape)
 			}
 		case typeText == "－" || typeText == "-" || typeText == "\u00a0":
-			children := xmlDoc.Find(strings.ToLower(shapeName)).Children()
+			children := hintXML.Find(strings.ToLower(shapeName)).Children()
 			members := map[string]ShapeRef{}
 			children.Each(func(_ int, s *goquery.Selection) {
 				nodeName := goquery.NodeName(s)
@@ -344,6 +340,14 @@ func (g *Generator) extractShapeNames(doc *goquery.Document) (names ShapeNames) 
 		names = append(names, name)
 	})
 	return names
+}
+
+func (g *Generator) extractHintXML(doc *goquery.Document) (hintXML *goquery.Document) {
+	text := doc.Find(g.ResultExampleSelector).Text()
+	reader := strings.NewReader(text)
+	hintXML, err := goquery.NewDocumentFromReader(reader)
+	panicIfErr(err)
+	return hintXML
 }
 
 type ShapeNames []string
