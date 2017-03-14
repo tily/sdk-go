@@ -31,6 +31,8 @@ type Generator struct {
 	RequestShapeTypeSelector     string
 	RequestShapeRequiredSelector string
 	RequestShapeRequiredRegexp   string
+	RequestShapeIgnoreSelector   string
+	RequestShapeIgnoreRegexp     string
 	ResultShapeSelector          string
 	ResultShapeNameSelector      string
 	ResultShapeTypeSelector      string
@@ -186,8 +188,8 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			return
 		}
 
-		description := s.Find("td:nth-child(2)").First().Text()
-		if regexp.MustCompile(`^※指定不可$`).MatchString(description) {
+		ignoreText := s.Find(g.RequestShapeIgnoreSelector).First().Text()
+		if regexp.MustCompile(g.RequestShapeIgnoreRegexp).MatchString(ignoreText) {
 			return
 		}
 
