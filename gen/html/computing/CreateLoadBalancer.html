@@ -1,0 +1,787 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="CreateLoadBalancer：ロードバランサーの定義を作成します。ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="rest,api,CreateLoadBalancer,クラウド,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドREST API（CreateLoadBalancer） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="class" type="text" value="column2L" -->
+<!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+<div id="container">
+  <div id="header" class="pkg">
+    <div id="headLogo" class="pkg">
+      <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+      <!-- InstanceBeginEditable name="h1" -->
+      <h1 id="tagline">クラウドREST API（CreateLoadBalancer）</h1>
+      <!-- InstanceEndEditable --> </div>
+    <!-- /#headLogo -->
+    <div id="headInfo">
+      <ul class="pkg">
+        <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+        <li><a href="/inquiry/">各種お問い合わせ</a></li>
+      </ul>
+      <!-- /#headInfo --></div>
+    <!-- noscriptMSG -->
+    <noscript>
+    <div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div>
+    </noscript>
+  </div>
+  <!-- /#header --> 
+  
+  		<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>  <div class="lower-main">
+    <div class="inner pkg">
+      <h2><span>ニフティクラウド APIリファレンス</span></h2>
+      <div class="footpath"> <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">APIのご利用にあたって</a>&gt;<a href="/api/rest/">ニフティクラウドREST API</a>&gt;<strong>CreateLoadBalancer</strong><!-- InstanceEndEditable --> </div>
+      <!-- /.footpath --> 
+    </div>
+    <!-- /.inner --> 
+  </div>
+  <!-- /#lower-main -->
+  
+  <div id="contents">
+    <div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+      <div id="mainContents">
+        <h3 id="CreateLoadBalancer" class="ttl-01"><span><span>CreateLoadBalancer</span></span></h3>
+        <h4 id="houtline" class="ttl-02"><span><span>処理概要</span></span></h4>
+        <div class="section">
+          <p class="pgh-01">ロードバランサーの定義を作成します。1回のリクエストで、1つのポート定義を作成できます。<br/>
+            すでに存在するロードバランサー名を指定した、存在するポート番号を指定した場合は、エラーが返されます。</p>
+          <p> ロードバランサーの定義の作成に成功した場合は、以下のAPIを実行する必要があります</p>
+          <ul class="list-d01">
+            <li>API「RegisterInstancesWithLoadBalancer」（サーバー設定）</li>
+            <li>API「ConfigureHealthCheck」（ヘルスチェック設定）</li>
+          </ul>
+          <p>フィルターの設定は、「すべてのアクセスを許可する」になっています。変更を行う場合は以下のAPIを実行する必要があります。</p>
+          <ul class="list-d01">
+            <li>API「SetFilterForLoadBalancer」（フィルター設定）</li>
+          </ul>
+        </div>
+        <!-- /.section -->
+        <h4 id="hparameter" class="ttl-02"><span><span>指定するパラメーター</span></span></h4>
+        <div class="section">
+          <table class="tbl-01" summary="指定するパラメーター">
+            <tbody><tr>
+              <th width="30%" class="col4-1">パラメーター</th>
+              <th width="37%" class="col4-2">説明</th>
+              <th width="8%" class="tx_c">必須</th>
+              <th width="25%" class="col4-3">サンプル値</th>
+            </tr>
+            <tr>
+              <td class="col4-1">LoadBalancerName</td>
+              <td class="col4-2">ロードバランサー名<br/>
+                Type : String<br/>
+                使用可能文字 : 半角英数字( 15文字まで)</td>
+              <td class="tx_c">○</td>
+              <td class="col4-3">lb0001</td>
+            </tr>
+            <tr>
+              <td class="col4-1">Listeners.member.n.  Protocol</td>
+              <td class="col4-2">プロトコル<br/>
+                Type : String<br/>
+                値 : HTTP | HTTPS | FTP | 空(カスタム)<br/>
+                ※LoadBalancerPort 　の値によって設定値と異なる場合があります（後述） </td>
+              <td class="tx_c">○<br/>
+                （LoadBalancerPortといずれか）</td>
+              <td class="col4-3">HTTP</td>
+            </tr>
+            <tr>
+              <td class="col4-1">Listeners.member.n.<br/>
+                LoadBalancerPort</td>
+              <td class="col4-2">待ち受けポート<br/>
+                Type : Integer<br/>
+                Default : Protocolでの指定値による<br/>
+                80(Protocol=HTTP) | 443(Protocol=HTTPS) | 21(Protocol=FTP) </td>
+              <td class="tx_c">○<br/>
+                （Protocolといずれか）</td>
+              <td class="col4-3"> </td>
+            </tr>
+            <tr>
+              <td class="col4-1">Listeners.member.n.<br/>
+                InstancePort</td>
+              <td class="col4-2">宛先ポート<br/>
+                Type : Integer<br/>
+                Default : Protocolでの指定値による<br/>
+                80(Protocol=HTTP) | 443(Protocol=HTTPS) | 21(Protocol=FTP) </td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+            <tr>
+              <td class="col4-1"> Listeners.member.n.<br/>
+                BalancingType</td>
+              <td class="col4-2">ロードバランス方式<br/>
+                Type : String<br/>
+                値 : 1 (Round-Robin) | 2 (Least-Connection)<br/>
+                Default : 1 </td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+            <tr>
+              <td class="col4-1">AvailabilityZones .member.n</td>
+              <td class="col4-2">ゾーン情報<br/>
+                Type : String<br/>
+                Default : ニフティクラウドが決定</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+            <tr>
+              <td class="col4-1">NetworkVolume</td>
+              <td class="col4-2"> 最大ネットワーク流量<br/>
+                Type : Integer<br/>
+                単位 : Mbps<br/>
+                値 : 10,20,30,40,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000<br/>
+                Default : 10</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3">10</td>
+            </tr>
+            <tr>
+              <td class="col4-1">IpVersion</td>
+              <td class="col4-2">グローバルIPアドレスのバージョン<br/>
+                Type : String<br/>
+                値 : v4 (IPv4) |v6 (IPv6) | 空 (IPv4)<br/>
+                Default : v4</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+            <tr>
+              <td class="col4-1">AccountingType</td>
+              <td class="col4-2">利用料金タイプ<br/>
+                Type : String<br/>
+                値 : 1(月額課金) | 2(従量課金)<br/>
+                Default : 1</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+          </tbody></table>
+          <ul class="list-a01">
+            <li>※Protocol・LoadBalancerPortの関連性は、以下を参考にしてください。</li>
+          </ul>
+          <table class="tbl-rel" summary="Protocol・LoadBalancerPortの関連性">
+            <thead>
+              <tr>
+                <th colspan="3">Listerners</th>
+                <th>　</th>
+                <th colspan="3">設定される値</th>
+              </tr>
+              <tr>
+                <th class="col1">Protocol</th>
+                <th class="col2">LoadBalancerPort</th>
+                <th class="col3">InstancePort</th>
+                <th>　</th>
+                <th class="col1">Protocol</th>
+                <th class="col2">LoadBalancerPort</th>
+                <th class="col3">InstancePort</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col1">HTTP</td>
+                <td class="col2"> </td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1">HTTP</td>
+                <td class="col2 cap4">80</td>
+                <td class="col3 cap4">80</td>
+              </tr>
+              <tr>
+                <td class="col1">HTTPS</td>
+                <td class="col2"> </td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1">HTTPS</td>
+                <td class="col2 cap4">443</td>
+                <td class="col3 cap4">443</td>
+              </tr>
+              <tr>
+                <td class="col1">FTP</td>
+                <td class="col2"> </td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1">FTP</td>
+                <td class="col2 cap4">21</td>
+                <td class="col3 cap4">21</td>
+              </tr>
+              <tr>
+                <td class="col1">HTTP</td>
+                <td class="col2">70</td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1 cap4">カスタム</td>
+                <td class="col2">70</td>
+                <td class="col3 cap4">70</td>
+              </tr>
+              <tr>
+                <td class="col1">HTTPS</td>
+                <td class="col2">80</td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1 cap4">HTTP</td>
+                <td class="col2">80</td>
+                <td class="col3">80</td>
+              </tr>
+              <tr class="last">
+                <td class="col1">カスタム</td>
+                <td class="col2">80</td>
+                <td class="col3"> </td>
+                <th class="tx_c">→</th>
+                <td class="col1 cap4">HTTP</td>
+                <td class="col2">80</td>
+                <td class="col3 cap4">80</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.section -->
+        <h4 id="hresponsefield" class="ttl-02"><span><span>応答フィールド</span></span></h4>
+        <div class="section">
+          <table class="tbl-01" summary="応答フィールド">
+            <tbody><tr>
+              <th width="30%" class="col3-1">フィールド(項目)</th>
+              <th width="45%" class="col3-2">説明</th>
+              <th width="25%" class="col3-3">サンプル値</th>
+            </tr>
+            <tr>
+              <td class="col3-1">CreateLoadBalancer<br/>
+                Response</td>
+              <td class="col3-2">CreateLoadBalancer レスポンス<br/>
+                Type : CreateLoadBalancerResponse<br/>
+                Ancestor : なし<br/>
+                Children : CreateLoadBalancerResult, ResponseMetadata </td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">CreateLoadBalancerResult</td>
+              <td class="col3-2">ロードバランサーの情報<br/>
+                Type : CreateLoadBalancerResult<br/>
+                Ancestor : CreateLoadBalancerResponse<br/>
+                Children : DNSName </td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">DNSName</td>
+              <td class="col3-2"> グローバルIPアドレス<br/>
+                Type : xsd:string<br/>
+                Ancestor : CreateLoadBalancerResult<br/>
+                Children : なし</td>
+              <td class="col3-3">111.171.200.1</td>
+            </tr>
+            <tr>
+              <td class="col3-1">ResponseMetadata</td>
+              <td class="col3-2">リクエスト情報<br/>
+                Type : ResponseMetadata<br/>
+                Ancestor : CreateLoadBalancerResponse<br/>
+                Children : RequestId </td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">RequestId</td>
+              <td class="col3-2"> リクエスト識別子<br/>
+                Type : xsd:string<br/>
+                Ancestor : ResponseMetadata<br/>
+                Children : なし</td>
+              <td class="col3-3">f6dd8353-eb6b-6b4fd32e4f05</td>
+            </tr>
+          </tbody></table>
+        </div>
+        <!-- /.section -->
+        <h4 id="hrequestsample" class="ttl-02"><span><span>リクエストサンプル</span></span></h4>
+        <div class="section"><code class="cd-01"> https://cp.cloud.nifty.com/api/?Action=CreateLoadBalancer&amp;LoadBalancerName=lb0001<br/>
+          &amp;Listeners.member.1.Protocol=http&amp;NetworkVolume=10&amp;AccountingType=1&amp;CommonParams</code> </div>
+        <!-- /.section -->
+        <h4 id="hresponsesample" class="ttl-02"><span><span>応答サンプル</span></span></h4>
+        <div class="section"><code class="cd-01"> &lt;CreateLoadBalancerResponse xmlns=&#34;https://cp.cloud.nifty.com/api/&#34;&gt;<br/>
+          &lt;CreateLoadBalancerResult&gt;<br/>
+          &lt;DNSName&gt;111.171.200.1&lt;/DNSName&gt;<br/>
+          &lt;/CreateLoadBalancerResult&gt;<br/>
+          &lt;ResponseMetadata&gt;<br/>
+          &lt;RequestId&gt;f6dd8353-eb6b-6b4fd32e4f05&lt;/RequestId&gt;<br/>
+          &lt;/ResponseMetadata&gt;<br/>
+          &lt;/CreateLoadBalancerResponse&gt;</code> </div>
+        <!-- /.section --> 
+      </div>
+      <!-- /#mainContents --> 
+            <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><a href="/api/rest/">REST</a></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/rest/reference.htm">利用可能なREST API一覧</a></li>
+                  </ul>
+                </li>
+                <li><span>サーバー</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeInstanceAttribute.htm">DescribeInstanceAttribute</a></li>
+                      <li><a href="/api/rest/DescribeInstances.htm">DescribeInstances</a></li>
+                      <li><a href="/api/rest/ModifyInstanceAttribute.htm">ModifyInstanceAttribute</a></li>
+                      <li><a href="/api/rest/RebootInstances.htm">RebootInstances</a></li>
+                      <li><a href="/api/rest/RunInstances.htm">RunInstances</a></li>
+                      <li><a href="/api/rest/StartInstances.htm">StartInstances</a></li>
+                      <li><a href="/api/rest/StopInstances.htm">StopInstances</a></li>
+                      <li><a href="/api/rest/TerminateInstances.htm">TerminateInstances</a></li>
+                      <li><a href="/api/rest/CopyInstances.htm">CopyInstances</a></li>
+                      <li><a href="/api/rest/CancelCopyInstances.htm">CancelCopyInstances</a></li>
+                      <li><a href="/api/rest/ImportInstance.htm">ImportInstance</a></li>
+                      <li><a href="/api/rest/NiftyCreateInstanceSnapshot.htm">NiftyCreateInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyModifyInstanceSnapshotAttribute.htm">NiftyModifyInstanceSnapshotAttribute</a></li>
+                      <li><a href="/api/rest/NiftyDescribeInstanceSnapshots.htm">NiftyDescribeInstanceSnapshots</a></li>
+                      <li><a href="/api/rest/NiftyDeleteInstanceSnapshot.htm">NiftyDeleteInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyRestoreInstanceSnapshot.htm">NiftyRestoreInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyRetryImportInstance.htm">NiftyRetryImportInstance</a></li>
+                      <li><a href="/api/rest/NiftyUpdateInstanceNetworkInterfaces.htm">NiftyUpdateInstanceNetworkInterfaces</a></li>
+                    </ul>
+                </li>
+                <li><span>ディスク</span>
+                    <ul>
+                      <li><a href="/api/rest/AttachVolume.htm">AttachVolume</a></li>
+                      <li><a href="/api/rest/CreateVolume.htm">CreateVolume</a></li>
+                      <li><a href="/api/rest/DeleteVolume.htm">DeleteVolume</a></li>
+                      <li><a href="/api/rest/DescribeVolumes.htm">DescribeVolumes</a></li>
+                      <li><a href="/api/rest/DetachVolume.htm">DetachVolume</a></li>
+                      <li><a href="/api/rest/ModifyVolumeAttribute.htm">ModifyVolumeAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>ネットワーク・セキュリティ</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateKeyPair.htm">CreateKeyPair</a></li>
+                      <li><a href="/api/rest/DeleteKeyPair.htm">DeleteKeyPair</a></li>
+                      <li><a href="/api/rest/DescribeKeyPairs.htm">DescribeKeyPairs</a></li>
+                      <li><a href="/api/rest/NiftyModifyKeyPairAttribute.htm">NiftyModifyKeyPairAttribute</a></li>
+                      <li><a href="/api/rest/ImportKeyPair.htm">ImportKeyPair</a></li>
+                    </ul>
+                </li>
+                <li><span>OSイメージ</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeImages.htm">DescribeImages</a></li>
+                      <li><a href="/api/rest/CreateImage.htm">CreateImage</a></li>
+                      <li><a href="/api/rest/DeleteImage.htm">DeleteImage</a></li>
+                      <li><a href="/api/rest/ModifyImageAttribute.htm">ModifyImageAttribute</a></li>
+                      <li><a href="/api/rest/NiftyAssociateImage.htm">NiftyAssociateImage</a></li>
+                    </ul>
+                </li>
+                <li><span>ロードバランサー</span>
+                    <ul>
+                      <li><a href="/api/rest/ConfigureHealthCheck.htm">ConfigureHealthCheck</a></li>
+                      <li><a href="/api/rest/CreateLoadBalancer.htm">CreateLoadBalancer</a></li>
+                      <li><a href="/api/rest/DeleteLoadBalancer.htm">DeleteLoadBalancer</a></li>
+                      <li><a href="/api/rest/DeregisterInstancesFromLoadBalancer.htm">DeregisterInstancesFromLoadBalancer</a></li>
+                      <li><a href="/api/rest/DescribeInstanceHealth.htm">DescribeInstanceHealth</a></li>
+                      <li><a href="/api/rest/DescribeLoadBalancers.htm">DescribeLoadBalancers</a></li>
+                      <li><a href="/api/rest/RegisterInstancesWithLoadBalancer.htm">RegisterInstancesWithLoadBalancer</a></li>
+                      <li><a href="/api/rest/RegisterPortWithLoadBalancer.htm">RegisterPortWithLoadBalancer</a></li>
+                      <li><a href="/api/rest/SetFilterForLoadBalancer.htm">SetFilterForLoadBalancer</a></li>
+                      <li><a href="/api/rest/UpdateLoadBalancer.htm">UpdateLoadBalancer</a></li>
+                      <li><a href="/api/rest/UpdateLoadBalancerOption.htm">UpdateLoadBalancerOption</a></li>
+                      <li><a href="/api/rest/SetLoadBalancerListenerSSLCertificate.htm">SetLoadBalancerListenerSSLCertificate</a></li>
+                      <li><a href="/api/rest/UnsetLoadBalancerListenerSSLCertificate.htm">UnsetLoadBalancerListenerSSLCertificate</a></li>
+                      <li><a href="/api/rest/ClearLoadBalancerSession.htm">ClearLoadBalancerSession</a></li>
+                    </ul>
+                </li>
+                <li><span>ファイアウォール</span>
+                    <ul>
+                      <li><a href="/api/rest/AuthorizeSecurityGroupIngress.htm">AuthorizeSecurityGroupIngress</a></li>
+                      <li><a href="/api/rest/CreateSecurityGroup.htm">CreateSecurityGroup</a></li>
+                      <li><a href="/api/rest/DeleteSecurityGroup.htm">DeleteSecurityGroup</a></li>
+                      <li><a href="/api/rest/DeregisterInstancesFromSecurityGroup.htm">DeregisterInstancesFromSecurityGroup</a></li>
+                      <li><a href="/api/rest/DescribeSecurityActivities.htm">DescribeSecurityActivities</a></li>
+                      <li><a href="/api/rest/DescribeSecurityGroups.htm">DescribeSecurityGroups</a></li>
+                      <li><a href="/api/rest/RegisterInstancesWithSecurityGroup.htm">RegisterInstancesWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/RevokeSecurityGroupIngress.htm">RevokeSecurityGroupIngress</a></li>
+                      <li><a href="/api/rest/UpdateSecurityGroup.htm">UpdateSecurityGroup</a></li>
+                      <li><a href="/api/rest/UpdateSecurityGroupOption.htm">UpdateSecurityGroupOption</a></li>
+                      <li><a href="/api/rest/DescribeSecurityGroupOption.htm">DescribeSecurityGroupOption</a></li>
+                      <li><a href="/api/rest/NiftyRegisterRoutersWithSecurityGroup.htm">NiftyRegisterRoutersWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeregisterRoutersFromSecurityGroup.htm">NiftyDeregisterRoutersFromSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyRegisterVpnGatewaysWithSecurityGroup.htm">NiftyRegisterVpnGatewaysWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeregisterVpnGatewaysFromSecurityGroup.htm">NiftyDeregisterVpnGatewaysFromSecurityGroup</a></li>
+                    </ul>
+                </li>
+                <li><span>SSL証明書</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateSslCertificate.htm">CreateSslCertificate</a></li>
+                      <li><a href="/api/rest/DeleteSslCertificate.htm">DeleteSslCertificate</a></li>
+                      <li><a href="/api/rest/DescribeSslCertificates.htm">DescribeSslCertificates</a></li>
+                      <li><a href="/api/rest/DescribeSslCertificateAttribute.htm">DescribeSslCertificateAttribute</a></li>
+                      <li><a href="/api/rest/DownloadSslCertificate.htm">DownloadSslCertificate</a></li>
+                      <li><a href="/api/rest/ModifySslCertificateAttribute.htm">ModifySslCertificateAttribute</a></li>
+                      <li><a href="/api/rest/RegisterCorporateInfoForCertificate.htm">RegisterCorporateInfoForCertificate</a></li>
+                      <li><a href="/api/rest/UploadSslCertificate.htm">UploadSslCertificate</a></li>
+                      <li><a href="/api/rest/NiftyDescribeCorporateInfoForCertificate.htm">NiftyDescribeCorporateInfoForCertificate</a></li>
+                    </ul>
+                </li>
+                <li><span>利用状況</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeResources.htm">DescribeResources</a></li>
+                      <li><a href="/api/rest/DescribeServiceStatus.htm">DescribeServiceStatus</a></li>
+                      <li><a href="/api/rest/DescribeUsage.htm">DescribeUsage</a></li>
+                      <li><a href="/api/rest/DescribeUserActivities.htm">DescribeUserActivities</a></li>
+                    </ul>
+                </li>
+                <li><span>アップロード</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeUploads.htm">DescribeUploads</a></li>
+                      <li><a href="/api/rest/CancelUpload.htm">CancelUpload</a></li>
+                    </ul>
+                </li>
+                <li><span>付替IPアドレス</span>
+                    <ul>
+                      <li><a href="/api/rest/AllocateAddress.htm">AllocateAddress</a></li>
+                      <li><a href="/api/rest/AssociateAddress.htm">AssociateAddress</a></li>
+                      <li><a href="/api/rest/NiftyModifyAddressAttribute.htm">NiftyModifyAddressAttribute</a></li>
+                      <li><a href="/api/rest/DescribeAddresses.htm">DescribeAddresses</a></li>
+                      <li><a href="/api/rest/DisassociateAddress.htm">DisassociateAddress</a></li>
+                      <li><a href="/api/rest/ReleaseAddress.htm">ReleaseAddress</a></li>
+                    </ul>
+                </li>
+                <li><span>オートスケール</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateAutoScalingGroup.htm">NiftyCreateAutoScalingGroup</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAutoScalingGroups.htm">NiftyDescribeAutoScalingGroups</a></li>
+                      <li><a href="/api/rest/NiftyDescribeScalingActivities.htm">NiftyDescribeScalingActivities</a></li>
+                      <li><a href="/api/rest/NiftyUpdateAutoScalingGroup.htm">NiftyUpdateAutoScalingGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeleteAutoScalingGroup.htm">NiftyDeleteAutoScalingGroup</a></li>
+                    </ul>
+                </li>
+                <li><span>基本監視</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateAlarm.htm">NiftyCreateAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarms.htm">NiftyDescribeAlarms</a></li>
+                      <li><a href="/api/rest/NiftyUpdateAlarm.htm">NiftyUpdateAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDeleteAlarm.htm">NiftyDeleteAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmsPartitions.htm">NiftyDescribeAlarmsPartitions</a></li>
+                      <li><a href="/api/rest/NiftyDescribePerformanceChart.htm">NiftyDescribePerformanceChart</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmHistory.htm">NiftyDescribeAlarmHistory</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmRulesActivities.htm">NiftyDescribeAlarmRulesActivities</a></li>
+                    </ul>
+                </li>
+                <li><span>プライベートLAN</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreatePrivateLan.htm">NiftyCreatePrivateLan</a></li>
+                      <li><a href="/api/rest/NiftyDeletePrivateLan.htm">NiftyDeletePrivateLan</a></li>
+                      <li><a href="/api/rest/NiftyDescribePrivateLans.htm">NiftyDescribePrivateLans</a></li>
+                      <li><a href="/api/rest/NiftyModifyPrivateLanAttribute.htm">NiftyModifyPrivateLanAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>ルーター</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateRouter.htm">NiftyCreateRouter</a></li>
+                      <li><a href="/api/rest/NiftyDeleteRouter.htm">NiftyDeleteRouter</a></li>
+                      <li><a href="/api/rest/NiftyDescribeRouters.htm">NiftyDescribeRouters</a></li>
+                      <li><a href="/api/rest/NiftyRebootRouters.htm">NiftyRebootRouters</a></li>
+                      <li><a href="/api/rest/NiftyModifyRouterAttribute.htm">NiftyModifyRouterAttribute</a></li>
+                      <li><a href="/api/rest/NiftyUpdateRouterNetworkInterfaces.htm">NiftyUpdateRouterNetworkInterfaces</a></li>
+                      <li><a href="/api/rest/NiftyReplaceRouterLatestVersion.htm">NiftyReplaceRouterLatestVersion</a></li>
+                      <li><a href="/api/rest/NiftyRestoreRouterPreviousVersion.htm">NiftyRestoreRouterPreviousVersion</a></li>
+                      <li><a href="/api/rest/NiftyReleaseRouterBackupState.htm">NiftyReleaseRouterBackupState</a></li>
+                      <li><a href="/api/rest/CreateRouteTable.htm">CreateRouteTable</a></li>
+                      <li><a href="/api/rest/DeleteRouteTable.htm">DeleteRouteTable</a></li>
+                      <li><a href="/api/rest/DescribeRouteTables.htm">DescribeRouteTables</a></li>
+                      <li><a href="/api/rest/AssociateRouteTable.htm">AssociateRouteTable</a></li>
+                      <li><a href="/api/rest/DisassociateRouteTable.htm">DisassociateRouteTable</a></li>
+                      <li><a href="/api/rest/ReplaceRouteTableAssociation.htm">ReplaceRouteTableAssociation</a></li>
+                      <li><a href="/api/rest/CreateRoute.htm">CreateRoute</a></li>
+                      <li><a href="/api/rest/DeleteRoute.htm">DeleteRoute</a></li>
+                      <li><a href="/api/rest/ReplaceRoute.htm">ReplaceRoute</a></li>
+                      <li><a href="/api/rest/NiftyCreateNatTable.htm">NiftyCreateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDeleteNatTable.htm">NiftyDeleteNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDescribeNatTables.htm">NiftyDescribeNatTables</a></li>
+                      <li><a href="/api/rest/NiftyAssociateNatTable.htm">NiftyAssociateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDisassociateNatTable.htm">NiftyDisassociateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyReplaceNatTableAssociation.htm">NiftyReplaceNatTableAssociation</a></li>
+                      <li><a href="/api/rest/NiftyCreateNatRule.htm">NiftyCreateNatRule</a></li>
+                      <li><a href="/api/rest/NiftyDeleteNatRule.htm">NiftyDeleteNatRule</a></li>
+                      <li><a href="/api/rest/NiftyReplaceNatRule.htm">NiftyReplaceNatRule</a></li>
+                      <li><a href="/api/rest/NiftyEnableDhcp.htm">NiftyEnableDhcp</a></li>
+                      <li><a href="/api/rest/NiftyDisableDhcp.htm">NiftyDisableDhcp</a></li>
+                      <li><a href="/api/rest/CreateDhcpOptions.htm">CreateDhcpOptions</a></li>
+                      <li><a href="/api/rest/DeleteDhcpOptions.htm">DeleteDhcpOptions</a></li>
+                      <li><a href="/api/rest/DescribeDhcpOptions.htm">DescribeDhcpOptions</a></li>
+                      <li><a href="/api/rest/NiftyReplaceDhcpOption.htm">NiftyReplaceDhcpOption</a></li>
+                      <li><a href="/api/rest/NiftyReplaceDhcpConfig.htm">NiftyReplaceDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDescribeDhcpStatus.htm">NiftyDescribeDhcpStatus</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpConfig.htm">NiftyCreateDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpConfig.htm">NiftyDeleteDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDescribeDhcpConfigs.htm">NiftyDescribeDhcpConfigs</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpStaticMapping.htm">NiftyCreateDhcpStaticMapping</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpStaticMapping.htm">NiftyDeleteDhcpStaticMapping</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpIpAddressPool.htm">NiftyCreateDhcpIpAddressPool</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpIpAddressPool.htm">NiftyDeleteDhcpIpAddressPool</a></li>
+                      <li><a href="/api/rest/NiftyCreateWebProxy.htm">NiftyCreateWebProxy</a></li>
+                      <li><a href="/api/rest/NiftyDeleteWebProxy.htm">NiftyDeleteWebProxy</a></li>
+                      <li><a href="/api/rest/NiftyDescribeWebProxies.htm">NiftyDescribeWebProxies</a></li>
+                      <li><a href="/api/rest/NiftyModifyWebProxyAttribute.htm">NiftyModifyWebProxyAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>VPNゲートウェイ</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateVpnGateway.htm">CreateVpnGateway</a></li>
+                      <li><a href="/api/rest/DeleteVpnGateway.htm">DeleteVpnGateway</a></li>
+                      <li><a href="/api/rest/DescribeVpnGateways.htm">DescribeVpnGateways</a></li>
+                      <li><a href="/api/rest/NiftyDescribeVpnGatewayActivities.htm">NiftyDescribeVpnGatewayActivities</a></li>
+                      <li><a href="/api/rest/NiftyModifyVpnGatewayAttribute.htm">NiftyModifyVpnGatewayAttribute</a></li>
+                      <li><a href="/api/rest/NiftyRebootVpnGateways.htm">NiftyRebootVpnGateways</a></li>
+                      <li><a href="/api/rest/NiftyAssociateRouteTableWithVpnGateway.htm">NiftyAssociateRouteTableWithVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyDisassociateRouteTableFromVpnGateway.htm">NiftyDisassociateRouteTableFromVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyReplaceRouteTableAssociationWithVpnGateway.htm">NiftyReplaceRouteTableAssociationWithVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyReplaceVpnGatewayLatestVersion.htm">NiftyReplaceVpnGatewayLatestVersion</a></li>
+                      <li><a href="/api/rest/NiftyRestoreVpnGatewayPreviousVersion.htm">NiftyRestoreVpnGatewayPreviousVersion</a></li>
+                      <li><a href="/api/rest/NiftyReleaseVpnGatewayBackupState.htm">NiftyReleaseVpnGatewayBackupState</a></li>
+                      <li><a href="/api/rest/NiftyUpdateVpnGatewayNetworkInterfaces.htm">NiftyUpdateVpnGatewayNetworkInterfaces</a></li>
+                      <li><a href="/api/rest/CreateCustomerGateway.htm">CreateCustomerGateway</a></li>
+                      <li><a href="/api/rest/DeleteCustomerGateway.htm">DeleteCustomerGateway</a></li>
+                      <li><a href="/api/rest/DescribeCustomerGateways.htm">DescribeCustomerGateways</a></li>
+                      <li><a href="/api/rest/NiftyModifyCustomerGatewayAttribute.htm">NiftyModifyCustomerGatewayAttribute</a></li>
+                      <li><a href="/api/rest/CreateVpnConnection.htm">CreateVpnConnection</a></li>
+                      <li><a href="/api/rest/DeleteVpnConnection.htm">DeleteVpnConnection</a></li>
+                      <li><a href="/api/rest/DescribeVpnConnections.htm">DescribeVpnConnections</a></li>
+                    </ul>
+                </li>
+                <li><span>その他</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeAvailabilityZones.htm">DescribeAvailabilityZones</a></li>
+                      <li><a href="/api/rest/DescribeRegions.htm">DescribeRegions</a></li>
+                      <li><a href="/api/rest/AssociateUsers.htm">AssociateUsers</a></li>
+                      <li><a href="/api/rest/DissociateUsers.htm">DissociateUsers</a></li>
+                      <li><a href="/api/rest/DescribeAssociatedUsers.htm">DescribeAssociatedUsers</a></li>
+                      <li><a href="/api/rest/NiftyDescribePerformanceChart.htm">NiftyDescribePerformanceChart</a></li>
+                    </ul>
+                </li>
+                <li><span>付録</span>
+                    <ul>
+                      <li><a href="/api/rest/errorcode.htm">APIエラーコード表</a></li>
+                      <li><a href="/api/rest/authenticate.htm">共通パラメーターと認証方式</a></li>
+                    </ul>
+                </li>
+                <li><a href="/api/cli/">CLI</a></li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+      
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>      <!-- /#subContents --> 
+      <!-- InstanceEndEditable --></div>
+    <!-- /.contentsInner --></div>
+  <!-- /#contents --> 
+  
+  <!-- InstanceBeginEditable name="footer" --> 
+  <!-- #footer/ --> 
+      <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>  <!-- /#footer --> 
+  <!-- InstanceEndEditable --> </div>
+<!-- /#container --> 
+
+<!-- 計測系// --> 
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+
+</body><!-- InstanceEnd --></html>

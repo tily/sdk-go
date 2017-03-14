@@ -1,0 +1,4132 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウド API（DescribeUsage）：リソースの利用状況を返却します。ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="rest,api,DescribeUsage,クラウド,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドREST API（DescribeUsage） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="class" type="text" value="column2L" -->
+<!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+<div id="container">
+  <div id="header" class="pkg">
+    <div id="headLogo" class="pkg">
+      <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+      <!-- InstanceBeginEditable name="h1" -->
+      <h1 id="tagline">クラウドREST API（DescribeUsage）</h1>
+      <!-- InstanceEndEditable --> </div>
+    <!-- /#headLogo -->
+    <div id="headInfo">
+      <ul class="pkg">
+        <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+        <li><a href="/inquiry/">各種お問い合わせ</a></li>
+      </ul>
+      <!-- /#headInfo --></div>
+    <!-- noscriptMSG -->
+    <noscript>
+    <div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div>
+    </noscript>
+  </div>
+  <!-- /#header --> 
+  
+  		<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>  <div class="lower-main">
+    <div class="inner pkg">
+      <h2><span>ニフティクラウド APIリファレンス</span></h2>
+      <div class="footpath"> <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">APIのご利用にあたって</a>&gt;<a href="/api/rest/">ニフティクラウドREST API</a>&gt;<strong>DescribeUsage</strong><!-- InstanceEndEditable --> </div>
+      <!-- /.footpath --> 
+    </div>
+    <!-- /.inner --> 
+  </div>
+  <!-- /#lower-main -->
+  
+  <div id="contents">
+    <div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+      <div id="mainContents">
+        <h3 id="DescribeUsage" class="ttl-01"><span><span>DescribeUsage</span></span></h3>
+        <h4 id="houtline" class="ttl-02"><span><span>処理概要</span></span></h4>
+        <div class="section">
+          <p class="pgh-01">リソースの利用状況を返却します。<br/>
+            コントロールパネル画面の料金明細に当たりますが、金額は含まれません。</p>
+          <p>存在する情報のみ、レスポンス内にタグが生成されます。</p>
+          <p class="pgh-01">取得対象リージョンを設定した場合はサーバー利用情報などそのリージョンに属する個別情報を、指定しなかった場合はSSL証明書利用情報などリージョン共通情報と東日本リージョンの個別情報を返却します。</p>
+          <p>IsCharge=trueを指定した場合、レスポンスの各リソースに対して利用料金が返却されます。</p>
+        </div>
+        <!-- /.section -->
+        <h4 id="hparameter" class="ttl-02"><span><span>指定するパラメーター</span></span></h4>
+        <div class="section">
+          <table class="tbl-01" summary="指定するパラメーター">
+            <tbody><tr>
+              <th width="30%" class="col4-1">パラメーター</th>
+              <th width="37%" class="col4-2">説明</th>
+              <th width="8%" class="tx_c">必須</th>
+              <th width="25%" class="col4-3">サンプル値</th>
+            </tr>
+            <tr>
+              <td class="col4-1">YearMonth</td>
+              <td class="col4-2">取得対象年月<br/>
+                Type : String<br/>
+                形式: yyyymm | yyyy-mm | yyyy/mm</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3">2011-02</td>
+            </tr>
+            <tr>
+              <td class="col4-1">Region</td>
+              <td class="col4-2">取得対象リージョン<br/>
+                Type: xsd:string<br/>
+                Ancestor: DescribeUsage<br/>
+                Children: なし</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3">east-1</td>
+            </tr>
+            <tr>
+              <td class="col4-1">IsCharge</td>
+              <td class="col4-2">利用料金取得フラグ<br/>
+                Type : Boolean<br/>
+                Default : false（利用料金を取得しない）</td>
+              <td class="tx_c"> </td>
+              <td class="col4-3"> </td>
+            </tr>
+          </tbody></table>
+        </div>
+        <!-- /.section -->
+        <h4 id="hresponsefield" class="ttl-02"><span><span>応答フィールド</span></span></h4>
+        <div class="section">
+          <table class="tbl-01" summary="応答フィールド">
+            <tbody><tr>
+              <th width="30%" class="col3-1">フィールド</th>
+              <th width="45%" class="col3-2">説明</th>
+              <th width="25%" class="col3-3">サンプル値</th>
+            </tr>
+            <tr>
+              <td class="col3-1">DescribeUsageResponse</td>
+              <td class="col3-2">DescribeUsageレスポンス<br/>
+                Type : DescribeUsageResponseType<br/>
+                Ancestor : なし<br/>
+                Children : requestId, yearMonth, instanceInfo, copyInfo, imageInfo, volumeInfo, networkInfo, securityGroupInfo, loadBalancerInfo, elasticIpInfo, 
+                autoScaleInfo, sslCertInfo, privateLanInfo, chargeDetailInfo, premiumSupportInfo, multiAccountInfo, patternAuthInfo, storageInfo, 
+                mailSendInfo, osOptionChargeInfo, extraChargeInfo, licenseInfo, optionCommonInfo, optionInfo, 
+                internetVpnInfo, snapshotInfo, secureNetInfo, privateNetworkInfo, routerInfo, vpnGatewayInfo</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">requestId</td>
+              <td class="col3-2">リクエスト識別子<br/>
+                Type : xsd:string<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : なし</td>
+              <td class="col3-3">f6dd8353-eb6b-6b4fd32e4f05</td>
+            </tr>
+            <tr>
+              <td class="col3-1">yearMonth</td>
+              <td class="col3-2">情報取得年月<br/>
+                Type : xsd:string<br/>
+                形式 : yyyymm<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : なし</td>
+              <td class="col3-3">201102</td>
+            </tr>
+            <tr>
+              <td class="col3-1">instanceInfo</td>
+              <td class="col3-2">サーバー利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : instanceMonthlyRateSet, runningInstanceMeasuredRateSet, stoppedInstanceMeasuredRateSet, dynamicIpMonthlyRate, dynamicIpMeasuredRate, osMonthlyRate, osMeasuredRate, multiIpMonthlyRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">instanceMonthlyRateSet</td>
+              <td class="col3-2">サーバー月額利用情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別サーバー月額利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : instanceMonthlyRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">サーバータイプ<br/>
+                Type : xsd:string<br/>
+                Value: e-mini | mini | e-small | small | e-small2 | small2 | e-small4 | small4 | e-small8 | small8 | e-medium | medium | e-medium4 | medium4 | e-medium8 | medium8 | e-medium16 | medium16 | medium24 | e-large | large | e-large8 | large8 | e-large16 | large16 | e-large24 | large24 | e-large32 | large32 | e-extra-large16 | extra-large16 | e-extra-large24 | extra-large24 | e-extra-large32 | extra-large32 | e-double-large32 | double-large32 | e-double-large48 | double-large48 | e-double-large64 | double-large64 | e-double-large96 | double-large96<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : machine<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">machine</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">サーバー台数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">runningInstanceMeasuredRateSet</td>
+              <td class="col3-2">サーバー従量起動情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別サーバー従量起動情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : runningInstanceMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">サーバータイプ<br/>
+                Type : xsd:string<br/>
+                Value: e-mini | mini | e-small | small | e-small2 | small2 | e-small4 | small4 | e-small8 | small8 | e-medium | medium | e-medium4 | medium4 | e-medium8 | medium8 | e-medium16 | medium16 | medium24 | e-large | large | e-large8 | large8 | e-large16 | large16 | e-large24 | large24 | e-large32 | large32 | e-extra-large16 | extra-large16 | e-extra-large24 | extra-large24 | e-extra-large32 | extra-large32 | e-double-large32 | double-large32 | e-double-large48 | double-large48 | e-double-large64 | double-large64 | e-double-large96 | double-large96<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">stoppedInstanceMeasuredRateSet</td>
+              <td class="col3-2">サーバー従量停止情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別サーバー従量停止情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : stoppedInstanceMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">サーバータイプ<br/>
+                Type : xsd:string<br/>
+                Value: e-mini | mini | e-small | small | e-small2 | small2 | e-small4 | small4 | e-small8 | small8 | e-medium | medium | e-medium4 | medium4 | e-medium8 | medium8 | e-medium16 | medium16 | medium24 | e-large | large | e-large8 | large8 | e-large16 | large16 | e-large24 | large24 | e-large32 | large32 | e-extra-large16 | extra-large16 | e-extra-large24 | extra-large24 | e-extra-large32 | extra-large32 | e-double-large32 | double-large32 | e-double-large48 | double-large48 | e-double-large64 | double-large64 | e-double-large96 | double-large96<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">dynamicIpMonthlyRate</td>
+              <td class="col3-2">動的IP月額利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : dynamicIpMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : machine<br/>
+                Ancestor : dynamicIpMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3">machine</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用IP数<br/>
+                Type : xsd:int<br/>
+                Ancestor : dynamicIpMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">dynamicIpMeasuredRate</td>
+              <td class="col3-2">動的IP従量利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : dynamicIpMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : dynamicIpMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : dynamicIpMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">osMonthlyRate</td>
+              <td class="col3-2">OS月額利用情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OS種類別月額利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : osMonthlyRate<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">OS種別<br/>
+                Type : xsd:string<br/>
+                Value : windows｜redhat｜centos｜ubuntu<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : vCPU<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">vCPU</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用サーバー台数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">osMeasuredRate</td>
+              <td class="col3-2">OS従量利用情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : instanceInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OS従量利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : osMeasuredRate<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">OS種別<br/>
+                Type : xsd:string<br/>
+                Value : windows｜redhat｜centos｜ubuntu<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">multiIpMonthlyRate</td>
+              <td class="col3-2">マルチIP月額利用情報（共通情報）<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: instanceInfo<br/>
+                Children: type, unit, value, charg</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                値 : IP<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用数(IP)<br/>
+                Type: xsd:int<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">copyInfo</td>
+              <td class="col3-2">サーバーコピー利用状況<br/>
+                Type : UsageCopyInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : instanceCopy</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">instanceCopy</td>
+              <td class="col3-2">サーバーコピー情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : copyInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : instanceCopy<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : times<br/>
+                Ancestor : instanceCopy<br/>
+                Children : なし</td>
+              <td class="col3-3">times</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">サーバーコピー数<br/>
+                Type : xsd:int<br/>
+                Ancestor : instanceCopy<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">imageInfo</td>
+              <td class="col3-2">イメージ利用情報<br/>
+                Type : UsageImageInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : createImage, keepImageSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">createImage</td>
+              <td class="col3-2">サーバーイメージ化情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : imageInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : createImage<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : times<br/>
+                Ancestor : createImage<br/>
+                Children : なし</td>
+              <td class="col3-3">times</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">サーバーイメージ化数<br/>
+                Type : xsd:int<br/>
+                Ancestor : createImage<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">keepImageSet</td>
+              <td class="col3-2">イメージ保持情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : imageInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OS別イメージ保持情報 | イメージの増設ディスク保持情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : keepImageSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">OS種類 | ディスク<br/>
+                Type : xsd:string<br/>
+                Value : windows | linux | volume<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : image | 100GB<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">image</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">保持イメージ数 | 増設ディスク容量(/100GB)<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">volumeInfo</td>
+              <td class="col3-2">ディスク利用情報<br/>
+                Type : UsageVolumeInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : volumeSet, volumeMeasuredRateSet, importInstanceDiskMonthlyRate, importInstanceDiskMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">volumeSet</td>
+              <td class="col3-2">月額利用ディスク情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : volumeInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">ディスク種類別利用ディスク情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : volumeSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">ディスク種類<br/>
+                Type : xsd:string<br/>
+                Value : Standard Storage | High-Speed Storage A | High-Speed Storage B | Flash Storage<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : 100GB<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">100GB</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ディスクサイズを100GBで割った値の合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">volumeMeasuredRateSet</td>
+              <td class="col3-2">従量利用ディスク情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : volumeInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">ディスク種類別利用ディスク情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : volumeMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">ディスク種類<br/>
+                Type : xsd:string<br/>
+                Value : Standard Storage | High-Speed Storage A | High-Speed Storage B | Flash Storage<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">importInstanceDiskMonthlyRate</td>
+              <td class="col3-2">インポートサーバーのディスク超過分従量<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : volumeInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : importInstanceDiskMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 :  hour<br/>
+                Ancestor : importInstanceDiskMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ディスク容量100GBあたりのインポートサーバーディスク超過時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : importInstanceDiskMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">++++++importInstanceDiskMeasuredRate</td>
+              <td class="col3-2">インポートサーバーのディスク超過分従量<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : volumeInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : importInstanceDiskMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : importInstanceDiskMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ディスク容量100GBあたりのインポートサーバーディスク超過時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : importInstanceDiskMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">networkInfo</td>
+              <td class="col3-2">ネットワーク利用情報<br/>
+                Type : UsageNetworkInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : networkFlowSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">networkFlowSet</td>
+              <td class="col3-2">ネットワーク通信情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : networkInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">課金種類別ネットワーク通信情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : networkFlowSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">ネットワーク課金種別<br/>
+                Type : xsd:string<br/>
+                Value : free(無償分) | charge（有償分）<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : GB<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">GB</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ネットワーク転送量<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">securityGroupInfo</td>
+              <td class="col3-2">ファイアウォール利用情報<br/>
+                Type : UsageSecurityGroupInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : securityGroupApplyTime, optionSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">securityGroupApplyTime</td>
+              <td class="col3-2">ファイアウォール適用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : securityGroupInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : securityGroupApplyTime<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : securityGroupApplyTime<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ファイアウォール適用時間<br/>
+                Type : xsd:int<br/>
+                Ancestor : securityGroupApplyTime<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionSet</td>
+              <td class="col3-2">ファイアウォールオプション情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : securityGroupInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">オプション別ファイアウォール情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : optionSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">オプション名<br/>
+                Type : xsd:string<br/>
+                Value : group(グループ上限変更オプション) | rule(ルール数上限変更オプション) | log(ログ取得条件変更オプション)<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : &#34;&#34; | 10groups | 10rules<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"><ul class="list-a01 lay-btm-00">
+                  <li>※ログ取得条件変更オプションの場合は「&#34;&#34;（空）」、グループ上限変更オプションは「10groups」、ルール数上限変更オプションの場合は「10rules」</li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">数量<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">loadBalancerInfo</td>
+              <td class="col3-2">ロードバランサー利用情報<br/>
+                Type : UsageLoadBalancerInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : vipSet, vipMeasuredRateSet, optionSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">vipSet</td>
+              <td class="col3-2">月額利用VIP情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : loadBalancerInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">帯域別VIP情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : vipSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">帯域<br/>
+                Type : xsd:string<br/>
+                Value : 10 | 20 | 30 | 40 | 100 | 200<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : VIP<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">VIP</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">VIP数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">vipMeasuredRateSet</td>
+              <td class="col3-2">従量利用VIP情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : loadBalancerInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">帯域別VIP情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : vipMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">帯域<br/>
+                Type : xsd:string<br/>
+                Value : 10 | 20 | 30 | 40 | 100 | 200<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionSet</td>
+              <td class="col3-2">ロードバランサーオプション情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : loadBalancerInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">オプション別ロードバランサー情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : optionSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">オプション名<br/>
+                Type : xsd:string<br/>
+                Value : session(セッション固定オプション) | sorry(Sorryページオプション) | mobilefilter(携帯キャリアフィルターオプション) | accelerator（SSLアクセラレータ）<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : &#34;&#34; | hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"><ul class="list-a01 lay-btm-00">
+                  <li>※セッション固定オプションの場合は「hour」、それ以外は「&#34;&#34;（空）」</li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">数量<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">elasticIpInfo</td>
+              <td class="col3-2">付替IP利用情報<br/>
+                Type : UsageElasticIpInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : elasticIpSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">elasticIpSet</td>
+              <td class="col3-2">付替IP利用情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : elasticIpInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別付替IP利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : elasticIpSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">IPタイプ<br/>
+                Type : xsd:string<br/>
+                Value : public | private<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : IP<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">IP</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用IP数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">autoScaleInfo</td>
+              <td class="col3-2">オートスケール利用情報<br/>
+                Type : UsageAutoScaleInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : autoScaleCount, runningScaleOutInstanceSet, stoppedScaleOutInstanceSet, runningScaleOutOsSet, stoppedScaleOutOsSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">autoScaleCount</td>
+              <td class="col3-2">利用オートスケール数<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : autoScaleInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : autoScaleCount<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : config<br/>
+                Ancestor : autoScaleCount<br/>
+                Children : なし</td>
+              <td class="col3-3">config</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">オートスケール設定数<br/>
+                Type : xsd:int<br/>
+                Ancestor : autoScaleCount<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">runningScaleOutInstanceSet</td>
+              <td class="col3-2">スケールアウトサーバー起動情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : autoScaleInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別スケールアウトサーバー起動情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : runningScaleOutInstanceSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">サーバータイプ<br/>
+                Type : xsd:string<br/>
+                Value: e-mini | mini | e-small | small | e-small2 | small2 | e-small4 | small4 | e-small8 | small8 | e-medium | medium | e-medium4 | medium4 | e-medium8 | medium8 | e-medium16 | medium16 | medium24 | e-large | large | e-large8 | large8 | e-large16 | large16 | e-large24 | large24 | e-large32 | large32 | e-extra-large16 | extra-large16 | e-extra-large24 | extra-large24 | e-extra-large32 | extra-large32 | e-double-large32 | double-large32 | e-double-large48 | double-large48 | e-double-large64 | double-large64 | e-double-large96 | double-large96<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">stoppedScaleOutInstanceSet</td>
+              <td class="col3-2">スケールアウトサーバー停止情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : autoScaleInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別スケールアウトサーバー停止情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : stoppedScaleOutInstanceSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">サーバータイプ<br/>
+                Type : xsd:string<br/>
+                Value: e-mini | mini | e-small | small | e-small2 | small2 | e-small4 | small4 | e-small8 | small8 | e-medium | medium | e-medium4 | medium4 | e-medium8 | medium8 | e-medium16 | medium16 | medium24 | e-large | large | e-large8 | large8 | e-large16 | large16 | e-large24 | large24 | e-large32 | large32 | e-extra-large16 | extra-large16 | e-extra-large24 | extra-large24 | e-extra-large32 | extra-large32 | e-double-large32 | double-large32 | e-double-large48 | double-large48 | e-double-large64 | double-large64 | e-double-large96 | double-large96<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">runningScaleOutOsSet</td>
+              <td class="col3-2">スケールアウトサーバー起動時OS利用情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : autoScaleInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OS種類別スケールアウトサーバー起動時OS利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : runningScaleOutOsSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">OS種別<br/>
+                Type : xsd:string<br/>
+                Value : windows｜redhat｜centos｜ubuntu<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">stoppedScaleOutOsSet</td>
+              <td class="col3-2">スケールアウトサーバー停止時OS利用情報セット<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : autoScaleInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OS種類別スケールアウトサーバー停止時OS利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : stoppedScaleOutOsSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">OS種別<br/>
+                Type : xsd:string<br/>
+                Value : windows｜redhat｜centos｜ubuntu<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : hour<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">hour</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">sslCertInfo</td>
+              <td class="col3-2">SSL証明書利用情報（共通情報）<br/>
+                Type : UsageSslCertInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : createSslCertSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">createSslCertSet</td>
+              <td class="col3-2">SSL証明書作成情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : sslCertInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">証明書種類別SSL証明書情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : createSslCertSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">証明書種類<br/>
+                Type : xsd:string<br/>
+                Value : 6 | 12 | 24 | u6 | u12 | u23 | g12 | g12w<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : cert | day<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"><ul class="list-a01 lay-btm-00">
+                  <li>※CyberTrust証明書では「cert」を、GeoTrust証明書では「day」</li>
+                </ul></td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">証明書数 | 利用時間<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">privateLanInfo</td>
+              <td class="col3-2">プライベートLAN情報（共通情報）<br/>
+                Type : UsagePrivateLanInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : privateLan</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">privateLan</td>
+              <td class="col3-2">プライベートLAN情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : privateLanInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : privateLan<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : LAN<br/>
+                Ancestor : privateLan<br/>
+                Children : なし</td>
+              <td class="col3-3">LAN</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用プライベートLAN数<br/>
+                Type : xsd:int<br/>
+                Ancestor : privateLan<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">chargeDetailInfo</td>
+              <td class="col3-2">利用料金明細情報（共通情報）<br/>
+                Type : UsageChargeDetailInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : chargeDetail</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">chargeDetail</td>
+              <td class="col3-2">利用料金明細<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : chargeDetailInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : chargeDetail<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : chargeDetail<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用料金明細サービス利用状況<br/>
+                Type : xsd:int<br/>
+                Value : 1(申し込み中)<br/>
+                Ancestor : chargeDetail<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">premiumSupportInfo</td>
+              <td class="col3-2">プレミアムサポート情報（システム監視を除き共通情報）<br/>
+                Type : UsagePremiumSupportInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : premiumSupportSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">premiumSupportSet</td>
+              <td class="col3-2">プレミアムサポート状況<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : premiumSupportInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">適用プレミアムサポート情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : premiumSupportSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">適用プレミアムサポート名<br/>
+                Type : xsd:string<br/>
+                Value : ヘルプデスク | OSサポート | OSパッチ適用 | システム監視<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">契約数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">multiAccountInfo</td>
+              <td class="col3-2">マルチアカウント利用情報（共通情報）<br/>
+                Type : UsageMultiAccoutlInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : multiAccount</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">multiAccount</td>
+              <td class="col3-2">マルチアカウント利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : multiAccountInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : multiAccount<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : account<br/>
+                Ancestor : multiAccount<br/>
+                Children : なし</td>
+              <td class="col3-3">account</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">マルチアカウント・子アカウント数<br/>
+                Type : xsd:int<br/>
+                Ancestor : multiAccount<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">patternAuthInfo</td>
+              <td class="col3-2">パターン認証利用情報（共通情報）<br/>
+                Type : UsagePatternAuthInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : patternAuthSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">patternAuthSet</td>
+              <td class="col3-2">パターン認証利用情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : patternAuthInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">パターン認証利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : patternAuthSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                値 : &#34;parent&#34; | &#34;child&#34;<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : account<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">account</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">パターン認証利用アカウント数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">storageInfo</td>
+              <td class="col3-2">クラウドストレージ利用情報<br/>
+                Type : UsageStorageInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : storageMonthlyRate, storageMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">storageMonthlyRate</td>
+              <td class="col3-2">クラウドストレージ月額利用情報（共通情報）<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : storageInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">パック種別<br/>
+                Type : xsd:string<br/>
+                値 : 1TB, 5TB, 20TB, 50TB, 70TB, 100TB<br/>
+                Ancestor : storageMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : storageMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">クラウドストレージ利用中容量<br/>
+                Type : xsd:int<br/>
+                Value : 1<br/>
+                Ancestor : storageMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">storageMeasuredRate</td>
+              <td class="col3-2">クラウドストレージ従量利用情報（月額利用のとき共通情報、従量利用のとき個別情報）<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : storageInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : storageMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : GB<br/>
+                Ancestor : storageMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3">GB</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">クラウドストレージ利用中容量<br/>
+                Type : xsd:double<br/>
+                Ancestor : storageMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">mailSendInfo</td>
+              <td class="col3-2">メール配信利用情報（共通情報）<br/>
+                Type: UsageMailSendInfoType<br/>
+                Ancestor: DescribeUsageResponse<br/>
+                Children: mailSendInitial, mailSendMonthlyRate, mailSendMeasuredRate, OptionSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">mailSendInitial</td>
+              <td class="col3-2">メール配信初期費用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: mailSendInfo<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendInitial<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendInitial<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">メール配信サービス初期費用利用状況<br/>
+                Type: xsd:int<br/>
+                Value:1<br/>
+                Ancestor: mailSendInitial<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">mailSendMonthlyRate</td>
+              <td class="col3-2">メール配信月額利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: mailSendInfo<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">パック種別<br/>
+                Type: xsd:string<br/>
+                Value:3000 | 10000 | 20000 | 30000 | 40000 | 50000<br/>
+                Ancestor: mailSendMonthlyRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendMonthlyRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">メール配信サービス月額利用状況<br/>
+                Type: xsd:int<br/>
+                Value:1 (利用している)<br/>
+                Ancestor: mailSendMonthlyRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">mailSendMeasuredRate</td>
+              <td class="col3-2">メール配信従量通数<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: mailSendInfo<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendMeasuredRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                値: mail<br/>
+                Ancestor: mailSendMeasuredRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">メール通数<br/>
+                Type: xsd:double<br/>
+                Ancestor: mailSendMeasuredRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">mailSendMonthlyExceedRate</td>
+              <td class="col3-2">超過通数利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: mailSendInfo<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendMonthlyExceedRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: mailSendMonthlyExceedRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">メール通数<br/>
+                Type: xsd:double<br/>
+                Ancestor: mailSendMonthlyExceedRate<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionSet</td>
+              <td class="col3-2">メール配信オプション利用情報<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: mailSendInfo<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">メール配信オプション利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: OptionSet<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">オプション名<br/>
+                Type: xsd:string<br/>
+                Value: initial.decomail | decomail<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">メール配信オプション利用状況<br/>
+                Type: xsd:int<br/>
+                Value:1 (利用している)<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">osOptionChargeInfo</td>
+              <td class="col3-2">OSオプションの利用情報<br/>
+                Type : UsageOsOptionChargeInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : osOptionChargeMonthlyRateSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">osOptionChargeMonthlyRateSet</td>
+              <td class="col3-2">OSオプションの月額利用情報<br/>
+                Type : UsageDetailSetType<br/>
+                Ancestor : osOptionChargeInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">OSオプションの月額利用情報<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : osOptionChargeMonthlyRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                値 : Microsoft SQLServer 2008 R2<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                値 : machine<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3">machine</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ライセンス数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">extraChargeInfo</td>
+              <td class="col3-2">その他の利用情報（共通情報）<br/>
+                Type: UsageExtraChargeInfoType<br/>
+                Ancestor: DescribeUsageResponse<br/>
+                Children: extraChargeMonthlyRateSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">extraChargeMonthlyRateSet</td>
+              <td class="col3-2">その他の利用情報<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: extraChargeInfo<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">その他の利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: extraChargeMonthlyRateSet<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Value: &#34;Oracle11g&#34;<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ライセンス数<br/>
+                Type: xsd:int<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">licenseInfo</td>
+              <td class="col3-2">ライセンス利用情報（共通情報）<br/>
+                Type: UsageLicenseInfoType<br/>
+                Ancestor: DescribeUsageResponse<br/>
+                Children: licenseMonthlyRateSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">licenseMonthlyRateSet</td>
+              <td class="col3-2">ライセンス利用情報<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: licenseInfo<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">タイプ別ライセンス利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: licenseMonthlyRateSet<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">ライセンス種別<br/>
+                Type: xsd:string<br/>
+                Value: RDS | Office(Std) | Office(Pro Plus)<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                値 : license<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3">license</td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">ライセンス利用数<br/>
+                Type: xsd:int<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionCommonInfo</td>
+              <td class="col3-2">追加オプション利用情報（共通情報）<br/>
+                Type: UsageOptionInfoType<br/>
+                Ancestor: DescribeUsageResponse<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">追加オプション利用情報<br/>
+                Type: UsageOptionDetailSetType<br/>
+                Ancestor: optionCommonInfo<br/>
+                Children: optionName, optionSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionName</td>
+              <td class="col3-2">追加オプション大分類名<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionSet</td>
+              <td class="col3-2">追加オプション小分類利用情報<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: item<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">追加オプション小分類利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: optionSet<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">追加オプション小分類名<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">数<br/>
+                Type: xsd:int<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionInfo</td>
+              <td class="col3-2">追加オプション利用情報<br/>
+                Type: UsageOptionInfoType<br/>
+                Ancestor: DescribeUsageResponse<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">追加オプション利用情報<br/>
+                Type: UsageOptionDetailSetType<br/>
+                Ancestor: optionInfo<br/>
+                Children: optionName, optionSet</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionName</td>
+              <td class="col3-2">追加オプション大分類名<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">optionSet</td>
+              <td class="col3-2">追加オプション小分類利用情報<br/>
+                Type: UsageDetailSetType<br/>
+                Ancestor: item<br/>
+                Children: item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">追加オプション小分類利用情報<br/>
+                Type: UsageDetailInfoType<br/>
+                Ancestor: optionSet<br/>
+                Children: type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">追加オプション小分類名<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type: xsd:string<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">数<br/>
+                Type: xsd:int<br/>
+                Ancestor: item<br/>
+                Children: なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">internetVpnInfo</td>
+              <td class="col3-2">インターネットVPN<br/>
+                Type : UsageInternetVpnInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : ineternetVpnInitial, internetVpnMonthlyRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">internetVpnInitial</td>
+              <td class="col3-2">インターネットVPN初期費用<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : internetVpnInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">★タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : internetVpnInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">★タグ生成なし<br/>
+                Type : xsd:stringint<br/>
+                Ancestor : internetVpnInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">インターネットVPN契約数<br/>
+                Type : xsd:int<br/>
+                Ancestor : internetVpnInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : internetVpnInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">internetVpnMonthlyRateSet</td>
+              <td class="col3-2">インターネットVPN月額利用料セット<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : internetVpnInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">インターネットVPN月額利用料<br/>
+                Type : xsd:string<br/>
+                Ancestor : internetVpnMonthlyRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                値: 30 (30MBps) | 100 (100Mbps)<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">インターネットVPN利用数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">snapshotInfo</td>
+              <td class="col3-2">スナップショット<br/>
+                Type : UsageSnapshotInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : snapshot</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">snapShot</td>
+              <td class="col3-2">スナップショット利用量<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : snapShot<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : snapShot<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Ancestor :snapShot<br/>
+                Ancestor : mailSendInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">スナップショット利用数<br/>
+                Type : xsd:int<br/>
+                Ancestor : snapShot<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor :snapShot<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">secureNetInfo</td>
+              <td class="col3-2">セキュアネットワーク<br/>
+                Type : UsageSecureNetInfoType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : secureNetMonthlyRate, vpnConnectMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">secureNetMonthlyRate</td>
+              <td class="col3-2">セキュアネットワーク基本料金<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : secureNetInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : secureNetMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : secureNetMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">セキュアネットワーク利用数<br/>
+                Type : xsd:int<br/>
+                Ancestor : secureNetMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : internetVpnInitial<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">vpnConnectMeasuredRateSet</td>
+              <td class="col3-2">VPN接続料金セット<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : secureNetInfo<br/>
+                Children : item</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">VPN接続料金<br/>
+                Type : xsd:string<br/>
+                Ancestor : vpnConnectMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                値 : connect(外部接続) | innerConnect(内部接続)<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">privateNetworkInfo</td>
+              <td class="col3-2">プライベートネットワーク<br/>
+                Type : UsagePrivateLanType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : privateNetworkMonthryRate privateNetworkMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">privateNetworkMonthlyRate</td>
+              <td class="col3-2">プライベートネットワーク(月額)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : privateNetworkInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : privateNetworkMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : privateNetworkMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用数<br/>
+                Type : xsd:int<br/>
+                Ancestor : privateNetworkMonthryRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : privateNetworkMonthryRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">privateNetworkMeasuredRate</td>
+              <td class="col3-2">プライベートネットワーク(従量)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : privateNetworkInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タグ生成なし<br/>
+                Type : xsd:string<br/>
+                Ancestor : privateNetworkMonthlyRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : privateNetworkInfo<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : privateNetworkMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : privateNetworkMeasuredRate<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">routerInfo</td>
+              <td class="col3-2">ルーター<br/>
+                Type : UsagerouterType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : routerMonthryRate routerMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">routerMonthlyRateSet</td>
+              <td class="col3-2">ルーター(月額)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : routerInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">ルーター料金<br/>
+                Type : xsd:string<br/>
+                Ancestor : routerMonthlyRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用数<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">routerMeasuredRateSet</td>
+              <td class="col3-2">ルーター(従量)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : routerInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">ルーター料金<br/>
+                Type : xsd:string<br/>
+                Ancestor : routerMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">vpnGatewayInfo</td>
+              <td class="col3-2">VPNゲートウェイ<br/>
+                Type : UsagevpnGatewayType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : vpnGatewayMonthryRate vpnGatewayMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">vpnGatewayMonthlyRateSet</td>
+              <td class="col3-2">VPNゲートウェイ(月額)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : vpnGatewayInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">ルーター料金<br/>
+                Type : xsd:string<br/>
+                Ancestor : vpnGatewayMonthlyRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用数<br/>
+                Type: xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+            </tr><tr>
+              <td class="col3-1">vpnGatewayInfo</td>
+              <td class="col3-2">VPNゲートウェイ<br/>
+                Type : UsagevpnGatewayType<br/>
+                Ancestor : DescribeUsageResponse<br/>
+                Children : vpnGatewayMonthryRate vpnGatewayMeasuredRate</td>
+              <td class="col3-3"> </td>
+            </tr>
+            
+              <tr><td class="col3-1">vpnGatewayMeasuredRateSet</td>
+              <td class="col3-2">VPNゲートウェイ(月額)<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : vpnGatewayInfo<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">item</td>
+              <td class="col3-2">VPNゲートウェイ料金<br/>
+                Type : xsd:string<br/>
+                Ancestor : vpnGatewayMeasuredRateSet<br/>
+                Children : type, unit, value, charge</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">type</td>
+              <td class="col3-2">タイプ<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">unit</td>
+              <td class="col3-2">単位<br/>
+                Type : xsd:string<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">value</td>
+              <td class="col3-2">利用時間合計<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+            <tr>
+              <td class="col3-1">charge</td>
+              <td class="col3-2">利用料金<br/>
+                Type : xsd:int<br/>
+                Ancestor : item<br/>
+                Children : なし</td>
+              <td class="col3-3"> </td>
+            </tr>
+          </tbody></table>
+        </div>
+        <!-- /.section -->
+        <h4 id="hrequestsample" class="ttl-02"><span><span>リクエストサンプル</span></span></h4>
+        <div class="section"> 共通情報と東日本リージョン固有情報の取得 <code class="cd-01">https://cp.cloud.nifty.com/api/?Action=DescribeUsage&amp;IsCharge=true&amp;CommonParams</code> リージョン固有情報の取得 <code class="cd-01">https://cp.cloud.nifty.com/api/?Action=DescribeUsage&amp;Region=east-1&amp;CommonParams</code> </div>
+        <!-- /.section -->
+        <h4 id="hresponsesample" class="ttl-02"><span><span>応答サンプル</span></span></h4>
+        <div class="section"> 共通情報と東日本リージョン固有情報の取得<br/>
+          <code class="cd-01"> &lt;DescribeUsageResponse xmlns=&#34;https://cp.cloud.nifty.com/api/&#34;&gt;<br/>
+              &lt;requestId&gt;b1d415ab-5916-49b2-a428-07ca18548c56&lt;/requestId&gt;<br/>
+              &lt;yearMonth&gt;201106&lt;/yearMonth&gt;<br/>
+              &lt;instanceInfo&gt;<br/>
+                  &lt;instanceMonthlyRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                          &lt;charge&gt;7200&lt;/charge&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/instanceMonthlyRateSet&gt;<br/>
+                  &lt;runningInstanceMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                          &lt;charge&gt;5&lt;/charge&gt;    ※以下各タグに対する&lt;charge&gt;の例示を省略<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningInstanceMeasuredRateSet&gt;<br/>
+                  &lt;stoppedInstanceMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedInstanceMeasuredRateSet&gt;<br/>
+                  &lt;dynamicIpMonthlyRate&gt;<br/>
+                      &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/dynamicIpMonthlyRate&gt;<br/>
+                  &lt;dynamicIpMeasuredRate&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/dynamicIpMeasuredRate&gt;<br/>
+                  &lt;osMonthlyRate&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;vCPU&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/osMonthlyRate&gt;<br/>
+                  &lt;osMeasuredRate&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/osMeasuredRate&gt;<br/>
+                  &lt;multiIpMonthlyRate&gt;<br/>
+                      &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                      &lt;value&gt;4&lt;/value&gt;<br/>
+                  &lt;/multiIpMonthlyRate&gt;<br/>
+              &lt;/instanceInfo&gt;<br/>
+              &lt;copyInfo&gt;<br/>
+                  &lt;instanceCopy&gt;<br/>
+                      &lt;unit&gt;times&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/instanceCopy&gt;<br/>
+              &lt;/copyInfo&gt;<br/>
+              &lt;imageInfo&gt;<br/>
+                  &lt;createImage&gt;<br/>
+                      &lt;unit&gt;times&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/createImage&gt;<br/>
+                  &lt;keepImageSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;linux&lt;/type&gt;<br/>
+                          &lt;unit&gt;image&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;image&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;volume&lt;/type&gt;<br/>
+                          &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/keepImageSet&gt;<br/>
+              &lt;/imageInfo&gt;<br/>
+              &lt;volumeInfo&gt;<br/>
+                  &lt;volumeSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;High-Speed Storage A&lt;/type&gt;<br/>
+                          &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/volumeSet&gt;<br/>
+                  &lt;volumeMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;High-Speed Storage A&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;223&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/volumeMeasuredRateSet&gt;<br/>
+                  &lt;importInstanceDiskMonthlyRate&gt;<br/>
+                      &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/importInstanceDiskMonthlyRate&gt;<br/>
+                  &lt;importInstanceDiskMeasuredRate&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/importInstanceDiskMeasuredRate&gt;<br/>
+              &lt;/volumeInfo&gt;<br/>
+              &lt;networkInfo&gt;<br/>
+                  &lt;networkFlowSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;free&lt;/type&gt;<br/>
+                          &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;charge&lt;/type&gt;<br/>
+                          &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/networkFlowSet&gt;<br/>
+              &lt;/networkInfo&gt;<br/>
+              &lt;securityGroupInfo&gt;<br/>
+                  &lt;securityGroupApplyTime&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/securityGroupApplyTime&gt;<br/>
+                  &lt;optionSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;group&lt;/type&gt;<br/>
+                          &lt;unit&gt;10groups&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/optionSet&gt;<br/>
+              &lt;/securityGroupInfo&gt;<br/>
+              &lt;loadBalancerInfo&gt;<br/>
+                  &lt;vipSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;10&lt;/type&gt;<br/>
+                          &lt;unit&gt;VIP&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/vipSet&gt;<br/>
+                  &lt;vipMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;10&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;501&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/vipMeasuredRateSet&gt;<br/>
+                  &lt;optionSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;session&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;accelerator&lt;/type&gt;<br/>
+                          &lt;unit&gt;<br/>
+                          &lt;/unit&gt;<br/>
+                          &lt;value&gt;598&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/optionSet&gt;<br/>
+              &lt;/loadBalancerInfo&gt;<br/>
+              &lt;elasticIpInfo&gt;<br/>
+                  &lt;elasticIpSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;public&lt;/type&gt;<br/>
+                          &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                          &lt;value&gt;3&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;private&lt;/type&gt;<br/>
+                          &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                          &lt;value&gt;3&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/elasticIpSet&gt;<br/>
+              &lt;/elasticIpInfo&gt;<br/>
+              &lt;autoScaleInfo&gt;<br/>
+                  &lt;autoScaleCount&gt;<br/>
+                      &lt;unit&gt;config&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/autoScaleCount&gt;<br/>
+                  &lt;runningScaleOutInstanceSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningScaleOutInstanceSet&gt;<br/>
+                  &lt;stoppedScaleOutInstanceSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedScaleOutInstanceSet&gt;<br/>
+                  &lt;runningScaleOutOsSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningScaleOutOsSet&gt;<br/>
+                  &lt;stoppedScaleOutOsSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedScaleOutOsSet&gt;<br/>
+              &lt;/autoScaleInfo&gt;<br/>
+              &lt;sslCertInfo&gt;<br/>
+                  &lt;createSslCertSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;6&lt;/type&gt;<br/>
+                          &lt;unit&gt;cert&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/createSslCertSet&gt;<br/>
+              &lt;/sslCertInfo&gt;<br/>
+              &lt;privateLanInfo&gt;<br/>
+                  &lt;privateLan&gt;<br/>
+                      &lt;unit&gt;LAN&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/privateLan&gt;<br/>
+              &lt;/privateLanInfo&gt;<br/>
+              &lt;chargeDetailInfo&gt;<br/>
+                  &lt;chargeDetail&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/chargeDetail&gt;<br/>
+              &lt;/chargeDetailInfo&gt;<br/>
+              &lt;premiumSupportInfo&gt;<br/>
+                  &lt;premiumSupportSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;ヘルプデスク&lt;/type&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/premiumSupportSet&gt;<br/>
+              &lt;/premiumSupportInfo&gt;<br/>
+              &lt;multiAccountInfo&gt;<br/>
+                  &lt;multiAccount&gt;<br/>
+                      &lt;unit&gt;account&lt;/unit&gt;<br/>
+                      &lt;value&gt;3&lt;/value&gt;<br/>
+                  &lt;/multiAccount&gt;<br/>
+              &lt;/multiAccountInfo&gt;<br/>
+              &lt;patternAuthInfo&gt;<br/>
+                  &lt;patternAuthSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;child&lt;/type&gt;<br/>
+                          &lt;unit&gt;account&lt;/unit&gt;<br/>
+                          &lt;value&gt;4&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/patternAuthSet&gt;<br/>
+              &lt;/patternAuthInfo&gt;<br/>
+              &lt;storageInfo&gt;<br/>
+                  &lt;storageMonthlyRate&gt;<br/>
+                      &lt;type&gt;5TB&lt;/type&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/storageMonthlyRate&gt;<br/>
+                  &lt;storageMeasuredRate&gt;<br/>
+                      &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                      &lt;value&gt;411.5&lt;/value&gt;<br/>
+                  &lt;/storageMeasuredRate&gt;<br/>
+              &lt;/storageInfo&gt;<br/>
+              &lt;mailSendInfo&gt;<br/>
+                  &lt;mailSendInitial&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/mailSendInitial&gt;<br/>
+                  &lt;mailSendMonthlyRate&gt;<br/>
+                      &lt;type&gt;3000&lt;/type&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/mailSendMonthlyRate&gt;<br/>
+                  &lt;mailSendMeasuredRate&gt;<br/>
+                      &lt;unit&gt;mail&lt;/unit&gt;<br/>
+                      &lt;value&gt;999&lt;/value&gt;<br/>
+                  &lt;/mailSendMeasuredRate&gt;<br/>
+                  &lt;mailSendMonthlyExceedRate&gt;<br/>
+                      &lt;unit&gt;mail&lt;/unit&gt;<br/>
+                      &lt;value&gt;999&lt;/value&gt;<br/>
+                  &lt;/mailSendMonthlyExceedRate&gt;<br/>
+                  &lt;OptionSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;initial.decomail&lt;/type&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;decomail&lt;/type&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/OptionSet&gt;<br/>
+              &lt;/mailSendInfo&gt;<br/>
+              &lt;extraChargeInfo&gt;<br/>
+                  &lt;extraChargeMonthlyRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;Oracle11g&lt;/type&gt;<br/>
+                          &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                          &lt;value&gt;2&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/extraChargeMonthlyRateSet&gt;<br/>
+              &lt;/extraChargeInfo&gt;<br/>
+              &lt;licenseInfo&gt;<br/>
+                  &lt;licenseMonthlyRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;RDS&lt;/type&gt;<br/>
+                          &lt;unit&gt;license&lt;/unit&gt;<br/>
+                          &lt;value&gt;20&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;Office(Std)&lt;/type&gt;<br/>
+                          &lt;unit&gt;license&lt;/unit&gt;<br/>
+                          &lt;value&gt;20&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;Office(Pro Plus)&lt;/type&gt;<br/>
+                          &lt;unit&gt;license&lt;/unit&gt;<br/>
+                          &lt;value&gt;20&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/licenseMonthlyRateSet&gt;<br/>
+              &lt;/licenseInfo&gt;<br/>
+              &lt;optionCommnInfo&gt;<br/>
+                  &lt;item&gt;<br/>
+                      &lt;optionName&gt;HARDWARE&lt;/optionName&gt;<br/>
+                      &lt;optionSet&gt;<br/>
+                          &lt;item&gt;<br/>
+                              &lt;type&gt;physical_servers&lt;/type&gt;<br/>
+                              &lt;unit&gt;times&lt;/unit&gt;<br/>
+                              &lt;value&gt;10&lt;/value&gt;<br/>
+                          &lt;item&gt;<br/>
+                      &lt;/optionSet&gt;<br/>
+                  &lt;/item&gt;<br/>
+              &lt;/optionCommonInfo&gt;<br/>
+              &lt;optionInfo&gt;<br/>
+                  &lt;item&gt;<br/>
+                      &lt;optionName&gt;PRIVATE_RACK&lt;/optionName&gt;<br/>
+                      &lt;optionSet&gt;<br/>
+                          &lt;item&gt;<br/>
+                              &lt;type&gt;-&lt;/type&gt;<br/>
+                              &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                              &lt;value&gt;1&lt;/value&gt;<br/>
+                          &lt;/item&gt;<br/>
+                      &lt;/optionSet&gt;<br/>
+                  &lt;/item&gt;<br/>
+              &lt;/optionInfo&gt;<br/>
+              &lt;internetVpnInfo&gt;<br/>
+                &lt;internetVpnInitial&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/internetVpnInitial&gt;<br/>
+                &lt;internetVpnMonthlyRateSet&gt;<br/>
+                  &lt;item&gt;<br/>
+                    &lt;type&gt;30&lt;/type&gt;<br/>
+                    &lt;value&gt;1&lt;/value&gt;<br/>
+                    &lt;charge&gt;100&lt;/charge&gt;<br/>
+                  &lt;/item&gt;<br/>
+                &lt;/internetVpnMonthlyRateSet&gt;<br/>
+              &lt;/internetVpnInfo&gt;<br/>
+              &lt;snapshotInfo&gt;<br/>
+                &lt;snapShot&gt;<br/>
+                  &lt;unit&gt;snapshot&lt;/unit&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/snapShot&gt;<br/>
+              &lt;/snapShotInfo&gt;<br/>
+              &lt;secureNetInfo&gt;<br/>
+                &lt;secureNetMonthlyRate&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/secureNetMonthlyRate&gt;<br/>
+                &lt;vpnConnectionMeasuredRateSet&gt;<br/>
+                  &lt;item&gt;<br/>
+                    &lt;type&gt;connect&lt;/type&gt;<br/>
+                    &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                    &lt;value&gt;1&lt;/value&gt;<br/>
+                    &lt;charge&gt;100&lt;/charge&gt;<br/>
+                  &lt;/item&gt;<br/>
+                &lt;/vpnConnectionMeasuredRateSet&gt;<br/>
+                &lt;internetGatewayRate&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/internetGatewayRate&gt;<br/>
+              &lt;/secureNetInfo&gt;<br/>
+          &lt;/DescribeUsageResponse&gt; </code> リージョン固有情報の取得<br/>
+          <code class="cd-01"> &lt;DescribeUsageResponse xmlns=&#34;https://cp.cloud.nifty.com/api/&#34;&gt;<br/>
+              &lt;requestId&gt;b1d415ab-5916-49b2-a428-07ca18548c56&lt;/requestId&gt;<br/>
+              &lt;yearMonth&gt;201106&lt;/yearMonth&gt;<br/>
+              &lt;instanceInfo&gt;<br/>
+                  &lt;instanceMonthlyRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/instanceMonthlyRateSet&gt;<br/>
+                  &lt;runningInstanceMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningInstanceMeasuredRateSet&gt;<br/>
+                  &lt;stoppedInstanceMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedInstanceMeasuredRateSet&gt;<br/>
+                  &lt;dynamicIpMonthlyRate&gt;<br/>
+                      &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/dynamicIpMonthlyRate&gt;<br/>
+                  &lt;dynamicIpMeasuredRate&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/dynamicIpMeasuredRate&gt;<br/>
+                  &lt;osMonthlyRate&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;vCPU&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/osMonthlyRate&gt;<br/>
+                  &lt;osMeasuredRate&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/osMeasuredRate&gt;<br/>
+                  &lt;multiIpMonthlyRate&gt;<br/>
+                      &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                      &lt;value&gt;4&lt;/value&gt;<br/>
+                  &lt;/multiIpMonthlyRate&gt;<br/>
+              &lt;/instanceInfo&gt;<br/>
+              &lt;copyInfo&gt;<br/>
+                  &lt;instanceCopy&gt;<br/>
+                      &lt;unit&gt;times&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/instanceCopy&gt;<br/>
+              &lt;/copyInfo&gt;<br/>
+              &lt;imageInfo&gt;<br/>
+                  &lt;createImage&gt;<br/>
+                      &lt;unit&gt;times&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/createImage&gt;<br/>
+                  &lt;keepImageSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;linux&lt;/type&gt;<br/>
+                          &lt;unit&gt;image&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;image&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;volume&lt;/type&gt;<br/>
+                          &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/keepImageSet&gt;<br/>
+              &lt;/imageInfo&gt;<br/>
+              &lt;volumeInfo&gt;<br/>
+                  &lt;volumeSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;High-Speed Storage A&lt;/type&gt;<br/>
+                          &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/volumeSet&gt;<br/>
+                  &lt;volumeMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;High-Speed Storage A&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;223&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/volumeMeasuredRateSet&gt;<br/>
+                  &lt;importInstanceDiskMonthlyRate&gt;<br/>
+                      &lt;unit&gt;100GB&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/importInstanceDiskMonthlyRate&gt;<br/>
+                  &lt;importInstanceDiskMeasuredRate&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/importInstanceDiskMeasuredRate&gt;<br/>
+              &lt;/volumeInfo&gt;<br/>
+              &lt;networkInfo&gt;<br/>
+                  &lt;networkFlowSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;free&lt;/type&gt;<br/>
+                          &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;charge&lt;/type&gt;<br/>
+                          &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/networkFlowSet&gt;<br/>
+              &lt;/networkInfo&gt;<br/>
+              &lt;securityGroupInfo&gt;<br/>
+                  &lt;securityGroupApplyTime&gt;<br/>
+                      &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/securityGroupApplyTime&gt;<br/>
+                  &lt;optionSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;group&lt;/type&gt;<br/>
+                          &lt;unit&gt;10groups&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/optionSet&gt;<br/>
+              &lt;/securityGroupInfo&gt;<br/>
+              &lt;loadBalancerInfo&gt;<br/>
+                  &lt;vipSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;10&lt;/type&gt;<br/>
+                          &lt;unit&gt;VIP&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/vipSet&gt;<br/>
+                  &lt;vipMeasuredRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;10&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;501&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/vipMeasuredRateSet&gt;<br/>
+                  &lt;optionSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;session&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;accelerator&lt;/type&gt;<br/>
+                          &lt;unit&gt;<br/>
+                          &lt;/unit&gt;<br/>
+                          &lt;value&gt;598&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/optionSet&gt;<br/>
+              &lt;/loadBalancerInfo&gt;<br/>
+              &lt;elasticIpInfo&gt;<br/>
+                  &lt;elasticIpSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;public&lt;/type&gt;<br/>
+                          &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                          &lt;value&gt;3&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;private&lt;/type&gt;<br/>
+                          &lt;unit&gt;IP&lt;/unit&gt;<br/>
+                          &lt;value&gt;3&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/elasticIpSet&gt;<br/>
+              &lt;/elasticIpInfo&gt;<br/>
+              &lt;autoScaleInfo&gt;<br/>
+                  &lt;autoScaleCount&gt;<br/>
+                      &lt;unit&gt;config&lt;/unit&gt;<br/>
+                      &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;/autoScaleCount&gt;<br/>
+                  &lt;runningScaleOutInstanceSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningScaleOutInstanceSet&gt;<br/>
+                  &lt;stoppedScaleOutInstanceSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;mini&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedScaleOutInstanceSet&gt;<br/>
+                  &lt;runningScaleOutOsSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/runningScaleOutOsSet&gt;<br/>
+                  &lt;stoppedScaleOutOsSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;windows&lt;/type&gt;<br/>
+                          &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/stoppedScaleOutOsSet&gt;<br/>
+              &lt;/autoScaleInfo&gt;<br/>
+              &lt;premiumSupportInfo&gt;<br/>
+                  &lt;premiumSupportSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;システム監視&lt;/type&gt;<br/>
+                          &lt;value&gt;1&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/premiumSupportSet&gt;<br/>
+              &lt;/premiumSupportInfo&gt;<br/>
+              &lt;storageInfo&gt;<br/>
+                  &lt;storageMeasuredRate&gt;<br/>
+                      &lt;unit&gt;GB&lt;/unit&gt;<br/>
+                      &lt;value&gt;411.5&lt;/value&gt;<br/>
+                  &lt;/storageMeasuredRate&gt;<br/>
+              &lt;/storageInfo&gt;<br/>
+              &lt;osOptionChargeInfo&gt;<br/>
+                  &lt;osOptionChargeMonthlyRateSet&gt;<br/>
+                      &lt;item&gt;<br/>
+                          &lt;type&gt;Microsoft SQLServer 2008 R2&lt;/type&gt;<br/>
+                          &lt;unit&gt;machine&lt;/unit&gt;<br/>
+                          &lt;value&gt;3&lt;/value&gt;<br/>
+                      &lt;/item&gt;<br/>
+                  &lt;/osOptionChargeMonthlyRateSet&gt;<br/>
+              &lt;/osOptionChargeInfo&gt;<br/>
+              &lt;optionInfo&gt;<br/>
+                  &lt;item&gt;<br/>
+                      &lt;optionName&gt;PRIVATE_RACK&lt;/optionName&gt;<br/>
+                      &lt;optionSet&gt;<br/>
+                          &lt;item&gt;<br/>
+                              &lt;type&gt;-&lt;/type&gt;<br/>
+                              &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                              &lt;value&gt;1&lt;/value&gt;<br/>
+                          &lt;/item&gt;<br/>
+                      &lt;/optionSet&gt;<br/>
+                  &lt;/item&gt;<br/>
+              &lt;/optionInfo&gt;<br/>
+              &lt;internetVpnInfo&gt;<br/>
+                &lt;internetVpnInitial&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/internetVpnInitial&gt;<br/>
+                &lt;internetVpnMonthlyRateSet&gt;<br/>
+                  &lt;item&gt;<br/>
+                    &lt;type&gt;30&lt;/type&gt;<br/>
+                    &lt;value&gt;1&lt;/value&gt;<br/>
+                    &lt;charge&gt;100&lt;/charge&gt;<br/>
+                  &lt;/item&gt;<br/>
+                &lt;/internetVpnMonthlyRateSet&gt;<br/>
+              &lt;/internetVpnInfo&gt;<br/>
+              &lt;snapshotInfo&gt;<br/>
+                &lt;snapShot&gt;<br/>
+                  &lt;unit&gt;snapshot&lt;/unit&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/snapShot&gt;<br/>
+              &lt;/snapShotInfo&gt;<br/>
+              &lt;secureNetInfo&gt;<br/>
+                &lt;secureNetMonthlyRate&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/secureNetMonthlyRate&gt;<br/>
+                &lt;vpnConnectionMeasuredRateSet&gt;<br/>
+                  &lt;item&gt;<br/>
+                    &lt;type&gt;connect&lt;/type&gt;<br/>
+                    &lt;unit&gt;hour&lt;/unit&gt;<br/>
+                    &lt;value&gt;1&lt;/value&gt;<br/>
+                    &lt;charge&gt;100&lt;/charge&gt;<br/>
+                  &lt;/item&gt;<br/>
+                &lt;/vpnConnectionMeasuredRateSet&gt;<br/>
+                &lt;internetGatewayRate&gt;<br/>
+                  &lt;value&gt;1&lt;/value&gt;<br/>
+                  &lt;charge&gt;100&lt;/charge&gt;<br/>
+                &lt;/internetGatewayRate&gt;<br/>
+              &lt;/secureNetInfo&gt;<br/>
+          &lt;/DescribeUsageResponse&gt; </code> </div>
+        <!-- /.section --> 
+      </div>
+      <!-- /#mainContents --> 
+            <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><a href="/api/rest/">REST</a></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/rest/reference.htm">利用可能なREST API一覧</a></li>
+                  </ul>
+                </li>
+                <li><span>サーバー</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeInstanceAttribute.htm">DescribeInstanceAttribute</a></li>
+                      <li><a href="/api/rest/DescribeInstances.htm">DescribeInstances</a></li>
+                      <li><a href="/api/rest/ModifyInstanceAttribute.htm">ModifyInstanceAttribute</a></li>
+                      <li><a href="/api/rest/RebootInstances.htm">RebootInstances</a></li>
+                      <li><a href="/api/rest/RunInstances.htm">RunInstances</a></li>
+                      <li><a href="/api/rest/StartInstances.htm">StartInstances</a></li>
+                      <li><a href="/api/rest/StopInstances.htm">StopInstances</a></li>
+                      <li><a href="/api/rest/TerminateInstances.htm">TerminateInstances</a></li>
+                      <li><a href="/api/rest/CopyInstances.htm">CopyInstances</a></li>
+                      <li><a href="/api/rest/CancelCopyInstances.htm">CancelCopyInstances</a></li>
+                      <li><a href="/api/rest/ImportInstance.htm">ImportInstance</a></li>
+                      <li><a href="/api/rest/NiftyCreateInstanceSnapshot.htm">NiftyCreateInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyModifyInstanceSnapshotAttribute.htm">NiftyModifyInstanceSnapshotAttribute</a></li>
+                      <li><a href="/api/rest/NiftyDescribeInstanceSnapshots.htm">NiftyDescribeInstanceSnapshots</a></li>
+                      <li><a href="/api/rest/NiftyDeleteInstanceSnapshot.htm">NiftyDeleteInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyRestoreInstanceSnapshot.htm">NiftyRestoreInstanceSnapshot</a></li>
+                      <li><a href="/api/rest/NiftyRetryImportInstance.htm">NiftyRetryImportInstance</a></li>
+                      <li><a href="/api/rest/NiftyUpdateInstanceNetworkInterfaces.htm">NiftyUpdateInstanceNetworkInterfaces</a></li>
+                    </ul>
+                </li>
+                <li><span>ディスク</span>
+                    <ul>
+                      <li><a href="/api/rest/AttachVolume.htm">AttachVolume</a></li>
+                      <li><a href="/api/rest/CreateVolume.htm">CreateVolume</a></li>
+                      <li><a href="/api/rest/DeleteVolume.htm">DeleteVolume</a></li>
+                      <li><a href="/api/rest/DescribeVolumes.htm">DescribeVolumes</a></li>
+                      <li><a href="/api/rest/DetachVolume.htm">DetachVolume</a></li>
+                      <li><a href="/api/rest/ModifyVolumeAttribute.htm">ModifyVolumeAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>ネットワーク・セキュリティ</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateKeyPair.htm">CreateKeyPair</a></li>
+                      <li><a href="/api/rest/DeleteKeyPair.htm">DeleteKeyPair</a></li>
+                      <li><a href="/api/rest/DescribeKeyPairs.htm">DescribeKeyPairs</a></li>
+                      <li><a href="/api/rest/NiftyModifyKeyPairAttribute.htm">NiftyModifyKeyPairAttribute</a></li>
+                      <li><a href="/api/rest/ImportKeyPair.htm">ImportKeyPair</a></li>
+                    </ul>
+                </li>
+                <li><span>OSイメージ</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeImages.htm">DescribeImages</a></li>
+                      <li><a href="/api/rest/CreateImage.htm">CreateImage</a></li>
+                      <li><a href="/api/rest/DeleteImage.htm">DeleteImage</a></li>
+                      <li><a href="/api/rest/ModifyImageAttribute.htm">ModifyImageAttribute</a></li>
+                      <li><a href="/api/rest/NiftyAssociateImage.htm">NiftyAssociateImage</a></li>
+                    </ul>
+                </li>
+                <li><span>ロードバランサー</span>
+                    <ul>
+                      <li><a href="/api/rest/ConfigureHealthCheck.htm">ConfigureHealthCheck</a></li>
+                      <li><a href="/api/rest/CreateLoadBalancer.htm">CreateLoadBalancer</a></li>
+                      <li><a href="/api/rest/DeleteLoadBalancer.htm">DeleteLoadBalancer</a></li>
+                      <li><a href="/api/rest/DeregisterInstancesFromLoadBalancer.htm">DeregisterInstancesFromLoadBalancer</a></li>
+                      <li><a href="/api/rest/DescribeInstanceHealth.htm">DescribeInstanceHealth</a></li>
+                      <li><a href="/api/rest/DescribeLoadBalancers.htm">DescribeLoadBalancers</a></li>
+                      <li><a href="/api/rest/RegisterInstancesWithLoadBalancer.htm">RegisterInstancesWithLoadBalancer</a></li>
+                      <li><a href="/api/rest/RegisterPortWithLoadBalancer.htm">RegisterPortWithLoadBalancer</a></li>
+                      <li><a href="/api/rest/SetFilterForLoadBalancer.htm">SetFilterForLoadBalancer</a></li>
+                      <li><a href="/api/rest/UpdateLoadBalancer.htm">UpdateLoadBalancer</a></li>
+                      <li><a href="/api/rest/UpdateLoadBalancerOption.htm">UpdateLoadBalancerOption</a></li>
+                      <li><a href="/api/rest/SetLoadBalancerListenerSSLCertificate.htm">SetLoadBalancerListenerSSLCertificate</a></li>
+                      <li><a href="/api/rest/UnsetLoadBalancerListenerSSLCertificate.htm">UnsetLoadBalancerListenerSSLCertificate</a></li>
+                      <li><a href="/api/rest/ClearLoadBalancerSession.htm">ClearLoadBalancerSession</a></li>
+                    </ul>
+                </li>
+                <li><span>ファイアウォール</span>
+                    <ul>
+                      <li><a href="/api/rest/AuthorizeSecurityGroupIngress.htm">AuthorizeSecurityGroupIngress</a></li>
+                      <li><a href="/api/rest/CreateSecurityGroup.htm">CreateSecurityGroup</a></li>
+                      <li><a href="/api/rest/DeleteSecurityGroup.htm">DeleteSecurityGroup</a></li>
+                      <li><a href="/api/rest/DeregisterInstancesFromSecurityGroup.htm">DeregisterInstancesFromSecurityGroup</a></li>
+                      <li><a href="/api/rest/DescribeSecurityActivities.htm">DescribeSecurityActivities</a></li>
+                      <li><a href="/api/rest/DescribeSecurityGroups.htm">DescribeSecurityGroups</a></li>
+                      <li><a href="/api/rest/RegisterInstancesWithSecurityGroup.htm">RegisterInstancesWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/RevokeSecurityGroupIngress.htm">RevokeSecurityGroupIngress</a></li>
+                      <li><a href="/api/rest/UpdateSecurityGroup.htm">UpdateSecurityGroup</a></li>
+                      <li><a href="/api/rest/UpdateSecurityGroupOption.htm">UpdateSecurityGroupOption</a></li>
+                      <li><a href="/api/rest/DescribeSecurityGroupOption.htm">DescribeSecurityGroupOption</a></li>
+                      <li><a href="/api/rest/NiftyRegisterRoutersWithSecurityGroup.htm">NiftyRegisterRoutersWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeregisterRoutersFromSecurityGroup.htm">NiftyDeregisterRoutersFromSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyRegisterVpnGatewaysWithSecurityGroup.htm">NiftyRegisterVpnGatewaysWithSecurityGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeregisterVpnGatewaysFromSecurityGroup.htm">NiftyDeregisterVpnGatewaysFromSecurityGroup</a></li>
+                    </ul>
+                </li>
+                <li><span>SSL証明書</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateSslCertificate.htm">CreateSslCertificate</a></li>
+                      <li><a href="/api/rest/DeleteSslCertificate.htm">DeleteSslCertificate</a></li>
+                      <li><a href="/api/rest/DescribeSslCertificates.htm">DescribeSslCertificates</a></li>
+                      <li><a href="/api/rest/DescribeSslCertificateAttribute.htm">DescribeSslCertificateAttribute</a></li>
+                      <li><a href="/api/rest/DownloadSslCertificate.htm">DownloadSslCertificate</a></li>
+                      <li><a href="/api/rest/ModifySslCertificateAttribute.htm">ModifySslCertificateAttribute</a></li>
+                      <li><a href="/api/rest/RegisterCorporateInfoForCertificate.htm">RegisterCorporateInfoForCertificate</a></li>
+                      <li><a href="/api/rest/UploadSslCertificate.htm">UploadSslCertificate</a></li>
+                      <li><a href="/api/rest/NiftyDescribeCorporateInfoForCertificate.htm">NiftyDescribeCorporateInfoForCertificate</a></li>
+                    </ul>
+                </li>
+                <li><span>利用状況</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeResources.htm">DescribeResources</a></li>
+                      <li><a href="/api/rest/DescribeServiceStatus.htm">DescribeServiceStatus</a></li>
+                      <li><a href="/api/rest/DescribeUsage.htm">DescribeUsage</a></li>
+                      <li><a href="/api/rest/DescribeUserActivities.htm">DescribeUserActivities</a></li>
+                    </ul>
+                </li>
+                <li><span>アップロード</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeUploads.htm">DescribeUploads</a></li>
+                      <li><a href="/api/rest/CancelUpload.htm">CancelUpload</a></li>
+                    </ul>
+                </li>
+                <li><span>付替IPアドレス</span>
+                    <ul>
+                      <li><a href="/api/rest/AllocateAddress.htm">AllocateAddress</a></li>
+                      <li><a href="/api/rest/AssociateAddress.htm">AssociateAddress</a></li>
+                      <li><a href="/api/rest/NiftyModifyAddressAttribute.htm">NiftyModifyAddressAttribute</a></li>
+                      <li><a href="/api/rest/DescribeAddresses.htm">DescribeAddresses</a></li>
+                      <li><a href="/api/rest/DisassociateAddress.htm">DisassociateAddress</a></li>
+                      <li><a href="/api/rest/ReleaseAddress.htm">ReleaseAddress</a></li>
+                    </ul>
+                </li>
+                <li><span>オートスケール</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateAutoScalingGroup.htm">NiftyCreateAutoScalingGroup</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAutoScalingGroups.htm">NiftyDescribeAutoScalingGroups</a></li>
+                      <li><a href="/api/rest/NiftyDescribeScalingActivities.htm">NiftyDescribeScalingActivities</a></li>
+                      <li><a href="/api/rest/NiftyUpdateAutoScalingGroup.htm">NiftyUpdateAutoScalingGroup</a></li>
+                      <li><a href="/api/rest/NiftyDeleteAutoScalingGroup.htm">NiftyDeleteAutoScalingGroup</a></li>
+                    </ul>
+                </li>
+                <li><span>基本監視</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateAlarm.htm">NiftyCreateAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarms.htm">NiftyDescribeAlarms</a></li>
+                      <li><a href="/api/rest/NiftyUpdateAlarm.htm">NiftyUpdateAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDeleteAlarm.htm">NiftyDeleteAlarm</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmsPartitions.htm">NiftyDescribeAlarmsPartitions</a></li>
+                      <li><a href="/api/rest/NiftyDescribePerformanceChart.htm">NiftyDescribePerformanceChart</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmHistory.htm">NiftyDescribeAlarmHistory</a></li>
+                      <li><a href="/api/rest/NiftyDescribeAlarmRulesActivities.htm">NiftyDescribeAlarmRulesActivities</a></li>
+                    </ul>
+                </li>
+                <li><span>プライベートLAN</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreatePrivateLan.htm">NiftyCreatePrivateLan</a></li>
+                      <li><a href="/api/rest/NiftyDeletePrivateLan.htm">NiftyDeletePrivateLan</a></li>
+                      <li><a href="/api/rest/NiftyDescribePrivateLans.htm">NiftyDescribePrivateLans</a></li>
+                      <li><a href="/api/rest/NiftyModifyPrivateLanAttribute.htm">NiftyModifyPrivateLanAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>ルーター</span>
+                    <ul>
+                      <li><a href="/api/rest/NiftyCreateRouter.htm">NiftyCreateRouter</a></li>
+                      <li><a href="/api/rest/NiftyDeleteRouter.htm">NiftyDeleteRouter</a></li>
+                      <li><a href="/api/rest/NiftyDescribeRouters.htm">NiftyDescribeRouters</a></li>
+                      <li><a href="/api/rest/NiftyRebootRouters.htm">NiftyRebootRouters</a></li>
+                      <li><a href="/api/rest/NiftyModifyRouterAttribute.htm">NiftyModifyRouterAttribute</a></li>
+                      <li><a href="/api/rest/NiftyUpdateRouterNetworkInterfaces.htm">NiftyUpdateRouterNetworkInterfaces</a></li>
+                      <li><a href="/api/rest/NiftyReplaceRouterLatestVersion.htm">NiftyReplaceRouterLatestVersion</a></li>
+                      <li><a href="/api/rest/NiftyRestoreRouterPreviousVersion.htm">NiftyRestoreRouterPreviousVersion</a></li>
+                      <li><a href="/api/rest/NiftyReleaseRouterBackupState.htm">NiftyReleaseRouterBackupState</a></li>
+                      <li><a href="/api/rest/CreateRouteTable.htm">CreateRouteTable</a></li>
+                      <li><a href="/api/rest/DeleteRouteTable.htm">DeleteRouteTable</a></li>
+                      <li><a href="/api/rest/DescribeRouteTables.htm">DescribeRouteTables</a></li>
+                      <li><a href="/api/rest/AssociateRouteTable.htm">AssociateRouteTable</a></li>
+                      <li><a href="/api/rest/DisassociateRouteTable.htm">DisassociateRouteTable</a></li>
+                      <li><a href="/api/rest/ReplaceRouteTableAssociation.htm">ReplaceRouteTableAssociation</a></li>
+                      <li><a href="/api/rest/CreateRoute.htm">CreateRoute</a></li>
+                      <li><a href="/api/rest/DeleteRoute.htm">DeleteRoute</a></li>
+                      <li><a href="/api/rest/ReplaceRoute.htm">ReplaceRoute</a></li>
+                      <li><a href="/api/rest/NiftyCreateNatTable.htm">NiftyCreateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDeleteNatTable.htm">NiftyDeleteNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDescribeNatTables.htm">NiftyDescribeNatTables</a></li>
+                      <li><a href="/api/rest/NiftyAssociateNatTable.htm">NiftyAssociateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyDisassociateNatTable.htm">NiftyDisassociateNatTable</a></li>
+                      <li><a href="/api/rest/NiftyReplaceNatTableAssociation.htm">NiftyReplaceNatTableAssociation</a></li>
+                      <li><a href="/api/rest/NiftyCreateNatRule.htm">NiftyCreateNatRule</a></li>
+                      <li><a href="/api/rest/NiftyDeleteNatRule.htm">NiftyDeleteNatRule</a></li>
+                      <li><a href="/api/rest/NiftyReplaceNatRule.htm">NiftyReplaceNatRule</a></li>
+                      <li><a href="/api/rest/NiftyEnableDhcp.htm">NiftyEnableDhcp</a></li>
+                      <li><a href="/api/rest/NiftyDisableDhcp.htm">NiftyDisableDhcp</a></li>
+                      <li><a href="/api/rest/CreateDhcpOptions.htm">CreateDhcpOptions</a></li>
+                      <li><a href="/api/rest/DeleteDhcpOptions.htm">DeleteDhcpOptions</a></li>
+                      <li><a href="/api/rest/DescribeDhcpOptions.htm">DescribeDhcpOptions</a></li>
+                      <li><a href="/api/rest/NiftyReplaceDhcpOption.htm">NiftyReplaceDhcpOption</a></li>
+                      <li><a href="/api/rest/NiftyReplaceDhcpConfig.htm">NiftyReplaceDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDescribeDhcpStatus.htm">NiftyDescribeDhcpStatus</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpConfig.htm">NiftyCreateDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpConfig.htm">NiftyDeleteDhcpConfig</a></li>
+                      <li><a href="/api/rest/NiftyDescribeDhcpConfigs.htm">NiftyDescribeDhcpConfigs</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpStaticMapping.htm">NiftyCreateDhcpStaticMapping</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpStaticMapping.htm">NiftyDeleteDhcpStaticMapping</a></li>
+                      <li><a href="/api/rest/NiftyCreateDhcpIpAddressPool.htm">NiftyCreateDhcpIpAddressPool</a></li>
+                      <li><a href="/api/rest/NiftyDeleteDhcpIpAddressPool.htm">NiftyDeleteDhcpIpAddressPool</a></li>
+                      <li><a href="/api/rest/NiftyCreateWebProxy.htm">NiftyCreateWebProxy</a></li>
+                      <li><a href="/api/rest/NiftyDeleteWebProxy.htm">NiftyDeleteWebProxy</a></li>
+                      <li><a href="/api/rest/NiftyDescribeWebProxies.htm">NiftyDescribeWebProxies</a></li>
+                      <li><a href="/api/rest/NiftyModifyWebProxyAttribute.htm">NiftyModifyWebProxyAttribute</a></li>
+                    </ul>
+                </li>
+                <li><span>VPNゲートウェイ</span>
+                    <ul>
+                      <li><a href="/api/rest/CreateVpnGateway.htm">CreateVpnGateway</a></li>
+                      <li><a href="/api/rest/DeleteVpnGateway.htm">DeleteVpnGateway</a></li>
+                      <li><a href="/api/rest/DescribeVpnGateways.htm">DescribeVpnGateways</a></li>
+                      <li><a href="/api/rest/NiftyDescribeVpnGatewayActivities.htm">NiftyDescribeVpnGatewayActivities</a></li>
+                      <li><a href="/api/rest/NiftyModifyVpnGatewayAttribute.htm">NiftyModifyVpnGatewayAttribute</a></li>
+                      <li><a href="/api/rest/NiftyRebootVpnGateways.htm">NiftyRebootVpnGateways</a></li>
+                      <li><a href="/api/rest/NiftyAssociateRouteTableWithVpnGateway.htm">NiftyAssociateRouteTableWithVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyDisassociateRouteTableFromVpnGateway.htm">NiftyDisassociateRouteTableFromVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyReplaceRouteTableAssociationWithVpnGateway.htm">NiftyReplaceRouteTableAssociationWithVpnGateway</a></li>
+                      <li><a href="/api/rest/NiftyReplaceVpnGatewayLatestVersion.htm">NiftyReplaceVpnGatewayLatestVersion</a></li>
+                      <li><a href="/api/rest/NiftyRestoreVpnGatewayPreviousVersion.htm">NiftyRestoreVpnGatewayPreviousVersion</a></li>
+                      <li><a href="/api/rest/NiftyReleaseVpnGatewayBackupState.htm">NiftyReleaseVpnGatewayBackupState</a></li>
+                      <li><a href="/api/rest/NiftyUpdateVpnGatewayNetworkInterfaces.htm">NiftyUpdateVpnGatewayNetworkInterfaces</a></li>
+                      <li><a href="/api/rest/CreateCustomerGateway.htm">CreateCustomerGateway</a></li>
+                      <li><a href="/api/rest/DeleteCustomerGateway.htm">DeleteCustomerGateway</a></li>
+                      <li><a href="/api/rest/DescribeCustomerGateways.htm">DescribeCustomerGateways</a></li>
+                      <li><a href="/api/rest/NiftyModifyCustomerGatewayAttribute.htm">NiftyModifyCustomerGatewayAttribute</a></li>
+                      <li><a href="/api/rest/CreateVpnConnection.htm">CreateVpnConnection</a></li>
+                      <li><a href="/api/rest/DeleteVpnConnection.htm">DeleteVpnConnection</a></li>
+                      <li><a href="/api/rest/DescribeVpnConnections.htm">DescribeVpnConnections</a></li>
+                    </ul>
+                </li>
+                <li><span>その他</span>
+                    <ul>
+                      <li><a href="/api/rest/DescribeAvailabilityZones.htm">DescribeAvailabilityZones</a></li>
+                      <li><a href="/api/rest/DescribeRegions.htm">DescribeRegions</a></li>
+                      <li><a href="/api/rest/AssociateUsers.htm">AssociateUsers</a></li>
+                      <li><a href="/api/rest/DissociateUsers.htm">DissociateUsers</a></li>
+                      <li><a href="/api/rest/DescribeAssociatedUsers.htm">DescribeAssociatedUsers</a></li>
+                      <li><a href="/api/rest/NiftyDescribePerformanceChart.htm">NiftyDescribePerformanceChart</a></li>
+                    </ul>
+                </li>
+                <li><span>付録</span>
+                    <ul>
+                      <li><a href="/api/rest/errorcode.htm">APIエラーコード表</a></li>
+                      <li><a href="/api/rest/authenticate.htm">共通パラメーターと認証方式</a></li>
+                    </ul>
+                </li>
+                <li><a href="/api/cli/">CLI</a></li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+      
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>      <!-- /#subContents --> 
+      <!-- InstanceEndEditable --></div>
+    <!-- /.contentsInner --></div>
+  <!-- /#contents --> 
+  
+  <!-- InstanceBeginEditable name="footer" --> 
+  <!-- #footer/ --> 
+      <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>  <!-- /#footer --> 
+  <!-- InstanceEndEditable --> </div>
+<!-- /#container --> 
+
+<!-- 計測系// --> 
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+
+</body><!-- InstanceEnd --></html>

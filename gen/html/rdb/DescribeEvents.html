@@ -1,0 +1,790 @@
+<!--?xml version="1.0" encoding="shift_jis"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/api_index.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<meta http-equiv="Content-Language" content="ja"/>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta name="robots" content="noydir,noodp,index,follow"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="Description" content="クラウドAPI（RDB：DescribeEvents）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Keywords" content="クラウド,API,RDB,DescribeEvents,ニフティ,cloud,nifty"/>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>クラウドAPI（RDB：DescribeEvents） | ニフティクラウド</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="../../css2/print.css" type="text/css" media="print"/>
+<script type="text/javascript" src="../../js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/heightLine.js"></script>
+<!--[if IE 6]>
+    <script src="http://cloud.nifty.com/js/DD_belatedPNG_0.0.8a.js"></script>
+    <script>
+        DD_belatedPNG.fix('img, .png_bg');
+    </script>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="class" type="text" value="column2L" --><!-- InstanceParam name="id" type="text" value="apiPage" -->
+</head>
+
+<body class="column2L" id="apiPage">
+
+<p class="skipNav"><a href="#mainContents">本文へジャンプします。</a></p>
+
+<div id="container">
+
+    <div id="header" class="pkg">
+        <div id="headLogo" class="pkg">
+            <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
+            <!-- InstanceBeginEditable name="h1" -->
+			<h1 id="tagline">クラウドAPI（RDB：DescribeEvents）</h1>
+			<!-- InstanceEndEditable -->
+        </div><!-- /#headLogo -->
+        <div id="headInfo">
+          <ul class="pkg">
+            <li><a href="http://www.nifty.com/" target="_blank">@niftyトップ</a></li>
+            <li><a href="/inquiry/">各種お問い合わせ</a></li>
+          </ul>
+        <!-- /#headInfo --></div>
+				<!-- noscriptMSG -->
+        <noscript><div class="noscriptMsg">このサイトを正しく表示するためには、ブラウザのJavaScriptの設定を「有効」にしてください。</div></noscript>
+    </div><!-- /#header -->
+
+				<div id="gnavi"><ul id="gnaviMenu" class="pkg">
+    	<li><a href="http://cloud.nifty.com/"><img src="/images/ico_home.gif" width="19" height="21" alt="ニフティクラウドトップへ"/></a></li>
+    	<li><a href="/doc/">ドキュメントトップ</a></li>
+      <li><a href="/spec/">技術仕様</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/spec/rdb/">RDB</a></li>
+      		<li><a href="/spec/dns/">DNS</a></li>
+      		<li><a href="/spec/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/spec/automation/">Automation</a></li>
+      		<li><a href="/spec/nas/">NAS</a></li>
+      		<li><a href="/spec/script/">スクリプト</a></li>
+      		<li><a href="/spec/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/api/">APIリファレンス</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/api/">ニフティクラウド</a></li>
+      		<li><a href="/api/rdb/">RDB</a></li>
+      		<li><a href="/api/dns/">DNS</a></li>
+      		<li><a href="/api/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/api/mqtt/">MQTT</a></li>
+      		<li><a href="/api/storage/">ストレージ</a></li>
+      		<li><a href="/api/nas/">NAS</a></li>
+      		<li><a href="/api/script/">スクリプト</a></li>
+      	</ul></div></li>
+      <li><a href="/api/sdk/">SDK</a></li>
+      <li><a href="/guide/">ユーザーガイド</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/guide/cp/">コンピューティング</a></li>
+      		<li><a href="/guide/rdb/">RDB</a></li>
+      		<li><a href="/guide/dns/">DNS</a></li>
+      		<li><a href="/guide/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/guide/automation/">Automation</a></li>
+      		<li><a href="/guide/mqtt/">MQTT</a></li>
+      		<li><a href="/guide/timer/">タイマー</a></li>
+      		<li><a href="/guide/nas/">NAS</a></li>
+      		<li><a href="/guide/script/">スクリプト</a></li>
+      		<li><a href="/guide/iot_device_hub/">IoTデバイスハブ</a></li>
+      		<li><a href="/guide/data_visualizer/quick_start.htm">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/help/">コントロールパネルヘルプ</a><div class="gnav-sub-doc"><ul>
+      		<li><a href="/help/acc/">共通</a></li>
+      		<li><a href="/help/list_cp.htm">コンピューティング</a></li>
+      		<li><a href="/help/air/">DRサービス</a></li>
+      		<li><a href="/help/rdb/">RDB</a></li>
+      		<li><a href="/help/dns/">DNS</a></li>
+      		<li><a href="/help/ess/">ESS（メール配信）</a></li>
+      		<li><a href="/help/automation/">Automation</a></li>
+      		<li><a href="/help/mqtt/">MQTT</a></li>
+      		<li><a href="/help/timer/">タイマー</a></li>
+      		<li><a href="/help/storage/">ストレージ</a></li>
+      		<li><a href="/help/nas/">NAS</a></li>
+      		<li><a href="/help/watch/">監視</a></li>
+      		<li><a href="/help/script/">スクリプト</a></li>
+      		<li><a href="/help/data_visualizer/">Data Visualizer（β）</a></li>
+      	</ul></div></li>
+      <li><a href="/cs/catalog/cloud_faq/1.htm">FAQ</a></li>
+    </ul></div>    
+    <div class="lower-main">
+        <div class="inner pkg">
+            <h2><span>ニフティクラウド APIリファレンス</span></h2>
+            <div class="footpath">
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/rdb/">RDB</a>&gt;<strong>DescribeEvents</strong><!-- InstanceEndEditable -->
+            </div><!-- /.footpath -->
+        </div><!-- /.inner -->
+    </div><!-- /#lower-main -->
+    
+    <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
+			<div id="mainContents">
+				<h3 id="GetBucket" class="ttl-01"><span><span>RDB：DescribeEvents</span></span></h3>
+				<h4 id="outline" class="ttl-02"><span><span>処理概要</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">過去14日のDBサーバー・DBファイアウォールグループ・DBスナップショット・DBパラメーターグループに関するイベントの情報を取得します。</p>
+					<p class="pgh-01">特定のリソースについてのイベント情報を取得するには対象のSourceIdentifier(リソース名)とSourceType(リソースタイプ)を指定してください。</p>
+					<p class="pgh-01">Duration、EndTime、StartTimeの組み合わせによる情報の取得範囲は下記のようになります。</p>
+					<table class="tbl-01" summary="情報の取得範囲">
+						<tbody><tr>
+							<th width="250">何も指定しない</th>
+							<td>Durationのデフォルト値60で、現在時刻の1時間前～現在時刻のイベントを取得</td>
+						</tr>
+						<tr>
+							<th>Durationのみ指定</th>
+							<td>現在時刻から指定した期間(分)前～現在時刻のイベントを取得</td>
+						</tr>
+						<tr>
+							<th>StartTimeのみ指定</th>
+							<td>StartTime～現在時刻のイベントを取得</td>
+						</tr>
+						<tr>
+							<th>EndTimeのみ指定</th>
+							<td>EndTimeの<span class="cap4">1時間前</span>～EndTimeのイベントを取得</td>
+						</tr>
+						<tr>
+							<th>StartTimeとEndTimeを指定</th>
+							<td>StartTime～EndTimeのイベントを取得</td>
+						</tr>
+						<tr>
+							<th>StartTimeとDurationを指定</th>
+							<td>エラー</td>
+						</tr>
+						<tr>
+							<th>EndTimeとDurationを指定</th>
+							<td>エラー</td>
+						</tr>
+						<tr>
+							<th>StartTime,EndTime,Durationを指定</th>
+							<td>エラー</td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="リクエストパラメーター">
+						<tbody><tr>
+							<th class="col7-1">要素名</th>
+							<th class="col7-2">説明</th>
+							<th class="col7-3">必須</th>
+							<th class="col7-4">値</th>
+							<th class="col7-5">最大値</th>
+							<th class="col7-6">デフォルト値</th>
+							<th class="col7-7">備考</th>
+						</tr>
+						<tr>
+							<td class="col7-1">Duration</td>
+							<td class="col7-2">
+								<p class="pgh-01">読み出すイベントの期間(分)</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※現在時刻から指定した期間(分)までに発生したイベントが取得できます</li>
+									<li>※このパラメータを指定した場合、EndTime・StartTimeは指定できません</li>
+								</ul>
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">60</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">EndTime</td>
+							<td class="col7-2">イベント読み出し期間の終了時間<br/>例：2009-07-08T18:00Z<br/>形式：ISO 8601</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">日時</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">EventCategories.member.N</td>
+							<td class="col7-2">イベント通知のトリガになるイベントカテゴリーのリスト<br/>
+							値：availability | backup | configuration change | creation | deletion | failover | failure | low storage | notification | recovery | restoration</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字配列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">Marker</td>
+							<td class="col7-2">
+								<p class="pgh-01">マーカー</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※ページネート用にイベント一覧の取得位置を表す文字列です</li>
+									<li>※前回のDescribeEventsリクエストで返却された値を指定します</li>
+									<li>※この値が指定された場合、取得位置より後のイベントが返却されます</li>
+								</ul>
+							</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">MaxRecords</td>
+							<td class="col7-2">レスポンスに含まれるレコードの最大値<br/>値：20～100</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">20-100</td>
+							<td class="col7-6">100</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">SourceIdentifier</td>
+							<td class="col7-2">
+								<p class="pgh-01">読み出すイベントのリソース名</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※指定しない場合、すべてのリソースタイプのイベントが返却されます</li>
+									<li>※リソースタイプに応じてリソース名を指定してください<br/>
+									db-instance → DBサーバー名<br/>
+									db-parameter-group → DBパラメーターグループ名<br/>
+									db-security-group → DBファイアウォールグループ名<br/>
+									db-snapshot → DBスナップショット名</li>
+								</ul>
+							</td>
+							<td class="col7-3">○(SourceTypeを指定する場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">SourceType</td>
+							<td class="col7-2">
+								<p class="pgh-01">読み出すイベントのリソースタイプ</p>
+								<ul class="list-a01 lay-btm-00">
+									<li>※指定しない場合、すべてのリソースタイプのイベントが返却されます</li>
+								</ul>
+							値：db-instance | db-parameter-group | db-security-group | db-snapshot</td>
+							<td class="col7-3">○(SourceIdentifierを指定する場合)</td>
+							<td class="col7-4">文字列</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+						<tr>
+							<td class="col7-1">StartTime</td>
+							<td class="col7-2">イベントの読み出し期間の開始時間<br/>例：2009-07-08T18:00Z<br/>形式：ISO 8601</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">日時</td>
+							<td class="col7-5">－</td>
+							<td class="col7-6">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+					</tbody></table>
+				<!-- /.section --></div>
+				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
+				<div class="section">
+					<p class="pgh-01">XML</p>
+					<h5 class="ttl-03">status</h5>
+					<p class="pgh-01">statusは共通の応答メッセージを返却します。</p>
+					<h5 class="ttl-03">result</h5>
+					<table class="tbl-01" summary="レスポンス">
+						<tbody><tr>
+							<th width="20%" class="col4-1">要素名</th>
+							<th width="52%" class="col4-2">説明</th>
+							<th width="8%" class="tx_c">値</th>
+							<th width="20%" class="col4-3">備考</th>
+						</tr>
+						<tr>
+							<td class="col4-1">DescribeEventsResponse </td>
+							<td class="col4-2">ルート</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">DescribeEventsResult</td>
+							<td class="col4-2">結果</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Events</td>
+							<td class="col4-2">イベント情報リスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Event</td>
+							<td class="col4-2">イベント情報</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Date</td>
+							<td class="col4-2">日時</td>
+							<td class="tx_c">日時</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">EventCategories</td>
+							<td class="col4-2">イベントのカテゴリーリスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">EventCategory</td>
+							<td class="col4-2">イベントのカテゴリー</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Message</td>
+							<td class="col4-2">メッセージ</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">SourceIdentifier</td>
+							<td class="col4-2">イベントのリソース名</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">SourceType</td>
+							<td class="col4-2">イベントのリソースタイプ<br/>
+								値：db-instance | db-parameter-group | db-security-group | db-snapshot</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">Marker</td>
+							<td class="col4-2">マーカー</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+						<tr>
+							<td class="col4-1">ResponseMetadata</td>
+							<td class="col4-2">共通メタ情報</td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="error" class="ttl-02"><span><span>エラー</span></span></h4>
+				<div class="section">
+					<table class="tbl-01" summary="エラー">
+						<tbody><tr>
+							<th width="20%" class="col5-1">コード</th>
+							<th width="30%" class="col5-2">メッセージ</th>
+							<th width="10%" class="col5-3">タイプ</th>
+							<th width="10%" class="col5-4">HTTP<br/>ステータスコード</th>
+							<th width="30%" class="col5-5">説明</th>
+						</tr>
+						<tr>
+							<td rowspan="2" class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">If Duration is specified, both StartTime and EndTime must be omitted.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">DurationとStartTimeまたはEndTimeを同時に指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-2">Cannot specify source identifier without source type</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">SourceTypeを指定しないでSourceIdentifierを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Invalid value for max records. Must be between 20 and 100</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MaxRecordsに20-100でない値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">MalformedInput</td>
+							<td class="col5-2"> </td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">Durationに数値以外を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Duration must be positive.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">Durationに0以下の数値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">Events occurring more than 14 days in the past are not available.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">Durationに20160(14日)を超える数値を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">Events occurring more than 14 days in the past are not available.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">(StartTimeを指定しないで)EndTimeに14日+1時間より前の日時を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">MalformedInput</td>
+							<td class="col5-2">timestamp must follow ISO8601</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">EndTimeに日時以外を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Start time must be in the past.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">(StartTimeを指定しないで)EndTimeに現在時刻+1時間以降を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Invalid event category type xxxx.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">EventCategories.member.Nに存在しないカテゴリーを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">MalformedInput</td>
+							<td class="col5-2"> </td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">MaxRecordsに数値以外を設定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Invalid event source type. Valid types are &#39;db-instance&#39;, &#39;db-security-group&#39;, &#39;db-snapshot&#39;, &#39;db-parameter-group&#39;</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">SourceTypeに存在しないリソースタイプを指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">Events occurring more than 14 days in the past are not available.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">StartTimeに14日より前の日時を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">MalformedInput</td>
+							<td class="col5-2">timestamp must follow ISO8601</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">StartTimeに日時以外を指定した場合</td>
+
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterValue</td>
+							<td class="col5-2">Start time must be in the past.</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">StartTimeに現在時刻以降の日時を指定した場合</td>
+						</tr>
+						<tr>
+							<td class="col5-1">InvalidParameterCombination</td>
+							<td class="col5-2">End time must not precede start time</td>
+							<td class="col5-3">Sender</td>
+							<td class="col5-4">400</td>
+							<td class="col5-5">EndTimeより後の日時をStartTimeに指定した場合</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<!-- /.section -->
+				<h4 id="sample" class="ttl-02"><span><span>サンプル</span></span></h4>
+				<div class="section">
+					<h5 class="ttl-03">リクエストサンプル</h5>
+					<code class="cd-01">
+https://rdb.jp-east-1.api.cloud.nifty.com/<br/>
+  ?Action=DescribeEvents<br/>
+  &amp;Duration=1440<br/>
+  &amp;SignatureVersion=2<br/>
+  &amp;SignatureMethod=HmacSHA256<br/>
+  &amp;Timestamp=2013-12-09T00%3A00%3A00.000Z<br/>
+  &amp;AWSAccessKeyId=&lt;Nifty Cloud Access Key ID&gt;<br/>
+  &amp;Signature=&lt;Signature&gt;
+					</code>
+					<h5 class="ttl-03">レスポンスサンプル</h5>
+					<code class="cd-01">
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;<br/>
+&lt;DescribeEventsResponse&gt;<br/>
+  &lt;DescribeEventsResult&gt;<br/>
+    &lt;Events&gt;<br/>
+    &lt;Event&gt;<br/>
+      &lt;Date&gt;2013-11-30T05:51:24.000Z&lt;/Date&gt;<br/>
+      &lt;EventCategories&gt;<br/>
+        &lt;EventCategory&gt;configuration change&lt;/EventCategory&gt;<br/>
+      &lt;/EventCategories&gt;<br/>
+      &lt;Message&gt;Updated parameter max_allowed_packet to 1024 with apply method immediate&lt;/Message&gt;<br/>
+      &lt;SourceIdentifier&gt;mydbparametergroup&lt;/SourceIdentifier&gt;<br/>
+      &lt;SourceType&gt;db-parameter-group&lt;/SourceType&gt;<br/>
+    &lt;/Event&gt;<br/>
+    &lt;Event&gt;<br/>
+      &lt;Date&gt;2013-11-30T05:51:24.000Z&lt;/Date&gt;<br/>
+      &lt;EventCategories&gt;<br/>
+        &lt;EventCategory&gt;configuration change&lt;/EventCategory&gt;<br/>
+      &lt;/EventCategories&gt;<br/>
+      &lt;Message&gt;Updated parameter max_connections to 24 with apply method pending-reboot&lt;/Message&gt;<br/>
+      &lt;SourceIdentifier&gt;mydbparametergroup&lt;/SourceIdentifier&gt;<br/>
+      &lt;SourceType&gt;db-parameter-group&lt;/SourceType&gt;<br/>
+    &lt;/Event&gt;<br/>
+    &lt;Event&gt;<br/>
+      &lt;Date&gt;2013-11-30T06:00:07.000Z&lt;/Date&gt;<br/>
+      &lt;EventCategories&gt;<br/>
+        &lt;EventCategory&gt;configuration change&lt;/EventCategory&gt;<br/>
+      &lt;/EventCategories&gt;<br/>
+      &lt;Message&gt;Updated parameter max_allowed_packet to null with apply method immediate&lt;/Message&gt;<br/>
+      &lt;SourceIdentifier&gt;mydbparametergroup&lt;/SourceIdentifier&gt;<br/>
+      &lt;SourceType&gt;db-parameter-group&lt;/SourceType&gt;<br/>
+    &lt;/Event&gt;<br/>
+    &lt;Event&gt;<br/>
+      &lt;Date&gt;2013-11-30T06:00:07.000Z&lt;/Date&gt;<br/>
+      &lt;EventCategories&gt;<br/>
+        &lt;EventCategory&gt;configuration change&lt;/EventCategory&gt;<br/>
+      &lt;/EventCategories&gt;<br/>
+      &lt;Message&gt;Updated parameter max_connections to {DBInstanceClassMemory/12582880} with apply method immediate&lt;/Message&gt;<br/>
+      &lt;SourceIdentifier&gt;mydbparametergroup&lt;/SourceIdentifier&gt;<br/>
+      &lt;SourceType&gt;db-parameter-group&lt;/SourceType&gt;<br/>
+    &lt;/Event&gt;<br/>
+    &lt;/Events&gt;<br/>
+  &lt;/DescribeEventsResult&gt;<br/>
+  &lt;ResponseMetadata&gt;<br/>
+    &lt;RequestId&gt;00441b3a-a6f8-46c8-8f34-2af2c76f08ce&lt;/RequestId&gt;<br/>
+  &lt;/ResponseMetadata&gt;<br/>
+&lt;/DescribeEventsResponse&gt;
+					</code>
+				</div>
+				<!-- /.section -->
+			</div>
+			<!-- /#mainContents -->
+			      <div id="subContents">
+            <div id="searchHelp" class="sidenaviBox01 pkg">
+        <h3><img src="/images/se_re_navi_title05.gif" width="210" height="31" alt="ニフティクラウド サイト内検索"/></h3>
+        <ul>
+          <li class="pgh-01 tx_l pkg"><form action="/search/search_doc.htm" id="cse-search-box" role="search" accept-charset="utf-8">
+            <input type="hidden" name="cx" value="001788031542357343381:ov-i-kjbk6q"/>
+            <input type="hidden" name="cof" value="FORID:12"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" id="searchbox2" size="30"/>
+            <input type="image" alt="検索" value="検索" name="sa" src="/images/se_re_btn_top_search.gif" onmouseover="this.src=&#39;/images/se_re_btn_top_search.gif&#39;" onmouseout="this.src=&#39;/images/se_re_btn_top_search.gif&#39;"/>
+          </form>
+          <script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja" async=""></script></li>
+        </ul>
+      </div><!-- /.sidenaviFaq01 -->
+        <div id="sidenavi" class="pkg">
+          <h3><img src="/api/images/api_side_tit.gif" width="192" height="19" alt="APIメニュー"/></h3>
+          <div id="mainMenu" class="sidenaviBox02 pkg">
+            <div class="inner">
+              <ul class="pkg">
+                <li class="l1"><a href="/api/">APIのご利用にあたって</a>
+                  <ul>
+                    <li><a href="/api/endpoint.htm">エンドポイントについて</a></li>
+                    <li><a href="/api/signature.htm">シグネチャーについて</a></li>
+                    <li><a href="/api/zone.htm">ゾーンについて</a></li>
+                  </ul></li>
+                <li><span>リファレンス</span>
+                  <ul>
+                    <li><a href="/api/rdb/">利用可能なAPI一覧</a></li>
+                    <li><a href="/api/rdb/request.htm">共通リクエスト・レスポンス</a></li>
+                    <li><a href="/api/rdb/error.htm">共通エラー</a></li>
+                  </ul>
+                </li>
+                <li><span>DBサーバー</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBInstance.htm">CreateDBInstance</a></li>
+                    <li><a href="/api/rdb/CreateDBInstanceReadReplica.htm">CreateDBInstanceReadReplica</a></li>
+                    <li><a href="/api/rdb/DeleteDBInstance.htm">DeleteDBInstance</a></li>
+                    <li><a href="/api/rdb/RebootDBInstance.htm">RebootDBInstance</a></li>
+                    <li><a href="/api/rdb/DescribeDBInstances.htm">DescribeDBInstances</a></li>
+                    <li><a href="/api/rdb/ModifyDBInstance.htm">ModifyDBInstance</a></li>
+                    <li><a href="/api/rdb/NiftyFailoverDBInstance.htm">NiftyFailoverDBInstance</a></li>
+                  </ul>
+                </li>
+                <li><span>オプション</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeDBEngineVersions.htm">DescribeDBEngineVersions</a></li>
+                    <li><a href="/api/rdb/DescribeOrderableDBInstanceOptions.htm">DescribeOrderableDBInstanceOptions</a></li>
+                  </ul>
+                </li>
+                <li><span>DBスナップショット</span>
+                  <ul>
+                    <li><a href="/api/rdb/CopyDBSnapshot.htm">CopyDBSnapshot</a></li>
+                    <li><a href="/api/rdb/CreateDBSnapshot.htm">CreateDBSnapshot</a></li>
+                    <li><a href="/api/rdb/DeleteDBSnapshot.htm">DeleteDBSnapshot</a></li>
+                    <li><a href="/api/rdb/DescribeDBSnapshots.htm">DescribeDBSnapshots</a></li>
+                    <li><a href="/api/rdb/RestoreDBInstanceFromDBSnapshot.htm">RestoreDBInstanceFromDBSnapshot</a></li>
+                    <li><a href="/api/rdb/RestoreDBInstanceToPointInTime.htm">RestoreDBInstanceToPointInTime</a></li>
+                  </ul>
+                </li>
+                <li><span>DBパラメーターグループ</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBParameterGroup.htm">CreateDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/DeleteDBParameterGroup.htm">DeleteDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/DescribeDBParameters.htm">DescribeDBParameters</a></li>
+                    <li><a href="/api/rdb/DescribeEngineDefaultParameters.htm">DescribeEngineDefaultParameters</a></li>
+                    <li><a href="/api/rdb/DescribeDBParameterGroups.htm">DescribeDBParameterGroups</a></li>
+                    <li><a href="/api/rdb/ModifyDBParameterGroup.htm">ModifyDBParameterGroup</a></li>
+                    <li><a href="/api/rdb/ResetDBParameterGroup.htm">ResetDBParameterGroup</a></li>
+                  </ul>
+                </li>
+                <li><span>DBファイアウォール</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateDBSecurityGroup.htm">CreateDBSecurityGroup</a></li>
+                    <li><a href="/api/rdb/AuthorizeDBSecurityGroupIngress.htm">AuthorizeDBSecurityGroupIngress</a></li>
+                    <li><a href="/api/rdb/DeleteDBSecurityGroup.htm">DeleteDBSecurityGroup</a></li>
+                    <li><a href="/api/rdb/DescribeDBSecurityGroups.htm">DescribeDBSecurityGroups</a></li>
+                    <li><a href="/api/rdb/RevokeDBSecurityGroupIngress.htm">RevokeDBSecurityGroupIngress</a></li>
+                  </ul>
+                </li>
+                <li><span>イベント</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeEvents.htm">DescribeEvents</a></li>
+                  </ul>
+                </li>
+                <li><span>イベント通知</span>
+                  <ul>
+                    <li><a href="/api/rdb/CreateEventSubscription.htm">CreateEventSubscription</a></li>
+                    <li><a href="/api/rdb/DescribeEventSubscriptions.htm">DescribeEventSubscriptions</a></li>
+                    <li><a href="/api/rdb/ModifyEventSubscription.htm">ModifyEventSubscription</a></li>
+                    <li><a href="/api/rdb/DeleteEventSubscription.htm">DeleteEventSubscription</a></li>
+                    <li><a href="/api/rdb/AddSourceIdentifierToSubscription.htm">AddSourceIdentifierToSubscription</a></li>
+                    <li><a href="/api/rdb/DescribeEventCategories.htm">DescribeEventCategories</a></li>
+                    <li><a href="/api/rdb/RemoveSourceIdentifierFromSubscription.htm">RemoveSourceIdentifierFromSubscription</a></li>
+                  </ul>
+                </li>
+                <li><span>DBログ</span>
+                  <ul>
+                    <li><a href="/api/rdb/DescribeDBLogFiles.htm">DescribeDBLogFiles</a></li>
+                    <li><a href="/api/rdb/DownloadDBLogFilePortion.htm">DownloadDBLogFilePortion</a></li>
+                  </ul>
+                </li>
+                <li><span>モニタリング</span>
+                  <ul>
+                    <li><a href="/api/rdb/NiftyGetMetricStatistics.htm">NiftyGetMetricStatistics</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- /.inner -->
+          </div>
+          <!-- /.sidenaviBox02 -->
+
+        </div>
+        <!-- /#sidenavi -->
+        <div class="searchWrap pkg"></div>
+        <!-- /.searchWrap -->
+                    <div id="loginLink" class="sidenaviBox01 pkg">
+                <h3><img src="/images/se_re_navi_title02.gif" width="210" height="31" alt="ご利用中のお客様"/></h3>
+                <ul>
+                <li><a href="https://console.cloud.nifty.com/web/cp" target="_blank"><img height="38" width="172" class="imgover" alt="ニフティクラウドへログイン" src="/images/se_re_btn_login.gif"/></a></li>
+                <li class="link-arr-01"><a href="https://inquiry.nifty.com/webeq/pub/cloud/support" target="_blank" onclick="adpsp_track(&#39;inquiry_tbl_nav&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_tbl_nav&#39;, this.href), false;">トラブルに関するお問い合わせ</a></li>
+                </ul>
+            </div><!-- /.sidenaviBox01 --> 
+
+            <div class="bannerWrap">
+                <ul>
+                <li><a href="http://twitter.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/tw-sd&#39;]);"><img src="/images/ban_twitter.gif" alt="ツイッターでフォローしてください" width="210" height="65"/></a></li>
+                <li><a href="https://www.facebook.com/niftycloud" target="_blank" onclick="_gaq.push([&#39;_trackPageview&#39;,&#39;/og/fb-sd&#39;]);"><img src="/images/ban_facebook.gif" width="210" height="65" alt="ニフティクラウド公式フェイスブックページ"/></a></li>
+                </ul>
+            </div><!-- /.bannerWrap -->      </div>			<!-- /#subContents -->
+			<!-- InstanceEndEditable --></div>
+  <!-- /.contentsInner --></div><!-- /#contents -->
+  
+<!-- InstanceBeginEditable name="footer" -->
+	<!-- #footer/ -->
+	    <div id="footNavigation">
+    	<div id="footInfo">
+        <div class="footBtn pkg">
+        	<p><a href="https://inquiry.nifty.com/webeq/pub/cloud/request" target="_blank" onclick="adpsp_track(&#39;request_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;request_ftr&#39;, this.href), false;"><img src="/images/btn_footer_request.gif" width="180" height="31" alt="資料ダウンロード" class="imgover"/></a>
+        		<a href="http://cloud.nifty.com/simulator/" onclick="adpsp_track(&#39;simulator_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;simulator_ftr&#39;, this.href), false;"><img src="/images/btn_footer_simulator.gif" width="180" height="31" alt="見積シミュレーター" class="imgover"/></a></p>
+        	<p><a href="http://cloud.nifty.com/flow/" onclick="adpsp_track(&#39;signup_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;signup_ftr&#39;, this.href), false;"><img src="/images/btn_footer_signup.gif" width="210" height="65" alt="お申し込み" class="imgover"/></a></p>
+        <!-- /.footbtn --></div>
+      	<div class="footInquiry pkg">
+        	<img src="/images/tel_footer_txt.gif" width="390" height="25" alt="導入のご相談はお電話でも受け付けております。"/>
+        	<ul><li><a href="http://cloud.nifty.com/inquiry/" onclick="adpsp_track(&#39;inquiry_ftr&#39;);" onmousedown="return countlink(&#39;cloud&#39;, &#39;inquiry_ftr&#39;, this.href), false;">各種お問い合わせ</a></li></ul>
+          <img src="/images/tel_footer.gif" width="520" height="40" alt="0120-22-1200（平日 9:00～17:45）"/>
+        <!-- /.footInquiry --></div>
+      <!-- /#footInfo --></div>
+      <div class="largeinner pkg">
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/">ニフティクラウドトップ</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_news/top/1.htm">お知らせ</a></li>
+          <li><a href="http://cloud.nifty.com/seminar/">セミナー・イベント一覧</a></li>
+          <li><a href="http://cloud.nifty.com/feature/">特長</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/service/spec.htm">サーバータイプ・仕様</a></li>
+        	<li><a href="http://cloud.nifty.com/service/spec_dedicated.htm">専有サーバー 仕様</a></li>
+          <li><a href="http://cloud.nifty.com/service/">機能・サービス</a></li>
+          <li><a href="http://cloud.nifty.com/price/">料金一覧</a></li>
+          <li><a href="http://cloud.nifty.com/case/">事例紹介</a></li>
+          <li><a href="http://cloud.nifty.com/case/lineup.htm">導入企業一覧</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/flow/#flow">ご利用までの流れ</a></li>
+          <li><a href="http://cloud.nifty.com/first/">新規申込特典</a></li>
+          <li><a href="http://cloud.nifty.com/term/">利用規約</a></li>
+          <li><a href="http://cloud.nifty.com/sla/">品質保証制度（SLA）について</a></li>
+          <li><a href="http://cloud.nifty.com/sitemap.htm">サイトマップ</a></li>
+        </ul>
+      	<ul>
+        	<li><a href="http://cloud.nifty.com/support/">サポートメニュー</a></li>
+          <li><a href="http://info.biz.nifty.com/cloud/">トラブル・メンテナンス情報</a></li>
+          <li><a href="http://cloud.nifty.com/help/">コントロールパネルヘルプ</a></li>
+          <li><a href="http://cloud.nifty.com/api/">APIリファレンス</a></li>
+          <li><a href="http://cloud.nifty.com/cs/catalog/cloud_faq/1.htm">FAQ（よくあるご質問）</a></li>
+        </ul>
+      </div><!-- /.largeinner -->
+    </div><!-- /.footNavigation -->
+
+    <div id="contentsBtm">
+    	<div class="inner pkg">
+            <p class="resolution">推奨画面サイズ　1024×768 以上</p>
+            <p class="pgTopLink"><a href="#header"><img src="/images/pagetop.gif" alt="ページの先頭へ" width="130" height="29" class="imgover"/></a></p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer">
+        <div class="nifty pkg">
+            <p id="gotop_img"><a href="http://www.nifty.com/"><img height="17" width="88" alt="アット・ニフティトップページへ" src="/images/gotop.gif"/></a></p>
+            <p id="ftr_recruit"><a href="http://r.advg.jp/adptg_count/r?adptg_aid=5330&amp;adptg_mid=6911&amp;adptg_lid=1" target="_blank" rel="nofollow">【採用】ニフティクラウドを支える仲間を募集しています。</a></p>
+            <address>
+                <a href="http://www.nifty.co.jp/privacy/" target="_blank">個人情報保護ポリシー</a><br/>
+                <a href="http://www.nifty.com/policy/website.htm" target="_blank">ウェブサイトの利用について</a><br/>
+                <span class="copyright">© NIFTY Corporation</span>
+            </address>
+        </div><!-- /.nifty -->
+    </div>	<!-- /#footer -->
+	<!-- InstanceEndEditable -->
+
+</div><!-- /#container -->
+
+<!-- 計測系// -->
+<!-- ADPLAN -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5330&amp;pid=1" charset="UTF-8"></script>
+<noscript><iframe src="//o.advg.jp/oif?aid=5330&pid=1" width="1" height="1"></iframe></noscript>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56G3KC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G3KC');</script>
+<!-- End Google Tag Manager -->
+
+<!-- YTM -->
+<script type="text/javascript">
+(function () {
+var tagjs = document.createElement("script");
+var s = document.getElementsByTagName("script")[0];
+tagjs.async = true;
+tagjs.src = "//s.yjtag.jp/tag.js#site=2WBk10P";
+s.parentNode.insertBefore(tagjs, s);
+}());
+</script>
+<noscript>
+<iframe src="//b.yjtag.jp/iframe?c=2WBk10P" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //計測系 -->
+
+
+
+</body><!-- InstanceEnd --></html>
