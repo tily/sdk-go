@@ -2,12 +2,12 @@
   "version": "",
   "metadata": {
     "apiVersion": "2.2",
-    "endpointPrefix": "",
-    "serviceAbbreviation": "",
-    "serviceFullName": "",
-    "signatureVersion": "",
-    "xmlNamespace": "",
-    "protocol": ""
+    "endpointPrefix": "computing",
+    "serviceAbbreviation": "computing",
+    "serviceFullName": "computing",
+    "signatureVersion": "v2",
+    "xmlNamespace": "http://dummy",
+    "protocol": "query"
   },
   "operations": {
     "AllocateAddress": {

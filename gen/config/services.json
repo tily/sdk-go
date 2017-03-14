@@ -8,7 +8,13 @@
     },
     "generator": {
       "metadata": {
-        "apiVersion": "2.2"
+        "apiVersion": "2.2",
+        "endpointPrefix": "computing",
+        "serviceAbbreviation": "computing",
+        "serviceFullName": "computing",
+        "signatureVersion": "v2", 
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
       },
       "http": {
         "method": "POST",
