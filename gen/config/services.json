@@ -1,0 +1,169 @@
+[
+  {
+    "id": "computing",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/rest/reference.htm",
+      "operationListRegexp": "^/api/rest/(([A-Z][a-z]+){2,}).htm$",
+      "operationListSelector": "#mainContents .section a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "2.2"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "requestShapeSelector": "",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  },
+  {
+    "id": "rdb",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/rdb/",
+      "operationListRegexp": "^/api/rdb/(([A-Z][a-z]+|DB){2,}).htm$",
+      "operationListSelector": "#mainContents table a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "2013-05-15N2013-12-16",
+        "endpointPrefix": "rdb",
+        "serviceAbbreviation": "rdb",
+        "serviceFullName": "rdb",
+        "signatureVersion": "v2", 
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "table[summary='レスポンス'] tr:nth-child(n+2)",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  },
+  {
+    "id": "dns",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/dns/",
+      "operationListRegexp": "^/api/dns/(([A-Z][a-z]+){2,}).htm$",
+      "operationListSelector": "#mainContents table a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "2012-12-12N2013-12-16",
+        "globalEndpoint": "dns.api.cloud.nifty.com"
+      },
+      "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "table[summary='レスポンス'] tr:nth-child(n+2)",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  },
+  {
+    "id": "ess",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/ess/",
+      "operationListRegexp": "^/api/ess/(([A-Z][a-z]+){2,}).htm$",
+      "operationListSelector": "#mainContents table a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "2010-12-01N2014-05-28",
+        "globalEndpoint": "ess.api.cloud.nifty.com"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "table[summary='レスポンス'] tr:nth-child(n+2)",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  },
+  {
+    "id": "nas",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/nas/",
+      "operationListRegexp": "^/api/nas/(([A-Z][a-z]+|NAS){2,}).htm$",
+      "operationListSelector": "#mainContents table a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "N2016-02-24",
+        "endpointPrefix": "nas",
+        "serviceAbbreviation": "nas",
+        "serviceFullName": "nas",
+        "signatureVersion": "v2",
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "table[summary='レスポンス'] tr:nth-child(n+2)",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  },
+  {
+    "id": "mqtt",
+    "downloader": {
+      "operationListURL": "http://cloud.nifty.com/api/mqtt/",
+      "operationListRegexp": "^/api/mqtt/(([A-Z][a-z]+|MQTT){2,}).htm$",
+      "operationListSelector": "#mainContents table a"
+    },
+    "generator": {
+      "metadata": {
+        "apiVersion": "2016-01-25N2016-01-25",
+        "globalEndpoint": "mqtt.api.cloud.nifty.com"
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
+      "requestShapeNameSelector": "td:nth-child(1)",
+      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeRequiredSelector": "td:nth-child(3)",
+      "requestShapeRequiredRegexp": "^\u25CB$",
+      "resultShapeSelector": "table[summary='レスポンス'] tr:nth-child(n+2)",
+      "resultShapeNameSelector": "td:nth-child(1)",
+      "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultExampleSelector": "code.cd-01:last-child"
+    }
+  }
+]

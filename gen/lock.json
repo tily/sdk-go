@@ -1,0 +1,62 @@
+{
+    "memo": "c8239db15e7b665e8f0fa5f1b8f10e05a456f0a6f33b40d1e6e47c620c9f84dc",
+    "projects": [
+        {
+            "name": "github.com/PuerkitoBio/goquery",
+            "version": "v1.1.0",
+            "revision": "e1271ee34c6a305e38566ecd27ae374944907ee9",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/andybalholm/cascadia",
+            "branch": "master",
+            "revision": "349dd0209470eabd9514242c688c403c0926d266",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/inconshreveable/mousetrap",
+            "branch": "master",
+            "revision": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/spf13/cobra",
+            "branch": "master",
+            "revision": "ee4055870c2d5f7ce112642377e32c9929c3bbaf",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/spf13/pflag",
+            "branch": "master",
+            "revision": "9ff6c6923cfffbcd502984b8e0c80539a94968b7",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "b4690f45fa1cafc47b1c280c2e75116efe40cc13",
+            "packages": [
+                "html"
+            ]
+        },
+        {
+            "name": "golang.org/x/text",
+            "branch": "master",
+            "revision": "85c29909967d7f171f821e7a42e7b7af76fb9598",
+            "packages": [
+                "encoding/japanese",
+                "transform"
+            ]
+        }
+    ]
+}
