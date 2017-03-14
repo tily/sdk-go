@@ -1,0 +1,870 @@
+{
+  "version": "2",
+  "service": "computing",
+  "operations": {
+    "AllocateAddress": "AllocateAddress",
+    "AssociateAddress": "AssociateAddress",
+    "AssociateRouteTable": "AssociateRouteTable",
+    "AssociateUsers": "AssociateUsers",
+    "AttachVolume": "AttachVolume",
+    "AuthorizeSecurityGroupIngress": "AuthorizeSecurityGroupIngress",
+    "CancelCopyInstances": "CancelCopyInstances",
+    "CancelUpload": "CancelUpload",
+    "ClearLoadBalancerSession": "ClearLoadBalancerSession",
+    "ConfigureHealthCheck": "ConfigureHealthCheck",
+    "CopyInstances": "CopyInstances",
+    "CreateCustomerGateway": "CreateCustomerGateway",
+    "CreateDhcpOptions": "CreateDhcpOptions",
+    "CreateImage": "CreateImage",
+    "CreateKeyPair": "CreateKeyPair",
+    "CreateLoadBalancer": "CreateLoadBalancer",
+    "CreateRoute": "CreateRoute",
+    "CreateRouteTable": "CreateRouteTable",
+    "CreateSecurityGroup": "CreateSecurityGroup",
+    "CreateSslCertificate": "CreateSslCertificate",
+    "CreateVolume": "CreateVolume",
+    "CreateVpnConnection": "CreateVpnConnection",
+    "CreateVpnGateway": "CreateVpnGateway",
+    "DeleteCustomerGateway": "DeleteCustomerGateway",
+    "DeleteDhcpOptions": "DeleteDhcpOptions",
+    "DeleteImage": "DeleteImage",
+    "DeleteKeyPair": "DeleteKeyPair",
+    "DeleteLoadBalancer": "DeleteLoadBalancer",
+    "DeleteRoute": "DeleteRoute",
+    "DeleteRouteTable": "DeleteRouteTable",
+    "DeleteSecurityGroup": "DeleteSecurityGroup",
+    "DeleteSslCertificate": "DeleteSslCertificate",
+    "DeleteVolume": "DeleteVolume",
+    "DeleteVpnConnection": "DeleteVpnConnection",
+    "DeleteVpnGateway": "DeleteVpnGateway",
+    "DeregisterInstancesFromLoadBalancer": "DeregisterInstancesFromLoadBalancer",
+    "DeregisterInstancesFromSecurityGroup": "DeregisterInstancesFromSecurityGroup",
+    "DescribeAddresses": "DescribeAddresses",
+    "DescribeAssociatedUsers": "DescribeAssociatedUsers",
+    "DescribeAvailabilityZones": "DescribeAvailabilityZones",
+    "DescribeCustomerGateways": "DescribeCustomerGateways",
+    "DescribeDhcpOptions": "DescribeDhcpOptions",
+    "DescribeImages": "DescribeImages",
+    "DescribeInstanceAttribute": "DescribeInstanceAttribute",
+    "DescribeInstanceHealth": "DescribeInstanceHealth",
+    "DescribeInstances": "DescribeInstances",
+    "DescribeKeyPairs": "DescribeKeyPairs",
+    "DescribeLoadBalancers": "DescribeLoadBalancers",
+    "DescribeRegions": "DescribeRegions",
+    "DescribeResources": "DescribeResources",
+    "DescribeRouteTables": "DescribeRouteTables",
+    "DescribeSecurityActivities": "DescribeSecurityActivities",
+    "DescribeSecurityGroupOption": "DescribeSecurityGroupOption",
+    "DescribeSecurityGroups": "DescribeSecurityGroups",
+    "DescribeServiceStatus": "DescribeServiceStatus",
+    "DescribeSslCertificateAttribute": "DescribeSslCertificateAttribute",
+    "DescribeSslCertificates": "DescribeSslCertificates",
+    "DescribeUploads": "DescribeUploads",
+    "DescribeUsage": "DescribeUsage",
+    "DescribeUserActivities": "DescribeUserActivities",
+    "DescribeVolumes": "DescribeVolumes",
+    "DescribeVpnConnections": "DescribeVpnConnections",
+    "DescribeVpnGateways": "DescribeVpnGateways",
+    "DetachVolume": "DetachVolume",
+    "DisassociateAddress": "DisassociateAddress",
+    "DisassociateRouteTable": "DisassociateRouteTable",
+    "DissociateUsers": "DissociateUsers",
+    "DownloadSslCertificate": "DownloadSslCertificate",
+    "ImportInstance": "ImportInstance",
+    "ImportKeyPair": "ImportKeyPair",
+    "ModifyImageAttribute": "ModifyImageAttribute",
+    "ModifyInstanceAttribute": "ModifyInstanceAttribute",
+    "ModifySslCertificateAttribute": "ModifySslCertificateAttribute",
+    "ModifyVolumeAttribute": "ModifyVolumeAttribute",
+    "NiftyAssociateImage": "NiftyAssociateImage",
+    "NiftyAssociateNatTable": "NiftyAssociateNatTable",
+    "NiftyAssociateRouteTableWithVpnGateway": "NiftyAssociateRouteTableWithVpnGateway",
+    "NiftyCreateAlarm": "NiftyCreateAlarm",
+    "NiftyCreateAutoScalingGroup": "NiftyCreateAutoScalingGroup",
+    "NiftyCreateDhcpConfig": "NiftyCreateDhcpConfig",
+    "NiftyCreateDhcpIpAddressPool": "NiftyCreateDhcpIpAddressPool",
+    "NiftyCreateDhcpStaticMapping": "NiftyCreateDhcpStaticMapping",
+    "NiftyCreateInstanceSnapshot": "NiftyCreateInstanceSnapshot",
+    "NiftyCreateNatRule": "NiftyCreateNatRule",
+    "NiftyCreateNatTable": "NiftyCreateNatTable",
+    "NiftyCreatePrivateLan": "NiftyCreatePrivateLan",
+    "NiftyCreateRouter": "NiftyCreateRouter",
+    "NiftyCreateWebProxy": "NiftyCreateWebProxy",
+    "NiftyDeleteAlarm": "NiftyDeleteAlarm",
+    "NiftyDeleteAutoScalingGroup": "NiftyDeleteAutoScalingGroup",
+    "NiftyDeleteDhcpConfig": "NiftyDeleteDhcpConfig",
+    "NiftyDeleteDhcpIpAddressPool": "NiftyDeleteDhcpIpAddressPool",
+    "NiftyDeleteDhcpStaticMapping": "NiftyDeleteDhcpStaticMapping",
+    "NiftyDeleteInstanceSnapshot": "NiftyDeleteInstanceSnapshot",
+    "NiftyDeleteNatRule": "NiftyDeleteNatRule",
+    "NiftyDeleteNatTable": "NiftyDeleteNatTable",
+    "NiftyDeletePrivateLan": "NiftyDeletePrivateLan",
+    "NiftyDeleteRouter": "NiftyDeleteRouter",
+    "NiftyDeleteWebProxy": "NiftyDeleteWebProxy",
+    "NiftyDeregisterRoutersFromSecurityGroup": "NiftyDeregisterRoutersFromSecurityGroup",
+    "NiftyDeregisterVpnGatewaysFromSecurityGroup": "NiftyDeregisterVpnGatewaysFromSecurityGroup",
+    "NiftyDescribeAlarmHistory": "NiftyDescribeAlarmHistory",
+    "NiftyDescribeAlarmRulesActivities": "NiftyDescribeAlarmRulesActivities",
+    "NiftyDescribeAlarms": "NiftyDescribeAlarms",
+    "NiftyDescribeAlarmsPartitions": "NiftyDescribeAlarmsPartitions",
+    "NiftyDescribeAutoScalingGroups": "NiftyDescribeAutoScalingGroups",
+    "NiftyDescribeCorporateInfoForCertificate": "NiftyDescribeCorporateInfoForCertificate",
+    "NiftyDescribeDhcpConfigs": "NiftyDescribeDhcpConfigs",
+    "NiftyDescribeDhcpStatus": "NiftyDescribeDhcpStatus",
+    "NiftyDescribeInstanceSnapshots": "NiftyDescribeInstanceSnapshots",
+    "NiftyDescribeNatTables": "NiftyDescribeNatTables",
+    "NiftyDescribePerformanceChart": "NiftyDescribePerformanceChart",
+    "NiftyDescribePrivateLans": "NiftyDescribePrivateLans",
+    "NiftyDescribeRouters": "NiftyDescribeRouters",
+    "NiftyDescribeScalingActivities": "NiftyDescribeScalingActivities",
+    "NiftyDescribeVpnGatewayActivities": "NiftyDescribeVpnGatewayActivities",
+    "NiftyDescribeWebProxies": "NiftyDescribeWebProxies",
+    "NiftyDisableDhcp": "NiftyDisableDhcp",
+    "NiftyDisassociateNatTable": "NiftyDisassociateNatTable",
+    "NiftyDisassociateRouteTableFromVpnGateway": "NiftyDisassociateRouteTableFromVpnGateway",
+    "NiftyEnableDhcp": "NiftyEnableDhcp",
+    "NiftyModifyAddressAttribute": "NiftyModifyAddressAttribute",
+    "NiftyModifyCustomerGatewayAttribute": "NiftyModifyCustomerGatewayAttribute",
+    "NiftyModifyInstanceSnapshotAttribute": "NiftyModifyInstanceSnapshotAttribute",
+    "NiftyModifyKeyPairAttribute": "NiftyModifyKeyPairAttribute",
+    "NiftyModifyPrivateLanAttribute": "NiftyModifyPrivateLanAttribute",
+    "NiftyModifyRouterAttribute": "NiftyModifyRouterAttribute",
+    "NiftyModifyVpnGatewayAttribute": "NiftyModifyVpnGatewayAttribute",
+    "NiftyModifyWebProxyAttribute": "NiftyModifyWebProxyAttribute",
+    "NiftyRebootRouters": "NiftyRebootRouters",
+    "NiftyRebootVpnGateways": "NiftyRebootVpnGateways",
+    "NiftyRegisterRoutersWithSecurityGroup": "NiftyRegisterRoutersWithSecurityGroup",
+    "NiftyRegisterVpnGatewaysWithSecurityGroup": "NiftyRegisterVpnGatewaysWithSecurityGroup",
+    "NiftyReleaseRouterBackupState": "NiftyReleaseRouterBackupState",
+    "NiftyReleaseVpnGatewayBackupState": "NiftyReleaseVpnGatewayBackupState",
+    "NiftyReplaceDhcpConfig": "NiftyReplaceDhcpConfig",
+    "NiftyReplaceDhcpOption": "NiftyReplaceDhcpOption",
+    "NiftyReplaceNatRule": "NiftyReplaceNatRule",
+    "NiftyReplaceNatTableAssociation": "NiftyReplaceNatTableAssociation",
+    "NiftyReplaceRouteTableAssociationWithVpnGateway": "NiftyReplaceRouteTableAssociationWithVpnGateway",
+    "NiftyReplaceRouterLatestVersion": "NiftyReplaceRouterLatestVersion",
+    "NiftyReplaceVpnGatewayLatestVersion": "NiftyReplaceVpnGatewayLatestVersion",
+    "NiftyRestoreInstanceSnapshot": "NiftyRestoreInstanceSnapshot",
+    "NiftyRestoreRouterPreviousVersion": "NiftyRestoreRouterPreviousVersion",
+    "NiftyRestoreVpnGatewayPreviousVersion": "NiftyRestoreVpnGatewayPreviousVersion",
+    "NiftyRetryImportInstance": "NiftyRetryImportInstance",
+    "NiftyUpdateAlarm": "NiftyUpdateAlarm",
+    "NiftyUpdateAutoScalingGroup": "NiftyUpdateAutoScalingGroup",
+    "NiftyUpdateInstanceNetworkInterfaces": "NiftyUpdateInstanceNetworkInterfaces",
+    "NiftyUpdateRouterNetworkInterfaces": "NiftyUpdateRouterNetworkInterfaces",
+    "NiftyUpdateVpnGatewayNetworkInterfaces": "NiftyUpdateVpnGatewayNetworkInterfaces",
+    "RebootInstances": "RebootInstances",
+    "RegisterCorporateInfoForCertificate": "RegisterCorporateInfoForCertificate",
+    "RegisterInstancesWithLoadBalancer": "RegisterInstancesWithLoadBalancer",
+    "RegisterInstancesWithSecurityGroup": "RegisterInstancesWithSecurityGroup",
+    "RegisterPortWithLoadBalancer": "RegisterPortWithLoadBalancer",
+    "ReleaseAddress": "ReleaseAddress",
+    "ReplaceRoute": "ReplaceRoute",
+    "ReplaceRouteTableAssociation": "ReplaceRouteTableAssociation",
+    "RevokeSecurityGroupIngress": "RevokeSecurityGroupIngress",
+    "RunInstances": "RunInstances",
+    "SetFilterForLoadBalancer": "SetFilterForLoadBalancer",
+    "StartInstances": "StartInstances",
+    "StopInstances": "StopInstances",
+    "TerminateInstances": "TerminateInstances",
+    "UpdateLoadBalancer": "UpdateLoadBalancer",
+    "UpdateLoadBalancerOption": "UpdateLoadBalancerOption",
+    "UpdateSecurityGroup": "UpdateSecurityGroup",
+    "UpdateSecurityGroupOption": "UpdateSecurityGroupOption",
+    "UploadSslCertificate": "UploadSslCertificate"
+  },
+  "shapes": {
+    "AllocateAddressRequest": {
+      "base": "AllocateAddressRequest",
+      "refs": null
+    },
+    "AssociateAddressRequest": {
+      "base": "AssociateAddressRequest",
+      "refs": null
+    },
+    "AssociateRouteTableRequest": {
+      "base": "AssociateRouteTableRequest",
+      "refs": null
+    },
+    "AssociateUsersRequest": {
+      "base": "AssociateUsersRequest",
+      "refs": null
+    },
+    "AttachVolumeRequest": {
+      "base": "AttachVolumeRequest",
+      "refs": null
+    },
+    "AuthorizeSecurityGroupIngressRequest": {
+      "base": "AuthorizeSecurityGroupIngressRequest",
+      "refs": null
+    },
+    "Boolean": {
+      "base": "Boolean",
+      "refs": null
+    },
+    "CancelCopyInstancesRequest": {
+      "base": "CancelCopyInstancesRequest",
+      "refs": null
+    },
+    "CancelUploadRequest": {
+      "base": "CancelUploadRequest",
+      "refs": null
+    },
+    "ClearLoadBalancerSessionRequest": {
+      "base": "ClearLoadBalancerSessionRequest",
+      "refs": null
+    },
+    "ConfigureHealthCheckRequest": {
+      "base": "ConfigureHealthCheckRequest",
+      "refs": null
+    },
+    "CopyInstancesRequest": {
+      "base": "CopyInstancesRequest",
+      "refs": null
+    },
+    "CreateCustomerGatewayRequest": {
+      "base": "CreateCustomerGatewayRequest",
+      "refs": null
+    },
+    "CreateDhcpOptionsRequest": {
+      "base": "CreateDhcpOptionsRequest",
+      "refs": null
+    },
+    "CreateImageRequest": {
+      "base": "CreateImageRequest",
+      "refs": null
+    },
+    "CreateKeyPairRequest": {
+      "base": "CreateKeyPairRequest",
+      "refs": null
+    },
+    "CreateLoadBalancerRequest": {
+      "base": "CreateLoadBalancerRequest",
+      "refs": null
+    },
+    "CreateRouteRequest": {
+      "base": "CreateRouteRequest",
+      "refs": null
+    },
+    "CreateRouteTableRequest": {
+      "base": "CreateRouteTableRequest",
+      "refs": null
+    },
+    "CreateSecurityGroupRequest": {
+      "base": "CreateSecurityGroupRequest",
+      "refs": null
+    },
+    "CreateSslCertificateRequest": {
+      "base": "CreateSslCertificateRequest",
+      "refs": null
+    },
+    "CreateVolumeRequest": {
+      "base": "CreateVolumeRequest",
+      "refs": null
+    },
+    "CreateVpnConnectionRequest": {
+      "base": "CreateVpnConnectionRequest",
+      "refs": null
+    },
+    "CreateVpnGatewayRequest": {
+      "base": "CreateVpnGatewayRequest",
+      "refs": null
+    },
+    "DeleteCustomerGatewayRequest": {
+      "base": "DeleteCustomerGatewayRequest",
+      "refs": null
+    },
+    "DeleteDhcpOptionsRequest": {
+      "base": "DeleteDhcpOptionsRequest",
+      "refs": null
+    },
+    "DeleteImageRequest": {
+      "base": "DeleteImageRequest",
+      "refs": null
+    },
+    "DeleteKeyPairRequest": {
+      "base": "DeleteKeyPairRequest",
+      "refs": null
+    },
+    "DeleteLoadBalancerRequest": {
+      "base": "DeleteLoadBalancerRequest",
+      "refs": null
+    },
+    "DeleteRouteRequest": {
+      "base": "DeleteRouteRequest",
+      "refs": null
+    },
+    "DeleteRouteTableRequest": {
+      "base": "DeleteRouteTableRequest",
+      "refs": null
+    },
+    "DeleteSecurityGroupRequest": {
+      "base": "DeleteSecurityGroupRequest",
+      "refs": null
+    },
+    "DeleteSslCertificateRequest": {
+      "base": "DeleteSslCertificateRequest",
+      "refs": null
+    },
+    "DeleteVolumeRequest": {
+      "base": "DeleteVolumeRequest",
+      "refs": null
+    },
+    "DeleteVpnConnectionRequest": {
+      "base": "DeleteVpnConnectionRequest",
+      "refs": null
+    },
+    "DeleteVpnGatewayRequest": {
+      "base": "DeleteVpnGatewayRequest",
+      "refs": null
+    },
+    "DeregisterInstancesFromLoadBalancerRequest": {
+      "base": "DeregisterInstancesFromLoadBalancerRequest",
+      "refs": null
+    },
+    "DeregisterInstancesFromSecurityGroupRequest": {
+      "base": "DeregisterInstancesFromSecurityGroupRequest",
+      "refs": null
+    },
+    "DescribeAddressesRequest": {
+      "base": "DescribeAddressesRequest",
+      "refs": null
+    },
+    "DescribeAssociatedUsersRequest": {
+      "base": "DescribeAssociatedUsersRequest",
+      "refs": null
+    },
+    "DescribeAvailabilityZonesRequest": {
+      "base": "DescribeAvailabilityZonesRequest",
+      "refs": null
+    },
+    "DescribeCustomerGatewaysRequest": {
+      "base": "DescribeCustomerGatewaysRequest",
+      "refs": null
+    },
+    "DescribeDhcpOptionsRequest": {
+      "base": "DescribeDhcpOptionsRequest",
+      "refs": null
+    },
+    "DescribeImagesRequest": {
+      "base": "DescribeImagesRequest",
+      "refs": null
+    },
+    "DescribeInstanceAttributeRequest": {
+      "base": "DescribeInstanceAttributeRequest",
+      "refs": null
+    },
+    "DescribeInstanceHealthRequest": {
+      "base": "DescribeInstanceHealthRequest",
+      "refs": null
+    },
+    "DescribeInstancesRequest": {
+      "base": "DescribeInstancesRequest",
+      "refs": null
+    },
+    "DescribeKeyPairsRequest": {
+      "base": "DescribeKeyPairsRequest",
+      "refs": null
+    },
+    "DescribeLoadBalancersRequest": {
+      "base": "DescribeLoadBalancersRequest",
+      "refs": null
+    },
+    "DescribeRegionsRequest": {
+      "base": "DescribeRegionsRequest",
+      "refs": null
+    },
+    "DescribeResourcesRequest": {
+      "base": "DescribeResourcesRequest",
+      "refs": null
+    },
+    "DescribeRouteTablesRequest": {
+      "base": "DescribeRouteTablesRequest",
+      "refs": null
+    },
+    "DescribeSecurityActivitiesRequest": {
+      "base": "DescribeSecurityActivitiesRequest",
+      "refs": null
+    },
+    "DescribeSecurityGroupOptionRequest": {
+      "base": "DescribeSecurityGroupOptionRequest",
+      "refs": null
+    },
+    "DescribeSecurityGroupsRequest": {
+      "base": "DescribeSecurityGroupsRequest",
+      "refs": null
+    },
+    "DescribeServiceStatusRequest": {
+      "base": "DescribeServiceStatusRequest",
+      "refs": null
+    },
+    "DescribeSslCertificateAttributeRequest": {
+      "base": "DescribeSslCertificateAttributeRequest",
+      "refs": null
+    },
+    "DescribeSslCertificatesRequest": {
+      "base": "DescribeSslCertificatesRequest",
+      "refs": null
+    },
+    "DescribeUploadsRequest": {
+      "base": "DescribeUploadsRequest",
+      "refs": null
+    },
+    "DescribeUsageRequest": {
+      "base": "DescribeUsageRequest",
+      "refs": null
+    },
+    "DescribeUserActivitiesRequest": {
+      "base": "DescribeUserActivitiesRequest",
+      "refs": null
+    },
+    "DescribeVolumesRequest": {
+      "base": "DescribeVolumesRequest",
+      "refs": null
+    },
+    "DescribeVpnConnectionsRequest": {
+      "base": "DescribeVpnConnectionsRequest",
+      "refs": null
+    },
+    "DescribeVpnGatewaysRequest": {
+      "base": "DescribeVpnGatewaysRequest",
+      "refs": null
+    },
+    "DetachVolumeRequest": {
+      "base": "DetachVolumeRequest",
+      "refs": null
+    },
+    "DisassociateAddressRequest": {
+      "base": "DisassociateAddressRequest",
+      "refs": null
+    },
+    "DisassociateRouteTableRequest": {
+      "base": "DisassociateRouteTableRequest",
+      "refs": null
+    },
+    "DissociateUsersRequest": {
+      "base": "DissociateUsersRequest",
+      "refs": null
+    },
+    "DownloadSslCertificateRequest": {
+      "base": "DownloadSslCertificateRequest",
+      "refs": null
+    },
+    "ImportInstanceRequest": {
+      "base": "ImportInstanceRequest",
+      "refs": null
+    },
+    "ImportKeyPairRequest": {
+      "base": "ImportKeyPairRequest",
+      "refs": null
+    },
+    "Integer": {
+      "base": "Integer",
+      "refs": null
+    },
+    "ModifyImageAttributeRequest": {
+      "base": "ModifyImageAttributeRequest",
+      "refs": null
+    },
+    "ModifyInstanceAttributeRequest": {
+      "base": "ModifyInstanceAttributeRequest",
+      "refs": null
+    },
+    "ModifySslCertificateAttributeRequest": {
+      "base": "ModifySslCertificateAttributeRequest",
+      "refs": null
+    },
+    "ModifyVolumeAttributeRequest": {
+      "base": "ModifyVolumeAttributeRequest",
+      "refs": null
+    },
+    "NiftyAssociateImageRequest": {
+      "base": "NiftyAssociateImageRequest",
+      "refs": null
+    },
+    "NiftyAssociateNatTableRequest": {
+      "base": "NiftyAssociateNatTableRequest",
+      "refs": null
+    },
+    "NiftyAssociateRouteTableWithVpnGatewayRequest": {
+      "base": "NiftyAssociateRouteTableWithVpnGatewayRequest",
+      "refs": null
+    },
+    "NiftyCreateAlarmRequest": {
+      "base": "NiftyCreateAlarmRequest",
+      "refs": null
+    },
+    "NiftyCreateAutoScalingGroupRequest": {
+      "base": "NiftyCreateAutoScalingGroupRequest",
+      "refs": null
+    },
+    "NiftyCreateDhcpConfigRequest": {
+      "base": "NiftyCreateDhcpConfigRequest",
+      "refs": null
+    },
+    "NiftyCreateDhcpIpAddressPoolRequest": {
+      "base": "NiftyCreateDhcpIpAddressPoolRequest",
+      "refs": null
+    },
+    "NiftyCreateDhcpStaticMappingRequest": {
+      "base": "NiftyCreateDhcpStaticMappingRequest",
+      "refs": null
+    },
+    "NiftyCreateInstanceSnapshotRequest": {
+      "base": "NiftyCreateInstanceSnapshotRequest",
+      "refs": null
+    },
+    "NiftyCreateNatRuleRequest": {
+      "base": "NiftyCreateNatRuleRequest",
+      "refs": null
+    },
+    "NiftyCreateNatTableRequest": {
+      "base": "NiftyCreateNatTableRequest",
+      "refs": null
+    },
+    "NiftyCreatePrivateLanRequest": {
+      "base": "NiftyCreatePrivateLanRequest",
+      "refs": null
+    },
+    "NiftyCreateRouterRequest": {
+      "base": "NiftyCreateRouterRequest",
+      "refs": null
+    },
+    "NiftyCreateWebProxyRequest": {
+      "base": "NiftyCreateWebProxyRequest",
+      "refs": null
+    },
+    "NiftyDeleteAlarmRequest": {
+      "base": "NiftyDeleteAlarmRequest",
+      "refs": null
+    },
+    "NiftyDeleteAutoScalingGroupRequest": {
+      "base": "NiftyDeleteAutoScalingGroupRequest",
+      "refs": null
+    },
+    "NiftyDeleteDhcpConfigRequest": {
+      "base": "NiftyDeleteDhcpConfigRequest",
+      "refs": null
+    },
+    "NiftyDeleteDhcpIpAddressPoolRequest": {
+      "base": "NiftyDeleteDhcpIpAddressPoolRequest",
+      "refs": null
+    },
+    "NiftyDeleteDhcpStaticMappingRequest": {
+      "base": "NiftyDeleteDhcpStaticMappingRequest",
+      "refs": null
+    },
+    "NiftyDeleteInstanceSnapshotRequest": {
+      "base": "NiftyDeleteInstanceSnapshotRequest",
+      "refs": null
+    },
+    "NiftyDeleteNatRuleRequest": {
+      "base": "NiftyDeleteNatRuleRequest",
+      "refs": null
+    },
+    "NiftyDeleteNatTableRequest": {
+      "base": "NiftyDeleteNatTableRequest",
+      "refs": null
+    },
+    "NiftyDeletePrivateLanRequest": {
+      "base": "NiftyDeletePrivateLanRequest",
+      "refs": null
+    },
+    "NiftyDeleteRouterRequest": {
+      "base": "NiftyDeleteRouterRequest",
+      "refs": null
+    },
+    "NiftyDeleteWebProxyRequest": {
+      "base": "NiftyDeleteWebProxyRequest",
+      "refs": null
+    },
+    "NiftyDeregisterRoutersFromSecurityGroupRequest": {
+      "base": "NiftyDeregisterRoutersFromSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest": {
+      "base": "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmHistoryRequest": {
+      "base": "NiftyDescribeAlarmHistoryRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmRulesActivitiesRequest": {
+      "base": "NiftyDescribeAlarmRulesActivitiesRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmsPartitionsRequest": {
+      "base": "NiftyDescribeAlarmsPartitionsRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmsRequest": {
+      "base": "NiftyDescribeAlarmsRequest",
+      "refs": null
+    },
+    "NiftyDescribeAutoScalingGroupsRequest": {
+      "base": "NiftyDescribeAutoScalingGroupsRequest",
+      "refs": null
+    },
+    "NiftyDescribeCorporateInfoForCertificateRequest": {
+      "base": "NiftyDescribeCorporateInfoForCertificateRequest",
+      "refs": null
+    },
+    "NiftyDescribeDhcpConfigsRequest": {
+      "base": "NiftyDescribeDhcpConfigsRequest",
+      "refs": null
+    },
+    "NiftyDescribeDhcpStatusRequest": {
+      "base": "NiftyDescribeDhcpStatusRequest",
+      "refs": null
+    },
+    "NiftyDescribeInstanceSnapshotsRequest": {
+      "base": "NiftyDescribeInstanceSnapshotsRequest",
+      "refs": null
+    },
+    "NiftyDescribeNatTablesRequest": {
+      "base": "NiftyDescribeNatTablesRequest",
+      "refs": null
+    },
+    "NiftyDescribePerformanceChartRequest": {
+      "base": "NiftyDescribePerformanceChartRequest",
+      "refs": null
+    },
+    "NiftyDescribePrivateLansRequest": {
+      "base": "NiftyDescribePrivateLansRequest",
+      "refs": null
+    },
+    "NiftyDescribeRoutersRequest": {
+      "base": "NiftyDescribeRoutersRequest",
+      "refs": null
+    },
+    "NiftyDescribeScalingActivitiesRequest": {
+      "base": "NiftyDescribeScalingActivitiesRequest",
+      "refs": null
+    },
+    "NiftyDescribeVpnGatewayActivitiesRequest": {
+      "base": "NiftyDescribeVpnGatewayActivitiesRequest",
+      "refs": null
+    },
+    "NiftyDescribeWebProxiesRequest": {
+      "base": "NiftyDescribeWebProxiesRequest",
+      "refs": null
+    },
+    "NiftyDisableDhcpRequest": {
+      "base": "NiftyDisableDhcpRequest",
+      "refs": null
+    },
+    "NiftyDisassociateNatTableRequest": {
+      "base": "NiftyDisassociateNatTableRequest",
+      "refs": null
+    },
+    "NiftyDisassociateRouteTableFromVpnGatewayRequest": {
+      "base": "NiftyDisassociateRouteTableFromVpnGatewayRequest",
+      "refs": null
+    },
+    "NiftyEnableDhcpRequest": {
+      "base": "NiftyEnableDhcpRequest",
+      "refs": null
+    },
+    "NiftyModifyAddressAttributeRequest": {
+      "base": "NiftyModifyAddressAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyCustomerGatewayAttributeRequest": {
+      "base": "NiftyModifyCustomerGatewayAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyInstanceSnapshotAttributeRequest": {
+      "base": "NiftyModifyInstanceSnapshotAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyKeyPairAttributeRequest": {
+      "base": "NiftyModifyKeyPairAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyPrivateLanAttributeRequest": {
+      "base": "NiftyModifyPrivateLanAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyRouterAttributeRequest": {
+      "base": "NiftyModifyRouterAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyVpnGatewayAttributeRequest": {
+      "base": "NiftyModifyVpnGatewayAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyWebProxyAttributeRequest": {
+      "base": "NiftyModifyWebProxyAttributeRequest",
+      "refs": null
+    },
+    "NiftyRebootRoutersRequest": {
+      "base": "NiftyRebootRoutersRequest",
+      "refs": null
+    },
+    "NiftyRebootVpnGatewaysRequest": {
+      "base": "NiftyRebootVpnGatewaysRequest",
+      "refs": null
+    },
+    "NiftyRegisterRoutersWithSecurityGroupRequest": {
+      "base": "NiftyRegisterRoutersWithSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyRegisterVpnGatewaysWithSecurityGroupRequest": {
+      "base": "NiftyRegisterVpnGatewaysWithSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyReleaseRouterBackupStateRequest": {
+      "base": "NiftyReleaseRouterBackupStateRequest",
+      "refs": null
+    },
+    "NiftyReleaseVpnGatewayBackupStateRequest": {
+      "base": "NiftyReleaseVpnGatewayBackupStateRequest",
+      "refs": null
+    },
+    "NiftyReplaceDhcpConfigRequest": {
+      "base": "NiftyReplaceDhcpConfigRequest",
+      "refs": null
+    },
+    "NiftyReplaceDhcpOptionRequest": {
+      "base": "NiftyReplaceDhcpOptionRequest",
+      "refs": null
+    },
+    "NiftyReplaceNatRuleRequest": {
+      "base": "NiftyReplaceNatRuleRequest",
+      "refs": null
+    },
+    "NiftyReplaceNatTableAssociationRequest": {
+      "base": "NiftyReplaceNatTableAssociationRequest",
+      "refs": null
+    },
+    "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest": {
+      "base": "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest",
+      "refs": null
+    },
+    "NiftyReplaceRouterLatestVersionRequest": {
+      "base": "NiftyReplaceRouterLatestVersionRequest",
+      "refs": null
+    },
+    "NiftyReplaceVpnGatewayLatestVersionRequest": {
+      "base": "NiftyReplaceVpnGatewayLatestVersionRequest",
+      "refs": null
+    },
+    "NiftyRestoreInstanceSnapshotRequest": {
+      "base": "NiftyRestoreInstanceSnapshotRequest",
+      "refs": null
+    },
+    "NiftyRestoreRouterPreviousVersionRequest": {
+      "base": "NiftyRestoreRouterPreviousVersionRequest",
+      "refs": null
+    },
+    "NiftyRestoreVpnGatewayPreviousVersionRequest": {
+      "base": "NiftyRestoreVpnGatewayPreviousVersionRequest",
+      "refs": null
+    },
+    "NiftyRetryImportInstanceRequest": {
+      "base": "NiftyRetryImportInstanceRequest",
+      "refs": null
+    },
+    "NiftyUpdateAlarmRequest": {
+      "base": "NiftyUpdateAlarmRequest",
+      "refs": null
+    },
+    "NiftyUpdateAutoScalingGroupRequest": {
+      "base": "NiftyUpdateAutoScalingGroupRequest",
+      "refs": null
+    },
+    "NiftyUpdateInstanceNetworkInterfacesRequest": {
+      "base": "NiftyUpdateInstanceNetworkInterfacesRequest",
+      "refs": null
+    },
+    "NiftyUpdateRouterNetworkInterfacesRequest": {
+      "base": "NiftyUpdateRouterNetworkInterfacesRequest",
+      "refs": null
+    },
+    "NiftyUpdateVpnGatewayNetworkInterfacesRequest": {
+      "base": "NiftyUpdateVpnGatewayNetworkInterfacesRequest",
+      "refs": null
+    },
+    "RebootInstancesRequest": {
+      "base": "RebootInstancesRequest",
+      "refs": null
+    },
+    "RegisterCorporateInfoForCertificateRequest": {
+      "base": "RegisterCorporateInfoForCertificateRequest",
+      "refs": null
+    },
+    "RegisterInstancesWithLoadBalancerRequest": {
+      "base": "RegisterInstancesWithLoadBalancerRequest",
+      "refs": null
+    },
+    "RegisterInstancesWithSecurityGroupRequest": {
+      "base": "RegisterInstancesWithSecurityGroupRequest",
+      "refs": null
+    },
+    "RegisterPortWithLoadBalancerRequest": {
+      "base": "RegisterPortWithLoadBalancerRequest",
+      "refs": null
+    },
+    "ReleaseAddressRequest": {
+      "base": "ReleaseAddressRequest",
+      "refs": null
+    },
+    "ReplaceRouteRequest": {
+      "base": "ReplaceRouteRequest",
+      "refs": null
+    },
+    "ReplaceRouteTableAssociationRequest": {
+      "base": "ReplaceRouteTableAssociationRequest",
+      "refs": null
+    },
+    "RevokeSecurityGroupIngressRequest": {
+      "base": "RevokeSecurityGroupIngressRequest",
+      "refs": null
+    },
+    "RunInstancesRequest": {
+      "base": "RunInstancesRequest",
+      "refs": null
+    },
+    "SetFilterForLoadBalancerRequest": {
+      "base": "SetFilterForLoadBalancerRequest",
+      "refs": null
+    },
+    "StartInstancesRequest": {
+      "base": "StartInstancesRequest",
+      "refs": null
+    },
+    "StopInstancesRequest": {
+      "base": "StopInstancesRequest",
+      "refs": null
+    },
+    "String": {
+      "base": "String",
+      "refs": null
+    },
+    "TerminateInstancesRequest": {
+      "base": "TerminateInstancesRequest",
+      "refs": null
+    },
+    "UpdateLoadBalancerOptionRequest": {
+      "base": "UpdateLoadBalancerOptionRequest",
+      "refs": null
+    },
+    "UpdateLoadBalancerRequest": {
+      "base": "UpdateLoadBalancerRequest",
+      "refs": null
+    },
+    "UpdateSecurityGroupOptionRequest": {
+      "base": "UpdateSecurityGroupOptionRequest",
+      "refs": null
+    },
+    "UpdateSecurityGroupRequest": {
+      "base": "UpdateSecurityGroupRequest",
+      "refs": null
+    },
+    "UploadSslCertificateRequest": {
+      "base": "UploadSslCertificateRequest",
+      "refs": null
+    }
+  }
+}

@@ -1,0 +1,2405 @@
+{
+  "version": "",
+  "metadata": {
+    "apiVersion": "2.2",
+    "endpointPrefix": "",
+    "serviceAbbreviation": "",
+    "serviceFullName": "",
+    "signatureVersion": "",
+    "xmlNamespace": "",
+    "protocol": ""
+  },
+  "operations": {
+    "AllocateAddress": {
+      "name": "AllocateAddress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AllocateAddressRequest"
+      },
+      "output": null
+    },
+    "AssociateAddress": {
+      "name": "AssociateAddress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AssociateAddressRequest"
+      },
+      "output": null
+    },
+    "AssociateRouteTable": {
+      "name": "AssociateRouteTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AssociateRouteTableRequest"
+      },
+      "output": null
+    },
+    "AssociateUsers": {
+      "name": "AssociateUsers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AssociateUsersRequest"
+      },
+      "output": null
+    },
+    "AttachVolume": {
+      "name": "AttachVolume",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AttachVolumeRequest"
+      },
+      "output": null
+    },
+    "AuthorizeSecurityGroupIngress": {
+      "name": "AuthorizeSecurityGroupIngress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "AuthorizeSecurityGroupIngressRequest"
+      },
+      "output": null
+    },
+    "CancelCopyInstances": {
+      "name": "CancelCopyInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CancelCopyInstancesRequest"
+      },
+      "output": null
+    },
+    "CancelUpload": {
+      "name": "CancelUpload",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CancelUploadRequest"
+      },
+      "output": null
+    },
+    "ClearLoadBalancerSession": {
+      "name": "ClearLoadBalancerSession",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ClearLoadBalancerSessionRequest"
+      },
+      "output": null
+    },
+    "ConfigureHealthCheck": {
+      "name": "ConfigureHealthCheck",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ConfigureHealthCheckRequest"
+      },
+      "output": null
+    },
+    "CopyInstances": {
+      "name": "CopyInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CopyInstancesRequest"
+      },
+      "output": null
+    },
+    "CreateCustomerGateway": {
+      "name": "CreateCustomerGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateCustomerGatewayRequest"
+      },
+      "output": null
+    },
+    "CreateDhcpOptions": {
+      "name": "CreateDhcpOptions",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateDhcpOptionsRequest"
+      },
+      "output": null
+    },
+    "CreateImage": {
+      "name": "CreateImage",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateImageRequest"
+      },
+      "output": null
+    },
+    "CreateKeyPair": {
+      "name": "CreateKeyPair",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateKeyPairRequest"
+      },
+      "output": null
+    },
+    "CreateLoadBalancer": {
+      "name": "CreateLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "CreateRoute": {
+      "name": "CreateRoute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateRouteRequest"
+      },
+      "output": null
+    },
+    "CreateRouteTable": {
+      "name": "CreateRouteTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateRouteTableRequest"
+      },
+      "output": null
+    },
+    "CreateSecurityGroup": {
+      "name": "CreateSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "CreateSslCertificate": {
+      "name": "CreateSslCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateSslCertificateRequest"
+      },
+      "output": null
+    },
+    "CreateVolume": {
+      "name": "CreateVolume",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateVolumeRequest"
+      },
+      "output": null
+    },
+    "CreateVpnConnection": {
+      "name": "CreateVpnConnection",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateVpnConnectionRequest"
+      },
+      "output": null
+    },
+    "CreateVpnGateway": {
+      "name": "CreateVpnGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "CreateVpnGatewayRequest"
+      },
+      "output": null
+    },
+    "DeleteCustomerGateway": {
+      "name": "DeleteCustomerGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteCustomerGatewayRequest"
+      },
+      "output": null
+    },
+    "DeleteDhcpOptions": {
+      "name": "DeleteDhcpOptions",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteDhcpOptionsRequest"
+      },
+      "output": null
+    },
+    "DeleteImage": {
+      "name": "DeleteImage",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteImageRequest"
+      },
+      "output": null
+    },
+    "DeleteKeyPair": {
+      "name": "DeleteKeyPair",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteKeyPairRequest"
+      },
+      "output": null
+    },
+    "DeleteLoadBalancer": {
+      "name": "DeleteLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "DeleteRoute": {
+      "name": "DeleteRoute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteRouteRequest"
+      },
+      "output": null
+    },
+    "DeleteRouteTable": {
+      "name": "DeleteRouteTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteRouteTableRequest"
+      },
+      "output": null
+    },
+    "DeleteSecurityGroup": {
+      "name": "DeleteSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "DeleteSslCertificate": {
+      "name": "DeleteSslCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteSslCertificateRequest"
+      },
+      "output": null
+    },
+    "DeleteVolume": {
+      "name": "DeleteVolume",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteVolumeRequest"
+      },
+      "output": null
+    },
+    "DeleteVpnConnection": {
+      "name": "DeleteVpnConnection",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteVpnConnectionRequest"
+      },
+      "output": null
+    },
+    "DeleteVpnGateway": {
+      "name": "DeleteVpnGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeleteVpnGatewayRequest"
+      },
+      "output": null
+    },
+    "DeregisterInstancesFromLoadBalancer": {
+      "name": "DeregisterInstancesFromLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeregisterInstancesFromLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "DeregisterInstancesFromSecurityGroup": {
+      "name": "DeregisterInstancesFromSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DeregisterInstancesFromSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "DescribeAddresses": {
+      "name": "DescribeAddresses",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeAddressesRequest"
+      },
+      "output": null
+    },
+    "DescribeAssociatedUsers": {
+      "name": "DescribeAssociatedUsers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeAssociatedUsersRequest"
+      },
+      "output": null
+    },
+    "DescribeAvailabilityZones": {
+      "name": "DescribeAvailabilityZones",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeAvailabilityZonesRequest"
+      },
+      "output": null
+    },
+    "DescribeCustomerGateways": {
+      "name": "DescribeCustomerGateways",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeCustomerGatewaysRequest"
+      },
+      "output": null
+    },
+    "DescribeDhcpOptions": {
+      "name": "DescribeDhcpOptions",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeDhcpOptionsRequest"
+      },
+      "output": null
+    },
+    "DescribeImages": {
+      "name": "DescribeImages",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeImagesRequest"
+      },
+      "output": null
+    },
+    "DescribeInstanceAttribute": {
+      "name": "DescribeInstanceAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeInstanceAttributeRequest"
+      },
+      "output": null
+    },
+    "DescribeInstanceHealth": {
+      "name": "DescribeInstanceHealth",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeInstanceHealthRequest"
+      },
+      "output": null
+    },
+    "DescribeInstances": {
+      "name": "DescribeInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeInstancesRequest"
+      },
+      "output": null
+    },
+    "DescribeKeyPairs": {
+      "name": "DescribeKeyPairs",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeKeyPairsRequest"
+      },
+      "output": null
+    },
+    "DescribeLoadBalancers": {
+      "name": "DescribeLoadBalancers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeLoadBalancersRequest"
+      },
+      "output": null
+    },
+    "DescribeRegions": {
+      "name": "DescribeRegions",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeRegionsRequest"
+      },
+      "output": null
+    },
+    "DescribeResources": {
+      "name": "DescribeResources",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeResourcesRequest"
+      },
+      "output": null
+    },
+    "DescribeRouteTables": {
+      "name": "DescribeRouteTables",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeRouteTablesRequest"
+      },
+      "output": null
+    },
+    "DescribeSecurityActivities": {
+      "name": "DescribeSecurityActivities",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeSecurityActivitiesRequest"
+      },
+      "output": null
+    },
+    "DescribeSecurityGroupOption": {
+      "name": "DescribeSecurityGroupOption",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeSecurityGroupOptionRequest"
+      },
+      "output": null
+    },
+    "DescribeSecurityGroups": {
+      "name": "DescribeSecurityGroups",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeSecurityGroupsRequest"
+      },
+      "output": null
+    },
+    "DescribeServiceStatus": {
+      "name": "DescribeServiceStatus",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeServiceStatusRequest"
+      },
+      "output": null
+    },
+    "DescribeSslCertificateAttribute": {
+      "name": "DescribeSslCertificateAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeSslCertificateAttributeRequest"
+      },
+      "output": null
+    },
+    "DescribeSslCertificates": {
+      "name": "DescribeSslCertificates",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeSslCertificatesRequest"
+      },
+      "output": null
+    },
+    "DescribeUploads": {
+      "name": "DescribeUploads",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeUploadsRequest"
+      },
+      "output": null
+    },
+    "DescribeUsage": {
+      "name": "DescribeUsage",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeUsageRequest"
+      },
+      "output": null
+    },
+    "DescribeUserActivities": {
+      "name": "DescribeUserActivities",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeUserActivitiesRequest"
+      },
+      "output": null
+    },
+    "DescribeVolumes": {
+      "name": "DescribeVolumes",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeVolumesRequest"
+      },
+      "output": null
+    },
+    "DescribeVpnConnections": {
+      "name": "DescribeVpnConnections",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeVpnConnectionsRequest"
+      },
+      "output": null
+    },
+    "DescribeVpnGateways": {
+      "name": "DescribeVpnGateways",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DescribeVpnGatewaysRequest"
+      },
+      "output": null
+    },
+    "DetachVolume": {
+      "name": "DetachVolume",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DetachVolumeRequest"
+      },
+      "output": null
+    },
+    "DisassociateAddress": {
+      "name": "DisassociateAddress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DisassociateAddressRequest"
+      },
+      "output": null
+    },
+    "DisassociateRouteTable": {
+      "name": "DisassociateRouteTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DisassociateRouteTableRequest"
+      },
+      "output": null
+    },
+    "DissociateUsers": {
+      "name": "DissociateUsers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DissociateUsersRequest"
+      },
+      "output": null
+    },
+    "DownloadSslCertificate": {
+      "name": "DownloadSslCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "DownloadSslCertificateRequest"
+      },
+      "output": null
+    },
+    "ImportInstance": {
+      "name": "ImportInstance",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ImportInstanceRequest"
+      },
+      "output": null
+    },
+    "ImportKeyPair": {
+      "name": "ImportKeyPair",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ImportKeyPairRequest"
+      },
+      "output": null
+    },
+    "ModifyImageAttribute": {
+      "name": "ModifyImageAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ModifyImageAttributeRequest"
+      },
+      "output": null
+    },
+    "ModifyInstanceAttribute": {
+      "name": "ModifyInstanceAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ModifyInstanceAttributeRequest"
+      },
+      "output": null
+    },
+    "ModifySslCertificateAttribute": {
+      "name": "ModifySslCertificateAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ModifySslCertificateAttributeRequest"
+      },
+      "output": null
+    },
+    "ModifyVolumeAttribute": {
+      "name": "ModifyVolumeAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ModifyVolumeAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyAssociateImage": {
+      "name": "NiftyAssociateImage",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyAssociateImageRequest"
+      },
+      "output": null
+    },
+    "NiftyAssociateNatTable": {
+      "name": "NiftyAssociateNatTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyAssociateNatTableRequest"
+      },
+      "output": null
+    },
+    "NiftyAssociateRouteTableWithVpnGateway": {
+      "name": "NiftyAssociateRouteTableWithVpnGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyAssociateRouteTableWithVpnGatewayRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateAlarm": {
+      "name": "NiftyCreateAlarm",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateAlarmRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateAutoScalingGroup": {
+      "name": "NiftyCreateAutoScalingGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateAutoScalingGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateDhcpConfig": {
+      "name": "NiftyCreateDhcpConfig",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateDhcpConfigRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateDhcpIpAddressPool": {
+      "name": "NiftyCreateDhcpIpAddressPool",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateDhcpIpAddressPoolRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateDhcpStaticMapping": {
+      "name": "NiftyCreateDhcpStaticMapping",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateDhcpStaticMappingRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateInstanceSnapshot": {
+      "name": "NiftyCreateInstanceSnapshot",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateInstanceSnapshotRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateNatRule": {
+      "name": "NiftyCreateNatRule",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateNatRuleRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateNatTable": {
+      "name": "NiftyCreateNatTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateNatTableRequest"
+      },
+      "output": null
+    },
+    "NiftyCreatePrivateLan": {
+      "name": "NiftyCreatePrivateLan",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreatePrivateLanRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateRouter": {
+      "name": "NiftyCreateRouter",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateRouterRequest"
+      },
+      "output": null
+    },
+    "NiftyCreateWebProxy": {
+      "name": "NiftyCreateWebProxy",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyCreateWebProxyRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteAlarm": {
+      "name": "NiftyDeleteAlarm",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteAlarmRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteAutoScalingGroup": {
+      "name": "NiftyDeleteAutoScalingGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteAutoScalingGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteDhcpConfig": {
+      "name": "NiftyDeleteDhcpConfig",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteDhcpConfigRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteDhcpIpAddressPool": {
+      "name": "NiftyDeleteDhcpIpAddressPool",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteDhcpIpAddressPoolRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteDhcpStaticMapping": {
+      "name": "NiftyDeleteDhcpStaticMapping",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteDhcpStaticMappingRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteInstanceSnapshot": {
+      "name": "NiftyDeleteInstanceSnapshot",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteInstanceSnapshotRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteNatRule": {
+      "name": "NiftyDeleteNatRule",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteNatRuleRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteNatTable": {
+      "name": "NiftyDeleteNatTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteNatTableRequest"
+      },
+      "output": null
+    },
+    "NiftyDeletePrivateLan": {
+      "name": "NiftyDeletePrivateLan",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeletePrivateLanRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteRouter": {
+      "name": "NiftyDeleteRouter",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteRouterRequest"
+      },
+      "output": null
+    },
+    "NiftyDeleteWebProxy": {
+      "name": "NiftyDeleteWebProxy",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeleteWebProxyRequest"
+      },
+      "output": null
+    },
+    "NiftyDeregisterRoutersFromSecurityGroup": {
+      "name": "NiftyDeregisterRoutersFromSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeregisterRoutersFromSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyDeregisterVpnGatewaysFromSecurityGroup": {
+      "name": "NiftyDeregisterVpnGatewaysFromSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeAlarmHistory": {
+      "name": "NiftyDescribeAlarmHistory",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeAlarmHistoryRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeAlarmRulesActivities": {
+      "name": "NiftyDescribeAlarmRulesActivities",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeAlarmRulesActivitiesRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeAlarms": {
+      "name": "NiftyDescribeAlarms",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeAlarmsRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeAlarmsPartitions": {
+      "name": "NiftyDescribeAlarmsPartitions",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeAlarmsPartitionsRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeAutoScalingGroups": {
+      "name": "NiftyDescribeAutoScalingGroups",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeAutoScalingGroupsRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeCorporateInfoForCertificate": {
+      "name": "NiftyDescribeCorporateInfoForCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeCorporateInfoForCertificateRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeDhcpConfigs": {
+      "name": "NiftyDescribeDhcpConfigs",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeDhcpConfigsRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeDhcpStatus": {
+      "name": "NiftyDescribeDhcpStatus",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeDhcpStatusRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeInstanceSnapshots": {
+      "name": "NiftyDescribeInstanceSnapshots",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeInstanceSnapshotsRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeNatTables": {
+      "name": "NiftyDescribeNatTables",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeNatTablesRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribePerformanceChart": {
+      "name": "NiftyDescribePerformanceChart",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribePerformanceChartRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribePrivateLans": {
+      "name": "NiftyDescribePrivateLans",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribePrivateLansRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeRouters": {
+      "name": "NiftyDescribeRouters",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeRoutersRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeScalingActivities": {
+      "name": "NiftyDescribeScalingActivities",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeScalingActivitiesRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeVpnGatewayActivities": {
+      "name": "NiftyDescribeVpnGatewayActivities",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeVpnGatewayActivitiesRequest"
+      },
+      "output": null
+    },
+    "NiftyDescribeWebProxies": {
+      "name": "NiftyDescribeWebProxies",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDescribeWebProxiesRequest"
+      },
+      "output": null
+    },
+    "NiftyDisableDhcp": {
+      "name": "NiftyDisableDhcp",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDisableDhcpRequest"
+      },
+      "output": null
+    },
+    "NiftyDisassociateNatTable": {
+      "name": "NiftyDisassociateNatTable",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDisassociateNatTableRequest"
+      },
+      "output": null
+    },
+    "NiftyDisassociateRouteTableFromVpnGateway": {
+      "name": "NiftyDisassociateRouteTableFromVpnGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyDisassociateRouteTableFromVpnGatewayRequest"
+      },
+      "output": null
+    },
+    "NiftyEnableDhcp": {
+      "name": "NiftyEnableDhcp",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyEnableDhcpRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyAddressAttribute": {
+      "name": "NiftyModifyAddressAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyAddressAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyCustomerGatewayAttribute": {
+      "name": "NiftyModifyCustomerGatewayAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyCustomerGatewayAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyInstanceSnapshotAttribute": {
+      "name": "NiftyModifyInstanceSnapshotAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyInstanceSnapshotAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyKeyPairAttribute": {
+      "name": "NiftyModifyKeyPairAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyKeyPairAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyPrivateLanAttribute": {
+      "name": "NiftyModifyPrivateLanAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyPrivateLanAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyRouterAttribute": {
+      "name": "NiftyModifyRouterAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyRouterAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyVpnGatewayAttribute": {
+      "name": "NiftyModifyVpnGatewayAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyVpnGatewayAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyModifyWebProxyAttribute": {
+      "name": "NiftyModifyWebProxyAttribute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyModifyWebProxyAttributeRequest"
+      },
+      "output": null
+    },
+    "NiftyRebootRouters": {
+      "name": "NiftyRebootRouters",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRebootRoutersRequest"
+      },
+      "output": null
+    },
+    "NiftyRebootVpnGateways": {
+      "name": "NiftyRebootVpnGateways",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRebootVpnGatewaysRequest"
+      },
+      "output": null
+    },
+    "NiftyRegisterRoutersWithSecurityGroup": {
+      "name": "NiftyRegisterRoutersWithSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRegisterRoutersWithSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyRegisterVpnGatewaysWithSecurityGroup": {
+      "name": "NiftyRegisterVpnGatewaysWithSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRegisterVpnGatewaysWithSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyReleaseRouterBackupState": {
+      "name": "NiftyReleaseRouterBackupState",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReleaseRouterBackupStateRequest"
+      },
+      "output": null
+    },
+    "NiftyReleaseVpnGatewayBackupState": {
+      "name": "NiftyReleaseVpnGatewayBackupState",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReleaseVpnGatewayBackupStateRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceDhcpConfig": {
+      "name": "NiftyReplaceDhcpConfig",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceDhcpConfigRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceDhcpOption": {
+      "name": "NiftyReplaceDhcpOption",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceDhcpOptionRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceNatRule": {
+      "name": "NiftyReplaceNatRule",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceNatRuleRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceNatTableAssociation": {
+      "name": "NiftyReplaceNatTableAssociation",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceNatTableAssociationRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceRouteTableAssociationWithVpnGateway": {
+      "name": "NiftyReplaceRouteTableAssociationWithVpnGateway",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceRouterLatestVersion": {
+      "name": "NiftyReplaceRouterLatestVersion",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceRouterLatestVersionRequest"
+      },
+      "output": null
+    },
+    "NiftyReplaceVpnGatewayLatestVersion": {
+      "name": "NiftyReplaceVpnGatewayLatestVersion",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyReplaceVpnGatewayLatestVersionRequest"
+      },
+      "output": null
+    },
+    "NiftyRestoreInstanceSnapshot": {
+      "name": "NiftyRestoreInstanceSnapshot",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRestoreInstanceSnapshotRequest"
+      },
+      "output": null
+    },
+    "NiftyRestoreRouterPreviousVersion": {
+      "name": "NiftyRestoreRouterPreviousVersion",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRestoreRouterPreviousVersionRequest"
+      },
+      "output": null
+    },
+    "NiftyRestoreVpnGatewayPreviousVersion": {
+      "name": "NiftyRestoreVpnGatewayPreviousVersion",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRestoreVpnGatewayPreviousVersionRequest"
+      },
+      "output": null
+    },
+    "NiftyRetryImportInstance": {
+      "name": "NiftyRetryImportInstance",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyRetryImportInstanceRequest"
+      },
+      "output": null
+    },
+    "NiftyUpdateAlarm": {
+      "name": "NiftyUpdateAlarm",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyUpdateAlarmRequest"
+      },
+      "output": null
+    },
+    "NiftyUpdateAutoScalingGroup": {
+      "name": "NiftyUpdateAutoScalingGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyUpdateAutoScalingGroupRequest"
+      },
+      "output": null
+    },
+    "NiftyUpdateInstanceNetworkInterfaces": {
+      "name": "NiftyUpdateInstanceNetworkInterfaces",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyUpdateInstanceNetworkInterfacesRequest"
+      },
+      "output": null
+    },
+    "NiftyUpdateRouterNetworkInterfaces": {
+      "name": "NiftyUpdateRouterNetworkInterfaces",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyUpdateRouterNetworkInterfacesRequest"
+      },
+      "output": null
+    },
+    "NiftyUpdateVpnGatewayNetworkInterfaces": {
+      "name": "NiftyUpdateVpnGatewayNetworkInterfaces",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "NiftyUpdateVpnGatewayNetworkInterfacesRequest"
+      },
+      "output": null
+    },
+    "RebootInstances": {
+      "name": "RebootInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RebootInstancesRequest"
+      },
+      "output": null
+    },
+    "RegisterCorporateInfoForCertificate": {
+      "name": "RegisterCorporateInfoForCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RegisterCorporateInfoForCertificateRequest"
+      },
+      "output": null
+    },
+    "RegisterInstancesWithLoadBalancer": {
+      "name": "RegisterInstancesWithLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RegisterInstancesWithLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "RegisterInstancesWithSecurityGroup": {
+      "name": "RegisterInstancesWithSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RegisterInstancesWithSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "RegisterPortWithLoadBalancer": {
+      "name": "RegisterPortWithLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RegisterPortWithLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "ReleaseAddress": {
+      "name": "ReleaseAddress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ReleaseAddressRequest"
+      },
+      "output": null
+    },
+    "ReplaceRoute": {
+      "name": "ReplaceRoute",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ReplaceRouteRequest"
+      },
+      "output": null
+    },
+    "ReplaceRouteTableAssociation": {
+      "name": "ReplaceRouteTableAssociation",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "ReplaceRouteTableAssociationRequest"
+      },
+      "output": null
+    },
+    "RevokeSecurityGroupIngress": {
+      "name": "RevokeSecurityGroupIngress",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RevokeSecurityGroupIngressRequest"
+      },
+      "output": null
+    },
+    "RunInstances": {
+      "name": "RunInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "RunInstancesRequest"
+      },
+      "output": null
+    },
+    "SetFilterForLoadBalancer": {
+      "name": "SetFilterForLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "SetFilterForLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "StartInstances": {
+      "name": "StartInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "StartInstancesRequest"
+      },
+      "output": null
+    },
+    "StopInstances": {
+      "name": "StopInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "StopInstancesRequest"
+      },
+      "output": null
+    },
+    "TerminateInstances": {
+      "name": "TerminateInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "TerminateInstancesRequest"
+      },
+      "output": null
+    },
+    "UpdateLoadBalancer": {
+      "name": "UpdateLoadBalancer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "UpdateLoadBalancerRequest"
+      },
+      "output": null
+    },
+    "UpdateLoadBalancerOption": {
+      "name": "UpdateLoadBalancerOption",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "UpdateLoadBalancerOptionRequest"
+      },
+      "output": null
+    },
+    "UpdateSecurityGroup": {
+      "name": "UpdateSecurityGroup",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "UpdateSecurityGroupRequest"
+      },
+      "output": null
+    },
+    "UpdateSecurityGroupOption": {
+      "name": "UpdateSecurityGroupOption",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "UpdateSecurityGroupOptionRequest"
+      },
+      "output": null
+    },
+    "UploadSslCertificate": {
+      "name": "UploadSslCertificate",
+      "http": {
+        "method": "POST",
+        "requestUri": "/api/2.2/"
+      },
+      "input": {
+        "shape": "UploadSslCertificateRequest"
+      },
+      "output": null
+    }
+  },
+  "shapes": {
+    "AllocateAddressRequest": {
+      "type": "structure"
+    },
+    "AssociateAddressRequest": {
+      "type": "structure"
+    },
+    "AssociateRouteTableRequest": {
+      "type": "structure"
+    },
+    "AssociateUsersRequest": {
+      "type": "structure"
+    },
+    "AttachVolumeRequest": {
+      "type": "structure"
+    },
+    "AuthorizeSecurityGroupIngressRequest": {
+      "type": "structure"
+    },
+    "Boolean": {
+      "type": "boolean"
+    },
+    "CancelCopyInstancesRequest": {
+      "type": "structure"
+    },
+    "CancelUploadRequest": {
+      "type": "structure"
+    },
+    "ClearLoadBalancerSessionRequest": {
+      "type": "structure"
+    },
+    "ConfigureHealthCheckRequest": {
+      "type": "structure"
+    },
+    "CopyInstancesRequest": {
+      "type": "structure"
+    },
+    "CreateCustomerGatewayRequest": {
+      "type": "structure"
+    },
+    "CreateDhcpOptionsRequest": {
+      "type": "structure"
+    },
+    "CreateImageRequest": {
+      "type": "structure"
+    },
+    "CreateKeyPairRequest": {
+      "type": "structure"
+    },
+    "CreateLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "CreateRouteRequest": {
+      "type": "structure"
+    },
+    "CreateRouteTableRequest": {
+      "type": "structure"
+    },
+    "CreateSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "CreateSslCertificateRequest": {
+      "type": "structure"
+    },
+    "CreateVolumeRequest": {
+      "type": "structure"
+    },
+    "CreateVpnConnectionRequest": {
+      "type": "structure"
+    },
+    "CreateVpnGatewayRequest": {
+      "type": "structure"
+    },
+    "DeleteCustomerGatewayRequest": {
+      "type": "structure"
+    },
+    "DeleteDhcpOptionsRequest": {
+      "type": "structure"
+    },
+    "DeleteImageRequest": {
+      "type": "structure"
+    },
+    "DeleteKeyPairRequest": {
+      "type": "structure"
+    },
+    "DeleteLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "DeleteRouteRequest": {
+      "type": "structure"
+    },
+    "DeleteRouteTableRequest": {
+      "type": "structure"
+    },
+    "DeleteSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "DeleteSslCertificateRequest": {
+      "type": "structure"
+    },
+    "DeleteVolumeRequest": {
+      "type": "structure"
+    },
+    "DeleteVpnConnectionRequest": {
+      "type": "structure"
+    },
+    "DeleteVpnGatewayRequest": {
+      "type": "structure"
+    },
+    "DeregisterInstancesFromLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "DeregisterInstancesFromSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "DescribeAddressesRequest": {
+      "type": "structure"
+    },
+    "DescribeAssociatedUsersRequest": {
+      "type": "structure"
+    },
+    "DescribeAvailabilityZonesRequest": {
+      "type": "structure"
+    },
+    "DescribeCustomerGatewaysRequest": {
+      "type": "structure"
+    },
+    "DescribeDhcpOptionsRequest": {
+      "type": "structure"
+    },
+    "DescribeImagesRequest": {
+      "type": "structure"
+    },
+    "DescribeInstanceAttributeRequest": {
+      "type": "structure"
+    },
+    "DescribeInstanceHealthRequest": {
+      "type": "structure"
+    },
+    "DescribeInstancesRequest": {
+      "type": "structure"
+    },
+    "DescribeKeyPairsRequest": {
+      "type": "structure"
+    },
+    "DescribeLoadBalancersRequest": {
+      "type": "structure"
+    },
+    "DescribeRegionsRequest": {
+      "type": "structure"
+    },
+    "DescribeResourcesRequest": {
+      "type": "structure"
+    },
+    "DescribeRouteTablesRequest": {
+      "type": "structure"
+    },
+    "DescribeSecurityActivitiesRequest": {
+      "type": "structure"
+    },
+    "DescribeSecurityGroupOptionRequest": {
+      "type": "structure"
+    },
+    "DescribeSecurityGroupsRequest": {
+      "type": "structure"
+    },
+    "DescribeServiceStatusRequest": {
+      "type": "structure"
+    },
+    "DescribeSslCertificateAttributeRequest": {
+      "type": "structure"
+    },
+    "DescribeSslCertificatesRequest": {
+      "type": "structure"
+    },
+    "DescribeUploadsRequest": {
+      "type": "structure"
+    },
+    "DescribeUsageRequest": {
+      "type": "structure"
+    },
+    "DescribeUserActivitiesRequest": {
+      "type": "structure"
+    },
+    "DescribeVolumesRequest": {
+      "type": "structure"
+    },
+    "DescribeVpnConnectionsRequest": {
+      "type": "structure"
+    },
+    "DescribeVpnGatewaysRequest": {
+      "type": "structure"
+    },
+    "DetachVolumeRequest": {
+      "type": "structure"
+    },
+    "DisassociateAddressRequest": {
+      "type": "structure"
+    },
+    "DisassociateRouteTableRequest": {
+      "type": "structure"
+    },
+    "DissociateUsersRequest": {
+      "type": "structure"
+    },
+    "DownloadSslCertificateRequest": {
+      "type": "structure"
+    },
+    "ImportInstanceRequest": {
+      "type": "structure"
+    },
+    "ImportKeyPairRequest": {
+      "type": "structure"
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "ModifyImageAttributeRequest": {
+      "type": "structure"
+    },
+    "ModifyInstanceAttributeRequest": {
+      "type": "structure"
+    },
+    "ModifySslCertificateAttributeRequest": {
+      "type": "structure"
+    },
+    "ModifyVolumeAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyAssociateImageRequest": {
+      "type": "structure"
+    },
+    "NiftyAssociateNatTableRequest": {
+      "type": "structure"
+    },
+    "NiftyAssociateRouteTableWithVpnGatewayRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateAlarmRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateAutoScalingGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateDhcpConfigRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateDhcpIpAddressPoolRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateDhcpStaticMappingRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateInstanceSnapshotRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateNatRuleRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateNatTableRequest": {
+      "type": "structure"
+    },
+    "NiftyCreatePrivateLanRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateRouterRequest": {
+      "type": "structure"
+    },
+    "NiftyCreateWebProxyRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteAlarmRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteAutoScalingGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteDhcpConfigRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteDhcpIpAddressPoolRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteDhcpStaticMappingRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteInstanceSnapshotRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteNatRuleRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteNatTableRequest": {
+      "type": "structure"
+    },
+    "NiftyDeletePrivateLanRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteRouterRequest": {
+      "type": "structure"
+    },
+    "NiftyDeleteWebProxyRequest": {
+      "type": "structure"
+    },
+    "NiftyDeregisterRoutersFromSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeAlarmHistoryRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeAlarmRulesActivitiesRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeAlarmsPartitionsRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeAlarmsRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeAutoScalingGroupsRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeCorporateInfoForCertificateRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeDhcpConfigsRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeDhcpStatusRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeInstanceSnapshotsRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeNatTablesRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribePerformanceChartRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribePrivateLansRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeRoutersRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeScalingActivitiesRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeVpnGatewayActivitiesRequest": {
+      "type": "structure"
+    },
+    "NiftyDescribeWebProxiesRequest": {
+      "type": "structure"
+    },
+    "NiftyDisableDhcpRequest": {
+      "type": "structure"
+    },
+    "NiftyDisassociateNatTableRequest": {
+      "type": "structure"
+    },
+    "NiftyDisassociateRouteTableFromVpnGatewayRequest": {
+      "type": "structure"
+    },
+    "NiftyEnableDhcpRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyAddressAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyCustomerGatewayAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyInstanceSnapshotAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyKeyPairAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyPrivateLanAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyRouterAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyVpnGatewayAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyModifyWebProxyAttributeRequest": {
+      "type": "structure"
+    },
+    "NiftyRebootRoutersRequest": {
+      "type": "structure"
+    },
+    "NiftyRebootVpnGatewaysRequest": {
+      "type": "structure"
+    },
+    "NiftyRegisterRoutersWithSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyRegisterVpnGatewaysWithSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyReleaseRouterBackupStateRequest": {
+      "type": "structure"
+    },
+    "NiftyReleaseVpnGatewayBackupStateRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceDhcpConfigRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceDhcpOptionRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceNatRuleRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceNatTableAssociationRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceRouterLatestVersionRequest": {
+      "type": "structure"
+    },
+    "NiftyReplaceVpnGatewayLatestVersionRequest": {
+      "type": "structure"
+    },
+    "NiftyRestoreInstanceSnapshotRequest": {
+      "type": "structure"
+    },
+    "NiftyRestoreRouterPreviousVersionRequest": {
+      "type": "structure"
+    },
+    "NiftyRestoreVpnGatewayPreviousVersionRequest": {
+      "type": "structure"
+    },
+    "NiftyRetryImportInstanceRequest": {
+      "type": "structure"
+    },
+    "NiftyUpdateAlarmRequest": {
+      "type": "structure"
+    },
+    "NiftyUpdateAutoScalingGroupRequest": {
+      "type": "structure"
+    },
+    "NiftyUpdateInstanceNetworkInterfacesRequest": {
+      "type": "structure"
+    },
+    "NiftyUpdateRouterNetworkInterfacesRequest": {
+      "type": "structure"
+    },
+    "NiftyUpdateVpnGatewayNetworkInterfacesRequest": {
+      "type": "structure"
+    },
+    "RebootInstancesRequest": {
+      "type": "structure"
+    },
+    "RegisterCorporateInfoForCertificateRequest": {
+      "type": "structure"
+    },
+    "RegisterInstancesWithLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "RegisterInstancesWithSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "RegisterPortWithLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "ReleaseAddressRequest": {
+      "type": "structure"
+    },
+    "ReplaceRouteRequest": {
+      "type": "structure"
+    },
+    "ReplaceRouteTableAssociationRequest": {
+      "type": "structure"
+    },
+    "RevokeSecurityGroupIngressRequest": {
+      "type": "structure"
+    },
+    "RunInstancesRequest": {
+      "type": "structure"
+    },
+    "SetFilterForLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "StartInstancesRequest": {
+      "type": "structure"
+    },
+    "StopInstancesRequest": {
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TerminateInstancesRequest": {
+      "type": "structure"
+    },
+    "UpdateLoadBalancerOptionRequest": {
+      "type": "structure"
+    },
+    "UpdateLoadBalancerRequest": {
+      "type": "structure"
+    },
+    "UpdateSecurityGroupOptionRequest": {
+      "type": "structure"
+    },
+    "UpdateSecurityGroupRequest": {
+      "type": "structure"
+    },
+    "UploadSslCertificateRequest": {
+      "type": "structure"
+    }
+  }
+}
