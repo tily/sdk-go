@@ -20,7 +20,7 @@
         "method": "POST",
         "requestUri": "/api/2.2/"
       },
-      "requestShapeSelector": "",
+      "requestShapeSelector": "table[summary='指定するパラメーター'] tr:nth-child(n+2)",
       "requestShapeNameSelector": "td:nth-child(1)",
       "requestShapeTypeSelector": "td:nth-child(4)",
       "requestShapeRequiredSelector": "td:nth-child(3)",
