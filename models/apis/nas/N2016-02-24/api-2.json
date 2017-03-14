@@ -329,7 +329,12 @@
       }
     },
     "DescribeNASInstancesResult": {
-      "type": "structure"
+      "type": "structure",
+      "members": {
+        "NASInstances": {
+          "shape": "NASInstances"
+        }
+      }
     },
     "DescribeNASSecurityGroupsRequest": {
       "type": "structure",
@@ -600,6 +605,13 @@
     },
     "NASInstanceType": {
       "type": "integer"
+    },
+    "NASInstances": {
+      "type": "list",
+      "member": {
+        "shape": "NASInstance",
+        "locationName": "NASInstance"
+      }
     },
     "NASSecurityGroup": {
       "type": "structure",

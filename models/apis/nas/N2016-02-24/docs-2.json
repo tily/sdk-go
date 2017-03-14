@@ -211,6 +211,10 @@
       "base": "NASInstanceType",
       "refs": null
     },
+    "NASInstances": {
+      "base": "NASInstances",
+      "refs": null
+    },
     "NASSecurityGroup": {
       "base": "NASSecurityGroup",
       "refs": null
