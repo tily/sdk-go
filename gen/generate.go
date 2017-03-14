@@ -194,7 +194,6 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		}
 
 		typeText := s.Find(g.RequestShapeTypeSelector).First().Text()
-		var _type string
 		switch {
 		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
@@ -202,10 +201,10 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			shapeName = match[0][1]
 			value := match[0][2]
 
-			_type = fmt.Sprintf("%sStructList", shapeName)
+			member.ShapeName = fmt.Sprintf("%sStructList", shapeName)
 			structShapeName := fmt.Sprintf("%sStruct", shapeName)
 			structListShape := Shape{
-				ShapeName: _type,
+				ShapeName: member.ShapeName,
 				Type:      "list",
 				Member:    &ShapeRef{ShapeName: structShapeName},
 			}
@@ -230,29 +229,28 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 				structShape.Members[value] = member
 			}
 		case typeText == "数値" || typeText == "Long":
-			_type = "Integer"
+			member.ShapeName = "Integer"
 		case typeText == "文字列":
-			_type = "String"
+			member.ShapeName = "String"
 		case typeText == "真偽値" || typeText == "boolean":
-			_type = "Boolean"
+			member.ShapeName = "Boolean"
 		case typeText == "日付" || typeText == "日時":
-			_type = "TStamp"
+			member.ShapeName = "TStamp"
 			tstampShape := Shape{
-				ShapeName: _type,
+				ShapeName: member.ShapeName,
 				Type:      "timestamp",
 			}
 			shapes = append(shapes, tstampShape)
 		case typeText == "文字配列":
 			shapeName = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(shapeName, "")
-			_type = fmt.Sprintf("%sStringList", shapeName)
+			member.ShapeName = fmt.Sprintf("%sStringList", shapeName)
 			stringListShape := Shape{
-				ShapeName: _type,
+				ShapeName: member.ShapeName,
 				Type:      "list",
 				Member:    &ShapeRef{ShapeName: "String"},
 			}
 			shapes = append(shapes, stringListShape)
 		}
-		member.ShapeName = _type
 
 		requiredText := s.Find(g.RequestShapeRequiredSelector).First().Text()
 		if regexp.MustCompile(g.RequestShapeRequiredRegexp).MatchString(requiredText) {
