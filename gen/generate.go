@@ -29,6 +29,7 @@ type Generator struct {
 	RequestShapeSelector         string
 	RequestShapeNameSelector     string
 	RequestShapeTypeSelector     string
+	RequestShapeTypeRegexp       string
 	RequestShapeRequiredSelector string
 	RequestShapeRequiredRegexp   string
 	RequestShapeIgnoreSelector   string
@@ -194,6 +195,21 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		}
 
 		typeText := s.Find(g.RequestShapeTypeSelector).First().Text()
+		if g.RequestShapeTypeRegexp != "" {
+			r := regexp.MustCompile(g.RequestShapeTypeRegexp)
+			m := r.FindStringSubmatch(typeText)
+			result := make(map[string]string)
+			for i, name := range r.SubexpNames() {
+				if i != 0 && i <= len(m) {
+					result[name] = m[i]
+				}
+			}
+			if result["type"] == "" {
+				return
+			}
+			typeText = result["type"]
+		}
+
 		switch {
 		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
@@ -228,12 +244,14 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			} else {
 				structShape.Members[value] = member
 			}
-		case typeText == "数値" || typeText == "Long":
+		case typeText == "数値" || typeText == "Long" || typeText == "int" || typeText == "Integer" || typeText == "xsd:int" || typeText == "xsd:Int":
 			member.ShapeName = "Integer"
-		case typeText == "文字列":
+		case typeText == "文字列" || typeText == "String" || typeText == "xsd:string" || typeText == "Sring" || typeText == "string" || typeText == "String ":
 			member.ShapeName = "String"
-		case typeText == "真偽値" || typeText == "boolean":
+		case typeText == "真偽値" || typeText == "boolean" || typeText == "Boolean" || typeText == "bBoolean":
 			member.ShapeName = "Boolean"
+		case typeText == "Double":
+			member.ShapeName = "Double"
 		case typeText == "日付" || typeText == "日時":
 			member.ShapeName = "TStamp"
 			tstampShape := Shape{
@@ -308,6 +326,7 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 	shapes = append(shapes, Shape{ShapeName: "Integer", Type: "integer"})
 	shapes = append(shapes, Shape{ShapeName: "String", Type: "string"})
 	shapes = append(shapes, Shape{ShapeName: "Boolean", Type: "boolean"})
+	shapes = append(shapes, Shape{ShapeName: "Double", Type: "double"})
 	return shapes
 }
 

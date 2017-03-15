@@ -446,6 +446,10 @@
       "base": "DissociateUsersRequest",
       "refs": null
     },
+    "Double": {
+      "base": "Double",
+      "refs": null
+    },
     "DownloadSslCertificateRequest": {
       "base": "DownloadSslCertificateRequest",
       "refs": null
