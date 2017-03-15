@@ -229,7 +229,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		}
 
 		switch {
-		case regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
+		case regexp.MustCompile(`^([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
 			r := regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`)
 			match := r.FindAllStringSubmatch(shapeName, -1)
 			parentShapeName := match[0][1]
