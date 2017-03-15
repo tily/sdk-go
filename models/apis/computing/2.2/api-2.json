@@ -1912,8 +1912,20 @@
     " requestId": {
       "type": "string"
     },
+    "AccountName": {
+      "type": "boolean"
+    },
     "AccountingType": {
       "type": "string"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Agreement": {
+      "type": "boolean"
+    },
+    "All": {
+      "type": "boolean"
     },
     "AllocateAddressRequest": {
       "type": "structure",
@@ -1927,8 +1939,8 @@
         "NiftyPrivateIp": {
           "shape": "Boolean"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         }
       }
     },
@@ -2048,11 +2060,28 @@
         }
       }
     },
+    "AvailabilityZone": {
+      "type": "string"
+    },
     "BalancingType": {
       "type": "string"
     },
     "Boolean": {
       "type": "boolean"
+    },
+    "BypassInterface": {
+      "type": "structure",
+      "members": {
+        "NetworkId": {
+          "shape": "NetworkId"
+        },
+        "NetworkName": {
+          "shape": "NetworkName"
+        }
+      }
+    },
+    "Bytes": {
+      "type": "integer"
     },
     "CancelCopyInstancesRequest": {
       "type": "structure",
@@ -2072,6 +2101,29 @@
       "required": [
         "ConversionTaskId"
       ]
+    },
+    "CertInfo": {
+      "type": "structure",
+      "members": {
+        "CountryName": {
+          "shape": "CountryName"
+        },
+        "EmailAddress": {
+          "shape": "EmailAddress"
+        },
+        "LocationName": {
+          "shape": "LocationName"
+        },
+        "OrganizationName": {
+          "shape": "OrganizationName"
+        },
+        "OrganizationUnitName": {
+          "shape": "OrganizationUnitName"
+        },
+        "StateName": {
+          "shape": "StateName"
+        }
+      }
     },
     "ClearLoadBalancerSessionRequest": {
       "type": "structure",
@@ -2095,20 +2147,8 @@
     "ConfigureHealthCheckRequest": {
       "type": "structure",
       "members": {
-        "HealthCheck.HealthyThreshold": {
-          "shape": "Integer"
-        },
-        "HealthCheck.Interval": {
-          "shape": "Integer"
-        },
-        "HealthCheck.Target": {
-          "shape": "String"
-        },
-        "HealthCheck.Timeout": {
-          "shape": "Integer"
-        },
-        "HealthCheck.UnhealthyThreshold": {
-          "shape": "Integer"
+        "HealthCheck": {
+          "shape": "HealthCheck"
         },
         "InstancePort": {
           "shape": "Integer"
@@ -2124,9 +2164,9 @@
         "LoadBalancerName",
         "LoadBalancerPort",
         "InstancePort",
-        "HealthCheck.Target",
-        "HealthCheck.Interval",
-        "HealthCheck.UnhealthyThreshold"
+        "HealthCheck",
+        "HealthCheck",
+        "HealthCheck"
       ]
     },
     "CookieExpirationPeriod": {
@@ -2135,23 +2175,31 @@
     "CookieName": {
       "type": "string"
     },
+    "CopyInstance": {
+      "type": "structure",
+      "members": {
+        "AccountingType": {
+          "shape": "AccountingType"
+        },
+        "InstanceName": {
+          "shape": "InstanceName"
+        },
+        "InstanceType": {
+          "shape": "InstanceType"
+        },
+        "IpType": {
+          "shape": "IpType"
+        }
+      }
+    },
     "CopyInstancesRequest": {
       "type": "structure",
       "members": {
         "CopyCount": {
           "shape": "Integer"
         },
-        "CopyInstance.AccountingType": {
-          "shape": "String"
-        },
-        "CopyInstance.InstanceName": {
-          "shape": "String"
-        },
-        "CopyInstance.InstanceType": {
-          "shape": "String"
-        },
-        "CopyInstance.IpType": {
-          "shape": "String"
+        "CopyInstance": {
+          "shape": "CopyInstance"
         },
         "CopyInstance.LoadBalancers.n.InstancePort": {
           "shape": "Integer"
@@ -2161,12 +2209,6 @@
         },
         "CopyInstance.LoadBalancers.n.LoadBalancerPort": {
           "shape": "Integer"
-        },
-        "CopyInstance.Placement.AvailabilityZone": {
-          "shape": "String"
-        },
-        "CopyInstance.Placement.RegionName": {
-          "shape": "String"
         },
         "CopyInstance.SecurityGroup.n": {
           "shape": "String"
@@ -2188,12 +2230,26 @@
         },
         "NetworkInterface.n.SecurityGroupId.n": {
           "shape": "String"
+        },
+        "Placement": {
+          "shape": "Placement"
         }
       },
       "required": [
         "InstanceId",
-        "CopyInstance.InstanceName"
+        "CopyInstance"
       ]
+    },
+    "CountryName": {
+      "type": "string"
+    },
+    "CourseUpdate": {
+      "type": "structure",
+      "members": {
+        "Agreement": {
+          "shape": "Agreement"
+        }
+      }
     },
     "CreateCustomerGatewayRequest": {
       "type": "structure",
@@ -2257,11 +2313,8 @@
         "NoReboot": {
           "shape": "Boolean"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
-        },
-        "Placement.RegionName": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         }
       },
       "required": [
@@ -2375,8 +2428,8 @@
         "GroupName": {
           "shape": "String"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         }
       }
     },
@@ -2389,23 +2442,8 @@
         "CertAuthority": {
           "shape": "Integer"
         },
-        "CertInfo.CountryName": {
-          "shape": "String"
-        },
-        "CertInfo.EmailAddress": {
-          "shape": "String"
-        },
-        "CertInfo.LocationName": {
-          "shape": "String"
-        },
-        "CertInfo.OrganizationName": {
-          "shape": "String"
-        },
-        "CertInfo.OrganizationUnitName": {
-          "shape": "String"
-        },
-        "CertInfo.StateName": {
-          "shape": "String"
+        "CertInfo": {
+          "shape": "CertInfo"
         },
         "Count": {
           "shape": "Integer"
@@ -2465,50 +2503,17 @@
         "NiftyCustomerGatewayName": {
           "shape": "String"
         },
-        "NiftyIPsecConfiguration.EncryptionAlgorithm": {
-          "shape": "String"
+        "NiftyIPsecConfiguration": {
+          "shape": "NiftyIPsecConfiguration"
         },
-        "NiftyIPsecConfiguration.HashAlgorithm": {
-          "shape": "String"
+        "NiftyIpsecConfiguration": {
+          "shape": "NiftyIpsecConfiguration"
         },
-        "NiftyIPsecConfiguration.PreSharedKey": {
-          "shape": "String"
+        "NiftyRemoteVpn": {
+          "shape": "NiftyRemoteVpn"
         },
-        "NiftyIpsecConfiguration.InternetKeyExchange": {
-          "shape": "String"
-        },
-        "NiftyRemoteVpn.AccountName": {
-          "shape": "Boolean"
-        },
-        "NiftyRemoteVpn.Password": {
-          "shape": "String"
-        },
-        "NiftyTunnel.DestinationPort": {
-          "shape": "String"
-        },
-        "NiftyTunnel.Encapsulation": {
-          "shape": "String"
-        },
-        "NiftyTunnel.Mode": {
-          "shape": "String"
-        },
-        "NiftyTunnel.PeerSessionId": {
-          "shape": "String"
-        },
-        "NiftyTunnel.PeerTunnelId": {
-          "shape": "String"
-        },
-        "NiftyTunnel.SessionId": {
-          "shape": "String"
-        },
-        "NiftyTunnel.SourcePort": {
-          "shape": "String"
-        },
-        "NiftyTunnel.TunnelId": {
-          "shape": "String"
-        },
-        "NiftyTunnel.Type": {
-          "shape": "String"
+        "NiftyTunnel": {
+          "shape": "NiftyTunnel"
         },
         "NiftyVpnConnectionDescription": {
           "shape": "String"
@@ -2519,11 +2524,8 @@
         "NiftyVpnGatewayName": {
           "shape": "String"
         },
-        "Options.NiftyIpIpTunnel": {
-          "shape": "String"
-        },
-        "Options.StaticRoutesOnly": {
-          "shape": "String"
+        "Options": {
+          "shape": "Options"
         },
         "Type": {
           "shape": "String"
@@ -2543,14 +2545,8 @@
         "AccountingType": {
           "shape": "String"
         },
-        "NiftyNetwork.IpAddress": {
-          "shape": "String"
-        },
-        "NiftyNetwork.NetworkId": {
-          "shape": "String"
-        },
-        "NiftyNetwork.NetworkName": {
-          "shape": "String"
+        "NiftyNetwork": {
+          "shape": "NiftyNetwork"
         },
         "NiftyRedundancy": {
           "shape": "Boolean"
@@ -2564,8 +2560,8 @@
         "NiftyVpnGatewayType": {
           "shape": "String"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         },
         "SecurityGroup.n": {
           "shape": "String"
@@ -2578,8 +2574,45 @@
     "CreatedTime": {
       "type": "timestamp"
     },
+    "DDay": {
+      "type": "structure",
+      "members": {
+        "EndingDDay": {
+          "shape": "EndingDDay"
+        },
+        "StartingDDay": {
+          "shape": "StartingDDay"
+        }
+      }
+    },
     "DNSName": {
       "type": "string"
+    },
+    "Day": {
+      "type": "structure",
+      "members": {
+        "SetFriday": {
+          "shape": "SetFriday"
+        },
+        "SetMonday": {
+          "shape": "SetMonday"
+        },
+        "SetSaturday": {
+          "shape": "SetSaturday"
+        },
+        "SetSunday": {
+          "shape": "SetSunday"
+        },
+        "SetThursday": {
+          "shape": "SetThursday"
+        },
+        "SetTuesday": {
+          "shape": "SetTuesday"
+        },
+        "SetWednesday": {
+          "shape": "SetWednesday"
+        }
+      }
     },
     "DeleteCustomerGatewayRequest": {
       "type": "structure",
@@ -2643,6 +2676,9 @@
         "LoadBalancerPort",
         "InstancePort"
       ]
+    },
+    "DeleteOnTermination": {
+      "type": "boolean"
     },
     "DeleteRouteRequest": {
       "type": "structure",
@@ -2937,14 +2973,8 @@
         "GroupName": {
           "shape": "String"
         },
-        "Range.All": {
-          "shape": "Boolean"
-        },
-        "Range.EndNumber": {
-          "shape": "Integer"
-        },
-        "Range.StartNumber": {
-          "shape": "Integer"
+        "Range": {
+          "shape": "Range"
         }
       }
     },
@@ -3026,11 +3056,8 @@
     "DescribeUserActivitiesRequest": {
       "type": "structure",
       "members": {
-        "Range.EndNumber": {
-          "shape": "Integer"
-        },
-        "Range.StartNumber": {
-          "shape": "Integer"
+        "Range": {
+          "shape": "Range"
         },
         "YearMonth": {
           "shape": "String"
@@ -3077,6 +3104,22 @@
       }
     },
     "Description": {
+      "type": "structure",
+      "members": {
+        "Value": {
+          "shape": "Value"
+        }
+      }
+    },
+    "Destination": {
+      "type": "structure",
+      "members": {
+        "Port": {
+          "shape": "Port"
+        }
+      }
+    },
+    "DestinationPort": {
       "type": "string"
     },
     "DetachVolumeRequest": {
@@ -3166,8 +3209,52 @@
         "FileType"
       ]
     },
+    "Ebs": {
+      "type": "structure",
+      "members": {
+        "DeleteOnTermination": {
+          "shape": "DeleteOnTermination"
+        },
+        "NoDevice": {
+          "shape": "NoDevice"
+        },
+        "SnapshotId": {
+          "shape": "SnapshotId"
+        },
+        "VolumeSize": {
+          "shape": "VolumeSize"
+        }
+      }
+    },
+    "EmailAddress": {
+      "type": "string"
+    },
+    "Enable": {
+      "type": "boolean"
+    },
     "Enabled": {
       "type": "boolean"
+    },
+    "Encapsulation": {
+      "type": "string"
+    },
+    "Encoding": {
+      "type": "string"
+    },
+    "EncryptionAlgorithm": {
+      "type": "string"
+    },
+    "EndNumber": {
+      "type": "integer"
+    },
+    "EndingDDay": {
+      "type": "string"
+    },
+    "EndingMonth": {
+      "type": "string"
+    },
+    "EndingTimeZone": {
+      "type": "string"
     },
     "ExpirationPeriod": {
       "type": "integer"
@@ -3175,11 +3262,54 @@
     "FilterType": {
       "type": "string"
     },
+    "Format": {
+      "type": "string"
+    },
+    "GroupName": {
+      "type": "string"
+    },
+    "HashAlgorithm": {
+      "type": "string"
+    },
+    "HealthCheck": {
+      "type": "structure",
+      "members": {
+        "HealthyThreshold": {
+          "shape": "HealthyThreshold"
+        },
+        "Interval": {
+          "shape": "Interval"
+        },
+        "Target": {
+          "shape": "Target"
+        },
+        "Timeout": {
+          "shape": "Timeout"
+        },
+        "UnhealthyThreshold": {
+          "shape": "UnhealthyThreshold"
+        }
+      }
+    },
     "HealthyThreshold": {
       "type": "integer"
     },
     "IPAddress": {
       "type": "string"
+    },
+    "Image": {
+      "type": "structure",
+      "members": {
+        "Bytes": {
+          "shape": "Bytes"
+        },
+        "Format": {
+          "shape": "Format"
+        },
+        "ImportManifestUrl": {
+          "shape": "ImportManifestUrl"
+        }
+      }
     },
     "ImportInstanceRequest": {
       "type": "structure",
@@ -3196,17 +3326,8 @@
         "DiskImage.n.Description": {
           "shape": "String"
         },
-        "DiskImage.n.Image.Bytes": {
-          "shape": "Integer"
-        },
-        "DiskImage.n.Image.Format": {
-          "shape": "String"
-        },
-        "DiskImage.n.Image.ImportManifestUrl": {
-          "shape": "String"
-        },
-        "DiskImage.n.Volume.Size": {
-          "shape": "Integer"
+        "Image": {
+          "shape": "Image"
         },
         "InstanceId": {
           "shape": "String"
@@ -3220,8 +3341,8 @@
         "IpType": {
           "shape": "String"
         },
-        "Monitoring.Enabled": {
-          "shape": "String"
+        "Monitoring": {
+          "shape": "Monitoring"
         },
         "NetworkInterface.n.DeviceIndex": {
           "shape": "Integer"
@@ -3241,8 +3362,8 @@
         "Ovf": {
           "shape": "String"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         },
         "Platform": {
           "shape": "String"
@@ -3261,6 +3382,9 @@
         },
         "UserData": {
           "shape": "String"
+        },
+        "Volume": {
+          "shape": "Volume"
         }
       },
       "required": [
@@ -3285,11 +3409,31 @@
         "PublicKeyMaterial"
       ]
     },
+    "ImportManifestUrl": {
+      "type": "string"
+    },
+    "InboundInterface": {
+      "type": "structure",
+      "members": {
+        "NetworkId": {
+          "shape": "NetworkId"
+        },
+        "NetworkName": {
+          "shape": "NetworkName"
+        }
+      }
+    },
     "InstanceId": {
+      "type": "string"
+    },
+    "InstanceName": {
       "type": "string"
     },
     "InstancePort": {
       "type": "integer"
+    },
+    "InstanceType": {
+      "type": "string"
     },
     "InstanceUniqueId": {
       "type": "string"
@@ -3297,8 +3441,56 @@
     "Integer": {
       "type": "integer"
     },
+    "InternetKeyExchange": {
+      "type": "string"
+    },
     "Interval": {
       "type": "integer"
+    },
+    "IpAddress": {
+      "type": "string"
+    },
+    "IpType": {
+      "type": "string"
+    },
+    "ListenInterface": {
+      "type": "structure",
+      "members": {
+        "NetworkId": {
+          "shape": "NetworkId"
+        },
+        "NetworkName": {
+          "shape": "NetworkName"
+        }
+      }
+    },
+    "Listener": {
+      "type": "structure",
+      "members": {
+        "BalancingType": {
+          "shape": "BalancingType"
+        },
+        "InstancePort": {
+          "shape": "InstancePort"
+        },
+        "LoadBalancerPort": {
+          "shape": "LoadBalancerPort"
+        },
+        "Protocol": {
+          "shape": "Protocol"
+        }
+      }
+    },
+    "ListenerUpdate": {
+      "type": "structure",
+      "members": {
+        "InstancePort": {
+          "shape": "InstancePort"
+        },
+        "LoadBalancerPort": {
+          "shape": "LoadBalancerPort"
+        }
+      }
     },
     "LoadBalancerName": {
       "type": "string"
@@ -3306,7 +3498,13 @@
     "LoadBalancerPort": {
       "type": "integer"
     },
+    "LocationName": {
+      "type": "string"
+    },
     "Memo": {
+      "type": "string"
+    },
+    "Mode": {
       "type": "string"
     },
     "ModifyImageAttributeRequest": {
@@ -3372,8 +3570,8 @@
     "ModifySslCertificateAttributeRequest": {
       "type": "structure",
       "members": {
-        "Description.Value": {
-          "shape": "String"
+        "Description": {
+          "shape": "Description"
         },
         "FqdnId": {
           "shape": "String"
@@ -3399,6 +3597,42 @@
       "required": [
         "VolumeId"
       ]
+    },
+    "Monitoring": {
+      "type": "structure",
+      "members": {
+        "Enabled": {
+          "shape": "Enabled"
+        }
+      }
+    },
+    "Month": {
+      "type": "structure",
+      "members": {
+        "EndingMonth": {
+          "shape": "EndingMonth"
+        },
+        "StartingMonth": {
+          "shape": "StartingMonth"
+        }
+      }
+    },
+    "NameServer": {
+      "type": "string"
+    },
+    "NetworkId": {
+      "type": "string"
+    },
+    "NetworkInterface": {
+      "type": "structure",
+      "members": {
+        "IpAddress": {
+          "shape": "IpAddress"
+        }
+      }
+    },
+    "NetworkName": {
+      "type": "string"
     },
     "NetworkVolume": {
       "type": "integer"
@@ -3528,6 +3762,12 @@
         "ChangeInCapacity": {
           "shape": "Integer"
         },
+        "DDay": {
+          "shape": "DDay"
+        },
+        "Day": {
+          "shape": "Day"
+        },
         "DefaultCooldown": {
           "shape": "Integer"
         },
@@ -3558,49 +3798,13 @@
         "MinSize": {
           "shape": "Integer"
         },
+        "Month": {
+          "shape": "Month"
+        },
         "Scaleout": {
           "shape": "Integer"
         },
         "ScaleoutCondition": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.DDay.EndingDDay": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.DDay.StartingDDay": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetFriday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetMonday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetSaturday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetSunday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetThursday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetTuesday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetWednesday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Month.EndingMonth": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Month.StartingMonth": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.TimeZone.EndingTimeZone": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.TimeZone.StartingTimeZone": {
           "shape": "String"
         },
         "ScalingTrigger.n.BreachDuration": {
@@ -3614,6 +3818,9 @@
         },
         "SecurityGroup.n": {
           "shape": "String"
+        },
+        "TimeZone": {
+          "shape": "TimeZone"
         }
       },
       "required": [
@@ -3698,14 +3905,11 @@
         "Description": {
           "shape": "String"
         },
-        "Destination.Port": {
-          "shape": "Integer"
+        "Destination": {
+          "shape": "Destination"
         },
-        "InboundInterface.NetworkId": {
-          "shape": "String"
-        },
-        "InboundInterface.NetworkName": {
-          "shape": "String"
+        "InboundInterface": {
+          "shape": "InboundInterface"
         },
         "NatTableId": {
           "shape": "String"
@@ -3713,11 +3917,8 @@
         "NatType": {
           "shape": "String"
         },
-        "OutboundInterface.NetworkId": {
-          "shape": "String"
-        },
-        "OutboundInterface.NetworkName": {
-          "shape": "String"
+        "OutboundInterface": {
+          "shape": "OutboundInterface"
         },
         "Protocol": {
           "shape": "String"
@@ -3725,17 +3926,11 @@
         "RuleNumber": {
           "shape": "String"
         },
-        "Source.Address": {
-          "shape": "String"
+        "Source": {
+          "shape": "Source"
         },
-        "Source.Port": {
-          "shape": "Integer"
-        },
-        "Translation.Address": {
-          "shape": "String"
-        },
-        "Translation.Port": {
-          "shape": "Integer"
+        "Translation": {
+          "shape": "Translation"
         }
       },
       "required": [
@@ -3824,26 +4019,20 @@
         "Agreement": {
           "shape": "Boolean"
         },
-        "BypassInterface.NetworkId": {
-          "shape": "String"
-        },
-        "BypassInterface.NetworkName": {
-          "shape": "String"
+        "BypassInterface": {
+          "shape": "BypassInterface"
         },
         "Description": {
           "shape": "String"
         },
-        "ListenInterface.NetworkId": {
-          "shape": "String"
-        },
-        "ListenInterface.NetworkName": {
-          "shape": "String"
+        "ListenInterface": {
+          "shape": "ListenInterface"
         },
         "ListenPort": {
           "shape": "String"
         },
-        "Option.NameServer": {
-          "shape": "String"
+        "Option": {
+          "shape": "Option"
         },
         "RouterId": {
           "shape": "String"
@@ -4228,14 +4417,8 @@
         "AutoScalingGroupName": {
           "shape": "String"
         },
-        "Range.All": {
-          "shape": "Boolean"
-        },
-        "Range.EndNumber": {
-          "shape": "Integer"
-        },
-        "Range.StartNumber": {
-          "shape": "Integer"
+        "Range": {
+          "shape": "Range"
         }
       },
       "required": [
@@ -4341,6 +4524,31 @@
         },
         "RouterName": {
           "shape": "String"
+        }
+      }
+    },
+    "NiftyIPsecConfiguration": {
+      "type": "structure",
+      "members": {
+        "EncryptionAlgorithm": {
+          "shape": "EncryptionAlgorithm"
+        },
+        "HashAlgorithm": {
+          "shape": "HashAlgorithm"
+        },
+        "PreSharedKey": {
+          "shape": "PreSharedKey"
+        }
+      }
+    },
+    "NiftyIpIpTunnel": {
+      "type": "string"
+    },
+    "NiftyIpsecConfiguration": {
+      "type": "structure",
+      "members": {
+        "InternetKeyExchange": {
+          "shape": "InternetKeyExchange"
         }
       }
     },
@@ -4518,6 +4726,20 @@
         "Value"
       ]
     },
+    "NiftyNetwork": {
+      "type": "structure",
+      "members": {
+        "IpAddress": {
+          "shape": "IpAddress"
+        },
+        "NetworkId": {
+          "shape": "NetworkId"
+        },
+        "NetworkName": {
+          "shape": "NetworkName"
+        }
+      }
+    },
     "NiftyRebootRoutersRequest": {
       "type": "structure",
       "members": {
@@ -4602,6 +4824,17 @@
         }
       }
     },
+    "NiftyRemoteVpn": {
+      "type": "structure",
+      "members": {
+        "AccountName": {
+          "shape": "AccountName"
+        },
+        "Password": {
+          "shape": "Password"
+        }
+      }
+    },
     "NiftyReplaceDhcpConfigRequest": {
       "type": "structure",
       "members": {
@@ -4660,14 +4893,11 @@
         "Description": {
           "shape": "String"
         },
-        "Destination.Port": {
-          "shape": "Integer"
+        "Destination": {
+          "shape": "Destination"
         },
-        "InboundInterface.NetworkId": {
-          "shape": "String"
-        },
-        "InboundInterface.NetworkName": {
-          "shape": "String"
+        "InboundInterface": {
+          "shape": "InboundInterface"
         },
         "NatTableId": {
           "shape": "String"
@@ -4675,11 +4905,8 @@
         "NatType": {
           "shape": "String"
         },
-        "OutboundInterface.NetworkId": {
-          "shape": "String"
-        },
-        "OutboundInterface.NetworkName": {
-          "shape": "String"
+        "OutboundInterface": {
+          "shape": "OutboundInterface"
         },
         "Protocol": {
           "shape": "String"
@@ -4687,17 +4914,11 @@
         "RuleNumber": {
           "shape": "String"
         },
-        "Source.Address": {
-          "shape": "String"
+        "Source": {
+          "shape": "Source"
         },
-        "Source.Port": {
-          "shape": "Integer"
-        },
-        "Translation.Address": {
-          "shape": "String"
-        },
-        "Translation.Port": {
-          "shape": "Integer"
+        "Translation": {
+          "shape": "Translation"
         }
       },
       "required": [
@@ -4815,6 +5036,38 @@
         "InstanceId"
       ]
     },
+    "NiftyTunnel": {
+      "type": "structure",
+      "members": {
+        "DestinationPort": {
+          "shape": "DestinationPort"
+        },
+        "Encapsulation": {
+          "shape": "Encapsulation"
+        },
+        "Mode": {
+          "shape": "Mode"
+        },
+        "PeerSessionId": {
+          "shape": "PeerSessionId"
+        },
+        "PeerTunnelId": {
+          "shape": "PeerTunnelId"
+        },
+        "SessionId": {
+          "shape": "SessionId"
+        },
+        "SourcePort": {
+          "shape": "SourcePort"
+        },
+        "TunnelId": {
+          "shape": "TunnelId"
+        },
+        "Type": {
+          "shape": "Type"
+        }
+      }
+    },
     "NiftyUpdateAlarmRequest": {
       "type": "structure",
       "members": {
@@ -4878,6 +5131,12 @@
         "ChangeInCapacity": {
           "shape": "Integer"
         },
+        "DDay": {
+          "shape": "DDay"
+        },
+        "Day": {
+          "shape": "Day"
+        },
         "DefaultCooldown": {
           "shape": "Integer"
         },
@@ -4908,49 +5167,13 @@
         "MinSize": {
           "shape": "Integer"
         },
+        "Month": {
+          "shape": "Month"
+        },
         "Scaleout": {
           "shape": "Integer"
         },
         "ScaleoutCondition": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.DDay.EndingDDay": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.DDay.StartingDDay": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetFriday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetMonday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetSaturday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetSunday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetThursday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetTuesday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Day.SetWednesday": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Month.EndingMonth": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.Month.StartingMonth": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.TimeZone.EndingTimeZone": {
-          "shape": "String"
-        },
-        "ScalingSchedule.n.TimeZone.StartingTimeZone": {
           "shape": "String"
         },
         "ScalingTrigger.n.BreachDuration": {
@@ -4964,6 +5187,9 @@
         },
         "SecurityGroup.n": {
           "shape": "String"
+        },
+        "TimeZone": {
+          "shape": "TimeZone"
         }
       },
       "required": [
@@ -5052,8 +5278,8 @@
         "Agreement": {
           "shape": "Boolean"
         },
-        "NetworkInterface.IpAddress": {
-          "shape": "String"
+        "NetworkInterface": {
+          "shape": "NetworkInterface"
         },
         "NiftyReboot": {
           "shape": "String"
@@ -5066,7 +5292,72 @@
         }
       }
     },
+    "NoDevice": {
+      "type": "boolean"
+    },
+    "Option": {
+      "type": "structure",
+      "members": {
+        "NameServer": {
+          "shape": "NameServer"
+        }
+      }
+    },
+    "Options": {
+      "type": "structure",
+      "members": {
+        "NiftyIpIpTunnel": {
+          "shape": "NiftyIpIpTunnel"
+        },
+        "StaticRoutesOnly": {
+          "shape": "StaticRoutesOnly"
+        }
+      }
+    },
+    "OrganizationName": {
+      "type": "string"
+    },
+    "OrganizationUnitName": {
+      "type": "string"
+    },
+    "OutboundInterface": {
+      "type": "structure",
+      "members": {
+        "NetworkId": {
+          "shape": "NetworkId"
+        },
+        "NetworkName": {
+          "shape": "NetworkName"
+        }
+      }
+    },
+    "Password": {
+      "type": "string"
+    },
+    "PeerSessionId": {
+      "type": "string"
+    },
+    "PeerTunnelId": {
+      "type": "string"
+    },
+    "Placement": {
+      "type": "structure",
+      "members": {
+        "AvailabilityZone": {
+          "shape": "AvailabilityZone"
+        },
+        "GroupName": {
+          "shape": "GroupName"
+        }
+      }
+    },
     "PolicyName": {
+      "type": "string"
+    },
+    "Port": {
+      "type": "integer"
+    },
+    "PreSharedKey": {
       "type": "string"
     },
     "Primary": {
@@ -5074,6 +5365,20 @@
     },
     "Protocol": {
       "type": "string"
+    },
+    "Range": {
+      "type": "structure",
+      "members": {
+        "All": {
+          "shape": "All"
+        },
+        "EndNumber": {
+          "shape": "EndNumber"
+        },
+        "StartNumber": {
+          "shape": "StartNumber"
+        }
+      }
     },
     "ReasonCode": {
       "type": "string"
@@ -5094,12 +5399,12 @@
           "shape": "String"
         },
         "UserData": {
-          "shape": "String"
-        },
-        "UserData.Encoding": {
-          "shape": "String"
+          "shape": "UserData"
         }
       }
+    },
+    "RegionName": {
+      "type": "string"
     },
     "RegisterCorporateInfoForCertificateRequest": {
       "type": "structure",
@@ -5368,18 +5673,6 @@
         "BlockDeviceMapping.n.DeviceName": {
           "shape": "String"
         },
-        "BlockDeviceMapping.n.Ebs.DeleteOnTermination": {
-          "shape": "Boolean"
-        },
-        "BlockDeviceMapping.n.Ebs.NoDevice": {
-          "shape": "Boolean"
-        },
-        "BlockDeviceMapping.n.Ebs.SnapshotId": {
-          "shape": "String"
-        },
-        "BlockDeviceMapping.n.Ebs.VolumeSize": {
-          "shape": "Integer"
-        },
         "BlockDeviceMapping.n.VirtualName": {
           "shape": "String"
         },
@@ -5388,6 +5681,9 @@
         },
         "DisableApiTermination": {
           "shape": "Boolean"
+        },
+        "Ebs": {
+          "shape": "Ebs"
         },
         "ImageId": {
           "shape": "String"
@@ -5422,8 +5718,8 @@
         "MinCount": {
           "shape": "Integer"
         },
-        "Monitoring.Enabled": {
-          "shape": "Boolean"
+        "Monitoring": {
+          "shape": "Monitoring"
         },
         "NetworkInterface.n.DeviceIndex": {
           "shape": "Integer"
@@ -5443,11 +5739,8 @@
         "Password": {
           "shape": "String"
         },
-        "Placement.AvailabilityZone": {
-          "shape": "String"
-        },
-        "Placement.GroupName": {
-          "shape": "String"
+        "Placement": {
+          "shape": "Placement"
         },
         "PublicIp": {
           "shape": "String"
@@ -5462,15 +5755,26 @@
           "shape": "String"
         },
         "UserData": {
-          "shape": "String"
-        },
-        "UserData.Encoding": {
-          "shape": "String"
+          "shape": "UserData"
         }
       }
     },
     "SSLCertificateId": {
       "type": "string"
+    },
+    "SessionId": {
+      "type": "string"
+    },
+    "SessionStickinessPolicyUpdate": {
+      "type": "structure",
+      "members": {
+        "Enable": {
+          "shape": "Enable"
+        },
+        "ExpirationPeriod": {
+          "shape": "ExpirationPeriod"
+        }
+      }
     },
     "SetFilterForLoadBalancerRequest": {
       "type": "structure",
@@ -5500,6 +5804,58 @@
         "InstancePort"
       ]
     },
+    "SetFriday": {
+      "type": "string"
+    },
+    "SetMonday": {
+      "type": "string"
+    },
+    "SetSaturday": {
+      "type": "string"
+    },
+    "SetSunday": {
+      "type": "string"
+    },
+    "SetThursday": {
+      "type": "string"
+    },
+    "SetTuesday": {
+      "type": "string"
+    },
+    "SetWednesday": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "integer"
+    },
+    "SnapshotId": {
+      "type": "string"
+    },
+    "SorryPageUpdate": {
+      "type": "structure",
+      "members": {
+        "Enable": {
+          "shape": "Enable"
+        },
+        "StatusCode": {
+          "shape": "StatusCode"
+        }
+      }
+    },
+    "Source": {
+      "type": "structure",
+      "members": {
+        "Address": {
+          "shape": "Address"
+        },
+        "Port": {
+          "shape": "Port"
+        }
+      }
+    },
+    "SourcePort": {
+      "type": "string"
+    },
     "StartInstancesRequest": {
       "type": "structure",
       "members": {
@@ -5519,18 +5875,36 @@
           "shape": "String"
         },
         "UserData": {
-          "shape": "String"
-        },
-        "UserData.Encoding": {
-          "shape": "String"
+          "shape": "UserData"
         }
       },
       "required": [
         "InstanceId.n"
       ]
     },
+    "StartNumber": {
+      "type": "integer"
+    },
+    "StartingDDay": {
+      "type": "string"
+    },
+    "StartingMonth": {
+      "type": "string"
+    },
+    "StartingTimeZone": {
+      "type": "string"
+    },
     "State": {
       "type": "string"
+    },
+    "StateName": {
+      "type": "string"
+    },
+    "StaticRoutesOnly": {
+      "type": "string"
+    },
+    "StatusCode": {
+      "type": "integer"
     },
     "StopInstancesRequest": {
       "type": "structure",
@@ -5563,8 +5937,36 @@
         "InstanceId.n"
       ]
     },
+    "TimeZone": {
+      "type": "structure",
+      "members": {
+        "EndingTimeZone": {
+          "shape": "EndingTimeZone"
+        },
+        "StartingTimeZone": {
+          "shape": "StartingTimeZone"
+        }
+      }
+    },
     "Timeout": {
       "type": "integer"
+    },
+    "Translation": {
+      "type": "structure",
+      "members": {
+        "Address": {
+          "shape": "Address"
+        },
+        "Port": {
+          "shape": "Port"
+        }
+      }
+    },
+    "TunnelId": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
     },
     "UnhealthyThreshold": {
       "type": "integer"
@@ -5581,17 +5983,11 @@
         "LoadBalancerPort": {
           "shape": "Integer"
         },
-        "SessionStickinessPolicyUpdate.Enable": {
-          "shape": "Boolean"
+        "SessionStickinessPolicyUpdate": {
+          "shape": "SessionStickinessPolicyUpdate"
         },
-        "SessionStickinessPolicyUpdate.ExpirationPeriod": {
-          "shape": "Integer"
-        },
-        "SorryPageUpdate.Enable": {
-          "shape": "Boolean"
-        },
-        "SorryPageUpdate.StatusCode": {
-          "shape": "Integer"
+        "SorryPageUpdate": {
+          "shape": "SorryPageUpdate"
         }
       },
       "required": [
@@ -5606,23 +6002,11 @@
         "AccountingTypeUpdate": {
           "shape": "String"
         },
-        "ListenerUpdate.InstancePort": {
-          "shape": "Integer"
+        "Listener": {
+          "shape": "Listener"
         },
-        "ListenerUpdate.Listener.BalancingType": {
-          "shape": "String"
-        },
-        "ListenerUpdate.Listener.InstancePort": {
-          "shape": "Integer"
-        },
-        "ListenerUpdate.Listener.LoadBalancerPort": {
-          "shape": "Integer"
-        },
-        "ListenerUpdate.Listener.Protocol": {
-          "shape": "String"
-        },
-        "ListenerUpdate.LoadBalancerPort": {
-          "shape": "Integer"
+        "ListenerUpdate": {
+          "shape": "ListenerUpdate"
         },
         "LoadBalancerName": {
           "shape": "String"
@@ -5639,10 +6023,7 @@
       "type": "structure",
       "members": {
         "CourseUpdate": {
-          "shape": "String"
-        },
-        "CourseUpdate.Agreement": {
-          "shape": "Boolean"
+          "shape": "CourseUpdate"
         },
         "SecurityGroupLimitUpdate": {
           "shape": "Integer"
@@ -5696,8 +6077,30 @@
         "Key"
       ]
     },
+    "UserData": {
+      "type": "structure",
+      "members": {
+        "Encoding": {
+          "shape": "Encoding"
+        }
+      }
+    },
     "UserId": {
       "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    },
+    "Volume": {
+      "type": "structure",
+      "members": {
+        "Size": {
+          "shape": "Size"
+        }
+      }
+    },
+    "VolumeSize": {
+      "type": "integer"
     },
     "acceptedRouteCount": {
       "type": "integer"

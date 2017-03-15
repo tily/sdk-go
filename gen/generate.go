@@ -212,7 +212,42 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			typeText = result["type"]
 		}
 
+		shapeType := ""
 		switch {
+		case regexp.MustCompile(`^(数値|Long|int|Integer|xsd:(int|Int))$`).MatchString(typeText):
+			shapeType = "Integer"
+		case regexp.MustCompile(`^(文字列|String|xsd:string|Sring|string|String )$`).MatchString(typeText):
+			shapeType = "String"
+		case regexp.MustCompile(`^(真偽値|boolean|Boolean|bBoolean)$`).MatchString(typeText):
+			shapeType = "Boolean"
+		case regexp.MustCompile(`^Double$`).MatchString(typeText):
+			shapeType = "Double"
+		case regexp.MustCompile(`^(日付|日時)$`).MatchString(typeText):
+			shapeType = "TStamp"
+		case regexp.MustCompile(`^文字配列$`).MatchString(typeText):
+			shapeType = "List"
+		}
+
+		switch {
+		case regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
+			r := regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`)
+			match := r.FindAllStringSubmatch(shapeName, -1)
+			parentShapeName := match[0][1]
+			childShapeName := match[0][2]
+			parentShape := shapes.findShapeByName(parentShapeName)
+			if parentShape.ShapeName == "" {
+				parentShape = Shape{
+					ShapeName: parentShapeName,
+					Type:      "structure",
+					Members:   map[string]ShapeRef{},
+				}
+				shapes = append(shapes, parentShape)
+			}
+			parentShape.Members[childShapeName] = ShapeRef{ShapeName: childShapeName}
+			childShape := Shape{ShapeName: childShapeName, Type: strings.ToLower(shapeType)}
+			shapes = append(shapes, childShape)
+			member.ShapeName = parentShapeName
+			shapeName = parentShapeName
 		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
 			match := r.FindAllStringSubmatch(shapeName, -1)
@@ -238,22 +273,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 				shapes = append(shapes, structShape)
 			}
 			structShape.Members[value] = ShapeRef{ShapeName: "String"}
-		case regexp.MustCompile(`^(数値|Long|int|Integer|xsd:(int|Int))$`).MatchString(typeText):
-			member.ShapeName = "Integer"
-		case regexp.MustCompile(`^(文字列|String|xsd:string|Sring|string|String )$`).MatchString(typeText):
-			member.ShapeName = "String"
-		case regexp.MustCompile(`^(真偽値|boolean|Boolean|bBoolean)$`).MatchString(typeText):
-			member.ShapeName = "Boolean"
-		case regexp.MustCompile(`^Double$`).MatchString(typeText):
-			member.ShapeName = "Double"
-		case regexp.MustCompile(`^(日付|日時)$`).MatchString(typeText):
-			member.ShapeName = "TStamp"
-			tstampShape := Shape{
-				ShapeName: member.ShapeName,
-				Type:      "timestamp",
-			}
-			shapes = append(shapes, tstampShape)
-		case regexp.MustCompile(`^文字配列$`).MatchString(typeText):
+		case shapeType == "List":
 			shapeName = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(shapeName, "")
 			member.ShapeName = fmt.Sprintf("%sStringList", shapeName)
 			stringListShape := Shape{
@@ -262,6 +282,15 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 				Member:    &ShapeRef{ShapeName: "String"},
 			}
 			shapes = append(shapes, stringListShape)
+		case shapeType == "TStamp":
+			member.ShapeName = shapeType
+			tstampShape := Shape{
+				ShapeName: shapeType,
+				Type:      "timestamp",
+			}
+			shapes = append(shapes, tstampShape)
+		case shapeType == "Integer" || shapeType == "String" || shapeType == "Boolean" || shapeType == "Double":
+			member.ShapeName = shapeType
 		}
 
 		requiredText := s.Find(g.RequestShapeRequiredSelector).First().Text()

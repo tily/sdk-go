@@ -214,8 +214,24 @@
       "base": " requestId",
       "refs": null
     },
+    "AccountName": {
+      "base": "AccountName",
+      "refs": null
+    },
     "AccountingType": {
       "base": "AccountingType",
+      "refs": null
+    },
+    "Address": {
+      "base": "Address",
+      "refs": null
+    },
+    "Agreement": {
+      "base": "Agreement",
+      "refs": null
+    },
+    "All": {
+      "base": "All",
       "refs": null
     },
     "AllocateAddressRequest": {
@@ -242,6 +258,10 @@
       "base": "AuthorizeSecurityGroupIngressRequest",
       "refs": null
     },
+    "AvailabilityZone": {
+      "base": "AvailabilityZone",
+      "refs": null
+    },
     "BalancingType": {
       "base": "BalancingType",
       "refs": null
@@ -250,12 +270,24 @@
       "base": "Boolean",
       "refs": null
     },
+    "BypassInterface": {
+      "base": "BypassInterface",
+      "refs": null
+    },
+    "Bytes": {
+      "base": "Bytes",
+      "refs": null
+    },
     "CancelCopyInstancesRequest": {
       "base": "CancelCopyInstancesRequest",
       "refs": null
     },
     "CancelUploadRequest": {
       "base": "CancelUploadRequest",
+      "refs": null
+    },
+    "CertInfo": {
+      "base": "CertInfo",
       "refs": null
     },
     "ClearLoadBalancerSessionRequest": {
@@ -274,8 +306,20 @@
       "base": "CookieName",
       "refs": null
     },
+    "CopyInstance": {
+      "base": "CopyInstance",
+      "refs": null
+    },
     "CopyInstancesRequest": {
       "base": "CopyInstancesRequest",
+      "refs": null
+    },
+    "CountryName": {
+      "base": "CountryName",
+      "refs": null
+    },
+    "CourseUpdate": {
+      "base": "CourseUpdate",
       "refs": null
     },
     "CreateCustomerGatewayRequest": {
@@ -330,8 +374,16 @@
       "base": "CreatedTime",
       "refs": null
     },
+    "DDay": {
+      "base": "DDay",
+      "refs": null
+    },
     "DNSName": {
       "base": "DNSName",
+      "refs": null
+    },
+    "Day": {
+      "base": "Day",
       "refs": null
     },
     "DeleteCustomerGatewayRequest": {
@@ -352,6 +404,10 @@
     },
     "DeleteLoadBalancerRequest": {
       "base": "DeleteLoadBalancerRequest",
+      "refs": null
+    },
+    "DeleteOnTermination": {
+      "base": "DeleteOnTermination",
       "refs": null
     },
     "DeleteRouteRequest": {
@@ -498,6 +554,14 @@
       "base": "Description",
       "refs": null
     },
+    "Destination": {
+      "base": "Destination",
+      "refs": null
+    },
+    "DestinationPort": {
+      "base": "DestinationPort",
+      "refs": null
+    },
     "DetachVolumeRequest": {
       "base": "DetachVolumeRequest",
       "refs": null
@@ -522,8 +586,48 @@
       "base": "DownloadSslCertificateRequest",
       "refs": null
     },
+    "Ebs": {
+      "base": "Ebs",
+      "refs": null
+    },
+    "EmailAddress": {
+      "base": "EmailAddress",
+      "refs": null
+    },
+    "Enable": {
+      "base": "Enable",
+      "refs": null
+    },
     "Enabled": {
       "base": "Enabled",
+      "refs": null
+    },
+    "Encapsulation": {
+      "base": "Encapsulation",
+      "refs": null
+    },
+    "Encoding": {
+      "base": "Encoding",
+      "refs": null
+    },
+    "EncryptionAlgorithm": {
+      "base": "EncryptionAlgorithm",
+      "refs": null
+    },
+    "EndNumber": {
+      "base": "EndNumber",
+      "refs": null
+    },
+    "EndingDDay": {
+      "base": "EndingDDay",
+      "refs": null
+    },
+    "EndingMonth": {
+      "base": "EndingMonth",
+      "refs": null
+    },
+    "EndingTimeZone": {
+      "base": "EndingTimeZone",
       "refs": null
     },
     "ExpirationPeriod": {
@@ -534,12 +638,32 @@
       "base": "FilterType",
       "refs": null
     },
+    "Format": {
+      "base": "Format",
+      "refs": null
+    },
+    "GroupName": {
+      "base": "GroupName",
+      "refs": null
+    },
+    "HashAlgorithm": {
+      "base": "HashAlgorithm",
+      "refs": null
+    },
+    "HealthCheck": {
+      "base": "HealthCheck",
+      "refs": null
+    },
     "HealthyThreshold": {
       "base": "HealthyThreshold",
       "refs": null
     },
     "IPAddress": {
       "base": "IPAddress",
+      "refs": null
+    },
+    "Image": {
+      "base": "Image",
       "refs": null
     },
     "ImportInstanceRequest": {
@@ -550,12 +674,28 @@
       "base": "ImportKeyPairRequest",
       "refs": null
     },
+    "ImportManifestUrl": {
+      "base": "ImportManifestUrl",
+      "refs": null
+    },
+    "InboundInterface": {
+      "base": "InboundInterface",
+      "refs": null
+    },
     "InstanceId": {
       "base": "InstanceId",
       "refs": null
     },
+    "InstanceName": {
+      "base": "InstanceName",
+      "refs": null
+    },
     "InstancePort": {
       "base": "InstancePort",
+      "refs": null
+    },
+    "InstanceType": {
+      "base": "InstanceType",
       "refs": null
     },
     "InstanceUniqueId": {
@@ -566,8 +706,32 @@
       "base": "Integer",
       "refs": null
     },
+    "InternetKeyExchange": {
+      "base": "InternetKeyExchange",
+      "refs": null
+    },
     "Interval": {
       "base": "Interval",
+      "refs": null
+    },
+    "IpAddress": {
+      "base": "IpAddress",
+      "refs": null
+    },
+    "IpType": {
+      "base": "IpType",
+      "refs": null
+    },
+    "ListenInterface": {
+      "base": "ListenInterface",
+      "refs": null
+    },
+    "Listener": {
+      "base": "Listener",
+      "refs": null
+    },
+    "ListenerUpdate": {
+      "base": "ListenerUpdate",
       "refs": null
     },
     "LoadBalancerName": {
@@ -578,8 +742,16 @@
       "base": "LoadBalancerPort",
       "refs": null
     },
+    "LocationName": {
+      "base": "LocationName",
+      "refs": null
+    },
     "Memo": {
       "base": "Memo",
+      "refs": null
+    },
+    "Mode": {
+      "base": "Mode",
       "refs": null
     },
     "ModifyImageAttributeRequest": {
@@ -596,6 +768,30 @@
     },
     "ModifyVolumeAttributeRequest": {
       "base": "ModifyVolumeAttributeRequest",
+      "refs": null
+    },
+    "Monitoring": {
+      "base": "Monitoring",
+      "refs": null
+    },
+    "Month": {
+      "base": "Month",
+      "refs": null
+    },
+    "NameServer": {
+      "base": "NameServer",
+      "refs": null
+    },
+    "NetworkId": {
+      "base": "NetworkId",
+      "refs": null
+    },
+    "NetworkInterface": {
+      "base": "NetworkInterface",
+      "refs": null
+    },
+    "NetworkName": {
+      "base": "NetworkName",
       "refs": null
     },
     "NetworkVolume": {
@@ -794,6 +990,18 @@
       "base": "NiftyEnableDhcpRequest",
       "refs": null
     },
+    "NiftyIPsecConfiguration": {
+      "base": "NiftyIPsecConfiguration",
+      "refs": null
+    },
+    "NiftyIpIpTunnel": {
+      "base": "NiftyIpIpTunnel",
+      "refs": null
+    },
+    "NiftyIpsecConfiguration": {
+      "base": "NiftyIpsecConfiguration",
+      "refs": null
+    },
     "NiftyModifyAddressAttributeRequest": {
       "base": "NiftyModifyAddressAttributeRequest",
       "refs": null
@@ -826,6 +1034,10 @@
       "base": "NiftyModifyWebProxyAttributeRequest",
       "refs": null
     },
+    "NiftyNetwork": {
+      "base": "NiftyNetwork",
+      "refs": null
+    },
     "NiftyRebootRoutersRequest": {
       "base": "NiftyRebootRoutersRequest",
       "refs": null
@@ -848,6 +1060,10 @@
     },
     "NiftyReleaseVpnGatewayBackupStateRequest": {
       "base": "NiftyReleaseVpnGatewayBackupStateRequest",
+      "refs": null
+    },
+    "NiftyRemoteVpn": {
+      "base": "NiftyRemoteVpn",
       "refs": null
     },
     "NiftyReplaceDhcpConfigRequest": {
@@ -894,6 +1110,10 @@
       "base": "NiftyRetryImportInstanceRequest",
       "refs": null
     },
+    "NiftyTunnel": {
+      "base": "NiftyTunnel",
+      "refs": null
+    },
     "NiftyUpdateAlarmRequest": {
       "base": "NiftyUpdateAlarmRequest",
       "refs": null
@@ -914,8 +1134,56 @@
       "base": "NiftyUpdateVpnGatewayNetworkInterfacesRequest",
       "refs": null
     },
+    "NoDevice": {
+      "base": "NoDevice",
+      "refs": null
+    },
+    "Option": {
+      "base": "Option",
+      "refs": null
+    },
+    "Options": {
+      "base": "Options",
+      "refs": null
+    },
+    "OrganizationName": {
+      "base": "OrganizationName",
+      "refs": null
+    },
+    "OrganizationUnitName": {
+      "base": "OrganizationUnitName",
+      "refs": null
+    },
+    "OutboundInterface": {
+      "base": "OutboundInterface",
+      "refs": null
+    },
+    "Password": {
+      "base": "Password",
+      "refs": null
+    },
+    "PeerSessionId": {
+      "base": "PeerSessionId",
+      "refs": null
+    },
+    "PeerTunnelId": {
+      "base": "PeerTunnelId",
+      "refs": null
+    },
+    "Placement": {
+      "base": "Placement",
+      "refs": null
+    },
     "PolicyName": {
       "base": "PolicyName",
+      "refs": null
+    },
+    "Port": {
+      "base": "Port",
+      "refs": null
+    },
+    "PreSharedKey": {
+      "base": "PreSharedKey",
       "refs": null
     },
     "Primary": {
@@ -926,12 +1194,20 @@
       "base": "Protocol",
       "refs": null
     },
+    "Range": {
+      "base": "Range",
+      "refs": null
+    },
     "ReasonCode": {
       "base": "ReasonCode",
       "refs": null
     },
     "RebootInstancesRequest": {
       "base": "RebootInstancesRequest",
+      "refs": null
+    },
+    "RegionName": {
+      "base": "RegionName",
       "refs": null
     },
     "RegisterCorporateInfoForCertificateRequest": {
@@ -978,16 +1254,100 @@
       "base": "SSLCertificateId",
       "refs": null
     },
+    "SessionId": {
+      "base": "SessionId",
+      "refs": null
+    },
+    "SessionStickinessPolicyUpdate": {
+      "base": "SessionStickinessPolicyUpdate",
+      "refs": null
+    },
     "SetFilterForLoadBalancerRequest": {
       "base": "SetFilterForLoadBalancerRequest",
+      "refs": null
+    },
+    "SetFriday": {
+      "base": "SetFriday",
+      "refs": null
+    },
+    "SetMonday": {
+      "base": "SetMonday",
+      "refs": null
+    },
+    "SetSaturday": {
+      "base": "SetSaturday",
+      "refs": null
+    },
+    "SetSunday": {
+      "base": "SetSunday",
+      "refs": null
+    },
+    "SetThursday": {
+      "base": "SetThursday",
+      "refs": null
+    },
+    "SetTuesday": {
+      "base": "SetTuesday",
+      "refs": null
+    },
+    "SetWednesday": {
+      "base": "SetWednesday",
+      "refs": null
+    },
+    "Size": {
+      "base": "Size",
+      "refs": null
+    },
+    "SnapshotId": {
+      "base": "SnapshotId",
+      "refs": null
+    },
+    "SorryPageUpdate": {
+      "base": "SorryPageUpdate",
+      "refs": null
+    },
+    "Source": {
+      "base": "Source",
+      "refs": null
+    },
+    "SourcePort": {
+      "base": "SourcePort",
       "refs": null
     },
     "StartInstancesRequest": {
       "base": "StartInstancesRequest",
       "refs": null
     },
+    "StartNumber": {
+      "base": "StartNumber",
+      "refs": null
+    },
+    "StartingDDay": {
+      "base": "StartingDDay",
+      "refs": null
+    },
+    "StartingMonth": {
+      "base": "StartingMonth",
+      "refs": null
+    },
+    "StartingTimeZone": {
+      "base": "StartingTimeZone",
+      "refs": null
+    },
     "State": {
       "base": "State",
+      "refs": null
+    },
+    "StateName": {
+      "base": "StateName",
+      "refs": null
+    },
+    "StaticRoutesOnly": {
+      "base": "StaticRoutesOnly",
+      "refs": null
+    },
+    "StatusCode": {
+      "base": "StatusCode",
       "refs": null
     },
     "StopInstancesRequest": {
@@ -1006,8 +1366,24 @@
       "base": "TerminateInstancesRequest",
       "refs": null
     },
+    "TimeZone": {
+      "base": "TimeZone",
+      "refs": null
+    },
     "Timeout": {
       "base": "Timeout",
+      "refs": null
+    },
+    "Translation": {
+      "base": "Translation",
+      "refs": null
+    },
+    "TunnelId": {
+      "base": "TunnelId",
+      "refs": null
+    },
+    "Type": {
+      "base": "Type",
       "refs": null
     },
     "UnhealthyThreshold": {
@@ -1034,8 +1410,24 @@
       "base": "UploadSslCertificateRequest",
       "refs": null
     },
+    "UserData": {
+      "base": "UserData",
+      "refs": null
+    },
     "UserId": {
       "base": "UserId",
+      "refs": null
+    },
+    "Value": {
+      "base": "Value",
+      "refs": null
+    },
+    "Volume": {
+      "base": "Volume",
+      "refs": null
+    },
+    "VolumeSize": {
+      "base": "VolumeSize",
       "refs": null
     },
     "acceptedRouteCount": {
