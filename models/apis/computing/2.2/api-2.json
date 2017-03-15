@@ -2016,34 +2016,34 @@
     "AuthorizeSecurityGroupIngressRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tGroupName": {
+        "GroupName": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.Description": {
+        "IpPermissions.n.Description": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.FromPort": {
+        "IpPermissions.n.FromPort": {
           "shape": "Integer"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.Groups.\n\t\t\t\t\t\t\t\t\tm.GroupName": {
+        "IpPermissions.n.Groups.m.GroupName": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.Groups.\n\t\t\t\t\t\t\t\t\tm.UserId": {
+        "IpPermissions.n.Groups.m.UserId": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.InOut": {
+        "IpPermissions.n.InOut": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.IpProtocol": {
+        "IpPermissions.n.IpProtocol": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.IpRanges.\n\t\t\t\t\t\t\t\t\tm.CidrIp": {
+        "IpPermissions.n.IpRanges.m.CidrIp": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tIpPermissions.n.ToPort": {
+        "IpPermissions.n.ToPort": {
           "shape": "Integer"
         },
-        "\n\t\t\t\t\t\t\t\tUserId": {
+        "UserId": {
           "shape": "String"
         }
       }
@@ -2290,25 +2290,25 @@
     "CreateLoadBalancerRequest": {
       "type": "structure",
       "members": {
-        " Listeners.member.n.\n                BalancingType": {
-          "shape": "String"
-        },
         "AccountingType": {
           "shape": "String"
         },
-        "AvailabilityZones .member.n": {
+        "AvailabilityZones.member.n": {
           "shape": "String"
         },
         "IpVersion": {
           "shape": "String"
         },
-        "Listeners.member.n.\n                InstancePort": {
+        "Listeners.member.n.BalancingType": {
+          "shape": "String"
+        },
+        "Listeners.member.n.InstancePort": {
           "shape": "Integer"
         },
-        "Listeners.member.n.\n                LoadBalancerPort": {
+        "Listeners.member.n.LoadBalancerPort": {
           "shape": "Integer"
         },
-        "Listeners.member.n.  Protocol": {
+        "Listeners.member.n.Protocol": {
           "shape": "String"
         },
         "LoadBalancerName": {
@@ -2369,10 +2369,10 @@
     "CreateSecurityGroupRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tGroupDescription": {
+        "GroupDescription": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tGroupName": {
+        "GroupName": {
           "shape": "String"
         },
         "Placement.AvailabilityZone": {
@@ -2673,7 +2673,7 @@
     "DeleteSecurityGroupRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tGroupName": {
+        "GroupName": {
           "shape": "String"
         }
       }
@@ -2748,10 +2748,10 @@
     "DeregisterInstancesFromSecurityGroupRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tGroupName": {
+        "GroupName": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tInstanceId.n": {
+        "InstanceId.n": {
           "shape": "String"
         }
       }
@@ -2845,11 +2845,11 @@
     "DescribeInstanceHealthRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tInstances.member.n.\nInstanceId": {
-          "shape": "String"
-        },
         "InstancePort": {
           "shape": "Integer"
+        },
+        "Instances.member.n.InstanceId": {
+          "shape": "String"
         },
         "LoadBalancerName": {
           "shape": "String"
@@ -2886,10 +2886,10 @@
     "DescribeLoadBalancersRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tLoadBalancerNames.LoadBalancerPort.n": {
+        "LoadBalancerNames.InstancePort.n": {
           "shape": "Integer"
         },
-        "LoadBalancerNames.InstancePort.n": {
+        "LoadBalancerNames.LoadBalancerPort.n": {
           "shape": "Integer"
         },
         "LoadBalancerNames.member.n": {
@@ -2923,7 +2923,7 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "RouteTableId .n": {
+        "RouteTableId.n": {
           "shape": "String"
         }
       }
@@ -2931,19 +2931,19 @@
     "DescribeSecurityActivitiesRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tActivityDate": {
+        "ActivityDate": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tGroupName": {
+        "GroupName": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tRange.All": {
+        "Range.All": {
           "shape": "Boolean"
         },
-        "\n\t\t\t\t\t\t\t\tRange.EndNumber": {
+        "Range.EndNumber": {
           "shape": "Integer"
         },
-        "\n\t\t\t\t\t\t\t\tRange.StartNumber": {
+        "Range.StartNumber": {
           "shape": "Integer"
         }
       }
@@ -2993,10 +2993,10 @@
     "DescribeSslCertificatesRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tFqdnId.n": {
+        "Fqdn.n": {
           "shape": "String"
         },
-        "Fqdn.n": {
+        "FqdnId.n": {
           "shape": "String"
         }
       }
@@ -3220,7 +3220,7 @@
         "IpType": {
           "shape": "String"
         },
-        "Monitoring .Enabled": {
+        "Monitoring.Enabled": {
           "shape": "String"
         },
         "NetworkInterface.n.DeviceIndex": {
@@ -3318,7 +3318,7 @@
         "ImageId": {
           "shape": "String"
         },
-        "LaunchPermission.Add.n.Group\n": {
+        "LaunchPermission.Add.n.Group": {
           "shape": "String"
         },
         "LaunchPermission.Add.n.UserId": {
@@ -5213,10 +5213,10 @@
     "RegisterInstancesWithSecurityGroupRequest": {
       "type": "structure",
       "members": {
-        " GroupName": {
+        "GroupName": {
           "shape": "String"
         },
-        " InstanceId.n": {
+        "InstanceId.n": {
           "shape": "String"
         }
       }
@@ -5224,16 +5224,16 @@
     "RegisterPortWithLoadBalancerRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tListeners.member.n.BalancingType": {
+        "Listeners.member.n.BalancingType": {
           "shape": "String"
         },
-        "\n\t\t\t\t\t\t\t\tListeners.member.n.InstancePort": {
+        "Listeners.member.n.InstancePort": {
           "shape": "Integer"
         },
-        "\n\t\t\t\t\t\t\t\tListeners.member.n.LoadBalancerPort": {
+        "Listeners.member.n.LoadBalancerPort": {
           "shape": "Integer"
         },
-        "\n\t\t\t\t\t\t\t\tListeners.member.n.Protocol": {
+        "Listeners.member.n.Protocol": {
           "shape": "String"
         },
         "LoadBalancerName": {
@@ -5365,22 +5365,22 @@
         "Agreement": {
           "shape": "Boolean"
         },
-        "BlockDeviceMapping .n.DeviceName": {
+        "BlockDeviceMapping.n.DeviceName": {
           "shape": "String"
         },
-        "BlockDeviceMapping .n.Ebs.DeleteOnTermination": {
+        "BlockDeviceMapping.n.Ebs.DeleteOnTermination": {
           "shape": "Boolean"
         },
-        "BlockDeviceMapping .n.Ebs.NoDevice": {
+        "BlockDeviceMapping.n.Ebs.NoDevice": {
           "shape": "Boolean"
         },
-        "BlockDeviceMapping .n.Ebs.SnapshotId": {
+        "BlockDeviceMapping.n.Ebs.SnapshotId": {
           "shape": "String"
         },
-        "BlockDeviceMapping .n.Ebs.VolumeSize": {
+        "BlockDeviceMapping.n.Ebs.VolumeSize": {
           "shape": "Integer"
         },
-        "BlockDeviceMapping .n.VirtualName": {
+        "BlockDeviceMapping.n.VirtualName": {
           "shape": "String"
         },
         "Description": {
@@ -5422,7 +5422,7 @@
         "MinCount": {
           "shape": "Integer"
         },
-        "Monitoring .Enabled": {
+        "Monitoring.Enabled": {
           "shape": "Boolean"
         },
         "NetworkInterface.n.DeviceIndex": {
@@ -5475,13 +5475,13 @@
     "SetFilterForLoadBalancerRequest": {
       "type": "structure",
       "members": {
-        "\n\t\t\t\t\t\t\t\tIPAddresses.member.n.AddOnFilter": {
-          "shape": "Boolean"
-        },
-        "\n\t\t\t\t\t\t\t\tIPAddresses.member.n.IPAddress": {
+        "FilterType": {
           "shape": "String"
         },
-        "FilterType": {
+        "IPAddresses.member.n.AddOnFilter": {
+          "shape": "Boolean"
+        },
+        "IPAddresses.member.n.IPAddress": {
           "shape": "String"
         },
         "InstancePort": {
@@ -5606,23 +5606,23 @@
         "AccountingTypeUpdate": {
           "shape": "String"
         },
-        "ListenerUpdate.\n                InstancePort": {
+        "ListenerUpdate.InstancePort": {
           "shape": "Integer"
         },
-        "ListenerUpdate.\n                LoadBalancerPort": {
-          "shape": "Integer"
-        },
-        "ListenerUpdate.Listener.\n                BalancingType": {
+        "ListenerUpdate.Listener.BalancingType": {
           "shape": "String"
         },
-        "ListenerUpdate.Listener.\n                InstancePort": {
+        "ListenerUpdate.Listener.InstancePort": {
           "shape": "Integer"
         },
-        "ListenerUpdate.Listener.\n                LoadBalancerPort": {
+        "ListenerUpdate.Listener.LoadBalancerPort": {
           "shape": "Integer"
         },
-        "ListenerUpdate.Listener.\n                Protocol": {
+        "ListenerUpdate.Listener.Protocol": {
           "shape": "String"
+        },
+        "ListenerUpdate.LoadBalancerPort": {
+          "shape": "Integer"
         },
         "LoadBalancerName": {
           "shape": "String"

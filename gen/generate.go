@@ -186,6 +186,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 	doc.Find(g.RequestShapeSelector).Each(func(_ int, s *goquery.Selection) {
 		member := ShapeRef{}
 		shapeName := s.Find(g.RequestShapeNameSelector).First().Text()
+		shapeName = regexp.MustCompile(`(\s|\t|\n)`).ReplaceAllString(shapeName, "")
 		if shapeName == "" {
 			return
 		}
