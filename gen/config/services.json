@@ -31,6 +31,7 @@
       "resultShapeSelector": "table[summary='応答フィールド'] tr:nth-child(n+2)",
       "resultShapeNameSelector": "td:nth-child(1)",
       "resultShapeTypeSelector": "td:nth-child(3)",
+      "resultShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|$)",
       "resultExampleSelector": "code.cd-01:last-child"
     }
   },

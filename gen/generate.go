@@ -37,6 +37,7 @@ type Generator struct {
 	ResultShapeSelector          string
 	ResultShapeNameSelector      string
 	ResultShapeTypeSelector      string
+	ResultShapeTypeRegexp        string
 	ResultExampleSelector        string
 }
 
@@ -300,6 +301,20 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 		}
 
 		typeText := s.Find(g.ResultShapeTypeSelector).First().Text()
+		if g.ResultShapeTypeRegexp != "" {
+			r := regexp.MustCompile(g.ResultShapeTypeRegexp)
+			m := r.FindStringSubmatch(typeText)
+			result := make(map[string]string)
+			for i, name := range r.SubexpNames() {
+				if i != 0 && i <= len(m) {
+					result[name] = m[i]
+				}
+			}
+			if result["type"] == "" {
+				return
+			}
+			typeText = result["type"]
+		}
 		switch {
 		case typeText == "数値" || typeText == "Long":
 			shape := Shape{ShapeName: shapeName, Type: "integer"}
