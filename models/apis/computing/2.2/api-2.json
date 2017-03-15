@@ -1918,6 +1918,12 @@
     "AccountingType": {
       "type": "string"
     },
+    "AccountingTypeList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Address": {
       "type": "string"
     },
@@ -2060,8 +2066,20 @@
         }
       }
     },
+    "AutoScalingGroupNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "AvailabilityZone": {
       "type": "string"
+    },
+    "AvailabilityZonesList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "BalancingType": {
       "type": "string"
@@ -2165,6 +2183,12 @@
         "HealthCheck",
         "HealthCheck"
       ]
+    },
+    "ConversionTaskIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "CookieExpirationPeriod": {
       "type": "string"
@@ -2343,8 +2367,9 @@
         "AccountingType": {
           "shape": "String"
         },
-        "AvailabilityZones.member.n": {
-          "shape": "String"
+        "AvailabilityZones": {
+          "shape": "AvailabilityZonesList",
+          "locationName": "AvailabilityZones"
         },
         "IpVersion": {
           "shape": "String"
@@ -2560,8 +2585,9 @@
         "Placement": {
           "shape": "Placement"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         },
         "Type": {
           "shape": "String"
@@ -2571,8 +2597,20 @@
     "CreatedTime": {
       "type": "timestamp"
     },
+    "CustomerGatewayIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "DNSName": {
       "type": "string"
+    },
+    "DataTypeList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "DeleteCustomerGatewayRequest": {
       "type": "structure",
@@ -2744,16 +2782,18 @@
         "GroupName": {
           "shape": "String"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         }
       }
     },
     "DescribeAddressesRequest": {
       "type": "structure",
       "members": {
-        "PublicIp.n": {
-          "shape": "String"
+        "PublicIp": {
+          "shape": "PublicIpList",
+          "locationName": "PublicIp"
         }
       }
     },
@@ -2771,16 +2811,18 @@
     "DescribeAvailabilityZonesRequest": {
       "type": "structure",
       "members": {
-        "ZoneName.n": {
-          "shape": "String"
+        "ZoneName": {
+          "shape": "ZoneNameList",
+          "locationName": "ZoneName"
         }
       }
     },
     "DescribeCustomerGatewaysRequest": {
       "type": "structure",
       "members": {
-        "CustomerGatewayId.n": {
-          "shape": "String"
+        "CustomerGatewayId": {
+          "shape": "CustomerGatewayIdList",
+          "locationName": "CustomerGatewayId"
         },
         "Filter.n.Name": {
           "shape": "String"
@@ -2788,8 +2830,9 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "NiftyCustomerGatewayName.n": {
-          "shape": "String"
+        "NiftyCustomerGatewayName": {
+          "shape": "NiftyCustomerGatewayNameList",
+          "locationName": "NiftyCustomerGatewayName"
         }
       }
     },
@@ -2810,17 +2853,21 @@
     "DescribeImagesRequest": {
       "type": "structure",
       "members": {
-        "ExecutableBy.n": {
-          "shape": "String"
+        "ExecutableBy": {
+          "shape": "ExecutableByList",
+          "locationName": "ExecutableBy"
         },
-        "ImageId.n": {
-          "shape": "String"
+        "ImageId": {
+          "shape": "ImageIdList",
+          "locationName": "ImageId"
         },
-        "ImageName.n": {
-          "shape": "String"
+        "ImageName": {
+          "shape": "ImageNameList",
+          "locationName": "ImageName"
         },
-        "Owner.n": {
-          "shape": "String"
+        "Owner": {
+          "shape": "OwnerList",
+          "locationName": "Owner"
         }
       }
     },
@@ -2860,33 +2907,37 @@
     "DescribeInstancesRequest": {
       "type": "structure",
       "members": {
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
-        "Tenancy.n": {
-          "shape": "String"
+        "Tenancy": {
+          "shape": "TenancyList",
+          "locationName": "Tenancy"
         }
       }
     },
     "DescribeKeyPairsRequest": {
       "type": "structure",
       "members": {
-        "KeyName.n": {
-          "shape": "String"
+        "KeyName": {
+          "shape": "KeyNameList",
+          "locationName": "KeyName"
         }
       }
     },
     "DescribeLoadBalancersRequest": {
       "type": "structure",
       "members": {
+        "LoadBalancerNames": {
+          "shape": "LoadBalancerNamesList",
+          "locationName": "LoadBalancerNames"
+        },
         "LoadBalancerNames.InstancePort.n": {
           "shape": "Integer"
         },
         "LoadBalancerNames.LoadBalancerPort.n": {
           "shape": "Integer"
-        },
-        "LoadBalancerNames.member.n": {
-          "shape": "String"
         }
       }
     },
@@ -2899,8 +2950,9 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "RegionName.n": {
-          "shape": "String"
+        "RegionName": {
+          "shape": "RegionNameList",
+          "locationName": "RegionName"
         }
       }
     },
@@ -2916,8 +2968,9 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "RouteTableId.n": {
-          "shape": "String"
+        "RouteTableId": {
+          "shape": "RouteTableIdList",
+          "locationName": "RouteTableId"
         }
       }
     },
@@ -2947,8 +3000,9 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "GroupName.n": {
-          "shape": "String"
+        "GroupName": {
+          "shape": "GroupNameList",
+          "locationName": "GroupName"
         }
       }
     },
@@ -2980,19 +3034,22 @@
     "DescribeSslCertificatesRequest": {
       "type": "structure",
       "members": {
-        "Fqdn.n": {
-          "shape": "String"
+        "Fqdn": {
+          "shape": "FqdnList",
+          "locationName": "Fqdn"
         },
-        "FqdnId.n": {
-          "shape": "String"
+        "FqdnId": {
+          "shape": "FqdnIdList",
+          "locationName": "FqdnId"
         }
       }
     },
     "DescribeUploadsRequest": {
       "type": "structure",
       "members": {
-        "ConversionTaskId.n": {
-          "shape": "String"
+        "ConversionTaskId": {
+          "shape": "ConversionTaskIdList",
+          "locationName": "ConversionTaskId"
         }
       }
     },
@@ -3024,8 +3081,9 @@
     "DescribeVolumesRequest": {
       "type": "structure",
       "members": {
-        "VolumeId.n": {
-          "shape": "String"
+        "VolumeId": {
+          "shape": "VolumeIdList",
+          "locationName": "VolumeId"
         }
       }
     },
@@ -3038,8 +3096,9 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "VpnConnectionId.n": {
-          "shape": "String"
+        "VpnConnectionId": {
+          "shape": "VpnConnectionIdList",
+          "locationName": "VpnConnectionId"
         }
       }
     },
@@ -3052,11 +3111,13 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "NiftyVpnGatewayName.n": {
-          "shape": "String"
+        "NiftyVpnGatewayName": {
+          "shape": "NiftyVpnGatewayNameList",
+          "locationName": "NiftyVpnGatewayName"
         },
-        "VpnGatewayId.n": {
-          "shape": "String"
+        "VpnGatewayId": {
+          "shape": "VpnGatewayIdList",
+          "locationName": "VpnGatewayId"
         }
       }
     },
@@ -3148,6 +3209,12 @@
         "Users.member.n.UserId"
       ]
     },
+    "DistributionIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Double": {
       "type": "double"
     },
@@ -3169,6 +3236,12 @@
     "EmailAddress": {
       "type": "string"
     },
+    "EmailAddressList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Enable": {
       "type": "boolean"
     },
@@ -3187,14 +3260,38 @@
     "EndNumber": {
       "type": "integer"
     },
+    "ExecutableByList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "ExpirationPeriod": {
       "type": "integer"
     },
     "FilterType": {
       "type": "string"
     },
+    "FqdnIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "FqdnList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "GroupName": {
       "type": "string"
+    },
+    "GroupNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "HashAlgorithm": {
       "type": "string"
@@ -3224,6 +3321,18 @@
     },
     "IPAddress": {
       "type": "string"
+    },
+    "ImageIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "ImageNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "ImportInstanceRequest": {
       "type": "structure",
@@ -3297,8 +3406,9 @@
         "PublicIp": {
           "shape": "String"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         },
         "SubnetId": {
           "shape": "String"
@@ -3343,14 +3453,32 @@
     "InstanceId": {
       "type": "string"
     },
+    "InstanceIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "InstanceName": {
       "type": "string"
     },
     "InstancePort": {
       "type": "integer"
     },
+    "InstanceSnapshotIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "InstanceType": {
       "type": "string"
+    },
+    "InstanceTypeList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "InstanceUniqueId": {
       "type": "string"
@@ -3369,6 +3497,12 @@
     },
     "IpType": {
       "type": "string"
+    },
+    "KeyNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "ListenInterface": {
       "type": "structure",
@@ -3415,8 +3549,26 @@
     "LoadBalancerName": {
       "type": "string"
     },
+    "LoadBalancerNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "LoadBalancerNamesList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "LoadBalancerPort": {
       "type": "integer"
+    },
+    "LoadBalancerPortList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "LocationName": {
       "type": "string"
@@ -3448,8 +3600,9 @@
         "LaunchPermission.Remove.n.UserId": {
           "shape": "String"
         },
-        "ProductCode.n": {
-          "shape": "String"
+        "ProductCode": {
+          "shape": "ProductCodeList",
+          "locationName": "ProductCode"
         },
         "Value": {
           "shape": "String"
@@ -3529,8 +3682,20 @@
     "NameServer": {
       "type": "string"
     },
+    "NatTableIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "NetworkId": {
       "type": "string"
+    },
+    "NetworkIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "NetworkInterface": {
       "type": "structure",
@@ -3552,8 +3717,9 @@
     "NiftyAssociateImageRequest": {
       "type": "structure",
       "members": {
-        "DistributionId.n": {
-          "shape": "String"
+        "DistributionId": {
+          "shape": "DistributionIdList",
+          "locationName": "DistributionId"
         },
         "ImageId": {
           "shape": "String"
@@ -3618,23 +3784,28 @@
         "Description": {
           "shape": "String"
         },
-        "EmailAddress.l": {
-          "shape": "String"
+        "EmailAddress": {
+          "shape": "EmailAddressList",
+          "locationName": "EmailAddress"
         },
         "FunctionName": {
           "shape": "String"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
-        "LoadBalancerName.n": {
-          "shape": "String"
+        "LoadBalancerName": {
+          "shape": "LoadBalancerNameList",
+          "locationName": "LoadBalancerName"
         },
-        "LoadBalancerPort.n": {
-          "shape": "String"
+        "LoadBalancerPort": {
+          "shape": "LoadBalancerPortList",
+          "locationName": "LoadBalancerPort"
         },
-        "Partition.n": {
-          "shape": "String"
+        "Partition": {
+          "shape": "PartitionList",
+          "locationName": "Partition"
         },
         "Rule.m.BreachDuration": {
           "shape": "Integer"
@@ -3659,7 +3830,7 @@
         "FunctionName",
         "Rule.m.DataType",
         "Rule.m.BreachDuration",
-        "EmailAddress.l"
+        "EmailAddress"
       ]
     },
     "NiftyCreateAutoScalingGroupRequest": {
@@ -3755,8 +3926,9 @@
         "ScalingTrigger.n.UpperThreshold": {
           "shape": "Double"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         }
       },
       "required": [
@@ -3941,8 +4113,9 @@
         "RouterName": {
           "shape": "String"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         },
         "Type": {
           "shape": "String"
@@ -3980,6 +4153,12 @@
       "required": [
         "ListenPort"
       ]
+    },
+    "NiftyCustomerGatewayNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "NiftyDeleteAlarmRequest": {
       "type": "structure",
@@ -4055,11 +4234,13 @@
     "NiftyDeleteInstanceSnapshotRequest": {
       "type": "structure",
       "members": {
-        "InstanceSnapshotId.n": {
-          "shape": "String"
+        "InstanceSnapshotId": {
+          "shape": "InstanceSnapshotIdList",
+          "locationName": "InstanceSnapshotId"
         },
-        "SnapshotName.n": {
-          "shape": "String"
+        "SnapshotName": {
+          "shape": "SnapshotNameList",
+          "locationName": "SnapshotName"
         }
       }
     },
@@ -4203,8 +4384,9 @@
     "NiftyDescribeAlarmsPartitionsRequest": {
       "type": "structure",
       "members": {
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         }
       }
     },
@@ -4222,8 +4404,9 @@
     "NiftyDescribeAutoScalingGroupsRequest": {
       "type": "structure",
       "members": {
-        "AutoScalingGroupName.n": {
-          "shape": "String"
+        "AutoScalingGroupName": {
+          "shape": "AutoScalingGroupNameList",
+          "locationName": "AutoScalingGroupName"
         }
       }
     },
@@ -4258,11 +4441,13 @@
     "NiftyDescribeInstanceSnapshotsRequest": {
       "type": "structure",
       "members": {
-        "InstanceSnapshotId.n": {
-          "shape": "String"
+        "InstanceSnapshotId": {
+          "shape": "InstanceSnapshotIdList",
+          "locationName": "InstanceSnapshotId"
         },
-        "SnapshotName.n": {
-          "shape": "String"
+        "SnapshotName": {
+          "shape": "SnapshotNameList",
+          "locationName": "SnapshotName"
         }
       }
     },
@@ -4275,16 +4460,18 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "NatTableId.n": {
-          "shape": "String"
+        "NatTableId": {
+          "shape": "NatTableIdList",
+          "locationName": "NatTableId"
         }
       }
     },
     "NiftyDescribePerformanceChartRequest": {
       "type": "structure",
       "members": {
-        "DataType.n": {
-          "shape": "String"
+        "DataType": {
+          "shape": "DataTypeList",
+          "locationName": "DataType"
         },
         "FromDate": {
           "shape": "String"
@@ -4292,8 +4479,9 @@
         "FunctionName": {
           "shape": "String"
         },
-        "ResourceName.n": {
-          "shape": "String"
+        "ResourceName": {
+          "shape": "ResourceNameList",
+          "locationName": "ResourceName"
         },
         "ToDate": {
           "shape": "String"
@@ -4304,7 +4492,7 @@
       },
       "required": [
         "FunctionName",
-        "ResourceName.n"
+        "ResourceName"
       ]
     },
     "NiftyDescribePrivateLansRequest": {
@@ -4316,11 +4504,13 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "NetworkId.n": {
-          "shape": "String"
+        "NetworkId": {
+          "shape": "NetworkIdList",
+          "locationName": "NetworkId"
         },
-        "PrivateLanName.n": {
-          "shape": "String"
+        "PrivateLanName": {
+          "shape": "PrivateLanNameList",
+          "locationName": "PrivateLanName"
         }
       }
     },
@@ -4333,11 +4523,13 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "RouterId.n": {
-          "shape": "String"
+        "RouterId": {
+          "shape": "RouterIdList",
+          "locationName": "RouterId"
         },
-        "RouterName.n": {
-          "shape": "String"
+        "RouterName": {
+          "shape": "RouterNameList",
+          "locationName": "RouterName"
         }
       }
     },
@@ -4381,11 +4573,13 @@
         "Filter.n.Value.m": {
           "shape": "String"
         },
-        "RouterId.n": {
-          "shape": "String"
+        "RouterId": {
+          "shape": "RouterIdList",
+          "locationName": "RouterId"
         },
-        "RouterName.n": {
-          "shape": "String"
+        "RouterName": {
+          "shape": "RouterNameList",
+          "locationName": "RouterName"
         }
       }
     },
@@ -5013,23 +5207,28 @@
         "Description": {
           "shape": "String"
         },
-        "EmailAddress.l": {
-          "shape": "String"
+        "EmailAddress": {
+          "shape": "EmailAddressList",
+          "locationName": "EmailAddress"
         },
         "FunctionName": {
           "shape": "String"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
-        "LoadBalancerName.n": {
-          "shape": "String"
+        "LoadBalancerName": {
+          "shape": "LoadBalancerNameList",
+          "locationName": "LoadBalancerName"
         },
-        "LoadBalancerPort.n": {
-          "shape": "String"
+        "LoadBalancerPort": {
+          "shape": "LoadBalancerPortList",
+          "locationName": "LoadBalancerPort"
         },
-        "Partition.n": {
-          "shape": "String"
+        "Partition": {
+          "shape": "PartitionList",
+          "locationName": "Partition"
         },
         "Rule.m.BreachDuration": {
           "shape": "Integer"
@@ -5151,8 +5350,9 @@
         "ScalingTrigger.n.UpperThreshold": {
           "shape": "Double"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         }
       },
       "required": [
@@ -5255,6 +5455,12 @@
         }
       }
     },
+    "NiftyVpnGatewayNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Option": {
       "type": "structure",
       "members": {
@@ -5291,6 +5497,18 @@
         }
       }
     },
+    "OwnerList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "PartitionList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Password": {
       "type": "string"
     },
@@ -5323,8 +5541,26 @@
     "Primary": {
       "type": "boolean"
     },
+    "PrivateLanNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "ProductCodeList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "Protocol": {
       "type": "string"
+    },
+    "PublicIpList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "Range": {
       "type": "structure",
@@ -5349,14 +5585,16 @@
         "Force": {
           "shape": "Boolean"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
         "NiftyIsBios": {
           "shape": "Boolean"
         },
-        "Tenancy.1": {
-          "shape": "String"
+        "Tenancy": {
+          "shape": "TenancyList",
+          "locationName": "Tenancy"
         },
         "UserData": {
           "shape": "UserData"
@@ -5365,6 +5603,12 @@
     },
     "RegionName": {
       "type": "string"
+    },
+    "RegionNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "RegisterCorporateInfoForCertificateRequest": {
       "type": "structure",
@@ -5481,8 +5725,9 @@
         "GroupName": {
           "shape": "String"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         }
       }
     },
@@ -5580,6 +5825,12 @@
     "RequestId": {
       "type": "string"
     },
+    "ResourceNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "RevokeSecurityGroupIngressRequest": {
       "type": "structure",
       "members": {
@@ -5614,6 +5865,24 @@
       "required": [
         "GroupName"
       ]
+    },
+    "RouteTableIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "RouterIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "RouterNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "RunInstancesRequest": {
       "type": "structure",
@@ -5717,8 +5986,9 @@
         "RamdiskId": {
           "shape": "String"
         },
-        "SecurityGroup.n": {
-          "shape": "String"
+        "SecurityGroup": {
+          "shape": "SecurityGroupList",
+          "locationName": "SecurityGroup"
         },
         "SubnetId": {
           "shape": "String"
@@ -5730,6 +6000,12 @@
     },
     "SSLCertificateId": {
       "type": "string"
+    },
+    "SecurityGroupList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "SessionId": {
       "type": "string"
@@ -5773,6 +6049,12 @@
         "InstancePort"
       ]
     },
+    "SnapshotNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "SorryPageUpdate": {
       "type": "structure",
       "members": {
@@ -5801,27 +6083,31 @@
     "StartInstancesRequest": {
       "type": "structure",
       "members": {
-        "AccountingType.n": {
-          "shape": "String"
+        "AccountingType": {
+          "shape": "AccountingTypeList",
+          "locationName": "AccountingType"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
-        "InstanceType.n": {
-          "shape": "String"
+        "InstanceType": {
+          "shape": "InstanceTypeList",
+          "locationName": "InstanceType"
         },
         "NiftyIsBios": {
           "shape": "Boolean"
         },
-        "Tenancy.n": {
-          "shape": "String"
+        "Tenancy": {
+          "shape": "TenancyList",
+          "locationName": "Tenancy"
         },
         "UserData": {
           "shape": "UserData"
         }
       },
       "required": [
-        "InstanceId.n"
+        "InstanceId"
       ]
     },
     "StartNumber": {
@@ -5845,11 +6131,13 @@
         "Force": {
           "shape": "Boolean"
         },
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         },
-        "Tenancy.n": {
-          "shape": "String"
+        "Tenancy": {
+          "shape": "TenancyList",
+          "locationName": "Tenancy"
         }
       }
     },
@@ -5859,15 +6147,22 @@
     "Target": {
       "type": "string"
     },
+    "TenancyList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
     "TerminateInstancesRequest": {
       "type": "structure",
       "members": {
-        "InstanceId.n": {
-          "shape": "String"
+        "InstanceId": {
+          "shape": "InstanceIdList",
+          "locationName": "InstanceId"
         }
       },
       "required": [
-        "InstanceId.n"
+        "InstanceId"
       ]
     },
     "Timeout": {
@@ -6009,6 +6304,30 @@
     },
     "Value": {
       "type": "string"
+    },
+    "VolumeIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "VpnConnectionIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "VpnGatewayIdList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
+    },
+    "ZoneNameList": {
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "acceptedRouteCount": {
       "type": "integer"

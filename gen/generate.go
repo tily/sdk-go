@@ -281,6 +281,19 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			shapes = append(shapes, grandChildShape)
 			member.ShapeName = parentShapeName
 			shapeName = parentShapeName
+		case regexp.MustCompile(`^([a-zA-Z]{2,})\.(l|1|n|member\.(n|N))$`).MatchString(shapeName):
+			r := regexp.MustCompile(`^([a-zA-Z]{2,})\.(l|1|n|member\.(n|N))$`)
+			match := r.FindAllStringSubmatch(shapeName, -1)
+			shapeName = match[0][1]
+			realShapeName := fmt.Sprintf("%sList", shapeName)
+			member.ShapeName = realShapeName
+			member.LocationName = shapeName
+			listShape := Shape{
+				ShapeName: member.ShapeName,
+				Type:      "list",
+				Member:    &ShapeRef{ShapeName: "String"},
+			}
+			shapes = append(shapes, listShape)
 		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
 			match := r.FindAllStringSubmatch(shapeName, -1)
@@ -306,15 +319,6 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 				shapes = append(shapes, structShape)
 			}
 			structShape.Members[value] = ShapeRef{ShapeName: "String"}
-		case shapeType == "List":
-			shapeName = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(shapeName, "")
-			member.ShapeName = fmt.Sprintf("%sStringList", shapeName)
-			stringListShape := Shape{
-				ShapeName: member.ShapeName,
-				Type:      "list",
-				Member:    &ShapeRef{ShapeName: "String"},
-			}
-			shapes = append(shapes, stringListShape)
 		case shapeType == "TStamp":
 			member.ShapeName = shapeType
 			tstampShape := Shape{
