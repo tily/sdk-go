@@ -107,7 +107,9 @@
       "input": {
         "shape": "ClearLoadBalancerSessionRequest"
       },
-      "output": null
+      "output": {
+        "shape": "ClearLoadBalancerSessionResult"
+      }
     },
     "ConfigureHealthCheck": {
       "name": "ConfigureHealthCheck",
@@ -118,7 +120,9 @@
       "input": {
         "shape": "ConfigureHealthCheckRequest"
       },
-      "output": null
+      "output": {
+        "shape": "ConfigureHealthCheckResult"
+      }
     },
     "CopyInstances": {
       "name": "CopyInstances",
@@ -184,7 +188,9 @@
       "input": {
         "shape": "CreateLoadBalancerRequest"
       },
-      "output": null
+      "output": {
+        "shape": "CreateLoadBalancerResult"
+      }
     },
     "CreateRoute": {
       "name": "CreateRoute",
@@ -316,7 +322,9 @@
       "input": {
         "shape": "DeleteLoadBalancerRequest"
       },
-      "output": null
+      "output": {
+        "shape": "DeleteLoadBalancerResult"
+      }
     },
     "DeleteRoute": {
       "name": "DeleteRoute",
@@ -536,7 +544,9 @@
       "input": {
         "shape": "DescribeLoadBalancersRequest"
       },
-      "output": null
+      "output": {
+        "shape": "DescribeLoadBalancersResult"
+      }
     },
     "DescribeRegions": {
       "name": "DescribeRegions",
@@ -1724,7 +1734,9 @@
       "input": {
         "shape": "RegisterPortWithLoadBalancerRequest"
       },
-      "output": null
+      "output": {
+        "shape": "RegisterPortWithLoadBalancerResult"
+      }
     },
     "ReleaseAddress": {
       "name": "ReleaseAddress",
@@ -1790,7 +1802,9 @@
       "input": {
         "shape": "SetFilterForLoadBalancerRequest"
       },
-      "output": null
+      "output": {
+        "shape": "SetFilterForLoadBalancerResult"
+      }
     },
     "StartInstances": {
       "name": "StartInstances",
@@ -1882,6 +1896,33 @@
     }
   },
   "shapes": {
+    "\t\t\t\t\t\t\t\tvalue": {
+      "type": "structure"
+    },
+    "\n\t\t\t\t\t\t\t\tinstanceId": {
+      "type": "structure"
+    },
+    "\n\t\t\t\t\t\t\t\tinstancesSet": {
+      "type": "structure"
+    },
+    "\n\t\t\t\t\t\t\t\titem": {
+      "type": "structure"
+    },
+    "\n\t\t\t\t\t\t\t\tuserId": {
+      "type": "structure"
+    },
+    " instancesSet": {
+      "type": "structure"
+    },
+    " item": {
+      "type": "structure"
+    },
+    "++++++importInstanceDiskMeasuredRate": {
+      "type": "structure"
+    },
+    "AccountingType": {
+      "type": "structure"
+    },
     "AllocateAddressRequest": {
       "type": "structure",
       "members": {
@@ -1896,6 +1937,14 @@
         },
         "Placement.AvailabilityZone": {
           "shape": "String"
+        }
+      }
+    },
+    "AppCookieStickinessPolicies": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
         }
       }
     },
@@ -1950,6 +1999,9 @@
       "required": [
         "RouteTableId"
       ]
+    },
+    "AssociateUserResult": {
+      "type": "structure"
     },
     "AssociateUsersRequest": {
       "type": "structure",
@@ -2015,6 +2067,17 @@
         }
       }
     },
+    "AvailabilityZones": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "BalancingType": {
+      "type": "structure"
+    },
     "Boolean": {
       "type": "boolean"
     },
@@ -2056,6 +2119,9 @@
         "InstancePort"
       ]
     },
+    "ClearLoadBalancerSessionResult": {
+      "type": "structure"
+    },
     "ConfigureHealthCheckRequest": {
       "type": "structure",
       "members": {
@@ -2092,6 +2158,20 @@
         "HealthCheck.Interval",
         "HealthCheck.UnhealthyThreshold"
       ]
+    },
+    "ConfigureHealthCheckResult": {
+      "type": "structure",
+      "members": {
+        "HealthCheck": {
+          "shape": "HealthCheck"
+        }
+      }
+    },
+    "CookieExpirationPeriod": {
+      "type": "structure"
+    },
+    "CookieName": {
+      "type": "structure"
     },
     "CopyInstancesRequest": {
       "type": "structure",
@@ -2279,6 +2359,14 @@
       "required": [
         "LoadBalancerName"
       ]
+    },
+    "CreateLoadBalancerResult": {
+      "type": "structure",
+      "members": {
+        "DNSName": {
+          "shape": "DNSName"
+        }
+      }
     },
     "CreateRouteRequest": {
       "type": "structure",
@@ -2596,6 +2684,9 @@
         "InstancePort"
       ]
     },
+    "DeleteLoadBalancerResult": {
+      "type": "structure"
+    },
     "DeleteRouteRequest": {
       "type": "structure",
       "members": {
@@ -2674,6 +2765,9 @@
         }
       }
     },
+    "DeregisterInstances\nFromLoadBalancerResult": {
+      "type": "structure"
+    },
     "DeregisterInstancesFromLoadBalancerRequest": {
       "type": "structure",
       "members": {
@@ -2715,6 +2809,9 @@
           "shape": "String"
         }
       }
+    },
+    "DescribeAssociatedUserResult": {
+      "type": "structure"
     },
     "DescribeAssociatedUsersRequest": {
       "type": "structure",
@@ -2794,6 +2891,9 @@
         }
       }
     },
+    "DescribeInstanceHealth\nResult": {
+      "type": "structure"
+    },
     "DescribeInstanceHealthRequest": {
       "type": "structure",
       "members": {
@@ -2846,6 +2946,14 @@
         },
         "LoadBalancerNames.member.n": {
           "shape": "String"
+        }
+      }
+    },
+    "DescribeLoadBalancersResult": {
+      "type": "structure",
+      "members": {
+        "LoadBalancerDescriptions": {
+          "shape": "LoadBalancerDescriptions"
         }
       }
     },
@@ -3028,6 +3136,9 @@
         }
       }
     },
+    "Description": {
+      "type": "structure"
+    },
     "DetachVolumeRequest": {
       "type": "structure",
       "members": {
@@ -3082,6 +3193,9 @@
         "AssociationId"
       ]
     },
+    "DissociateUserResult": {
+      "type": "structure"
+    },
     "DissociateUsersRequest": {
       "type": "structure",
       "members": {
@@ -3114,6 +3228,48 @@
         "FqdnId",
         "FileType"
       ]
+    },
+    "Filter": {
+      "type": "structure",
+      "members": {
+        "FilterType": {
+          "shape": "FilterType"
+        },
+        "IPAddresses": {
+          "shape": "IPAddresses"
+        }
+      }
+    },
+    "HealthCheck": {
+      "type": "structure",
+      "members": {
+        "HealthyThreshold": {
+          "shape": "HealthyThreshold"
+        },
+        "InstanceStates": {
+          "shape": "InstanceStates"
+        },
+        "Interval": {
+          "shape": "Interval"
+        },
+        "Target": {
+          "shape": "Target"
+        },
+        "Timeout": {
+          "shape": "Timeout"
+        },
+        "UnhealthyThreshold": {
+          "shape": "UnhealthyThreshold"
+        }
+      }
+    },
+    "IPAddresses": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
     },
     "ImportInstanceRequest": {
       "type": "structure",
@@ -3219,8 +3375,171 @@
         "PublicKeyMaterial"
       ]
     },
+    "InstanceId": {
+      "type": "structure"
+    },
+    "InstancePort": {
+      "type": "structure"
+    },
+    "InstanceStates": {
+      "type": "structure",
+      "members": {
+        "AccountingType": {
+          "shape": "AccountingType"
+        },
+        "CreatedTime": {
+          "shape": "CreatedTime"
+        },
+        "Filter": {
+          "shape": "Filter"
+        },
+        "NextMonthAccountingType": {
+          "shape": "NextMonthAccountingType"
+        },
+        "Option": {
+          "shape": "Option"
+        },
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "InstanceUniqueId": {
+      "type": "structure"
+    },
+    "Instances": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
     "Integer": {
       "type": "integer"
+    },
+    "Item": {
+      "type": "structure",
+      "members": {
+        "accountingType": {
+          "shape": "accountingType"
+        },
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        },
+        "description": {
+          "shape": "description"
+        },
+        "deviceIndex": {
+          "shape": "deviceIndex"
+        },
+        "dhcpConfigId": {
+          "shape": "dhcpConfigId"
+        },
+        "dhcpOptionsId": {
+          "shape": "dhcpOptionsId"
+        },
+        "groupId": {
+          "shape": "groupId"
+        },
+        "groupSet": {
+          "shape": "groupSet"
+        },
+        "ipAddress": {
+          "shape": "ipAddress"
+        },
+        "item": {
+          "shape": "item"
+        },
+        "networkInterfaceSet": {
+          "shape": "networkInterfaceSet"
+        },
+        "nextMonthAccountingType": {
+          "shape": "nextMonthAccountingType"
+        },
+        "routerId": {
+          "shape": "routerId"
+        },
+        "routerName": {
+          "shape": "routerName"
+        },
+        "state": {
+          "shape": "state"
+        },
+        "versionInformation": {
+          "shape": "versionInformation"
+        }
+      }
+    },
+    "LBCookieStickinessPolicies": {
+      "type": "structure",
+      "members": {
+        "AvailabilityZones": {
+          "shape": "AvailabilityZones"
+        },
+        "HealthCheck": {
+          "shape": "HealthCheck"
+        },
+        "Instances": {
+          "shape": "Instances"
+        },
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "Listener": {
+      "type": "structure",
+      "members": {
+        "BalancingType": {
+          "shape": "BalancingType"
+        },
+        "InstancePort": {
+          "shape": "InstancePort"
+        },
+        "LoadBalancerPort": {
+          "shape": "LoadBalancerPort"
+        },
+        "Protocol": {
+          "shape": "Protocol"
+        },
+        "SSLCertificateId": {
+          "shape": "SSLCertificateId"
+        }
+      }
+    },
+    "ListenerDescriptions": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "Listeners": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "LoadBalancerDescriptions": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "LoadBalancerPort": {
+      "type": "structure"
+    },
+    "Memo": {
+      "type": "structure"
+    },
+    "MobileFilter": {
+      "type": "structure"
     },
     "ModifyImageAttributeRequest": {
       "type": "structure",
@@ -3312,6 +3631,9 @@
       "required": [
         "VolumeId"
       ]
+    },
+    "NextMonthAccountingType": {
+      "type": "structure"
     },
     "NiftyAssociateImageRequest": {
       "type": "structure",
@@ -4089,6 +4411,9 @@
         "ResourceName.n"
       ]
     },
+    "NiftyDescribePerformanceChartRespons": {
+      "type": "structure"
+    },
     "NiftyDescribePrivateLansRequest": {
       "type": "structure",
       "members": {
@@ -4313,6 +4638,9 @@
         "Attribute",
         "Value"
       ]
+    },
+    "NiftyModifyInstanceSnapshotAttributeRespons": {
+      "type": "structure"
     },
     "NiftyModifyKeyPairAttributeRequest": {
       "type": "structure",
@@ -4973,6 +5301,48 @@
         }
       }
     },
+    "Option": {
+      "type": "structure",
+      "members": {
+        "SessionStickinessPolicy": {
+          "shape": "SessionStickinessPolicy"
+        },
+        "SorryPage": {
+          "shape": "SorryPage"
+        }
+      }
+    },
+    "Policies": {
+      "type": "structure",
+      "members": {
+        "AppCookieStickinessPolicies": {
+          "shape": "AppCookieStickinessPolicies"
+        }
+      }
+    },
+    "PolicyName": {
+      "type": "structure",
+      "members": {
+        "CookieExpirationPeriod": {
+          "shape": "CookieExpirationPeriod"
+        },
+        "CookieName": {
+          "shape": "CookieName"
+        }
+      }
+    },
+    "PolicyNames": {
+      "type": "structure"
+    },
+    "Primary": {
+      "type": "structure"
+    },
+    "Protocol": {
+      "type": "structure"
+    },
+    "ReasonCode": {
+      "type": "structure"
+    },
     "RebootInstancesRequest": {
       "type": "structure",
       "members": {
@@ -5082,6 +5452,9 @@
         "EmailAddress"
       ]
     },
+    "RegisterInstances\nWithLoadBalancerResult": {
+      "type": "structure"
+    },
     "RegisterInstancesWithLoadBalancerRequest": {
       "type": "structure",
       "members": {
@@ -5138,6 +5511,14 @@
       "required": [
         "LoadBalancerName"
       ]
+    },
+    "RegisterPortWithLoadBalancerResult": {
+      "type": "structure",
+      "members": {
+        "Listeners": {
+          "shape": "Listeners"
+        }
+      }
     },
     "ReleaseAddressRequest": {
       "type": "structure",
@@ -5361,6 +5742,17 @@
         }
       }
     },
+    "SessionStickinessPolicy": {
+      "type": "structure",
+      "members": {
+        "Enabled": {
+          "shape": "Enabled"
+        },
+        "ExpirationPeriod": {
+          "shape": "ExpirationPeriod"
+        }
+      }
+    },
     "SetFilterForLoadBalancerRequest": {
       "type": "structure",
       "members": {
@@ -5388,6 +5780,22 @@
         "LoadBalancerPort",
         "InstancePort"
       ]
+    },
+    "SetFilterForLoadBalancerResult": {
+      "type": "structure",
+      "members": {
+        "Filter": {
+          "shape": "Filter"
+        }
+      }
+    },
+    "SorryPage": {
+      "type": "structure",
+      "members": {
+        "Enabled": {
+          "shape": "Enabled"
+        }
+      }
     },
     "StartInstancesRequest": {
       "type": "structure",
@@ -5417,6 +5825,9 @@
       "required": [
         "InstanceId.n"
       ]
+    },
+    "State": {
+      "type": "structure"
     },
     "StopInstancesRequest": {
       "type": "structure",
@@ -5572,6 +5983,2885 @@
         "Certificate",
         "Key"
       ]
+    },
+    "Users": {
+      "type": "structure",
+      "members": {
+        "member": {
+          "shape": "member"
+        }
+      }
+    },
+    "acceptedRouteCount": {
+      "type": "structure"
+    },
+    "accountingType": {
+      "type": "structure"
+    },
+    "addDatetime": {
+      "type": "structure"
+    },
+    "addDiskCount": {
+      "type": "structure"
+    },
+    "addDiskTotalSize": {
+      "type": "structure"
+    },
+    "address": {
+      "type": "structure",
+      "members": {
+        "port": {
+          "shape": "port"
+        },
+        "translation": {
+          "shape": "translation"
+        }
+      }
+    },
+    "addressesSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "admin": {
+      "type": "structure"
+    },
+    "alarm": {
+      "type": "structure"
+    },
+    "alarmDateHistorySet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "alarmEvent": {
+      "type": "structure"
+    },
+    "alarmEventHistorySet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "alarmRulesActivitiesDateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "alarmRulesActivitiesEvent": {
+      "type": "structure"
+    },
+    "alarmRulesActivitiesEventDatetim": {
+      "type": "structure"
+    },
+    "alarmRulesActivitiesEventSet": {
+      "type": "structure",
+      "members": {
+        "alarmRulesActivitiesEvent": {
+          "shape": "alarmRulesActivitiesEvent"
+        },
+        "alarmRulesActivitiesEventSet": {
+          "shape": "alarmRulesActivitiesEventSet"
+        },
+        "resourceName": {
+          "shape": "resourceName"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "alarmRulesActivitiesSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "alarmState": {
+      "type": "structure"
+    },
+    "alarmTargetSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "alarmTargetsSet": {
+      "type": "structure"
+    },
+    "allocationId": {
+      "type": "structure"
+    },
+    "amiLaunchIndex": {
+      "type": "structure"
+    },
+    "analyzeCode": {
+      "type": "structure"
+    },
+    "analyzeResultSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "approverEmailAddress": {
+      "type": "structure"
+    },
+    "association": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        },
+        "privateIpAddressesSet": {
+          "shape": "privateIpAddressesSet"
+        }
+      }
+    },
+    "associationId": {
+      "type": "structure"
+    },
+    "associationSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "attachTime": {
+      "type": "structure",
+      "members": {
+        "deleteOnTermination": {
+          "shape": "deleteOnTermination"
+        }
+      }
+    },
+    "attachment": {
+      "type": "structure",
+      "members": {
+        "attachmentID": {
+          "shape": "attachmentID"
+        }
+      }
+    },
+    "attachmentID": {
+      "type": "structure",
+      "members": {
+        "association": {
+          "shape": "association"
+        },
+        "attachTime": {
+          "shape": "attachTime"
+        },
+        "deviceIndex": {
+          "shape": "deviceIndex"
+        },
+        "status": {
+          "shape": "status"
+        }
+      }
+    },
+    "attachmentSet": {
+      "type": "structure",
+      "members": {
+        "description": {
+          "shape": "description"
+        },
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "attachments": {
+      "type": "structure",
+      "members": {
+        "tagSet": {
+          "shape": "tagSet"
+        }
+      }
+    },
+    "attribute": {
+      "type": "structure"
+    },
+    "autoScaleCount": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "autoScaleInfo": {
+      "type": "structure",
+      "members": {
+        "autoScaleCount": {
+          "shape": "autoScaleCount"
+        },
+        "runningScaleOutInstanceSet": {
+          "shape": "runningScaleOutInstanceSet"
+        },
+        "runningScaleOutOsSet": {
+          "shape": "runningScaleOutOsSet"
+        },
+        "stoppedScaleOutInstanceSet": {
+          "shape": "stoppedScaleOutInstanceSet"
+        },
+        "stoppedScaleOutOsSet": {
+          "shape": "stoppedScaleOutOsSet"
+        }
+      }
+    },
+    "autoScalingGroupName": {
+      "type": "structure"
+    },
+    "autoScalingReservationSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "autoscaling": {
+      "type": "structure"
+    },
+    "availabilityZone": {
+      "type": "structure"
+    },
+    "availabilityZoneInfo": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "backupInformation": {
+      "type": "structure",
+      "members": {
+        "isBackup": {
+          "shape": "isBackup"
+        }
+      }
+    },
+    "bgpAsn": {
+      "type": "structure"
+    },
+    "blockDeviceMapping": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "breachDuration": {
+      "type": "structure"
+    },
+    "bypassInterface": {
+      "type": "structure",
+      "members": {
+        "networkId": {
+          "shape": "networkId"
+        },
+        "networkName": {
+          "shape": "networkName"
+        }
+      }
+    },
+    "caState": {
+      "type": "structure"
+    },
+    "categoryName": {
+      "type": "structure"
+    },
+    "certAuthority": {
+      "type": "structure"
+    },
+    "certInfo": {
+      "type": "structure",
+      "members": {
+        "caState": {
+          "shape": "caState"
+        },
+        "countryName": {
+          "shape": "countryName"
+        },
+        "locationName": {
+          "shape": "locationName"
+        },
+        "organizationName": {
+          "shape": "organizationName"
+        },
+        "organizationUnitName": {
+          "shape": "organizationUnitName"
+        },
+        "stateName": {
+          "shape": "stateName"
+        }
+      }
+    },
+    "certState": {
+      "type": "structure"
+    },
+    "certsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "changeInCapacity": {
+      "type": "structure"
+    },
+    "charge": {
+      "type": "structure"
+    },
+    "chargeDetail": {
+      "type": "structure"
+    },
+    "chargeDetailInfo": {
+      "type": "structure"
+    },
+    "checksum": {
+      "type": "structure"
+    },
+    "cidrBlock": {
+      "type": "structure"
+    },
+    "clientName": {
+      "type": "structure"
+    },
+    "code": {
+      "type": "structure"
+    },
+    "controlPanelStatus": {
+      "type": "structure"
+    },
+    "conversionTask": {
+      "type": "structure",
+      "members": {
+        "conversionTaskId": {
+          "shape": "conversionTaskId"
+        },
+        "expirationTime": {
+          "shape": "expirationTime"
+        },
+        "importInstance": {
+          "shape": "importInstance"
+        }
+      }
+    },
+    "copyInfo": {
+      "type": "structure",
+      "members": {
+        "instanceCopy": {
+          "shape": "instanceCopy"
+        }
+      }
+    },
+    "copyInstanceSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "count": {
+      "type": "structure"
+    },
+    "createImage": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "createSslCertSet": {
+      "type": "structure"
+    },
+    "createdTime": {
+      "type": "structure"
+    },
+    "currentServersCount": {
+      "type": "structure"
+    },
+    "currentState": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "shape": "code"
+        },
+        "name": {
+          "shape": "name"
+        }
+      }
+    },
+    "customerGateway": {
+      "type": "structure",
+      "members": {
+        "customerGatewayId": {
+          "shape": "customerGatewayId"
+        },
+        "ipAddress": {
+          "shape": "ipAddress"
+        },
+        "niftyCustomerGatewayName": {
+          "shape": "niftyCustomerGatewayName"
+        },
+        "state": {
+          "shape": "state"
+        }
+      }
+    },
+    "customerGatewayConfiguration": {
+      "type": "structure",
+      "members": {
+        "customerGatewayId": {
+          "shape": "customerGatewayId"
+        },
+        "niftyCustomerGatewayName": {
+          "shape": "niftyCustomerGatewayName"
+        },
+        "niftyVpnGatewayName": {
+          "shape": "niftyVpnGatewayName"
+        },
+        "tagSet": {
+          "shape": "tagSet"
+        },
+        "type": {
+          "shape": "type"
+        },
+        "vgwTelemetry": {
+          "shape": "vgwTelemetry"
+        },
+        "vpnGatewayId": {
+          "shape": "vpnGatewayId"
+        }
+      }
+    },
+    "customerGatewayId": {
+      "type": "structure"
+    },
+    "customerGatewaySet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "customizeImageCount": {
+      "type": "structure"
+    },
+    "dDay": {
+      "type": "structure",
+      "members": {
+        "endingDDay": {
+          "shape": "endingDDay"
+        },
+        "startingDDay": {
+          "shape": "startingDDay"
+        }
+      }
+    },
+    "dalarmEventDatetime": {
+      "type": "structure"
+    },
+    "data": {
+      "type": "structure"
+    },
+    "dataSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "dataType": {
+      "type": "structure"
+    },
+    "date": {
+      "type": "structure"
+    },
+    "dateTime": {
+      "type": "structure"
+    },
+    "day": {
+      "type": "structure",
+      "members": {
+        "setFriday": {
+          "shape": "setFriday"
+        },
+        "setMonday": {
+          "shape": "setMonday"
+        },
+        "setSaturday": {
+          "shape": "setSaturday"
+        },
+        "setSunday": {
+          "shape": "setSunday"
+        },
+        "setThursday": {
+          "shape": "setThursday"
+        },
+        "setTuesday": {
+          "shape": "setTuesday"
+        },
+        "setWednesday": {
+          "shape": "setWednesday"
+        }
+      }
+    },
+    "defaultCooldown": {
+      "type": "structure"
+    },
+    "deleteOnTermination": {
+      "type": "structure"
+    },
+    "descriprion": {
+      "type": "structure"
+    },
+    "description": {
+      "type": "structure",
+      "members": {
+        "ownerId": {
+          "shape": "ownerId"
+        }
+      }
+    },
+    "destination": {
+      "type": "structure"
+    },
+    "destinationCidrBlock": {
+      "type": "structure"
+    },
+    "destinationPort": {
+      "type": "structure"
+    },
+    "detailDescription": {
+      "type": "structure"
+    },
+    "details": {
+      "type": "structure",
+      "members": {
+        "changeInCapacity": {
+          "shape": "changeInCapacity"
+        },
+        "currentServersCount": {
+          "shape": "currentServersCount"
+        }
+      }
+    },
+    "deviceIndex": {
+      "type": "structure"
+    },
+    "dhcp": {
+      "type": "structure"
+    },
+    "dhcpConfig": {
+      "type": "structure",
+      "members": {
+        "dhcpConfigId": {
+          "shape": "dhcpConfigId"
+        },
+        "ipAddressPoolsSet": {
+          "shape": "ipAddressPoolsSet"
+        }
+      }
+    },
+    "dhcpConfigId": {
+      "type": "structure"
+    },
+    "dhcpConfigsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "dhcpConfigurationSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "dhcpConfigurationSetType": {
+      "type": "structure"
+    },
+    "dhcpIpAddressInformation": {
+      "type": "structure",
+      "members": {
+        "dhcpIpAddressSet": {
+          "shape": "dhcpIpAddressSet"
+        },
+        "ipAddressPoolSet": {
+          "shape": "ipAddressPoolSet"
+        }
+      }
+    },
+    "dhcpIpAddressSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "dhcpOptions": {
+      "type": "structure",
+      "members": {
+        "dhcpOptionsId": {
+          "shape": "dhcpOptionsId"
+        },
+        "tagSet": {
+          "shape": "tagSet"
+        }
+      }
+    },
+    "dhcpOptionsId": {
+      "type": "structure"
+    },
+    "dhcpOptionsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "dhcpStatusInformationSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "difference": {
+      "type": "structure"
+    },
+    "diskStatus": {
+      "type": "structure"
+    },
+    "diskType": {
+      "type": "structure"
+    },
+    "distributionId": {
+      "type": "structure"
+    },
+    "dnsName": {
+      "type": "structure",
+      "members": {
+        "instanceType": {
+          "shape": "instanceType"
+        },
+        "keyName": {
+          "shape": "keyName"
+        },
+        "launchTime": {
+          "shape": "launchTime"
+        },
+        "monitoring": {
+          "shape": "monitoring"
+        },
+        "placement": {
+          "shape": "placement"
+        },
+        "platform": {
+          "shape": "platform"
+        },
+        "privateIpAddress": {
+          "shape": "privateIpAddress"
+        }
+      }
+    },
+    "domain": {
+      "type": "structure"
+    },
+    "dynamicIpCount": {
+      "type": "structure"
+    },
+    "dynamicIpMeasuredRate": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "dynamicIpMonthlyRate": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "ebs": {
+      "type": "structure",
+      "members": {
+        "deleteOnTermination": {
+          "shape": "deleteOnTermination"
+        },
+        "status": {
+          "shape": "status"
+        },
+        "volumeId": {
+          "shape": "volumeId"
+        }
+      }
+    },
+    "elasticIpInfo": {
+      "type": "structure",
+      "members": {
+        "elasticIpSet": {
+          "shape": "elasticIpSet"
+        }
+      }
+    },
+    "elasticIpItemSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "elasticIpSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "emailAddress": {
+      "type": "structure"
+    },
+    "emailAddressSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "encapsulation": {
+      "type": "structure"
+    },
+    "encryptionAlgorithm": {
+      "type": "structure"
+    },
+    "endDate": {
+      "type": "structure"
+    },
+    "endingDDay": {
+      "type": "structure"
+    },
+    "endingMonth": {
+      "type": "structure"
+    },
+    "endingTimeZone": {
+      "type": "structure"
+    },
+    "expirationDate": {
+      "type": "structure"
+    },
+    "expireTime": {
+      "type": "structure"
+    },
+    "expiredDate": {
+      "type": "structure"
+    },
+    "expiredTime": {
+      "type": "structure"
+    },
+    "extraChargeInfo": {
+      "type": "structure"
+    },
+    "extraChargeMonthlyRateSet": {
+      "type": "structure"
+    },
+    "fileData": {
+      "type": "structure"
+    },
+    "functionName": {
+      "type": "structure"
+    },
+    "gatewayId": {
+      "type": "structure"
+    },
+    "groupDescription": {
+      "type": "structure"
+    },
+    "groupId": {
+      "type": "structure"
+    },
+    "groupLogFilterBroadcast": {
+      "type": "structure"
+    },
+    "groupLogFilterNetBios": {
+      "type": "structure"
+    },
+    "groupName": {
+      "type": "structure"
+    },
+    "groupSet": {
+      "type": "structure",
+      "members": {
+        "attachment": {
+          "shape": "attachment"
+        },
+        "groupId": {
+          "shape": "groupId"
+        },
+        "instancesSet": {
+          "shape": "instancesSet"
+        }
+      }
+    },
+    "groupSetItem": {
+      "type": "structure"
+    },
+    "groups": {
+      "type": "structure"
+    },
+    "gruopId": {
+      "type": "structure"
+    },
+    "hashingAlgorithm": {
+      "type": "structure"
+    },
+    "hotAdd": {
+      "type": "structure"
+    },
+    "id": {
+      "type": "structure"
+    },
+    "image": {
+      "type": "structure"
+    },
+    "imageId": {
+      "type": "structure"
+    },
+    "imageInfo": {
+      "type": "structure",
+      "members": {
+        "createImage": {
+          "shape": "createImage"
+        },
+        "keepImageSet": {
+          "shape": "keepImageSet"
+        }
+      }
+    },
+    "imageLocation": {
+      "type": "structure",
+      "members": {
+        "imageOwnerId": {
+          "shape": "imageOwnerId"
+        },
+        "imageState": {
+          "shape": "imageState"
+        },
+        "isPublic": {
+          "shape": "isPublic"
+        },
+        "productCodes": {
+          "shape": "productCodes"
+        }
+      }
+    },
+    "imagesSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "importInstance": {
+      "type": "structure",
+      "members": {
+        "volumes": {
+          "shape": "volumes"
+        }
+      }
+    },
+    "importInstanceDiskMonthlyRate": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "importManifestUrl": {
+      "type": "structure"
+    },
+    "inboundInterface": {
+      "type": "structure"
+    },
+    "instanceCopy": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "instanceId": {
+      "type": "structure"
+    },
+    "instanceInfo": {
+      "type": "structure",
+      "members": {
+        "dynamicIpMeasuredRate": {
+          "shape": "dynamicIpMeasuredRate"
+        },
+        "dynamicIpMonthlyRate": {
+          "shape": "dynamicIpMonthlyRate"
+        },
+        "instanceMonthlyRateSet": {
+          "shape": "instanceMonthlyRateSet"
+        },
+        "multiIpMonthlyRate": {
+          "shape": "multiIpMonthlyRate"
+        },
+        "osMeasuredRate": {
+          "shape": "osMeasuredRate"
+        },
+        "osMonthlyRate": {
+          "shape": "osMonthlyRate"
+        },
+        "runningInstanceMeasuredRateSet": {
+          "shape": "runningInstanceMeasuredRateSet"
+        },
+        "stoppedInstanceMeasuredRateSet": {
+          "shape": "stoppedInstanceMeasuredRateSet"
+        }
+      }
+    },
+    "instanceItemSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "instanceLifecycle": {
+      "type": "structure"
+    },
+    "instanceLifecycleLimit": {
+      "type": "structure"
+    },
+    "instanceMonthlyRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "instanceOwnerId": {
+      "type": "structure"
+    },
+    "instancePort": {
+      "type": "structure"
+    },
+    "instanceSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "instanceSnapshotId": {
+      "type": "structure"
+    },
+    "instanceState": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "shape": "code"
+        },
+        "name": {
+          "shape": "name"
+        }
+      }
+    },
+    "instanceStatus": {
+      "type": "structure"
+    },
+    "instanceType": {
+      "type": "structure"
+    },
+    "instanceUniqueId": {
+      "type": "structure"
+    },
+    "instanceUniqueIdsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "instancesNetworkInterfaceSet": {
+      "type": "structure"
+    },
+    "instancesSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "internetKeyExchange": {
+      "type": "structure"
+    },
+    "internetVpnInfo": {
+      "type": "structure",
+      "members": {
+        "internetVpnInitial": {
+          "shape": "internetVpnInitial"
+        },
+        "internetVpnMonthlyRateSet": {
+          "shape": "internetVpnMonthlyRateSet"
+        }
+      }
+    },
+    "internetVpnInitial": {
+      "type": "structure",
+      "members": {
+        "charge": {
+          "shape": "charge"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "internetVpnMonthlyRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "ipAddress": {
+      "type": "structure",
+      "members": {
+        "privateIpAddressV6": {
+          "shape": "privateIpAddressV6"
+        }
+      }
+    },
+    "ipAddressPoolSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "ipAddressPoolsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "ipAddressV6": {
+      "type": "structure",
+      "members": {
+        "accountingType": {
+          "shape": "accountingType"
+        },
+        "architecture": {
+          "shape": "architecture"
+        },
+        "blockDeviceMapping": {
+          "shape": "blockDeviceMapping"
+        },
+        "ipType": {
+          "shape": "ipType"
+        },
+        "networkInterfaceSet": {
+          "shape": "networkInterfaceSet"
+        },
+        "niftyPrivateIpType": {
+          "shape": "niftyPrivateIpType"
+        },
+        "rootDeviceType": {
+          "shape": "rootDeviceType"
+        }
+      }
+    },
+    "ipAddressx": {
+      "type": "structure"
+    },
+    "ipOwnerId": {
+      "type": "structure"
+    },
+    "ipPermissions": {
+      "type": "structure",
+      "members": {
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        },
+        "groupLogFilterBroadcast": {
+          "shape": "groupLogFilterBroadcast"
+        },
+        "groupLogFilterNetBios": {
+          "shape": "groupLogFilterNetBios"
+        },
+        "groupLogLimit": {
+          "shape": "groupLogLimit"
+        },
+        "groupRuleLimit": {
+          "shape": "groupRuleLimit"
+        },
+        "instanceUniqueIdsSet": {
+          "shape": "instanceUniqueIdsSet"
+        },
+        "instancesSet": {
+          "shape": "instancesSet"
+        },
+        "item": {
+          "shape": "item"
+        },
+        "routerSet": {
+          "shape": "routerSet"
+        },
+        "vpnGatewaySet": {
+          "shape": "vpnGatewaySet"
+        }
+      }
+    },
+    "ipRanges": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "ipType": {
+      "type": "structure"
+    },
+    "isBackup": {
+      "type": "structure"
+    },
+    "isLatest": {
+      "type": "structure"
+    },
+    "item": {
+      "type": "structure",
+      "members": {
+        "currentState": {
+          "shape": "currentState"
+        },
+        "instanceId": {
+          "shape": "instanceId"
+        },
+        "instanceUniqueId": {
+          "shape": "instanceUniqueId"
+        },
+        "previousState": {
+          "shape": "previousState"
+        }
+      }
+    },
+    "keepImageSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "kernelId": {
+      "type": "structure"
+    },
+    "key": {
+      "type": "structure"
+    },
+    "keyFingerprint": {
+      "type": "structure"
+    },
+    "keyLength": {
+      "type": "structure"
+    },
+    "keySet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "keyname": {
+      "type": "structure"
+    },
+    "lastStatusChange": {
+      "type": "structure"
+    },
+    "launchTime": {
+      "type": "structure"
+    },
+    "leaseExpiration": {
+      "type": "structure"
+    },
+    "leaseType": {
+      "type": "structure"
+    },
+    "licenseInfo": {
+      "type": "structure"
+    },
+    "licenseMonthlyRateSet": {
+      "type": "structure"
+    },
+    "line": {
+      "type": "structure"
+    },
+    "listenInterface": {
+      "type": "structure",
+      "members": {
+        "networkId": {
+          "shape": "networkId"
+        },
+        "networkName": {
+          "shape": "networkName"
+        }
+      }
+    },
+    "listenPort": {
+      "type": "structure"
+    },
+    "loadBalancerCount": {
+      "type": "structure"
+    },
+    "loadBalancerInfo": {
+      "type": "structure",
+      "members": {
+        "optionSet": {
+          "shape": "optionSet"
+        },
+        "vipMeasuredRateSet": {
+          "shape": "vipMeasuredRateSet"
+        },
+        "vipSet": {
+          "shape": "vipSet"
+        }
+      }
+    },
+    "loadBalancerName": {
+      "type": "structure"
+    },
+    "loadBalancerPort": {
+      "type": "structure"
+    },
+    "loadBalancing": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "loadbalancing": {
+      "type": "structure",
+      "members": {
+        "description": {
+          "shape": "description"
+        },
+        "ipType": {
+          "shape": "ipType"
+        },
+        "niftyPrivateIpType": {
+          "shape": "niftyPrivateIpType"
+        }
+      }
+    },
+    "log": {
+      "type": "structure"
+    },
+    "logSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "macAddress": {
+      "type": "structure"
+    },
+    "mailSendInfo": {
+      "type": "structure"
+    },
+    "mailSendInitial": {
+      "type": "structure"
+    },
+    "mailSendMeasuredRate": {
+      "type": "structure"
+    },
+    "mailSendMonthlyExceedRate": {
+      "type": "structure"
+    },
+    "mailSendMonthlyRate": {
+      "type": "structure"
+    },
+    "main": {
+      "type": "structure"
+    },
+    "maxSize": {
+      "type": "structure"
+    },
+    "member": {
+      "type": "structure",
+      "members": {
+        "IPAddress": {
+          "shape": "IPAddress"
+        }
+      }
+    },
+    "memo": {
+      "type": "structure"
+    },
+    "message": {
+      "type": "structure"
+    },
+    "messageSet": {
+      "type": "structure",
+      "members": {
+        "isDefault": {
+          "shape": "isDefault"
+        },
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "minSize": {
+      "type": "structure"
+    },
+    "mode": {
+      "type": "structure"
+    },
+    "monitoring": {
+      "type": "structure",
+      "members": {
+        "state": {
+          "shape": "state"
+        }
+      }
+    },
+    "monitoringRuleCount": {
+      "type": "structure"
+    },
+    "month": {
+      "type": "structure",
+      "members": {
+        "endingMonth": {
+          "shape": "endingMonth"
+        },
+        "startingMonth": {
+          "shape": "startingMonth"
+        }
+      }
+    },
+    "mtu": {
+      "type": "structure"
+    },
+    "multiAccount": {
+      "type": "structure"
+    },
+    "multiAccountInfo": {
+      "type": "structure"
+    },
+    "multiIpMonthlyRate": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "name": {
+      "type": "structure"
+    },
+    "nameServer": {
+      "type": "structure"
+    },
+    "natRule": {
+      "type": "structure",
+      "members": {
+        "address": {
+          "shape": "address"
+        },
+        "description": {
+          "shape": "description"
+        },
+        "natType": {
+          "shape": "natType"
+        },
+        "outboundInterface": {
+          "shape": "outboundInterface"
+        },
+        "protocol": {
+          "shape": "protocol"
+        },
+        "ruleNumber": {
+          "shape": "ruleNumber"
+        },
+        "source": {
+          "shape": "source"
+        }
+      }
+    },
+    "natRuleSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "natTable": {
+      "type": "structure",
+      "members": {
+        "natTableId": {
+          "shape": "natTableId"
+        }
+      }
+    },
+    "natTableAssociationId": {
+      "type": "structure"
+    },
+    "natTableId": {
+      "type": "structure"
+    },
+    "natTableSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "natType": {
+      "type": "structure"
+    },
+    "networkFlowAmount": {
+      "type": "structure"
+    },
+    "networkFlowSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "networkId": {
+      "type": "structure"
+    },
+    "networkInfo": {
+      "type": "structure",
+      "members": {
+        "networkFlowSet": {
+          "shape": "networkFlowSet"
+        }
+      }
+    },
+    "networkInterface": {
+      "type": "structure"
+    },
+    "networkInterfaceId": {
+      "type": "structure",
+      "members": {
+        "subnetId": {
+          "shape": "subnetId"
+        }
+      }
+    },
+    "networkInterfaceOwnerId": {
+      "type": "structure"
+    },
+    "networkInterfaceSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "networkName": {
+      "type": "structure"
+    },
+    "networkStatus": {
+      "type": "structure"
+    },
+    "newAssociationId": {
+      "type": "structure"
+    },
+    "nextMonthAccountingType": {
+      "type": "structure"
+    },
+    "niftyContactUrl": {
+      "type": "structure"
+    },
+    "niftyCustomerGatewayDescription": {
+      "type": "structure"
+    },
+    "niftyCustomerGatewayName": {
+      "type": "structure"
+    },
+    "niftyDistributionIds": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "niftyGatewayName": {
+      "type": "structure"
+    },
+    "niftyImageSize": {
+      "type": "structure"
+    },
+    "niftyIpsecConfiguration": {
+      "type": "structure",
+      "members": {
+        "encryptionAlgorithm": {
+          "shape": "encryptionAlgorithm"
+        },
+        "hashingAlgorithm": {
+          "shape": "hashingAlgorithm"
+        },
+        "item": {
+          "shape": "item"
+        },
+        "niftyVpnConnectionDescription": {
+          "shape": "niftyVpnConnectionDescription"
+        },
+        "preSharedKey": {
+          "shape": "preSharedKey"
+        }
+      }
+    },
+    "niftyIsAllowedDistribution": {
+      "type": "structure"
+    },
+    "niftyLanSideCidrBlock": {
+      "type": "structure"
+    },
+    "niftyLanSideIpAddress": {
+      "type": "structure"
+    },
+    "niftyMultiAccountCount": {
+      "type": "structure"
+    },
+    "niftyNetworkId": {
+      "type": "structure"
+    },
+    "niftyNetworkName": {
+      "type": "structure",
+      "members": {
+        "macAddress": {
+          "shape": "macAddress"
+        },
+        "privateDnsName": {
+          "shape": "privateDnsName"
+        },
+        "privateIpAddress": {
+          "shape": "privateIpAddress"
+        },
+        "status": {
+          "shape": "status"
+        }
+      }
+    },
+    "niftyPrivateIpType": {
+      "type": "structure"
+    },
+    "niftyPrivateNetworkType": {
+      "type": "structure"
+    },
+    "niftyRedundancy": {
+      "type": "structure"
+    },
+    "niftySnapshotting": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "niftyTunnel": {
+      "type": "structure"
+    },
+    "niftyVpnConnectionDescription": {
+      "type": "structure"
+    },
+    "niftyVpnGatewayDescription": {
+      "type": "structure"
+    },
+    "niftyVpnGatewayName": {
+      "type": "structure"
+    },
+    "niftyVpnGatewayType": {
+      "type": "structure"
+    },
+    "noDevice": {
+      "type": "structure"
+    },
+    "operation": {
+      "type": "structure"
+    },
+    "operator": {
+      "type": "structure"
+    },
+    "option": {
+      "type": "structure",
+      "members": {
+        "nameServer": {
+          "shape": "nameServer"
+        }
+      }
+    },
+    "optionCommonInfo": {
+      "type": "structure"
+    },
+    "optionInfo": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "optionName": {
+      "type": "structure"
+    },
+    "optionSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "options": {
+      "type": "structure",
+      "members": {
+        "staticRoutesOnly": {
+          "shape": "staticRoutesOnly"
+        }
+      }
+    },
+    "origin": {
+      "type": "structure"
+    },
+    "osMeasuredRate": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "osMonthlyRate": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "osOptionChargeInfo": {
+      "type": "structure",
+      "members": {
+        "osOptionChargeMonthlyRateSet": {
+          "shape": "osOptionChargeMonthlyRateSet"
+        }
+      }
+    },
+    "osOptionChargeMonthlyRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "outboundInterface": {
+      "type": "structure",
+      "members": {
+        "networkId": {
+          "shape": "networkId"
+        }
+      }
+    },
+    "outsideIpAddress": {
+      "type": "structure"
+    },
+    "ownerId": {
+      "type": "structure",
+      "members": {
+        "groupSet": {
+          "shape": "groupSet"
+        },
+        "niftyNetworkId": {
+          "shape": "niftyNetworkId"
+        },
+        "niftyNetworkName": {
+          "shape": "niftyNetworkName"
+        }
+      }
+    },
+    "partition": {
+      "type": "structure"
+    },
+    "partitionsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "patternAuthInfo": {
+      "type": "structure"
+    },
+    "patternAuthSet": {
+      "type": "structure"
+    },
+    "peerSessionId": {
+      "type": "structure"
+    },
+    "peerTunnelId": {
+      "type": "structure"
+    },
+    "performanceChartSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "period": {
+      "type": "structure",
+      "members": {
+        "endDate": {
+          "shape": "endDate"
+        },
+        "startDate": {
+          "shape": "startDate"
+        },
+        "validityTerm": {
+          "shape": "validityTerm"
+        }
+      }
+    },
+    "phoneNumber": {
+      "type": "structure"
+    },
+    "placement": {
+      "type": "structure",
+      "members": {
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        }
+      }
+    },
+    "platform": {
+      "type": "structure"
+    },
+    "port": {
+      "type": "structure"
+    },
+    "powerStatus": {
+      "type": "structure"
+    },
+    "preSharedKey": {
+      "type": "structure",
+      "members": {
+        "internetKeyExchange": {
+          "shape": "internetKeyExchange"
+        }
+      }
+    },
+    "premiumSupportInfo": {
+      "type": "structure",
+      "members": {
+        "premiumSupportSet": {
+          "shape": "premiumSupportSet"
+        }
+      }
+    },
+    "premiumSupportSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "previousState": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "shape": "code"
+        },
+        "name": {
+          "shape": "name"
+        }
+      }
+    },
+    "primary": {
+      "type": "structure"
+    },
+    "privateDnsName": {
+      "type": "structure",
+      "members": {
+        "dnsName": {
+          "shape": "dnsName"
+        },
+        "sourceDestCheck": {
+          "shape": "sourceDestCheck"
+        }
+      }
+    },
+    "privateIpAddress": {
+      "type": "structure",
+      "members": {
+        "ipAddress": {
+          "shape": "ipAddress"
+        },
+        "privateIpAddressV6": {
+          "shape": "privateIpAddressV6"
+        }
+      }
+    },
+    "privateIpAddressV6": {
+      "type": "structure",
+      "members": {
+        "ipAddressV6": {
+          "shape": "ipAddressV6"
+        },
+        "privateDnsName": {
+          "shape": "privateDnsName"
+        }
+      }
+    },
+    "privateIpAddressesSet": {
+      "type": "structure"
+    },
+    "privateLan": {
+      "type": "structure",
+      "members": {
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        },
+        "cidrBlock": {
+          "shape": "cidrBlock"
+        },
+        "networkId": {
+          "shape": "networkId"
+        },
+        "privateLanName": {
+          "shape": "privateLanName"
+        },
+        "state": {
+          "shape": "state"
+        },
+        "tagSet": {
+          "shape": "tagSet"
+        }
+      }
+    },
+    "privateLanClassicCount": {
+      "type": "structure"
+    },
+    "privateLanCount": {
+      "type": "structure"
+    },
+    "privateLanInfo": {
+      "type": "structure"
+    },
+    "privateLanName": {
+      "type": "structure"
+    },
+    "privateLanSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "privateNetworkInfo": {
+      "type": "structure"
+    },
+    "privateNetworkMeasuredRate": {
+      "type": "structure"
+    },
+    "privateNetworkMonthlyRate": {
+      "type": "structure"
+    },
+    "process": {
+      "type": "structure"
+    },
+    "productCode": {
+      "type": "structure"
+    },
+    "productCodes": {
+      "type": "structure"
+    },
+    "propagatingVgwSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "protocol": {
+      "type": "structure"
+    },
+    "publicDnsName": {
+      "type": "structure"
+    },
+    "publicIp": {
+      "type": "structure"
+    },
+    "publicIpV6": {
+      "type": "structure"
+    },
+    "ramdiskId": {
+      "type": "structure"
+    },
+    "reason": {
+      "type": "structure"
+    },
+    "redistributable": {
+      "type": "structure"
+    },
+    "regionInfo": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "regionName": {
+      "type": "structure"
+    },
+    "requestId": {
+      "type": "structure"
+    },
+    "requesterId": {
+      "type": "structure"
+    },
+    "reservationId": {
+      "type": "structure",
+      "members": {
+        "ownerId": {
+          "shape": "ownerId"
+        }
+      }
+    },
+    "reservationSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "resource": {
+      "type": "structure"
+    },
+    "resourceInfo": {
+      "type": "structure",
+      "members": {
+        "addDiskCount": {
+          "shape": "addDiskCount"
+        },
+        "addDiskTotalSize": {
+          "shape": "addDiskTotalSize"
+        },
+        "autoScaleCount": {
+          "shape": "autoScaleCount"
+        },
+        "customizeImageCount": {
+          "shape": "customizeImageCount"
+        },
+        "dynamicIpCount": {
+          "shape": "dynamicIpCount"
+        },
+        "elasticIpItemSet": {
+          "shape": "elasticIpItemSet"
+        },
+        "instanceItemSet": {
+          "shape": "instanceItemSet"
+        },
+        "loadBalancerCount": {
+          "shape": "loadBalancerCount"
+        },
+        "monitoringRuleCount": {
+          "shape": "monitoringRuleCount"
+        },
+        "networkFlowAmount": {
+          "shape": "networkFlowAmount"
+        },
+        "niftyMultiAccountCount": {
+          "shape": "niftyMultiAccountCount"
+        },
+        "premiumSupportSet": {
+          "shape": "premiumSupportSet"
+        },
+        "privateLanClassicCount": {
+          "shape": "privateLanClassicCount"
+        },
+        "privateLanCount": {
+          "shape": "privateLanCount"
+        },
+        "routerItemSet": {
+          "shape": "routerItemSet"
+        },
+        "securityGroupCount": {
+          "shape": "securityGroupCount"
+        },
+        "sslCertCount": {
+          "shape": "sslCertCount"
+        },
+        "vpnGatewayItemSet": {
+          "shape": "vpnGatewayItemSet"
+        }
+      }
+    },
+    "resourceName": {
+      "type": "structure"
+    },
+    "result": {
+      "type": "structure"
+    },
+    "return": {
+      "type": "structure"
+    },
+    "rootDeviceName": {
+      "type": "structure"
+    },
+    "routeSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "routeTable": {
+      "type": "structure",
+      "members": {
+        "routeTableId": {
+          "shape": "routeTableId"
+        }
+      }
+    },
+    "routeTableAssociationId": {
+      "type": "structure"
+    },
+    "routeTableId": {
+      "type": "structure"
+    },
+    "routeTableSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "router": {
+      "type": "structure",
+      "members": {
+        "accountingType": {
+          "shape": "accountingType"
+        },
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        },
+        "backupInformation": {
+          "shape": "backupInformation"
+        },
+        "description": {
+          "shape": "description"
+        },
+        "groupSet": {
+          "shape": "groupSet"
+        },
+        "networkInterfaceSet": {
+          "shape": "networkInterfaceSet"
+        },
+        "nextMonthAccountingType": {
+          "shape": "nextMonthAccountingType"
+        },
+        "routerId": {
+          "shape": "routerId"
+        },
+        "routerName": {
+          "shape": "routerName"
+        },
+        "state": {
+          "shape": "state"
+        },
+        "type": {
+          "shape": "type"
+        },
+        "versionInformation": {
+          "shape": "versionInformation"
+        }
+      }
+    },
+    "routerId": {
+      "type": "structure"
+    },
+    "routerInfo": {
+      "type": "structure"
+    },
+    "routerItemSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "routerMeasuredRateSet": {
+      "type": "structure"
+    },
+    "routerMonthlyRateSet": {
+      "type": "structure"
+    },
+    "routerName": {
+      "type": "structure"
+    },
+    "routerNetworkInterfaceSet": {
+      "type": "structure"
+    },
+    "routerSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "routes": {
+      "type": "structure",
+      "members": {
+        "niftyIpsecConfiguration": {
+          "shape": "niftyIpsecConfiguration"
+        }
+      }
+    },
+    "ruleName": {
+      "type": "structure"
+    },
+    "ruleNumber": {
+      "type": "structure"
+    },
+    "ruleSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "runningInstanceMeasuredRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "runningScaleOutInstanceSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "runningScaleOutOsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "scaleout": {
+      "type": "structure"
+    },
+    "scaleoutCondition": {
+      "type": "structure"
+    },
+    "scheduleSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "secureNetInfo": {
+      "type": "structure",
+      "members": {
+        "secureNetMonthlyRate": {
+          "shape": "secureNetMonthlyRate"
+        }
+      }
+    },
+    "secureNetMonthlyRate": {
+      "type": "structure",
+      "members": {
+        "charge": {
+          "shape": "charge"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "securityGroupApplyTime": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "securityGroupCount": {
+      "type": "structure"
+    },
+    "securityGroupInfo": {
+      "type": "structure",
+      "members": {
+        "optionSet": {
+          "shape": "optionSet"
+        },
+        "securityGroupApplyTime": {
+          "shape": "securityGroupApplyTime"
+        }
+      }
+    },
+    "serviceStatusSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "sessionId": {
+      "type": "structure"
+    },
+    "setFriday": {
+      "type": "structure"
+    },
+    "setMonday": {
+      "type": "structure"
+    },
+    "setSaturday": {
+      "type": "structure"
+    },
+    "setSunday": {
+      "type": "structure"
+    },
+    "setThursday": {
+      "type": "structure"
+    },
+    "setTuesday": {
+      "type": "structure"
+    },
+    "setWednesday": {
+      "type": "structure"
+    },
+    "sharingStatus": {
+      "type": "structure"
+    },
+    "size": {
+      "type": "structure"
+    },
+    "snapShot": {
+      "type": "structure",
+      "members": {
+        "charge": {
+          "shape": "charge"
+        },
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "snapshotId": {
+      "type": "structure",
+      "members": {
+        "accountingType": {
+          "shape": "accountingType"
+        },
+        "attachmentSet": {
+          "shape": "attachmentSet"
+        },
+        "availabilityZone": {
+          "shape": "availabilityZone"
+        },
+        "createTime": {
+          "shape": "createTime"
+        },
+        "nextMonthAccountingType": {
+          "shape": "nextMonthAccountingType"
+        },
+        "status": {
+          "shape": "status"
+        }
+      }
+    },
+    "snapshotInfo": {
+      "type": "structure",
+      "members": {
+        "snapShot": {
+          "shape": "snapShot"
+        }
+      }
+    },
+    "snapshotInfoSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "snapshotName": {
+      "type": "structure"
+    },
+    "snapshotSet": {
+      "type": "structure"
+    },
+    "source": {
+      "type": "structure"
+    },
+    "sourceDestCheck": {
+      "type": "structure",
+      "members": {
+        "groupSet": {
+          "shape": "groupSet"
+        }
+      }
+    },
+    "sourcePort": {
+      "type": "structure"
+    },
+    "spotInstanceRequestId": {
+      "type": "structure"
+    },
+    "sslCertCount": {
+      "type": "structure"
+    },
+    "sslCertInfo": {
+      "type": "structure"
+    },
+    "startDate": {
+      "type": "structure"
+    },
+    "startIpAddress": {
+      "type": "structure"
+    },
+    "startingDDay": {
+      "type": "structure"
+    },
+    "startingMonth": {
+      "type": "structure"
+    },
+    "startingTimeZone": {
+      "type": "structure"
+    },
+    "state": {
+      "type": "structure"
+    },
+    "stateReason": {
+      "type": "structure"
+    },
+    "staticMappingsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "staticRoutesOnly": {
+      "type": "structure"
+    },
+    "status": {
+      "type": "structure"
+    },
+    "statusMessage": {
+      "type": "structure"
+    },
+    "stopIpAddress": {
+      "type": "structure"
+    },
+    "stoppedInstanceMeasuredRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "stoppedScaleOutInstanceSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "stoppedScaleOutOsSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "storageInfo": {
+      "type": "structure",
+      "members": {
+        "storageMeasuredRate": {
+          "shape": "storageMeasuredRate"
+        }
+      }
+    },
+    "storageMeasuredRate": {
+      "type": "structure",
+      "members": {
+        "unit": {
+          "shape": "unit"
+        },
+        "value": {
+          "shape": "value"
+        }
+      }
+    },
+    "storageMonthlyRate": {
+      "type": "structure"
+    },
+    "storageStatus": {
+      "type": "structure"
+    },
+    "subnetId": {
+      "type": "structure",
+      "members": {
+        "vpcId": {
+          "shape": "vpcId"
+        }
+      }
+    },
+    "tagSet": {
+      "type": "structure"
+    },
+    "tdbCode": {
+      "type": "structure",
+      "members": {
+        "alphabetName1": {
+          "shape": "alphabetName1"
+        },
+        "alphabetName2": {
+          "shape": "alphabetName2"
+        },
+        "city": {
+          "shape": "city"
+        },
+        "corpGrade": {
+          "shape": "corpGrade"
+        },
+        "corpName": {
+          "shape": "corpName"
+        },
+        "divisionName": {
+          "shape": "divisionName"
+        },
+        "emailAddress": {
+          "shape": "emailAddress"
+        },
+        "kanaName1": {
+          "shape": "kanaName1"
+        },
+        "kanaName2": {
+          "shape": "kanaName2"
+        },
+        "name1": {
+          "shape": "name1"
+        },
+        "name2": {
+          "shape": "name2"
+        },
+        "phoneNumber": {
+          "shape": "phoneNumber"
+        },
+        "postName": {
+          "shape": "postName"
+        },
+        "pref": {
+          "shape": "pref"
+        },
+        "presidentName1": {
+          "shape": "presidentName1"
+        },
+        "presidentName2": {
+          "shape": "presidentName2"
+        },
+        "zip1": {
+          "shape": "zip1"
+        },
+        "zip2": {
+          "shape": "zip2"
+        }
+      }
+    },
+    "tenancy": {
+      "type": "structure"
+    },
+    "threshold": {
+      "type": "structure"
+    },
+    "time": {
+      "type": "structure"
+    },
+    "timeZone": {
+      "type": "structure",
+      "members": {
+        "endingTimeZone": {
+          "shape": "endingTimeZone"
+        },
+        "startingTimeZone": {
+          "shape": "startingTimeZone"
+        }
+      }
+    },
+    "translation": {
+      "type": "structure",
+      "members": {
+        "port": {
+          "shape": "port"
+        }
+      }
+    },
+    "triggerSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "tunnelId": {
+      "type": "structure"
+    },
+    "type": {
+      "type": "structure"
+    },
+    "unit": {
+      "type": "structure"
+    },
+    "updateDate": {
+      "type": "structure"
+    },
+    "updatedTime": {
+      "type": "structure"
+    },
+    "uploadState": {
+      "type": "structure"
+    },
+    "uploads": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "upperLowerCondition": {
+      "type": "structure"
+    },
+    "upperThreshold": {
+      "type": "structure"
+    },
+    "userActivitiesSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "validityTerm": {
+      "type": "structure"
+    },
+    "value": {
+      "type": "structure"
+    },
+    "valueSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "valueType": {
+      "type": "structure"
+    },
+    "version": {
+      "type": "structure"
+    },
+    "versionInformation": {
+      "type": "structure",
+      "members": {
+        "isLatest": {
+          "shape": "isLatest"
+        },
+        "version": {
+          "shape": "version"
+        }
+      }
+    },
+    "vgwTelemetry": {
+      "type": "structure",
+      "members": {
+        "options": {
+          "shape": "options"
+        },
+        "routes": {
+          "shape": "routes"
+        }
+      }
+    },
+    "vipMeasuredRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "vipSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "virtualName": {
+      "type": "structure"
+    },
+    "volume": {
+      "type": "structure"
+    },
+    "volumeId": {
+      "type": "structure"
+    },
+    "volumeInfo": {
+      "type": "structure",
+      "members": {
+        "importInstanceDiskMonthlyRate": {
+          "shape": "importInstanceDiskMonthlyRate"
+        },
+        "volumeMeasuredRateSet": {
+          "shape": "volumeMeasuredRateSet"
+        },
+        "volumeSet": {
+          "shape": "volumeSet"
+        }
+      }
+    },
+    "volumeMeasuredRateSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "volumeSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "volumeSize": {
+      "type": "structure"
+    },
+    "volumes": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "vpcId": {
+      "type": "structure",
+      "members": {
+        "description": {
+          "shape": "description"
+        }
+      }
+    },
+    "vpcPeeringConnectionId": {
+      "type": "structure"
+    },
+    "vpnConnectMeasuredRateSet": {
+      "type": "structure"
+    },
+    "vpnConnection": {
+      "type": "structure",
+      "members": {
+        "state": {
+          "shape": "state"
+        },
+        "vpnConnectionId": {
+          "shape": "vpnConnectionId"
+        }
+      }
+    },
+    "vpnConnectionId": {
+      "type": "structure"
+    },
+    "vpnConnectionSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "vpnGatewayId": {
+      "type": "structure"
+    },
+    "vpnGatewayInfo": {
+      "type": "structure"
+    },
+    "vpnGatewayItemSet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "vpnGatewayMeasuredRateSet": {
+      "type": "structure"
+    },
+    "vpnGatewayMonthlyRateSet": {
+      "type": "structure"
+    },
+    "vpnGatewayNetworkInterfaceSet": {
+      "type": "structure"
+    },
+    "vpnGatewaySet": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "webProxy": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "shape": "item"
+        }
+      }
+    },
+    "zone": {
+      "type": "structure"
     }
   }
 }

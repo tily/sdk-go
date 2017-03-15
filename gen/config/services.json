@@ -28,7 +28,7 @@
       "requestShapeRequiredRegexp": "^\u25CB$",
       "requestShapeIgnoreSelector": "td:nth-child(2)",
       "requestShapeIgnoreRegexp": "^※指定不可$",
-      "resultShapeSelector": "",
+      "resultShapeSelector": "table[summary='応答フィールド'] tr:nth-child(n+2)",
       "resultShapeNameSelector": "td:nth-child(1)",
       "resultShapeTypeSelector": "td:nth-child(3)",
       "resultExampleSelector": "code.cd-01:last-child"
