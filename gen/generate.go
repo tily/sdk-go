@@ -245,22 +245,22 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			} else {
 				structShape.Members[value] = member
 			}
-		case typeText == "数値" || typeText == "Long" || typeText == "int" || typeText == "Integer" || typeText == "xsd:int" || typeText == "xsd:Int":
+		case regexp.MustCompile(`^(数値|Long|int|Integer|xsd:(int|Int))$`).MatchString(typeText):
 			member.ShapeName = "Integer"
-		case typeText == "文字列" || typeText == "String" || typeText == "xsd:string" || typeText == "Sring" || typeText == "string" || typeText == "String ":
+		case regexp.MustCompile(`^(文字列|String|xsd:string|Sring|string|String )$`).MatchString(typeText):
 			member.ShapeName = "String"
-		case typeText == "真偽値" || typeText == "boolean" || typeText == "Boolean" || typeText == "bBoolean":
+		case regexp.MustCompile(`^(真偽値|boolean|Boolean|bBoolean)$`).MatchString(typeText):
 			member.ShapeName = "Boolean"
-		case typeText == "Double":
+		case regexp.MustCompile(`^Double$`).MatchString(typeText):
 			member.ShapeName = "Double"
-		case typeText == "日付" || typeText == "日時":
+		case regexp.MustCompile(`^(日付|日時)$`).MatchString(typeText):
 			member.ShapeName = "TStamp"
 			tstampShape := Shape{
 				ShapeName: member.ShapeName,
 				Type:      "timestamp",
 			}
 			shapes = append(shapes, tstampShape)
-		case typeText == "文字配列":
+		case regexp.MustCompile(`^文字配列$`).MatchString(typeText):
 			shapeName = regexp.MustCompile(`\.member\.N$`).ReplaceAllString(shapeName, "")
 			member.ShapeName = fmt.Sprintf("%sStringList", shapeName)
 			stringListShape := Shape{
