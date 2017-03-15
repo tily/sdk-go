@@ -248,6 +248,39 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			shapes = append(shapes, childShape)
 			member.ShapeName = parentShapeName
 			shapeName = parentShapeName
+		case regexp.MustCompile(`^([a-zA-Z]{2,})\.([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
+			r := regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`)
+			match := r.FindAllStringSubmatch(shapeName, -1)
+			parentShapeName := match[0][1]
+			childShapeName := match[0][2]
+			grandChildShapeName := match[0][3]
+
+			parentShape := shapes.findShapeByName(parentShapeName)
+			if parentShape.ShapeName == "" {
+				parentShape = Shape{
+					ShapeName: parentShapeName,
+					Type:      "structure",
+					Members:   map[string]ShapeRef{},
+				}
+				shapes = append(shapes, parentShape)
+			}
+			parentShape.Members[childShapeName] = ShapeRef{ShapeName: childShapeName}
+
+			childShape := shapes.findShapeByName(childShapeName)
+			if childShape.ShapeName == "" {
+				childShape = Shape{
+					ShapeName: childShapeName,
+					Type:      "structure",
+					Members:   map[string]ShapeRef{},
+				}
+				shapes = append(shapes, childShape)
+			}
+			childShape.Members[grandChildShapeName] = ShapeRef{ShapeName: grandChildShapeName}
+
+			grandChildShape := Shape{ShapeName: grandChildShapeName, Type: strings.ToLower(shapeType)}
+			shapes = append(shapes, grandChildShape)
+			member.ShapeName = parentShapeName
+			shapeName = parentShapeName
 		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
 			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
 			match := r.FindAllStringSubmatch(shapeName, -1)

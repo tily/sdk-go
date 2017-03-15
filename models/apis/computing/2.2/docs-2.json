@@ -274,10 +274,6 @@
       "base": "BypassInterface",
       "refs": null
     },
-    "Bytes": {
-      "base": "Bytes",
-      "refs": null
-    },
     "CancelCopyInstancesRequest": {
       "base": "CancelCopyInstancesRequest",
       "refs": null
@@ -374,16 +370,8 @@
       "base": "CreatedTime",
       "refs": null
     },
-    "DDay": {
-      "base": "DDay",
-      "refs": null
-    },
     "DNSName": {
       "base": "DNSName",
-      "refs": null
-    },
-    "Day": {
-      "base": "Day",
       "refs": null
     },
     "DeleteCustomerGatewayRequest": {
@@ -404,10 +392,6 @@
     },
     "DeleteLoadBalancerRequest": {
       "base": "DeleteLoadBalancerRequest",
-      "refs": null
-    },
-    "DeleteOnTermination": {
-      "base": "DeleteOnTermination",
       "refs": null
     },
     "DeleteRouteRequest": {
@@ -586,10 +570,6 @@
       "base": "DownloadSslCertificateRequest",
       "refs": null
     },
-    "Ebs": {
-      "base": "Ebs",
-      "refs": null
-    },
     "EmailAddress": {
       "base": "EmailAddress",
       "refs": null
@@ -618,28 +598,12 @@
       "base": "EndNumber",
       "refs": null
     },
-    "EndingDDay": {
-      "base": "EndingDDay",
-      "refs": null
-    },
-    "EndingMonth": {
-      "base": "EndingMonth",
-      "refs": null
-    },
-    "EndingTimeZone": {
-      "base": "EndingTimeZone",
-      "refs": null
-    },
     "ExpirationPeriod": {
       "base": "ExpirationPeriod",
       "refs": null
     },
     "FilterType": {
       "base": "FilterType",
-      "refs": null
-    },
-    "Format": {
-      "base": "Format",
       "refs": null
     },
     "GroupName": {
@@ -662,20 +626,12 @@
       "base": "IPAddress",
       "refs": null
     },
-    "Image": {
-      "base": "Image",
-      "refs": null
-    },
     "ImportInstanceRequest": {
       "base": "ImportInstanceRequest",
       "refs": null
     },
     "ImportKeyPairRequest": {
       "base": "ImportKeyPairRequest",
-      "refs": null
-    },
-    "ImportManifestUrl": {
-      "base": "ImportManifestUrl",
       "refs": null
     },
     "InboundInterface": {
@@ -772,10 +728,6 @@
     },
     "Monitoring": {
       "base": "Monitoring",
-      "refs": null
-    },
-    "Month": {
-      "base": "Month",
       "refs": null
     },
     "NameServer": {
@@ -1134,10 +1086,6 @@
       "base": "NiftyUpdateVpnGatewayNetworkInterfacesRequest",
       "refs": null
     },
-    "NoDevice": {
-      "base": "NoDevice",
-      "refs": null
-    },
     "Option": {
       "base": "Option",
       "refs": null
@@ -1266,42 +1214,6 @@
       "base": "SetFilterForLoadBalancerRequest",
       "refs": null
     },
-    "SetFriday": {
-      "base": "SetFriday",
-      "refs": null
-    },
-    "SetMonday": {
-      "base": "SetMonday",
-      "refs": null
-    },
-    "SetSaturday": {
-      "base": "SetSaturday",
-      "refs": null
-    },
-    "SetSunday": {
-      "base": "SetSunday",
-      "refs": null
-    },
-    "SetThursday": {
-      "base": "SetThursday",
-      "refs": null
-    },
-    "SetTuesday": {
-      "base": "SetTuesday",
-      "refs": null
-    },
-    "SetWednesday": {
-      "base": "SetWednesday",
-      "refs": null
-    },
-    "Size": {
-      "base": "Size",
-      "refs": null
-    },
-    "SnapshotId": {
-      "base": "SnapshotId",
-      "refs": null
-    },
     "SorryPageUpdate": {
       "base": "SorryPageUpdate",
       "refs": null
@@ -1320,18 +1232,6 @@
     },
     "StartNumber": {
       "base": "StartNumber",
-      "refs": null
-    },
-    "StartingDDay": {
-      "base": "StartingDDay",
-      "refs": null
-    },
-    "StartingMonth": {
-      "base": "StartingMonth",
-      "refs": null
-    },
-    "StartingTimeZone": {
-      "base": "StartingTimeZone",
       "refs": null
     },
     "State": {
@@ -1364,10 +1264,6 @@
     },
     "TerminateInstancesRequest": {
       "base": "TerminateInstancesRequest",
-      "refs": null
-    },
-    "TimeZone": {
-      "base": "TimeZone",
       "refs": null
     },
     "Timeout": {
@@ -1420,14 +1316,6 @@
     },
     "Value": {
       "base": "Value",
-      "refs": null
-    },
-    "Volume": {
-      "base": "Volume",
-      "refs": null
-    },
-    "VolumeSize": {
-      "base": "VolumeSize",
       "refs": null
     },
     "acceptedRouteCount": {
