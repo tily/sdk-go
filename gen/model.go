@@ -58,3 +58,15 @@ type DocsShape struct {
 	Base string            `json:"base"`
 	Refs map[string]string `json:"refs"`
 }
+
+type Shapes []Shape
+
+// get position in strint slice case-insensitively
+func (shapes Shapes) findShapeByName(shapeName string) Shape {
+	for _, shape := range shapes {
+		if shape.ShapeName == shapeName {
+			return shape
+		}
+	}
+	return Shape{}
+}

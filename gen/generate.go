@@ -175,7 +175,7 @@ func (g *Generator) loadOperationHTML(path string) (doc *goquery.Document, err e
 	return doc, nil
 }
 
-func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Document) (shapes []Shape) {
+func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Document) (shapes Shapes) {
 	shape := Shape{}
 	shape.ShapeName = fmt.Sprintf("%sRequest", operationName)
 	shape.Type = "structure"
@@ -228,13 +228,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			}
 
 			shapes = append(shapes, structListShape)
-			structShape := Shape{}
-			for _, shape := range shapes {
-				if shape.ShapeName == structShapeName {
-					structShape = shape
-					break
-				}
-			}
+			structShape := shapes.findShapeByName(structShapeName)
 			member := ShapeRef{ShapeName: "String"}
 			if structShape.ShapeName == "" {
 				structShape = Shape{
