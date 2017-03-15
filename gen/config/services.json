@@ -30,8 +30,8 @@
       "requestShapeIgnoreRegexp": "^※指定不可$",
       "resultShapeSelector": "table[summary='応答フィールド'] tr:nth-child(n+2)",
       "resultShapeNameSelector": "td:nth-child(1)",
-      "resultShapeTypeSelector": "td:nth-child(3)",
-      "resultShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|$)",
+      "resultShapeTypeSelector": "td:nth-child(2)",
+      "resultShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|Ancestor|Value|Valid Values|単位|$)",
       "resultExampleSelector": "code.cd-01:last-child"
     }
   },

@@ -174,6 +174,50 @@
     "UploadSslCertificate": "UploadSslCertificate"
   },
   "shapes": {
+    "\t\t\t\t\t\t\t\tvalue": {
+      "base": "\t\t\t\t\t\t\t\tvalue",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\tattachTime": {
+      "base": "\n\t\t\t\t\t\t\t\tattachTime",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\tgroupName": {
+      "base": "\n\t\t\t\t\t\t\t\tgroupName",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\tinstanceId": {
+      "base": "\n\t\t\t\t\t\t\t\tinstanceId",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\tlog": {
+      "base": "\n\t\t\t\t\t\t\t\tlog",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\trequestId": {
+      "base": "\n\t\t\t\t\t\t\t\trequestId",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\treturn": {
+      "base": "\n\t\t\t\t\t\t\t\treturn",
+      "refs": null
+    },
+    "\n\t\t\t\t\t\t\t\tuserId": {
+      "base": "\n\t\t\t\t\t\t\t\tuserId",
+      "refs": null
+    },
+    " instanceId": {
+      "base": " instanceId",
+      "refs": null
+    },
+    " requestId": {
+      "base": " requestId",
+      "refs": null
+    },
+    "AccountingType": {
+      "base": "AccountingType",
+      "refs": null
+    },
     "AllocateAddressRequest": {
       "base": "AllocateAddressRequest",
       "refs": null
@@ -198,6 +242,10 @@
       "base": "AuthorizeSecurityGroupIngressRequest",
       "refs": null
     },
+    "BalancingType": {
+      "base": "BalancingType",
+      "refs": null
+    },
     "Boolean": {
       "base": "Boolean",
       "refs": null
@@ -216,6 +264,14 @@
     },
     "ConfigureHealthCheckRequest": {
       "base": "ConfigureHealthCheckRequest",
+      "refs": null
+    },
+    "CookieExpirationPeriod": {
+      "base": "CookieExpirationPeriod",
+      "refs": null
+    },
+    "CookieName": {
+      "base": "CookieName",
       "refs": null
     },
     "CopyInstancesRequest": {
@@ -268,6 +324,14 @@
     },
     "CreateVpnGatewayRequest": {
       "base": "CreateVpnGatewayRequest",
+      "refs": null
+    },
+    "CreatedTime": {
+      "base": "CreatedTime",
+      "refs": null
+    },
+    "DNSName": {
+      "base": "DNSName",
       "refs": null
     },
     "DeleteCustomerGatewayRequest": {
@@ -430,6 +494,10 @@
       "base": "DescribeVpnGatewaysRequest",
       "refs": null
     },
+    "Description": {
+      "base": "Description",
+      "refs": null
+    },
     "DetachVolumeRequest": {
       "base": "DetachVolumeRequest",
       "refs": null
@@ -454,6 +522,26 @@
       "base": "DownloadSslCertificateRequest",
       "refs": null
     },
+    "Enabled": {
+      "base": "Enabled",
+      "refs": null
+    },
+    "ExpirationPeriod": {
+      "base": "ExpirationPeriod",
+      "refs": null
+    },
+    "FilterType": {
+      "base": "FilterType",
+      "refs": null
+    },
+    "HealthyThreshold": {
+      "base": "HealthyThreshold",
+      "refs": null
+    },
+    "IPAddress": {
+      "base": "IPAddress",
+      "refs": null
+    },
     "ImportInstanceRequest": {
       "base": "ImportInstanceRequest",
       "refs": null
@@ -462,8 +550,36 @@
       "base": "ImportKeyPairRequest",
       "refs": null
     },
+    "InstanceId": {
+      "base": "InstanceId",
+      "refs": null
+    },
+    "InstancePort": {
+      "base": "InstancePort",
+      "refs": null
+    },
+    "InstanceUniqueId": {
+      "base": "InstanceUniqueId",
+      "refs": null
+    },
     "Integer": {
       "base": "Integer",
+      "refs": null
+    },
+    "Interval": {
+      "base": "Interval",
+      "refs": null
+    },
+    "LoadBalancerName": {
+      "base": "LoadBalancerName",
+      "refs": null
+    },
+    "LoadBalancerPort": {
+      "base": "LoadBalancerPort",
+      "refs": null
+    },
+    "Memo": {
+      "base": "Memo",
       "refs": null
     },
     "ModifyImageAttributeRequest": {
@@ -480,6 +596,14 @@
     },
     "ModifyVolumeAttributeRequest": {
       "base": "ModifyVolumeAttributeRequest",
+      "refs": null
+    },
+    "NetworkVolume": {
+      "base": "NetworkVolume",
+      "refs": null
+    },
+    "NextMonthAccountingType": {
+      "base": "NextMonthAccountingType",
       "refs": null
     },
     "NiftyAssociateImageRequest": {
@@ -790,6 +914,22 @@
       "base": "NiftyUpdateVpnGatewayNetworkInterfacesRequest",
       "refs": null
     },
+    "PolicyName": {
+      "base": "PolicyName",
+      "refs": null
+    },
+    "Primary": {
+      "base": "Primary",
+      "refs": null
+    },
+    "Protocol": {
+      "base": "Protocol",
+      "refs": null
+    },
+    "ReasonCode": {
+      "base": "ReasonCode",
+      "refs": null
+    },
     "RebootInstancesRequest": {
       "base": "RebootInstancesRequest",
       "refs": null
@@ -822,12 +962,20 @@
       "base": "ReplaceRouteTableAssociationRequest",
       "refs": null
     },
+    "RequestId": {
+      "base": "RequestId",
+      "refs": null
+    },
     "RevokeSecurityGroupIngressRequest": {
       "base": "RevokeSecurityGroupIngressRequest",
       "refs": null
     },
     "RunInstancesRequest": {
       "base": "RunInstancesRequest",
+      "refs": null
+    },
+    "SSLCertificateId": {
+      "base": "SSLCertificateId",
       "refs": null
     },
     "SetFilterForLoadBalancerRequest": {
@@ -838,6 +986,10 @@
       "base": "StartInstancesRequest",
       "refs": null
     },
+    "State": {
+      "base": "State",
+      "refs": null
+    },
     "StopInstancesRequest": {
       "base": "StopInstancesRequest",
       "refs": null
@@ -846,8 +998,20 @@
       "base": "String",
       "refs": null
     },
+    "Target": {
+      "base": "Target",
+      "refs": null
+    },
     "TerminateInstancesRequest": {
       "base": "TerminateInstancesRequest",
+      "refs": null
+    },
+    "Timeout": {
+      "base": "Timeout",
+      "refs": null
+    },
+    "UnhealthyThreshold": {
+      "base": "UnhealthyThreshold",
       "refs": null
     },
     "UpdateLoadBalancerOptionRequest": {
@@ -868,6 +1032,1330 @@
     },
     "UploadSslCertificateRequest": {
       "base": "UploadSslCertificateRequest",
+      "refs": null
+    },
+    "UserId": {
+      "base": "UserId",
+      "refs": null
+    },
+    "acceptedRouteCount": {
+      "base": "acceptedRouteCount",
+      "refs": null
+    },
+    "accountingType": {
+      "base": "accountingType",
+      "refs": null
+    },
+    "addDatetime": {
+      "base": "addDatetime",
+      "refs": null
+    },
+    "addDiskCount": {
+      "base": "addDiskCount",
+      "refs": null
+    },
+    "addDiskTotalSize": {
+      "base": "addDiskTotalSize",
+      "refs": null
+    },
+    "address": {
+      "base": "address",
+      "refs": null
+    },
+    "admin": {
+      "base": "admin",
+      "refs": null
+    },
+    "alarm": {
+      "base": "alarm",
+      "refs": null
+    },
+    "alarmCondition": {
+      "base": "alarmCondition",
+      "refs": null
+    },
+    "alarmEvent": {
+      "base": "alarmEvent",
+      "refs": null
+    },
+    "alarmRulesActivitiesEvent": {
+      "base": "alarmRulesActivitiesEvent",
+      "refs": null
+    },
+    "alarmRulesActivitiesEventDatetim": {
+      "base": "alarmRulesActivitiesEventDatetim",
+      "refs": null
+    },
+    "alarmState": {
+      "base": "alarmState",
+      "refs": null
+    },
+    "allocationId": {
+      "base": "allocationId",
+      "refs": null
+    },
+    "alphabetName1": {
+      "base": "alphabetName1",
+      "refs": null
+    },
+    "alphabetName2": {
+      "base": "alphabetName2",
+      "refs": null
+    },
+    "amiLaunchIndex": {
+      "base": "amiLaunchIndex",
+      "refs": null
+    },
+    "analyzeCode": {
+      "base": "analyzeCode",
+      "refs": null
+    },
+    "approverEmailAddress": {
+      "base": "approverEmailAddress",
+      "refs": null
+    },
+    "architecture": {
+      "base": "architecture",
+      "refs": null
+    },
+    "associationId": {
+      "base": "associationId",
+      "refs": null
+    },
+    "attachTime": {
+      "base": "attachTime",
+      "refs": null
+    },
+    "attachmentID": {
+      "base": "attachmentID",
+      "refs": null
+    },
+    "attribute": {
+      "base": "attribute",
+      "refs": null
+    },
+    "autoScaleCount": {
+      "base": "autoScaleCount",
+      "refs": null
+    },
+    "autoScalingGroupName": {
+      "base": "autoScalingGroupName",
+      "refs": null
+    },
+    "availabilityZone": {
+      "base": "availabilityZone",
+      "refs": null
+    },
+    "bgpAsn": {
+      "base": "bgpAsn",
+      "refs": null
+    },
+    "breachDuration": {
+      "base": "breachDuration",
+      "refs": null
+    },
+    "bytesConverted": {
+      "base": "bytesConverted",
+      "refs": null
+    },
+    "caState": {
+      "base": "caState",
+      "refs": null
+    },
+    "categoryName": {
+      "base": "categoryName",
+      "refs": null
+    },
+    "certAuthority": {
+      "base": "certAuthority",
+      "refs": null
+    },
+    "certState": {
+      "base": "certState",
+      "refs": null
+    },
+    "changeInCapacity": {
+      "base": "changeInCapacity",
+      "refs": null
+    },
+    "charge": {
+      "base": "charge",
+      "refs": null
+    },
+    "checksum": {
+      "base": "checksum",
+      "refs": null
+    },
+    "cidrBlock": {
+      "base": "cidrBlock",
+      "refs": null
+    },
+    "cidrIp": {
+      "base": "cidrIp",
+      "refs": null
+    },
+    "city": {
+      "base": "city",
+      "refs": null
+    },
+    "clientName": {
+      "base": "clientName",
+      "refs": null
+    },
+    "code": {
+      "base": "code",
+      "refs": null
+    },
+    "controlPanelStatus": {
+      "base": "controlPanelStatus",
+      "refs": null
+    },
+    "conversionTaskId": {
+      "base": "conversionTaskId",
+      "refs": null
+    },
+    "copyInfo": {
+      "base": "copyInfo",
+      "refs": null
+    },
+    "corpGrade": {
+      "base": "corpGrade",
+      "refs": null
+    },
+    "corpName": {
+      "base": "corpName",
+      "refs": null
+    },
+    "count": {
+      "base": "count",
+      "refs": null
+    },
+    "countryName": {
+      "base": "countryName",
+      "refs": null
+    },
+    "course": {
+      "base": "course",
+      "refs": null
+    },
+    "createTime": {
+      "base": "createTime",
+      "refs": null
+    },
+    "createdTime": {
+      "base": "createdTime",
+      "refs": null
+    },
+    "currentServersCount": {
+      "base": "currentServersCount",
+      "refs": null
+    },
+    "customerGatewayConfiguration": {
+      "base": "customerGatewayConfiguration",
+      "refs": null
+    },
+    "customerGatewayId": {
+      "base": "customerGatewayId",
+      "refs": null
+    },
+    "customizeImageCount": {
+      "base": "customizeImageCount",
+      "refs": null
+    },
+    "dalarmEventDatetime": {
+      "base": "dalarmEventDatetime",
+      "refs": null
+    },
+    "data": {
+      "base": "data",
+      "refs": null
+    },
+    "dataType": {
+      "base": "dataType",
+      "refs": null
+    },
+    "date": {
+      "base": "date",
+      "refs": null
+    },
+    "dateTime": {
+      "base": "dateTime",
+      "refs": null
+    },
+    "defaultCooldown": {
+      "base": "defaultCooldown",
+      "refs": null
+    },
+    "deleteOnTermination": {
+      "base": "deleteOnTermination",
+      "refs": null
+    },
+    "descriprion": {
+      "base": "descriprion",
+      "refs": null
+    },
+    "description": {
+      "base": "description",
+      "refs": null
+    },
+    "destinationCidrBlock": {
+      "base": "destinationCidrBlock",
+      "refs": null
+    },
+    "destinationPort": {
+      "base": "destinationPort",
+      "refs": null
+    },
+    "detailDescription": {
+      "base": "detailDescription",
+      "refs": null
+    },
+    "device": {
+      "base": "device",
+      "refs": null
+    },
+    "deviceIndex": {
+      "base": "deviceIndex",
+      "refs": null
+    },
+    "deviceName": {
+      "base": "deviceName",
+      "refs": null
+    },
+    "dhcp": {
+      "base": "dhcp",
+      "refs": null
+    },
+    "dhcpConfigId": {
+      "base": "dhcpConfigId",
+      "refs": null
+    },
+    "dhcpOptionsId": {
+      "base": "dhcpOptionsId",
+      "refs": null
+    },
+    "difference": {
+      "base": "difference",
+      "refs": null
+    },
+    "diskStatus": {
+      "base": "diskStatus",
+      "refs": null
+    },
+    "diskType": {
+      "base": "diskType",
+      "refs": null
+    },
+    "distributionId": {
+      "base": "distributionId",
+      "refs": null
+    },
+    "divisionName": {
+      "base": "divisionName",
+      "refs": null
+    },
+    "dnsName": {
+      "base": "dnsName",
+      "refs": null
+    },
+    "domain": {
+      "base": "domain",
+      "refs": null
+    },
+    "dynamicIpCount": {
+      "base": "dynamicIpCount",
+      "refs": null
+    },
+    "emailAddress": {
+      "base": "emailAddress",
+      "refs": null
+    },
+    "encapsulation": {
+      "base": "encapsulation",
+      "refs": null
+    },
+    "encryptionAlgorithm": {
+      "base": "encryptionAlgorithm",
+      "refs": null
+    },
+    "endDate": {
+      "base": "endDate",
+      "refs": null
+    },
+    "endingDDay": {
+      "base": "endingDDay",
+      "refs": null
+    },
+    "endingMonth": {
+      "base": "endingMonth",
+      "refs": null
+    },
+    "endingTimeZone": {
+      "base": "endingTimeZone",
+      "refs": null
+    },
+    "expirationDate": {
+      "base": "expirationDate",
+      "refs": null
+    },
+    "expirationTime": {
+      "base": "expirationTime",
+      "refs": null
+    },
+    "expireTime": {
+      "base": "expireTime",
+      "refs": null
+    },
+    "expiredDate": {
+      "base": "expiredDate",
+      "refs": null
+    },
+    "expiredTime": {
+      "base": "expiredTime",
+      "refs": null
+    },
+    "fileData": {
+      "base": "fileData",
+      "refs": null
+    },
+    "format": {
+      "base": "format",
+      "refs": null
+    },
+    "fqdn": {
+      "base": "fqdn",
+      "refs": null
+    },
+    "fqdnId": {
+      "base": "fqdnId",
+      "refs": null
+    },
+    "fromPort": {
+      "base": "fromPort",
+      "refs": null
+    },
+    "functionName": {
+      "base": "functionName",
+      "refs": null
+    },
+    "gatewayId": {
+      "base": "gatewayId",
+      "refs": null
+    },
+    "groupDescription": {
+      "base": "groupDescription",
+      "refs": null
+    },
+    "groupId": {
+      "base": "groupId",
+      "refs": null
+    },
+    "groupLogFilterBroadcast": {
+      "base": "groupLogFilterBroadcast",
+      "refs": null
+    },
+    "groupLogFilterNetBios": {
+      "base": "groupLogFilterNetBios",
+      "refs": null
+    },
+    "groupLogLimit": {
+      "base": "groupLogLimit",
+      "refs": null
+    },
+    "groupName": {
+      "base": "groupName",
+      "refs": null
+    },
+    "groupRuleLimit": {
+      "base": "groupRuleLimit",
+      "refs": null
+    },
+    "groupStatus": {
+      "base": "groupStatus",
+      "refs": null
+    },
+    "gruopId": {
+      "base": "gruopId",
+      "refs": null
+    },
+    "hashingAlgorithm": {
+      "base": "hashingAlgorithm",
+      "refs": null
+    },
+    "hotAdd": {
+      "base": "hotAdd",
+      "refs": null
+    },
+    "id": {
+      "base": "id",
+      "refs": null
+    },
+    "imageId": {
+      "base": "imageId",
+      "refs": null
+    },
+    "imageLocation": {
+      "base": "imageLocation",
+      "refs": null
+    },
+    "imageName": {
+      "base": "imageName",
+      "refs": null
+    },
+    "imageOwnerAlias": {
+      "base": "imageOwnerAlias",
+      "refs": null
+    },
+    "imageOwnerId": {
+      "base": "imageOwnerId",
+      "refs": null
+    },
+    "imageState": {
+      "base": "imageState",
+      "refs": null
+    },
+    "imageType": {
+      "base": "imageType",
+      "refs": null
+    },
+    "importManifestUrl": {
+      "base": "importManifestUrl",
+      "refs": null
+    },
+    "inOut": {
+      "base": "inOut",
+      "refs": null
+    },
+    "inboundInterface": {
+      "base": "inboundInterface",
+      "refs": null
+    },
+    "instanceId": {
+      "base": "instanceId",
+      "refs": null
+    },
+    "instanceLifecycle": {
+      "base": "instanceLifecycle",
+      "refs": null
+    },
+    "instanceLifecycleLimit": {
+      "base": "instanceLifecycleLimit",
+      "refs": null
+    },
+    "instanceOwnerId": {
+      "base": "instanceOwnerId",
+      "refs": null
+    },
+    "instancePort": {
+      "base": "instancePort",
+      "refs": null
+    },
+    "instanceSnapshotId": {
+      "base": "instanceSnapshotId",
+      "refs": null
+    },
+    "instanceState": {
+      "base": "instanceState",
+      "refs": null
+    },
+    "instanceStatus": {
+      "base": "instanceStatus",
+      "refs": null
+    },
+    "instanceType": {
+      "base": "instanceType",
+      "refs": null
+    },
+    "instanceUniqueId": {
+      "base": "instanceUniqueId",
+      "refs": null
+    },
+    "internetKeyExchange": {
+      "base": "internetKeyExchange",
+      "refs": null
+    },
+    "ipAddress": {
+      "base": "ipAddress",
+      "refs": null
+    },
+    "ipAddressV6": {
+      "base": "ipAddressV6",
+      "refs": null
+    },
+    "ipAddressx": {
+      "base": "ipAddressx",
+      "refs": null
+    },
+    "ipOwnerId": {
+      "base": "ipOwnerId",
+      "refs": null
+    },
+    "ipProtocol": {
+      "base": "ipProtocol",
+      "refs": null
+    },
+    "ipType": {
+      "base": "ipType",
+      "refs": null
+    },
+    "isBackup": {
+      "base": "isBackup",
+      "refs": null
+    },
+    "isDefault": {
+      "base": "isDefault",
+      "refs": null
+    },
+    "isLatest": {
+      "base": "isLatest",
+      "refs": null
+    },
+    "isPublic": {
+      "base": "isPublic",
+      "refs": null
+    },
+    "item": {
+      "base": "item",
+      "refs": null
+    },
+    "kanaName1": {
+      "base": "kanaName1",
+      "refs": null
+    },
+    "kanaName2": {
+      "base": "kanaName2",
+      "refs": null
+    },
+    "kernelId": {
+      "base": "kernelId",
+      "refs": null
+    },
+    "key": {
+      "base": "key",
+      "refs": null
+    },
+    "keyFingerprint": {
+      "base": "keyFingerprint",
+      "refs": null
+    },
+    "keyLength": {
+      "base": "keyLength",
+      "refs": null
+    },
+    "keyMaterial": {
+      "base": "keyMaterial",
+      "refs": null
+    },
+    "keyName": {
+      "base": "keyName",
+      "refs": null
+    },
+    "keyname": {
+      "base": "keyname",
+      "refs": null
+    },
+    "lastStatusChange": {
+      "base": "lastStatusChange",
+      "refs": null
+    },
+    "launchTime": {
+      "base": "launchTime",
+      "refs": null
+    },
+    "leaseExpiration": {
+      "base": "leaseExpiration",
+      "refs": null
+    },
+    "leaseType": {
+      "base": "leaseType",
+      "refs": null
+    },
+    "line": {
+      "base": "line",
+      "refs": null
+    },
+    "listenPort": {
+      "base": "listenPort",
+      "refs": null
+    },
+    "loadBalancerCount": {
+      "base": "loadBalancerCount",
+      "refs": null
+    },
+    "loadBalancerName": {
+      "base": "loadBalancerName",
+      "refs": null
+    },
+    "loadBalancerPort": {
+      "base": "loadBalancerPort",
+      "refs": null
+    },
+    "locationName": {
+      "base": "locationName",
+      "refs": null
+    },
+    "log": {
+      "base": "log",
+      "refs": null
+    },
+    "macAddress": {
+      "base": "macAddress",
+      "refs": null
+    },
+    "main": {
+      "base": "main",
+      "refs": null
+    },
+    "maxSize": {
+      "base": "maxSize",
+      "refs": null
+    },
+    "member": {
+      "base": "member",
+      "refs": null
+    },
+    "memo": {
+      "base": "memo",
+      "refs": null
+    },
+    "message": {
+      "base": "message",
+      "refs": null
+    },
+    "minSize": {
+      "base": "minSize",
+      "refs": null
+    },
+    "mode": {
+      "base": "mode",
+      "refs": null
+    },
+    "monitoringRuleCount": {
+      "base": "monitoringRuleCount",
+      "refs": null
+    },
+    "mtu": {
+      "base": "mtu",
+      "refs": null
+    },
+    "name": {
+      "base": "name",
+      "refs": null
+    },
+    "name1": {
+      "base": "name1",
+      "refs": null
+    },
+    "name2": {
+      "base": "name2",
+      "refs": null
+    },
+    "nameServer": {
+      "base": "nameServer",
+      "refs": null
+    },
+    "natTableAssociationId": {
+      "base": "natTableAssociationId",
+      "refs": null
+    },
+    "natTableId": {
+      "base": "natTableId",
+      "refs": null
+    },
+    "natType": {
+      "base": "natType",
+      "refs": null
+    },
+    "networkFlowAmount": {
+      "base": "networkFlowAmount",
+      "refs": null
+    },
+    "networkId": {
+      "base": "networkId",
+      "refs": null
+    },
+    "networkInterfaceId": {
+      "base": "networkInterfaceId",
+      "refs": null
+    },
+    "networkInterfaceOwnerId": {
+      "base": "networkInterfaceOwnerId",
+      "refs": null
+    },
+    "networkName": {
+      "base": "networkName",
+      "refs": null
+    },
+    "networkStatus": {
+      "base": "networkStatus",
+      "refs": null
+    },
+    "newAssociationId": {
+      "base": "newAssociationId",
+      "refs": null
+    },
+    "nextMonthAccountingType": {
+      "base": "nextMonthAccountingType",
+      "refs": null
+    },
+    "niftyContactUrl": {
+      "base": "niftyContactUrl",
+      "refs": null
+    },
+    "niftyCustomerGatewayDescription": {
+      "base": "niftyCustomerGatewayDescription",
+      "refs": null
+    },
+    "niftyCustomerGatewayName": {
+      "base": "niftyCustomerGatewayName",
+      "refs": null
+    },
+    "niftyGatewayName": {
+      "base": "niftyGatewayName",
+      "refs": null
+    },
+    "niftyImageSize": {
+      "base": "niftyImageSize",
+      "refs": null
+    },
+    "niftyIsAllowedDistribution": {
+      "base": "niftyIsAllowedDistribution",
+      "refs": null
+    },
+    "niftyLanSideCidrBlock": {
+      "base": "niftyLanSideCidrBlock",
+      "refs": null
+    },
+    "niftyLanSideIpAddress": {
+      "base": "niftyLanSideIpAddress",
+      "refs": null
+    },
+    "niftyMultiAccountCount": {
+      "base": "niftyMultiAccountCount",
+      "refs": null
+    },
+    "niftyNetworkId": {
+      "base": "niftyNetworkId",
+      "refs": null
+    },
+    "niftyNetworkName": {
+      "base": "niftyNetworkName",
+      "refs": null
+    },
+    "niftyPrivateIpType": {
+      "base": "niftyPrivateIpType",
+      "refs": null
+    },
+    "niftyPrivateNetworkType": {
+      "base": "niftyPrivateNetworkType",
+      "refs": null
+    },
+    "niftyRedundancy": {
+      "base": "niftyRedundancy",
+      "refs": null
+    },
+    "niftyVpnConnectionDescription": {
+      "base": "niftyVpnConnectionDescription",
+      "refs": null
+    },
+    "niftyVpnGatewayDescription": {
+      "base": "niftyVpnGatewayDescription",
+      "refs": null
+    },
+    "niftyVpnGatewayName": {
+      "base": "niftyVpnGatewayName",
+      "refs": null
+    },
+    "niftyVpnGatewayType": {
+      "base": "niftyVpnGatewayType",
+      "refs": null
+    },
+    "operation": {
+      "base": "operation",
+      "refs": null
+    },
+    "operator": {
+      "base": "operator",
+      "refs": null
+    },
+    "option": {
+      "base": "option",
+      "refs": null
+    },
+    "optionName": {
+      "base": "optionName",
+      "refs": null
+    },
+    "organizationName": {
+      "base": "organizationName",
+      "refs": null
+    },
+    "organizationUnitName": {
+      "base": "organizationUnitName",
+      "refs": null
+    },
+    "origin": {
+      "base": "origin",
+      "refs": null
+    },
+    "outsideIpAddress": {
+      "base": "outsideIpAddress",
+      "refs": null
+    },
+    "ownerId": {
+      "base": "ownerId",
+      "refs": null
+    },
+    "partition": {
+      "base": "partition",
+      "refs": null
+    },
+    "peerSessionId": {
+      "base": "peerSessionId",
+      "refs": null
+    },
+    "peerTunnelId": {
+      "base": "peerTunnelId",
+      "refs": null
+    },
+    "phoneNumber": {
+      "base": "phoneNumber",
+      "refs": null
+    },
+    "platform": {
+      "base": "platform",
+      "refs": null
+    },
+    "port": {
+      "base": "port",
+      "refs": null
+    },
+    "postName": {
+      "base": "postName",
+      "refs": null
+    },
+    "powerStatus": {
+      "base": "powerStatus",
+      "refs": null
+    },
+    "preSharedKey": {
+      "base": "preSharedKey",
+      "refs": null
+    },
+    "pref": {
+      "base": "pref",
+      "refs": null
+    },
+    "presidentName1": {
+      "base": "presidentName1",
+      "refs": null
+    },
+    "presidentName2": {
+      "base": "presidentName2",
+      "refs": null
+    },
+    "primary": {
+      "base": "primary",
+      "refs": null
+    },
+    "priority": {
+      "base": "priority",
+      "refs": null
+    },
+    "privateDnsName": {
+      "base": "privateDnsName",
+      "refs": null
+    },
+    "privateIpAddress": {
+      "base": "privateIpAddress",
+      "refs": null
+    },
+    "privateIpAddressV6": {
+      "base": "privateIpAddressV6",
+      "refs": null
+    },
+    "privateLanClassicCount": {
+      "base": "privateLanClassicCount",
+      "refs": null
+    },
+    "privateLanCount": {
+      "base": "privateLanCount",
+      "refs": null
+    },
+    "privateLanName": {
+      "base": "privateLanName",
+      "refs": null
+    },
+    "process": {
+      "base": "process",
+      "refs": null
+    },
+    "productCode": {
+      "base": "productCode",
+      "refs": null
+    },
+    "protocol": {
+      "base": "protocol",
+      "refs": null
+    },
+    "publicDnsName": {
+      "base": "publicDnsName",
+      "refs": null
+    },
+    "publicIp": {
+      "base": "publicIp",
+      "refs": null
+    },
+    "publicIpV6": {
+      "base": "publicIpV6",
+      "refs": null
+    },
+    "ramdiskId": {
+      "base": "ramdiskId",
+      "refs": null
+    },
+    "reason": {
+      "base": "reason",
+      "refs": null
+    },
+    "redistributable": {
+      "base": "redistributable",
+      "refs": null
+    },
+    "regionEndpoint": {
+      "base": "regionEndpoint",
+      "refs": null
+    },
+    "regionName": {
+      "base": "regionName",
+      "refs": null
+    },
+    "requestId": {
+      "base": "requestId",
+      "refs": null
+    },
+    "requested": {
+      "base": "requested",
+      "refs": null
+    },
+    "requesterId": {
+      "base": "requesterId",
+      "refs": null
+    },
+    "reservationId": {
+      "base": "reservationId",
+      "refs": null
+    },
+    "resource": {
+      "base": "resource",
+      "refs": null
+    },
+    "resourceName": {
+      "base": "resourceName",
+      "refs": null
+    },
+    "result": {
+      "base": "result",
+      "refs": null
+    },
+    "return": {
+      "base": "return",
+      "refs": null
+    },
+    "rootDeviceName": {
+      "base": "rootDeviceName",
+      "refs": null
+    },
+    "rootDeviceType": {
+      "base": "rootDeviceType",
+      "refs": null
+    },
+    "routeTableAssociationId": {
+      "base": "routeTableAssociationId",
+      "refs": null
+    },
+    "routeTableId": {
+      "base": "routeTableId",
+      "refs": null
+    },
+    "routerId": {
+      "base": "routerId",
+      "refs": null
+    },
+    "routerName": {
+      "base": "routerName",
+      "refs": null
+    },
+    "ruleName": {
+      "base": "ruleName",
+      "refs": null
+    },
+    "ruleNumber": {
+      "base": "ruleNumber",
+      "refs": null
+    },
+    "scaleout": {
+      "base": "scaleout",
+      "refs": null
+    },
+    "scaleoutCondition": {
+      "base": "scaleoutCondition",
+      "refs": null
+    },
+    "securityGroupCount": {
+      "base": "securityGroupCount",
+      "refs": null
+    },
+    "securityGroupLimit": {
+      "base": "securityGroupLimit",
+      "refs": null
+    },
+    "securityGroupSupported": {
+      "base": "securityGroupSupported",
+      "refs": null
+    },
+    "sessionId": {
+      "base": "sessionId",
+      "refs": null
+    },
+    "setFriday": {
+      "base": "setFriday",
+      "refs": null
+    },
+    "setMonday": {
+      "base": "setMonday",
+      "refs": null
+    },
+    "setSaturday": {
+      "base": "setSaturday",
+      "refs": null
+    },
+    "setSunday": {
+      "base": "setSunday",
+      "refs": null
+    },
+    "setThursday": {
+      "base": "setThursday",
+      "refs": null
+    },
+    "setTuesday": {
+      "base": "setTuesday",
+      "refs": null
+    },
+    "setWednesday": {
+      "base": "setWednesday",
+      "refs": null
+    },
+    "sharingStatus": {
+      "base": "sharingStatus",
+      "refs": null
+    },
+    "size": {
+      "base": "size",
+      "refs": null
+    },
+    "snapshotId": {
+      "base": "snapshotId",
+      "refs": null
+    },
+    "snapshotName": {
+      "base": "snapshotName",
+      "refs": null
+    },
+    "source": {
+      "base": "source",
+      "refs": null
+    },
+    "sourceDestCheck": {
+      "base": "sourceDestCheck",
+      "refs": null
+    },
+    "sourcePort": {
+      "base": "sourcePort",
+      "refs": null
+    },
+    "spotInstanceRequestId": {
+      "base": "spotInstanceRequestId",
+      "refs": null
+    },
+    "sslCertCount": {
+      "base": "sslCertCount",
+      "refs": null
+    },
+    "startDate": {
+      "base": "startDate",
+      "refs": null
+    },
+    "startIpAddress": {
+      "base": "startIpAddress",
+      "refs": null
+    },
+    "startingDDay": {
+      "base": "startingDDay",
+      "refs": null
+    },
+    "startingMonth": {
+      "base": "startingMonth",
+      "refs": null
+    },
+    "startingTimeZone": {
+      "base": "startingTimeZone",
+      "refs": null
+    },
+    "state": {
+      "base": "state",
+      "refs": null
+    },
+    "stateName": {
+      "base": "stateName",
+      "refs": null
+    },
+    "staticRoutesOnly": {
+      "base": "staticRoutesOnly",
+      "refs": null
+    },
+    "status": {
+      "base": "status",
+      "refs": null
+    },
+    "statusMessage": {
+      "base": "statusMessage",
+      "refs": null
+    },
+    "stopIpAddress": {
+      "base": "stopIpAddress",
+      "refs": null
+    },
+    "storageStatus": {
+      "base": "storageStatus",
+      "refs": null
+    },
+    "subnetId": {
+      "base": "subnetId",
+      "refs": null
+    },
+    "supportName": {
+      "base": "supportName",
+      "refs": null
+    },
+    "tdbCode": {
+      "base": "tdbCode",
+      "refs": null
+    },
+    "tenancy": {
+      "base": "tenancy",
+      "refs": null
+    },
+    "threshold": {
+      "base": "threshold",
+      "refs": null
+    },
+    "time": {
+      "base": "time",
+      "refs": null
+    },
+    "toPort": {
+      "base": "toPort",
+      "refs": null
+    },
+    "tunnelId": {
+      "base": "tunnelId",
+      "refs": null
+    },
+    "type": {
+      "base": "type",
+      "refs": null
+    },
+    "unit": {
+      "base": "unit",
+      "refs": null
+    },
+    "updateDate": {
+      "base": "updateDate",
+      "refs": null
+    },
+    "updatedTime": {
+      "base": "updatedTime",
+      "refs": null
+    },
+    "uploadState": {
+      "base": "uploadState",
+      "refs": null
+    },
+    "upperLowerCondition": {
+      "base": "upperLowerCondition",
+      "refs": null
+    },
+    "upperThreshold": {
+      "base": "upperThreshold",
+      "refs": null
+    },
+    "validityTerm": {
+      "base": "validityTerm",
+      "refs": null
+    },
+    "value": {
+      "base": "value",
+      "refs": null
+    },
+    "valueType": {
+      "base": "valueType",
+      "refs": null
+    },
+    "version": {
+      "base": "version",
+      "refs": null
+    },
+    "virtualName": {
+      "base": "virtualName",
+      "refs": null
+    },
+    "volumeId": {
+      "base": "volumeId",
+      "refs": null
+    },
+    "volumeSize": {
+      "base": "volumeSize",
+      "refs": null
+    },
+    "vpcId": {
+      "base": "vpcId",
+      "refs": null
+    },
+    "vpcPeeringConnectionId": {
+      "base": "vpcPeeringConnectionId",
+      "refs": null
+    },
+    "vpnConnectionId": {
+      "base": "vpnConnectionId",
+      "refs": null
+    },
+    "vpnGatewayId": {
+      "base": "vpnGatewayId",
+      "refs": null
+    },
+    "yearMonth": {
+      "base": "yearMonth",
+      "refs": null
+    },
+    "zip1": {
+      "base": "zip1",
+      "refs": null
+    },
+    "zip2": {
+      "base": "zip2",
+      "refs": null
+    },
+    "zone": {
+      "base": "zone",
+      "refs": null
+    },
+    "zoneName": {
+      "base": "zoneName",
+      "refs": null
+    },
+    "zoneState": {
+      "base": "zoneState",
       "refs": null
     }
   }

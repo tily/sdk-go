@@ -1882,6 +1882,39 @@
     }
   },
   "shapes": {
+    "\t\t\t\t\t\t\t\tvalue": {
+      "type": "string"
+    },
+    "\n\t\t\t\t\t\t\t\tattachTime": {
+      "type": "timestamp"
+    },
+    "\n\t\t\t\t\t\t\t\tgroupName": {
+      "type": "string"
+    },
+    "\n\t\t\t\t\t\t\t\tinstanceId": {
+      "type": "string"
+    },
+    "\n\t\t\t\t\t\t\t\tlog": {
+      "type": "string"
+    },
+    "\n\t\t\t\t\t\t\t\trequestId": {
+      "type": "string"
+    },
+    "\n\t\t\t\t\t\t\t\treturn": {
+      "type": "boolean"
+    },
+    "\n\t\t\t\t\t\t\t\tuserId": {
+      "type": "string"
+    },
+    " instanceId": {
+      "type": "string"
+    },
+    " requestId": {
+      "type": "string"
+    },
+    "AccountingType": {
+      "type": "string"
+    },
     "AllocateAddressRequest": {
       "type": "structure",
       "members": {
@@ -2015,6 +2048,9 @@
         }
       }
     },
+    "BalancingType": {
+      "type": "string"
+    },
     "Boolean": {
       "type": "boolean"
     },
@@ -2092,6 +2128,12 @@
         "HealthCheck.Interval",
         "HealthCheck.UnhealthyThreshold"
       ]
+    },
+    "CookieExpirationPeriod": {
+      "type": "string"
+    },
+    "CookieName": {
+      "type": "string"
     },
     "CopyInstancesRequest": {
       "type": "structure",
@@ -2532,6 +2574,12 @@
           "shape": "String"
         }
       }
+    },
+    "CreatedTime": {
+      "type": "timestamp"
+    },
+    "DNSName": {
+      "type": "string"
     },
     "DeleteCustomerGatewayRequest": {
       "type": "structure",
@@ -3028,6 +3076,9 @@
         }
       }
     },
+    "Description": {
+      "type": "string"
+    },
     "DetachVolumeRequest": {
       "type": "structure",
       "members": {
@@ -3114,6 +3165,21 @@
         "FqdnId",
         "FileType"
       ]
+    },
+    "Enabled": {
+      "type": "boolean"
+    },
+    "ExpirationPeriod": {
+      "type": "integer"
+    },
+    "FilterType": {
+      "type": "string"
+    },
+    "HealthyThreshold": {
+      "type": "integer"
+    },
+    "IPAddress": {
+      "type": "string"
     },
     "ImportInstanceRequest": {
       "type": "structure",
@@ -3219,8 +3285,29 @@
         "PublicKeyMaterial"
       ]
     },
+    "InstanceId": {
+      "type": "string"
+    },
+    "InstancePort": {
+      "type": "integer"
+    },
+    "InstanceUniqueId": {
+      "type": "string"
+    },
     "Integer": {
       "type": "integer"
+    },
+    "Interval": {
+      "type": "integer"
+    },
+    "LoadBalancerName": {
+      "type": "string"
+    },
+    "LoadBalancerPort": {
+      "type": "integer"
+    },
+    "Memo": {
+      "type": "string"
     },
     "ModifyImageAttributeRequest": {
       "type": "structure",
@@ -3312,6 +3399,12 @@
       "required": [
         "VolumeId"
       ]
+    },
+    "NetworkVolume": {
+      "type": "integer"
+    },
+    "NextMonthAccountingType": {
+      "type": "string"
     },
     "NiftyAssociateImageRequest": {
       "type": "structure",
@@ -4973,6 +5066,18 @@
         }
       }
     },
+    "PolicyName": {
+      "type": "string"
+    },
+    "Primary": {
+      "type": "boolean"
+    },
+    "Protocol": {
+      "type": "string"
+    },
+    "ReasonCode": {
+      "type": "string"
+    },
     "RebootInstancesRequest": {
       "type": "structure",
       "members": {
@@ -5207,6 +5312,9 @@
         "RouteTableId"
       ]
     },
+    "RequestId": {
+      "type": "string"
+    },
     "RevokeSecurityGroupIngressRequest": {
       "type": "structure",
       "members": {
@@ -5361,6 +5469,9 @@
         }
       }
     },
+    "SSLCertificateId": {
+      "type": "string"
+    },
     "SetFilterForLoadBalancerRequest": {
       "type": "structure",
       "members": {
@@ -5418,6 +5529,9 @@
         "InstanceId.n"
       ]
     },
+    "State": {
+      "type": "string"
+    },
     "StopInstancesRequest": {
       "type": "structure",
       "members": {
@@ -5435,6 +5549,9 @@
     "String": {
       "type": "string"
     },
+    "Target": {
+      "type": "string"
+    },
     "TerminateInstancesRequest": {
       "type": "structure",
       "members": {
@@ -5445,6 +5562,12 @@
       "required": [
         "InstanceId.n"
       ]
+    },
+    "Timeout": {
+      "type": "integer"
+    },
+    "UnhealthyThreshold": {
+      "type": "integer"
     },
     "UpdateLoadBalancerOptionRequest": {
       "type": "structure",
@@ -5572,6 +5695,999 @@
         "Certificate",
         "Key"
       ]
+    },
+    "UserId": {
+      "type": "string"
+    },
+    "acceptedRouteCount": {
+      "type": "integer"
+    },
+    "accountingType": {
+      "type": "string"
+    },
+    "addDatetime": {
+      "type": "timestamp"
+    },
+    "addDiskCount": {
+      "type": "integer"
+    },
+    "addDiskTotalSize": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "string"
+    },
+    "admin": {
+      "type": "string"
+    },
+    "alarm": {
+      "type": "string"
+    },
+    "alarmCondition": {
+      "type": "string"
+    },
+    "alarmEvent": {
+      "type": "string"
+    },
+    "alarmRulesActivitiesEvent": {
+      "type": "string"
+    },
+    "alarmRulesActivitiesEventDatetim": {
+      "type": "timestamp"
+    },
+    "alarmState": {
+      "type": "string"
+    },
+    "allocationId": {
+      "type": "string"
+    },
+    "alphabetName1": {
+      "type": "string"
+    },
+    "alphabetName2": {
+      "type": "string"
+    },
+    "amiLaunchIndex": {
+      "type": "string"
+    },
+    "analyzeCode": {
+      "type": "string"
+    },
+    "approverEmailAddress": {
+      "type": "integer"
+    },
+    "architecture": {
+      "type": "string"
+    },
+    "associationId": {
+      "type": "string"
+    },
+    "attachTime": {
+      "type": "timestamp"
+    },
+    "attachmentID": {
+      "type": "string"
+    },
+    "attribute": {
+      "type": "string"
+    },
+    "autoScaleCount": {
+      "type": "integer"
+    },
+    "autoScalingGroupName": {
+      "type": "string"
+    },
+    "availabilityZone": {
+      "type": "string"
+    },
+    "bgpAsn": {
+      "type": "string"
+    },
+    "breachDuration": {
+      "type": "integer"
+    },
+    "bytesConverted": {
+      "type": "integer"
+    },
+    "caState": {
+      "type": "boolean"
+    },
+    "categoryName": {
+      "type": "string"
+    },
+    "certAuthority": {
+      "type": "string"
+    },
+    "certState": {
+      "type": "string"
+    },
+    "changeInCapacity": {
+      "type": "integer"
+    },
+    "charge": {
+      "type": "integer"
+    },
+    "checksum": {
+      "type": "integer"
+    },
+    "cidrBlock": {
+      "type": "string"
+    },
+    "cidrIp": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "code": {
+      "type": "integer"
+    },
+    "controlPanelStatus": {
+      "type": "string"
+    },
+    "conversionTaskId": {
+      "type": "string"
+    },
+    "copyInfo": {
+      "type": "string"
+    },
+    "corpGrade": {
+      "type": "string"
+    },
+    "corpName": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "countryName": {
+      "type": "string"
+    },
+    "course": {
+      "type": "string"
+    },
+    "createTime": {
+      "type": "timestamp"
+    },
+    "createdTime": {
+      "type": "timestamp"
+    },
+    "currentServersCount": {
+      "type": "integer"
+    },
+    "customerGatewayConfiguration": {
+      "type": "string"
+    },
+    "customerGatewayId": {
+      "type": "string"
+    },
+    "customizeImageCount": {
+      "type": "integer"
+    },
+    "dalarmEventDatetime": {
+      "type": "timestamp"
+    },
+    "data": {
+      "type": "string"
+    },
+    "dataType": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "dateTime": {
+      "type": "string"
+    },
+    "defaultCooldown": {
+      "type": "integer"
+    },
+    "deleteOnTermination": {
+      "type": "string"
+    },
+    "descriprion": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "destinationCidrBlock": {
+      "type": "string"
+    },
+    "destinationPort": {
+      "type": "string"
+    },
+    "detailDescription": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "deviceIndex": {
+      "type": "string"
+    },
+    "deviceName": {
+      "type": "string"
+    },
+    "dhcp": {
+      "type": "boolean"
+    },
+    "dhcpConfigId": {
+      "type": "string"
+    },
+    "dhcpOptionsId": {
+      "type": "string"
+    },
+    "difference": {
+      "type": "string"
+    },
+    "diskStatus": {
+      "type": "string"
+    },
+    "diskType": {
+      "type": "string"
+    },
+    "distributionId": {
+      "type": "string"
+    },
+    "divisionName": {
+      "type": "string"
+    },
+    "dnsName": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "dynamicIpCount": {
+      "type": "integer"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "encapsulation": {
+      "type": "string"
+    },
+    "encryptionAlgorithm": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "timestamp"
+    },
+    "endingDDay": {
+      "type": "string"
+    },
+    "endingMonth": {
+      "type": "string"
+    },
+    "endingTimeZone": {
+      "type": "string"
+    },
+    "expirationDate": {
+      "type": "timestamp"
+    },
+    "expirationTime": {
+      "type": "string"
+    },
+    "expireTime": {
+      "type": "timestamp"
+    },
+    "expiredDate": {
+      "type": "string"
+    },
+    "expiredTime": {
+      "type": "string"
+    },
+    "fileData": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "fqdn": {
+      "type": "string"
+    },
+    "fqdnId": {
+      "type": "string"
+    },
+    "fromPort": {
+      "type": "integer"
+    },
+    "functionName": {
+      "type": "string"
+    },
+    "gatewayId": {
+      "type": "string"
+    },
+    "groupDescription": {
+      "type": "string"
+    },
+    "groupId": {
+      "type": "string"
+    },
+    "groupLogFilterBroadcast": {
+      "type": "boolean"
+    },
+    "groupLogFilterNetBios": {
+      "type": "boolean"
+    },
+    "groupLogLimit": {
+      "type": "integer"
+    },
+    "groupName": {
+      "type": "string"
+    },
+    "groupRuleLimit": {
+      "type": "integer"
+    },
+    "groupStatus": {
+      "type": "string"
+    },
+    "gruopId": {
+      "type": "string"
+    },
+    "hashingAlgorithm": {
+      "type": "string"
+    },
+    "hotAdd": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "imageId": {
+      "type": "string"
+    },
+    "imageLocation": {
+      "type": "string"
+    },
+    "imageName": {
+      "type": "string"
+    },
+    "imageOwnerAlias": {
+      "type": "string"
+    },
+    "imageOwnerId": {
+      "type": "string"
+    },
+    "imageState": {
+      "type": "string"
+    },
+    "imageType": {
+      "type": "string"
+    },
+    "importManifestUrl": {
+      "type": "string"
+    },
+    "inOut": {
+      "type": "string"
+    },
+    "inboundInterface": {
+      "type": "integer"
+    },
+    "instanceId": {
+      "type": "string"
+    },
+    "instanceLifecycle": {
+      "type": "string"
+    },
+    "instanceLifecycleLimit": {
+      "type": "integer"
+    },
+    "instanceOwnerId": {
+      "type": "string"
+    },
+    "instancePort": {
+      "type": "integer"
+    },
+    "instanceSnapshotId": {
+      "type": "string"
+    },
+    "instanceState": {
+      "type": "string"
+    },
+    "instanceStatus": {
+      "type": "string"
+    },
+    "instanceType": {
+      "type": "string"
+    },
+    "instanceUniqueId": {
+      "type": "string"
+    },
+    "internetKeyExchange": {
+      "type": "string"
+    },
+    "ipAddress": {
+      "type": "string"
+    },
+    "ipAddressV6": {
+      "type": "string"
+    },
+    "ipAddressx": {
+      "type": "string"
+    },
+    "ipOwnerId": {
+      "type": "string"
+    },
+    "ipProtocol": {
+      "type": "string"
+    },
+    "ipType": {
+      "type": "string"
+    },
+    "isBackup": {
+      "type": "boolean"
+    },
+    "isDefault": {
+      "type": "boolean"
+    },
+    "isLatest": {
+      "type": "boolean"
+    },
+    "isPublic": {
+      "type": "boolean"
+    },
+    "item": {
+      "type": "string"
+    },
+    "kanaName1": {
+      "type": "string"
+    },
+    "kanaName2": {
+      "type": "string"
+    },
+    "kernelId": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "keyFingerprint": {
+      "type": "string"
+    },
+    "keyLength": {
+      "type": "integer"
+    },
+    "keyMaterial": {
+      "type": "string"
+    },
+    "keyName": {
+      "type": "string"
+    },
+    "keyname": {
+      "type": "string"
+    },
+    "lastStatusChange": {
+      "type": "timestamp"
+    },
+    "launchTime": {
+      "type": "timestamp"
+    },
+    "leaseExpiration": {
+      "type": "timestamp"
+    },
+    "leaseType": {
+      "type": "string"
+    },
+    "line": {
+      "type": "string"
+    },
+    "listenPort": {
+      "type": "string"
+    },
+    "loadBalancerCount": {
+      "type": "integer"
+    },
+    "loadBalancerName": {
+      "type": "string"
+    },
+    "loadBalancerPort": {
+      "type": "integer"
+    },
+    "locationName": {
+      "type": "string"
+    },
+    "log": {
+      "type": "string"
+    },
+    "macAddress": {
+      "type": "string"
+    },
+    "main": {
+      "type": "boolean"
+    },
+    "maxSize": {
+      "type": "integer"
+    },
+    "member": {
+      "type": "string"
+    },
+    "memo": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "minSize": {
+      "type": "integer"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "monitoringRuleCount": {
+      "type": "integer"
+    },
+    "mtu": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name1": {
+      "type": "string"
+    },
+    "name2": {
+      "type": "string"
+    },
+    "nameServer": {
+      "type": "string"
+    },
+    "natTableAssociationId": {
+      "type": "string"
+    },
+    "natTableId": {
+      "type": "string"
+    },
+    "natType": {
+      "type": "string"
+    },
+    "networkFlowAmount": {
+      "type": "integer"
+    },
+    "networkId": {
+      "type": "string"
+    },
+    "networkInterfaceId": {
+      "type": "string"
+    },
+    "networkInterfaceOwnerId": {
+      "type": "string"
+    },
+    "networkName": {
+      "type": "string"
+    },
+    "networkStatus": {
+      "type": "string"
+    },
+    "newAssociationId": {
+      "type": "string"
+    },
+    "nextMonthAccountingType": {
+      "type": "string"
+    },
+    "niftyContactUrl": {
+      "type": "string"
+    },
+    "niftyCustomerGatewayDescription": {
+      "type": "string"
+    },
+    "niftyCustomerGatewayName": {
+      "type": "string"
+    },
+    "niftyGatewayName": {
+      "type": "string"
+    },
+    "niftyImageSize": {
+      "type": "integer"
+    },
+    "niftyIsAllowedDistribution": {
+      "type": "boolean"
+    },
+    "niftyLanSideCidrBlock": {
+      "type": "string"
+    },
+    "niftyLanSideIpAddress": {
+      "type": "string"
+    },
+    "niftyMultiAccountCount": {
+      "type": "integer"
+    },
+    "niftyNetworkId": {
+      "type": "string"
+    },
+    "niftyNetworkName": {
+      "type": "string"
+    },
+    "niftyPrivateIpType": {
+      "type": "string"
+    },
+    "niftyPrivateNetworkType": {
+      "type": "string"
+    },
+    "niftyRedundancy": {
+      "type": "boolean"
+    },
+    "niftyVpnConnectionDescription": {
+      "type": "string"
+    },
+    "niftyVpnGatewayDescription": {
+      "type": "string"
+    },
+    "niftyVpnGatewayName": {
+      "type": "string"
+    },
+    "niftyVpnGatewayType": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "string"
+    },
+    "option": {
+      "type": "string"
+    },
+    "optionName": {
+      "type": "string"
+    },
+    "organizationName": {
+      "type": "string"
+    },
+    "organizationUnitName": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "outsideIpAddress": {
+      "type": "string"
+    },
+    "ownerId": {
+      "type": "string"
+    },
+    "partition": {
+      "type": "string"
+    },
+    "peerSessionId": {
+      "type": "string"
+    },
+    "peerTunnelId": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "port": {
+      "type": "integer"
+    },
+    "postName": {
+      "type": "string"
+    },
+    "powerStatus": {
+      "type": "string"
+    },
+    "preSharedKey": {
+      "type": "string"
+    },
+    "pref": {
+      "type": "string"
+    },
+    "presidentName1": {
+      "type": "string"
+    },
+    "presidentName2": {
+      "type": "string"
+    },
+    "primary": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "privateDnsName": {
+      "type": "string"
+    },
+    "privateIpAddress": {
+      "type": "string"
+    },
+    "privateIpAddressV6": {
+      "type": "string"
+    },
+    "privateLanClassicCount": {
+      "type": "integer"
+    },
+    "privateLanCount": {
+      "type": "integer"
+    },
+    "privateLanName": {
+      "type": "string"
+    },
+    "process": {
+      "type": "string"
+    },
+    "productCode": {
+      "type": "string"
+    },
+    "protocol": {
+      "type": "string"
+    },
+    "publicDnsName": {
+      "type": "string"
+    },
+    "publicIp": {
+      "type": "string"
+    },
+    "publicIpV6": {
+      "type": "string"
+    },
+    "ramdiskId": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "redistributable": {
+      "type": "boolean"
+    },
+    "regionEndpoint": {
+      "type": "string"
+    },
+    "regionName": {
+      "type": "string"
+    },
+    "requestId": {
+      "type": "string"
+    },
+    "requested": {
+      "type": "string"
+    },
+    "requesterId": {
+      "type": "string"
+    },
+    "reservationId": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "string"
+    },
+    "resourceName": {
+      "type": "string"
+    },
+    "result": {
+      "type": "boolean"
+    },
+    "return": {
+      "type": "boolean"
+    },
+    "rootDeviceName": {
+      "type": "string"
+    },
+    "rootDeviceType": {
+      "type": "string"
+    },
+    "routeTableAssociationId": {
+      "type": "string"
+    },
+    "routeTableId": {
+      "type": "string"
+    },
+    "routerId": {
+      "type": "string"
+    },
+    "routerName": {
+      "type": "string"
+    },
+    "ruleName": {
+      "type": "string"
+    },
+    "ruleNumber": {
+      "type": "string"
+    },
+    "scaleout": {
+      "type": "integer"
+    },
+    "scaleoutCondition": {
+      "type": "string"
+    },
+    "securityGroupCount": {
+      "type": "integer"
+    },
+    "securityGroupLimit": {
+      "type": "integer"
+    },
+    "securityGroupSupported": {
+      "type": "boolean"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "setFriday": {
+      "type": "string"
+    },
+    "setMonday": {
+      "type": "string"
+    },
+    "setSaturday": {
+      "type": "string"
+    },
+    "setSunday": {
+      "type": "string"
+    },
+    "setThursday": {
+      "type": "string"
+    },
+    "setTuesday": {
+      "type": "string"
+    },
+    "setWednesday": {
+      "type": "string"
+    },
+    "sharingStatus": {
+      "type": "string"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "snapshotId": {
+      "type": "string"
+    },
+    "snapshotName": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "sourceDestCheck": {
+      "type": "string"
+    },
+    "sourcePort": {
+      "type": "string"
+    },
+    "spotInstanceRequestId": {
+      "type": "string"
+    },
+    "sslCertCount": {
+      "type": "integer"
+    },
+    "startDate": {
+      "type": "timestamp"
+    },
+    "startIpAddress": {
+      "type": "string"
+    },
+    "startingDDay": {
+      "type": "string"
+    },
+    "startingMonth": {
+      "type": "string"
+    },
+    "startingTimeZone": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "stateName": {
+      "type": "string"
+    },
+    "staticRoutesOnly": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "statusMessage": {
+      "type": "string"
+    },
+    "stopIpAddress": {
+      "type": "string"
+    },
+    "storageStatus": {
+      "type": "string"
+    },
+    "subnetId": {
+      "type": "string"
+    },
+    "supportName": {
+      "type": "string"
+    },
+    "tdbCode": {
+      "type": "string"
+    },
+    "tenancy": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "double"
+    },
+    "time": {
+      "type": "timestamp"
+    },
+    "toPort": {
+      "type": "integer"
+    },
+    "tunnelId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "updateDate": {
+      "type": "string"
+    },
+    "updatedTime": {
+      "type": "string"
+    },
+    "uploadState": {
+      "type": "boolean"
+    },
+    "upperLowerCondition": {
+      "type": "string"
+    },
+    "upperThreshold": {
+      "type": "double"
+    },
+    "validityTerm": {
+      "type": "integer"
+    },
+    "value": {
+      "type": "string"
+    },
+    "valueType": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "virtualName": {
+      "type": "string"
+    },
+    "volumeId": {
+      "type": "string"
+    },
+    "volumeSize": {
+      "type": "integer"
+    },
+    "vpcId": {
+      "type": "string"
+    },
+    "vpcPeeringConnectionId": {
+      "type": "string"
+    },
+    "vpnConnectionId": {
+      "type": "string"
+    },
+    "vpnGatewayId": {
+      "type": "string"
+    },
+    "yearMonth": {
+      "type": "string"
+    },
+    "zip1": {
+      "type": "string"
+    },
+    "zip2": {
+      "type": "string"
+    },
+    "zone": {
+      "type": "string"
+    },
+    "zoneName": {
+      "type": "string"
+    },
+    "zoneState": {
+      "type": "string"
     }
   }
 }

@@ -316,24 +316,27 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 			typeText = result["type"]
 		}
 		switch {
-		case typeText == "数値" || typeText == "Long":
+		case regexp.MustCompile(`^(数値|Long|xsd?:\s?(Integer|integer|integer |int|intger|int\(A 16-bit unsigned\)|long|short))$`).MatchString(typeText):
 			shape := Shape{ShapeName: shapeName, Type: "integer"}
 			shapes = append(shapes, shape)
-		case typeText == "文字列":
+		case regexp.MustCompile(`^xsd?:(Double|double)$`).MatchString(typeText):
+			shape := Shape{ShapeName: shapeName, Type: "double"}
+			shapes = append(shapes, shape)
+		case regexp.MustCompile(`^(文字列|xsd?::?\s?(string|String|stringint))$`).MatchString(typeText):
 			shape := Shape{ShapeName: shapeName, Type: "string"}
 			shapes = append(shapes, shape)
-		case typeText == "真偽値" || typeText == "boolean":
+		case regexp.MustCompile(`^(真偽値|boolean|xsd?:(xs:)?\s?(boolean|Boolean))$`).MatchString(typeText):
 			shape := Shape{ShapeName: shapeName, Type: "boolean"}
 			shapes = append(shapes, shape)
-		case typeText == "日時":
+		case regexp.MustCompile(`^(日時|xsd?:\s?(dateTime|DateTime|datetime|calendar|Calendar)(　?\(yyyy-mm-ddThh:mm:ssZ\))?)$`).MatchString(typeText):
 			shape := Shape{ShapeName: shapeName, Type: "timestamp"}
 			shapes = append(shapes, shape)
-		case typeText == "リスト":
+		case regexp.MustCompile(`^リスト$`).MatchString(typeText):
 			shape := g.generateResultListShape(shapeName, shapeNames, hintXML)
 			if shape.ShapeName != "" {
 				shapes = append(shapes, shape)
 			}
-		case typeText == "－" || typeText == "-" || typeText == "\u00a0":
+		case regexp.MustCompile(`^(－|\-|\x{00a0})$`).MatchString(typeText):
 			shape := g.generateResultStructShape(shapeName, shapeNames, hintXML)
 			shapes = append(shapes, shape)
 		}
