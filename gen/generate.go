@@ -229,17 +229,15 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 
 			shapes = append(shapes, structListShape)
 			structShape := shapes.findShapeByName(structShapeName)
-			member := ShapeRef{ShapeName: "String"}
 			if structShape.ShapeName == "" {
 				structShape = Shape{
 					ShapeName: structShapeName,
 					Type:      "structure",
-					Members:   map[string]ShapeRef{value: member},
+					Members:   map[string]ShapeRef{},
 				}
 				shapes = append(shapes, structShape)
-			} else {
-				structShape.Members[value] = member
 			}
+			structShape.Members[value] = ShapeRef{ShapeName: "String"}
 		case regexp.MustCompile(`^(数値|Long|int|Integer|xsd:(int|Int))$`).MatchString(typeText):
 			member.ShapeName = "Integer"
 		case regexp.MustCompile(`^(文字列|String|xsd:string|Sring|string|String )$`).MatchString(typeText):
