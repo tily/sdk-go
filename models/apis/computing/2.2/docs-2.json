@@ -278,6 +278,14 @@
       "base": "BalancingType",
       "refs": null
     },
+    "BlockDeviceMappingStruct": {
+      "base": "BlockDeviceMappingStruct",
+      "refs": null
+    },
+    "BlockDeviceMappingStructList": {
+      "base": "BlockDeviceMappingStructList",
+      "refs": null
+    },
     "Boolean": {
       "base": "Boolean",
       "refs": null
@@ -574,12 +582,32 @@
       "base": "DetachVolumeRequest",
       "refs": null
     },
+    "DhcpConfigurationList": {
+      "base": "DhcpConfigurationList",
+      "refs": null
+    },
+    "DhcpConfigurationStruct": {
+      "base": "DhcpConfigurationStruct",
+      "refs": null
+    },
+    "DhcpConfigurationStructList": {
+      "base": "DhcpConfigurationStructList",
+      "refs": null
+    },
     "DisassociateAddressRequest": {
       "base": "DisassociateAddressRequest",
       "refs": null
     },
     "DisassociateRouteTableRequest": {
       "base": "DisassociateRouteTableRequest",
+      "refs": null
+    },
+    "DiskImageStruct": {
+      "base": "DiskImageStruct",
+      "refs": null
+    },
+    "DiskImageStructList": {
+      "base": "DiskImageStructList",
       "refs": null
     },
     "DissociateUsersRequest": {
@@ -638,6 +666,18 @@
       "base": "ExpirationPeriod",
       "refs": null
     },
+    "FilterList": {
+      "base": "FilterList",
+      "refs": null
+    },
+    "FilterStruct": {
+      "base": "FilterStruct",
+      "refs": null
+    },
+    "FilterStructList": {
+      "base": "FilterStructList",
+      "refs": null
+    },
     "FilterType": {
       "base": "FilterType",
       "refs": null
@@ -672,6 +712,14 @@
     },
     "IPAddress": {
       "base": "IPAddress",
+      "refs": null
+    },
+    "IPAddressesStruct": {
+      "base": "IPAddressesStruct",
+      "refs": null
+    },
+    "IPAddressesStructList": {
+      "base": "IPAddressesStructList",
       "refs": null
     },
     "ImageIdList": {
@@ -726,6 +774,14 @@
       "base": "InstanceUniqueId",
       "refs": null
     },
+    "InstancesStruct": {
+      "base": "InstancesStruct",
+      "refs": null
+    },
+    "InstancesStructList": {
+      "base": "InstancesStructList",
+      "refs": null
+    },
     "Integer": {
       "base": "Integer",
       "refs": null
@@ -742,12 +798,28 @@
       "base": "IpAddress",
       "refs": null
     },
+    "IpPermissionsStruct": {
+      "base": "IpPermissionsStruct",
+      "refs": null
+    },
+    "IpPermissionsStructList": {
+      "base": "IpPermissionsStructList",
+      "refs": null
+    },
     "IpType": {
       "base": "IpType",
       "refs": null
     },
     "KeyNameList": {
       "base": "KeyNameList",
+      "refs": null
+    },
+    "LicenseStruct": {
+      "base": "LicenseStruct",
+      "refs": null
+    },
+    "LicenseStructList": {
+      "base": "LicenseStructList",
       "refs": null
     },
     "ListenInterface": {
@@ -760,6 +832,14 @@
     },
     "ListenerUpdate": {
       "base": "ListenerUpdate",
+      "refs": null
+    },
+    "ListenersStruct": {
+      "base": "ListenersStruct",
+      "refs": null
+    },
+    "ListenersStructList": {
+      "base": "ListenersStructList",
       "refs": null
     },
     "LoadBalancerName": {
@@ -780,6 +860,14 @@
     },
     "LoadBalancerPortList": {
       "base": "LoadBalancerPortList",
+      "refs": null
+    },
+    "LoadBalancersStruct": {
+      "base": "LoadBalancersStruct",
+      "refs": null
+    },
+    "LoadBalancersStructList": {
+      "base": "LoadBalancersStructList",
       "refs": null
     },
     "LocationName": {
@@ -832,6 +920,18 @@
     },
     "NetworkInterface": {
       "base": "NetworkInterface",
+      "refs": null
+    },
+    "NetworkInterfaceList": {
+      "base": "NetworkInterfaceList",
+      "refs": null
+    },
+    "NetworkInterfaceStruct": {
+      "base": "NetworkInterfaceStruct",
+      "refs": null
+    },
+    "NetworkInterfaceStructList": {
+      "base": "NetworkInterfaceStructList",
       "refs": null
     },
     "NetworkName": {
@@ -1334,12 +1434,44 @@
       "base": "RouterNameList",
       "refs": null
     },
+    "RouterSetStruct": {
+      "base": "RouterSetStruct",
+      "refs": null
+    },
+    "RouterSetStructList": {
+      "base": "RouterSetStructList",
+      "refs": null
+    },
+    "RouterStruct": {
+      "base": "RouterStruct",
+      "refs": null
+    },
+    "RouterStructList": {
+      "base": "RouterStructList",
+      "refs": null
+    },
+    "RuleStruct": {
+      "base": "RuleStruct",
+      "refs": null
+    },
+    "RuleStructList": {
+      "base": "RuleStructList",
+      "refs": null
+    },
     "RunInstancesRequest": {
       "base": "RunInstancesRequest",
       "refs": null
     },
     "SSLCertificateId": {
       "base": "SSLCertificateId",
+      "refs": null
+    },
+    "ScalingTriggerStruct": {
+      "base": "ScalingTriggerStruct",
+      "refs": null
+    },
+    "ScalingTriggerStructList": {
+      "base": "ScalingTriggerStructList",
       "refs": null
     },
     "SecurityGroupList": {
@@ -1466,6 +1598,14 @@
       "base": "UserId",
       "refs": null
     },
+    "UsersStruct": {
+      "base": "UsersStruct",
+      "refs": null
+    },
+    "UsersStructList": {
+      "base": "UsersStructList",
+      "refs": null
+    },
     "Value": {
       "base": "Value",
       "refs": null
@@ -1480,6 +1620,22 @@
     },
     "VpnGatewayIdList": {
       "base": "VpnGatewayIdList",
+      "refs": null
+    },
+    "VpnGatewaySetStruct": {
+      "base": "VpnGatewaySetStruct",
+      "refs": null
+    },
+    "VpnGatewaySetStructList": {
+      "base": "VpnGatewaySetStructList",
+      "refs": null
+    },
+    "VpnGatewayStruct": {
+      "base": "VpnGatewayStruct",
+      "refs": null
+    },
+    "VpnGatewayStructList": {
+      "base": "VpnGatewayStructList",
       "refs": null
     },
     "ZoneNameList": {

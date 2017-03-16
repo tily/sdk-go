@@ -294,31 +294,52 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 				Member:    &ShapeRef{ShapeName: "String"},
 			}
 			shapes = append(shapes, listShape)
-		case regexp.MustCompile(`\.member\.N\..+$`).MatchString(shapeName):
-			r := regexp.MustCompile(`^(.+)\.member\.N\.(.+)$`)
+		case regexp.MustCompile(`^([a-zA-Z]{2,})\.(m|n|member\.(n|N))\.([a-zA-Z]{2,})(\.(n|m))?$`).MatchString(shapeName):
+			r := regexp.MustCompile(`^([a-zA-Z]{2,})\.(m|n|member\.(n|N))\.([a-zA-Z]{2,})(\.(n|m))?$`)
 			match := r.FindAllStringSubmatch(shapeName, -1)
 			shapeName = match[0][1]
-			value := match[0][2]
+			value := match[0][4]
+			index := match[0][6]
 
 			member.ShapeName = fmt.Sprintf("%sStructList", shapeName)
-			structShapeName := fmt.Sprintf("%sStruct", shapeName)
-			structListShape := Shape{
-				ShapeName: member.ShapeName,
-				Type:      "list",
-				Member:    &ShapeRef{ShapeName: structShapeName},
-			}
-
-			shapes = append(shapes, structListShape)
-			structShape := shapes.findShapeByName(structShapeName)
-			if structShape.ShapeName == "" {
-				structShape = Shape{
-					ShapeName: structShapeName,
-					Type:      "structure",
-					Members:   map[string]ShapeRef{},
+			if index == "" {
+				structShapeName := fmt.Sprintf("%sStruct", shapeName)
+				structListShape := Shape{
+					ShapeName: member.ShapeName,
+					Type:      "list",
+					Member:    &ShapeRef{ShapeName: structShapeName},
 				}
-				shapes = append(shapes, structShape)
+
+				shapes = append(shapes, structListShape)
+				structShape := shapes.findShapeByName(structShapeName)
+				if structShape.ShapeName == "" {
+					structShape = Shape{
+						ShapeName: structShapeName,
+						Type:      "structure",
+						Members:   map[string]ShapeRef{},
+					}
+					shapes = append(shapes, structShape)
+				}
+				structShape.Members[value] = ShapeRef{ShapeName: "String"}
+			} else {
+				listShapeName := fmt.Sprintf("%sList", shapeName)
+				structListShape := Shape{
+					ShapeName: member.ShapeName,
+					Type:      "list",
+					Member:    &ShapeRef{ShapeName: listShapeName},
+				}
+
+				shapes = append(shapes, structListShape)
+				listShape := shapes.findShapeByName(listShapeName)
+				if listShape.ShapeName == "" {
+					listShape = Shape{
+						ShapeName: listShapeName,
+						Type:      "list",
+					}
+					shapes = append(shapes, listShape)
+				}
+				listShape.Member = &ShapeRef{ShapeName: "String"}
 			}
-			structShape.Members[value] = ShapeRef{ShapeName: "String"}
 		case shapeType == "TStamp":
 			member.ShapeName = shapeType
 			tstampShape := Shape{
