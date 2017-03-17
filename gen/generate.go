@@ -228,127 +228,89 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			shapeType = "List"
 		}
 
-		switch {
-		case regexp.MustCompile(`^([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
-			r := regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`)
-			match := r.FindAllStringSubmatch(shapeName, -1)
-			parentShapeName := match[0][1]
-			childShapeName := match[0][2]
-			parentShape := shapes.findShapeByName(parentShapeName)
-			if parentShape.ShapeName == "" {
-				parentShape = Shape{
-					ShapeName: parentShapeName,
-					Type:      "structure",
-					Members:   map[string]ShapeRef{},
-				}
-				shapes = append(shapes, parentShape)
-			}
-			parentShape.Members[childShapeName] = ShapeRef{ShapeName: childShapeName}
-			childShape := Shape{ShapeName: childShapeName, Type: strings.ToLower(shapeType)}
-			shapes = append(shapes, childShape)
-			member.ShapeName = parentShapeName
-			shapeName = parentShapeName
-		case regexp.MustCompile(`^([a-zA-Z]{2,})\.([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`).MatchString(shapeName):
-			r := regexp.MustCompile(`([a-zA-Z]{2,})\.([a-zA-Z]{2,})\.([a-zA-Z]{2,})$`)
-			match := r.FindAllStringSubmatch(shapeName, -1)
-			parentShapeName := match[0][1]
-			childShapeName := match[0][2]
-			grandChildShapeName := match[0][3]
-
-			parentShape := shapes.findShapeByName(parentShapeName)
-			if parentShape.ShapeName == "" {
-				parentShape = Shape{
-					ShapeName: parentShapeName,
-					Type:      "structure",
-					Members:   map[string]ShapeRef{},
-				}
-				shapes = append(shapes, parentShape)
-			}
-			parentShape.Members[childShapeName] = ShapeRef{ShapeName: childShapeName}
-
-			childShape := shapes.findShapeByName(childShapeName)
-			if childShape.ShapeName == "" {
-				childShape = Shape{
-					ShapeName: childShapeName,
-					Type:      "structure",
-					Members:   map[string]ShapeRef{},
-				}
-				shapes = append(shapes, childShape)
-			}
-			childShape.Members[grandChildShapeName] = ShapeRef{ShapeName: grandChildShapeName}
-
-			grandChildShape := Shape{ShapeName: grandChildShapeName, Type: strings.ToLower(shapeType)}
-			shapes = append(shapes, grandChildShape)
-			member.ShapeName = parentShapeName
-			shapeName = parentShapeName
-		case regexp.MustCompile(`^([a-zA-Z]{2,})\.(l|1|n|member\.(n|N))$`).MatchString(shapeName):
-			r := regexp.MustCompile(`^([a-zA-Z]{2,})\.(l|1|n|member\.(n|N))$`)
-			match := r.FindAllStringSubmatch(shapeName, -1)
-			shapeName = match[0][1]
-			realShapeName := fmt.Sprintf("%sList", shapeName)
-			member.ShapeName = realShapeName
-			member.LocationName = shapeName
-			listShape := Shape{
-				ShapeName: member.ShapeName,
-				Type:      "list",
-				Member:    &ShapeRef{ShapeName: "String"},
-			}
-			shapes = append(shapes, listShape)
-		case regexp.MustCompile(`^([a-zA-Z]{2,})\.(m|n|member\.(n|N))\.([a-zA-Z]{2,})(\.(n|m))?$`).MatchString(shapeName):
-			r := regexp.MustCompile(`^([a-zA-Z]{2,})\.(m|n|member\.(n|N))\.([a-zA-Z]{2,})(\.(n|m))?$`)
-			match := r.FindAllStringSubmatch(shapeName, -1)
-			shapeName = match[0][1]
-			value := match[0][4]
-			index := match[0][6]
-
-			member.ShapeName = fmt.Sprintf("%sStructList", shapeName)
-			if index == "" {
-				structShapeName := fmt.Sprintf("%sStruct", shapeName)
-				structListShape := Shape{
-					ShapeName: member.ShapeName,
-					Type:      "list",
-					Member:    &ShapeRef{ShapeName: structShapeName},
-				}
-
-				shapes = append(shapes, structListShape)
-				structShape := shapes.findShapeByName(structShapeName)
-				if structShape.ShapeName == "" {
-					structShape = Shape{
-						ShapeName: structShapeName,
-						Type:      "structure",
-						Members:   map[string]ShapeRef{},
+		//shapeName = g.parseRequestParam(shapeName, shapeType, shapes)
+		//member.ShapeName = shapeName
+		if regexp.MustCompile(`\.`).MatchString(shapeName) {
+			parts := regexp.MustCompile(`[a-zA-Z]+((\.member)?\.(n|m|l|1))?`).FindAllString(shapeName, -1)
+			for i, _ := range parts {
+				if i == len(parts)-1 {
+					currentShapeName := ""
+					if r := regexp.MustCompile(`((\.member)?\.(n|m|l|1))$`); r.MatchString(parts[i]) {
+						currentShapeName = r.ReplaceAllString(parts[i], "")
+						currentShapeName = fmt.Sprintf("%sList", currentShapeName)
+						currentShape := Shape{ShapeName: currentShapeName, Type: "list", Member: &ShapeRef{ShapeName: shapeType}}
+						shapes = append(shapes, currentShape)
+					} else {
+						currentShapeName = parts[i]
+						currentShape := Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
+						shapes = append(shapes, currentShape)
 					}
-					shapes = append(shapes, structShape)
-				}
-				structShape.Members[value] = ShapeRef{ShapeName: "String"}
-			} else {
-				listShapeName := fmt.Sprintf("%sList", shapeName)
-				structListShape := Shape{
-					ShapeName: member.ShapeName,
-					Type:      "list",
-					Member:    &ShapeRef{ShapeName: listShapeName},
-				}
-
-				shapes = append(shapes, structListShape)
-				listShape := shapes.findShapeByName(listShapeName)
-				if listShape.ShapeName == "" {
-					listShape = Shape{
-						ShapeName: listShapeName,
-						Type:      "list",
+					if i == 0 {
+						shapeName = currentShapeName
+						member.ShapeName = shapeName
 					}
-					shapes = append(shapes, listShape)
+				} else if r := regexp.MustCompile(`((\.member)?\.(n|m|l|1))$`); r.MatchString(parts[i]) {
+					currentShapeName := r.ReplaceAllString(parts[i], "")
+					currentShapeName = fmt.Sprintf("%sList", currentShapeName)
+					if i == 0 {
+						shapeName = currentShapeName
+						member.ShapeName = shapeName
+					}
+					currentShape := Shape{ShapeName: currentShapeName, Type: "list"}
+					refShapeName := ""
+					if r.MatchString(parts[i+1]) {
+						refShapeName = r.ReplaceAllString(parts[i+1], "")
+						refShapeName = fmt.Sprintf("%sList", refShapeName)
+					} else {
+						if i == len(parts)-2 {
+							refShapeName = parts[i+1]
+						} else {
+							refShapeName = fmt.Sprintf("%sStruct", parts[i+1])
+						}
+					}
+					currentShape.Member = &ShapeRef{ShapeName: refShapeName}
+					shapes = append(shapes, currentShape)
+				} else {
+					currentShapeName := fmt.Sprintf("%sStruct", parts[i])
+					if i == 0 {
+						shapeName = parts[i]
+						member.ShapeName = currentShapeName
+					}
+					currentShape := shapes.findShapeByName(currentShapeName)
+					flg := false
+					if currentShape.ShapeName == "" {
+						flg = true
+						currentShape = &Shape{ShapeName: currentShapeName, Type: "structure", Members: map[string]ShapeRef{}}
+					}
+					refShapeName := ""
+					if r.MatchString(parts[i+1]) {
+						refShapeName = r.ReplaceAllString(parts[i+1], "")
+						refShapeName = fmt.Sprintf("%sList", refShapeName)
+					} else {
+						if i == len(parts)-2 {
+							refShapeName = parts[i+1]
+						} else {
+							refShapeName = fmt.Sprintf("%sStruct", parts[i+1])
+						}
+					}
+					currentShape.Members[refShapeName] = ShapeRef{ShapeName: refShapeName}
+					if flg {
+						shapes = append(shapes, *currentShape)
+					}
 				}
-				listShape.Member = &ShapeRef{ShapeName: "String"}
 			}
-		case shapeType == "TStamp":
-			member.ShapeName = shapeType
-			tstampShape := Shape{
-				ShapeName: shapeType,
-				Type:      "timestamp",
+		} else {
+			switch {
+			case shapeType == "TStamp":
+				member.ShapeName = shapeType
+				tstampShape := Shape{
+					ShapeName: shapeType,
+					Type:      "timestamp",
+				}
+				shapes = append(shapes, tstampShape)
+			case shapeType == "Integer" || shapeType == "String" || shapeType == "Boolean" || shapeType == "Double":
+				member.ShapeName = shapeType
 			}
-			shapes = append(shapes, tstampShape)
-		case shapeType == "Integer" || shapeType == "String" || shapeType == "Boolean" || shapeType == "Double":
-			member.ShapeName = shapeType
 		}
 
 		requiredText := s.Find(g.RequestShapeRequiredSelector).First().Text()
