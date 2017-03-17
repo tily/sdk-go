@@ -9,7 +9,7 @@ import (
 	"github.com/tily/sdk-go/aws/corehandlers"
 	"github.com/tily/sdk-go/aws/request"
 	"github.com/tily/sdk-go/private/protocol/query"
-	"github.com/tily/sdk-go/private/signer/v2"
+	"github.com/tily/sdk-go/private/signer/n2"
 )
 
 // computing
@@ -64,7 +64,7 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 	}
 
 	// Handlers
-	svc.Handlers.Sign.PushBackNamed(v2.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(n2.SignRequestHandler)
 	svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
 	svc.Handlers.Build.PushBackNamed(query.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed(query.UnmarshalHandler)

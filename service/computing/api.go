@@ -10554,6 +10554,18 @@ func (c *computing) UploadSslCertificate(input *UploadSslCertificateInput) (*Upl
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AllocateAddressRequest
 type AllocateAddressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Domain *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// Boolean
+	NiftyPrivateIp *bool `type:"boolean"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -10564,6 +10576,30 @@ func (s AllocateAddressInput) String() string {
 // GoString returns the string representation
 func (s AllocateAddressInput) GoString() string {
 	return s.String()
+}
+
+// SetDomain sets the Domain field's value.
+func (s *AllocateAddressInput) SetDomain(v string) *AllocateAddressInput {
+	s.Domain = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AllocateAddressInput) SetInstanceId(v string) *AllocateAddressInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetNiftyPrivateIp sets the NiftyPrivateIp field's value.
+func (s *AllocateAddressInput) SetNiftyPrivateIp(v bool) *AllocateAddressInput {
+	s.NiftyPrivateIp = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *AllocateAddressInput) SetPlacement(v *PlacementStruct) *AllocateAddressInput {
+	s.Placement = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AllocateAddressOutput
@@ -10585,6 +10621,29 @@ func (s AllocateAddressOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateAddressRequest
 type AssociateAddressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AllocationId *string `type:"string"`
+
+	// Boolean
+	AllowReassociation *bool `type:"boolean"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// String
+	NetworkInterfaceId *string `type:"string"`
+
+	// String
+	NiftyReboot *string `type:"string"`
+
+	// String
+	PrivateIpAddress *string `type:"string"`
+
+	// String
+	PublicIp *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10595,6 +10654,61 @@ func (s AssociateAddressInput) String() string {
 // GoString returns the string representation
 func (s AssociateAddressInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AssociateAddressInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AssociateAddressInput"}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAllocationId sets the AllocationId field's value.
+func (s *AssociateAddressInput) SetAllocationId(v string) *AssociateAddressInput {
+	s.AllocationId = &v
+	return s
+}
+
+// SetAllowReassociation sets the AllowReassociation field's value.
+func (s *AssociateAddressInput) SetAllowReassociation(v bool) *AssociateAddressInput {
+	s.AllowReassociation = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AssociateAddressInput) SetInstanceId(v string) *AssociateAddressInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetNetworkInterfaceId sets the NetworkInterfaceId field's value.
+func (s *AssociateAddressInput) SetNetworkInterfaceId(v string) *AssociateAddressInput {
+	s.NetworkInterfaceId = &v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *AssociateAddressInput) SetNiftyReboot(v string) *AssociateAddressInput {
+	s.NiftyReboot = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *AssociateAddressInput) SetPrivateIpAddress(v string) *AssociateAddressInput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *AssociateAddressInput) SetPublicIp(v string) *AssociateAddressInput {
+	s.PublicIp = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateAddressOutput
@@ -10616,6 +10730,23 @@ func (s AssociateAddressOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateRouteTableRequest
 type AssociateRouteTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
+
+	// String
+	SubnetId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10626,6 +10757,49 @@ func (s AssociateRouteTableInput) String() string {
 // GoString returns the string representation
 func (s AssociateRouteTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AssociateRouteTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AssociateRouteTableInput"}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *AssociateRouteTableInput) SetAgreement(v bool) *AssociateRouteTableInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *AssociateRouteTableInput) SetRouteTableId(v string) *AssociateRouteTableInput {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *AssociateRouteTableInput) SetRouterId(v string) *AssociateRouteTableInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *AssociateRouteTableInput) SetRouterName(v string) *AssociateRouteTableInput {
+	s.RouterName = &v
+	return s
+}
+
+// SetSubnetId sets the SubnetId field's value.
+func (s *AssociateRouteTableInput) SetSubnetId(v string) *AssociateRouteTableInput {
+	s.SubnetId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateRouteTableOutput
@@ -10647,6 +10821,16 @@ func (s AssociateRouteTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateUsersRequest
 type AssociateUsersInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
+
+	// UsersList
+	//
+	// UsersList is a required field
+	UsersList []*string `type:"list" required:"true"`
 }
 
 // String returns the string representation
@@ -10657,6 +10841,34 @@ func (s AssociateUsersInput) String() string {
 // GoString returns the string representation
 func (s AssociateUsersInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AssociateUsersInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AssociateUsersInput"}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+	if s.UsersList == nil {
+		invalidParams.Add(request.NewErrParamRequired("UsersList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *AssociateUsersInput) SetFunctionName(v string) *AssociateUsersInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetUsersList sets the UsersList field's value.
+func (s *AssociateUsersInput) SetUsersList(v []*string) *AssociateUsersInput {
+	s.UsersList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateUsersOutput
@@ -10678,6 +10890,15 @@ func (s AssociateUsersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachVolumeRequest
 type AttachVolumeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Device *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	VolumeId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10688,6 +10909,24 @@ func (s AttachVolumeInput) String() string {
 // GoString returns the string representation
 func (s AttachVolumeInput) GoString() string {
 	return s.String()
+}
+
+// SetDevice sets the Device field's value.
+func (s *AttachVolumeInput) SetDevice(v string) *AttachVolumeInput {
+	s.Device = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AttachVolumeInput) SetInstanceId(v string) *AttachVolumeInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *AttachVolumeInput) SetVolumeId(v string) *AttachVolumeInput {
+	s.VolumeId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachVolumeOutput
@@ -10709,6 +10948,15 @@ func (s AttachVolumeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AuthorizeSecurityGroupIngressRequest
 type AuthorizeSecurityGroupIngressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `type:"string"`
+
+	// IpPermissionsList
+	IpPermissionsList [][]*string `type:"list"`
+
+	// String
+	UserId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10719,6 +10967,24 @@ func (s AuthorizeSecurityGroupIngressInput) String() string {
 // GoString returns the string representation
 func (s AuthorizeSecurityGroupIngressInput) GoString() string {
 	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *AuthorizeSecurityGroupIngressInput) SetGroupName(v string) *AuthorizeSecurityGroupIngressInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetIpPermissionsList sets the IpPermissionsList field's value.
+func (s *AuthorizeSecurityGroupIngressInput) SetIpPermissionsList(v [][]*string) *AuthorizeSecurityGroupIngressInput {
+	s.IpPermissionsList = v
+	return s
+}
+
+// SetUserId sets the UserId field's value.
+func (s *AuthorizeSecurityGroupIngressInput) SetUserId(v string) *AuthorizeSecurityGroupIngressInput {
+	s.UserId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//AuthorizeSecurityGroupIngressOutput
@@ -10736,10 +11002,47 @@ func (s AuthorizeSecurityGroupIngressOutput) GoString() string {
 	return s.String()
 }
 
+// BypassInterfaceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//BypassInterfaceStruct
+type BypassInterfaceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NetworkId
+	NetworkId *string `type:"string"`
+
+	// NetworkName
+	NetworkName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s BypassInterfaceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s BypassInterfaceStruct) GoString() string {
+	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *BypassInterfaceStruct) SetNetworkId(v string) *BypassInterfaceStruct {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *BypassInterfaceStruct) SetNetworkName(v string) *BypassInterfaceStruct {
+	s.NetworkName = &v
+	return s
+}
+
 // CancelCopyInstancesRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelCopyInstancesRequest
 type CancelCopyInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10750,6 +11053,12 @@ func (s CancelCopyInstancesInput) String() string {
 // GoString returns the string representation
 func (s CancelCopyInstancesInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CancelCopyInstancesInput) SetInstanceId(v string) *CancelCopyInstancesInput {
+	s.InstanceId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelCopyInstancesOutput
@@ -10771,6 +11080,11 @@ func (s CancelCopyInstancesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelUploadRequest
 type CancelUploadInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// ConversionTaskId is a required field
+	ConversionTaskId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -10781,6 +11095,25 @@ func (s CancelUploadInput) String() string {
 // GoString returns the string representation
 func (s CancelUploadInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CancelUploadInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CancelUploadInput"}
+	if s.ConversionTaskId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ConversionTaskId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetConversionTaskId sets the ConversionTaskId field's value.
+func (s *CancelUploadInput) SetConversionTaskId(v string) *CancelUploadInput {
+	s.ConversionTaskId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelUploadOutput
@@ -10798,10 +11131,95 @@ func (s CancelUploadOutput) GoString() string {
 	return s.String()
 }
 
+// CertInfoStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CertInfoStruct
+type CertInfoStruct struct {
+	_ struct{} `type:"structure"`
+
+	// CountryName
+	CountryName *string `type:"string"`
+
+	// EmailAddress
+	EmailAddress *string `type:"string"`
+
+	// LocationName
+	LocationName *string `type:"string"`
+
+	// OrganizationName
+	OrganizationName *string `type:"string"`
+
+	// OrganizationUnitName
+	OrganizationUnitName *string `type:"string"`
+
+	// StateName
+	StateName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s CertInfoStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CertInfoStruct) GoString() string {
+	return s.String()
+}
+
+// SetCountryName sets the CountryName field's value.
+func (s *CertInfoStruct) SetCountryName(v string) *CertInfoStruct {
+	s.CountryName = &v
+	return s
+}
+
+// SetEmailAddress sets the EmailAddress field's value.
+func (s *CertInfoStruct) SetEmailAddress(v string) *CertInfoStruct {
+	s.EmailAddress = &v
+	return s
+}
+
+// SetLocationName sets the LocationName field's value.
+func (s *CertInfoStruct) SetLocationName(v string) *CertInfoStruct {
+	s.LocationName = &v
+	return s
+}
+
+// SetOrganizationName sets the OrganizationName field's value.
+func (s *CertInfoStruct) SetOrganizationName(v string) *CertInfoStruct {
+	s.OrganizationName = &v
+	return s
+}
+
+// SetOrganizationUnitName sets the OrganizationUnitName field's value.
+func (s *CertInfoStruct) SetOrganizationUnitName(v string) *CertInfoStruct {
+	s.OrganizationUnitName = &v
+	return s
+}
+
+// SetStateName sets the StateName field's value.
+func (s *CertInfoStruct) SetStateName(v string) *CertInfoStruct {
+	s.StateName = &v
+	return s
+}
+
 // ClearLoadBalancerSessionRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ClearLoadBalancerSessionRequest
 type ClearLoadBalancerSessionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -10812,6 +11230,43 @@ func (s ClearLoadBalancerSessionInput) String() string {
 // GoString returns the string representation
 func (s ClearLoadBalancerSessionInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ClearLoadBalancerSessionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ClearLoadBalancerSessionInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *ClearLoadBalancerSessionInput) SetInstancePort(v int64) *ClearLoadBalancerSessionInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *ClearLoadBalancerSessionInput) SetLoadBalancerName(v string) *ClearLoadBalancerSessionInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *ClearLoadBalancerSessionInput) SetLoadBalancerPort(v int64) *ClearLoadBalancerSessionInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ClearLoadBalancerSessionOutput
@@ -10833,6 +11288,26 @@ func (s ClearLoadBalancerSessionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ConfigureHealthCheckRequest
 type ConfigureHealthCheckInput struct {
 	_ struct{} `type:"structure"`
+
+	// HealthCheckStruct
+	//
+	// HealthCheck is a required field
+	HealthCheck *HealthCheckStruct `type:"structure" required:"true"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -10843,6 +11318,52 @@ func (s ConfigureHealthCheckInput) String() string {
 // GoString returns the string representation
 func (s ConfigureHealthCheckInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ConfigureHealthCheckInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ConfigureHealthCheckInput"}
+	if s.HealthCheck == nil {
+		invalidParams.Add(request.NewErrParamRequired("HealthCheck"))
+	}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetHealthCheck sets the HealthCheck field's value.
+func (s *ConfigureHealthCheckInput) SetHealthCheck(v *HealthCheckStruct) *ConfigureHealthCheckInput {
+	s.HealthCheck = v
+	return s
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *ConfigureHealthCheckInput) SetInstancePort(v int64) *ConfigureHealthCheckInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *ConfigureHealthCheckInput) SetLoadBalancerName(v string) *ConfigureHealthCheckInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *ConfigureHealthCheckInput) SetLoadBalancerPort(v int64) *ConfigureHealthCheckInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ConfigureHealthCheckOutput
@@ -10860,10 +11381,105 @@ func (s ConfigureHealthCheckOutput) GoString() string {
 	return s.String()
 }
 
+// CopyInstanceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstanceStruct
+type CopyInstanceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// AccountingType
+	AccountingType *string `type:"string"`
+
+	// InstanceName
+	InstanceName *string `type:"string"`
+
+	// InstanceType
+	InstanceType *string `type:"string"`
+
+	// IpType
+	IpType *string `type:"string"`
+
+	// LoadBalancersList
+	LoadBalancersList []*int64 `type:"list"`
+
+	// PlacementStruct
+	PlacementStruct *PlacementStruct `type:"structure"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
+}
+
+// String returns the string representation
+func (s CopyInstanceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CopyInstanceStruct) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *CopyInstanceStruct) SetAccountingType(v string) *CopyInstanceStruct {
+	s.AccountingType = &v
+	return s
+}
+
+// SetInstanceName sets the InstanceName field's value.
+func (s *CopyInstanceStruct) SetInstanceName(v string) *CopyInstanceStruct {
+	s.InstanceName = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *CopyInstanceStruct) SetInstanceType(v string) *CopyInstanceStruct {
+	s.InstanceType = &v
+	return s
+}
+
+// SetIpType sets the IpType field's value.
+func (s *CopyInstanceStruct) SetIpType(v string) *CopyInstanceStruct {
+	s.IpType = &v
+	return s
+}
+
+// SetLoadBalancersList sets the LoadBalancersList field's value.
+func (s *CopyInstanceStruct) SetLoadBalancersList(v []*int64) *CopyInstanceStruct {
+	s.LoadBalancersList = v
+	return s
+}
+
+// SetPlacementStruct sets the PlacementStruct field's value.
+func (s *CopyInstanceStruct) SetPlacementStruct(v *PlacementStruct) *CopyInstanceStruct {
+	s.PlacementStruct = v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *CopyInstanceStruct) SetSecurityGroupList(v []*string) *CopyInstanceStruct {
+	s.SecurityGroupList = v
+	return s
+}
+
 // CopyInstancesRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstancesRequest
 type CopyInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	CopyCount *int64 `type:"integer"`
+
+	// CopyInstanceStruct
+	//
+	// CopyInstance is a required field
+	CopyInstance *CopyInstanceStruct `type:"structure" required:"true"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -10874,6 +11490,46 @@ func (s CopyInstancesInput) String() string {
 // GoString returns the string representation
 func (s CopyInstancesInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CopyInstancesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CopyInstancesInput"}
+	if s.CopyInstance == nil {
+		invalidParams.Add(request.NewErrParamRequired("CopyInstance"))
+	}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCopyCount sets the CopyCount field's value.
+func (s *CopyInstancesInput) SetCopyCount(v int64) *CopyInstancesInput {
+	s.CopyCount = &v
+	return s
+}
+
+// SetCopyInstance sets the CopyInstance field's value.
+func (s *CopyInstancesInput) SetCopyInstance(v *CopyInstanceStruct) *CopyInstancesInput {
+	s.CopyInstance = v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CopyInstancesInput) SetInstanceId(v string) *CopyInstancesInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *CopyInstancesInput) SetNetworkInterfaceList(v []*string) *CopyInstancesInput {
+	s.NetworkInterfaceList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstancesOutput
@@ -10891,10 +11547,58 @@ func (s CopyInstancesOutput) GoString() string {
 	return s.String()
 }
 
+// CourseUpdateStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CourseUpdateStruct
+type CourseUpdateStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Agreement
+	Agreement *bool `type:"boolean"`
+}
+
+// String returns the string representation
+func (s CourseUpdateStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CourseUpdateStruct) GoString() string {
+	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *CourseUpdateStruct) SetAgreement(v bool) *CourseUpdateStruct {
+	s.Agreement = &v
+	return s
+}
+
 // CreateCustomerGatewayRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateCustomerGatewayRequest
 type CreateCustomerGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	BgpAsn *int64 `type:"integer"`
+
+	// String
+	//
+	// IpAddress is a required field
+	IpAddress *string `type:"string" required:"true"`
+
+	// String
+	NiftyCustomerGatewayDescription *string `type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `type:"string"`
+
+	// String
+	NiftyLanSideCidrBlock *string `type:"string"`
+
+	// String
+	NiftyLanSideIpAddress *string `type:"string"`
+
+	// String
+	Type *string `type:"string"`
 }
 
 // String returns the string representation
@@ -10905,6 +11609,61 @@ func (s CreateCustomerGatewayInput) String() string {
 // GoString returns the string representation
 func (s CreateCustomerGatewayInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateCustomerGatewayInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateCustomerGatewayInput"}
+	if s.IpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("IpAddress"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetBgpAsn sets the BgpAsn field's value.
+func (s *CreateCustomerGatewayInput) SetBgpAsn(v int64) *CreateCustomerGatewayInput {
+	s.BgpAsn = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *CreateCustomerGatewayInput) SetIpAddress(v string) *CreateCustomerGatewayInput {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayDescription sets the NiftyCustomerGatewayDescription field's value.
+func (s *CreateCustomerGatewayInput) SetNiftyCustomerGatewayDescription(v string) *CreateCustomerGatewayInput {
+	s.NiftyCustomerGatewayDescription = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *CreateCustomerGatewayInput) SetNiftyCustomerGatewayName(v string) *CreateCustomerGatewayInput {
+	s.NiftyCustomerGatewayName = &v
+	return s
+}
+
+// SetNiftyLanSideCidrBlock sets the NiftyLanSideCidrBlock field's value.
+func (s *CreateCustomerGatewayInput) SetNiftyLanSideCidrBlock(v string) *CreateCustomerGatewayInput {
+	s.NiftyLanSideCidrBlock = &v
+	return s
+}
+
+// SetNiftyLanSideIpAddress sets the NiftyLanSideIpAddress field's value.
+func (s *CreateCustomerGatewayInput) SetNiftyLanSideIpAddress(v string) *CreateCustomerGatewayInput {
+	s.NiftyLanSideIpAddress = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *CreateCustomerGatewayInput) SetType(v string) *CreateCustomerGatewayInput {
+	s.Type = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateCustomerGatewayOutput
@@ -10926,6 +11685,11 @@ func (s CreateCustomerGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateDhcpOptionsRequest
 type CreateDhcpOptionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpConfigurationList
+	//
+	// DhcpConfigurationList is a required field
+	DhcpConfigurationList [][]*string `type:"list" required:"true"`
 }
 
 // String returns the string representation
@@ -10936,6 +11700,25 @@ func (s CreateDhcpOptionsInput) String() string {
 // GoString returns the string representation
 func (s CreateDhcpOptionsInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateDhcpOptionsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateDhcpOptionsInput"}
+	if s.DhcpConfigurationList == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigurationList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDhcpConfigurationList sets the DhcpConfigurationList field's value.
+func (s *CreateDhcpOptionsInput) SetDhcpConfigurationList(v [][]*string) *CreateDhcpOptionsInput {
+	s.DhcpConfigurationList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateDhcpOptionsOutput
@@ -10957,6 +11740,28 @@ func (s CreateDhcpOptionsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateImageRequest
 type CreateImageInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// Boolean
+	LeftInstance *bool `type:"boolean"`
+
+	// String
+	//
+	// Name is a required field
+	Name *string `type:"string" required:"true"`
+
+	// Boolean
+	NoReboot *bool `type:"boolean"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -10967,6 +11772,58 @@ func (s CreateImageInput) String() string {
 // GoString returns the string representation
 func (s CreateImageInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateImageInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateImageInput"}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+	if s.Name == nil {
+		invalidParams.Add(request.NewErrParamRequired("Name"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateImageInput) SetDescription(v string) *CreateImageInput {
+	s.Description = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CreateImageInput) SetInstanceId(v string) *CreateImageInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetLeftInstance sets the LeftInstance field's value.
+func (s *CreateImageInput) SetLeftInstance(v bool) *CreateImageInput {
+	s.LeftInstance = &v
+	return s
+}
+
+// SetName sets the Name field's value.
+func (s *CreateImageInput) SetName(v string) *CreateImageInput {
+	s.Name = &v
+	return s
+}
+
+// SetNoReboot sets the NoReboot field's value.
+func (s *CreateImageInput) SetNoReboot(v bool) *CreateImageInput {
+	s.NoReboot = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *CreateImageInput) SetPlacement(v *PlacementStruct) *CreateImageInput {
+	s.Placement = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateImageOutput
@@ -10988,6 +11845,19 @@ func (s CreateImageOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateKeyPairRequest
 type CreateKeyPairInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// KeyName is a required field
+	KeyName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Password is a required field
+	Password *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -10998,6 +11868,40 @@ func (s CreateKeyPairInput) String() string {
 // GoString returns the string representation
 func (s CreateKeyPairInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateKeyPairInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateKeyPairInput"}
+	if s.KeyName == nil {
+		invalidParams.Add(request.NewErrParamRequired("KeyName"))
+	}
+	if s.Password == nil {
+		invalidParams.Add(request.NewErrParamRequired("Password"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateKeyPairInput) SetDescription(v string) *CreateKeyPairInput {
+	s.Description = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *CreateKeyPairInput) SetKeyName(v string) *CreateKeyPairInput {
+	s.KeyName = &v
+	return s
+}
+
+// SetPassword sets the Password field's value.
+func (s *CreateKeyPairInput) SetPassword(v string) *CreateKeyPairInput {
+	s.Password = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateKeyPairOutput
@@ -11019,6 +11923,26 @@ func (s CreateKeyPairOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateLoadBalancerRequest
 type CreateLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// AvailabilityZonesList
+	AvailabilityZonesList []*string `type:"list"`
+
+	// String
+	IpVersion *string `type:"string"`
+
+	// ListenersList
+	ListenersList []*string `type:"list"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	NetworkVolume *int64 `type:"integer"`
 }
 
 // String returns the string representation
@@ -11029,6 +11953,55 @@ func (s CreateLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s CreateLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateLoadBalancerInput"}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *CreateLoadBalancerInput) SetAccountingType(v string) *CreateLoadBalancerInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZonesList sets the AvailabilityZonesList field's value.
+func (s *CreateLoadBalancerInput) SetAvailabilityZonesList(v []*string) *CreateLoadBalancerInput {
+	s.AvailabilityZonesList = v
+	return s
+}
+
+// SetIpVersion sets the IpVersion field's value.
+func (s *CreateLoadBalancerInput) SetIpVersion(v string) *CreateLoadBalancerInput {
+	s.IpVersion = &v
+	return s
+}
+
+// SetListenersList sets the ListenersList field's value.
+func (s *CreateLoadBalancerInput) SetListenersList(v []*string) *CreateLoadBalancerInput {
+	s.ListenersList = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *CreateLoadBalancerInput) SetLoadBalancerName(v string) *CreateLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetNetworkVolume sets the NetworkVolume field's value.
+func (s *CreateLoadBalancerInput) SetNetworkVolume(v int64) *CreateLoadBalancerInput {
+	s.NetworkVolume = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateLoadBalancerOutput
@@ -11050,6 +12023,37 @@ func (s CreateLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteRequest
 type CreateRouteInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DestinationCidrBlock is a required field
+	DestinationCidrBlock *string `type:"string" required:"true"`
+
+	// String
+	GatewayId *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	IpAddress *string `type:"string"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkInterfaceId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
+
+	// String
+	VpcPeeringConnectionId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11060,6 +12064,76 @@ func (s CreateRouteInput) String() string {
 // GoString returns the string representation
 func (s CreateRouteInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateRouteInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateRouteInput"}
+	if s.DestinationCidrBlock == nil {
+		invalidParams.Add(request.NewErrParamRequired("DestinationCidrBlock"))
+	}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDestinationCidrBlock sets the DestinationCidrBlock field's value.
+func (s *CreateRouteInput) SetDestinationCidrBlock(v string) *CreateRouteInput {
+	s.DestinationCidrBlock = &v
+	return s
+}
+
+// SetGatewayId sets the GatewayId field's value.
+func (s *CreateRouteInput) SetGatewayId(v string) *CreateRouteInput {
+	s.GatewayId = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CreateRouteInput) SetInstanceId(v string) *CreateRouteInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *CreateRouteInput) SetIpAddress(v string) *CreateRouteInput {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *CreateRouteInput) SetNetworkId(v string) *CreateRouteInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkInterfaceId sets the NetworkInterfaceId field's value.
+func (s *CreateRouteInput) SetNetworkInterfaceId(v string) *CreateRouteInput {
+	s.NetworkInterfaceId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *CreateRouteInput) SetNetworkName(v string) *CreateRouteInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *CreateRouteInput) SetRouteTableId(v string) *CreateRouteInput {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetVpcPeeringConnectionId sets the VpcPeeringConnectionId field's value.
+func (s *CreateRouteInput) SetVpcPeeringConnectionId(v string) *CreateRouteInput {
+	s.VpcPeeringConnectionId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteOutput
@@ -11081,6 +12155,9 @@ func (s CreateRouteOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteTableRequest
 type CreateRouteTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	VpcId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11091,6 +12168,12 @@ func (s CreateRouteTableInput) String() string {
 // GoString returns the string representation
 func (s CreateRouteTableInput) GoString() string {
 	return s.String()
+}
+
+// SetVpcId sets the VpcId field's value.
+func (s *CreateRouteTableInput) SetVpcId(v string) *CreateRouteTableInput {
+	s.VpcId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteTableOutput
@@ -11112,6 +12195,15 @@ func (s CreateRouteTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSecurityGroupRequest
 type CreateSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupDescription *string `type:"string"`
+
+	// String
+	GroupName *string `type:"string"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -11122,6 +12214,24 @@ func (s CreateSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s CreateSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// SetGroupDescription sets the GroupDescription field's value.
+func (s *CreateSecurityGroupInput) SetGroupDescription(v string) *CreateSecurityGroupInput {
+	s.GroupDescription = &v
+	return s
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *CreateSecurityGroupInput) SetGroupName(v string) *CreateSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *CreateSecurityGroupInput) SetPlacement(v *PlacementStruct) *CreateSecurityGroupInput {
+	s.Placement = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSecurityGroupOutput
@@ -11143,6 +12253,30 @@ func (s CreateSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSslCertificateRequest
 type CreateSslCertificateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	ApproverEmailAddress *string `type:"string"`
+
+	// Integer
+	CertAuthority *int64 `type:"integer"`
+
+	// CertInfoStruct
+	CertInfo *CertInfoStruct `type:"structure"`
+
+	// Integer
+	Count *int64 `type:"integer"`
+
+	// String
+	Fqdn *string `type:"string"`
+
+	// String
+	FqdnId *string `type:"string"`
+
+	// Integer
+	KeyLength *int64 `type:"integer"`
+
+	// Integer
+	ValidityTerm *int64 `type:"integer"`
 }
 
 // String returns the string representation
@@ -11153,6 +12287,54 @@ func (s CreateSslCertificateInput) String() string {
 // GoString returns the string representation
 func (s CreateSslCertificateInput) GoString() string {
 	return s.String()
+}
+
+// SetApproverEmailAddress sets the ApproverEmailAddress field's value.
+func (s *CreateSslCertificateInput) SetApproverEmailAddress(v string) *CreateSslCertificateInput {
+	s.ApproverEmailAddress = &v
+	return s
+}
+
+// SetCertAuthority sets the CertAuthority field's value.
+func (s *CreateSslCertificateInput) SetCertAuthority(v int64) *CreateSslCertificateInput {
+	s.CertAuthority = &v
+	return s
+}
+
+// SetCertInfo sets the CertInfo field's value.
+func (s *CreateSslCertificateInput) SetCertInfo(v *CertInfoStruct) *CreateSslCertificateInput {
+	s.CertInfo = v
+	return s
+}
+
+// SetCount sets the Count field's value.
+func (s *CreateSslCertificateInput) SetCount(v int64) *CreateSslCertificateInput {
+	s.Count = &v
+	return s
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *CreateSslCertificateInput) SetFqdn(v string) *CreateSslCertificateInput {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *CreateSslCertificateInput) SetFqdnId(v string) *CreateSslCertificateInput {
+	s.FqdnId = &v
+	return s
+}
+
+// SetKeyLength sets the KeyLength field's value.
+func (s *CreateSslCertificateInput) SetKeyLength(v int64) *CreateSslCertificateInput {
+	s.KeyLength = &v
+	return s
+}
+
+// SetValidityTerm sets the ValidityTerm field's value.
+func (s *CreateSslCertificateInput) SetValidityTerm(v int64) *CreateSslCertificateInput {
+	s.ValidityTerm = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSslCertificateOutput
@@ -11174,6 +12356,30 @@ func (s CreateSslCertificateOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVolumeRequest
 type CreateVolumeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// String
+	AvailabilityZone *string `type:"string"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	DiskType *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	Size *string `type:"string"`
+
+	// String
+	SnapshotId *string `type:"string"`
+
+	// String
+	VolumeId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11184,6 +12390,54 @@ func (s CreateVolumeInput) String() string {
 // GoString returns the string representation
 func (s CreateVolumeInput) GoString() string {
 	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *CreateVolumeInput) SetAccountingType(v string) *CreateVolumeInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *CreateVolumeInput) SetAvailabilityZone(v string) *CreateVolumeInput {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateVolumeInput) SetDescription(v string) *CreateVolumeInput {
+	s.Description = &v
+	return s
+}
+
+// SetDiskType sets the DiskType field's value.
+func (s *CreateVolumeInput) SetDiskType(v string) *CreateVolumeInput {
+	s.DiskType = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CreateVolumeInput) SetInstanceId(v string) *CreateVolumeInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetSize sets the Size field's value.
+func (s *CreateVolumeInput) SetSize(v string) *CreateVolumeInput {
+	s.Size = &v
+	return s
+}
+
+// SetSnapshotId sets the SnapshotId field's value.
+func (s *CreateVolumeInput) SetSnapshotId(v string) *CreateVolumeInput {
+	s.SnapshotId = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *CreateVolumeInput) SetVolumeId(v string) *CreateVolumeInput {
+	s.VolumeId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVolumeOutput
@@ -11205,6 +12459,49 @@ func (s CreateVolumeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnConnectionRequest
 type CreateVpnConnectionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	CustomerGatewayId *string `type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `type:"string"`
+
+	// NiftyIPsecConfigurationStruct
+	NiftyIPsecConfiguration *NiftyIPsecConfigurationStruct `type:"structure"`
+
+	// NiftyIpsecConfigurationStruct
+	NiftyIpsecConfiguration *NiftyIpsecConfigurationStruct `type:"structure"`
+
+	// NiftyRemoteVpnStruct
+	NiftyRemoteVpn *NiftyRemoteVpnStruct `type:"structure"`
+
+	// NiftyTunnelStruct
+	NiftyTunnel *NiftyTunnelStruct `type:"structure"`
+
+	// String
+	NiftyVpnConnectionDescription *string `type:"string"`
+
+	// String
+	NiftyVpnConnectionMtu *string `type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// OptionsStruct
+	Options *OptionsStruct `type:"structure"`
+
+	// String
+	//
+	// Type is a required field
+	Type *string `type:"string" required:"true"`
+
+	// String
+	//
+	// VpnGatewayId is a required field
+	VpnGatewayId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11215,6 +12512,100 @@ func (s CreateVpnConnectionInput) String() string {
 // GoString returns the string representation
 func (s CreateVpnConnectionInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateVpnConnectionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateVpnConnectionInput"}
+	if s.Type == nil {
+		invalidParams.Add(request.NewErrParamRequired("Type"))
+	}
+	if s.VpnGatewayId == nil {
+		invalidParams.Add(request.NewErrParamRequired("VpnGatewayId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *CreateVpnConnectionInput) SetAgreement(v bool) *CreateVpnConnectionInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetCustomerGatewayId sets the CustomerGatewayId field's value.
+func (s *CreateVpnConnectionInput) SetCustomerGatewayId(v string) *CreateVpnConnectionInput {
+	s.CustomerGatewayId = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *CreateVpnConnectionInput) SetNiftyCustomerGatewayName(v string) *CreateVpnConnectionInput {
+	s.NiftyCustomerGatewayName = &v
+	return s
+}
+
+// SetNiftyIPsecConfiguration sets the NiftyIPsecConfiguration field's value.
+func (s *CreateVpnConnectionInput) SetNiftyIPsecConfiguration(v *NiftyIPsecConfigurationStruct) *CreateVpnConnectionInput {
+	s.NiftyIPsecConfiguration = v
+	return s
+}
+
+// SetNiftyIpsecConfiguration sets the NiftyIpsecConfiguration field's value.
+func (s *CreateVpnConnectionInput) SetNiftyIpsecConfiguration(v *NiftyIpsecConfigurationStruct) *CreateVpnConnectionInput {
+	s.NiftyIpsecConfiguration = v
+	return s
+}
+
+// SetNiftyRemoteVpn sets the NiftyRemoteVpn field's value.
+func (s *CreateVpnConnectionInput) SetNiftyRemoteVpn(v *NiftyRemoteVpnStruct) *CreateVpnConnectionInput {
+	s.NiftyRemoteVpn = v
+	return s
+}
+
+// SetNiftyTunnel sets the NiftyTunnel field's value.
+func (s *CreateVpnConnectionInput) SetNiftyTunnel(v *NiftyTunnelStruct) *CreateVpnConnectionInput {
+	s.NiftyTunnel = v
+	return s
+}
+
+// SetNiftyVpnConnectionDescription sets the NiftyVpnConnectionDescription field's value.
+func (s *CreateVpnConnectionInput) SetNiftyVpnConnectionDescription(v string) *CreateVpnConnectionInput {
+	s.NiftyVpnConnectionDescription = &v
+	return s
+}
+
+// SetNiftyVpnConnectionMtu sets the NiftyVpnConnectionMtu field's value.
+func (s *CreateVpnConnectionInput) SetNiftyVpnConnectionMtu(v string) *CreateVpnConnectionInput {
+	s.NiftyVpnConnectionMtu = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *CreateVpnConnectionInput) SetNiftyVpnGatewayName(v string) *CreateVpnConnectionInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetOptions sets the Options field's value.
+func (s *CreateVpnConnectionInput) SetOptions(v *OptionsStruct) *CreateVpnConnectionInput {
+	s.Options = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *CreateVpnConnectionInput) SetType(v string) *CreateVpnConnectionInput {
+	s.Type = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *CreateVpnConnectionInput) SetVpnGatewayId(v string) *CreateVpnConnectionInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnConnectionOutput
@@ -11236,6 +12627,33 @@ func (s CreateVpnConnectionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnGatewayRequest
 type CreateVpnGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// NiftyNetworkStruct
+	NiftyNetwork *NiftyNetworkStruct `type:"structure"`
+
+	// Boolean
+	NiftyRedundancy *bool `type:"boolean"`
+
+	// String
+	NiftyVpnGatewayDescription *string `type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	NiftyVpnGatewayType *string `type:"string"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
+
+	// String
+	Type *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11246,6 +12664,60 @@ func (s CreateVpnGatewayInput) String() string {
 // GoString returns the string representation
 func (s CreateVpnGatewayInput) GoString() string {
 	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *CreateVpnGatewayInput) SetAccountingType(v string) *CreateVpnGatewayInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetNiftyNetwork sets the NiftyNetwork field's value.
+func (s *CreateVpnGatewayInput) SetNiftyNetwork(v *NiftyNetworkStruct) *CreateVpnGatewayInput {
+	s.NiftyNetwork = v
+	return s
+}
+
+// SetNiftyRedundancy sets the NiftyRedundancy field's value.
+func (s *CreateVpnGatewayInput) SetNiftyRedundancy(v bool) *CreateVpnGatewayInput {
+	s.NiftyRedundancy = &v
+	return s
+}
+
+// SetNiftyVpnGatewayDescription sets the NiftyVpnGatewayDescription field's value.
+func (s *CreateVpnGatewayInput) SetNiftyVpnGatewayDescription(v string) *CreateVpnGatewayInput {
+	s.NiftyVpnGatewayDescription = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *CreateVpnGatewayInput) SetNiftyVpnGatewayName(v string) *CreateVpnGatewayInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetNiftyVpnGatewayType sets the NiftyVpnGatewayType field's value.
+func (s *CreateVpnGatewayInput) SetNiftyVpnGatewayType(v string) *CreateVpnGatewayInput {
+	s.NiftyVpnGatewayType = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *CreateVpnGatewayInput) SetPlacement(v *PlacementStruct) *CreateVpnGatewayInput {
+	s.Placement = v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *CreateVpnGatewayInput) SetSecurityGroupList(v []*string) *CreateVpnGatewayInput {
+	s.SecurityGroupList = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *CreateVpnGatewayInput) SetType(v string) *CreateVpnGatewayInput {
+	s.Type = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnGatewayOutput
@@ -11267,6 +12739,12 @@ func (s CreateVpnGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteCustomerGatewayRequest
 type DeleteCustomerGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	CustomerGatewayId *string `type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11277,6 +12755,18 @@ func (s DeleteCustomerGatewayInput) String() string {
 // GoString returns the string representation
 func (s DeleteCustomerGatewayInput) GoString() string {
 	return s.String()
+}
+
+// SetCustomerGatewayId sets the CustomerGatewayId field's value.
+func (s *DeleteCustomerGatewayInput) SetCustomerGatewayId(v string) *DeleteCustomerGatewayInput {
+	s.CustomerGatewayId = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *DeleteCustomerGatewayInput) SetNiftyCustomerGatewayName(v string) *DeleteCustomerGatewayInput {
+	s.NiftyCustomerGatewayName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteCustomerGatewayOutput
@@ -11298,6 +12788,11 @@ func (s DeleteCustomerGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteDhcpOptionsRequest
 type DeleteDhcpOptionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DhcpOptionsId is a required field
+	DhcpOptionsId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11308,6 +12803,25 @@ func (s DeleteDhcpOptionsInput) String() string {
 // GoString returns the string representation
 func (s DeleteDhcpOptionsInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteDhcpOptionsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteDhcpOptionsInput"}
+	if s.DhcpOptionsId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpOptionsId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDhcpOptionsId sets the DhcpOptionsId field's value.
+func (s *DeleteDhcpOptionsInput) SetDhcpOptionsId(v string) *DeleteDhcpOptionsInput {
+	s.DhcpOptionsId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteDhcpOptionsOutput
@@ -11329,6 +12843,11 @@ func (s DeleteDhcpOptionsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteImageRequest
 type DeleteImageInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// ImageId is a required field
+	ImageId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11339,6 +12858,25 @@ func (s DeleteImageInput) String() string {
 // GoString returns the string representation
 func (s DeleteImageInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteImageInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteImageInput"}
+	if s.ImageId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ImageId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *DeleteImageInput) SetImageId(v string) *DeleteImageInput {
+	s.ImageId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteImageOutput
@@ -11360,6 +12898,11 @@ func (s DeleteImageOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteKeyPairRequest
 type DeleteKeyPairInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// KeyName is a required field
+	KeyName *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11370,6 +12913,25 @@ func (s DeleteKeyPairInput) String() string {
 // GoString returns the string representation
 func (s DeleteKeyPairInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteKeyPairInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteKeyPairInput"}
+	if s.KeyName == nil {
+		invalidParams.Add(request.NewErrParamRequired("KeyName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *DeleteKeyPairInput) SetKeyName(v string) *DeleteKeyPairInput {
+	s.KeyName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteKeyPairOutput
@@ -11391,6 +12953,21 @@ func (s DeleteKeyPairOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteLoadBalancerRequest
 type DeleteLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -11401,6 +12978,43 @@ func (s DeleteLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s DeleteLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteLoadBalancerInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *DeleteLoadBalancerInput) SetInstancePort(v int64) *DeleteLoadBalancerInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *DeleteLoadBalancerInput) SetLoadBalancerName(v string) *DeleteLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *DeleteLoadBalancerInput) SetLoadBalancerPort(v int64) *DeleteLoadBalancerInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteLoadBalancerOutput
@@ -11422,6 +13036,16 @@ func (s DeleteLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteRequest
 type DeleteRouteInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DestinationCidrBlock is a required field
+	DestinationCidrBlock *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11432,6 +13056,34 @@ func (s DeleteRouteInput) String() string {
 // GoString returns the string representation
 func (s DeleteRouteInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteRouteInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteRouteInput"}
+	if s.DestinationCidrBlock == nil {
+		invalidParams.Add(request.NewErrParamRequired("DestinationCidrBlock"))
+	}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDestinationCidrBlock sets the DestinationCidrBlock field's value.
+func (s *DeleteRouteInput) SetDestinationCidrBlock(v string) *DeleteRouteInput {
+	s.DestinationCidrBlock = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *DeleteRouteInput) SetRouteTableId(v string) *DeleteRouteInput {
+	s.RouteTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteOutput
@@ -11453,6 +13105,11 @@ func (s DeleteRouteOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteTableRequest
 type DeleteRouteTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11463,6 +13120,25 @@ func (s DeleteRouteTableInput) String() string {
 // GoString returns the string representation
 func (s DeleteRouteTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteRouteTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteRouteTableInput"}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *DeleteRouteTableInput) SetRouteTableId(v string) *DeleteRouteTableInput {
+	s.RouteTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteTableOutput
@@ -11484,6 +13160,9 @@ func (s DeleteRouteTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSecurityGroupRequest
 type DeleteSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11494,6 +13173,12 @@ func (s DeleteSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s DeleteSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *DeleteSecurityGroupInput) SetGroupName(v string) *DeleteSecurityGroupInput {
+	s.GroupName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSecurityGroupOutput
@@ -11515,6 +13200,11 @@ func (s DeleteSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSslCertificateRequest
 type DeleteSslCertificateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// FqdnId is a required field
+	FqdnId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11525,6 +13215,25 @@ func (s DeleteSslCertificateInput) String() string {
 // GoString returns the string representation
 func (s DeleteSslCertificateInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteSslCertificateInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteSslCertificateInput"}
+	if s.FqdnId == nil {
+		invalidParams.Add(request.NewErrParamRequired("FqdnId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *DeleteSslCertificateInput) SetFqdnId(v string) *DeleteSslCertificateInput {
+	s.FqdnId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSslCertificateOutput
@@ -11546,6 +13255,9 @@ func (s DeleteSslCertificateOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVolumeRequest
 type DeleteVolumeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	VolumeId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11556,6 +13268,12 @@ func (s DeleteVolumeInput) String() string {
 // GoString returns the string representation
 func (s DeleteVolumeInput) GoString() string {
 	return s.String()
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *DeleteVolumeInput) SetVolumeId(v string) *DeleteVolumeInput {
+	s.VolumeId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVolumeOutput
@@ -11577,6 +13295,14 @@ func (s DeleteVolumeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnConnectionRequest
 type DeleteVpnConnectionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// VpnConnectionId is a required field
+	VpnConnectionId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11587,6 +13313,31 @@ func (s DeleteVpnConnectionInput) String() string {
 // GoString returns the string representation
 func (s DeleteVpnConnectionInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteVpnConnectionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteVpnConnectionInput"}
+	if s.VpnConnectionId == nil {
+		invalidParams.Add(request.NewErrParamRequired("VpnConnectionId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *DeleteVpnConnectionInput) SetAgreement(v bool) *DeleteVpnConnectionInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetVpnConnectionId sets the VpnConnectionId field's value.
+func (s *DeleteVpnConnectionInput) SetVpnConnectionId(v string) *DeleteVpnConnectionInput {
+	s.VpnConnectionId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnConnectionOutput
@@ -11608,6 +13359,12 @@ func (s DeleteVpnConnectionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnGatewayRequest
 type DeleteVpnGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11618,6 +13375,18 @@ func (s DeleteVpnGatewayInput) String() string {
 // GoString returns the string representation
 func (s DeleteVpnGatewayInput) GoString() string {
 	return s.String()
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *DeleteVpnGatewayInput) SetNiftyVpnGatewayName(v string) *DeleteVpnGatewayInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *DeleteVpnGatewayInput) SetVpnGatewayId(v string) *DeleteVpnGatewayInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnGatewayOutput
@@ -11639,6 +13408,26 @@ func (s DeleteVpnGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromLoadBalancerRequest
 type DeregisterInstancesFromLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// InstancesList
+	//
+	// InstancesList is a required field
+	InstancesList []*string `type:"list" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -11649,6 +13438,52 @@ func (s DeregisterInstancesFromLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s DeregisterInstancesFromLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeregisterInstancesFromLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeregisterInstancesFromLoadBalancerInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.InstancesList == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancesList"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *DeregisterInstancesFromLoadBalancerInput) SetInstancePort(v int64) *DeregisterInstancesFromLoadBalancerInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetInstancesList sets the InstancesList field's value.
+func (s *DeregisterInstancesFromLoadBalancerInput) SetInstancesList(v []*string) *DeregisterInstancesFromLoadBalancerInput {
+	s.InstancesList = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *DeregisterInstancesFromLoadBalancerInput) SetLoadBalancerName(v string) *DeregisterInstancesFromLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *DeregisterInstancesFromLoadBalancerInput) SetLoadBalancerPort(v int64) *DeregisterInstancesFromLoadBalancerInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromLoadBalancerOutput
@@ -11670,6 +13505,12 @@ func (s DeregisterInstancesFromLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromSecurityGroupRequest
 type DeregisterInstancesFromSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `type:"string"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11680,6 +13521,18 @@ func (s DeregisterInstancesFromSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s DeregisterInstancesFromSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *DeregisterInstancesFromSecurityGroupInput) SetGroupName(v string) *DeregisterInstancesFromSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *DeregisterInstancesFromSecurityGroupInput) SetInstanceIdList(v []*string) *DeregisterInstancesFromSecurityGroupInput {
+	s.InstanceIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromSecurityGroupOutput
@@ -11701,6 +13554,9 @@ func (s DeregisterInstancesFromSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAddressesRequest
 type DescribeAddressesInput struct {
 	_ struct{} `type:"structure"`
+
+	// PublicIpList
+	PublicIpList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11711,6 +13567,12 @@ func (s DescribeAddressesInput) String() string {
 // GoString returns the string representation
 func (s DescribeAddressesInput) GoString() string {
 	return s.String()
+}
+
+// SetPublicIpList sets the PublicIpList field's value.
+func (s *DescribeAddressesInput) SetPublicIpList(v []*string) *DescribeAddressesInput {
+	s.PublicIpList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAddressesOutput
@@ -11732,6 +13594,11 @@ func (s DescribeAddressesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAssociatedUsersRequest
 type DescribeAssociatedUsersInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -11742,6 +13609,25 @@ func (s DescribeAssociatedUsersInput) String() string {
 // GoString returns the string representation
 func (s DescribeAssociatedUsersInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeAssociatedUsersInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeAssociatedUsersInput"}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *DescribeAssociatedUsersInput) SetFunctionName(v string) *DescribeAssociatedUsersInput {
+	s.FunctionName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAssociatedUsersOutput
@@ -11763,6 +13649,9 @@ func (s DescribeAssociatedUsersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAvailabilityZonesRequest
 type DescribeAvailabilityZonesInput struct {
 	_ struct{} `type:"structure"`
+
+	// ZoneNameList
+	ZoneNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11773,6 +13662,12 @@ func (s DescribeAvailabilityZonesInput) String() string {
 // GoString returns the string representation
 func (s DescribeAvailabilityZonesInput) GoString() string {
 	return s.String()
+}
+
+// SetZoneNameList sets the ZoneNameList field's value.
+func (s *DescribeAvailabilityZonesInput) SetZoneNameList(v []*string) *DescribeAvailabilityZonesInput {
+	s.ZoneNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAvailabilityZonesOutput
@@ -11794,6 +13689,15 @@ func (s DescribeAvailabilityZonesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeCustomerGatewaysRequest
 type DescribeCustomerGatewaysInput struct {
 	_ struct{} `type:"structure"`
+
+	// CustomerGatewayIdList
+	CustomerGatewayIdList []*string `type:"list"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// NiftyCustomerGatewayNameList
+	NiftyCustomerGatewayNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11804,6 +13708,24 @@ func (s DescribeCustomerGatewaysInput) String() string {
 // GoString returns the string representation
 func (s DescribeCustomerGatewaysInput) GoString() string {
 	return s.String()
+}
+
+// SetCustomerGatewayIdList sets the CustomerGatewayIdList field's value.
+func (s *DescribeCustomerGatewaysInput) SetCustomerGatewayIdList(v []*string) *DescribeCustomerGatewaysInput {
+	s.CustomerGatewayIdList = v
+	return s
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeCustomerGatewaysInput) SetFilterList(v [][]*string) *DescribeCustomerGatewaysInput {
+	s.FilterList = v
+	return s
+}
+
+// SetNiftyCustomerGatewayNameList sets the NiftyCustomerGatewayNameList field's value.
+func (s *DescribeCustomerGatewaysInput) SetNiftyCustomerGatewayNameList(v []*string) *DescribeCustomerGatewaysInput {
+	s.NiftyCustomerGatewayNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeCustomerGatewaysOutput
@@ -11825,6 +13747,12 @@ func (s DescribeCustomerGatewaysOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeDhcpOptionsRequest
 type DescribeDhcpOptionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	DescribeDhcpOptionsResponse *string `type:"string"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11835,6 +13763,18 @@ func (s DescribeDhcpOptionsInput) String() string {
 // GoString returns the string representation
 func (s DescribeDhcpOptionsInput) GoString() string {
 	return s.String()
+}
+
+// SetDescribeDhcpOptionsResponse sets the DescribeDhcpOptionsResponse field's value.
+func (s *DescribeDhcpOptionsInput) SetDescribeDhcpOptionsResponse(v string) *DescribeDhcpOptionsInput {
+	s.DescribeDhcpOptionsResponse = &v
+	return s
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeDhcpOptionsInput) SetFilterList(v [][]*string) *DescribeDhcpOptionsInput {
+	s.FilterList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeDhcpOptionsOutput
@@ -11856,6 +13796,18 @@ func (s DescribeDhcpOptionsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeImagesRequest
 type DescribeImagesInput struct {
 	_ struct{} `type:"structure"`
+
+	// ExecutableByList
+	ExecutableByList []*string `type:"list"`
+
+	// ImageIdList
+	ImageIdList []*string `type:"list"`
+
+	// ImageNameList
+	ImageNameList []*string `type:"list"`
+
+	// OwnerList
+	OwnerList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11866,6 +13818,30 @@ func (s DescribeImagesInput) String() string {
 // GoString returns the string representation
 func (s DescribeImagesInput) GoString() string {
 	return s.String()
+}
+
+// SetExecutableByList sets the ExecutableByList field's value.
+func (s *DescribeImagesInput) SetExecutableByList(v []*string) *DescribeImagesInput {
+	s.ExecutableByList = v
+	return s
+}
+
+// SetImageIdList sets the ImageIdList field's value.
+func (s *DescribeImagesInput) SetImageIdList(v []*string) *DescribeImagesInput {
+	s.ImageIdList = v
+	return s
+}
+
+// SetImageNameList sets the ImageNameList field's value.
+func (s *DescribeImagesInput) SetImageNameList(v []*string) *DescribeImagesInput {
+	s.ImageNameList = v
+	return s
+}
+
+// SetOwnerList sets the OwnerList field's value.
+func (s *DescribeImagesInput) SetOwnerList(v []*string) *DescribeImagesInput {
+	s.OwnerList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeImagesOutput
@@ -11887,6 +13863,12 @@ func (s DescribeImagesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceAttributeRequest
 type DescribeInstanceAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Attribute *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -11897,6 +13879,18 @@ func (s DescribeInstanceAttributeInput) String() string {
 // GoString returns the string representation
 func (s DescribeInstanceAttributeInput) GoString() string {
 	return s.String()
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *DescribeInstanceAttributeInput) SetAttribute(v string) *DescribeInstanceAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *DescribeInstanceAttributeInput) SetInstanceId(v string) *DescribeInstanceAttributeInput {
+	s.InstanceId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceAttributeOutput
@@ -11918,6 +13912,24 @@ func (s DescribeInstanceAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceHealthRequest
 type DescribeInstanceHealthInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// InstancesList
+	InstancesList []*string `type:"list"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -11928,6 +13940,49 @@ func (s DescribeInstanceHealthInput) String() string {
 // GoString returns the string representation
 func (s DescribeInstanceHealthInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeInstanceHealthInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeInstanceHealthInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *DescribeInstanceHealthInput) SetInstancePort(v int64) *DescribeInstanceHealthInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetInstancesList sets the InstancesList field's value.
+func (s *DescribeInstanceHealthInput) SetInstancesList(v []*string) *DescribeInstanceHealthInput {
+	s.InstancesList = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *DescribeInstanceHealthInput) SetLoadBalancerName(v string) *DescribeInstanceHealthInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *DescribeInstanceHealthInput) SetLoadBalancerPort(v int64) *DescribeInstanceHealthInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceHealthOutput
@@ -11949,6 +14004,12 @@ func (s DescribeInstanceHealthOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstancesRequest
 type DescribeInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
+
+	// TenancyList
+	TenancyList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11959,6 +14020,18 @@ func (s DescribeInstancesInput) String() string {
 // GoString returns the string representation
 func (s DescribeInstancesInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *DescribeInstancesInput) SetInstanceIdList(v []*string) *DescribeInstancesInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetTenancyList sets the TenancyList field's value.
+func (s *DescribeInstancesInput) SetTenancyList(v []*string) *DescribeInstancesInput {
+	s.TenancyList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstancesOutput
@@ -11980,6 +14053,9 @@ func (s DescribeInstancesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeKeyPairsRequest
 type DescribeKeyPairsInput struct {
 	_ struct{} `type:"structure"`
+
+	// KeyNameList
+	KeyNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -11990,6 +14066,12 @@ func (s DescribeKeyPairsInput) String() string {
 // GoString returns the string representation
 func (s DescribeKeyPairsInput) GoString() string {
 	return s.String()
+}
+
+// SetKeyNameList sets the KeyNameList field's value.
+func (s *DescribeKeyPairsInput) SetKeyNameList(v []*string) *DescribeKeyPairsInput {
+	s.KeyNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeKeyPairsOutput
@@ -12011,6 +14093,12 @@ func (s DescribeKeyPairsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeLoadBalancersRequest
 type DescribeLoadBalancersInput struct {
 	_ struct{} `type:"structure"`
+
+	// LoadBalancerNamesStruct
+	LoadBalancerNames *LoadBalancerNamesStruct `type:"structure"`
+
+	// LoadBalancerNamesList
+	LoadBalancerNamesList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12021,6 +14109,18 @@ func (s DescribeLoadBalancersInput) String() string {
 // GoString returns the string representation
 func (s DescribeLoadBalancersInput) GoString() string {
 	return s.String()
+}
+
+// SetLoadBalancerNames sets the LoadBalancerNames field's value.
+func (s *DescribeLoadBalancersInput) SetLoadBalancerNames(v *LoadBalancerNamesStruct) *DescribeLoadBalancersInput {
+	s.LoadBalancerNames = v
+	return s
+}
+
+// SetLoadBalancerNamesList sets the LoadBalancerNamesList field's value.
+func (s *DescribeLoadBalancersInput) SetLoadBalancerNamesList(v []*string) *DescribeLoadBalancersInput {
+	s.LoadBalancerNamesList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeLoadBalancersOutput
@@ -12042,6 +14142,12 @@ func (s DescribeLoadBalancersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRegionsRequest
 type DescribeRegionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// RegionNameList
+	RegionNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12052,6 +14158,18 @@ func (s DescribeRegionsInput) String() string {
 // GoString returns the string representation
 func (s DescribeRegionsInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeRegionsInput) SetFilterList(v [][]*string) *DescribeRegionsInput {
+	s.FilterList = v
+	return s
+}
+
+// SetRegionNameList sets the RegionNameList field's value.
+func (s *DescribeRegionsInput) SetRegionNameList(v []*string) *DescribeRegionsInput {
+	s.RegionNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRegionsOutput
@@ -12104,6 +14222,12 @@ func (s DescribeResourcesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRouteTablesRequest
 type DescribeRouteTablesInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// RouteTableIdList
+	RouteTableIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12114,6 +14238,18 @@ func (s DescribeRouteTablesInput) String() string {
 // GoString returns the string representation
 func (s DescribeRouteTablesInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeRouteTablesInput) SetFilterList(v [][]*string) *DescribeRouteTablesInput {
+	s.FilterList = v
+	return s
+}
+
+// SetRouteTableIdList sets the RouteTableIdList field's value.
+func (s *DescribeRouteTablesInput) SetRouteTableIdList(v []*string) *DescribeRouteTablesInput {
+	s.RouteTableIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRouteTablesOutput
@@ -12135,6 +14271,15 @@ func (s DescribeRouteTablesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityActivitiesRequest
 type DescribeSecurityActivitiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	ActivityDate *string `type:"string"`
+
+	// String
+	GroupName *string `type:"string"`
+
+	// RangeStruct
+	Range *RangeStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -12145,6 +14290,24 @@ func (s DescribeSecurityActivitiesInput) String() string {
 // GoString returns the string representation
 func (s DescribeSecurityActivitiesInput) GoString() string {
 	return s.String()
+}
+
+// SetActivityDate sets the ActivityDate field's value.
+func (s *DescribeSecurityActivitiesInput) SetActivityDate(v string) *DescribeSecurityActivitiesInput {
+	s.ActivityDate = &v
+	return s
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *DescribeSecurityActivitiesInput) SetGroupName(v string) *DescribeSecurityActivitiesInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetRange sets the Range field's value.
+func (s *DescribeSecurityActivitiesInput) SetRange(v *RangeStruct) *DescribeSecurityActivitiesInput {
+	s.Range = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityActivitiesOutput
@@ -12197,6 +14360,12 @@ func (s DescribeSecurityGroupOptionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupsRequest
 type DescribeSecurityGroupsInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// GroupNameList
+	GroupNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12207,6 +14376,18 @@ func (s DescribeSecurityGroupsInput) String() string {
 // GoString returns the string representation
 func (s DescribeSecurityGroupsInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeSecurityGroupsInput) SetFilterList(v [][]*string) *DescribeSecurityGroupsInput {
+	s.FilterList = v
+	return s
+}
+
+// SetGroupNameList sets the GroupNameList field's value.
+func (s *DescribeSecurityGroupsInput) SetGroupNameList(v []*string) *DescribeSecurityGroupsInput {
+	s.GroupNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupsOutput
@@ -12228,6 +14409,12 @@ func (s DescribeSecurityGroupsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeServiceStatusRequest
 type DescribeServiceStatusInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	FromDate *string `type:"string"`
+
+	// String
+	ToDate *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12238,6 +14425,18 @@ func (s DescribeServiceStatusInput) String() string {
 // GoString returns the string representation
 func (s DescribeServiceStatusInput) GoString() string {
 	return s.String()
+}
+
+// SetFromDate sets the FromDate field's value.
+func (s *DescribeServiceStatusInput) SetFromDate(v string) *DescribeServiceStatusInput {
+	s.FromDate = &v
+	return s
+}
+
+// SetToDate sets the ToDate field's value.
+func (s *DescribeServiceStatusInput) SetToDate(v string) *DescribeServiceStatusInput {
+	s.ToDate = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeServiceStatusOutput
@@ -12259,6 +14458,14 @@ func (s DescribeServiceStatusOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificateAttributeRequest
 type DescribeSslCertificateAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Attribute *string `type:"string"`
+
+	// String
+	//
+	// FqdnId is a required field
+	FqdnId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12269,6 +14476,31 @@ func (s DescribeSslCertificateAttributeInput) String() string {
 // GoString returns the string representation
 func (s DescribeSslCertificateAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeSslCertificateAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeSslCertificateAttributeInput"}
+	if s.FqdnId == nil {
+		invalidParams.Add(request.NewErrParamRequired("FqdnId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *DescribeSslCertificateAttributeInput) SetAttribute(v string) *DescribeSslCertificateAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *DescribeSslCertificateAttributeInput) SetFqdnId(v string) *DescribeSslCertificateAttributeInput {
+	s.FqdnId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificateAttributeOutput
@@ -12290,6 +14522,12 @@ func (s DescribeSslCertificateAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificatesRequest
 type DescribeSslCertificatesInput struct {
 	_ struct{} `type:"structure"`
+
+	// FqdnIdList
+	FqdnIdList []*string `type:"list"`
+
+	// FqdnList
+	FqdnList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12300,6 +14538,18 @@ func (s DescribeSslCertificatesInput) String() string {
 // GoString returns the string representation
 func (s DescribeSslCertificatesInput) GoString() string {
 	return s.String()
+}
+
+// SetFqdnIdList sets the FqdnIdList field's value.
+func (s *DescribeSslCertificatesInput) SetFqdnIdList(v []*string) *DescribeSslCertificatesInput {
+	s.FqdnIdList = v
+	return s
+}
+
+// SetFqdnList sets the FqdnList field's value.
+func (s *DescribeSslCertificatesInput) SetFqdnList(v []*string) *DescribeSslCertificatesInput {
+	s.FqdnList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificatesOutput
@@ -12321,6 +14571,9 @@ func (s DescribeSslCertificatesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUploadsRequest
 type DescribeUploadsInput struct {
 	_ struct{} `type:"structure"`
+
+	// ConversionTaskIdList
+	ConversionTaskIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12331,6 +14584,12 @@ func (s DescribeUploadsInput) String() string {
 // GoString returns the string representation
 func (s DescribeUploadsInput) GoString() string {
 	return s.String()
+}
+
+// SetConversionTaskIdList sets the ConversionTaskIdList field's value.
+func (s *DescribeUploadsInput) SetConversionTaskIdList(v []*string) *DescribeUploadsInput {
+	s.ConversionTaskIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUploadsOutput
@@ -12352,6 +14611,15 @@ func (s DescribeUploadsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUsageRequest
 type DescribeUsageInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	IsCharge *bool `type:"boolean"`
+
+	// String
+	Region *string `type:"string"`
+
+	// String
+	YearMonth *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12362,6 +14630,24 @@ func (s DescribeUsageInput) String() string {
 // GoString returns the string representation
 func (s DescribeUsageInput) GoString() string {
 	return s.String()
+}
+
+// SetIsCharge sets the IsCharge field's value.
+func (s *DescribeUsageInput) SetIsCharge(v bool) *DescribeUsageInput {
+	s.IsCharge = &v
+	return s
+}
+
+// SetRegion sets the Region field's value.
+func (s *DescribeUsageInput) SetRegion(v string) *DescribeUsageInput {
+	s.Region = &v
+	return s
+}
+
+// SetYearMonth sets the YearMonth field's value.
+func (s *DescribeUsageInput) SetYearMonth(v string) *DescribeUsageInput {
+	s.YearMonth = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUsageOutput
@@ -12383,6 +14669,12 @@ func (s DescribeUsageOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUserActivitiesRequest
 type DescribeUserActivitiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// RangeStruct
+	Range *RangeStruct `type:"structure"`
+
+	// String
+	YearMonth *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12393,6 +14685,18 @@ func (s DescribeUserActivitiesInput) String() string {
 // GoString returns the string representation
 func (s DescribeUserActivitiesInput) GoString() string {
 	return s.String()
+}
+
+// SetRange sets the Range field's value.
+func (s *DescribeUserActivitiesInput) SetRange(v *RangeStruct) *DescribeUserActivitiesInput {
+	s.Range = v
+	return s
+}
+
+// SetYearMonth sets the YearMonth field's value.
+func (s *DescribeUserActivitiesInput) SetYearMonth(v string) *DescribeUserActivitiesInput {
+	s.YearMonth = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUserActivitiesOutput
@@ -12414,6 +14718,9 @@ func (s DescribeUserActivitiesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVolumesRequest
 type DescribeVolumesInput struct {
 	_ struct{} `type:"structure"`
+
+	// VolumeIdList
+	VolumeIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12424,6 +14731,12 @@ func (s DescribeVolumesInput) String() string {
 // GoString returns the string representation
 func (s DescribeVolumesInput) GoString() string {
 	return s.String()
+}
+
+// SetVolumeIdList sets the VolumeIdList field's value.
+func (s *DescribeVolumesInput) SetVolumeIdList(v []*string) *DescribeVolumesInput {
+	s.VolumeIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVolumesOutput
@@ -12445,6 +14758,12 @@ func (s DescribeVolumesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnConnectionsRequest
 type DescribeVpnConnectionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// VpnConnectionIdList
+	VpnConnectionIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12455,6 +14774,18 @@ func (s DescribeVpnConnectionsInput) String() string {
 // GoString returns the string representation
 func (s DescribeVpnConnectionsInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeVpnConnectionsInput) SetFilterList(v [][]*string) *DescribeVpnConnectionsInput {
+	s.FilterList = v
+	return s
+}
+
+// SetVpnConnectionIdList sets the VpnConnectionIdList field's value.
+func (s *DescribeVpnConnectionsInput) SetVpnConnectionIdList(v []*string) *DescribeVpnConnectionsInput {
+	s.VpnConnectionIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnConnectionsOutput
@@ -12476,6 +14807,15 @@ func (s DescribeVpnConnectionsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnGatewaysRequest
 type DescribeVpnGatewaysInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// NiftyVpnGatewayNameList
+	NiftyVpnGatewayNameList []*string `type:"list"`
+
+	// VpnGatewayIdList
+	VpnGatewayIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12486,6 +14826,24 @@ func (s DescribeVpnGatewaysInput) String() string {
 // GoString returns the string representation
 func (s DescribeVpnGatewaysInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *DescribeVpnGatewaysInput) SetFilterList(v [][]*string) *DescribeVpnGatewaysInput {
+	s.FilterList = v
+	return s
+}
+
+// SetNiftyVpnGatewayNameList sets the NiftyVpnGatewayNameList field's value.
+func (s *DescribeVpnGatewaysInput) SetNiftyVpnGatewayNameList(v []*string) *DescribeVpnGatewaysInput {
+	s.NiftyVpnGatewayNameList = v
+	return s
+}
+
+// SetVpnGatewayIdList sets the VpnGatewayIdList field's value.
+func (s *DescribeVpnGatewaysInput) SetVpnGatewayIdList(v []*string) *DescribeVpnGatewaysInput {
+	s.VpnGatewayIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnGatewaysOutput
@@ -12503,10 +14861,77 @@ func (s DescribeVpnGatewaysOutput) GoString() string {
 	return s.String()
 }
 
+// DescriptionStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescriptionStruct
+type DescriptionStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Value
+	Value *string `type:"string"`
+}
+
+// String returns the string representation
+func (s DescriptionStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescriptionStruct) GoString() string {
+	return s.String()
+}
+
+// SetValue sets the Value field's value.
+func (s *DescriptionStruct) SetValue(v string) *DescriptionStruct {
+	s.Value = &v
+	return s
+}
+
+// DestinationStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DestinationStruct
+type DestinationStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Port
+	Port *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s DestinationStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DestinationStruct) GoString() string {
+	return s.String()
+}
+
+// SetPort sets the Port field's value.
+func (s *DestinationStruct) SetPort(v int64) *DestinationStruct {
+	s.Port = &v
+	return s
+}
+
 // DetachVolumeRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DetachVolumeRequest
 type DetachVolumeInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	Device *string `type:"string"`
+
+	// Boolean
+	Force *bool `type:"boolean"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	//
+	// VolumeId is a required field
+	VolumeId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12517,6 +14942,49 @@ func (s DetachVolumeInput) String() string {
 // GoString returns the string representation
 func (s DetachVolumeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DetachVolumeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DetachVolumeInput"}
+	if s.VolumeId == nil {
+		invalidParams.Add(request.NewErrParamRequired("VolumeId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *DetachVolumeInput) SetAgreement(v bool) *DetachVolumeInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetDevice sets the Device field's value.
+func (s *DetachVolumeInput) SetDevice(v string) *DetachVolumeInput {
+	s.Device = &v
+	return s
+}
+
+// SetForce sets the Force field's value.
+func (s *DetachVolumeInput) SetForce(v bool) *DetachVolumeInput {
+	s.Force = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *DetachVolumeInput) SetInstanceId(v string) *DetachVolumeInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *DetachVolumeInput) SetVolumeId(v string) *DetachVolumeInput {
+	s.VolumeId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DetachVolumeOutput
@@ -12538,6 +15006,18 @@ func (s DetachVolumeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateAddressRequest
 type DisassociateAddressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `type:"string"`
+
+	// String
+	NiftyReboot *string `type:"string"`
+
+	// String
+	PrivateIpAddress *string `type:"string"`
+
+	// String
+	PublicIp *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12548,6 +15028,30 @@ func (s DisassociateAddressInput) String() string {
 // GoString returns the string representation
 func (s DisassociateAddressInput) GoString() string {
 	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *DisassociateAddressInput) SetAssociationId(v string) *DisassociateAddressInput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *DisassociateAddressInput) SetNiftyReboot(v string) *DisassociateAddressInput {
+	s.NiftyReboot = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *DisassociateAddressInput) SetPrivateIpAddress(v string) *DisassociateAddressInput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *DisassociateAddressInput) SetPublicIp(v string) *DisassociateAddressInput {
+	s.PublicIp = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateAddressOutput
@@ -12569,6 +15073,14 @@ func (s DisassociateAddressOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateRouteTableRequest
 type DisassociateRouteTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12579,6 +15091,31 @@ func (s DisassociateRouteTableInput) String() string {
 // GoString returns the string representation
 func (s DisassociateRouteTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DisassociateRouteTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DisassociateRouteTableInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *DisassociateRouteTableInput) SetAgreement(v bool) *DisassociateRouteTableInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *DisassociateRouteTableInput) SetAssociationId(v string) *DisassociateRouteTableInput {
+	s.AssociationId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateRouteTableOutput
@@ -12600,6 +15137,16 @@ func (s DisassociateRouteTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DissociateUsersRequest
 type DissociateUsersInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
+
+	// UsersList
+	//
+	// UsersList is a required field
+	UsersList []*string `type:"list" required:"true"`
 }
 
 // String returns the string representation
@@ -12610,6 +15157,34 @@ func (s DissociateUsersInput) String() string {
 // GoString returns the string representation
 func (s DissociateUsersInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DissociateUsersInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DissociateUsersInput"}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+	if s.UsersList == nil {
+		invalidParams.Add(request.NewErrParamRequired("UsersList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *DissociateUsersInput) SetFunctionName(v string) *DissociateUsersInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetUsersList sets the UsersList field's value.
+func (s *DissociateUsersInput) SetUsersList(v []*string) *DissociateUsersInput {
+	s.UsersList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DissociateUsersOutput
@@ -12631,6 +15206,16 @@ func (s DissociateUsersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DownloadSslCertificateRequest
 type DownloadSslCertificateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// FileType is a required field
+	FileType *string `type:"string" required:"true"`
+
+	// String
+	//
+	// FqdnId is a required field
+	FqdnId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12641,6 +15226,34 @@ func (s DownloadSslCertificateInput) String() string {
 // GoString returns the string representation
 func (s DownloadSslCertificateInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DownloadSslCertificateInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DownloadSslCertificateInput"}
+	if s.FileType == nil {
+		invalidParams.Add(request.NewErrParamRequired("FileType"))
+	}
+	if s.FqdnId == nil {
+		invalidParams.Add(request.NewErrParamRequired("FqdnId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFileType sets the FileType field's value.
+func (s *DownloadSslCertificateInput) SetFileType(v string) *DownloadSslCertificateInput {
+	s.FileType = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *DownloadSslCertificateInput) SetFqdnId(v string) *DownloadSslCertificateInput {
+	s.FqdnId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DownloadSslCertificateOutput
@@ -12658,10 +15271,179 @@ func (s DownloadSslCertificateOutput) GoString() string {
 	return s.String()
 }
 
+// EbsStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//EbsStruct
+type EbsStruct struct {
+	_ struct{} `type:"structure"`
+
+	// DeleteOnTermination
+	DeleteOnTermination *bool `type:"boolean"`
+
+	// NoDevice
+	NoDevice *bool `type:"boolean"`
+
+	// SnapshotId
+	SnapshotId *string `type:"string"`
+
+	// VolumeSize
+	VolumeSize *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s EbsStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s EbsStruct) GoString() string {
+	return s.String()
+}
+
+// SetDeleteOnTermination sets the DeleteOnTermination field's value.
+func (s *EbsStruct) SetDeleteOnTermination(v bool) *EbsStruct {
+	s.DeleteOnTermination = &v
+	return s
+}
+
+// SetNoDevice sets the NoDevice field's value.
+func (s *EbsStruct) SetNoDevice(v bool) *EbsStruct {
+	s.NoDevice = &v
+	return s
+}
+
+// SetSnapshotId sets the SnapshotId field's value.
+func (s *EbsStruct) SetSnapshotId(v string) *EbsStruct {
+	s.SnapshotId = &v
+	return s
+}
+
+// SetVolumeSize sets the VolumeSize field's value.
+func (s *EbsStruct) SetVolumeSize(v int64) *EbsStruct {
+	s.VolumeSize = &v
+	return s
+}
+
+// HealthCheckStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//HealthCheckStruct
+type HealthCheckStruct struct {
+	_ struct{} `type:"structure"`
+
+	// HealthyThreshold
+	HealthyThreshold *int64 `type:"integer"`
+
+	// Interval
+	Interval *int64 `type:"integer"`
+
+	// Target
+	Target *string `type:"string"`
+
+	// Timeout
+	Timeout *int64 `type:"integer"`
+
+	// UnhealthyThreshold
+	UnhealthyThreshold *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s HealthCheckStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s HealthCheckStruct) GoString() string {
+	return s.String()
+}
+
+// SetHealthyThreshold sets the HealthyThreshold field's value.
+func (s *HealthCheckStruct) SetHealthyThreshold(v int64) *HealthCheckStruct {
+	s.HealthyThreshold = &v
+	return s
+}
+
+// SetInterval sets the Interval field's value.
+func (s *HealthCheckStruct) SetInterval(v int64) *HealthCheckStruct {
+	s.Interval = &v
+	return s
+}
+
+// SetTarget sets the Target field's value.
+func (s *HealthCheckStruct) SetTarget(v string) *HealthCheckStruct {
+	s.Target = &v
+	return s
+}
+
+// SetTimeout sets the Timeout field's value.
+func (s *HealthCheckStruct) SetTimeout(v int64) *HealthCheckStruct {
+	s.Timeout = &v
+	return s
+}
+
+// SetUnhealthyThreshold sets the UnhealthyThreshold field's value.
+func (s *HealthCheckStruct) SetUnhealthyThreshold(v int64) *HealthCheckStruct {
+	s.UnhealthyThreshold = &v
+	return s
+}
+
 // ImportInstanceRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceRequest
 type ImportInstanceInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// String
+	Architecture *string `type:"string"`
+
+	// String
+	Description *string `type:"string"`
+
+	// DiskImageList
+	DiskImageList []*VolumeStruct `type:"list"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	InstanceInitiatedShutdownBehavior *string `type:"string"`
+
+	// String
+	InstanceType *string `type:"string"`
+
+	// String
+	IpType *string `type:"string"`
+
+	// MonitoringStruct
+	Monitoring *MonitoringStruct `type:"structure"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
+
+	// String
+	//
+	// Ovf is a required field
+	Ovf *string `type:"string" required:"true"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
+
+	// String
+	Platform *string `type:"string"`
+
+	// String
+	PrivateIpAddress *string `type:"string"`
+
+	// String
+	PublicIp *string `type:"string"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
+
+	// String
+	SubnetId *string `type:"string"`
+
+	// String
+	UserData *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12672,6 +15454,127 @@ func (s ImportInstanceInput) String() string {
 // GoString returns the string representation
 func (s ImportInstanceInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ImportInstanceInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ImportInstanceInput"}
+	if s.Ovf == nil {
+		invalidParams.Add(request.NewErrParamRequired("Ovf"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *ImportInstanceInput) SetAccountingType(v string) *ImportInstanceInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetArchitecture sets the Architecture field's value.
+func (s *ImportInstanceInput) SetArchitecture(v string) *ImportInstanceInput {
+	s.Architecture = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *ImportInstanceInput) SetDescription(v string) *ImportInstanceInput {
+	s.Description = &v
+	return s
+}
+
+// SetDiskImageList sets the DiskImageList field's value.
+func (s *ImportInstanceInput) SetDiskImageList(v []*VolumeStruct) *ImportInstanceInput {
+	s.DiskImageList = v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *ImportInstanceInput) SetInstanceId(v string) *ImportInstanceInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceInitiatedShutdownBehavior sets the InstanceInitiatedShutdownBehavior field's value.
+func (s *ImportInstanceInput) SetInstanceInitiatedShutdownBehavior(v string) *ImportInstanceInput {
+	s.InstanceInitiatedShutdownBehavior = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *ImportInstanceInput) SetInstanceType(v string) *ImportInstanceInput {
+	s.InstanceType = &v
+	return s
+}
+
+// SetIpType sets the IpType field's value.
+func (s *ImportInstanceInput) SetIpType(v string) *ImportInstanceInput {
+	s.IpType = &v
+	return s
+}
+
+// SetMonitoring sets the Monitoring field's value.
+func (s *ImportInstanceInput) SetMonitoring(v *MonitoringStruct) *ImportInstanceInput {
+	s.Monitoring = v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *ImportInstanceInput) SetNetworkInterfaceList(v []*string) *ImportInstanceInput {
+	s.NetworkInterfaceList = v
+	return s
+}
+
+// SetOvf sets the Ovf field's value.
+func (s *ImportInstanceInput) SetOvf(v string) *ImportInstanceInput {
+	s.Ovf = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *ImportInstanceInput) SetPlacement(v *PlacementStruct) *ImportInstanceInput {
+	s.Placement = v
+	return s
+}
+
+// SetPlatform sets the Platform field's value.
+func (s *ImportInstanceInput) SetPlatform(v string) *ImportInstanceInput {
+	s.Platform = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *ImportInstanceInput) SetPrivateIpAddress(v string) *ImportInstanceInput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *ImportInstanceInput) SetPublicIp(v string) *ImportInstanceInput {
+	s.PublicIp = &v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *ImportInstanceInput) SetSecurityGroupList(v []*string) *ImportInstanceInput {
+	s.SecurityGroupList = v
+	return s
+}
+
+// SetSubnetId sets the SubnetId field's value.
+func (s *ImportInstanceInput) SetSubnetId(v string) *ImportInstanceInput {
+	s.SubnetId = &v
+	return s
+}
+
+// SetUserData sets the UserData field's value.
+func (s *ImportInstanceInput) SetUserData(v string) *ImportInstanceInput {
+	s.UserData = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceOutput
@@ -12693,6 +15596,19 @@ func (s ImportInstanceOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportKeyPairRequest
 type ImportKeyPairInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// KeyName is a required field
+	KeyName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// PublicKeyMaterial is a required field
+	PublicKeyMaterial *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12703,6 +15619,40 @@ func (s ImportKeyPairInput) String() string {
 // GoString returns the string representation
 func (s ImportKeyPairInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ImportKeyPairInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ImportKeyPairInput"}
+	if s.KeyName == nil {
+		invalidParams.Add(request.NewErrParamRequired("KeyName"))
+	}
+	if s.PublicKeyMaterial == nil {
+		invalidParams.Add(request.NewErrParamRequired("PublicKeyMaterial"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *ImportKeyPairInput) SetDescription(v string) *ImportKeyPairInput {
+	s.Description = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *ImportKeyPairInput) SetKeyName(v string) *ImportKeyPairInput {
+	s.KeyName = &v
+	return s
+}
+
+// SetPublicKeyMaterial sets the PublicKeyMaterial field's value.
+func (s *ImportKeyPairInput) SetPublicKeyMaterial(v string) *ImportKeyPairInput {
+	s.PublicKeyMaterial = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportKeyPairOutput
@@ -12720,10 +15670,258 @@ func (s ImportKeyPairOutput) GoString() string {
 	return s.String()
 }
 
+// InboundInterfaceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InboundInterfaceStruct
+type InboundInterfaceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NetworkId
+	NetworkId *string `type:"string"`
+
+	// NetworkName
+	NetworkName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s InboundInterfaceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InboundInterfaceStruct) GoString() string {
+	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *InboundInterfaceStruct) SetNetworkId(v string) *InboundInterfaceStruct {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *InboundInterfaceStruct) SetNetworkName(v string) *InboundInterfaceStruct {
+	s.NetworkName = &v
+	return s
+}
+
+// LaunchPermissionStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LaunchPermissionStruct
+type LaunchPermissionStruct struct {
+	_ struct{} `type:"structure"`
+
+	// AddList
+	AddList []*string `type:"list"`
+
+	// RemoveList
+	RemoveList []*string `type:"list"`
+}
+
+// String returns the string representation
+func (s LaunchPermissionStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LaunchPermissionStruct) GoString() string {
+	return s.String()
+}
+
+// SetAddList sets the AddList field's value.
+func (s *LaunchPermissionStruct) SetAddList(v []*string) *LaunchPermissionStruct {
+	s.AddList = v
+	return s
+}
+
+// SetRemoveList sets the RemoveList field's value.
+func (s *LaunchPermissionStruct) SetRemoveList(v []*string) *LaunchPermissionStruct {
+	s.RemoveList = v
+	return s
+}
+
+// ListenInterfaceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListenInterfaceStruct
+type ListenInterfaceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NetworkId
+	NetworkId *string `type:"string"`
+
+	// NetworkName
+	NetworkName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s ListenInterfaceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ListenInterfaceStruct) GoString() string {
+	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *ListenInterfaceStruct) SetNetworkId(v string) *ListenInterfaceStruct {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *ListenInterfaceStruct) SetNetworkName(v string) *ListenInterfaceStruct {
+	s.NetworkName = &v
+	return s
+}
+
+// ListenerStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListenerStruct
+type ListenerStruct struct {
+	_ struct{} `type:"structure"`
+
+	// BalancingType
+	BalancingType *string `type:"string"`
+
+	// InstancePort
+	InstancePort *int64 `type:"integer"`
+
+	// LoadBalancerPort
+	LoadBalancerPort *int64 `type:"integer"`
+
+	// Protocol
+	Protocol *string `type:"string"`
+}
+
+// String returns the string representation
+func (s ListenerStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ListenerStruct) GoString() string {
+	return s.String()
+}
+
+// SetBalancingType sets the BalancingType field's value.
+func (s *ListenerStruct) SetBalancingType(v string) *ListenerStruct {
+	s.BalancingType = &v
+	return s
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *ListenerStruct) SetInstancePort(v int64) *ListenerStruct {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *ListenerStruct) SetLoadBalancerPort(v int64) *ListenerStruct {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// SetProtocol sets the Protocol field's value.
+func (s *ListenerStruct) SetProtocol(v string) *ListenerStruct {
+	s.Protocol = &v
+	return s
+}
+
+// ListenerUpdateStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListenerUpdateStruct
+type ListenerUpdateStruct struct {
+	_ struct{} `type:"structure"`
+
+	// InstancePort
+	InstancePort *int64 `type:"integer"`
+
+	// ListenerStruct
+	ListenerStruct *ListenerStruct `type:"structure"`
+
+	// LoadBalancerPort
+	LoadBalancerPort *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s ListenerUpdateStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ListenerUpdateStruct) GoString() string {
+	return s.String()
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *ListenerUpdateStruct) SetInstancePort(v int64) *ListenerUpdateStruct {
+	s.InstancePort = &v
+	return s
+}
+
+// SetListenerStruct sets the ListenerStruct field's value.
+func (s *ListenerUpdateStruct) SetListenerStruct(v *ListenerStruct) *ListenerUpdateStruct {
+	s.ListenerStruct = v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *ListenerUpdateStruct) SetLoadBalancerPort(v int64) *ListenerUpdateStruct {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// LoadBalancerNamesStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LoadBalancerNamesStruct
+type LoadBalancerNamesStruct struct {
+	_ struct{} `type:"structure"`
+
+	// InstancePortList
+	InstancePortList []*int64 `type:"list"`
+
+	// LoadBalancerPortList
+	LoadBalancerPortList []*string `type:"list"`
+}
+
+// String returns the string representation
+func (s LoadBalancerNamesStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LoadBalancerNamesStruct) GoString() string {
+	return s.String()
+}
+
+// SetInstancePortList sets the InstancePortList field's value.
+func (s *LoadBalancerNamesStruct) SetInstancePortList(v []*int64) *LoadBalancerNamesStruct {
+	s.InstancePortList = v
+	return s
+}
+
+// SetLoadBalancerPortList sets the LoadBalancerPortList field's value.
+func (s *LoadBalancerNamesStruct) SetLoadBalancerPortList(v []*string) *LoadBalancerNamesStruct {
+	s.LoadBalancerPortList = v
+	return s
+}
+
 // ModifyImageAttributeRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyImageAttributeRequest
 type ModifyImageAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Attribute *string `type:"string"`
+
+	// String
+	//
+	// ImageId is a required field
+	ImageId *string `type:"string" required:"true"`
+
+	// LaunchPermissionStruct
+	LaunchPermission *LaunchPermissionStruct `type:"structure"`
+
+	// ProductCodeList
+	ProductCodeList []*string `type:"list"`
+
+	// String
+	Value *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12734,6 +15932,49 @@ func (s ModifyImageAttributeInput) String() string {
 // GoString returns the string representation
 func (s ModifyImageAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ModifyImageAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ModifyImageAttributeInput"}
+	if s.ImageId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ImageId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *ModifyImageAttributeInput) SetAttribute(v string) *ModifyImageAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *ModifyImageAttributeInput) SetImageId(v string) *ModifyImageAttributeInput {
+	s.ImageId = &v
+	return s
+}
+
+// SetLaunchPermission sets the LaunchPermission field's value.
+func (s *ModifyImageAttributeInput) SetLaunchPermission(v *LaunchPermissionStruct) *ModifyImageAttributeInput {
+	s.LaunchPermission = v
+	return s
+}
+
+// SetProductCodeList sets the ProductCodeList field's value.
+func (s *ModifyImageAttributeInput) SetProductCodeList(v []*string) *ModifyImageAttributeInput {
+	s.ProductCodeList = v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *ModifyImageAttributeInput) SetValue(v string) *ModifyImageAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyImageAttributeOutput
@@ -12755,6 +15996,30 @@ func (s ModifyImageAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyInstanceAttributeRequest
 type ModifyInstanceAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// Boolean
+	Force *bool `type:"boolean"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// String
+	NiftyReboot *string `type:"string"`
+
+	// String
+	Tenancy *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12765,6 +16030,61 @@ func (s ModifyInstanceAttributeInput) String() string {
 // GoString returns the string representation
 func (s ModifyInstanceAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ModifyInstanceAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ModifyInstanceAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *ModifyInstanceAttributeInput) SetAttribute(v string) *ModifyInstanceAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetForce sets the Force field's value.
+func (s *ModifyInstanceAttributeInput) SetForce(v bool) *ModifyInstanceAttributeInput {
+	s.Force = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *ModifyInstanceAttributeInput) SetInstanceId(v string) *ModifyInstanceAttributeInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *ModifyInstanceAttributeInput) SetNiftyReboot(v string) *ModifyInstanceAttributeInput {
+	s.NiftyReboot = &v
+	return s
+}
+
+// SetTenancy sets the Tenancy field's value.
+func (s *ModifyInstanceAttributeInput) SetTenancy(v string) *ModifyInstanceAttributeInput {
+	s.Tenancy = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *ModifyInstanceAttributeInput) SetValue(v string) *ModifyInstanceAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyInstanceAttributeOutput
@@ -12786,6 +16106,14 @@ func (s ModifyInstanceAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifySslCertificateAttributeRequest
 type ModifySslCertificateAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// DescriptionStruct
+	Description *DescriptionStruct `type:"structure"`
+
+	// String
+	//
+	// FqdnId is a required field
+	FqdnId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12796,6 +16124,31 @@ func (s ModifySslCertificateAttributeInput) String() string {
 // GoString returns the string representation
 func (s ModifySslCertificateAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ModifySslCertificateAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ModifySslCertificateAttributeInput"}
+	if s.FqdnId == nil {
+		invalidParams.Add(request.NewErrParamRequired("FqdnId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *ModifySslCertificateAttributeInput) SetDescription(v *DescriptionStruct) *ModifySslCertificateAttributeInput {
+	s.Description = v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *ModifySslCertificateAttributeInput) SetFqdnId(v string) *ModifySslCertificateAttributeInput {
+	s.FqdnId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifySslCertificateAttributeOutput
@@ -12817,6 +16170,17 @@ func (s ModifySslCertificateAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyVolumeAttributeRequest
 type ModifyVolumeAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Attribute *string `type:"string"`
+
+	// String
+	Value *string `type:"string"`
+
+	// String
+	//
+	// VolumeId is a required field
+	VolumeId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -12827,6 +16191,37 @@ func (s ModifyVolumeAttributeInput) String() string {
 // GoString returns the string representation
 func (s ModifyVolumeAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ModifyVolumeAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ModifyVolumeAttributeInput"}
+	if s.VolumeId == nil {
+		invalidParams.Add(request.NewErrParamRequired("VolumeId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *ModifyVolumeAttributeInput) SetAttribute(v string) *ModifyVolumeAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *ModifyVolumeAttributeInput) SetValue(v string) *ModifyVolumeAttributeInput {
+	s.Value = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *ModifyVolumeAttributeInput) SetVolumeId(v string) *ModifyVolumeAttributeInput {
+	s.VolumeId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyVolumeAttributeOutput
@@ -12844,10 +16239,108 @@ func (s ModifyVolumeAttributeOutput) GoString() string {
 	return s.String()
 }
 
+// MonitoringStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//MonitoringStruct
+type MonitoringStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Enabled
+	Enabled *bool `type:"boolean"`
+}
+
+// String returns the string representation
+func (s MonitoringStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s MonitoringStruct) GoString() string {
+	return s.String()
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *MonitoringStruct) SetEnabled(v bool) *MonitoringStruct {
+	s.Enabled = &v
+	return s
+}
+
+// MonthStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//MonthStruct
+type MonthStruct struct {
+	_ struct{} `type:"structure"`
+
+	// EndingMonth
+	EndingMonth *string `type:"string"`
+
+	// StartingMonth
+	StartingMonth *string `type:"string"`
+}
+
+// String returns the string representation
+func (s MonthStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s MonthStruct) GoString() string {
+	return s.String()
+}
+
+// SetEndingMonth sets the EndingMonth field's value.
+func (s *MonthStruct) SetEndingMonth(v string) *MonthStruct {
+	s.EndingMonth = &v
+	return s
+}
+
+// SetStartingMonth sets the StartingMonth field's value.
+func (s *MonthStruct) SetStartingMonth(v string) *MonthStruct {
+	s.StartingMonth = &v
+	return s
+}
+
+// NetworkInterfaceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NetworkInterfaceStruct
+type NetworkInterfaceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// IpAddress
+	IpAddress *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NetworkInterfaceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NetworkInterfaceStruct) GoString() string {
+	return s.String()
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *NetworkInterfaceStruct) SetIpAddress(v string) *NetworkInterfaceStruct {
+	s.IpAddress = &v
+	return s
+}
+
 // NiftyAssociateImageRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateImageRequest
 type NiftyAssociateImageInput struct {
 	_ struct{} `type:"structure"`
+
+	// DistributionIdList
+	DistributionIdList []*string `type:"list"`
+
+	// String
+	//
+	// ImageId is a required field
+	ImageId *string `type:"string" required:"true"`
+
+	// Boolean
+	IsPublic *bool `type:"boolean"`
+
+	// Boolean
+	IsRedistribute *bool `type:"boolean"`
 }
 
 // String returns the string representation
@@ -12858,6 +16351,43 @@ func (s NiftyAssociateImageInput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateImageInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyAssociateImageInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyAssociateImageInput"}
+	if s.ImageId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ImageId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDistributionIdList sets the DistributionIdList field's value.
+func (s *NiftyAssociateImageInput) SetDistributionIdList(v []*string) *NiftyAssociateImageInput {
+	s.DistributionIdList = v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *NiftyAssociateImageInput) SetImageId(v string) *NiftyAssociateImageInput {
+	s.ImageId = &v
+	return s
+}
+
+// SetIsPublic sets the IsPublic field's value.
+func (s *NiftyAssociateImageInput) SetIsPublic(v bool) *NiftyAssociateImageInput {
+	s.IsPublic = &v
+	return s
+}
+
+// SetIsRedistribute sets the IsRedistribute field's value.
+func (s *NiftyAssociateImageInput) SetIsRedistribute(v bool) *NiftyAssociateImageInput {
+	s.IsRedistribute = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateImageOutput
@@ -12879,6 +16409,20 @@ func (s NiftyAssociateImageOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateNatTableRequest
 type NiftyAssociateNatTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12889,6 +16433,43 @@ func (s NiftyAssociateNatTableInput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateNatTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyAssociateNatTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyAssociateNatTableInput"}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyAssociateNatTableInput) SetAgreement(v bool) *NiftyAssociateNatTableInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyAssociateNatTableInput) SetNatTableId(v string) *NiftyAssociateNatTableInput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyAssociateNatTableInput) SetRouterId(v string) *NiftyAssociateNatTableInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyAssociateNatTableInput) SetRouterName(v string) *NiftyAssociateNatTableInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateNatTableOutput
@@ -12910,6 +16491,20 @@ func (s NiftyAssociateNatTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateRouteTableWithVpnGatewayRequest
 type NiftyAssociateRouteTableWithVpnGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12920,6 +16515,43 @@ func (s NiftyAssociateRouteTableWithVpnGatewayInput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateRouteTableWithVpnGatewayInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyAssociateRouteTableWithVpnGatewayInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyAssociateRouteTableWithVpnGatewayInput"}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayInput) SetAgreement(v bool) *NiftyAssociateRouteTableWithVpnGatewayInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayInput) SetNiftyVpnGatewayName(v string) *NiftyAssociateRouteTableWithVpnGatewayInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayInput) SetRouteTableId(v string) *NiftyAssociateRouteTableWithVpnGatewayInput {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayInput) SetVpnGatewayId(v string) *NiftyAssociateRouteTableWithVpnGatewayInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateRouteTableWithVpnGatewayOutput
@@ -12941,6 +16573,45 @@ func (s NiftyAssociateRouteTableWithVpnGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAlarmRequest
 type NiftyCreateAlarmInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AlarmCondition *string `type:"string"`
+
+	// String
+	Description *string `type:"string"`
+
+	// EmailAddressList
+	//
+	// EmailAddressList is a required field
+	EmailAddressList []*string `type:"list" required:"true"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
+
+	// LoadBalancerNameList
+	LoadBalancerNameList []*string `type:"list"`
+
+	// LoadBalancerPortList
+	LoadBalancerPortList []*string `type:"list"`
+
+	// PartitionList
+	PartitionList []*string `type:"list"`
+
+	// RuleList
+	//
+	// RuleList is a required field
+	RuleList []*int64 `type:"list" required:"true"`
+
+	// String
+	RuleName *string `type:"string"`
+
+	// String
+	Zone *string `type:"string"`
 }
 
 // String returns the string representation
@@ -12951,6 +16622,91 @@ func (s NiftyCreateAlarmInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateAlarmInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateAlarmInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateAlarmInput"}
+	if s.EmailAddressList == nil {
+		invalidParams.Add(request.NewErrParamRequired("EmailAddressList"))
+	}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+	if s.RuleList == nil {
+		invalidParams.Add(request.NewErrParamRequired("RuleList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAlarmCondition sets the AlarmCondition field's value.
+func (s *NiftyCreateAlarmInput) SetAlarmCondition(v string) *NiftyCreateAlarmInput {
+	s.AlarmCondition = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateAlarmInput) SetDescription(v string) *NiftyCreateAlarmInput {
+	s.Description = &v
+	return s
+}
+
+// SetEmailAddressList sets the EmailAddressList field's value.
+func (s *NiftyCreateAlarmInput) SetEmailAddressList(v []*string) *NiftyCreateAlarmInput {
+	s.EmailAddressList = v
+	return s
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *NiftyCreateAlarmInput) SetFunctionName(v string) *NiftyCreateAlarmInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *NiftyCreateAlarmInput) SetInstanceIdList(v []*string) *NiftyCreateAlarmInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetLoadBalancerNameList sets the LoadBalancerNameList field's value.
+func (s *NiftyCreateAlarmInput) SetLoadBalancerNameList(v []*string) *NiftyCreateAlarmInput {
+	s.LoadBalancerNameList = v
+	return s
+}
+
+// SetLoadBalancerPortList sets the LoadBalancerPortList field's value.
+func (s *NiftyCreateAlarmInput) SetLoadBalancerPortList(v []*string) *NiftyCreateAlarmInput {
+	s.LoadBalancerPortList = v
+	return s
+}
+
+// SetPartitionList sets the PartitionList field's value.
+func (s *NiftyCreateAlarmInput) SetPartitionList(v []*string) *NiftyCreateAlarmInput {
+	s.PartitionList = v
+	return s
+}
+
+// SetRuleList sets the RuleList field's value.
+func (s *NiftyCreateAlarmInput) SetRuleList(v []*int64) *NiftyCreateAlarmInput {
+	s.RuleList = v
+	return s
+}
+
+// SetRuleName sets the RuleName field's value.
+func (s *NiftyCreateAlarmInput) SetRuleName(v string) *NiftyCreateAlarmInput {
+	s.RuleName = &v
+	return s
+}
+
+// SetZone sets the Zone field's value.
+func (s *NiftyCreateAlarmInput) SetZone(v string) *NiftyCreateAlarmInput {
+	s.Zone = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAlarmOutput
@@ -12972,6 +16728,65 @@ func (s NiftyCreateAlarmOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAutoScalingGroupRequest
 type NiftyCreateAutoScalingGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// AutoScalingGroupName is a required field
+	AutoScalingGroupName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// ChangeInCapacity is a required field
+	ChangeInCapacity *int64 `type:"integer" required:"true"`
+
+	// Integer
+	DefaultCooldown *int64 `type:"integer"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// ImageId is a required field
+	ImageId *string `type:"string" required:"true"`
+
+	// Integer
+	InstanceLifecycleLimit *int64 `type:"integer"`
+
+	// String
+	InstanceType *string `type:"string"`
+
+	// LoadBalancersList
+	LoadBalancersList []*int64 `type:"list"`
+
+	// Integer
+	//
+	// MaxSize is a required field
+	MaxSize *int64 `type:"integer" required:"true"`
+
+	// Integer
+	//
+	// MinSize is a required field
+	MinSize *int64 `type:"integer" required:"true"`
+
+	// Integer
+	Scaleout *int64 `type:"integer"`
+
+	// String
+	//
+	// ScaleoutCondition is a required field
+	ScaleoutCondition *string `type:"string" required:"true"`
+
+	// ScalingScheduleList
+	ScalingScheduleList []*MonthStruct `type:"list"`
+
+	// ScalingTriggerList
+	//
+	// ScalingTriggerList is a required field
+	ScalingTriggerList []*int64 `type:"list" required:"true"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -12982,6 +16797,127 @@ func (s NiftyCreateAutoScalingGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateAutoScalingGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateAutoScalingGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateAutoScalingGroupInput"}
+	if s.AutoScalingGroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("AutoScalingGroupName"))
+	}
+	if s.ChangeInCapacity == nil {
+		invalidParams.Add(request.NewErrParamRequired("ChangeInCapacity"))
+	}
+	if s.ImageId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ImageId"))
+	}
+	if s.MaxSize == nil {
+		invalidParams.Add(request.NewErrParamRequired("MaxSize"))
+	}
+	if s.MinSize == nil {
+		invalidParams.Add(request.NewErrParamRequired("MinSize"))
+	}
+	if s.ScaleoutCondition == nil {
+		invalidParams.Add(request.NewErrParamRequired("ScaleoutCondition"))
+	}
+	if s.ScalingTriggerList == nil {
+		invalidParams.Add(request.NewErrParamRequired("ScalingTriggerList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetAutoScalingGroupName(v string) *NiftyCreateAutoScalingGroupInput {
+	s.AutoScalingGroupName = &v
+	return s
+}
+
+// SetChangeInCapacity sets the ChangeInCapacity field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetChangeInCapacity(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.ChangeInCapacity = &v
+	return s
+}
+
+// SetDefaultCooldown sets the DefaultCooldown field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetDefaultCooldown(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.DefaultCooldown = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetDescription(v string) *NiftyCreateAutoScalingGroupInput {
+	s.Description = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetImageId(v string) *NiftyCreateAutoScalingGroupInput {
+	s.ImageId = &v
+	return s
+}
+
+// SetInstanceLifecycleLimit sets the InstanceLifecycleLimit field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetInstanceLifecycleLimit(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.InstanceLifecycleLimit = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetInstanceType(v string) *NiftyCreateAutoScalingGroupInput {
+	s.InstanceType = &v
+	return s
+}
+
+// SetLoadBalancersList sets the LoadBalancersList field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetLoadBalancersList(v []*int64) *NiftyCreateAutoScalingGroupInput {
+	s.LoadBalancersList = v
+	return s
+}
+
+// SetMaxSize sets the MaxSize field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetMaxSize(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.MaxSize = &v
+	return s
+}
+
+// SetMinSize sets the MinSize field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetMinSize(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.MinSize = &v
+	return s
+}
+
+// SetScaleout sets the Scaleout field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetScaleout(v int64) *NiftyCreateAutoScalingGroupInput {
+	s.Scaleout = &v
+	return s
+}
+
+// SetScaleoutCondition sets the ScaleoutCondition field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetScaleoutCondition(v string) *NiftyCreateAutoScalingGroupInput {
+	s.ScaleoutCondition = &v
+	return s
+}
+
+// SetScalingScheduleList sets the ScalingScheduleList field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetScalingScheduleList(v []*MonthStruct) *NiftyCreateAutoScalingGroupInput {
+	s.ScalingScheduleList = v
+	return s
+}
+
+// SetScalingTriggerList sets the ScalingTriggerList field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetScalingTriggerList(v []*int64) *NiftyCreateAutoScalingGroupInput {
+	s.ScalingTriggerList = v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *NiftyCreateAutoScalingGroupInput) SetSecurityGroupList(v []*string) *NiftyCreateAutoScalingGroupInput {
+	s.SecurityGroupList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAutoScalingGroupOutput
@@ -13034,6 +16970,24 @@ func (s NiftyCreateDhcpConfigOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpIpAddressPoolRequest
 type NiftyCreateDhcpIpAddressPoolInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// StartIpAddress is a required field
+	StartIpAddress *string `type:"string" required:"true"`
+
+	// String
+	//
+	// StopIpAddress is a required field
+	StopIpAddress *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13044,6 +16998,49 @@ func (s NiftyCreateDhcpIpAddressPoolInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateDhcpIpAddressPoolInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateDhcpIpAddressPoolInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateDhcpIpAddressPoolInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+	if s.StartIpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("StartIpAddress"))
+	}
+	if s.StopIpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("StopIpAddress"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateDhcpIpAddressPoolInput) SetDescription(v string) *NiftyCreateDhcpIpAddressPoolInput {
+	s.Description = &v
+	return s
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyCreateDhcpIpAddressPoolInput) SetDhcpConfigId(v string) *NiftyCreateDhcpIpAddressPoolInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetStartIpAddress sets the StartIpAddress field's value.
+func (s *NiftyCreateDhcpIpAddressPoolInput) SetStartIpAddress(v string) *NiftyCreateDhcpIpAddressPoolInput {
+	s.StartIpAddress = &v
+	return s
+}
+
+// SetStopIpAddress sets the StopIpAddress field's value.
+func (s *NiftyCreateDhcpIpAddressPoolInput) SetStopIpAddress(v string) *NiftyCreateDhcpIpAddressPoolInput {
+	s.StopIpAddress = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpIpAddressPoolOutput
@@ -13065,6 +17062,24 @@ func (s NiftyCreateDhcpIpAddressPoolOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpStaticMappingRequest
 type NiftyCreateDhcpStaticMappingInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// IpAddress is a required field
+	IpAddress *string `type:"string" required:"true"`
+
+	// String
+	//
+	// MacAddress is a required field
+	MacAddress *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13075,6 +17090,49 @@ func (s NiftyCreateDhcpStaticMappingInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateDhcpStaticMappingInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateDhcpStaticMappingInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateDhcpStaticMappingInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+	if s.IpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("IpAddress"))
+	}
+	if s.MacAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("MacAddress"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateDhcpStaticMappingInput) SetDescription(v string) *NiftyCreateDhcpStaticMappingInput {
+	s.Description = &v
+	return s
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyCreateDhcpStaticMappingInput) SetDhcpConfigId(v string) *NiftyCreateDhcpStaticMappingInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *NiftyCreateDhcpStaticMappingInput) SetIpAddress(v string) *NiftyCreateDhcpStaticMappingInput {
+	s.IpAddress = &v
+	return s
+}
+
+// SetMacAddress sets the MacAddress field's value.
+func (s *NiftyCreateDhcpStaticMappingInput) SetMacAddress(v string) *NiftyCreateDhcpStaticMappingInput {
+	s.MacAddress = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpStaticMappingOutput
@@ -13096,6 +17154,19 @@ func (s NiftyCreateDhcpStaticMappingOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateInstanceSnapshotRequest
 type NiftyCreateInstanceSnapshotInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// SnapshotName is a required field
+	SnapshotName *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13106,6 +17177,40 @@ func (s NiftyCreateInstanceSnapshotInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateInstanceSnapshotInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateInstanceSnapshotInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateInstanceSnapshotInput"}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+	if s.SnapshotName == nil {
+		invalidParams.Add(request.NewErrParamRequired("SnapshotName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateInstanceSnapshotInput) SetDescription(v string) *NiftyCreateInstanceSnapshotInput {
+	s.Description = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *NiftyCreateInstanceSnapshotInput) SetInstanceId(v string) *NiftyCreateInstanceSnapshotInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetSnapshotName sets the SnapshotName field's value.
+func (s *NiftyCreateInstanceSnapshotInput) SetSnapshotName(v string) *NiftyCreateInstanceSnapshotInput {
+	s.SnapshotName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateInstanceSnapshotOutput
@@ -13127,6 +17232,44 @@ func (s NiftyCreateInstanceSnapshotOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatRuleRequest
 type NiftyCreateNatRuleInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// DestinationStruct
+	Destination *DestinationStruct `type:"structure"`
+
+	// InboundInterfaceStruct
+	InboundInterface *InboundInterfaceStruct `type:"structure"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// NatType is a required field
+	NatType *string `type:"string" required:"true"`
+
+	// OutboundInterfaceStruct
+	OutboundInterface *OutboundInterfaceStruct `type:"structure"`
+
+	// String
+	//
+	// Protocol is a required field
+	Protocol *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RuleNumber is a required field
+	RuleNumber *string `type:"string" required:"true"`
+
+	// SourceStruct
+	Source *SourceStruct `type:"structure"`
+
+	// TranslationStruct
+	Translation *TranslationStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -13137,6 +17280,88 @@ func (s NiftyCreateNatRuleInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateNatRuleInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateNatRuleInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateNatRuleInput"}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+	if s.NatType == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatType"))
+	}
+	if s.Protocol == nil {
+		invalidParams.Add(request.NewErrParamRequired("Protocol"))
+	}
+	if s.RuleNumber == nil {
+		invalidParams.Add(request.NewErrParamRequired("RuleNumber"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateNatRuleInput) SetDescription(v string) *NiftyCreateNatRuleInput {
+	s.Description = &v
+	return s
+}
+
+// SetDestination sets the Destination field's value.
+func (s *NiftyCreateNatRuleInput) SetDestination(v *DestinationStruct) *NiftyCreateNatRuleInput {
+	s.Destination = v
+	return s
+}
+
+// SetInboundInterface sets the InboundInterface field's value.
+func (s *NiftyCreateNatRuleInput) SetInboundInterface(v *InboundInterfaceStruct) *NiftyCreateNatRuleInput {
+	s.InboundInterface = v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyCreateNatRuleInput) SetNatTableId(v string) *NiftyCreateNatRuleInput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetNatType sets the NatType field's value.
+func (s *NiftyCreateNatRuleInput) SetNatType(v string) *NiftyCreateNatRuleInput {
+	s.NatType = &v
+	return s
+}
+
+// SetOutboundInterface sets the OutboundInterface field's value.
+func (s *NiftyCreateNatRuleInput) SetOutboundInterface(v *OutboundInterfaceStruct) *NiftyCreateNatRuleInput {
+	s.OutboundInterface = v
+	return s
+}
+
+// SetProtocol sets the Protocol field's value.
+func (s *NiftyCreateNatRuleInput) SetProtocol(v string) *NiftyCreateNatRuleInput {
+	s.Protocol = &v
+	return s
+}
+
+// SetRuleNumber sets the RuleNumber field's value.
+func (s *NiftyCreateNatRuleInput) SetRuleNumber(v string) *NiftyCreateNatRuleInput {
+	s.RuleNumber = &v
+	return s
+}
+
+// SetSource sets the Source field's value.
+func (s *NiftyCreateNatRuleInput) SetSource(v *SourceStruct) *NiftyCreateNatRuleInput {
+	s.Source = v
+	return s
+}
+
+// SetTranslation sets the Translation field's value.
+func (s *NiftyCreateNatRuleInput) SetTranslation(v *TranslationStruct) *NiftyCreateNatRuleInput {
+	s.Translation = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatRuleOutput
@@ -13189,6 +17414,23 @@ func (s NiftyCreateNatTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreatePrivateLanRequest
 type NiftyCreatePrivateLanInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// String
+	AvailabilityZone *string `type:"string"`
+
+	// String
+	//
+	// CidrBlock is a required field
+	CidrBlock *string `type:"string" required:"true"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	PrivateLanName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13199,6 +17441,49 @@ func (s NiftyCreatePrivateLanInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreatePrivateLanInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreatePrivateLanInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreatePrivateLanInput"}
+	if s.CidrBlock == nil {
+		invalidParams.Add(request.NewErrParamRequired("CidrBlock"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *NiftyCreatePrivateLanInput) SetAccountingType(v string) *NiftyCreatePrivateLanInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *NiftyCreatePrivateLanInput) SetAvailabilityZone(v string) *NiftyCreatePrivateLanInput {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCidrBlock sets the CidrBlock field's value.
+func (s *NiftyCreatePrivateLanInput) SetCidrBlock(v string) *NiftyCreatePrivateLanInput {
+	s.CidrBlock = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreatePrivateLanInput) SetDescription(v string) *NiftyCreatePrivateLanInput {
+	s.Description = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *NiftyCreatePrivateLanInput) SetPrivateLanName(v string) *NiftyCreatePrivateLanInput {
+	s.PrivateLanName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreatePrivateLanOutput
@@ -13220,6 +17505,27 @@ func (s NiftyCreatePrivateLanOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateRouterRequest
 type NiftyCreateRouterInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// String
+	AvailabilityZone *string `type:"string"`
+
+	// String
+	Description *string `type:"string"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
+
+	// String
+	RouterName *string `type:"string"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
+
+	// String
+	Type *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13230,6 +17536,48 @@ func (s NiftyCreateRouterInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateRouterInput) GoString() string {
 	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *NiftyCreateRouterInput) SetAccountingType(v string) *NiftyCreateRouterInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *NiftyCreateRouterInput) SetAvailabilityZone(v string) *NiftyCreateRouterInput {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateRouterInput) SetDescription(v string) *NiftyCreateRouterInput {
+	s.Description = &v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *NiftyCreateRouterInput) SetNetworkInterfaceList(v []*string) *NiftyCreateRouterInput {
+	s.NetworkInterfaceList = v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyCreateRouterInput) SetRouterName(v string) *NiftyCreateRouterInput {
+	s.RouterName = &v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *NiftyCreateRouterInput) SetSecurityGroupList(v []*string) *NiftyCreateRouterInput {
+	s.SecurityGroupList = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *NiftyCreateRouterInput) SetType(v string) *NiftyCreateRouterInput {
+	s.Type = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateRouterOutput
@@ -13251,6 +17599,32 @@ func (s NiftyCreateRouterOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateWebProxyRequest
 type NiftyCreateWebProxyInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// BypassInterfaceStruct
+	BypassInterface *BypassInterfaceStruct `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// ListenInterfaceStruct
+	ListenInterface *ListenInterfaceStruct `type:"structure"`
+
+	// String
+	//
+	// ListenPort is a required field
+	ListenPort *string `type:"string" required:"true"`
+
+	// OptionStruct
+	Option *OptionStruct `type:"structure"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13261,6 +17635,67 @@ func (s NiftyCreateWebProxyInput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateWebProxyInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyCreateWebProxyInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyCreateWebProxyInput"}
+	if s.ListenPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("ListenPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyCreateWebProxyInput) SetAgreement(v bool) *NiftyCreateWebProxyInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetBypassInterface sets the BypassInterface field's value.
+func (s *NiftyCreateWebProxyInput) SetBypassInterface(v *BypassInterfaceStruct) *NiftyCreateWebProxyInput {
+	s.BypassInterface = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyCreateWebProxyInput) SetDescription(v string) *NiftyCreateWebProxyInput {
+	s.Description = &v
+	return s
+}
+
+// SetListenInterface sets the ListenInterface field's value.
+func (s *NiftyCreateWebProxyInput) SetListenInterface(v *ListenInterfaceStruct) *NiftyCreateWebProxyInput {
+	s.ListenInterface = v
+	return s
+}
+
+// SetListenPort sets the ListenPort field's value.
+func (s *NiftyCreateWebProxyInput) SetListenPort(v string) *NiftyCreateWebProxyInput {
+	s.ListenPort = &v
+	return s
+}
+
+// SetOption sets the Option field's value.
+func (s *NiftyCreateWebProxyInput) SetOption(v *OptionStruct) *NiftyCreateWebProxyInput {
+	s.Option = v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyCreateWebProxyInput) SetRouterId(v string) *NiftyCreateWebProxyInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyCreateWebProxyInput) SetRouterName(v string) *NiftyCreateWebProxyInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateWebProxyOutput
@@ -13282,6 +17717,12 @@ func (s NiftyCreateWebProxyOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAlarmRequest
 type NiftyDeleteAlarmInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	FunctionName *string `type:"string"`
+
+	// String
+	RuleName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13292,6 +17733,18 @@ func (s NiftyDeleteAlarmInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteAlarmInput) GoString() string {
 	return s.String()
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *NiftyDeleteAlarmInput) SetFunctionName(v string) *NiftyDeleteAlarmInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetRuleName sets the RuleName field's value.
+func (s *NiftyDeleteAlarmInput) SetRuleName(v string) *NiftyDeleteAlarmInput {
+	s.RuleName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAlarmOutput
@@ -13313,6 +17766,11 @@ func (s NiftyDeleteAlarmOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAutoScalingGroupRequest
 type NiftyDeleteAutoScalingGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// AutoScalingGroupName is a required field
+	AutoScalingGroupName *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13323,6 +17781,25 @@ func (s NiftyDeleteAutoScalingGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteAutoScalingGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteAutoScalingGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteAutoScalingGroupInput"}
+	if s.AutoScalingGroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("AutoScalingGroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *NiftyDeleteAutoScalingGroupInput) SetAutoScalingGroupName(v string) *NiftyDeleteAutoScalingGroupInput {
+	s.AutoScalingGroupName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAutoScalingGroupOutput
@@ -13344,6 +17821,11 @@ func (s NiftyDeleteAutoScalingGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpConfigRequest
 type NiftyDeleteDhcpConfigInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13354,6 +17836,25 @@ func (s NiftyDeleteDhcpConfigInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpConfigInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteDhcpConfigInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteDhcpConfigInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyDeleteDhcpConfigInput) SetDhcpConfigId(v string) *NiftyDeleteDhcpConfigInput {
+	s.DhcpConfigId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpConfigOutput
@@ -13375,6 +17876,21 @@ func (s NiftyDeleteDhcpConfigOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpIpAddressPoolRequest
 type NiftyDeleteDhcpIpAddressPoolInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// StartIpAddress is a required field
+	StartIpAddress *string `type:"string" required:"true"`
+
+	// String
+	//
+	// StopIpAddress is a required field
+	StopIpAddress *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13385,6 +17901,43 @@ func (s NiftyDeleteDhcpIpAddressPoolInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpIpAddressPoolInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteDhcpIpAddressPoolInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteDhcpIpAddressPoolInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+	if s.StartIpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("StartIpAddress"))
+	}
+	if s.StopIpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("StopIpAddress"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyDeleteDhcpIpAddressPoolInput) SetDhcpConfigId(v string) *NiftyDeleteDhcpIpAddressPoolInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetStartIpAddress sets the StartIpAddress field's value.
+func (s *NiftyDeleteDhcpIpAddressPoolInput) SetStartIpAddress(v string) *NiftyDeleteDhcpIpAddressPoolInput {
+	s.StartIpAddress = &v
+	return s
+}
+
+// SetStopIpAddress sets the StopIpAddress field's value.
+func (s *NiftyDeleteDhcpIpAddressPoolInput) SetStopIpAddress(v string) *NiftyDeleteDhcpIpAddressPoolInput {
+	s.StopIpAddress = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpIpAddressPoolOutput
@@ -13406,6 +17959,21 @@ func (s NiftyDeleteDhcpIpAddressPoolOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpStaticMappingRequest
 type NiftyDeleteDhcpStaticMappingInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// IpAddress is a required field
+	IpAddress *string `type:"string" required:"true"`
+
+	// String
+	//
+	// MacAddress is a required field
+	MacAddress *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13416,6 +17984,43 @@ func (s NiftyDeleteDhcpStaticMappingInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpStaticMappingInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteDhcpStaticMappingInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteDhcpStaticMappingInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+	if s.IpAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("IpAddress"))
+	}
+	if s.MacAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("MacAddress"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyDeleteDhcpStaticMappingInput) SetDhcpConfigId(v string) *NiftyDeleteDhcpStaticMappingInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *NiftyDeleteDhcpStaticMappingInput) SetIpAddress(v string) *NiftyDeleteDhcpStaticMappingInput {
+	s.IpAddress = &v
+	return s
+}
+
+// SetMacAddress sets the MacAddress field's value.
+func (s *NiftyDeleteDhcpStaticMappingInput) SetMacAddress(v string) *NiftyDeleteDhcpStaticMappingInput {
+	s.MacAddress = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpStaticMappingOutput
@@ -13437,6 +18042,12 @@ func (s NiftyDeleteDhcpStaticMappingOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteInstanceSnapshotRequest
 type NiftyDeleteInstanceSnapshotInput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceSnapshotIdList
+	InstanceSnapshotIdList []*string `type:"list"`
+
+	// SnapshotNameList
+	SnapshotNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13447,6 +18058,18 @@ func (s NiftyDeleteInstanceSnapshotInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteInstanceSnapshotInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceSnapshotIdList sets the InstanceSnapshotIdList field's value.
+func (s *NiftyDeleteInstanceSnapshotInput) SetInstanceSnapshotIdList(v []*string) *NiftyDeleteInstanceSnapshotInput {
+	s.InstanceSnapshotIdList = v
+	return s
+}
+
+// SetSnapshotNameList sets the SnapshotNameList field's value.
+func (s *NiftyDeleteInstanceSnapshotInput) SetSnapshotNameList(v []*string) *NiftyDeleteInstanceSnapshotInput {
+	s.SnapshotNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteInstanceSnapshotOutput
@@ -13468,6 +18091,21 @@ func (s NiftyDeleteInstanceSnapshotOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatRuleRequest
 type NiftyDeleteNatRuleInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// NatType is a required field
+	NatType *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RuleNumber is a required field
+	RuleNumber *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13478,6 +18116,43 @@ func (s NiftyDeleteNatRuleInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteNatRuleInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteNatRuleInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteNatRuleInput"}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+	if s.NatType == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatType"))
+	}
+	if s.RuleNumber == nil {
+		invalidParams.Add(request.NewErrParamRequired("RuleNumber"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyDeleteNatRuleInput) SetNatTableId(v string) *NiftyDeleteNatRuleInput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetNatType sets the NatType field's value.
+func (s *NiftyDeleteNatRuleInput) SetNatType(v string) *NiftyDeleteNatRuleInput {
+	s.NatType = &v
+	return s
+}
+
+// SetRuleNumber sets the RuleNumber field's value.
+func (s *NiftyDeleteNatRuleInput) SetRuleNumber(v string) *NiftyDeleteNatRuleInput {
+	s.RuleNumber = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatRuleOutput
@@ -13499,6 +18174,11 @@ func (s NiftyDeleteNatRuleOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatTableRequest
 type NiftyDeleteNatTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -13509,6 +18189,25 @@ func (s NiftyDeleteNatTableInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteNatTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeleteNatTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeleteNatTableInput"}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyDeleteNatTableInput) SetNatTableId(v string) *NiftyDeleteNatTableInput {
+	s.NatTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatTableOutput
@@ -13530,6 +18229,12 @@ func (s NiftyDeleteNatTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeletePrivateLanRequest
 type NiftyDeletePrivateLanInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	PrivateLanName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13540,6 +18245,18 @@ func (s NiftyDeletePrivateLanInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeletePrivateLanInput) GoString() string {
 	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyDeletePrivateLanInput) SetNetworkId(v string) *NiftyDeletePrivateLanInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *NiftyDeletePrivateLanInput) SetPrivateLanName(v string) *NiftyDeletePrivateLanInput {
+	s.PrivateLanName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeletePrivateLanOutput
@@ -13561,6 +18278,12 @@ func (s NiftyDeletePrivateLanOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteRouterRequest
 type NiftyDeleteRouterInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13571,6 +18294,18 @@ func (s NiftyDeleteRouterInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteRouterInput) GoString() string {
 	return s.String()
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyDeleteRouterInput) SetRouterId(v string) *NiftyDeleteRouterInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyDeleteRouterInput) SetRouterName(v string) *NiftyDeleteRouterInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteRouterOutput
@@ -13592,6 +18327,15 @@ func (s NiftyDeleteRouterOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteWebProxyRequest
 type NiftyDeleteWebProxyInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13602,6 +18346,24 @@ func (s NiftyDeleteWebProxyInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteWebProxyInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyDeleteWebProxyInput) SetAgreement(v bool) *NiftyDeleteWebProxyInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyDeleteWebProxyInput) SetRouterId(v string) *NiftyDeleteWebProxyInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyDeleteWebProxyInput) SetRouterName(v string) *NiftyDeleteWebProxyInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteWebProxyOutput
@@ -13623,6 +18385,14 @@ func (s NiftyDeleteWebProxyOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterRoutersFromSecurityGroupRequest
 type NiftyDeregisterRoutersFromSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// RouterSetList
+	RouterSetList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13633,6 +18403,31 @@ func (s NiftyDeregisterRoutersFromSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeregisterRoutersFromSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeregisterRoutersFromSecurityGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeregisterRoutersFromSecurityGroupInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *NiftyDeregisterRoutersFromSecurityGroupInput) SetGroupName(v string) *NiftyDeregisterRoutersFromSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetRouterSetList sets the RouterSetList field's value.
+func (s *NiftyDeregisterRoutersFromSecurityGroupInput) SetRouterSetList(v []*string) *NiftyDeregisterRoutersFromSecurityGroupInput {
+	s.RouterSetList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterRoutersFromSecurityGroupOutput
@@ -13654,6 +18449,14 @@ func (s NiftyDeregisterRoutersFromSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterVpnGatewaysFromSecurityGroupRequest
 type NiftyDeregisterVpnGatewaysFromSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// RouterSetList
+	RouterSetList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13664,6 +18467,31 @@ func (s NiftyDeregisterVpnGatewaysFromSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyDeregisterVpnGatewaysFromSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDeregisterVpnGatewaysFromSecurityGroupInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupInput) SetGroupName(v string) *NiftyDeregisterVpnGatewaysFromSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetRouterSetList sets the RouterSetList field's value.
+func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupInput) SetRouterSetList(v []*string) *NiftyDeregisterVpnGatewaysFromSecurityGroupInput {
+	s.RouterSetList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterVpnGatewaysFromSecurityGroupOutput
@@ -13685,6 +18513,9 @@ func (s NiftyDeregisterVpnGatewaysFromSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmHistoryRequest
 type NiftyDescribeAlarmHistoryInput struct {
 	_ struct{} `type:"structure"`
+
+	// RuleList
+	RuleList []*int64 `type:"list"`
 }
 
 // String returns the string representation
@@ -13695,6 +18526,12 @@ func (s NiftyDescribeAlarmHistoryInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmHistoryInput) GoString() string {
 	return s.String()
+}
+
+// SetRuleList sets the RuleList field's value.
+func (s *NiftyDescribeAlarmHistoryInput) SetRuleList(v []*int64) *NiftyDescribeAlarmHistoryInput {
+	s.RuleList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmHistoryOutput
@@ -13716,6 +18553,9 @@ func (s NiftyDescribeAlarmHistoryOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmRulesActivitiesRequest
 type NiftyDescribeAlarmRulesActivitiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// RuleList
+	RuleList []*int64 `type:"list"`
 }
 
 // String returns the string representation
@@ -13726,6 +18566,12 @@ func (s NiftyDescribeAlarmRulesActivitiesInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmRulesActivitiesInput) GoString() string {
 	return s.String()
+}
+
+// SetRuleList sets the RuleList field's value.
+func (s *NiftyDescribeAlarmRulesActivitiesInput) SetRuleList(v []*int64) *NiftyDescribeAlarmRulesActivitiesInput {
+	s.RuleList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmRulesActivitiesOutput
@@ -13747,6 +18593,9 @@ func (s NiftyDescribeAlarmRulesActivitiesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsRequest
 type NiftyDescribeAlarmsInput struct {
 	_ struct{} `type:"structure"`
+
+	// RuleList
+	RuleList []*int64 `type:"list"`
 }
 
 // String returns the string representation
@@ -13757,6 +18606,12 @@ func (s NiftyDescribeAlarmsInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmsInput) GoString() string {
 	return s.String()
+}
+
+// SetRuleList sets the RuleList field's value.
+func (s *NiftyDescribeAlarmsInput) SetRuleList(v []*int64) *NiftyDescribeAlarmsInput {
+	s.RuleList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsOutput
@@ -13778,6 +18633,9 @@ func (s NiftyDescribeAlarmsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsPartitionsRequest
 type NiftyDescribeAlarmsPartitionsInput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13788,6 +18646,12 @@ func (s NiftyDescribeAlarmsPartitionsInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmsPartitionsInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *NiftyDescribeAlarmsPartitionsInput) SetInstanceIdList(v []*string) *NiftyDescribeAlarmsPartitionsInput {
+	s.InstanceIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsPartitionsOutput
@@ -13809,6 +18673,9 @@ func (s NiftyDescribeAlarmsPartitionsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAutoScalingGroupsRequest
 type NiftyDescribeAutoScalingGroupsInput struct {
 	_ struct{} `type:"structure"`
+
+	// AutoScalingGroupNameList
+	AutoScalingGroupNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13819,6 +18686,12 @@ func (s NiftyDescribeAutoScalingGroupsInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAutoScalingGroupsInput) GoString() string {
 	return s.String()
+}
+
+// SetAutoScalingGroupNameList sets the AutoScalingGroupNameList field's value.
+func (s *NiftyDescribeAutoScalingGroupsInput) SetAutoScalingGroupNameList(v []*string) *NiftyDescribeAutoScalingGroupsInput {
+	s.AutoScalingGroupNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAutoScalingGroupsOutput
@@ -13871,6 +18744,12 @@ func (s NiftyDescribeCorporateInfoForCertificateOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpConfigsRequest
 type NiftyDescribeDhcpConfigsInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	DhcpConfigId *string `type:"string"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13881,6 +18760,18 @@ func (s NiftyDescribeDhcpConfigsInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeDhcpConfigsInput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyDescribeDhcpConfigsInput) SetDhcpConfigId(v string) *NiftyDescribeDhcpConfigsInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *NiftyDescribeDhcpConfigsInput) SetFilterList(v [][]*string) *NiftyDescribeDhcpConfigsInput {
+	s.FilterList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpConfigsOutput
@@ -13902,6 +18793,12 @@ func (s NiftyDescribeDhcpConfigsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpStatusRequest
 type NiftyDescribeDhcpStatusInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -13912,6 +18809,18 @@ func (s NiftyDescribeDhcpStatusInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeDhcpStatusInput) GoString() string {
 	return s.String()
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyDescribeDhcpStatusInput) SetRouterId(v string) *NiftyDescribeDhcpStatusInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyDescribeDhcpStatusInput) SetRouterName(v string) *NiftyDescribeDhcpStatusInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpStatusOutput
@@ -13933,6 +18842,12 @@ func (s NiftyDescribeDhcpStatusOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeInstanceSnapshotsRequest
 type NiftyDescribeInstanceSnapshotsInput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceSnapshotIdList
+	InstanceSnapshotIdList []*string `type:"list"`
+
+	// SnapshotNameList
+	SnapshotNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13943,6 +18858,18 @@ func (s NiftyDescribeInstanceSnapshotsInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeInstanceSnapshotsInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceSnapshotIdList sets the InstanceSnapshotIdList field's value.
+func (s *NiftyDescribeInstanceSnapshotsInput) SetInstanceSnapshotIdList(v []*string) *NiftyDescribeInstanceSnapshotsInput {
+	s.InstanceSnapshotIdList = v
+	return s
+}
+
+// SetSnapshotNameList sets the SnapshotNameList field's value.
+func (s *NiftyDescribeInstanceSnapshotsInput) SetSnapshotNameList(v []*string) *NiftyDescribeInstanceSnapshotsInput {
+	s.SnapshotNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeInstanceSnapshotsOutput
@@ -13964,6 +18891,12 @@ func (s NiftyDescribeInstanceSnapshotsOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeNatTablesRequest
 type NiftyDescribeNatTablesInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// NatTableIdList
+	NatTableIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -13974,6 +18907,18 @@ func (s NiftyDescribeNatTablesInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeNatTablesInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *NiftyDescribeNatTablesInput) SetFilterList(v [][]*string) *NiftyDescribeNatTablesInput {
+	s.FilterList = v
+	return s
+}
+
+// SetNatTableIdList sets the NatTableIdList field's value.
+func (s *NiftyDescribeNatTablesInput) SetNatTableIdList(v []*string) *NiftyDescribeNatTablesInput {
+	s.NatTableIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeNatTablesOutput
@@ -13995,6 +18940,28 @@ func (s NiftyDescribeNatTablesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePerformanceChartRequest
 type NiftyDescribePerformanceChartInput struct {
 	_ struct{} `type:"structure"`
+
+	// DataTypeList
+	DataTypeList []*string `type:"list"`
+
+	// String
+	FromDate *string `type:"string"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
+
+	// ResourceNameList
+	//
+	// ResourceNameList is a required field
+	ResourceNameList []*string `type:"list" required:"true"`
+
+	// String
+	ToDate *string `type:"string"`
+
+	// String
+	ValueType *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14005,6 +18972,58 @@ func (s NiftyDescribePerformanceChartInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribePerformanceChartInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDescribePerformanceChartInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDescribePerformanceChartInput"}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+	if s.ResourceNameList == nil {
+		invalidParams.Add(request.NewErrParamRequired("ResourceNameList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDataTypeList sets the DataTypeList field's value.
+func (s *NiftyDescribePerformanceChartInput) SetDataTypeList(v []*string) *NiftyDescribePerformanceChartInput {
+	s.DataTypeList = v
+	return s
+}
+
+// SetFromDate sets the FromDate field's value.
+func (s *NiftyDescribePerformanceChartInput) SetFromDate(v string) *NiftyDescribePerformanceChartInput {
+	s.FromDate = &v
+	return s
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *NiftyDescribePerformanceChartInput) SetFunctionName(v string) *NiftyDescribePerformanceChartInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetResourceNameList sets the ResourceNameList field's value.
+func (s *NiftyDescribePerformanceChartInput) SetResourceNameList(v []*string) *NiftyDescribePerformanceChartInput {
+	s.ResourceNameList = v
+	return s
+}
+
+// SetToDate sets the ToDate field's value.
+func (s *NiftyDescribePerformanceChartInput) SetToDate(v string) *NiftyDescribePerformanceChartInput {
+	s.ToDate = &v
+	return s
+}
+
+// SetValueType sets the ValueType field's value.
+func (s *NiftyDescribePerformanceChartInput) SetValueType(v string) *NiftyDescribePerformanceChartInput {
+	s.ValueType = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePerformanceChartOutput
@@ -14026,6 +19045,15 @@ func (s NiftyDescribePerformanceChartOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePrivateLansRequest
 type NiftyDescribePrivateLansInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// NetworkIdList
+	NetworkIdList []*string `type:"list"`
+
+	// PrivateLanNameList
+	PrivateLanNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14036,6 +19064,24 @@ func (s NiftyDescribePrivateLansInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribePrivateLansInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *NiftyDescribePrivateLansInput) SetFilterList(v [][]*string) *NiftyDescribePrivateLansInput {
+	s.FilterList = v
+	return s
+}
+
+// SetNetworkIdList sets the NetworkIdList field's value.
+func (s *NiftyDescribePrivateLansInput) SetNetworkIdList(v []*string) *NiftyDescribePrivateLansInput {
+	s.NetworkIdList = v
+	return s
+}
+
+// SetPrivateLanNameList sets the PrivateLanNameList field's value.
+func (s *NiftyDescribePrivateLansInput) SetPrivateLanNameList(v []*string) *NiftyDescribePrivateLansInput {
+	s.PrivateLanNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePrivateLansOutput
@@ -14057,6 +19103,15 @@ func (s NiftyDescribePrivateLansOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeRoutersRequest
 type NiftyDescribeRoutersInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// RouterIdList
+	RouterIdList []*string `type:"list"`
+
+	// RouterNameList
+	RouterNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14067,6 +19122,24 @@ func (s NiftyDescribeRoutersInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeRoutersInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *NiftyDescribeRoutersInput) SetFilterList(v [][]*string) *NiftyDescribeRoutersInput {
+	s.FilterList = v
+	return s
+}
+
+// SetRouterIdList sets the RouterIdList field's value.
+func (s *NiftyDescribeRoutersInput) SetRouterIdList(v []*string) *NiftyDescribeRoutersInput {
+	s.RouterIdList = v
+	return s
+}
+
+// SetRouterNameList sets the RouterNameList field's value.
+func (s *NiftyDescribeRoutersInput) SetRouterNameList(v []*string) *NiftyDescribeRoutersInput {
+	s.RouterNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeRoutersOutput
@@ -14088,6 +19161,20 @@ func (s NiftyDescribeRoutersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeScalingActivitiesRequest
 type NiftyDescribeScalingActivitiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	ActivityDateFrom *string `type:"string"`
+
+	// String
+	ActivityDateTo *string `type:"string"`
+
+	// String
+	//
+	// AutoScalingGroupName is a required field
+	AutoScalingGroupName *string `type:"string" required:"true"`
+
+	// RangeStruct
+	Range *RangeStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -14098,6 +19185,43 @@ func (s NiftyDescribeScalingActivitiesInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeScalingActivitiesInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDescribeScalingActivitiesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDescribeScalingActivitiesInput"}
+	if s.AutoScalingGroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("AutoScalingGroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetActivityDateFrom sets the ActivityDateFrom field's value.
+func (s *NiftyDescribeScalingActivitiesInput) SetActivityDateFrom(v string) *NiftyDescribeScalingActivitiesInput {
+	s.ActivityDateFrom = &v
+	return s
+}
+
+// SetActivityDateTo sets the ActivityDateTo field's value.
+func (s *NiftyDescribeScalingActivitiesInput) SetActivityDateTo(v string) *NiftyDescribeScalingActivitiesInput {
+	s.ActivityDateTo = &v
+	return s
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *NiftyDescribeScalingActivitiesInput) SetAutoScalingGroupName(v string) *NiftyDescribeScalingActivitiesInput {
+	s.AutoScalingGroupName = &v
+	return s
+}
+
+// SetRange sets the Range field's value.
+func (s *NiftyDescribeScalingActivitiesInput) SetRange(v *RangeStruct) *NiftyDescribeScalingActivitiesInput {
+	s.Range = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeScalingActivitiesOutput
@@ -14119,6 +19243,12 @@ func (s NiftyDescribeScalingActivitiesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeVpnGatewayActivitiesRequest
 type NiftyDescribeVpnGatewayActivitiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14129,6 +19259,18 @@ func (s NiftyDescribeVpnGatewayActivitiesInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeVpnGatewayActivitiesInput) GoString() string {
 	return s.String()
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesInput) SetNiftyVpnGatewayName(v string) *NiftyDescribeVpnGatewayActivitiesInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesInput) SetVpnGatewayId(v string) *NiftyDescribeVpnGatewayActivitiesInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeVpnGatewayActivitiesOutput
@@ -14150,6 +19292,15 @@ func (s NiftyDescribeVpnGatewayActivitiesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeWebProxiesRequest
 type NiftyDescribeWebProxiesInput struct {
 	_ struct{} `type:"structure"`
+
+	// FilterList
+	FilterList [][]*string `type:"list"`
+
+	// RouterIdList
+	RouterIdList []*string `type:"list"`
+
+	// RouterNameList
+	RouterNameList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14160,6 +19311,24 @@ func (s NiftyDescribeWebProxiesInput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeWebProxiesInput) GoString() string {
 	return s.String()
+}
+
+// SetFilterList sets the FilterList field's value.
+func (s *NiftyDescribeWebProxiesInput) SetFilterList(v [][]*string) *NiftyDescribeWebProxiesInput {
+	s.FilterList = v
+	return s
+}
+
+// SetRouterIdList sets the RouterIdList field's value.
+func (s *NiftyDescribeWebProxiesInput) SetRouterIdList(v []*string) *NiftyDescribeWebProxiesInput {
+	s.RouterIdList = v
+	return s
+}
+
+// SetRouterNameList sets the RouterNameList field's value.
+func (s *NiftyDescribeWebProxiesInput) SetRouterNameList(v []*string) *NiftyDescribeWebProxiesInput {
+	s.RouterNameList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeWebProxiesOutput
@@ -14181,6 +19350,21 @@ func (s NiftyDescribeWebProxiesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisableDhcpRequest
 type NiftyDisableDhcpInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14191,6 +19375,36 @@ func (s NiftyDisableDhcpInput) String() string {
 // GoString returns the string representation
 func (s NiftyDisableDhcpInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyDisableDhcpInput) SetAgreement(v bool) *NiftyDisableDhcpInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyDisableDhcpInput) SetNetworkId(v string) *NiftyDisableDhcpInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NiftyDisableDhcpInput) SetNetworkName(v string) *NiftyDisableDhcpInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyDisableDhcpInput) SetRouterId(v string) *NiftyDisableDhcpInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyDisableDhcpInput) SetRouterName(v string) *NiftyDisableDhcpInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisableDhcpOutput
@@ -14212,6 +19426,14 @@ func (s NiftyDisableDhcpOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateNatTableRequest
 type NiftyDisassociateNatTableInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14222,6 +19444,31 @@ func (s NiftyDisassociateNatTableInput) String() string {
 // GoString returns the string representation
 func (s NiftyDisassociateNatTableInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDisassociateNatTableInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDisassociateNatTableInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyDisassociateNatTableInput) SetAgreement(v bool) *NiftyDisassociateNatTableInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyDisassociateNatTableInput) SetAssociationId(v string) *NiftyDisassociateNatTableInput {
+	s.AssociationId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateNatTableOutput
@@ -14243,6 +19490,14 @@ func (s NiftyDisassociateNatTableOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateRouteTableFromVpnGatewayRequest
 type NiftyDisassociateRouteTableFromVpnGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14253,6 +19508,31 @@ func (s NiftyDisassociateRouteTableFromVpnGatewayInput) String() string {
 // GoString returns the string representation
 func (s NiftyDisassociateRouteTableFromVpnGatewayInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyDisassociateRouteTableFromVpnGatewayInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyDisassociateRouteTableFromVpnGatewayInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyDisassociateRouteTableFromVpnGatewayInput) SetAgreement(v bool) *NiftyDisassociateRouteTableFromVpnGatewayInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyDisassociateRouteTableFromVpnGatewayInput) SetAssociationId(v string) *NiftyDisassociateRouteTableFromVpnGatewayInput {
+	s.AssociationId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateRouteTableFromVpnGatewayOutput
@@ -14274,6 +19554,27 @@ func (s NiftyDisassociateRouteTableFromVpnGatewayOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyEnableDhcpRequest
 type NiftyEnableDhcpInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	DhcpConfigId *string `type:"string"`
+
+	// String
+	DhcpOptionsId *string `type:"string"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14284,6 +19585,48 @@ func (s NiftyEnableDhcpInput) String() string {
 // GoString returns the string representation
 func (s NiftyEnableDhcpInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyEnableDhcpInput) SetAgreement(v bool) *NiftyEnableDhcpInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyEnableDhcpInput) SetDhcpConfigId(v string) *NiftyEnableDhcpInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetDhcpOptionsId sets the DhcpOptionsId field's value.
+func (s *NiftyEnableDhcpInput) SetDhcpOptionsId(v string) *NiftyEnableDhcpInput {
+	s.DhcpOptionsId = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyEnableDhcpInput) SetNetworkId(v string) *NiftyEnableDhcpInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NiftyEnableDhcpInput) SetNetworkName(v string) *NiftyEnableDhcpInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyEnableDhcpInput) SetRouterId(v string) *NiftyEnableDhcpInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyEnableDhcpInput) SetRouterName(v string) *NiftyEnableDhcpInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyEnableDhcpOutput
@@ -14301,10 +19644,94 @@ func (s NiftyEnableDhcpOutput) GoString() string {
 	return s.String()
 }
 
+// NiftyIPsecConfigurationStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyIPsecConfigurationStruct
+type NiftyIPsecConfigurationStruct struct {
+	_ struct{} `type:"structure"`
+
+	// EncryptionAlgorithm
+	EncryptionAlgorithm *string `type:"string"`
+
+	// HashAlgorithm
+	HashAlgorithm *string `type:"string"`
+
+	// PreSharedKey
+	PreSharedKey *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyIPsecConfigurationStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyIPsecConfigurationStruct) GoString() string {
+	return s.String()
+}
+
+// SetEncryptionAlgorithm sets the EncryptionAlgorithm field's value.
+func (s *NiftyIPsecConfigurationStruct) SetEncryptionAlgorithm(v string) *NiftyIPsecConfigurationStruct {
+	s.EncryptionAlgorithm = &v
+	return s
+}
+
+// SetHashAlgorithm sets the HashAlgorithm field's value.
+func (s *NiftyIPsecConfigurationStruct) SetHashAlgorithm(v string) *NiftyIPsecConfigurationStruct {
+	s.HashAlgorithm = &v
+	return s
+}
+
+// SetPreSharedKey sets the PreSharedKey field's value.
+func (s *NiftyIPsecConfigurationStruct) SetPreSharedKey(v string) *NiftyIPsecConfigurationStruct {
+	s.PreSharedKey = &v
+	return s
+}
+
+// NiftyIpsecConfigurationStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyIpsecConfigurationStruct
+type NiftyIpsecConfigurationStruct struct {
+	_ struct{} `type:"structure"`
+
+	// InternetKeyExchange
+	InternetKeyExchange *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyIpsecConfigurationStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyIpsecConfigurationStruct) GoString() string {
+	return s.String()
+}
+
+// SetInternetKeyExchange sets the InternetKeyExchange field's value.
+func (s *NiftyIpsecConfigurationStruct) SetInternetKeyExchange(v string) *NiftyIpsecConfigurationStruct {
+	s.InternetKeyExchange = &v
+	return s
+}
+
 // NiftyModifyAddressAttributeRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyAddressAttributeRequest
 type NiftyModifyAddressAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	PrivateIpAddress *string `type:"string"`
+
+	// String
+	PublicIp *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14315,6 +19742,46 @@ func (s NiftyModifyAddressAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyAddressAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyAddressAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyAddressAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyAddressAttributeInput) SetAttribute(v string) *NiftyModifyAddressAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *NiftyModifyAddressAttributeInput) SetPrivateIpAddress(v string) *NiftyModifyAddressAttributeInput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *NiftyModifyAddressAttributeInput) SetPublicIp(v string) *NiftyModifyAddressAttributeInput {
+	s.PublicIp = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyAddressAttributeInput) SetValue(v string) *NiftyModifyAddressAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyAddressAttributeOutput
@@ -14336,6 +19803,22 @@ func (s NiftyModifyAddressAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyCustomerGatewayAttributeRequest
 type NiftyModifyCustomerGatewayAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	CustomerGatewayId *string `type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14346,6 +19829,46 @@ func (s NiftyModifyCustomerGatewayAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyCustomerGatewayAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyCustomerGatewayAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyCustomerGatewayAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyCustomerGatewayAttributeInput) SetAttribute(v string) *NiftyModifyCustomerGatewayAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetCustomerGatewayId sets the CustomerGatewayId field's value.
+func (s *NiftyModifyCustomerGatewayAttributeInput) SetCustomerGatewayId(v string) *NiftyModifyCustomerGatewayAttributeInput {
+	s.CustomerGatewayId = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *NiftyModifyCustomerGatewayAttributeInput) SetNiftyCustomerGatewayName(v string) *NiftyModifyCustomerGatewayAttributeInput {
+	s.NiftyCustomerGatewayName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyCustomerGatewayAttributeInput) SetValue(v string) *NiftyModifyCustomerGatewayAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyCustomerGatewayAttributeOutput
@@ -14367,6 +19890,22 @@ func (s NiftyModifyCustomerGatewayAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyInstanceSnapshotAttributeRequest
 type NiftyModifyInstanceSnapshotAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	InstanceSnapshotId *string `type:"string"`
+
+	// String
+	SnapshotName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14377,6 +19916,46 @@ func (s NiftyModifyInstanceSnapshotAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyInstanceSnapshotAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyInstanceSnapshotAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyInstanceSnapshotAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeInput) SetAttribute(v string) *NiftyModifyInstanceSnapshotAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetInstanceSnapshotId sets the InstanceSnapshotId field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeInput) SetInstanceSnapshotId(v string) *NiftyModifyInstanceSnapshotAttributeInput {
+	s.InstanceSnapshotId = &v
+	return s
+}
+
+// SetSnapshotName sets the SnapshotName field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeInput) SetSnapshotName(v string) *NiftyModifyInstanceSnapshotAttributeInput {
+	s.SnapshotName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeInput) SetValue(v string) *NiftyModifyInstanceSnapshotAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyInstanceSnapshotAttributeOutput
@@ -14398,6 +19977,21 @@ func (s NiftyModifyInstanceSnapshotAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyKeyPairAttributeRequest
 type NiftyModifyKeyPairAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	//
+	// KeyName is a required field
+	KeyName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14408,6 +20002,43 @@ func (s NiftyModifyKeyPairAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyKeyPairAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyKeyPairAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyKeyPairAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.KeyName == nil {
+		invalidParams.Add(request.NewErrParamRequired("KeyName"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyKeyPairAttributeInput) SetAttribute(v string) *NiftyModifyKeyPairAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *NiftyModifyKeyPairAttributeInput) SetKeyName(v string) *NiftyModifyKeyPairAttributeInput {
+	s.KeyName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyKeyPairAttributeInput) SetValue(v string) *NiftyModifyKeyPairAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyKeyPairAttributeOutput
@@ -14429,6 +20060,22 @@ func (s NiftyModifyKeyPairAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyPrivateLanAttributeRequest
 type NiftyModifyPrivateLanAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	PrivateLanName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14439,6 +20086,46 @@ func (s NiftyModifyPrivateLanAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyPrivateLanAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyPrivateLanAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyPrivateLanAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyPrivateLanAttributeInput) SetAttribute(v string) *NiftyModifyPrivateLanAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyModifyPrivateLanAttributeInput) SetNetworkId(v string) *NiftyModifyPrivateLanAttributeInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *NiftyModifyPrivateLanAttributeInput) SetPrivateLanName(v string) *NiftyModifyPrivateLanAttributeInput {
+	s.PrivateLanName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyPrivateLanAttributeInput) SetValue(v string) *NiftyModifyPrivateLanAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyPrivateLanAttributeOutput
@@ -14460,6 +20147,25 @@ func (s NiftyModifyPrivateLanAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyRouterAttributeRequest
 type NiftyModifyRouterAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14470,6 +20176,52 @@ func (s NiftyModifyRouterAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyRouterAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyRouterAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyRouterAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyModifyRouterAttributeInput) SetAgreement(v bool) *NiftyModifyRouterAttributeInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyRouterAttributeInput) SetAttribute(v string) *NiftyModifyRouterAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyModifyRouterAttributeInput) SetRouterId(v string) *NiftyModifyRouterAttributeInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyModifyRouterAttributeInput) SetRouterName(v string) *NiftyModifyRouterAttributeInput {
+	s.RouterName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyRouterAttributeInput) SetValue(v string) *NiftyModifyRouterAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyRouterAttributeOutput
@@ -14491,6 +20243,25 @@ func (s NiftyModifyRouterAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyVpnGatewayAttributeRequest
 type NiftyModifyVpnGatewayAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// Attribute is a required field
+	Attribute *string `type:"string" required:"true"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14501,6 +20272,52 @@ func (s NiftyModifyVpnGatewayAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyVpnGatewayAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyVpnGatewayAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyVpnGatewayAttributeInput"}
+	if s.Attribute == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attribute"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyModifyVpnGatewayAttributeInput) SetAgreement(v bool) *NiftyModifyVpnGatewayAttributeInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyVpnGatewayAttributeInput) SetAttribute(v string) *NiftyModifyVpnGatewayAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyModifyVpnGatewayAttributeInput) SetNiftyVpnGatewayName(v string) *NiftyModifyVpnGatewayAttributeInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyVpnGatewayAttributeInput) SetValue(v string) *NiftyModifyVpnGatewayAttributeInput {
+	s.Value = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyModifyVpnGatewayAttributeInput) SetVpnGatewayId(v string) *NiftyModifyVpnGatewayAttributeInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyVpnGatewayAttributeOutput
@@ -14522,6 +20339,23 @@ func (s NiftyModifyVpnGatewayAttributeOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyWebProxyAttributeRequest
 type NiftyModifyWebProxyAttributeInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	Attribute *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
+
+	// String
+	//
+	// Value is a required field
+	Value *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14532,6 +20366,49 @@ func (s NiftyModifyWebProxyAttributeInput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyWebProxyAttributeInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyModifyWebProxyAttributeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyModifyWebProxyAttributeInput"}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyModifyWebProxyAttributeInput) SetAgreement(v bool) *NiftyModifyWebProxyAttributeInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyWebProxyAttributeInput) SetAttribute(v string) *NiftyModifyWebProxyAttributeInput {
+	s.Attribute = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyModifyWebProxyAttributeInput) SetRouterId(v string) *NiftyModifyWebProxyAttributeInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyModifyWebProxyAttributeInput) SetRouterName(v string) *NiftyModifyWebProxyAttributeInput {
+	s.RouterName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyWebProxyAttributeInput) SetValue(v string) *NiftyModifyWebProxyAttributeInput {
+	s.Value = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyWebProxyAttributeOutput
@@ -14549,10 +20426,56 @@ func (s NiftyModifyWebProxyAttributeOutput) GoString() string {
 	return s.String()
 }
 
+// NiftyNetworkStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyNetworkStruct
+type NiftyNetworkStruct struct {
+	_ struct{} `type:"structure"`
+
+	// IpAddress
+	IpAddress *string `type:"string"`
+
+	// NetworkId
+	NetworkId *string `type:"string"`
+
+	// NetworkName
+	NetworkName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyNetworkStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyNetworkStruct) GoString() string {
+	return s.String()
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *NiftyNetworkStruct) SetIpAddress(v string) *NiftyNetworkStruct {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyNetworkStruct) SetNetworkId(v string) *NiftyNetworkStruct {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NiftyNetworkStruct) SetNetworkName(v string) *NiftyNetworkStruct {
+	s.NetworkName = &v
+	return s
+}
+
 // NiftyRebootRoutersRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootRoutersRequest
 type NiftyRebootRoutersInput struct {
 	_ struct{} `type:"structure"`
+
+	// RouterList
+	RouterList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14563,6 +20486,12 @@ func (s NiftyRebootRoutersInput) String() string {
 // GoString returns the string representation
 func (s NiftyRebootRoutersInput) GoString() string {
 	return s.String()
+}
+
+// SetRouterList sets the RouterList field's value.
+func (s *NiftyRebootRoutersInput) SetRouterList(v []*string) *NiftyRebootRoutersInput {
+	s.RouterList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootRoutersOutput
@@ -14584,6 +20513,9 @@ func (s NiftyRebootRoutersOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootVpnGatewaysRequest
 type NiftyRebootVpnGatewaysInput struct {
 	_ struct{} `type:"structure"`
+
+	// VpnGatewayList
+	VpnGatewayList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14594,6 +20526,12 @@ func (s NiftyRebootVpnGatewaysInput) String() string {
 // GoString returns the string representation
 func (s NiftyRebootVpnGatewaysInput) GoString() string {
 	return s.String()
+}
+
+// SetVpnGatewayList sets the VpnGatewayList field's value.
+func (s *NiftyRebootVpnGatewaysInput) SetVpnGatewayList(v []*string) *NiftyRebootVpnGatewaysInput {
+	s.VpnGatewayList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootVpnGatewaysOutput
@@ -14615,6 +20553,14 @@ func (s NiftyRebootVpnGatewaysOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterRoutersWithSecurityGroupRequest
 type NiftyRegisterRoutersWithSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// RouterSetList
+	RouterSetList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14625,6 +20571,31 @@ func (s NiftyRegisterRoutersWithSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyRegisterRoutersWithSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyRegisterRoutersWithSecurityGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyRegisterRoutersWithSecurityGroupInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *NiftyRegisterRoutersWithSecurityGroupInput) SetGroupName(v string) *NiftyRegisterRoutersWithSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetRouterSetList sets the RouterSetList field's value.
+func (s *NiftyRegisterRoutersWithSecurityGroupInput) SetRouterSetList(v []*string) *NiftyRegisterRoutersWithSecurityGroupInput {
+	s.RouterSetList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterRoutersWithSecurityGroupOutput
@@ -14646,6 +20617,14 @@ func (s NiftyRegisterRoutersWithSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterVpnGatewaysWithSecurityGroupRequest
 type NiftyRegisterVpnGatewaysWithSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// VpnGatewaySetList
+	VpnGatewaySetList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -14656,6 +20635,31 @@ func (s NiftyRegisterVpnGatewaysWithSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyRegisterVpnGatewaysWithSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyRegisterVpnGatewaysWithSecurityGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyRegisterVpnGatewaysWithSecurityGroupInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *NiftyRegisterVpnGatewaysWithSecurityGroupInput) SetGroupName(v string) *NiftyRegisterVpnGatewaysWithSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetVpnGatewaySetList sets the VpnGatewaySetList field's value.
+func (s *NiftyRegisterVpnGatewaysWithSecurityGroupInput) SetVpnGatewaySetList(v []*string) *NiftyRegisterVpnGatewaysWithSecurityGroupInput {
+	s.VpnGatewaySetList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterVpnGatewaysWithSecurityGroupOutput
@@ -14677,6 +20681,12 @@ func (s NiftyRegisterVpnGatewaysWithSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseRouterBackupStateRequest
 type NiftyReleaseRouterBackupStateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14687,6 +20697,18 @@ func (s NiftyReleaseRouterBackupStateInput) String() string {
 // GoString returns the string representation
 func (s NiftyReleaseRouterBackupStateInput) GoString() string {
 	return s.String()
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyReleaseRouterBackupStateInput) SetRouterId(v string) *NiftyReleaseRouterBackupStateInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyReleaseRouterBackupStateInput) SetRouterName(v string) *NiftyReleaseRouterBackupStateInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseRouterBackupStateOutput
@@ -14708,6 +20730,12 @@ func (s NiftyReleaseRouterBackupStateOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseVpnGatewayBackupStateRequest
 type NiftyReleaseVpnGatewayBackupStateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14718,6 +20746,18 @@ func (s NiftyReleaseVpnGatewayBackupStateInput) String() string {
 // GoString returns the string representation
 func (s NiftyReleaseVpnGatewayBackupStateInput) GoString() string {
 	return s.String()
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyReleaseVpnGatewayBackupStateInput) SetNiftyVpnGatewayName(v string) *NiftyReleaseVpnGatewayBackupStateInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyReleaseVpnGatewayBackupStateInput) SetVpnGatewayId(v string) *NiftyReleaseVpnGatewayBackupStateInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseVpnGatewayBackupStateOutput
@@ -14735,10 +20775,64 @@ func (s NiftyReleaseVpnGatewayBackupStateOutput) GoString() string {
 	return s.String()
 }
 
+// NiftyRemoteVpnStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRemoteVpnStruct
+type NiftyRemoteVpnStruct struct {
+	_ struct{} `type:"structure"`
+
+	// AccountName
+	AccountName *bool `type:"boolean"`
+
+	// Password
+	Password *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyRemoteVpnStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyRemoteVpnStruct) GoString() string {
+	return s.String()
+}
+
+// SetAccountName sets the AccountName field's value.
+func (s *NiftyRemoteVpnStruct) SetAccountName(v bool) *NiftyRemoteVpnStruct {
+	s.AccountName = &v
+	return s
+}
+
+// SetPassword sets the Password field's value.
+func (s *NiftyRemoteVpnStruct) SetPassword(v string) *NiftyRemoteVpnStruct {
+	s.Password = &v
+	return s
+}
+
 // NiftyReplaceDhcpConfigRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpConfigRequest
 type NiftyReplaceDhcpConfigInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// DhcpConfigId is a required field
+	DhcpConfigId *string `type:"string" required:"true"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14749,6 +20843,55 @@ func (s NiftyReplaceDhcpConfigInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceDhcpConfigInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyReplaceDhcpConfigInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyReplaceDhcpConfigInput"}
+	if s.DhcpConfigId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpConfigId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetAgreement(v bool) *NiftyReplaceDhcpConfigInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetDhcpConfigId(v string) *NiftyReplaceDhcpConfigInput {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetNetworkId(v string) *NiftyReplaceDhcpConfigInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetNetworkName(v string) *NiftyReplaceDhcpConfigInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetRouterId(v string) *NiftyReplaceDhcpConfigInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyReplaceDhcpConfigInput) SetRouterName(v string) *NiftyReplaceDhcpConfigInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpConfigOutput
@@ -14770,6 +20913,26 @@ func (s NiftyReplaceDhcpConfigOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpOptionRequest
 type NiftyReplaceDhcpOptionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// DhcpOptionsId is a required field
+	DhcpOptionsId *string `type:"string" required:"true"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14780,6 +20943,55 @@ func (s NiftyReplaceDhcpOptionInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceDhcpOptionInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyReplaceDhcpOptionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyReplaceDhcpOptionInput"}
+	if s.DhcpOptionsId == nil {
+		invalidParams.Add(request.NewErrParamRequired("DhcpOptionsId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetAgreement(v bool) *NiftyReplaceDhcpOptionInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetDhcpOptionsId sets the DhcpOptionsId field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetDhcpOptionsId(v string) *NiftyReplaceDhcpOptionInput {
+	s.DhcpOptionsId = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetNetworkId(v string) *NiftyReplaceDhcpOptionInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetNetworkName(v string) *NiftyReplaceDhcpOptionInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetRouterId(v string) *NiftyReplaceDhcpOptionInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyReplaceDhcpOptionInput) SetRouterName(v string) *NiftyReplaceDhcpOptionInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpOptionOutput
@@ -14801,6 +21013,44 @@ func (s NiftyReplaceDhcpOptionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatRuleRequest
 type NiftyReplaceNatRuleInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `type:"string"`
+
+	// DestinationStruct
+	Destination *DestinationStruct `type:"structure"`
+
+	// InboundInterfaceStruct
+	InboundInterface *InboundInterfaceStruct `type:"structure"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// NatType is a required field
+	NatType *string `type:"string" required:"true"`
+
+	// OutboundInterfaceStruct
+	OutboundInterface *OutboundInterfaceStruct `type:"structure"`
+
+	// String
+	//
+	// Protocol is a required field
+	Protocol *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RuleNumber is a required field
+	RuleNumber *string `type:"string" required:"true"`
+
+	// SourceStruct
+	Source *SourceStruct `type:"structure"`
+
+	// TranslationStruct
+	Translation *TranslationStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -14811,6 +21061,88 @@ func (s NiftyReplaceNatRuleInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceNatRuleInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyReplaceNatRuleInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyReplaceNatRuleInput"}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+	if s.NatType == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatType"))
+	}
+	if s.Protocol == nil {
+		invalidParams.Add(request.NewErrParamRequired("Protocol"))
+	}
+	if s.RuleNumber == nil {
+		invalidParams.Add(request.NewErrParamRequired("RuleNumber"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyReplaceNatRuleInput) SetDescription(v string) *NiftyReplaceNatRuleInput {
+	s.Description = &v
+	return s
+}
+
+// SetDestination sets the Destination field's value.
+func (s *NiftyReplaceNatRuleInput) SetDestination(v *DestinationStruct) *NiftyReplaceNatRuleInput {
+	s.Destination = v
+	return s
+}
+
+// SetInboundInterface sets the InboundInterface field's value.
+func (s *NiftyReplaceNatRuleInput) SetInboundInterface(v *InboundInterfaceStruct) *NiftyReplaceNatRuleInput {
+	s.InboundInterface = v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyReplaceNatRuleInput) SetNatTableId(v string) *NiftyReplaceNatRuleInput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetNatType sets the NatType field's value.
+func (s *NiftyReplaceNatRuleInput) SetNatType(v string) *NiftyReplaceNatRuleInput {
+	s.NatType = &v
+	return s
+}
+
+// SetOutboundInterface sets the OutboundInterface field's value.
+func (s *NiftyReplaceNatRuleInput) SetOutboundInterface(v *OutboundInterfaceStruct) *NiftyReplaceNatRuleInput {
+	s.OutboundInterface = v
+	return s
+}
+
+// SetProtocol sets the Protocol field's value.
+func (s *NiftyReplaceNatRuleInput) SetProtocol(v string) *NiftyReplaceNatRuleInput {
+	s.Protocol = &v
+	return s
+}
+
+// SetRuleNumber sets the RuleNumber field's value.
+func (s *NiftyReplaceNatRuleInput) SetRuleNumber(v string) *NiftyReplaceNatRuleInput {
+	s.RuleNumber = &v
+	return s
+}
+
+// SetSource sets the Source field's value.
+func (s *NiftyReplaceNatRuleInput) SetSource(v *SourceStruct) *NiftyReplaceNatRuleInput {
+	s.Source = v
+	return s
+}
+
+// SetTranslation sets the Translation field's value.
+func (s *NiftyReplaceNatRuleInput) SetTranslation(v *TranslationStruct) *NiftyReplaceNatRuleInput {
+	s.Translation = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatRuleOutput
@@ -14832,6 +21164,19 @@ func (s NiftyReplaceNatRuleOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatTableAssociationRequest
 type NiftyReplaceNatTableAssociationInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// NatTableId is a required field
+	NatTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14842,6 +21187,40 @@ func (s NiftyReplaceNatTableAssociationInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceNatTableAssociationInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyReplaceNatTableAssociationInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyReplaceNatTableAssociationInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+	if s.NatTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("NatTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceNatTableAssociationInput) SetAgreement(v bool) *NiftyReplaceNatTableAssociationInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyReplaceNatTableAssociationInput) SetAssociationId(v string) *NiftyReplaceNatTableAssociationInput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyReplaceNatTableAssociationInput) SetNatTableId(v string) *NiftyReplaceNatTableAssociationInput {
+	s.NatTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatTableAssociationOutput
@@ -14863,6 +21242,19 @@ func (s NiftyReplaceNatTableAssociationOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouteTableAssociationWithVpnGatewayRequest
 type NiftyReplaceRouteTableAssociationWithVpnGatewayInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -14873,6 +21265,40 @@ func (s NiftyReplaceRouteTableAssociationWithVpnGatewayInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceRouteTableAssociationWithVpnGatewayInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyReplaceRouteTableAssociationWithVpnGatewayInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayInput) SetAgreement(v bool) *NiftyReplaceRouteTableAssociationWithVpnGatewayInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayInput) SetAssociationId(v string) *NiftyReplaceRouteTableAssociationWithVpnGatewayInput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayInput) SetRouteTableId(v string) *NiftyReplaceRouteTableAssociationWithVpnGatewayInput {
+	s.RouteTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouteTableAssociationWithVpnGatewayOutput
@@ -14894,6 +21320,15 @@ func (s NiftyReplaceRouteTableAssociationWithVpnGatewayOutput) GoString() string
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouterLatestVersionRequest
 type NiftyReplaceRouterLatestVersionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14904,6 +21339,24 @@ func (s NiftyReplaceRouterLatestVersionInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceRouterLatestVersionInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceRouterLatestVersionInput) SetAgreement(v bool) *NiftyReplaceRouterLatestVersionInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyReplaceRouterLatestVersionInput) SetRouterId(v string) *NiftyReplaceRouterLatestVersionInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyReplaceRouterLatestVersionInput) SetRouterName(v string) *NiftyReplaceRouterLatestVersionInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouterLatestVersionOutput
@@ -14925,6 +21378,15 @@ func (s NiftyReplaceRouterLatestVersionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceVpnGatewayLatestVersionRequest
 type NiftyReplaceVpnGatewayLatestVersionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14935,6 +21397,24 @@ func (s NiftyReplaceVpnGatewayLatestVersionInput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceVpnGatewayLatestVersionInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyReplaceVpnGatewayLatestVersionInput) SetAgreement(v bool) *NiftyReplaceVpnGatewayLatestVersionInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyReplaceVpnGatewayLatestVersionInput) SetNiftyVpnGatewayName(v string) *NiftyReplaceVpnGatewayLatestVersionInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyReplaceVpnGatewayLatestVersionInput) SetVpnGatewayId(v string) *NiftyReplaceVpnGatewayLatestVersionInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceVpnGatewayLatestVersionOutput
@@ -14956,6 +21436,12 @@ func (s NiftyReplaceVpnGatewayLatestVersionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreInstanceSnapshotRequest
 type NiftyRestoreInstanceSnapshotInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	InstanceSnapshotId *string `type:"string"`
+
+	// String
+	SnapshotName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14966,6 +21452,18 @@ func (s NiftyRestoreInstanceSnapshotInput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreInstanceSnapshotInput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceSnapshotId sets the InstanceSnapshotId field's value.
+func (s *NiftyRestoreInstanceSnapshotInput) SetInstanceSnapshotId(v string) *NiftyRestoreInstanceSnapshotInput {
+	s.InstanceSnapshotId = &v
+	return s
+}
+
+// SetSnapshotName sets the SnapshotName field's value.
+func (s *NiftyRestoreInstanceSnapshotInput) SetSnapshotName(v string) *NiftyRestoreInstanceSnapshotInput {
+	s.SnapshotName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreInstanceSnapshotOutput
@@ -14987,6 +21485,12 @@ func (s NiftyRestoreInstanceSnapshotOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreRouterPreviousVersionRequest
 type NiftyRestoreRouterPreviousVersionInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -14997,6 +21501,18 @@ func (s NiftyRestoreRouterPreviousVersionInput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreRouterPreviousVersionInput) GoString() string {
 	return s.String()
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyRestoreRouterPreviousVersionInput) SetRouterId(v string) *NiftyRestoreRouterPreviousVersionInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyRestoreRouterPreviousVersionInput) SetRouterName(v string) *NiftyRestoreRouterPreviousVersionInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreRouterPreviousVersionOutput
@@ -15018,6 +21534,12 @@ func (s NiftyRestoreRouterPreviousVersionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreVpnGatewayPreviousVersionRequest
 type NiftyRestoreVpnGatewayPreviousVersionInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15028,6 +21550,18 @@ func (s NiftyRestoreVpnGatewayPreviousVersionInput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreVpnGatewayPreviousVersionInput) GoString() string {
 	return s.String()
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyRestoreVpnGatewayPreviousVersionInput) SetNiftyVpnGatewayName(v string) *NiftyRestoreVpnGatewayPreviousVersionInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyRestoreVpnGatewayPreviousVersionInput) SetVpnGatewayId(v string) *NiftyRestoreVpnGatewayPreviousVersionInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreVpnGatewayPreviousVersionOutput
@@ -15049,6 +21583,11 @@ func (s NiftyRestoreVpnGatewayPreviousVersionOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRetryImportInstanceRequest
 type NiftyRetryImportInstanceInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -15059,6 +21598,25 @@ func (s NiftyRetryImportInstanceInput) String() string {
 // GoString returns the string representation
 func (s NiftyRetryImportInstanceInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyRetryImportInstanceInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyRetryImportInstanceInput"}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *NiftyRetryImportInstanceInput) SetInstanceId(v string) *NiftyRetryImportInstanceInput {
+	s.InstanceId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRetryImportInstanceOutput
@@ -15076,10 +21634,144 @@ func (s NiftyRetryImportInstanceOutput) GoString() string {
 	return s.String()
 }
 
+// NiftyTunnelStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyTunnelStruct
+type NiftyTunnelStruct struct {
+	_ struct{} `type:"structure"`
+
+	// DestinationPort
+	DestinationPort *string `type:"string"`
+
+	// Encapsulation
+	Encapsulation *string `type:"string"`
+
+	// Mode
+	Mode *string `type:"string"`
+
+	// PeerSessionId
+	PeerSessionId *string `type:"string"`
+
+	// PeerTunnelId
+	PeerTunnelId *string `type:"string"`
+
+	// SessionId
+	SessionId *string `type:"string"`
+
+	// SourcePort
+	SourcePort *string `type:"string"`
+
+	// TunnelId
+	TunnelId *string `type:"string"`
+
+	// Type
+	Type *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyTunnelStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyTunnelStruct) GoString() string {
+	return s.String()
+}
+
+// SetDestinationPort sets the DestinationPort field's value.
+func (s *NiftyTunnelStruct) SetDestinationPort(v string) *NiftyTunnelStruct {
+	s.DestinationPort = &v
+	return s
+}
+
+// SetEncapsulation sets the Encapsulation field's value.
+func (s *NiftyTunnelStruct) SetEncapsulation(v string) *NiftyTunnelStruct {
+	s.Encapsulation = &v
+	return s
+}
+
+// SetMode sets the Mode field's value.
+func (s *NiftyTunnelStruct) SetMode(v string) *NiftyTunnelStruct {
+	s.Mode = &v
+	return s
+}
+
+// SetPeerSessionId sets the PeerSessionId field's value.
+func (s *NiftyTunnelStruct) SetPeerSessionId(v string) *NiftyTunnelStruct {
+	s.PeerSessionId = &v
+	return s
+}
+
+// SetPeerTunnelId sets the PeerTunnelId field's value.
+func (s *NiftyTunnelStruct) SetPeerTunnelId(v string) *NiftyTunnelStruct {
+	s.PeerTunnelId = &v
+	return s
+}
+
+// SetSessionId sets the SessionId field's value.
+func (s *NiftyTunnelStruct) SetSessionId(v string) *NiftyTunnelStruct {
+	s.SessionId = &v
+	return s
+}
+
+// SetSourcePort sets the SourcePort field's value.
+func (s *NiftyTunnelStruct) SetSourcePort(v string) *NiftyTunnelStruct {
+	s.SourcePort = &v
+	return s
+}
+
+// SetTunnelId sets the TunnelId field's value.
+func (s *NiftyTunnelStruct) SetTunnelId(v string) *NiftyTunnelStruct {
+	s.TunnelId = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *NiftyTunnelStruct) SetType(v string) *NiftyTunnelStruct {
+	s.Type = &v
+	return s
+}
+
 // NiftyUpdateAlarmRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAlarmRequest
 type NiftyUpdateAlarmInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AlarmCondition *string `type:"string"`
+
+	// String
+	Description *string `type:"string"`
+
+	// EmailAddressList
+	EmailAddressList []*string `type:"list"`
+
+	// String
+	//
+	// FunctionName is a required field
+	FunctionName *string `type:"string" required:"true"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
+
+	// LoadBalancerNameList
+	LoadBalancerNameList []*string `type:"list"`
+
+	// LoadBalancerPortList
+	LoadBalancerPortList []*string `type:"list"`
+
+	// PartitionList
+	PartitionList []*string `type:"list"`
+
+	// RuleList
+	//
+	// RuleList is a required field
+	RuleList []*int64 `type:"list" required:"true"`
+
+	// String
+	RuleName *string `type:"string"`
+
+	// String
+	RuleNameUpdate *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15090,6 +21782,88 @@ func (s NiftyUpdateAlarmInput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateAlarmInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyUpdateAlarmInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyUpdateAlarmInput"}
+	if s.FunctionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FunctionName"))
+	}
+	if s.RuleList == nil {
+		invalidParams.Add(request.NewErrParamRequired("RuleList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAlarmCondition sets the AlarmCondition field's value.
+func (s *NiftyUpdateAlarmInput) SetAlarmCondition(v string) *NiftyUpdateAlarmInput {
+	s.AlarmCondition = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyUpdateAlarmInput) SetDescription(v string) *NiftyUpdateAlarmInput {
+	s.Description = &v
+	return s
+}
+
+// SetEmailAddressList sets the EmailAddressList field's value.
+func (s *NiftyUpdateAlarmInput) SetEmailAddressList(v []*string) *NiftyUpdateAlarmInput {
+	s.EmailAddressList = v
+	return s
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *NiftyUpdateAlarmInput) SetFunctionName(v string) *NiftyUpdateAlarmInput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *NiftyUpdateAlarmInput) SetInstanceIdList(v []*string) *NiftyUpdateAlarmInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetLoadBalancerNameList sets the LoadBalancerNameList field's value.
+func (s *NiftyUpdateAlarmInput) SetLoadBalancerNameList(v []*string) *NiftyUpdateAlarmInput {
+	s.LoadBalancerNameList = v
+	return s
+}
+
+// SetLoadBalancerPortList sets the LoadBalancerPortList field's value.
+func (s *NiftyUpdateAlarmInput) SetLoadBalancerPortList(v []*string) *NiftyUpdateAlarmInput {
+	s.LoadBalancerPortList = v
+	return s
+}
+
+// SetPartitionList sets the PartitionList field's value.
+func (s *NiftyUpdateAlarmInput) SetPartitionList(v []*string) *NiftyUpdateAlarmInput {
+	s.PartitionList = v
+	return s
+}
+
+// SetRuleList sets the RuleList field's value.
+func (s *NiftyUpdateAlarmInput) SetRuleList(v []*int64) *NiftyUpdateAlarmInput {
+	s.RuleList = v
+	return s
+}
+
+// SetRuleName sets the RuleName field's value.
+func (s *NiftyUpdateAlarmInput) SetRuleName(v string) *NiftyUpdateAlarmInput {
+	s.RuleName = &v
+	return s
+}
+
+// SetRuleNameUpdate sets the RuleNameUpdate field's value.
+func (s *NiftyUpdateAlarmInput) SetRuleNameUpdate(v string) *NiftyUpdateAlarmInput {
+	s.RuleNameUpdate = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAlarmOutput
@@ -15111,6 +21885,66 @@ func (s NiftyUpdateAlarmOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAutoScalingGroupRequest
 type NiftyUpdateAutoScalingGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// AutoScalingGroupName is a required field
+	AutoScalingGroupName *string `type:"string" required:"true"`
+
+	// String
+	AutoScalingGroupNameUpdate *string `type:"string"`
+
+	// Integer
+	//
+	// ChangeInCapacity is a required field
+	ChangeInCapacity *int64 `type:"integer" required:"true"`
+
+	// Integer
+	DefaultCooldown *int64 `type:"integer"`
+
+	// String
+	Description *string `type:"string"`
+
+	// String
+	ImageId *string `type:"string"`
+
+	// Integer
+	InstanceLifecycleLimit *int64 `type:"integer"`
+
+	// String
+	InstanceType *string `type:"string"`
+
+	// LoadBalancersList
+	LoadBalancersList []*int64 `type:"list"`
+
+	// Integer
+	//
+	// MaxSize is a required field
+	MaxSize *int64 `type:"integer" required:"true"`
+
+	// Integer
+	//
+	// MinSize is a required field
+	MinSize *int64 `type:"integer" required:"true"`
+
+	// Integer
+	Scaleout *int64 `type:"integer"`
+
+	// String
+	//
+	// ScaleoutCondition is a required field
+	ScaleoutCondition *string `type:"string" required:"true"`
+
+	// ScalingScheduleList
+	ScalingScheduleList []*MonthStruct `type:"list"`
+
+	// ScalingTriggerList
+	//
+	// ScalingTriggerList is a required field
+	ScalingTriggerList []*int64 `type:"list" required:"true"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -15121,6 +21955,130 @@ func (s NiftyUpdateAutoScalingGroupInput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateAutoScalingGroupInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyUpdateAutoScalingGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyUpdateAutoScalingGroupInput"}
+	if s.AutoScalingGroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("AutoScalingGroupName"))
+	}
+	if s.ChangeInCapacity == nil {
+		invalidParams.Add(request.NewErrParamRequired("ChangeInCapacity"))
+	}
+	if s.MaxSize == nil {
+		invalidParams.Add(request.NewErrParamRequired("MaxSize"))
+	}
+	if s.MinSize == nil {
+		invalidParams.Add(request.NewErrParamRequired("MinSize"))
+	}
+	if s.ScaleoutCondition == nil {
+		invalidParams.Add(request.NewErrParamRequired("ScaleoutCondition"))
+	}
+	if s.ScalingTriggerList == nil {
+		invalidParams.Add(request.NewErrParamRequired("ScalingTriggerList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetAutoScalingGroupName(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.AutoScalingGroupName = &v
+	return s
+}
+
+// SetAutoScalingGroupNameUpdate sets the AutoScalingGroupNameUpdate field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetAutoScalingGroupNameUpdate(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.AutoScalingGroupNameUpdate = &v
+	return s
+}
+
+// SetChangeInCapacity sets the ChangeInCapacity field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetChangeInCapacity(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.ChangeInCapacity = &v
+	return s
+}
+
+// SetDefaultCooldown sets the DefaultCooldown field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetDefaultCooldown(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.DefaultCooldown = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetDescription(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.Description = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetImageId(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.ImageId = &v
+	return s
+}
+
+// SetInstanceLifecycleLimit sets the InstanceLifecycleLimit field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetInstanceLifecycleLimit(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.InstanceLifecycleLimit = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetInstanceType(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.InstanceType = &v
+	return s
+}
+
+// SetLoadBalancersList sets the LoadBalancersList field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetLoadBalancersList(v []*int64) *NiftyUpdateAutoScalingGroupInput {
+	s.LoadBalancersList = v
+	return s
+}
+
+// SetMaxSize sets the MaxSize field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetMaxSize(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.MaxSize = &v
+	return s
+}
+
+// SetMinSize sets the MinSize field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetMinSize(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.MinSize = &v
+	return s
+}
+
+// SetScaleout sets the Scaleout field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetScaleout(v int64) *NiftyUpdateAutoScalingGroupInput {
+	s.Scaleout = &v
+	return s
+}
+
+// SetScaleoutCondition sets the ScaleoutCondition field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetScaleoutCondition(v string) *NiftyUpdateAutoScalingGroupInput {
+	s.ScaleoutCondition = &v
+	return s
+}
+
+// SetScalingScheduleList sets the ScalingScheduleList field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetScalingScheduleList(v []*MonthStruct) *NiftyUpdateAutoScalingGroupInput {
+	s.ScalingScheduleList = v
+	return s
+}
+
+// SetScalingTriggerList sets the ScalingTriggerList field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetScalingTriggerList(v []*int64) *NiftyUpdateAutoScalingGroupInput {
+	s.ScalingTriggerList = v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *NiftyUpdateAutoScalingGroupInput) SetSecurityGroupList(v []*string) *NiftyUpdateAutoScalingGroupInput {
+	s.SecurityGroupList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAutoScalingGroupOutput
@@ -15142,6 +22100,17 @@ func (s NiftyUpdateAutoScalingGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateInstanceNetworkInterfacesRequest
 type NiftyUpdateInstanceNetworkInterfacesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// InstanceId is a required field
+	InstanceId *string `type:"string" required:"true"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
+
+	// String
+	NiftyReboot *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15152,6 +22121,37 @@ func (s NiftyUpdateInstanceNetworkInterfacesInput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateInstanceNetworkInterfacesInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *NiftyUpdateInstanceNetworkInterfacesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "NiftyUpdateInstanceNetworkInterfacesInput"}
+	if s.InstanceId == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *NiftyUpdateInstanceNetworkInterfacesInput) SetInstanceId(v string) *NiftyUpdateInstanceNetworkInterfacesInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *NiftyUpdateInstanceNetworkInterfacesInput) SetNetworkInterfaceList(v []*string) *NiftyUpdateInstanceNetworkInterfacesInput {
+	s.NetworkInterfaceList = v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *NiftyUpdateInstanceNetworkInterfacesInput) SetNiftyReboot(v string) *NiftyUpdateInstanceNetworkInterfacesInput {
+	s.NiftyReboot = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateInstanceNetworkInterfacesOutput
@@ -15173,6 +22173,21 @@ func (s NiftyUpdateInstanceNetworkInterfacesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateRouterNetworkInterfacesRequest
 type NiftyUpdateRouterNetworkInterfacesInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
+
+	// String
+	NiftyReboot *string `type:"string"`
+
+	// String
+	RouterId *string `type:"string"`
+
+	// String
+	RouterName *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15183,6 +22198,36 @@ func (s NiftyUpdateRouterNetworkInterfacesInput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateRouterNetworkInterfacesInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesInput) SetAgreement(v bool) *NiftyUpdateRouterNetworkInterfacesInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesInput) SetNetworkInterfaceList(v []*string) *NiftyUpdateRouterNetworkInterfacesInput {
+	s.NetworkInterfaceList = v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesInput) SetNiftyReboot(v string) *NiftyUpdateRouterNetworkInterfacesInput {
+	s.NiftyReboot = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesInput) SetRouterId(v string) *NiftyUpdateRouterNetworkInterfacesInput {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesInput) SetRouterName(v string) *NiftyUpdateRouterNetworkInterfacesInput {
+	s.RouterName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateRouterNetworkInterfacesOutput
@@ -15204,6 +22249,21 @@ func (s NiftyUpdateRouterNetworkInterfacesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateVpnGatewayNetworkInterfacesRequest
 type NiftyUpdateVpnGatewayNetworkInterfacesInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// NetworkInterfaceStruct
+	NetworkInterface *NetworkInterfaceStruct `type:"structure"`
+
+	// String
+	NiftyReboot *string `type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `type:"string"`
+
+	// String
+	VpnGatewayId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15214,6 +22274,36 @@ func (s NiftyUpdateVpnGatewayNetworkInterfacesInput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateVpnGatewayNetworkInterfacesInput) GoString() string {
 	return s.String()
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetAgreement(v bool) *NiftyUpdateVpnGatewayNetworkInterfacesInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetNetworkInterface sets the NetworkInterface field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetNetworkInterface(v *NetworkInterfaceStruct) *NiftyUpdateVpnGatewayNetworkInterfacesInput {
+	s.NetworkInterface = v
+	return s
+}
+
+// SetNiftyReboot sets the NiftyReboot field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetNiftyReboot(v string) *NiftyUpdateVpnGatewayNetworkInterfacesInput {
+	s.NiftyReboot = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetNiftyVpnGatewayName(v string) *NiftyUpdateVpnGatewayNetworkInterfacesInput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetVpnGatewayId(v string) *NiftyUpdateVpnGatewayNetworkInterfacesInput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateVpnGatewayNetworkInterfacesOutput
@@ -15231,10 +22321,195 @@ func (s NiftyUpdateVpnGatewayNetworkInterfacesOutput) GoString() string {
 	return s.String()
 }
 
+// OptionStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//OptionStruct
+type OptionStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NameServer
+	NameServer *string `type:"string"`
+}
+
+// String returns the string representation
+func (s OptionStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s OptionStruct) GoString() string {
+	return s.String()
+}
+
+// SetNameServer sets the NameServer field's value.
+func (s *OptionStruct) SetNameServer(v string) *OptionStruct {
+	s.NameServer = &v
+	return s
+}
+
+// OptionsStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//OptionsStruct
+type OptionsStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NiftyIpIpTunnel
+	NiftyIpIpTunnel *string `type:"string"`
+
+	// StaticRoutesOnly
+	StaticRoutesOnly *string `type:"string"`
+}
+
+// String returns the string representation
+func (s OptionsStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s OptionsStruct) GoString() string {
+	return s.String()
+}
+
+// SetNiftyIpIpTunnel sets the NiftyIpIpTunnel field's value.
+func (s *OptionsStruct) SetNiftyIpIpTunnel(v string) *OptionsStruct {
+	s.NiftyIpIpTunnel = &v
+	return s
+}
+
+// SetStaticRoutesOnly sets the StaticRoutesOnly field's value.
+func (s *OptionsStruct) SetStaticRoutesOnly(v string) *OptionsStruct {
+	s.StaticRoutesOnly = &v
+	return s
+}
+
+// OutboundInterfaceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//OutboundInterfaceStruct
+type OutboundInterfaceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NetworkId
+	NetworkId *string `type:"string"`
+
+	// NetworkName
+	NetworkName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s OutboundInterfaceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s OutboundInterfaceStruct) GoString() string {
+	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *OutboundInterfaceStruct) SetNetworkId(v string) *OutboundInterfaceStruct {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *OutboundInterfaceStruct) SetNetworkName(v string) *OutboundInterfaceStruct {
+	s.NetworkName = &v
+	return s
+}
+
+// PlacementStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PlacementStruct
+type PlacementStruct struct {
+	_ struct{} `type:"structure"`
+
+	// AvailabilityZone
+	AvailabilityZone *string `type:"string"`
+
+	// GroupName
+	GroupName *string `type:"string"`
+}
+
+// String returns the string representation
+func (s PlacementStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PlacementStruct) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *PlacementStruct) SetAvailabilityZone(v string) *PlacementStruct {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *PlacementStruct) SetGroupName(v string) *PlacementStruct {
+	s.GroupName = &v
+	return s
+}
+
+// RangeStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RangeStruct
+type RangeStruct struct {
+	_ struct{} `type:"structure"`
+
+	// All
+	All *bool `type:"boolean"`
+
+	// EndNumber
+	EndNumber *int64 `type:"integer"`
+
+	// StartNumber
+	StartNumber *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s RangeStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RangeStruct) GoString() string {
+	return s.String()
+}
+
+// SetAll sets the All field's value.
+func (s *RangeStruct) SetAll(v bool) *RangeStruct {
+	s.All = &v
+	return s
+}
+
+// SetEndNumber sets the EndNumber field's value.
+func (s *RangeStruct) SetEndNumber(v int64) *RangeStruct {
+	s.EndNumber = &v
+	return s
+}
+
+// SetStartNumber sets the StartNumber field's value.
+func (s *RangeStruct) SetStartNumber(v int64) *RangeStruct {
+	s.StartNumber = &v
+	return s
+}
+
 // RebootInstancesRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RebootInstancesRequest
 type RebootInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Force *bool `type:"boolean"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
+
+	// Boolean
+	NiftyIsBios *bool `type:"boolean"`
+
+	// TenancyList
+	TenancyList []*string `type:"list"`
+
+	// UserDataStruct
+	UserData *UserDataStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -15245,6 +22520,36 @@ func (s RebootInstancesInput) String() string {
 // GoString returns the string representation
 func (s RebootInstancesInput) GoString() string {
 	return s.String()
+}
+
+// SetForce sets the Force field's value.
+func (s *RebootInstancesInput) SetForce(v bool) *RebootInstancesInput {
+	s.Force = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *RebootInstancesInput) SetInstanceIdList(v []*string) *RebootInstancesInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetNiftyIsBios sets the NiftyIsBios field's value.
+func (s *RebootInstancesInput) SetNiftyIsBios(v bool) *RebootInstancesInput {
+	s.NiftyIsBios = &v
+	return s
+}
+
+// SetTenancyList sets the TenancyList field's value.
+func (s *RebootInstancesInput) SetTenancyList(v []*string) *RebootInstancesInput {
+	s.TenancyList = v
+	return s
+}
+
+// SetUserData sets the UserData field's value.
+func (s *RebootInstancesInput) SetUserData(v *UserDataStruct) *RebootInstancesInput {
+	s.UserData = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RebootInstancesOutput
@@ -15266,6 +22571,104 @@ func (s RebootInstancesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterCorporateInfoForCertificateRequest
 type RegisterCorporateInfoForCertificateInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	//
+	// Agreement is a required field
+	Agreement *bool `type:"boolean" required:"true"`
+
+	// String
+	//
+	// AlphabetName1 is a required field
+	AlphabetName1 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// AlphabetName2 is a required field
+	AlphabetName2 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// City is a required field
+	City *string `type:"string" required:"true"`
+
+	// String
+	//
+	// CorpGrade is a required field
+	CorpGrade *string `type:"string" required:"true"`
+
+	// String
+	//
+	// CorpName is a required field
+	CorpName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// DivisionName is a required field
+	DivisionName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// EmailAddress is a required field
+	EmailAddress *string `type:"string" required:"true"`
+
+	// String
+	//
+	// KanaName1 is a required field
+	KanaName1 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// KanaName2 is a required field
+	KanaName2 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Name1 is a required field
+	Name1 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Name2 is a required field
+	Name2 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// PhoneNumber is a required field
+	PhoneNumber *string `type:"string" required:"true"`
+
+	// String
+	//
+	// PostName is a required field
+	PostName *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Pref is a required field
+	Pref *string `type:"string" required:"true"`
+
+	// String
+	//
+	// PresidentName1 is a required field
+	PresidentName1 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// PresidentName2 is a required field
+	PresidentName2 *string `type:"string" required:"true"`
+
+	// String
+	TdbCode *string `type:"string"`
+
+	// String
+	//
+	// Zip1 is a required field
+	Zip1 *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Zip2 is a required field
+	Zip2 *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -15276,6 +22679,193 @@ func (s RegisterCorporateInfoForCertificateInput) String() string {
 // GoString returns the string representation
 func (s RegisterCorporateInfoForCertificateInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *RegisterCorporateInfoForCertificateInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "RegisterCorporateInfoForCertificateInput"}
+	if s.Agreement == nil {
+		invalidParams.Add(request.NewErrParamRequired("Agreement"))
+	}
+	if s.AlphabetName1 == nil {
+		invalidParams.Add(request.NewErrParamRequired("AlphabetName1"))
+	}
+	if s.AlphabetName2 == nil {
+		invalidParams.Add(request.NewErrParamRequired("AlphabetName2"))
+	}
+	if s.City == nil {
+		invalidParams.Add(request.NewErrParamRequired("City"))
+	}
+	if s.CorpGrade == nil {
+		invalidParams.Add(request.NewErrParamRequired("CorpGrade"))
+	}
+	if s.CorpName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CorpName"))
+	}
+	if s.DivisionName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DivisionName"))
+	}
+	if s.EmailAddress == nil {
+		invalidParams.Add(request.NewErrParamRequired("EmailAddress"))
+	}
+	if s.KanaName1 == nil {
+		invalidParams.Add(request.NewErrParamRequired("KanaName1"))
+	}
+	if s.KanaName2 == nil {
+		invalidParams.Add(request.NewErrParamRequired("KanaName2"))
+	}
+	if s.Name1 == nil {
+		invalidParams.Add(request.NewErrParamRequired("Name1"))
+	}
+	if s.Name2 == nil {
+		invalidParams.Add(request.NewErrParamRequired("Name2"))
+	}
+	if s.PhoneNumber == nil {
+		invalidParams.Add(request.NewErrParamRequired("PhoneNumber"))
+	}
+	if s.PostName == nil {
+		invalidParams.Add(request.NewErrParamRequired("PostName"))
+	}
+	if s.Pref == nil {
+		invalidParams.Add(request.NewErrParamRequired("Pref"))
+	}
+	if s.PresidentName1 == nil {
+		invalidParams.Add(request.NewErrParamRequired("PresidentName1"))
+	}
+	if s.PresidentName2 == nil {
+		invalidParams.Add(request.NewErrParamRequired("PresidentName2"))
+	}
+	if s.Zip1 == nil {
+		invalidParams.Add(request.NewErrParamRequired("Zip1"))
+	}
+	if s.Zip2 == nil {
+		invalidParams.Add(request.NewErrParamRequired("Zip2"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetAgreement(v bool) *RegisterCorporateInfoForCertificateInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAlphabetName1 sets the AlphabetName1 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetAlphabetName1(v string) *RegisterCorporateInfoForCertificateInput {
+	s.AlphabetName1 = &v
+	return s
+}
+
+// SetAlphabetName2 sets the AlphabetName2 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetAlphabetName2(v string) *RegisterCorporateInfoForCertificateInput {
+	s.AlphabetName2 = &v
+	return s
+}
+
+// SetCity sets the City field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetCity(v string) *RegisterCorporateInfoForCertificateInput {
+	s.City = &v
+	return s
+}
+
+// SetCorpGrade sets the CorpGrade field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetCorpGrade(v string) *RegisterCorporateInfoForCertificateInput {
+	s.CorpGrade = &v
+	return s
+}
+
+// SetCorpName sets the CorpName field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetCorpName(v string) *RegisterCorporateInfoForCertificateInput {
+	s.CorpName = &v
+	return s
+}
+
+// SetDivisionName sets the DivisionName field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetDivisionName(v string) *RegisterCorporateInfoForCertificateInput {
+	s.DivisionName = &v
+	return s
+}
+
+// SetEmailAddress sets the EmailAddress field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetEmailAddress(v string) *RegisterCorporateInfoForCertificateInput {
+	s.EmailAddress = &v
+	return s
+}
+
+// SetKanaName1 sets the KanaName1 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetKanaName1(v string) *RegisterCorporateInfoForCertificateInput {
+	s.KanaName1 = &v
+	return s
+}
+
+// SetKanaName2 sets the KanaName2 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetKanaName2(v string) *RegisterCorporateInfoForCertificateInput {
+	s.KanaName2 = &v
+	return s
+}
+
+// SetName1 sets the Name1 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetName1(v string) *RegisterCorporateInfoForCertificateInput {
+	s.Name1 = &v
+	return s
+}
+
+// SetName2 sets the Name2 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetName2(v string) *RegisterCorporateInfoForCertificateInput {
+	s.Name2 = &v
+	return s
+}
+
+// SetPhoneNumber sets the PhoneNumber field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetPhoneNumber(v string) *RegisterCorporateInfoForCertificateInput {
+	s.PhoneNumber = &v
+	return s
+}
+
+// SetPostName sets the PostName field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetPostName(v string) *RegisterCorporateInfoForCertificateInput {
+	s.PostName = &v
+	return s
+}
+
+// SetPref sets the Pref field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetPref(v string) *RegisterCorporateInfoForCertificateInput {
+	s.Pref = &v
+	return s
+}
+
+// SetPresidentName1 sets the PresidentName1 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetPresidentName1(v string) *RegisterCorporateInfoForCertificateInput {
+	s.PresidentName1 = &v
+	return s
+}
+
+// SetPresidentName2 sets the PresidentName2 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetPresidentName2(v string) *RegisterCorporateInfoForCertificateInput {
+	s.PresidentName2 = &v
+	return s
+}
+
+// SetTdbCode sets the TdbCode field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetTdbCode(v string) *RegisterCorporateInfoForCertificateInput {
+	s.TdbCode = &v
+	return s
+}
+
+// SetZip1 sets the Zip1 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetZip1(v string) *RegisterCorporateInfoForCertificateInput {
+	s.Zip1 = &v
+	return s
+}
+
+// SetZip2 sets the Zip2 field's value.
+func (s *RegisterCorporateInfoForCertificateInput) SetZip2(v string) *RegisterCorporateInfoForCertificateInput {
+	s.Zip2 = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterCorporateInfoForCertificateOutput
@@ -15297,6 +22887,26 @@ func (s RegisterCorporateInfoForCertificateOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithLoadBalancerRequest
 type RegisterInstancesWithLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// InstancesList
+	//
+	// InstancesList is a required field
+	InstancesList []*string `type:"list" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -15307,6 +22917,52 @@ func (s RegisterInstancesWithLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s RegisterInstancesWithLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *RegisterInstancesWithLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "RegisterInstancesWithLoadBalancerInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.InstancesList == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancesList"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *RegisterInstancesWithLoadBalancerInput) SetInstancePort(v int64) *RegisterInstancesWithLoadBalancerInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetInstancesList sets the InstancesList field's value.
+func (s *RegisterInstancesWithLoadBalancerInput) SetInstancesList(v []*string) *RegisterInstancesWithLoadBalancerInput {
+	s.InstancesList = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *RegisterInstancesWithLoadBalancerInput) SetLoadBalancerName(v string) *RegisterInstancesWithLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *RegisterInstancesWithLoadBalancerInput) SetLoadBalancerPort(v int64) *RegisterInstancesWithLoadBalancerInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithLoadBalancerOutput
@@ -15328,6 +22984,12 @@ func (s RegisterInstancesWithLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithSecurityGroupRequest
 type RegisterInstancesWithSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `type:"string"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -15338,6 +23000,18 @@ func (s RegisterInstancesWithSecurityGroupInput) String() string {
 // GoString returns the string representation
 func (s RegisterInstancesWithSecurityGroupInput) GoString() string {
 	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *RegisterInstancesWithSecurityGroupInput) SetGroupName(v string) *RegisterInstancesWithSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *RegisterInstancesWithSecurityGroupInput) SetInstanceIdList(v []*string) *RegisterInstancesWithSecurityGroupInput {
+	s.InstanceIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithSecurityGroupOutput
@@ -15359,6 +23033,14 @@ func (s RegisterInstancesWithSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterPortWithLoadBalancerRequest
 type RegisterPortWithLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// ListenersList
+	ListenersList []*string `type:"list"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -15369,6 +23051,31 @@ func (s RegisterPortWithLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s RegisterPortWithLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *RegisterPortWithLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "RegisterPortWithLoadBalancerInput"}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetListenersList sets the ListenersList field's value.
+func (s *RegisterPortWithLoadBalancerInput) SetListenersList(v []*string) *RegisterPortWithLoadBalancerInput {
+	s.ListenersList = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *RegisterPortWithLoadBalancerInput) SetLoadBalancerName(v string) *RegisterPortWithLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterPortWithLoadBalancerOutput
@@ -15390,6 +23097,15 @@ func (s RegisterPortWithLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReleaseAddressRequest
 type ReleaseAddressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AllocationId *string `type:"string"`
+
+	// String
+	PrivateIpAddress *string `type:"string"`
+
+	// String
+	PublicIp *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15400,6 +23116,24 @@ func (s ReleaseAddressInput) String() string {
 // GoString returns the string representation
 func (s ReleaseAddressInput) GoString() string {
 	return s.String()
+}
+
+// SetAllocationId sets the AllocationId field's value.
+func (s *ReleaseAddressInput) SetAllocationId(v string) *ReleaseAddressInput {
+	s.AllocationId = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *ReleaseAddressInput) SetPrivateIpAddress(v string) *ReleaseAddressInput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *ReleaseAddressInput) SetPublicIp(v string) *ReleaseAddressInput {
+	s.PublicIp = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReleaseAddressOutput
@@ -15421,6 +23155,37 @@ func (s ReleaseAddressOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteRequest
 type ReplaceRouteInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// DestinationCidrBlock is a required field
+	DestinationCidrBlock *string `type:"string" required:"true"`
+
+	// String
+	GatewayId *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	IpAddress *string `type:"string"`
+
+	// String
+	NetworkId *string `type:"string"`
+
+	// String
+	NetworkInterfaceId *string `type:"string"`
+
+	// String
+	NetworkName *string `type:"string"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
+
+	// String
+	VpcPeeringConnectionId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15431,6 +23196,76 @@ func (s ReplaceRouteInput) String() string {
 // GoString returns the string representation
 func (s ReplaceRouteInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ReplaceRouteInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ReplaceRouteInput"}
+	if s.DestinationCidrBlock == nil {
+		invalidParams.Add(request.NewErrParamRequired("DestinationCidrBlock"))
+	}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDestinationCidrBlock sets the DestinationCidrBlock field's value.
+func (s *ReplaceRouteInput) SetDestinationCidrBlock(v string) *ReplaceRouteInput {
+	s.DestinationCidrBlock = &v
+	return s
+}
+
+// SetGatewayId sets the GatewayId field's value.
+func (s *ReplaceRouteInput) SetGatewayId(v string) *ReplaceRouteInput {
+	s.GatewayId = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *ReplaceRouteInput) SetInstanceId(v string) *ReplaceRouteInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *ReplaceRouteInput) SetIpAddress(v string) *ReplaceRouteInput {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *ReplaceRouteInput) SetNetworkId(v string) *ReplaceRouteInput {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkInterfaceId sets the NetworkInterfaceId field's value.
+func (s *ReplaceRouteInput) SetNetworkInterfaceId(v string) *ReplaceRouteInput {
+	s.NetworkInterfaceId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *ReplaceRouteInput) SetNetworkName(v string) *ReplaceRouteInput {
+	s.NetworkName = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *ReplaceRouteInput) SetRouteTableId(v string) *ReplaceRouteInput {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetVpcPeeringConnectionId sets the VpcPeeringConnectionId field's value.
+func (s *ReplaceRouteInput) SetVpcPeeringConnectionId(v string) *ReplaceRouteInput {
+	s.VpcPeeringConnectionId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteOutput
@@ -15452,6 +23287,19 @@ func (s ReplaceRouteOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteTableAssociationRequest
 type ReplaceRouteTableAssociationInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// String
+	//
+	// AssociationId is a required field
+	AssociationId *string `type:"string" required:"true"`
+
+	// String
+	//
+	// RouteTableId is a required field
+	RouteTableId *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -15462,6 +23310,40 @@ func (s ReplaceRouteTableAssociationInput) String() string {
 // GoString returns the string representation
 func (s ReplaceRouteTableAssociationInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ReplaceRouteTableAssociationInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ReplaceRouteTableAssociationInput"}
+	if s.AssociationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("AssociationId"))
+	}
+	if s.RouteTableId == nil {
+		invalidParams.Add(request.NewErrParamRequired("RouteTableId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *ReplaceRouteTableAssociationInput) SetAgreement(v bool) *ReplaceRouteTableAssociationInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *ReplaceRouteTableAssociationInput) SetAssociationId(v string) *ReplaceRouteTableAssociationInput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *ReplaceRouteTableAssociationInput) SetRouteTableId(v string) *ReplaceRouteTableAssociationInput {
+	s.RouteTableId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteTableAssociationOutput
@@ -15483,6 +23365,17 @@ func (s ReplaceRouteTableAssociationOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RevokeSecurityGroupIngressRequest
 type RevokeSecurityGroupIngressInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// IpPermissionsList
+	IpPermissionsList [][]*string `type:"list"`
+
+	// String
+	UserId *string `type:"string"`
 }
 
 // String returns the string representation
@@ -15493,6 +23386,37 @@ func (s RevokeSecurityGroupIngressInput) String() string {
 // GoString returns the string representation
 func (s RevokeSecurityGroupIngressInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *RevokeSecurityGroupIngressInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "RevokeSecurityGroupIngressInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *RevokeSecurityGroupIngressInput) SetGroupName(v string) *RevokeSecurityGroupIngressInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetIpPermissionsList sets the IpPermissionsList field's value.
+func (s *RevokeSecurityGroupIngressInput) SetIpPermissionsList(v [][]*string) *RevokeSecurityGroupIngressInput {
+	s.IpPermissionsList = v
+	return s
+}
+
+// SetUserId sets the UserId field's value.
+func (s *RevokeSecurityGroupIngressInput) SetUserId(v string) *RevokeSecurityGroupIngressInput {
+	s.UserId = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RevokeSecurityGroupIngressOutput
@@ -15514,6 +23438,84 @@ func (s RevokeSecurityGroupIngressOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RunInstancesRequest
 type RunInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `type:"string"`
+
+	// String
+	AddressingType *string `type:"string"`
+
+	// String
+	Admin *string `type:"string"`
+
+	// Boolean
+	Agreement *bool `type:"boolean"`
+
+	// BlockDeviceMappingList
+	BlockDeviceMappingList []*EbsStruct `type:"list"`
+
+	// String
+	Description *string `type:"string"`
+
+	// Boolean
+	DisableApiTermination *bool `type:"boolean"`
+
+	// String
+	ImageId *string `type:"string"`
+
+	// String
+	InstanceId *string `type:"string"`
+
+	// String
+	InstanceInitiatedShutdownBehavior *string `type:"string"`
+
+	// String
+	InstanceType *string `type:"string"`
+
+	// String
+	IpType *string `type:"string"`
+
+	// String
+	KernelId *string `type:"string"`
+
+	// String
+	KeyName *string `type:"string"`
+
+	// LicenseList
+	LicenseList []*string `type:"list"`
+
+	// Integer
+	MaxCount *int64 `type:"integer"`
+
+	// Integer
+	MinCount *int64 `type:"integer"`
+
+	// MonitoringStruct
+	Monitoring *MonitoringStruct `type:"structure"`
+
+	// NetworkInterfaceList
+	NetworkInterfaceList []*string `type:"list"`
+
+	// String
+	Password *string `type:"string"`
+
+	// PlacementStruct
+	Placement *PlacementStruct `type:"structure"`
+
+	// String
+	PublicIp *string `type:"string"`
+
+	// String
+	RamdiskId *string `type:"string"`
+
+	// SecurityGroupList
+	SecurityGroupList []*string `type:"list"`
+
+	// String
+	SubnetId *string `type:"string"`
+
+	// UserDataStruct
+	UserData *UserDataStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -15524,6 +23526,162 @@ func (s RunInstancesInput) String() string {
 // GoString returns the string representation
 func (s RunInstancesInput) GoString() string {
 	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *RunInstancesInput) SetAccountingType(v string) *RunInstancesInput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAddressingType sets the AddressingType field's value.
+func (s *RunInstancesInput) SetAddressingType(v string) *RunInstancesInput {
+	s.AddressingType = &v
+	return s
+}
+
+// SetAdmin sets the Admin field's value.
+func (s *RunInstancesInput) SetAdmin(v string) *RunInstancesInput {
+	s.Admin = &v
+	return s
+}
+
+// SetAgreement sets the Agreement field's value.
+func (s *RunInstancesInput) SetAgreement(v bool) *RunInstancesInput {
+	s.Agreement = &v
+	return s
+}
+
+// SetBlockDeviceMappingList sets the BlockDeviceMappingList field's value.
+func (s *RunInstancesInput) SetBlockDeviceMappingList(v []*EbsStruct) *RunInstancesInput {
+	s.BlockDeviceMappingList = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *RunInstancesInput) SetDescription(v string) *RunInstancesInput {
+	s.Description = &v
+	return s
+}
+
+// SetDisableApiTermination sets the DisableApiTermination field's value.
+func (s *RunInstancesInput) SetDisableApiTermination(v bool) *RunInstancesInput {
+	s.DisableApiTermination = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *RunInstancesInput) SetImageId(v string) *RunInstancesInput {
+	s.ImageId = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *RunInstancesInput) SetInstanceId(v string) *RunInstancesInput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceInitiatedShutdownBehavior sets the InstanceInitiatedShutdownBehavior field's value.
+func (s *RunInstancesInput) SetInstanceInitiatedShutdownBehavior(v string) *RunInstancesInput {
+	s.InstanceInitiatedShutdownBehavior = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *RunInstancesInput) SetInstanceType(v string) *RunInstancesInput {
+	s.InstanceType = &v
+	return s
+}
+
+// SetIpType sets the IpType field's value.
+func (s *RunInstancesInput) SetIpType(v string) *RunInstancesInput {
+	s.IpType = &v
+	return s
+}
+
+// SetKernelId sets the KernelId field's value.
+func (s *RunInstancesInput) SetKernelId(v string) *RunInstancesInput {
+	s.KernelId = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *RunInstancesInput) SetKeyName(v string) *RunInstancesInput {
+	s.KeyName = &v
+	return s
+}
+
+// SetLicenseList sets the LicenseList field's value.
+func (s *RunInstancesInput) SetLicenseList(v []*string) *RunInstancesInput {
+	s.LicenseList = v
+	return s
+}
+
+// SetMaxCount sets the MaxCount field's value.
+func (s *RunInstancesInput) SetMaxCount(v int64) *RunInstancesInput {
+	s.MaxCount = &v
+	return s
+}
+
+// SetMinCount sets the MinCount field's value.
+func (s *RunInstancesInput) SetMinCount(v int64) *RunInstancesInput {
+	s.MinCount = &v
+	return s
+}
+
+// SetMonitoring sets the Monitoring field's value.
+func (s *RunInstancesInput) SetMonitoring(v *MonitoringStruct) *RunInstancesInput {
+	s.Monitoring = v
+	return s
+}
+
+// SetNetworkInterfaceList sets the NetworkInterfaceList field's value.
+func (s *RunInstancesInput) SetNetworkInterfaceList(v []*string) *RunInstancesInput {
+	s.NetworkInterfaceList = v
+	return s
+}
+
+// SetPassword sets the Password field's value.
+func (s *RunInstancesInput) SetPassword(v string) *RunInstancesInput {
+	s.Password = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *RunInstancesInput) SetPlacement(v *PlacementStruct) *RunInstancesInput {
+	s.Placement = v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *RunInstancesInput) SetPublicIp(v string) *RunInstancesInput {
+	s.PublicIp = &v
+	return s
+}
+
+// SetRamdiskId sets the RamdiskId field's value.
+func (s *RunInstancesInput) SetRamdiskId(v string) *RunInstancesInput {
+	s.RamdiskId = &v
+	return s
+}
+
+// SetSecurityGroupList sets the SecurityGroupList field's value.
+func (s *RunInstancesInput) SetSecurityGroupList(v []*string) *RunInstancesInput {
+	s.SecurityGroupList = v
+	return s
+}
+
+// SetSubnetId sets the SubnetId field's value.
+func (s *RunInstancesInput) SetSubnetId(v string) *RunInstancesInput {
+	s.SubnetId = &v
+	return s
+}
+
+// SetUserData sets the UserData field's value.
+func (s *RunInstancesInput) SetUserData(v *UserDataStruct) *RunInstancesInput {
+	s.UserData = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//RunInstancesOutput
@@ -15541,10 +23699,65 @@ func (s RunInstancesOutput) GoString() string {
 	return s.String()
 }
 
+// SessionStickinessPolicyUpdateStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SessionStickinessPolicyUpdateStruct
+type SessionStickinessPolicyUpdateStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Enable
+	Enable *bool `type:"boolean"`
+
+	// ExpirationPeriod
+	ExpirationPeriod *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s SessionStickinessPolicyUpdateStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SessionStickinessPolicyUpdateStruct) GoString() string {
+	return s.String()
+}
+
+// SetEnable sets the Enable field's value.
+func (s *SessionStickinessPolicyUpdateStruct) SetEnable(v bool) *SessionStickinessPolicyUpdateStruct {
+	s.Enable = &v
+	return s
+}
+
+// SetExpirationPeriod sets the ExpirationPeriod field's value.
+func (s *SessionStickinessPolicyUpdateStruct) SetExpirationPeriod(v int64) *SessionStickinessPolicyUpdateStruct {
+	s.ExpirationPeriod = &v
+	return s
+}
+
 // SetFilterForLoadBalancerRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//SetFilterForLoadBalancerRequest
 type SetFilterForLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	FilterType *string `type:"string"`
+
+	// IPAddressesList
+	IPAddressesList []*bool `type:"list"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
 }
 
 // String returns the string representation
@@ -15555,6 +23768,55 @@ func (s SetFilterForLoadBalancerInput) String() string {
 // GoString returns the string representation
 func (s SetFilterForLoadBalancerInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *SetFilterForLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "SetFilterForLoadBalancerInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFilterType sets the FilterType field's value.
+func (s *SetFilterForLoadBalancerInput) SetFilterType(v string) *SetFilterForLoadBalancerInput {
+	s.FilterType = &v
+	return s
+}
+
+// SetIPAddressesList sets the IPAddressesList field's value.
+func (s *SetFilterForLoadBalancerInput) SetIPAddressesList(v []*bool) *SetFilterForLoadBalancerInput {
+	s.IPAddressesList = v
+	return s
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *SetFilterForLoadBalancerInput) SetInstancePort(v int64) *SetFilterForLoadBalancerInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *SetFilterForLoadBalancerInput) SetLoadBalancerName(v string) *SetFilterForLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *SetFilterForLoadBalancerInput) SetLoadBalancerPort(v int64) *SetFilterForLoadBalancerInput {
+	s.LoadBalancerPort = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//SetFilterForLoadBalancerOutput
@@ -15572,10 +23834,98 @@ func (s SetFilterForLoadBalancerOutput) GoString() string {
 	return s.String()
 }
 
+// SorryPageUpdateStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SorryPageUpdateStruct
+type SorryPageUpdateStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Enable
+	Enable *bool `type:"boolean"`
+
+	// StatusCode
+	StatusCode *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s SorryPageUpdateStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SorryPageUpdateStruct) GoString() string {
+	return s.String()
+}
+
+// SetEnable sets the Enable field's value.
+func (s *SorryPageUpdateStruct) SetEnable(v bool) *SorryPageUpdateStruct {
+	s.Enable = &v
+	return s
+}
+
+// SetStatusCode sets the StatusCode field's value.
+func (s *SorryPageUpdateStruct) SetStatusCode(v int64) *SorryPageUpdateStruct {
+	s.StatusCode = &v
+	return s
+}
+
+// SourceStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SourceStruct
+type SourceStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Address
+	Address *string `type:"string"`
+
+	// Port
+	Port *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s SourceStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SourceStruct) GoString() string {
+	return s.String()
+}
+
+// SetAddress sets the Address field's value.
+func (s *SourceStruct) SetAddress(v string) *SourceStruct {
+	s.Address = &v
+	return s
+}
+
+// SetPort sets the Port field's value.
+func (s *SourceStruct) SetPort(v int64) *SourceStruct {
+	s.Port = &v
+	return s
+}
+
 // StartInstancesRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//StartInstancesRequest
 type StartInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// AccountingTypeList
+	AccountingTypeList []*string `type:"list"`
+
+	// InstanceIdList
+	//
+	// InstanceIdList is a required field
+	InstanceIdList []*string `type:"list" required:"true"`
+
+	// InstanceTypeList
+	InstanceTypeList []*string `type:"list"`
+
+	// Boolean
+	NiftyIsBios *bool `type:"boolean"`
+
+	// TenancyList
+	TenancyList []*string `type:"list"`
+
+	// UserDataStruct
+	UserData *UserDataStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -15586,6 +23936,55 @@ func (s StartInstancesInput) String() string {
 // GoString returns the string representation
 func (s StartInstancesInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *StartInstancesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "StartInstancesInput"}
+	if s.InstanceIdList == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceIdList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAccountingTypeList sets the AccountingTypeList field's value.
+func (s *StartInstancesInput) SetAccountingTypeList(v []*string) *StartInstancesInput {
+	s.AccountingTypeList = v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *StartInstancesInput) SetInstanceIdList(v []*string) *StartInstancesInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetInstanceTypeList sets the InstanceTypeList field's value.
+func (s *StartInstancesInput) SetInstanceTypeList(v []*string) *StartInstancesInput {
+	s.InstanceTypeList = v
+	return s
+}
+
+// SetNiftyIsBios sets the NiftyIsBios field's value.
+func (s *StartInstancesInput) SetNiftyIsBios(v bool) *StartInstancesInput {
+	s.NiftyIsBios = &v
+	return s
+}
+
+// SetTenancyList sets the TenancyList field's value.
+func (s *StartInstancesInput) SetTenancyList(v []*string) *StartInstancesInput {
+	s.TenancyList = v
+	return s
+}
+
+// SetUserData sets the UserData field's value.
+func (s *StartInstancesInput) SetUserData(v *UserDataStruct) *StartInstancesInput {
+	s.UserData = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//StartInstancesOutput
@@ -15607,6 +24006,15 @@ func (s StartInstancesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//StopInstancesRequest
 type StopInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Force *bool `type:"boolean"`
+
+	// InstanceIdList
+	InstanceIdList []*string `type:"list"`
+
+	// TenancyList
+	TenancyList []*string `type:"list"`
 }
 
 // String returns the string representation
@@ -15617,6 +24025,24 @@ func (s StopInstancesInput) String() string {
 // GoString returns the string representation
 func (s StopInstancesInput) GoString() string {
 	return s.String()
+}
+
+// SetForce sets the Force field's value.
+func (s *StopInstancesInput) SetForce(v bool) *StopInstancesInput {
+	s.Force = &v
+	return s
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *StopInstancesInput) SetInstanceIdList(v []*string) *StopInstancesInput {
+	s.InstanceIdList = v
+	return s
+}
+
+// SetTenancyList sets the TenancyList field's value.
+func (s *StopInstancesInput) SetTenancyList(v []*string) *StopInstancesInput {
+	s.TenancyList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//StopInstancesOutput
@@ -15638,6 +24064,11 @@ func (s StopInstancesOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//TerminateInstancesRequest
 type TerminateInstancesInput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceIdList
+	//
+	// InstanceIdList is a required field
+	InstanceIdList []*string `type:"list" required:"true"`
 }
 
 // String returns the string representation
@@ -15648,6 +24079,25 @@ func (s TerminateInstancesInput) String() string {
 // GoString returns the string representation
 func (s TerminateInstancesInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *TerminateInstancesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "TerminateInstancesInput"}
+	if s.InstanceIdList == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstanceIdList"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstanceIdList sets the InstanceIdList field's value.
+func (s *TerminateInstancesInput) SetInstanceIdList(v []*string) *TerminateInstancesInput {
+	s.InstanceIdList = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//TerminateInstancesOutput
@@ -15665,10 +24115,58 @@ func (s TerminateInstancesOutput) GoString() string {
 	return s.String()
 }
 
+// TranslationStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//TranslationStruct
+type TranslationStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Address
+	Address *string `type:"string"`
+
+	// Port
+	Port *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s TranslationStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s TranslationStruct) GoString() string {
+	return s.String()
+}
+
+// SetAddress sets the Address field's value.
+func (s *TranslationStruct) SetAddress(v string) *TranslationStruct {
+	s.Address = &v
+	return s
+}
+
+// SetPort sets the Port field's value.
+func (s *TranslationStruct) SetPort(v int64) *TranslationStruct {
+	s.Port = &v
+	return s
+}
+
 // UpdateLoadBalancerRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerRequest
 type UpdateLoadBalancerInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingTypeUpdate *string `type:"string"`
+
+	// ListenerUpdateStruct
+	ListenerUpdate *ListenerUpdateStruct `type:"structure"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	NetworkVolumeUpdate *int64 `type:"integer"`
 }
 
 // String returns the string representation
@@ -15681,10 +24179,68 @@ func (s UpdateLoadBalancerInput) GoString() string {
 	return s.String()
 }
 
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateLoadBalancerInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateLoadBalancerInput"}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAccountingTypeUpdate sets the AccountingTypeUpdate field's value.
+func (s *UpdateLoadBalancerInput) SetAccountingTypeUpdate(v string) *UpdateLoadBalancerInput {
+	s.AccountingTypeUpdate = &v
+	return s
+}
+
+// SetListenerUpdate sets the ListenerUpdate field's value.
+func (s *UpdateLoadBalancerInput) SetListenerUpdate(v *ListenerUpdateStruct) *UpdateLoadBalancerInput {
+	s.ListenerUpdate = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *UpdateLoadBalancerInput) SetLoadBalancerName(v string) *UpdateLoadBalancerInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetNetworkVolumeUpdate sets the NetworkVolumeUpdate field's value.
+func (s *UpdateLoadBalancerInput) SetNetworkVolumeUpdate(v int64) *UpdateLoadBalancerInput {
+	s.NetworkVolumeUpdate = &v
+	return s
+}
+
 // UpdateLoadBalancerOptionRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerOptionRequest
 type UpdateLoadBalancerOptionInput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	//
+	// InstancePort is a required field
+	InstancePort *int64 `type:"integer" required:"true"`
+
+	// String
+	//
+	// LoadBalancerName is a required field
+	LoadBalancerName *string `type:"string" required:"true"`
+
+	// Integer
+	//
+	// LoadBalancerPort is a required field
+	LoadBalancerPort *int64 `type:"integer" required:"true"`
+
+	// SessionStickinessPolicyUpdateStruct
+	SessionStickinessPolicyUpdate *SessionStickinessPolicyUpdateStruct `type:"structure"`
+
+	// SorryPageUpdateStruct
+	SorryPageUpdate *SorryPageUpdateStruct `type:"structure"`
 }
 
 // String returns the string representation
@@ -15695,6 +24251,55 @@ func (s UpdateLoadBalancerOptionInput) String() string {
 // GoString returns the string representation
 func (s UpdateLoadBalancerOptionInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateLoadBalancerOptionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateLoadBalancerOptionInput"}
+	if s.InstancePort == nil {
+		invalidParams.Add(request.NewErrParamRequired("InstancePort"))
+	}
+	if s.LoadBalancerName == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerName"))
+	}
+	if s.LoadBalancerPort == nil {
+		invalidParams.Add(request.NewErrParamRequired("LoadBalancerPort"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *UpdateLoadBalancerOptionInput) SetInstancePort(v int64) *UpdateLoadBalancerOptionInput {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *UpdateLoadBalancerOptionInput) SetLoadBalancerName(v string) *UpdateLoadBalancerOptionInput {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *UpdateLoadBalancerOptionInput) SetLoadBalancerPort(v int64) *UpdateLoadBalancerOptionInput {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// SetSessionStickinessPolicyUpdate sets the SessionStickinessPolicyUpdate field's value.
+func (s *UpdateLoadBalancerOptionInput) SetSessionStickinessPolicyUpdate(v *SessionStickinessPolicyUpdateStruct) *UpdateLoadBalancerOptionInput {
+	s.SessionStickinessPolicyUpdate = v
+	return s
+}
+
+// SetSorryPageUpdate sets the SorryPageUpdate field's value.
+func (s *UpdateLoadBalancerOptionInput) SetSorryPageUpdate(v *SorryPageUpdateStruct) *UpdateLoadBalancerOptionInput {
+	s.SorryPageUpdate = v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerOptionOutput
@@ -15731,6 +24336,29 @@ func (s UpdateLoadBalancerOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupRequest
 type UpdateSecurityGroupInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	GgroupLogFilterNetBios *bool `type:"boolean"`
+
+	// Integer
+	GgroupLogLimitUpdate *int64 `type:"integer"`
+
+	// String
+	GroupDescriptionUpdate *string `type:"string"`
+
+	// Boolean
+	GroupLogFilterBroadcast *bool `type:"boolean"`
+
+	// String
+	//
+	// GroupName is a required field
+	GroupName *string `type:"string" required:"true"`
+
+	// String
+	GroupNameUpdate *string `type:"string"`
+
+	// Integer
+	GroupRuleLimitUpdate *int64 `type:"integer"`
 }
 
 // String returns the string representation
@@ -15743,10 +24371,71 @@ func (s UpdateSecurityGroupInput) GoString() string {
 	return s.String()
 }
 
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateSecurityGroupInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateSecurityGroupInput"}
+	if s.GroupName == nil {
+		invalidParams.Add(request.NewErrParamRequired("GroupName"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetGgroupLogFilterNetBios sets the GgroupLogFilterNetBios field's value.
+func (s *UpdateSecurityGroupInput) SetGgroupLogFilterNetBios(v bool) *UpdateSecurityGroupInput {
+	s.GgroupLogFilterNetBios = &v
+	return s
+}
+
+// SetGgroupLogLimitUpdate sets the GgroupLogLimitUpdate field's value.
+func (s *UpdateSecurityGroupInput) SetGgroupLogLimitUpdate(v int64) *UpdateSecurityGroupInput {
+	s.GgroupLogLimitUpdate = &v
+	return s
+}
+
+// SetGroupDescriptionUpdate sets the GroupDescriptionUpdate field's value.
+func (s *UpdateSecurityGroupInput) SetGroupDescriptionUpdate(v string) *UpdateSecurityGroupInput {
+	s.GroupDescriptionUpdate = &v
+	return s
+}
+
+// SetGroupLogFilterBroadcast sets the GroupLogFilterBroadcast field's value.
+func (s *UpdateSecurityGroupInput) SetGroupLogFilterBroadcast(v bool) *UpdateSecurityGroupInput {
+	s.GroupLogFilterBroadcast = &v
+	return s
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *UpdateSecurityGroupInput) SetGroupName(v string) *UpdateSecurityGroupInput {
+	s.GroupName = &v
+	return s
+}
+
+// SetGroupNameUpdate sets the GroupNameUpdate field's value.
+func (s *UpdateSecurityGroupInput) SetGroupNameUpdate(v string) *UpdateSecurityGroupInput {
+	s.GroupNameUpdate = &v
+	return s
+}
+
+// SetGroupRuleLimitUpdate sets the GroupRuleLimitUpdate field's value.
+func (s *UpdateSecurityGroupInput) SetGroupRuleLimitUpdate(v int64) *UpdateSecurityGroupInput {
+	s.GroupRuleLimitUpdate = &v
+	return s
+}
+
 // UpdateSecurityGroupOptionRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupOptionRequest
 type UpdateSecurityGroupOptionInput struct {
 	_ struct{} `type:"structure"`
+
+	// CourseUpdateStruct
+	CourseUpdate *CourseUpdateStruct `type:"structure"`
+
+	// Integer
+	SecurityGroupLimitUpdate *int64 `type:"integer"`
 }
 
 // String returns the string representation
@@ -15757,6 +24446,18 @@ func (s UpdateSecurityGroupOptionInput) String() string {
 // GoString returns the string representation
 func (s UpdateSecurityGroupOptionInput) GoString() string {
 	return s.String()
+}
+
+// SetCourseUpdate sets the CourseUpdate field's value.
+func (s *UpdateSecurityGroupOptionInput) SetCourseUpdate(v *CourseUpdateStruct) *UpdateSecurityGroupOptionInput {
+	s.CourseUpdate = v
+	return s
+}
+
+// SetSecurityGroupLimitUpdate sets the SecurityGroupLimitUpdate field's value.
+func (s *UpdateSecurityGroupOptionInput) SetSecurityGroupLimitUpdate(v int64) *UpdateSecurityGroupOptionInput {
+	s.SecurityGroupLimitUpdate = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupOptionOutput
@@ -15793,6 +24494,19 @@ func (s UpdateSecurityGroupOutput) GoString() string {
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadSslCertificateRequest
 type UploadSslCertificateInput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	CA *string `type:"string"`
+
+	// String
+	//
+	// Certificate is a required field
+	Certificate *string `type:"string" required:"true"`
+
+	// String
+	//
+	// Key is a required field
+	Key *string `type:"string" required:"true"`
 }
 
 // String returns the string representation
@@ -15803,6 +24517,40 @@ func (s UploadSslCertificateInput) String() string {
 // GoString returns the string representation
 func (s UploadSslCertificateInput) GoString() string {
 	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UploadSslCertificateInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UploadSslCertificateInput"}
+	if s.Certificate == nil {
+		invalidParams.Add(request.NewErrParamRequired("Certificate"))
+	}
+	if s.Key == nil {
+		invalidParams.Add(request.NewErrParamRequired("Key"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCA sets the CA field's value.
+func (s *UploadSslCertificateInput) SetCA(v string) *UploadSslCertificateInput {
+	s.CA = &v
+	return s
+}
+
+// SetCertificate sets the Certificate field's value.
+func (s *UploadSslCertificateInput) SetCertificate(v string) *UploadSslCertificateInput {
+	s.Certificate = &v
+	return s
+}
+
+// SetKey sets the Key field's value.
+func (s *UploadSslCertificateInput) SetKey(v string) *UploadSslCertificateInput {
+	s.Key = &v
+	return s
 }
 
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadSslCertificateOutput
@@ -15818,4 +24566,54 @@ func (s UploadSslCertificateOutput) String() string {
 // GoString returns the string representation
 func (s UploadSslCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// UserDataStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UserDataStruct
+type UserDataStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Encoding
+	Encoding *string `type:"string"`
+}
+
+// String returns the string representation
+func (s UserDataStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UserDataStruct) GoString() string {
+	return s.String()
+}
+
+// SetEncoding sets the Encoding field's value.
+func (s *UserDataStruct) SetEncoding(v string) *UserDataStruct {
+	s.Encoding = &v
+	return s
+}
+
+// VolumeStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VolumeStruct
+type VolumeStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Size
+	Size *int64 `type:"integer"`
+}
+
+// String returns the string representation
+func (s VolumeStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VolumeStruct) GoString() string {
+	return s.String()
+}
+
+// SetSize sets the Size field's value.
+func (s *VolumeStruct) SetSize(v int64) *VolumeStruct {
+	s.Size = &v
+	return s
 }

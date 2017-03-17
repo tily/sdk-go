@@ -20,7 +20,15 @@ func Examplecomputing_AllocateAddress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AllocateAddressInput
+	params := &computing.AllocateAddressInput{
+		Domain:         aws.String("String"),
+		InstanceId:     aws.String("String"),
+		NiftyPrivateIp: aws.Bool(true),
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+	}
 	resp, err := svc.AllocateAddress(params)
 
 	if err != nil {
@@ -39,7 +47,15 @@ func Examplecomputing_AssociateAddress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AssociateAddressInput
+	params := &computing.AssociateAddressInput{
+		InstanceId:         aws.String("String"), // Required
+		AllocationId:       aws.String("String"),
+		AllowReassociation: aws.Bool(true),
+		NetworkInterfaceId: aws.String("String"),
+		NiftyReboot:        aws.String("String"),
+		PrivateIpAddress:   aws.String("String"),
+		PublicIp:           aws.String("String"),
+	}
 	resp, err := svc.AssociateAddress(params)
 
 	if err != nil {
@@ -58,7 +74,13 @@ func Examplecomputing_AssociateRouteTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AssociateRouteTableInput
+	params := &computing.AssociateRouteTableInput{
+		RouteTableId: aws.String("String"), // Required
+		Agreement:    aws.Bool(true),
+		RouterId:     aws.String("String"),
+		RouterName:   aws.String("String"),
+		SubnetId:     aws.String("String"),
+	}
 	resp, err := svc.AssociateRouteTable(params)
 
 	if err != nil {
@@ -77,7 +99,13 @@ func Examplecomputing_AssociateUsers() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AssociateUsersInput
+	params := &computing.AssociateUsersInput{
+		FunctionName: aws.String("String"), // Required
+		UsersList: []*string{ // Required
+			aws.String("UserId"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.AssociateUsers(params)
 
 	if err != nil {
@@ -96,7 +124,11 @@ func Examplecomputing_AttachVolume() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AttachVolumeInput
+	params := &computing.AttachVolumeInput{
+		Device:     aws.String("String"),
+		InstanceId: aws.String("String"),
+		VolumeId:   aws.String("String"),
+	}
 	resp, err := svc.AttachVolume(params)
 
 	if err != nil {
@@ -115,7 +147,17 @@ func Examplecomputing_AuthorizeSecurityGroupIngress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.AuthorizeSecurityGroupIngressInput
+	params := &computing.AuthorizeSecurityGroupIngressInput{
+		GroupName: aws.String("String"),
+		IpPermissionsList: [][]*string{
+			{ // Required
+				aws.String("CidrIp"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		UserId: aws.String("String"),
+	}
 	resp, err := svc.AuthorizeSecurityGroupIngress(params)
 
 	if err != nil {
@@ -134,7 +176,9 @@ func Examplecomputing_CancelCopyInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CancelCopyInstancesInput
+	params := &computing.CancelCopyInstancesInput{
+		InstanceId: aws.String("String"),
+	}
 	resp, err := svc.CancelCopyInstances(params)
 
 	if err != nil {
@@ -153,7 +197,9 @@ func Examplecomputing_CancelUpload() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CancelUploadInput
+	params := &computing.CancelUploadInput{
+		ConversionTaskId: aws.String("String"), // Required
+	}
 	resp, err := svc.CancelUpload(params)
 
 	if err != nil {
@@ -172,7 +218,11 @@ func Examplecomputing_ClearLoadBalancerSession() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ClearLoadBalancerSessionInput
+	params := &computing.ClearLoadBalancerSessionInput{
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+	}
 	resp, err := svc.ClearLoadBalancerSession(params)
 
 	if err != nil {
@@ -191,7 +241,32 @@ func Examplecomputing_ConfigureHealthCheck() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ConfigureHealthCheckInput
+	params := &computing.ConfigureHealthCheckInput{
+		HealthCheck: &computing.HealthCheckStruct{ // Required
+			HealthyThreshold:   aws.Int64(1),
+			Interval:           aws.Int64(1),
+			Target:             aws.String("Target"),
+			Timeout:            aws.Int64(1),
+			UnhealthyThreshold: aws.Int64(1),
+		},
+		HealthCheck: &computing.HealthCheckStruct{ // Required
+			HealthyThreshold:   aws.Int64(1),
+			Interval:           aws.Int64(1),
+			Target:             aws.String("Target"),
+			Timeout:            aws.Int64(1),
+			UnhealthyThreshold: aws.Int64(1),
+		},
+		HealthCheck: &computing.HealthCheckStruct{ // Required
+			HealthyThreshold:   aws.Int64(1),
+			Interval:           aws.Int64(1),
+			Target:             aws.String("Target"),
+			Timeout:            aws.Int64(1),
+			UnhealthyThreshold: aws.Int64(1),
+		},
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+	}
 	resp, err := svc.ConfigureHealthCheck(params)
 
 	if err != nil {
@@ -210,7 +285,32 @@ func Examplecomputing_CopyInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CopyInstancesInput
+	params := &computing.CopyInstancesInput{
+		CopyInstance: &computing.CopyInstanceStruct{ // Required
+			AccountingType: aws.String("AccountingType"),
+			InstanceName:   aws.String("InstanceName"),
+			InstanceType:   aws.String("InstanceType"),
+			IpType:         aws.String("IpType"),
+			LoadBalancersList: []*int64{
+				aws.Int64(1), // Required
+				// More values...
+			},
+			PlacementStruct: &computing.PlacementStruct{
+				AvailabilityZone: aws.String("AvailabilityZone"),
+				GroupName:        aws.String("GroupName"),
+			},
+			SecurityGroupList: []*string{
+				aws.String("String"), // Required
+				// More values...
+			},
+		},
+		InstanceId: aws.String("String"), // Required
+		CopyCount:  aws.Int64(1),
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.CopyInstances(params)
 
 	if err != nil {
@@ -229,7 +329,15 @@ func Examplecomputing_CreateCustomerGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateCustomerGatewayInput
+	params := &computing.CreateCustomerGatewayInput{
+		IpAddress: aws.String("String"), // Required
+		BgpAsn:    aws.Int64(1),
+		NiftyCustomerGatewayDescription: aws.String("String"),
+		NiftyCustomerGatewayName:        aws.String("String"),
+		NiftyLanSideCidrBlock:           aws.String("String"),
+		NiftyLanSideIpAddress:           aws.String("String"),
+		Type: aws.String("String"),
+	}
 	resp, err := svc.CreateCustomerGateway(params)
 
 	if err != nil {
@@ -248,7 +356,22 @@ func Examplecomputing_CreateDhcpOptions() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateDhcpOptionsInput
+	params := &computing.CreateDhcpOptionsInput{
+		DhcpConfigurationList: [][]*string{ // Required
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		DhcpConfigurationList: [][]*string{ // Required
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+	}
 	resp, err := svc.CreateDhcpOptions(params)
 
 	if err != nil {
@@ -267,7 +390,17 @@ func Examplecomputing_CreateImage() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateImageInput
+	params := &computing.CreateImageInput{
+		InstanceId:   aws.String("String"), // Required
+		Name:         aws.String("String"), // Required
+		Description:  aws.String("String"),
+		LeftInstance: aws.Bool(true),
+		NoReboot:     aws.Bool(true),
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+	}
 	resp, err := svc.CreateImage(params)
 
 	if err != nil {
@@ -286,7 +419,11 @@ func Examplecomputing_CreateKeyPair() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateKeyPairInput
+	params := &computing.CreateKeyPairInput{
+		KeyName:     aws.String("String"), // Required
+		Password:    aws.String("String"), // Required
+		Description: aws.String("String"),
+	}
 	resp, err := svc.CreateKeyPair(params)
 
 	if err != nil {
@@ -305,7 +442,20 @@ func Examplecomputing_CreateLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateLoadBalancerInput
+	params := &computing.CreateLoadBalancerInput{
+		LoadBalancerName: aws.String("String"), // Required
+		AccountingType:   aws.String("String"),
+		AvailabilityZonesList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		IpVersion: aws.String("String"),
+		ListenersList: []*string{
+			aws.String("BalancingType"), // Required
+			// More values...
+		},
+		NetworkVolume: aws.Int64(1),
+	}
 	resp, err := svc.CreateLoadBalancer(params)
 
 	if err != nil {
@@ -324,7 +474,17 @@ func Examplecomputing_CreateRoute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateRouteInput
+	params := &computing.CreateRouteInput{
+		DestinationCidrBlock:   aws.String("String"), // Required
+		RouteTableId:           aws.String("String"), // Required
+		GatewayId:              aws.String("String"),
+		InstanceId:             aws.String("String"),
+		IpAddress:              aws.String("String"),
+		NetworkId:              aws.String("String"),
+		NetworkInterfaceId:     aws.String("String"),
+		NetworkName:            aws.String("String"),
+		VpcPeeringConnectionId: aws.String("String"),
+	}
 	resp, err := svc.CreateRoute(params)
 
 	if err != nil {
@@ -343,7 +503,9 @@ func Examplecomputing_CreateRouteTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateRouteTableInput
+	params := &computing.CreateRouteTableInput{
+		VpcId: aws.String("String"),
+	}
 	resp, err := svc.CreateRouteTable(params)
 
 	if err != nil {
@@ -362,7 +524,14 @@ func Examplecomputing_CreateSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateSecurityGroupInput
+	params := &computing.CreateSecurityGroupInput{
+		GroupDescription: aws.String("String"),
+		GroupName:        aws.String("String"),
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+	}
 	resp, err := svc.CreateSecurityGroup(params)
 
 	if err != nil {
@@ -381,7 +550,23 @@ func Examplecomputing_CreateSslCertificate() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateSslCertificateInput
+	params := &computing.CreateSslCertificateInput{
+		ApproverEmailAddress: aws.String("String"),
+		CertAuthority:        aws.Int64(1),
+		CertInfo: &computing.CertInfoStruct{
+			CountryName:          aws.String("CountryName"),
+			EmailAddress:         aws.String("EmailAddress"),
+			LocationName:         aws.String("LocationName"),
+			OrganizationName:     aws.String("OrganizationName"),
+			OrganizationUnitName: aws.String("OrganizationUnitName"),
+			StateName:            aws.String("StateName"),
+		},
+		Count:        aws.Int64(1),
+		Fqdn:         aws.String("String"),
+		FqdnId:       aws.String("String"),
+		KeyLength:    aws.Int64(1),
+		ValidityTerm: aws.Int64(1),
+	}
 	resp, err := svc.CreateSslCertificate(params)
 
 	if err != nil {
@@ -400,7 +585,16 @@ func Examplecomputing_CreateVolume() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateVolumeInput
+	params := &computing.CreateVolumeInput{
+		AccountingType:   aws.String("String"),
+		AvailabilityZone: aws.String("String"),
+		Description:      aws.String("String"),
+		DiskType:         aws.String("String"),
+		InstanceId:       aws.String("String"),
+		Size:             aws.String("String"),
+		SnapshotId:       aws.String("String"),
+		VolumeId:         aws.String("String"),
+	}
 	resp, err := svc.CreateVolume(params)
 
 	if err != nil {
@@ -419,7 +613,43 @@ func Examplecomputing_CreateVpnConnection() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateVpnConnectionInput
+	params := &computing.CreateVpnConnectionInput{
+		Type:                     aws.String("String"), // Required
+		VpnGatewayId:             aws.String("String"), // Required
+		Agreement:                aws.Bool(true),
+		CustomerGatewayId:        aws.String("String"),
+		NiftyCustomerGatewayName: aws.String("String"),
+		NiftyIPsecConfiguration: &computing.NiftyIPsecConfigurationStruct{
+			EncryptionAlgorithm: aws.String("EncryptionAlgorithm"),
+			HashAlgorithm:       aws.String("HashAlgorithm"),
+			PreSharedKey:        aws.String("PreSharedKey"),
+		},
+		NiftyIpsecConfiguration: &computing.NiftyIpsecConfigurationStruct{
+			InternetKeyExchange: aws.String("InternetKeyExchange"),
+		},
+		NiftyRemoteVpn: &computing.NiftyRemoteVpnStruct{
+			AccountName: aws.Bool(true),
+			Password:    aws.String("Password"),
+		},
+		NiftyTunnel: &computing.NiftyTunnelStruct{
+			DestinationPort: aws.String("DestinationPort"),
+			Encapsulation:   aws.String("Encapsulation"),
+			Mode:            aws.String("Mode"),
+			PeerSessionId:   aws.String("PeerSessionId"),
+			PeerTunnelId:    aws.String("PeerTunnelId"),
+			SessionId:       aws.String("SessionId"),
+			SourcePort:      aws.String("SourcePort"),
+			TunnelId:        aws.String("TunnelId"),
+			Type:            aws.String("Type"),
+		},
+		NiftyVpnConnectionDescription: aws.String("String"),
+		NiftyVpnConnectionMtu:         aws.String("String"),
+		NiftyVpnGatewayName:           aws.String("String"),
+		Options: &computing.OptionsStruct{
+			NiftyIpIpTunnel:  aws.String("NiftyIpIpTunnel"),
+			StaticRoutesOnly: aws.String("StaticRoutesOnly"),
+		},
+	}
 	resp, err := svc.CreateVpnConnection(params)
 
 	if err != nil {
@@ -438,7 +668,27 @@ func Examplecomputing_CreateVpnGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.CreateVpnGatewayInput
+	params := &computing.CreateVpnGatewayInput{
+		AccountingType: aws.String("String"),
+		NiftyNetwork: &computing.NiftyNetworkStruct{
+			IpAddress:   aws.String("IpAddress"),
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		NiftyRedundancy:            aws.Bool(true),
+		NiftyVpnGatewayDescription: aws.String("String"),
+		NiftyVpnGatewayName:        aws.String("String"),
+		NiftyVpnGatewayType:        aws.String("String"),
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		Type: aws.String("String"),
+	}
 	resp, err := svc.CreateVpnGateway(params)
 
 	if err != nil {
@@ -457,7 +707,10 @@ func Examplecomputing_DeleteCustomerGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteCustomerGatewayInput
+	params := &computing.DeleteCustomerGatewayInput{
+		CustomerGatewayId:        aws.String("String"),
+		NiftyCustomerGatewayName: aws.String("String"),
+	}
 	resp, err := svc.DeleteCustomerGateway(params)
 
 	if err != nil {
@@ -476,7 +729,9 @@ func Examplecomputing_DeleteDhcpOptions() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteDhcpOptionsInput
+	params := &computing.DeleteDhcpOptionsInput{
+		DhcpOptionsId: aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteDhcpOptions(params)
 
 	if err != nil {
@@ -495,7 +750,9 @@ func Examplecomputing_DeleteImage() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteImageInput
+	params := &computing.DeleteImageInput{
+		ImageId: aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteImage(params)
 
 	if err != nil {
@@ -514,7 +771,9 @@ func Examplecomputing_DeleteKeyPair() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteKeyPairInput
+	params := &computing.DeleteKeyPairInput{
+		KeyName: aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteKeyPair(params)
 
 	if err != nil {
@@ -533,7 +792,11 @@ func Examplecomputing_DeleteLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteLoadBalancerInput
+	params := &computing.DeleteLoadBalancerInput{
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+	}
 	resp, err := svc.DeleteLoadBalancer(params)
 
 	if err != nil {
@@ -552,7 +815,10 @@ func Examplecomputing_DeleteRoute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteRouteInput
+	params := &computing.DeleteRouteInput{
+		DestinationCidrBlock: aws.String("String"), // Required
+		RouteTableId:         aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteRoute(params)
 
 	if err != nil {
@@ -571,7 +837,9 @@ func Examplecomputing_DeleteRouteTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteRouteTableInput
+	params := &computing.DeleteRouteTableInput{
+		RouteTableId: aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteRouteTable(params)
 
 	if err != nil {
@@ -590,7 +858,9 @@ func Examplecomputing_DeleteSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteSecurityGroupInput
+	params := &computing.DeleteSecurityGroupInput{
+		GroupName: aws.String("String"),
+	}
 	resp, err := svc.DeleteSecurityGroup(params)
 
 	if err != nil {
@@ -609,7 +879,9 @@ func Examplecomputing_DeleteSslCertificate() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteSslCertificateInput
+	params := &computing.DeleteSslCertificateInput{
+		FqdnId: aws.String("String"), // Required
+	}
 	resp, err := svc.DeleteSslCertificate(params)
 
 	if err != nil {
@@ -628,7 +900,9 @@ func Examplecomputing_DeleteVolume() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteVolumeInput
+	params := &computing.DeleteVolumeInput{
+		VolumeId: aws.String("String"),
+	}
 	resp, err := svc.DeleteVolume(params)
 
 	if err != nil {
@@ -647,7 +921,10 @@ func Examplecomputing_DeleteVpnConnection() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteVpnConnectionInput
+	params := &computing.DeleteVpnConnectionInput{
+		VpnConnectionId: aws.String("String"), // Required
+		Agreement:       aws.Bool(true),
+	}
 	resp, err := svc.DeleteVpnConnection(params)
 
 	if err != nil {
@@ -666,7 +943,10 @@ func Examplecomputing_DeleteVpnGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeleteVpnGatewayInput
+	params := &computing.DeleteVpnGatewayInput{
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.DeleteVpnGateway(params)
 
 	if err != nil {
@@ -685,7 +965,15 @@ func Examplecomputing_DeregisterInstancesFromLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeregisterInstancesFromLoadBalancerInput
+	params := &computing.DeregisterInstancesFromLoadBalancerInput{
+		InstancePort: aws.Int64(1), // Required
+		InstancesList: []*string{ // Required
+			aws.String("InstanceId"), // Required
+			// More values...
+		},
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+	}
 	resp, err := svc.DeregisterInstancesFromLoadBalancer(params)
 
 	if err != nil {
@@ -704,7 +992,13 @@ func Examplecomputing_DeregisterInstancesFromSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DeregisterInstancesFromSecurityGroupInput
+	params := &computing.DeregisterInstancesFromSecurityGroupInput{
+		GroupName: aws.String("String"),
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DeregisterInstancesFromSecurityGroup(params)
 
 	if err != nil {
@@ -723,7 +1017,12 @@ func Examplecomputing_DescribeAddresses() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeAddressesInput
+	params := &computing.DescribeAddressesInput{
+		PublicIpList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeAddresses(params)
 
 	if err != nil {
@@ -742,7 +1041,9 @@ func Examplecomputing_DescribeAssociatedUsers() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeAssociatedUsersInput
+	params := &computing.DescribeAssociatedUsersInput{
+		FunctionName: aws.String("String"), // Required
+	}
 	resp, err := svc.DescribeAssociatedUsers(params)
 
 	if err != nil {
@@ -761,7 +1062,12 @@ func Examplecomputing_DescribeAvailabilityZones() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeAvailabilityZonesInput
+	params := &computing.DescribeAvailabilityZonesInput{
+		ZoneNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeAvailabilityZones(params)
 
 	if err != nil {
@@ -780,7 +1086,23 @@ func Examplecomputing_DescribeCustomerGateways() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeCustomerGatewaysInput
+	params := &computing.DescribeCustomerGatewaysInput{
+		CustomerGatewayIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		NiftyCustomerGatewayNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeCustomerGateways(params)
 
 	if err != nil {
@@ -799,7 +1121,16 @@ func Examplecomputing_DescribeDhcpOptions() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeDhcpOptionsInput
+	params := &computing.DescribeDhcpOptionsInput{
+		DescribeDhcpOptionsResponse: aws.String("String"),
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeDhcpOptions(params)
 
 	if err != nil {
@@ -818,7 +1149,24 @@ func Examplecomputing_DescribeImages() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeImagesInput
+	params := &computing.DescribeImagesInput{
+		ExecutableByList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		ImageIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		ImageNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		OwnerList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeImages(params)
 
 	if err != nil {
@@ -837,7 +1185,10 @@ func Examplecomputing_DescribeInstanceAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeInstanceAttributeInput
+	params := &computing.DescribeInstanceAttributeInput{
+		Attribute:  aws.String("String"),
+		InstanceId: aws.String("String"),
+	}
 	resp, err := svc.DescribeInstanceAttribute(params)
 
 	if err != nil {
@@ -856,7 +1207,15 @@ func Examplecomputing_DescribeInstanceHealth() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeInstanceHealthInput
+	params := &computing.DescribeInstanceHealthInput{
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+		InstancesList: []*string{
+			aws.String("InstanceId"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeInstanceHealth(params)
 
 	if err != nil {
@@ -875,7 +1234,16 @@ func Examplecomputing_DescribeInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeInstancesInput
+	params := &computing.DescribeInstancesInput{
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		TenancyList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeInstances(params)
 
 	if err != nil {
@@ -894,7 +1262,12 @@ func Examplecomputing_DescribeKeyPairs() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeKeyPairsInput
+	params := &computing.DescribeKeyPairsInput{
+		KeyNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeKeyPairs(params)
 
 	if err != nil {
@@ -913,7 +1286,22 @@ func Examplecomputing_DescribeLoadBalancers() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeLoadBalancersInput
+	params := &computing.DescribeLoadBalancersInput{
+		LoadBalancerNames: &computing.LoadBalancerNamesStruct{
+			InstancePortList: []*int64{
+				aws.Int64(1), // Required
+				// More values...
+			},
+			LoadBalancerPortList: []*string{
+				aws.String("String"), // Required
+				// More values...
+			},
+		},
+		LoadBalancerNamesList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeLoadBalancers(params)
 
 	if err != nil {
@@ -932,7 +1320,19 @@ func Examplecomputing_DescribeRegions() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeRegionsInput
+	params := &computing.DescribeRegionsInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		RegionNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeRegions(params)
 
 	if err != nil {
@@ -970,7 +1370,19 @@ func Examplecomputing_DescribeRouteTables() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeRouteTablesInput
+	params := &computing.DescribeRouteTablesInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		RouteTableIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeRouteTables(params)
 
 	if err != nil {
@@ -989,7 +1401,15 @@ func Examplecomputing_DescribeSecurityActivities() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeSecurityActivitiesInput
+	params := &computing.DescribeSecurityActivitiesInput{
+		ActivityDate: aws.String("String"),
+		GroupName:    aws.String("String"),
+		Range: &computing.RangeStruct{
+			All:         aws.Bool(true),
+			EndNumber:   aws.Int64(1),
+			StartNumber: aws.Int64(1),
+		},
+	}
 	resp, err := svc.DescribeSecurityActivities(params)
 
 	if err != nil {
@@ -1027,7 +1447,19 @@ func Examplecomputing_DescribeSecurityGroups() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeSecurityGroupsInput
+	params := &computing.DescribeSecurityGroupsInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		GroupNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeSecurityGroups(params)
 
 	if err != nil {
@@ -1046,7 +1478,10 @@ func Examplecomputing_DescribeServiceStatus() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeServiceStatusInput
+	params := &computing.DescribeServiceStatusInput{
+		FromDate: aws.String("String"),
+		ToDate:   aws.String("String"),
+	}
 	resp, err := svc.DescribeServiceStatus(params)
 
 	if err != nil {
@@ -1065,7 +1500,10 @@ func Examplecomputing_DescribeSslCertificateAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeSslCertificateAttributeInput
+	params := &computing.DescribeSslCertificateAttributeInput{
+		FqdnId:    aws.String("String"), // Required
+		Attribute: aws.String("String"),
+	}
 	resp, err := svc.DescribeSslCertificateAttribute(params)
 
 	if err != nil {
@@ -1084,7 +1522,16 @@ func Examplecomputing_DescribeSslCertificates() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeSslCertificatesInput
+	params := &computing.DescribeSslCertificatesInput{
+		FqdnIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		FqdnList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeSslCertificates(params)
 
 	if err != nil {
@@ -1103,7 +1550,12 @@ func Examplecomputing_DescribeUploads() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeUploadsInput
+	params := &computing.DescribeUploadsInput{
+		ConversionTaskIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeUploads(params)
 
 	if err != nil {
@@ -1122,7 +1574,11 @@ func Examplecomputing_DescribeUsage() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeUsageInput
+	params := &computing.DescribeUsageInput{
+		IsCharge:  aws.Bool(true),
+		Region:    aws.String("String"),
+		YearMonth: aws.String("String"),
+	}
 	resp, err := svc.DescribeUsage(params)
 
 	if err != nil {
@@ -1141,7 +1597,14 @@ func Examplecomputing_DescribeUserActivities() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeUserActivitiesInput
+	params := &computing.DescribeUserActivitiesInput{
+		Range: &computing.RangeStruct{
+			All:         aws.Bool(true),
+			EndNumber:   aws.Int64(1),
+			StartNumber: aws.Int64(1),
+		},
+		YearMonth: aws.String("String"),
+	}
 	resp, err := svc.DescribeUserActivities(params)
 
 	if err != nil {
@@ -1160,7 +1623,12 @@ func Examplecomputing_DescribeVolumes() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeVolumesInput
+	params := &computing.DescribeVolumesInput{
+		VolumeIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeVolumes(params)
 
 	if err != nil {
@@ -1179,7 +1647,19 @@ func Examplecomputing_DescribeVpnConnections() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeVpnConnectionsInput
+	params := &computing.DescribeVpnConnectionsInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		VpnConnectionIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeVpnConnections(params)
 
 	if err != nil {
@@ -1198,7 +1678,23 @@ func Examplecomputing_DescribeVpnGateways() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DescribeVpnGatewaysInput
+	params := &computing.DescribeVpnGatewaysInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		NiftyVpnGatewayNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		VpnGatewayIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DescribeVpnGateways(params)
 
 	if err != nil {
@@ -1217,7 +1713,13 @@ func Examplecomputing_DetachVolume() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DetachVolumeInput
+	params := &computing.DetachVolumeInput{
+		VolumeId:   aws.String("String"), // Required
+		Agreement:  aws.Bool(true),
+		Device:     aws.String("String"),
+		Force:      aws.Bool(true),
+		InstanceId: aws.String("String"),
+	}
 	resp, err := svc.DetachVolume(params)
 
 	if err != nil {
@@ -1236,7 +1738,12 @@ func Examplecomputing_DisassociateAddress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DisassociateAddressInput
+	params := &computing.DisassociateAddressInput{
+		AssociationId:    aws.String("String"),
+		NiftyReboot:      aws.String("String"),
+		PrivateIpAddress: aws.String("String"),
+		PublicIp:         aws.String("String"),
+	}
 	resp, err := svc.DisassociateAddress(params)
 
 	if err != nil {
@@ -1255,7 +1762,10 @@ func Examplecomputing_DisassociateRouteTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DisassociateRouteTableInput
+	params := &computing.DisassociateRouteTableInput{
+		AssociationId: aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.DisassociateRouteTable(params)
 
 	if err != nil {
@@ -1274,7 +1784,13 @@ func Examplecomputing_DissociateUsers() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DissociateUsersInput
+	params := &computing.DissociateUsersInput{
+		FunctionName: aws.String("String"), // Required
+		UsersList: []*string{ // Required
+			aws.String("UserId"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.DissociateUsers(params)
 
 	if err != nil {
@@ -1293,7 +1809,10 @@ func Examplecomputing_DownloadSslCertificate() {
 
 	svc := computing.New(sess)
 
-	var params *computing.DownloadSslCertificateInput
+	params := &computing.DownloadSslCertificateInput{
+		FileType: aws.String("String"), // Required
+		FqdnId:   aws.String("String"), // Required
+	}
 	resp, err := svc.DownloadSslCertificate(params)
 
 	if err != nil {
@@ -1312,7 +1831,42 @@ func Examplecomputing_ImportInstance() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ImportInstanceInput
+	params := &computing.ImportInstanceInput{
+		Ovf:            aws.String("String"), // Required
+		AccountingType: aws.String("String"),
+		Architecture:   aws.String("String"),
+		Description:    aws.String("String"),
+		DiskImageList: []*computing.VolumeStruct{
+			{ // Required
+				Size: aws.Int64(1),
+			},
+			// More values...
+		},
+		InstanceId:                        aws.String("String"),
+		InstanceInitiatedShutdownBehavior: aws.String("String"),
+		InstanceType:                      aws.String("String"),
+		IpType:                            aws.String("String"),
+		Monitoring: &computing.MonitoringStruct{
+			Enabled: aws.Bool(true),
+		},
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+		Platform:         aws.String("String"),
+		PrivateIpAddress: aws.String("String"),
+		PublicIp:         aws.String("String"),
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		SubnetId: aws.String("String"),
+		UserData: aws.String("String"),
+	}
 	resp, err := svc.ImportInstance(params)
 
 	if err != nil {
@@ -1331,7 +1885,11 @@ func Examplecomputing_ImportKeyPair() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ImportKeyPairInput
+	params := &computing.ImportKeyPairInput{
+		KeyName:           aws.String("String"), // Required
+		PublicKeyMaterial: aws.String("String"), // Required
+		Description:       aws.String("String"),
+	}
 	resp, err := svc.ImportKeyPair(params)
 
 	if err != nil {
@@ -1350,7 +1908,25 @@ func Examplecomputing_ModifyImageAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ModifyImageAttributeInput
+	params := &computing.ModifyImageAttributeInput{
+		ImageId:   aws.String("String"), // Required
+		Attribute: aws.String("String"),
+		LaunchPermission: &computing.LaunchPermissionStruct{
+			AddList: []*string{
+				aws.String("Group"), // Required
+				// More values...
+			},
+			RemoveList: []*string{
+				aws.String("Group"), // Required
+				// More values...
+			},
+		},
+		ProductCodeList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		Value: aws.String("String"),
+	}
 	resp, err := svc.ModifyImageAttribute(params)
 
 	if err != nil {
@@ -1369,7 +1945,14 @@ func Examplecomputing_ModifyInstanceAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ModifyInstanceAttributeInput
+	params := &computing.ModifyInstanceAttributeInput{
+		Attribute:   aws.String("String"), // Required
+		InstanceId:  aws.String("String"), // Required
+		Value:       aws.String("String"), // Required
+		Force:       aws.Bool(true),
+		NiftyReboot: aws.String("String"),
+		Tenancy:     aws.String("String"),
+	}
 	resp, err := svc.ModifyInstanceAttribute(params)
 
 	if err != nil {
@@ -1388,7 +1971,12 @@ func Examplecomputing_ModifySslCertificateAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ModifySslCertificateAttributeInput
+	params := &computing.ModifySslCertificateAttributeInput{
+		FqdnId: aws.String("String"), // Required
+		Description: &computing.DescriptionStruct{
+			Value: aws.String("Value"),
+		},
+	}
 	resp, err := svc.ModifySslCertificateAttribute(params)
 
 	if err != nil {
@@ -1407,7 +1995,11 @@ func Examplecomputing_ModifyVolumeAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ModifyVolumeAttributeInput
+	params := &computing.ModifyVolumeAttributeInput{
+		VolumeId:  aws.String("String"), // Required
+		Attribute: aws.String("String"),
+		Value:     aws.String("String"),
+	}
 	resp, err := svc.ModifyVolumeAttribute(params)
 
 	if err != nil {
@@ -1426,7 +2018,15 @@ func Examplecomputing_NiftyAssociateImage() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyAssociateImageInput
+	params := &computing.NiftyAssociateImageInput{
+		ImageId: aws.String("String"), // Required
+		DistributionIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		IsPublic:       aws.Bool(true),
+		IsRedistribute: aws.Bool(true),
+	}
 	resp, err := svc.NiftyAssociateImage(params)
 
 	if err != nil {
@@ -1445,7 +2045,12 @@ func Examplecomputing_NiftyAssociateNatTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyAssociateNatTableInput
+	params := &computing.NiftyAssociateNatTableInput{
+		NatTableId: aws.String("String"), // Required
+		Agreement:  aws.Bool(true),
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyAssociateNatTable(params)
 
 	if err != nil {
@@ -1464,7 +2069,12 @@ func Examplecomputing_NiftyAssociateRouteTableWithVpnGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyAssociateRouteTableWithVpnGatewayInput
+	params := &computing.NiftyAssociateRouteTableWithVpnGatewayInput{
+		RouteTableId:        aws.String("String"), // Required
+		Agreement:           aws.Bool(true),
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyAssociateRouteTableWithVpnGateway(params)
 
 	if err != nil {
@@ -1483,7 +2093,41 @@ func Examplecomputing_NiftyCreateAlarm() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateAlarmInput
+	params := &computing.NiftyCreateAlarmInput{
+		EmailAddressList: []*string{ // Required
+			aws.String("String"), // Required
+			// More values...
+		},
+		FunctionName: aws.String("String"), // Required
+		RuleList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		RuleList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		AlarmCondition: aws.String("String"),
+		Description:    aws.String("String"),
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		LoadBalancerNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		LoadBalancerPortList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		PartitionList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		RuleName: aws.String("String"),
+		Zone:     aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateAlarm(params)
 
 	if err != nil {
@@ -1502,7 +2146,42 @@ func Examplecomputing_NiftyCreateAutoScalingGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateAutoScalingGroupInput
+	params := &computing.NiftyCreateAutoScalingGroupInput{
+		AutoScalingGroupName: aws.String("String"), // Required
+		ChangeInCapacity:     aws.Int64(1),         // Required
+		ImageId:              aws.String("String"), // Required
+		MaxSize:              aws.Int64(1),         // Required
+		MinSize:              aws.Int64(1),         // Required
+		ScaleoutCondition:    aws.String("String"), // Required
+		ScalingTriggerList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		ScalingTriggerList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		DefaultCooldown:        aws.Int64(1),
+		Description:            aws.String("String"),
+		InstanceLifecycleLimit: aws.Int64(1),
+		InstanceType:           aws.String("String"),
+		LoadBalancersList: []*int64{
+			aws.Int64(1), // Required
+			// More values...
+		},
+		Scaleout: aws.Int64(1),
+		ScalingScheduleList: []*computing.MonthStruct{
+			{ // Required
+				EndingMonth:   aws.String("EndingMonth"),
+				StartingMonth: aws.String("StartingMonth"),
+			},
+			// More values...
+		},
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyCreateAutoScalingGroup(params)
 
 	if err != nil {
@@ -1540,7 +2219,12 @@ func Examplecomputing_NiftyCreateDhcpIpAddressPool() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateDhcpIpAddressPoolInput
+	params := &computing.NiftyCreateDhcpIpAddressPoolInput{
+		DhcpConfigId:   aws.String("String"), // Required
+		StartIpAddress: aws.String("String"), // Required
+		StopIpAddress:  aws.String("String"), // Required
+		Description:    aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateDhcpIpAddressPool(params)
 
 	if err != nil {
@@ -1559,7 +2243,12 @@ func Examplecomputing_NiftyCreateDhcpStaticMapping() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateDhcpStaticMappingInput
+	params := &computing.NiftyCreateDhcpStaticMappingInput{
+		DhcpConfigId: aws.String("String"), // Required
+		IpAddress:    aws.String("String"), // Required
+		MacAddress:   aws.String("String"), // Required
+		Description:  aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateDhcpStaticMapping(params)
 
 	if err != nil {
@@ -1578,7 +2267,11 @@ func Examplecomputing_NiftyCreateInstanceSnapshot() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateInstanceSnapshotInput
+	params := &computing.NiftyCreateInstanceSnapshotInput{
+		InstanceId:   aws.String("String"), // Required
+		SnapshotName: aws.String("String"), // Required
+		Description:  aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateInstanceSnapshot(params)
 
 	if err != nil {
@@ -1597,7 +2290,32 @@ func Examplecomputing_NiftyCreateNatRule() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateNatRuleInput
+	params := &computing.NiftyCreateNatRuleInput{
+		NatTableId:  aws.String("String"), // Required
+		NatType:     aws.String("String"), // Required
+		Protocol:    aws.String("String"), // Required
+		RuleNumber:  aws.String("String"), // Required
+		Description: aws.String("String"),
+		Destination: &computing.DestinationStruct{
+			Port: aws.Int64(1),
+		},
+		InboundInterface: &computing.InboundInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		OutboundInterface: &computing.OutboundInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		Source: &computing.SourceStruct{
+			Address: aws.String("Address"),
+			Port:    aws.Int64(1),
+		},
+		Translation: &computing.TranslationStruct{
+			Address: aws.String("Address"),
+			Port:    aws.Int64(1),
+		},
+	}
 	resp, err := svc.NiftyCreateNatRule(params)
 
 	if err != nil {
@@ -1635,7 +2353,13 @@ func Examplecomputing_NiftyCreatePrivateLan() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreatePrivateLanInput
+	params := &computing.NiftyCreatePrivateLanInput{
+		CidrBlock:        aws.String("String"), // Required
+		AccountingType:   aws.String("String"),
+		AvailabilityZone: aws.String("String"),
+		Description:      aws.String("String"),
+		PrivateLanName:   aws.String("String"),
+	}
 	resp, err := svc.NiftyCreatePrivateLan(params)
 
 	if err != nil {
@@ -1654,7 +2378,21 @@ func Examplecomputing_NiftyCreateRouter() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateRouterInput
+	params := &computing.NiftyCreateRouterInput{
+		AccountingType:   aws.String("String"),
+		AvailabilityZone: aws.String("String"),
+		Description:      aws.String("String"),
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+		RouterName: aws.String("String"),
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		Type: aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateRouter(params)
 
 	if err != nil {
@@ -1673,7 +2411,24 @@ func Examplecomputing_NiftyCreateWebProxy() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyCreateWebProxyInput
+	params := &computing.NiftyCreateWebProxyInput{
+		ListenPort: aws.String("String"), // Required
+		Agreement:  aws.Bool(true),
+		BypassInterface: &computing.BypassInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		Description: aws.String("String"),
+		ListenInterface: &computing.ListenInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		Option: &computing.OptionStruct{
+			NameServer: aws.String("NameServer"),
+		},
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyCreateWebProxy(params)
 
 	if err != nil {
@@ -1692,7 +2447,10 @@ func Examplecomputing_NiftyDeleteAlarm() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteAlarmInput
+	params := &computing.NiftyDeleteAlarmInput{
+		FunctionName: aws.String("String"),
+		RuleName:     aws.String("String"),
+	}
 	resp, err := svc.NiftyDeleteAlarm(params)
 
 	if err != nil {
@@ -1711,7 +2469,9 @@ func Examplecomputing_NiftyDeleteAutoScalingGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteAutoScalingGroupInput
+	params := &computing.NiftyDeleteAutoScalingGroupInput{
+		AutoScalingGroupName: aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteAutoScalingGroup(params)
 
 	if err != nil {
@@ -1730,7 +2490,9 @@ func Examplecomputing_NiftyDeleteDhcpConfig() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteDhcpConfigInput
+	params := &computing.NiftyDeleteDhcpConfigInput{
+		DhcpConfigId: aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteDhcpConfig(params)
 
 	if err != nil {
@@ -1749,7 +2511,11 @@ func Examplecomputing_NiftyDeleteDhcpIpAddressPool() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteDhcpIpAddressPoolInput
+	params := &computing.NiftyDeleteDhcpIpAddressPoolInput{
+		DhcpConfigId:   aws.String("String"), // Required
+		StartIpAddress: aws.String("String"), // Required
+		StopIpAddress:  aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteDhcpIpAddressPool(params)
 
 	if err != nil {
@@ -1768,7 +2534,11 @@ func Examplecomputing_NiftyDeleteDhcpStaticMapping() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteDhcpStaticMappingInput
+	params := &computing.NiftyDeleteDhcpStaticMappingInput{
+		DhcpConfigId: aws.String("String"), // Required
+		IpAddress:    aws.String("String"), // Required
+		MacAddress:   aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteDhcpStaticMapping(params)
 
 	if err != nil {
@@ -1787,7 +2557,16 @@ func Examplecomputing_NiftyDeleteInstanceSnapshot() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteInstanceSnapshotInput
+	params := &computing.NiftyDeleteInstanceSnapshotInput{
+		InstanceSnapshotIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		SnapshotNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDeleteInstanceSnapshot(params)
 
 	if err != nil {
@@ -1806,7 +2585,11 @@ func Examplecomputing_NiftyDeleteNatRule() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteNatRuleInput
+	params := &computing.NiftyDeleteNatRuleInput{
+		NatTableId: aws.String("String"), // Required
+		NatType:    aws.String("String"), // Required
+		RuleNumber: aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteNatRule(params)
 
 	if err != nil {
@@ -1825,7 +2608,9 @@ func Examplecomputing_NiftyDeleteNatTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteNatTableInput
+	params := &computing.NiftyDeleteNatTableInput{
+		NatTableId: aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyDeleteNatTable(params)
 
 	if err != nil {
@@ -1844,7 +2629,10 @@ func Examplecomputing_NiftyDeletePrivateLan() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeletePrivateLanInput
+	params := &computing.NiftyDeletePrivateLanInput{
+		NetworkId:      aws.String("String"),
+		PrivateLanName: aws.String("String"),
+	}
 	resp, err := svc.NiftyDeletePrivateLan(params)
 
 	if err != nil {
@@ -1863,7 +2651,10 @@ func Examplecomputing_NiftyDeleteRouter() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteRouterInput
+	params := &computing.NiftyDeleteRouterInput{
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyDeleteRouter(params)
 
 	if err != nil {
@@ -1882,7 +2673,11 @@ func Examplecomputing_NiftyDeleteWebProxy() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeleteWebProxyInput
+	params := &computing.NiftyDeleteWebProxyInput{
+		Agreement:  aws.Bool(true),
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyDeleteWebProxy(params)
 
 	if err != nil {
@@ -1901,7 +2696,13 @@ func Examplecomputing_NiftyDeregisterRoutersFromSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeregisterRoutersFromSecurityGroupInput
+	params := &computing.NiftyDeregisterRoutersFromSecurityGroupInput{
+		GroupName: aws.String("String"), // Required
+		RouterSetList: []*string{
+			aws.String("RouterName"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDeregisterRoutersFromSecurityGroup(params)
 
 	if err != nil {
@@ -1920,7 +2721,13 @@ func Examplecomputing_NiftyDeregisterVpnGatewaysFromSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput
+	params := &computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput{
+		GroupName: aws.String("String"), // Required
+		RouterSetList: []*string{
+			aws.String("RouterName"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDeregisterVpnGatewaysFromSecurityGroup(params)
 
 	if err != nil {
@@ -1939,7 +2746,12 @@ func Examplecomputing_NiftyDescribeAlarmHistory() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeAlarmHistoryInput
+	params := &computing.NiftyDescribeAlarmHistoryInput{
+		RuleList: []*int64{
+			aws.Int64(1), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeAlarmHistory(params)
 
 	if err != nil {
@@ -1958,7 +2770,12 @@ func Examplecomputing_NiftyDescribeAlarmRulesActivities() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeAlarmRulesActivitiesInput
+	params := &computing.NiftyDescribeAlarmRulesActivitiesInput{
+		RuleList: []*int64{
+			aws.Int64(1), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeAlarmRulesActivities(params)
 
 	if err != nil {
@@ -1977,7 +2794,12 @@ func Examplecomputing_NiftyDescribeAlarms() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeAlarmsInput
+	params := &computing.NiftyDescribeAlarmsInput{
+		RuleList: []*int64{
+			aws.Int64(1), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeAlarms(params)
 
 	if err != nil {
@@ -1996,7 +2818,12 @@ func Examplecomputing_NiftyDescribeAlarmsPartitions() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeAlarmsPartitionsInput
+	params := &computing.NiftyDescribeAlarmsPartitionsInput{
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeAlarmsPartitions(params)
 
 	if err != nil {
@@ -2015,7 +2842,12 @@ func Examplecomputing_NiftyDescribeAutoScalingGroups() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeAutoScalingGroupsInput
+	params := &computing.NiftyDescribeAutoScalingGroupsInput{
+		AutoScalingGroupNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeAutoScalingGroups(params)
 
 	if err != nil {
@@ -2053,7 +2885,16 @@ func Examplecomputing_NiftyDescribeDhcpConfigs() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeDhcpConfigsInput
+	params := &computing.NiftyDescribeDhcpConfigsInput{
+		DhcpConfigId: aws.String("String"),
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeDhcpConfigs(params)
 
 	if err != nil {
@@ -2072,7 +2913,10 @@ func Examplecomputing_NiftyDescribeDhcpStatus() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeDhcpStatusInput
+	params := &computing.NiftyDescribeDhcpStatusInput{
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyDescribeDhcpStatus(params)
 
 	if err != nil {
@@ -2091,7 +2935,16 @@ func Examplecomputing_NiftyDescribeInstanceSnapshots() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeInstanceSnapshotsInput
+	params := &computing.NiftyDescribeInstanceSnapshotsInput{
+		InstanceSnapshotIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		SnapshotNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeInstanceSnapshots(params)
 
 	if err != nil {
@@ -2110,7 +2963,19 @@ func Examplecomputing_NiftyDescribeNatTables() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeNatTablesInput
+	params := &computing.NiftyDescribeNatTablesInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		NatTableIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeNatTables(params)
 
 	if err != nil {
@@ -2129,7 +2994,20 @@ func Examplecomputing_NiftyDescribePerformanceChart() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribePerformanceChartInput
+	params := &computing.NiftyDescribePerformanceChartInput{
+		FunctionName: aws.String("String"), // Required
+		ResourceNameList: []*string{ // Required
+			aws.String("String"), // Required
+			// More values...
+		},
+		DataTypeList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		FromDate:  aws.String("String"),
+		ToDate:    aws.String("String"),
+		ValueType: aws.String("String"),
+	}
 	resp, err := svc.NiftyDescribePerformanceChart(params)
 
 	if err != nil {
@@ -2148,7 +3026,23 @@ func Examplecomputing_NiftyDescribePrivateLans() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribePrivateLansInput
+	params := &computing.NiftyDescribePrivateLansInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		NetworkIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		PrivateLanNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribePrivateLans(params)
 
 	if err != nil {
@@ -2167,7 +3061,23 @@ func Examplecomputing_NiftyDescribeRouters() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeRoutersInput
+	params := &computing.NiftyDescribeRoutersInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		RouterIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		RouterNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeRouters(params)
 
 	if err != nil {
@@ -2186,7 +3096,16 @@ func Examplecomputing_NiftyDescribeScalingActivities() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeScalingActivitiesInput
+	params := &computing.NiftyDescribeScalingActivitiesInput{
+		AutoScalingGroupName: aws.String("String"), // Required
+		ActivityDateFrom:     aws.String("String"),
+		ActivityDateTo:       aws.String("String"),
+		Range: &computing.RangeStruct{
+			All:         aws.Bool(true),
+			EndNumber:   aws.Int64(1),
+			StartNumber: aws.Int64(1),
+		},
+	}
 	resp, err := svc.NiftyDescribeScalingActivities(params)
 
 	if err != nil {
@@ -2205,7 +3124,10 @@ func Examplecomputing_NiftyDescribeVpnGatewayActivities() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeVpnGatewayActivitiesInput
+	params := &computing.NiftyDescribeVpnGatewayActivitiesInput{
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyDescribeVpnGatewayActivities(params)
 
 	if err != nil {
@@ -2224,7 +3146,23 @@ func Examplecomputing_NiftyDescribeWebProxies() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDescribeWebProxiesInput
+	params := &computing.NiftyDescribeWebProxiesInput{
+		FilterList: [][]*string{
+			{ // Required
+				aws.String("String"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		RouterIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		RouterNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyDescribeWebProxies(params)
 
 	if err != nil {
@@ -2243,7 +3181,13 @@ func Examplecomputing_NiftyDisableDhcp() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDisableDhcpInput
+	params := &computing.NiftyDisableDhcpInput{
+		Agreement:   aws.Bool(true),
+		NetworkId:   aws.String("String"),
+		NetworkName: aws.String("String"),
+		RouterId:    aws.String("String"),
+		RouterName:  aws.String("String"),
+	}
 	resp, err := svc.NiftyDisableDhcp(params)
 
 	if err != nil {
@@ -2262,7 +3206,10 @@ func Examplecomputing_NiftyDisassociateNatTable() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDisassociateNatTableInput
+	params := &computing.NiftyDisassociateNatTableInput{
+		AssociationId: aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.NiftyDisassociateNatTable(params)
 
 	if err != nil {
@@ -2281,7 +3228,10 @@ func Examplecomputing_NiftyDisassociateRouteTableFromVpnGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyDisassociateRouteTableFromVpnGatewayInput
+	params := &computing.NiftyDisassociateRouteTableFromVpnGatewayInput{
+		AssociationId: aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.NiftyDisassociateRouteTableFromVpnGateway(params)
 
 	if err != nil {
@@ -2300,7 +3250,15 @@ func Examplecomputing_NiftyEnableDhcp() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyEnableDhcpInput
+	params := &computing.NiftyEnableDhcpInput{
+		Agreement:     aws.Bool(true),
+		DhcpConfigId:  aws.String("String"),
+		DhcpOptionsId: aws.String("String"),
+		NetworkId:     aws.String("String"),
+		NetworkName:   aws.String("String"),
+		RouterId:      aws.String("String"),
+		RouterName:    aws.String("String"),
+	}
 	resp, err := svc.NiftyEnableDhcp(params)
 
 	if err != nil {
@@ -2319,7 +3277,12 @@ func Examplecomputing_NiftyModifyAddressAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyAddressAttributeInput
+	params := &computing.NiftyModifyAddressAttributeInput{
+		Attribute:        aws.String("String"), // Required
+		Value:            aws.String("String"), // Required
+		PrivateIpAddress: aws.String("String"),
+		PublicIp:         aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyAddressAttribute(params)
 
 	if err != nil {
@@ -2338,7 +3301,12 @@ func Examplecomputing_NiftyModifyCustomerGatewayAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyCustomerGatewayAttributeInput
+	params := &computing.NiftyModifyCustomerGatewayAttributeInput{
+		Attribute:                aws.String("String"), // Required
+		Value:                    aws.String("String"), // Required
+		CustomerGatewayId:        aws.String("String"),
+		NiftyCustomerGatewayName: aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyCustomerGatewayAttribute(params)
 
 	if err != nil {
@@ -2357,7 +3325,12 @@ func Examplecomputing_NiftyModifyInstanceSnapshotAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyInstanceSnapshotAttributeInput
+	params := &computing.NiftyModifyInstanceSnapshotAttributeInput{
+		Attribute:          aws.String("String"), // Required
+		Value:              aws.String("String"), // Required
+		InstanceSnapshotId: aws.String("String"),
+		SnapshotName:       aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyInstanceSnapshotAttribute(params)
 
 	if err != nil {
@@ -2376,7 +3349,11 @@ func Examplecomputing_NiftyModifyKeyPairAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyKeyPairAttributeInput
+	params := &computing.NiftyModifyKeyPairAttributeInput{
+		Attribute: aws.String("String"), // Required
+		KeyName:   aws.String("String"), // Required
+		Value:     aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyModifyKeyPairAttribute(params)
 
 	if err != nil {
@@ -2395,7 +3372,12 @@ func Examplecomputing_NiftyModifyPrivateLanAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyPrivateLanAttributeInput
+	params := &computing.NiftyModifyPrivateLanAttributeInput{
+		Attribute:      aws.String("String"), // Required
+		Value:          aws.String("String"), // Required
+		NetworkId:      aws.String("String"),
+		PrivateLanName: aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyPrivateLanAttribute(params)
 
 	if err != nil {
@@ -2414,7 +3396,13 @@ func Examplecomputing_NiftyModifyRouterAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyRouterAttributeInput
+	params := &computing.NiftyModifyRouterAttributeInput{
+		Attribute:  aws.String("String"), // Required
+		Value:      aws.String("String"), // Required
+		Agreement:  aws.Bool(true),
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyRouterAttribute(params)
 
 	if err != nil {
@@ -2433,7 +3421,13 @@ func Examplecomputing_NiftyModifyVpnGatewayAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyVpnGatewayAttributeInput
+	params := &computing.NiftyModifyVpnGatewayAttributeInput{
+		Attribute:           aws.String("String"), // Required
+		Value:               aws.String("String"), // Required
+		Agreement:           aws.Bool(true),
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyVpnGatewayAttribute(params)
 
 	if err != nil {
@@ -2452,7 +3446,13 @@ func Examplecomputing_NiftyModifyWebProxyAttribute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyModifyWebProxyAttributeInput
+	params := &computing.NiftyModifyWebProxyAttributeInput{
+		Value:      aws.String("String"), // Required
+		Agreement:  aws.Bool(true),
+		Attribute:  aws.String("String"),
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyModifyWebProxyAttribute(params)
 
 	if err != nil {
@@ -2471,7 +3471,12 @@ func Examplecomputing_NiftyRebootRouters() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRebootRoutersInput
+	params := &computing.NiftyRebootRoutersInput{
+		RouterList: []*string{
+			aws.String("NiftyReboot"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyRebootRouters(params)
 
 	if err != nil {
@@ -2490,7 +3495,12 @@ func Examplecomputing_NiftyRebootVpnGateways() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRebootVpnGatewaysInput
+	params := &computing.NiftyRebootVpnGatewaysInput{
+		VpnGatewayList: []*string{
+			aws.String("NiftyReboot"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyRebootVpnGateways(params)
 
 	if err != nil {
@@ -2509,7 +3519,13 @@ func Examplecomputing_NiftyRegisterRoutersWithSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRegisterRoutersWithSecurityGroupInput
+	params := &computing.NiftyRegisterRoutersWithSecurityGroupInput{
+		GroupName: aws.String("String"), // Required
+		RouterSetList: []*string{
+			aws.String("RouterName"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyRegisterRoutersWithSecurityGroup(params)
 
 	if err != nil {
@@ -2528,7 +3544,13 @@ func Examplecomputing_NiftyRegisterVpnGatewaysWithSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput
+	params := &computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput{
+		GroupName: aws.String("String"), // Required
+		VpnGatewaySetList: []*string{
+			aws.String("NiftyVpnGatewayName"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyRegisterVpnGatewaysWithSecurityGroup(params)
 
 	if err != nil {
@@ -2547,7 +3569,10 @@ func Examplecomputing_NiftyReleaseRouterBackupState() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReleaseRouterBackupStateInput
+	params := &computing.NiftyReleaseRouterBackupStateInput{
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyReleaseRouterBackupState(params)
 
 	if err != nil {
@@ -2566,7 +3591,10 @@ func Examplecomputing_NiftyReleaseVpnGatewayBackupState() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReleaseVpnGatewayBackupStateInput
+	params := &computing.NiftyReleaseVpnGatewayBackupStateInput{
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyReleaseVpnGatewayBackupState(params)
 
 	if err != nil {
@@ -2585,7 +3613,14 @@ func Examplecomputing_NiftyReplaceDhcpConfig() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceDhcpConfigInput
+	params := &computing.NiftyReplaceDhcpConfigInput{
+		DhcpConfigId: aws.String("String"), // Required
+		Agreement:    aws.Bool(true),
+		NetworkId:    aws.String("String"),
+		NetworkName:  aws.String("String"),
+		RouterId:     aws.String("String"),
+		RouterName:   aws.String("String"),
+	}
 	resp, err := svc.NiftyReplaceDhcpConfig(params)
 
 	if err != nil {
@@ -2604,7 +3639,14 @@ func Examplecomputing_NiftyReplaceDhcpOption() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceDhcpOptionInput
+	params := &computing.NiftyReplaceDhcpOptionInput{
+		DhcpOptionsId: aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+		NetworkId:     aws.String("String"),
+		NetworkName:   aws.String("String"),
+		RouterId:      aws.String("String"),
+		RouterName:    aws.String("String"),
+	}
 	resp, err := svc.NiftyReplaceDhcpOption(params)
 
 	if err != nil {
@@ -2623,7 +3665,32 @@ func Examplecomputing_NiftyReplaceNatRule() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceNatRuleInput
+	params := &computing.NiftyReplaceNatRuleInput{
+		NatTableId:  aws.String("String"), // Required
+		NatType:     aws.String("String"), // Required
+		Protocol:    aws.String("String"), // Required
+		RuleNumber:  aws.String("String"), // Required
+		Description: aws.String("String"),
+		Destination: &computing.DestinationStruct{
+			Port: aws.Int64(1),
+		},
+		InboundInterface: &computing.InboundInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		OutboundInterface: &computing.OutboundInterfaceStruct{
+			NetworkId:   aws.String("NetworkId"),
+			NetworkName: aws.String("NetworkName"),
+		},
+		Source: &computing.SourceStruct{
+			Address: aws.String("Address"),
+			Port:    aws.Int64(1),
+		},
+		Translation: &computing.TranslationStruct{
+			Address: aws.String("Address"),
+			Port:    aws.Int64(1),
+		},
+	}
 	resp, err := svc.NiftyReplaceNatRule(params)
 
 	if err != nil {
@@ -2642,7 +3709,11 @@ func Examplecomputing_NiftyReplaceNatTableAssociation() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceNatTableAssociationInput
+	params := &computing.NiftyReplaceNatTableAssociationInput{
+		AssociationId: aws.String("String"), // Required
+		NatTableId:    aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.NiftyReplaceNatTableAssociation(params)
 
 	if err != nil {
@@ -2661,7 +3732,11 @@ func Examplecomputing_NiftyReplaceRouteTableAssociationWithVpnGateway() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput
+	params := &computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput{
+		AssociationId: aws.String("String"), // Required
+		RouteTableId:  aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.NiftyReplaceRouteTableAssociationWithVpnGateway(params)
 
 	if err != nil {
@@ -2680,7 +3755,11 @@ func Examplecomputing_NiftyReplaceRouterLatestVersion() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceRouterLatestVersionInput
+	params := &computing.NiftyReplaceRouterLatestVersionInput{
+		Agreement:  aws.Bool(true),
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyReplaceRouterLatestVersion(params)
 
 	if err != nil {
@@ -2699,7 +3778,11 @@ func Examplecomputing_NiftyReplaceVpnGatewayLatestVersion() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyReplaceVpnGatewayLatestVersionInput
+	params := &computing.NiftyReplaceVpnGatewayLatestVersionInput{
+		Agreement:           aws.Bool(true),
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyReplaceVpnGatewayLatestVersion(params)
 
 	if err != nil {
@@ -2718,7 +3801,10 @@ func Examplecomputing_NiftyRestoreInstanceSnapshot() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRestoreInstanceSnapshotInput
+	params := &computing.NiftyRestoreInstanceSnapshotInput{
+		InstanceSnapshotId: aws.String("String"),
+		SnapshotName:       aws.String("String"),
+	}
 	resp, err := svc.NiftyRestoreInstanceSnapshot(params)
 
 	if err != nil {
@@ -2737,7 +3823,10 @@ func Examplecomputing_NiftyRestoreRouterPreviousVersion() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRestoreRouterPreviousVersionInput
+	params := &computing.NiftyRestoreRouterPreviousVersionInput{
+		RouterId:   aws.String("String"),
+		RouterName: aws.String("String"),
+	}
 	resp, err := svc.NiftyRestoreRouterPreviousVersion(params)
 
 	if err != nil {
@@ -2756,7 +3845,10 @@ func Examplecomputing_NiftyRestoreVpnGatewayPreviousVersion() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRestoreVpnGatewayPreviousVersionInput
+	params := &computing.NiftyRestoreVpnGatewayPreviousVersionInput{
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyRestoreVpnGatewayPreviousVersion(params)
 
 	if err != nil {
@@ -2775,7 +3867,9 @@ func Examplecomputing_NiftyRetryImportInstance() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyRetryImportInstanceInput
+	params := &computing.NiftyRetryImportInstanceInput{
+		InstanceId: aws.String("String"), // Required
+	}
 	resp, err := svc.NiftyRetryImportInstance(params)
 
 	if err != nil {
@@ -2794,7 +3888,37 @@ func Examplecomputing_NiftyUpdateAlarm() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyUpdateAlarmInput
+	params := &computing.NiftyUpdateAlarmInput{
+		FunctionName: aws.String("String"), // Required
+		RuleList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		AlarmCondition: aws.String("String"),
+		Description:    aws.String("String"),
+		EmailAddressList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		LoadBalancerNameList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		LoadBalancerPortList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		PartitionList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		RuleName:       aws.String("String"),
+		RuleNameUpdate: aws.String("String"),
+	}
 	resp, err := svc.NiftyUpdateAlarm(params)
 
 	if err != nil {
@@ -2813,7 +3937,43 @@ func Examplecomputing_NiftyUpdateAutoScalingGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyUpdateAutoScalingGroupInput
+	params := &computing.NiftyUpdateAutoScalingGroupInput{
+		AutoScalingGroupName: aws.String("String"), // Required
+		ChangeInCapacity:     aws.Int64(1),         // Required
+		MaxSize:              aws.Int64(1),         // Required
+		MinSize:              aws.Int64(1),         // Required
+		ScaleoutCondition:    aws.String("String"), // Required
+		ScalingTriggerList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		ScalingTriggerList: []*int64{ // Required
+			aws.Int64(1), // Required
+			// More values...
+		},
+		AutoScalingGroupNameUpdate: aws.String("String"),
+		DefaultCooldown:            aws.Int64(1),
+		Description:                aws.String("String"),
+		ImageId:                    aws.String("String"),
+		InstanceLifecycleLimit:     aws.Int64(1),
+		InstanceType:               aws.String("String"),
+		LoadBalancersList: []*int64{
+			aws.Int64(1), // Required
+			// More values...
+		},
+		Scaleout: aws.Int64(1),
+		ScalingScheduleList: []*computing.MonthStruct{
+			{ // Required
+				EndingMonth:   aws.String("EndingMonth"),
+				StartingMonth: aws.String("StartingMonth"),
+			},
+			// More values...
+		},
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.NiftyUpdateAutoScalingGroup(params)
 
 	if err != nil {
@@ -2832,7 +3992,14 @@ func Examplecomputing_NiftyUpdateInstanceNetworkInterfaces() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyUpdateInstanceNetworkInterfacesInput
+	params := &computing.NiftyUpdateInstanceNetworkInterfacesInput{
+		InstanceId: aws.String("String"), // Required
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+		NiftyReboot: aws.String("String"),
+	}
 	resp, err := svc.NiftyUpdateInstanceNetworkInterfaces(params)
 
 	if err != nil {
@@ -2851,7 +4018,16 @@ func Examplecomputing_NiftyUpdateRouterNetworkInterfaces() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyUpdateRouterNetworkInterfacesInput
+	params := &computing.NiftyUpdateRouterNetworkInterfacesInput{
+		Agreement: aws.Bool(true),
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+		NiftyReboot: aws.String("String"),
+		RouterId:    aws.String("String"),
+		RouterName:  aws.String("String"),
+	}
 	resp, err := svc.NiftyUpdateRouterNetworkInterfaces(params)
 
 	if err != nil {
@@ -2870,7 +4046,15 @@ func Examplecomputing_NiftyUpdateVpnGatewayNetworkInterfaces() {
 
 	svc := computing.New(sess)
 
-	var params *computing.NiftyUpdateVpnGatewayNetworkInterfacesInput
+	params := &computing.NiftyUpdateVpnGatewayNetworkInterfacesInput{
+		Agreement: aws.Bool(true),
+		NetworkInterface: &computing.NetworkInterfaceStruct{
+			IpAddress: aws.String("IpAddress"),
+		},
+		NiftyReboot:         aws.String("String"),
+		NiftyVpnGatewayName: aws.String("String"),
+		VpnGatewayId:        aws.String("String"),
+	}
 	resp, err := svc.NiftyUpdateVpnGatewayNetworkInterfaces(params)
 
 	if err != nil {
@@ -2889,7 +4073,21 @@ func Examplecomputing_RebootInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RebootInstancesInput
+	params := &computing.RebootInstancesInput{
+		Force: aws.Bool(true),
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		NiftyIsBios: aws.Bool(true),
+		TenancyList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		UserData: &computing.UserDataStruct{
+			Encoding: aws.String("Encoding"),
+		},
+	}
 	resp, err := svc.RebootInstances(params)
 
 	if err != nil {
@@ -2908,7 +4106,28 @@ func Examplecomputing_RegisterCorporateInfoForCertificate() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RegisterCorporateInfoForCertificateInput
+	params := &computing.RegisterCorporateInfoForCertificateInput{
+		Agreement:      aws.Bool(true),       // Required
+		AlphabetName1:  aws.String("String"), // Required
+		AlphabetName2:  aws.String("String"), // Required
+		City:           aws.String("String"), // Required
+		CorpGrade:      aws.String("String"), // Required
+		CorpName:       aws.String("String"), // Required
+		DivisionName:   aws.String("String"), // Required
+		EmailAddress:   aws.String("String"), // Required
+		KanaName1:      aws.String("String"), // Required
+		KanaName2:      aws.String("String"), // Required
+		Name1:          aws.String("String"), // Required
+		Name2:          aws.String("String"), // Required
+		PhoneNumber:    aws.String("String"), // Required
+		PostName:       aws.String("String"), // Required
+		Pref:           aws.String("String"), // Required
+		PresidentName1: aws.String("String"), // Required
+		PresidentName2: aws.String("String"), // Required
+		Zip1:           aws.String("String"), // Required
+		Zip2:           aws.String("String"), // Required
+		TdbCode:        aws.String("String"),
+	}
 	resp, err := svc.RegisterCorporateInfoForCertificate(params)
 
 	if err != nil {
@@ -2927,7 +4146,15 @@ func Examplecomputing_RegisterInstancesWithLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RegisterInstancesWithLoadBalancerInput
+	params := &computing.RegisterInstancesWithLoadBalancerInput{
+		InstancePort: aws.Int64(1), // Required
+		InstancesList: []*string{ // Required
+			aws.String("InstanceId"), // Required
+			// More values...
+		},
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+	}
 	resp, err := svc.RegisterInstancesWithLoadBalancer(params)
 
 	if err != nil {
@@ -2946,7 +4173,13 @@ func Examplecomputing_RegisterInstancesWithSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RegisterInstancesWithSecurityGroupInput
+	params := &computing.RegisterInstancesWithSecurityGroupInput{
+		GroupName: aws.String("String"),
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.RegisterInstancesWithSecurityGroup(params)
 
 	if err != nil {
@@ -2965,7 +4198,13 @@ func Examplecomputing_RegisterPortWithLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RegisterPortWithLoadBalancerInput
+	params := &computing.RegisterPortWithLoadBalancerInput{
+		LoadBalancerName: aws.String("String"), // Required
+		ListenersList: []*string{
+			aws.String("BalancingType"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.RegisterPortWithLoadBalancer(params)
 
 	if err != nil {
@@ -2984,7 +4223,11 @@ func Examplecomputing_ReleaseAddress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ReleaseAddressInput
+	params := &computing.ReleaseAddressInput{
+		AllocationId:     aws.String("String"),
+		PrivateIpAddress: aws.String("String"),
+		PublicIp:         aws.String("String"),
+	}
 	resp, err := svc.ReleaseAddress(params)
 
 	if err != nil {
@@ -3003,7 +4246,17 @@ func Examplecomputing_ReplaceRoute() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ReplaceRouteInput
+	params := &computing.ReplaceRouteInput{
+		DestinationCidrBlock:   aws.String("String"), // Required
+		RouteTableId:           aws.String("String"), // Required
+		GatewayId:              aws.String("String"),
+		InstanceId:             aws.String("String"),
+		IpAddress:              aws.String("String"),
+		NetworkId:              aws.String("String"),
+		NetworkInterfaceId:     aws.String("String"),
+		NetworkName:            aws.String("String"),
+		VpcPeeringConnectionId: aws.String("String"),
+	}
 	resp, err := svc.ReplaceRoute(params)
 
 	if err != nil {
@@ -3022,7 +4275,11 @@ func Examplecomputing_ReplaceRouteTableAssociation() {
 
 	svc := computing.New(sess)
 
-	var params *computing.ReplaceRouteTableAssociationInput
+	params := &computing.ReplaceRouteTableAssociationInput{
+		AssociationId: aws.String("String"), // Required
+		RouteTableId:  aws.String("String"), // Required
+		Agreement:     aws.Bool(true),
+	}
 	resp, err := svc.ReplaceRouteTableAssociation(params)
 
 	if err != nil {
@@ -3041,7 +4298,17 @@ func Examplecomputing_RevokeSecurityGroupIngress() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RevokeSecurityGroupIngressInput
+	params := &computing.RevokeSecurityGroupIngressInput{
+		GroupName: aws.String("String"), // Required
+		IpPermissionsList: [][]*string{
+			{ // Required
+				aws.String("CidrIp"), // Required
+				// More values...
+			},
+			// More values...
+		},
+		UserId: aws.String("String"),
+	}
 	resp, err := svc.RevokeSecurityGroupIngress(params)
 
 	if err != nil {
@@ -3060,7 +4327,58 @@ func Examplecomputing_RunInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.RunInstancesInput
+	params := &computing.RunInstancesInput{
+		AccountingType: aws.String("String"),
+		AddressingType: aws.String("String"),
+		Admin:          aws.String("String"),
+		Agreement:      aws.Bool(true),
+		BlockDeviceMappingList: []*computing.EbsStruct{
+			{ // Required
+				DeleteOnTermination: aws.Bool(true),
+				NoDevice:            aws.Bool(true),
+				SnapshotId:          aws.String("SnapshotId"),
+				VolumeSize:          aws.Int64(1),
+			},
+			// More values...
+		},
+		Description:                       aws.String("String"),
+		DisableApiTermination:             aws.Bool(true),
+		ImageId:                           aws.String("String"),
+		InstanceId:                        aws.String("String"),
+		InstanceInitiatedShutdownBehavior: aws.String("String"),
+		InstanceType:                      aws.String("String"),
+		IpType:                            aws.String("String"),
+		KernelId:                          aws.String("String"),
+		KeyName:                           aws.String("String"),
+		LicenseList: []*string{
+			aws.String("LicenseNum"), // Required
+			// More values...
+		},
+		MaxCount: aws.Int64(1),
+		MinCount: aws.Int64(1),
+		Monitoring: &computing.MonitoringStruct{
+			Enabled: aws.Bool(true),
+		},
+		NetworkInterfaceList: []*string{
+			aws.String("IpAddress"), // Required
+			// More values...
+		},
+		Password: aws.String("String"),
+		Placement: &computing.PlacementStruct{
+			AvailabilityZone: aws.String("AvailabilityZone"),
+			GroupName:        aws.String("GroupName"),
+		},
+		PublicIp:  aws.String("String"),
+		RamdiskId: aws.String("String"),
+		SecurityGroupList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		SubnetId: aws.String("String"),
+		UserData: &computing.UserDataStruct{
+			Encoding: aws.String("Encoding"),
+		},
+	}
 	resp, err := svc.RunInstances(params)
 
 	if err != nil {
@@ -3079,7 +4397,16 @@ func Examplecomputing_SetFilterForLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.SetFilterForLoadBalancerInput
+	params := &computing.SetFilterForLoadBalancerInput{
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+		FilterType:       aws.String("String"),
+		IPAddressesList: []*bool{
+			aws.Bool(true), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.SetFilterForLoadBalancer(params)
 
 	if err != nil {
@@ -3098,7 +4425,28 @@ func Examplecomputing_StartInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.StartInstancesInput
+	params := &computing.StartInstancesInput{
+		InstanceIdList: []*string{ // Required
+			aws.String("String"), // Required
+			// More values...
+		},
+		AccountingTypeList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		InstanceTypeList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		NiftyIsBios: aws.Bool(true),
+		TenancyList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		UserData: &computing.UserDataStruct{
+			Encoding: aws.String("Encoding"),
+		},
+	}
 	resp, err := svc.StartInstances(params)
 
 	if err != nil {
@@ -3117,7 +4465,17 @@ func Examplecomputing_StopInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.StopInstancesInput
+	params := &computing.StopInstancesInput{
+		Force: aws.Bool(true),
+		InstanceIdList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+		TenancyList: []*string{
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.StopInstances(params)
 
 	if err != nil {
@@ -3136,7 +4494,12 @@ func Examplecomputing_TerminateInstances() {
 
 	svc := computing.New(sess)
 
-	var params *computing.TerminateInstancesInput
+	params := &computing.TerminateInstancesInput{
+		InstanceIdList: []*string{ // Required
+			aws.String("String"), // Required
+			// More values...
+		},
+	}
 	resp, err := svc.TerminateInstances(params)
 
 	if err != nil {
@@ -3155,7 +4518,21 @@ func Examplecomputing_UpdateLoadBalancer() {
 
 	svc := computing.New(sess)
 
-	var params *computing.UpdateLoadBalancerInput
+	params := &computing.UpdateLoadBalancerInput{
+		LoadBalancerName:     aws.String("String"), // Required
+		AccountingTypeUpdate: aws.String("String"),
+		ListenerUpdate: &computing.ListenerUpdateStruct{
+			InstancePort: aws.Int64(1),
+			ListenerStruct: &computing.ListenerStruct{
+				BalancingType:    aws.String("BalancingType"),
+				InstancePort:     aws.Int64(1),
+				LoadBalancerPort: aws.Int64(1),
+				Protocol:         aws.String("Protocol"),
+			},
+			LoadBalancerPort: aws.Int64(1),
+		},
+		NetworkVolumeUpdate: aws.Int64(1),
+	}
 	resp, err := svc.UpdateLoadBalancer(params)
 
 	if err != nil {
@@ -3174,7 +4551,19 @@ func Examplecomputing_UpdateLoadBalancerOption() {
 
 	svc := computing.New(sess)
 
-	var params *computing.UpdateLoadBalancerOptionInput
+	params := &computing.UpdateLoadBalancerOptionInput{
+		InstancePort:     aws.Int64(1),         // Required
+		LoadBalancerName: aws.String("String"), // Required
+		LoadBalancerPort: aws.Int64(1),         // Required
+		SessionStickinessPolicyUpdate: &computing.SessionStickinessPolicyUpdateStruct{
+			Enable:           aws.Bool(true),
+			ExpirationPeriod: aws.Int64(1),
+		},
+		SorryPageUpdate: &computing.SorryPageUpdateStruct{
+			Enable:     aws.Bool(true),
+			StatusCode: aws.Int64(1),
+		},
+	}
 	resp, err := svc.UpdateLoadBalancerOption(params)
 
 	if err != nil {
@@ -3193,7 +4582,15 @@ func Examplecomputing_UpdateSecurityGroup() {
 
 	svc := computing.New(sess)
 
-	var params *computing.UpdateSecurityGroupInput
+	params := &computing.UpdateSecurityGroupInput{
+		GroupName:               aws.String("String"), // Required
+		GgroupLogFilterNetBios:  aws.Bool(true),
+		GgroupLogLimitUpdate:    aws.Int64(1),
+		GroupDescriptionUpdate:  aws.String("String"),
+		GroupLogFilterBroadcast: aws.Bool(true),
+		GroupNameUpdate:         aws.String("String"),
+		GroupRuleLimitUpdate:    aws.Int64(1),
+	}
 	resp, err := svc.UpdateSecurityGroup(params)
 
 	if err != nil {
@@ -3212,7 +4609,12 @@ func Examplecomputing_UpdateSecurityGroupOption() {
 
 	svc := computing.New(sess)
 
-	var params *computing.UpdateSecurityGroupOptionInput
+	params := &computing.UpdateSecurityGroupOptionInput{
+		CourseUpdate: &computing.CourseUpdateStruct{
+			Agreement: aws.Bool(true),
+		},
+		SecurityGroupLimitUpdate: aws.Int64(1),
+	}
 	resp, err := svc.UpdateSecurityGroupOption(params)
 
 	if err != nil {
@@ -3231,7 +4633,11 @@ func Examplecomputing_UploadSslCertificate() {
 
 	svc := computing.New(sess)
 
-	var params *computing.UploadSslCertificateInput
+	params := &computing.UploadSslCertificateInput{
+		Certificate: aws.String("String"), // Required
+		Key:         aws.String("String"), // Required
+		CA:          aws.String("String"),
+	}
 	resp, err := svc.UploadSslCertificate(params)
 
 	if err != nil {
