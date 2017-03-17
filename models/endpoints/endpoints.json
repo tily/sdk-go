@@ -8,7 +8,8 @@
         ],
         "signatureVersions": [
           "v4",
-          "s3"
+          "s3",
+	  "n2"
         ]
       },
       "dnsSuffix": "api.cloud.nifty.com",
@@ -73,6 +74,30 @@
               "hostname": "jp-east-2.os.cloud.nifty.com",
               "signatureVersions": [
                 "s3"
+              ]
+            }
+          }
+        },
+        "computing": {
+          "defaults": {
+            "protocols": [
+              "https"
+            ],
+            "signatureVersions": [
+              "n2"
+            ]
+          },
+          "endpoints": {
+            "jp-east-1": {
+              "hostname": "east-1.cp.cloud.nifty.com",
+              "signatureVersions": [
+                "n2"
+              ]
+            },
+            "jp-east-2": {
+              "hostname": "east-2.cp.cloud.nifty.com",
+              "signatureVersions": [
+                "n2"
               ]
             }
           }
