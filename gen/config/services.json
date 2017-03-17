@@ -12,7 +12,7 @@
         "endpointPrefix": "computing",
         "serviceAbbreviation": "computing",
         "serviceFullName": "computing",
-        "signatureVersion": "v2", 
+        "signatureVersion": "n2",
         "xmlNamespace": "http://dummy",
         "protocol": "query"
       },

@@ -425,8 +425,11 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
     }
 
 	// Handlers
-	svc.Handlers.Sign.PushBackNamed({{if eq .Metadata.SignatureVersion "v2"}}v2{{else if eq .Metadata.SignatureVersion "s3"}}s3{{else}}v4{{end}}.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed({{if eq .Metadata.SignatureVersion "v2"}}v2{{else if eq .Metadata.SignatureVersion "s3"}}s3{{else if eq .Metadata.SignatureVersion "n2"}}n2{{else}}v4{{end}}.SignRequestHandler)
 	{{- if eq .Metadata.SignatureVersion "v2" }}
+		svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	{{- end }}
+	{{- if eq .Metadata.SignatureVersion "n2" }}
 		svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
 	{{- end }}
 	svc.Handlers.Build.PushBackNamed({{ .ProtocolPackage }}.BuildHandler)
@@ -469,6 +472,9 @@ func (a *API) ServiceGoCode() string {
 		a.imports["github.com/tily/sdk-go/aws/corehandlers"] = true
 	} else if a.Metadata.SignatureVersion == "s3" {
 		a.imports["github.com/tily/sdk-go/private/signer/s3"] = true
+	} else if a.Metadata.SignatureVersion == "n2" {
+		a.imports["github.com/tily/sdk-go/private/signer/n2"] = true
+		a.imports["github.com/tily/sdk-go/aws/corehandlers"] = true
 	} else {
 		a.imports["github.com/tily/sdk-go/aws/signer/v4"] = true
 	}
