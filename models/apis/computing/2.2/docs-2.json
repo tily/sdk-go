@@ -174,46 +174,6 @@
     "UploadSslCertificate": "UploadSslCertificate"
   },
   "shapes": {
-    "\t\t\t\t\t\t\t\tvalue": {
-      "base": "\t\t\t\t\t\t\t\tvalue",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\tattachTime": {
-      "base": "\n\t\t\t\t\t\t\t\tattachTime",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\tgroupName": {
-      "base": "\n\t\t\t\t\t\t\t\tgroupName",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\tinstanceId": {
-      "base": "\n\t\t\t\t\t\t\t\tinstanceId",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\tlog": {
-      "base": "\n\t\t\t\t\t\t\t\tlog",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\trequestId": {
-      "base": "\n\t\t\t\t\t\t\t\trequestId",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\treturn": {
-      "base": "\n\t\t\t\t\t\t\t\treturn",
-      "refs": null
-    },
-    "\n\t\t\t\t\t\t\t\tuserId": {
-      "base": "\n\t\t\t\t\t\t\t\tuserId",
-      "refs": null
-    },
-    " instanceId": {
-      "base": " instanceId",
-      "refs": null
-    },
-    " requestId": {
-      "base": " requestId",
-      "refs": null
-    },
     "AccountName": {
       "base": "AccountName",
       "refs": null
@@ -3096,6 +3056,10 @@
     },
     "upperThreshold": {
       "base": "upperThreshold",
+      "refs": null
+    },
+    "userId": {
+      "base": "userId",
       "refs": null
     },
     "validityTerm": {

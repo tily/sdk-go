@@ -1882,36 +1882,6 @@
     }
   },
   "shapes": {
-    "\t\t\t\t\t\t\t\tvalue": {
-      "type": "string"
-    },
-    "\n\t\t\t\t\t\t\t\tattachTime": {
-      "type": "timestamp"
-    },
-    "\n\t\t\t\t\t\t\t\tgroupName": {
-      "type": "string"
-    },
-    "\n\t\t\t\t\t\t\t\tinstanceId": {
-      "type": "string"
-    },
-    "\n\t\t\t\t\t\t\t\tlog": {
-      "type": "string"
-    },
-    "\n\t\t\t\t\t\t\t\trequestId": {
-      "type": "string"
-    },
-    "\n\t\t\t\t\t\t\t\treturn": {
-      "type": "boolean"
-    },
-    "\n\t\t\t\t\t\t\t\tuserId": {
-      "type": "string"
-    },
-    " instanceId": {
-      "type": "string"
-    },
-    " requestId": {
-      "type": "string"
-    },
     "AccountName": {
       "type": "boolean"
     },
@@ -7242,6 +7212,9 @@
     },
     "upperThreshold": {
       "type": "double"
+    },
+    "userId": {
+      "type": "string"
     },
     "validityTerm": {
       "type": "integer"

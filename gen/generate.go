@@ -252,7 +252,7 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 
 	doc.Find(g.ResultShapeSelector).Each(func(i int, s *goquery.Selection) {
 		shapeName := s.Find(g.ResultShapeNameSelector).First().Text()
-		shapeName = regexp.MustCompile(`(\s)+$`).ReplaceAllString(shapeName, "")
+		shapeName = regexp.MustCompile(`(\s|\t|\n)`).ReplaceAllString(shapeName, "")
 
 		// skip if it's the xml root tag
 		if i == 0 && regexp.MustCompile(`Response$`).MatchString(shapeName) {
