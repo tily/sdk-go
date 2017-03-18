@@ -381,16 +381,16 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 		}
 		for i, _ := range parts {
 			if i == len(parts)-1 {
+				currentShape := Shape{}
 				currentShapeName := ""
 				if parts[i][2] != "" {
 					currentShapeName = fmt.Sprintf("%sList", parts[i][1])
-					currentShape := Shape{ShapeName: currentShapeName, Type: "list", Member: &ShapeRef{ShapeName: shapeType}}
-					*shapes = append(*shapes, currentShape)
+					currentShape = Shape{ShapeName: currentShapeName, Type: "list", Member: &ShapeRef{ShapeName: shapeType}}
 				} else {
 					currentShapeName = parts[i][1]
-					currentShape := Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
-					*shapes = append(*shapes, currentShape)
+					currentShape = Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
 				}
+				*shapes = append(*shapes, currentShape)
 			} else if parts[i][2] != "" {
 				currentShapeName := fmt.Sprintf("%sList", parts[i][1])
 				currentShape := Shape{ShapeName: currentShapeName, Type: "list"}
