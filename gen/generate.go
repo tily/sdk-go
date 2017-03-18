@@ -370,7 +370,16 @@ func (names ShapeNames) pos(value string) int {
 
 func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Shapes) (shapeName string, retShapeType string) {
 	if regexp.MustCompile(`\.`).MatchString(param) {
-		parts := regexp.MustCompile(`[a-zA-Z]+((\.member)?\.(n|m|l|1))?`).FindAllString(param, -1)
+		r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
+		parts := r.FindAllString(param, -1)
+		match := r.FindStringSubmatch(parts[0])
+		if match[2] != "" {
+			shapeName = fmt.Sprintf("%sList", match[1])
+			retShapeType = shapeName
+		} else {
+			shapeName = match[1]
+			retShapeType = fmt.Sprintf("%sStruct", match[1])
+		}
 		for i, _ := range parts {
 			if i == len(parts)-1 {
 				currentShapeName := ""
@@ -384,17 +393,9 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 					currentShape := Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
 					*shapes = append(*shapes, currentShape)
 				}
-				if i == 0 {
-					shapeName = currentShapeName
-					retShapeType = currentShapeName
-				}
 			} else if r := regexp.MustCompile(`((\.member)?\.(n|m|l|1))$`); r.MatchString(parts[i]) {
 				currentShapeName := r.ReplaceAllString(parts[i], "")
 				currentShapeName = fmt.Sprintf("%sList", currentShapeName)
-				if i == 0 {
-					shapeName = currentShapeName
-					retShapeType = currentShapeName
-				}
 				currentShape := Shape{ShapeName: currentShapeName, Type: "list"}
 				refShapeName := ""
 				if r.MatchString(parts[i+1]) {
@@ -411,10 +412,6 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 				*shapes = append(*shapes, currentShape)
 			} else {
 				currentShapeName := fmt.Sprintf("%sStruct", parts[i])
-				if i == 0 {
-					shapeName = parts[i]
-					retShapeType = currentShapeName
-				}
 				currentShape := *shapes.findShapeByName(currentShapeName)
 				flg := false
 				if currentShape.ShapeName == "" {
@@ -449,5 +446,6 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 			*shapes = append(*shapes, tstampShape)
 		}
 	}
+
 	return shapeName, retShapeType
 }
