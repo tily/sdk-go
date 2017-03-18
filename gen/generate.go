@@ -369,58 +369,9 @@ func (names ShapeNames) pos(value string) int {
 }
 
 func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Shapes) (shapeName string, retShapeType string) {
-	if regexp.MustCompile(`\.`).MatchString(param) {
-		r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
-		parts := r.FindAllStringSubmatch(param, -1)
-		if parts[0][2] != "" {
-			shapeName = fmt.Sprintf("%sList", parts[0][1])
-			retShapeType = shapeName
-		} else {
-			shapeName = parts[0][1]
-			retShapeType = fmt.Sprintf("%sStruct", parts[0][1])
-		}
-		for i, _ := range parts {
-			if i == len(parts)-1 {
-				currentShape := Shape{}
-				currentShapeName := ""
-				if parts[i][2] != "" {
-					currentShapeName = fmt.Sprintf("%sList", parts[i][1])
-					currentShape = Shape{ShapeName: currentShapeName, Type: "list", Member: &ShapeRef{ShapeName: shapeType}}
-				} else {
-					currentShapeName = parts[i][1]
-					currentShape = Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
-				}
-				*shapes = append(*shapes, currentShape)
-			} else {
-				refShapeName := ""
-				if parts[i+1][2] != "" {
-					refShapeName = fmt.Sprintf("%sList", parts[i+1][1])
-				} else {
-					if i == len(parts)-2 {
-						refShapeName = parts[i+1][1]
-					} else {
-						refShapeName = fmt.Sprintf("%sStruct", parts[i+1][1])
-					}
-				}
-				if parts[i][2] != "" {
-					currentShapeName := fmt.Sprintf("%sList", parts[i][1])
-					currentShape := Shape{ShapeName: currentShapeName, Type: "list"}
-					currentShape.Member = &ShapeRef{ShapeName: refShapeName}
-					*shapes = append(*shapes, currentShape)
-				} else {
-					currentShapeName := fmt.Sprintf("%sStruct", parts[i][1])
-					currentShape := *shapes.findShapeByName(currentShapeName)
-					if currentShape.ShapeName == "" {
-						currentShape = Shape{ShapeName: currentShapeName, Type: "structure", Members: map[string]ShapeRef{}}
-						*shapes = append(*shapes, currentShape)
-					}
-					currentShape.Members[refShapeName] = ShapeRef{ShapeName: refShapeName}
-				}
-			}
-		}
-	} else {
-		shapeName = param
-		retShapeType = shapeType
+	r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
+	parts := r.FindAllStringSubmatch(param, -1)
+	if len(parts) == 1 && parts[0][2] == "" {
 		if shapeType == "TStamp" {
 			tstampShape := Shape{
 				ShapeName: shapeType,
@@ -428,7 +379,52 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 			}
 			*shapes = append(*shapes, tstampShape)
 		}
+		return param, shapeType
+	} else if parts[0][2] != "" {
+		shapeName = fmt.Sprintf("%sList", parts[0][1])
+		retShapeType = shapeName
+	} else {
+		shapeName = parts[0][1]
+		retShapeType = fmt.Sprintf("%sStruct", parts[0][1])
 	}
-
+	for i, _ := range parts {
+		if i == len(parts)-1 {
+			currentShape := Shape{}
+			currentShapeName := ""
+			if parts[i][2] != "" {
+				currentShapeName = fmt.Sprintf("%sList", parts[i][1])
+				currentShape = Shape{ShapeName: currentShapeName, Type: "list", Member: &ShapeRef{ShapeName: shapeType}}
+			} else {
+				currentShapeName = parts[i][1]
+				currentShape = Shape{ShapeName: currentShapeName, Type: strings.ToLower(shapeType)}
+			}
+			*shapes = append(*shapes, currentShape)
+		} else {
+			refShapeName := ""
+			if parts[i+1][2] != "" {
+				refShapeName = fmt.Sprintf("%sList", parts[i+1][1])
+			} else {
+				if i == len(parts)-2 {
+					refShapeName = parts[i+1][1]
+				} else {
+					refShapeName = fmt.Sprintf("%sStruct", parts[i+1][1])
+				}
+			}
+			if parts[i][2] != "" {
+				currentShapeName := fmt.Sprintf("%sList", parts[i][1])
+				currentShape := Shape{ShapeName: currentShapeName, Type: "list"}
+				currentShape.Member = &ShapeRef{ShapeName: refShapeName}
+				*shapes = append(*shapes, currentShape)
+			} else {
+				currentShapeName := fmt.Sprintf("%sStruct", parts[i][1])
+				currentShape := *shapes.findShapeByName(currentShapeName)
+				if currentShape.ShapeName == "" {
+					currentShape = Shape{ShapeName: currentShapeName, Type: "structure", Members: map[string]ShapeRef{}}
+					*shapes = append(*shapes, currentShape)
+				}
+				currentShape.Members[refShapeName] = ShapeRef{ShapeName: refShapeName}
+			}
+		}
+	}
 	return shapeName, retShapeType
 }
