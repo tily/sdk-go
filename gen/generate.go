@@ -409,10 +409,9 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 			} else {
 				currentShapeName := fmt.Sprintf("%sStruct", parts[i][1])
 				currentShape := *shapes.findShapeByName(currentShapeName)
-				flg := false
 				if currentShape.ShapeName == "" {
-					flg = true
 					currentShape = Shape{ShapeName: currentShapeName, Type: "structure", Members: map[string]ShapeRef{}}
+					*shapes = append(*shapes, currentShape)
 				}
 				refShapeName := ""
 				if parts[i+1][2] != "" {
@@ -425,9 +424,6 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 					}
 				}
 				currentShape.Members[refShapeName] = ShapeRef{ShapeName: refShapeName}
-				if flg {
-					*shapes = append(*shapes, currentShape)
-				}
 			}
 		}
 	} else {
