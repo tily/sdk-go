@@ -373,7 +373,7 @@ func (names ShapeNames) pos(value string) int {
 }
 
 func (g *Generator) extractRequestShapeInfo(param string, shapeType string) (shapeName string, retShapeType string) {
-	r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
+	r := regexp.MustCompile(`([a-zA-Z0-9]+)((\.member)?\.(N$|n|m|l|1))?`)
 	parts := r.FindAllStringSubmatch(param, -1)
 	if len(parts) == 1 && parts[0][2] == "" {
 		return param, shapeType
@@ -386,7 +386,7 @@ func (g *Generator) extractRequestShapeInfo(param string, shapeType string) (sha
 }
 
 func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Shapes) {
-	r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
+	r := regexp.MustCompile(`([a-zA-Z0-9]+)((\.member)?\.(N$|n|m|l|1))?`)
 	parts := r.FindAllStringSubmatch(param, -1)
 	for i, _ := range parts {
 		if i == len(parts)-1 {
