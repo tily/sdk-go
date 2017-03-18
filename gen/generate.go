@@ -228,7 +228,10 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 			shapeType = "List"
 		}
 
-		shapeName, shapeType = g.parseRequestParam(shapeName, shapeType, &shapes)
+		if regexp.MustCompile(`\.`).MatchString(shapeName) {
+			g.parseRequestParam(shapeName, shapeType, &shapes)
+		}
+		shapeName, shapeType = g.extractRequestShapeInfo(shapeName, shapeType)
 		member.ShapeName = shapeType
 
 		requiredText := s.Find(g.RequestShapeRequiredSelector).First().Text()
@@ -369,18 +372,22 @@ func (names ShapeNames) pos(value string) int {
 	return -1
 }
 
-func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Shapes) (shapeName string, retShapeType string) {
+func (g *Generator) extractRequestShapeInfo(param string, shapeType string) (shapeName string, retShapeType string) {
 	r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
 	parts := r.FindAllStringSubmatch(param, -1)
 	if len(parts) == 1 && parts[0][2] == "" {
 		return param, shapeType
 	} else if parts[0][2] != "" {
-		shapeName = fmt.Sprintf("%sList", parts[0][1])
-		retShapeType = shapeName
+		shapeName := fmt.Sprintf("%sList", parts[0][1])
+		return shapeName, shapeName
 	} else {
-		shapeName = parts[0][1]
-		retShapeType = fmt.Sprintf("%sStruct", parts[0][1])
+		return parts[0][1], fmt.Sprintf("%sStruct", parts[0][1])
 	}
+}
+
+func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Shapes) {
+	r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
+	parts := r.FindAllStringSubmatch(param, -1)
 	for i, _ := range parts {
 		if i == len(parts)-1 {
 			shape := Shape{}
@@ -417,5 +424,4 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 			}
 		}
 	}
-	return shapeName, retShapeType
 }
