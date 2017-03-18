@@ -1706,6 +1706,10 @@
       "base": "String",
       "refs": null
     },
+    "TStamp": {
+      "base": "TStamp",
+      "refs": null
+    },
     "Target": {
       "base": "Target",
       "refs": null

@@ -6050,6 +6050,9 @@
     "String": {
       "type": "string"
     },
+    "TStamp": {
+      "type": "timestamp"
+    },
     "Target": {
       "type": "string"
     },
