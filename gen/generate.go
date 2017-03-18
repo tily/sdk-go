@@ -372,13 +372,13 @@ func (g *Generator) parseRequestParam(param string, shapeType string, shapes *Sh
 	if regexp.MustCompile(`\.`).MatchString(param) {
 		r := regexp.MustCompile(`([a-zA-Z]+)((\.member)?\.(n|m|l|1))?`)
 		parts := r.FindAllString(param, -1)
-		match := r.FindStringSubmatch(parts[0])
-		if match[2] != "" {
-			shapeName = fmt.Sprintf("%sList", match[1])
+		match := r.FindAllStringSubmatch(parts[0], -1)
+		if match[0][2] != "" {
+			shapeName = fmt.Sprintf("%sList", match[0][1])
 			retShapeType = shapeName
 		} else {
-			shapeName = match[1]
-			retShapeType = fmt.Sprintf("%sStruct", match[1])
+			shapeName = match[0][1]
+			retShapeType = fmt.Sprintf("%sStruct", match[0][1])
 		}
 		for i, _ := range parts {
 			if i == len(parts)-1 {
