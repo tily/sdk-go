@@ -13266,9 +13266,9 @@
           "shape": "UsageDetailInfoType",
           "locationName": "internetVpnInitial"
         },
-        "InternetVpnMonthlyRate": {
-          "shape": "",
-          "locationName": "internetVpnMonthlyRate"
+        "InternetVpnMonthlyRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "internetVpnMonthlyRateSet"
         }
       }
     },
