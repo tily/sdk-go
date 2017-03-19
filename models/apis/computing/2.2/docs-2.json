@@ -246,6 +246,10 @@
       "base": "AlarmEvent",
       "refs": null
     },
+    "AlarmEventDatetime": {
+      "base": "AlarmEventDatetime",
+      "refs": null
+    },
     "AlarmEventHistoryItemType": {
       "base": "AlarmEventHistoryItemType",
       "refs": null
@@ -840,14 +844,6 @@
     },
     "DNSName": {
       "base": "DNSName",
-      "refs": null
-    },
-    "DalarmEventDatetime": {
-      "base": "DalarmEventDatetime",
-      "refs": null
-    },
-    "Data": {
-      "base": "Data",
       "refs": null
     },
     "DataItemType": {

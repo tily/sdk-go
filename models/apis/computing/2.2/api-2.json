@@ -2281,7 +2281,7 @@
           "locationName": "alarmEventHistorySet"
         },
         "Date": {
-          "shape": "",
+          "shape": "String",
           "locationName": "date"
         }
       }
@@ -2295,6 +2295,9 @@
     "AlarmEvent": {
       "type": "string"
     },
+    "AlarmEventDatetime": {
+      "type": "timestamp"
+    },
     "AlarmEventHistoryItemType": {
       "type": "structure",
       "members": {
@@ -2303,7 +2306,7 @@
           "locationName": "alarmEvent"
         },
         "AlarmEventDatetime": {
-          "shape": "",
+          "shape": "TStamp",
           "locationName": "alarmEventDatetime"
         }
       }
@@ -4077,12 +4080,6 @@
       }
     },
     "DNSName": {
-      "type": "string"
-    },
-    "DalarmEventDatetime": {
-      "type": "timestamp"
-    },
-    "Data": {
       "type": "string"
     },
     "DataItemType": {
