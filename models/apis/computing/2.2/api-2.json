@@ -8690,9 +8690,9 @@
           "shape": "String",
           "locationName": "requestId"
         },
-        "SnapshotSet": {
-          "shape": "",
-          "locationName": "snapshotSet"
+        "SnapshotInfoSet": {
+          "shape": "SnapshotInfoSetType",
+          "locationName": "snapshotInfoSet"
         }
       }
     },
