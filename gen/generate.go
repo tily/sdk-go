@@ -377,7 +377,11 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 			newMembers := map[string]ShapeRef{}
 			for locationName, shapeRef := range shape.Members {
 				shapeName := locToShapeMap[locationName]
-				shapeRef.ShapeName = shapeName
+				if shapeName == "timestamp" {
+					shapeRef.ShapeName = "TStamp"
+				} else {
+					shapeRef.ShapeName = capitalize(shapeName)
+				}
 				newMembers[capitalize(locationName)] = shapeRef
 			}
 			shapes[i].Members = newMembers
