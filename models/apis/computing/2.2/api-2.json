@@ -9856,7 +9856,7 @@
           "locationName": "requestId"
         },
         "Return": {
-          "shape": "",
+          "shape": "Boolean",
           "locationName": "return"
         }
       }
