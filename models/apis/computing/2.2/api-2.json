@@ -13263,9 +13263,9 @@
     "UsageInternetVpnInfoType": {
       "type": "structure",
       "members": {
-        "IneternetVpnInitial": {
-          "shape": "",
-          "locationName": "ineternetVpnInitial"
+        "InternetVpnInitial": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "internetVpnInitial"
         },
         "InternetVpnMonthlyRate": {
           "shape": "",
