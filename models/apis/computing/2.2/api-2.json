@@ -10428,9 +10428,9 @@
           "shape": "String",
           "locationName": "sessionId"
         },
-        "SorcePort": {
-          "shape": "",
-          "locationName": "sorcePort"
+        "SourcePort": {
+          "shape": "String",
+          "locationName": "sourcePort"
         },
         "TunnelId": {
           "shape": "String",
@@ -12245,9 +12245,9 @@
           "shape": "String",
           "locationName": "setTuesday"
         },
-        "SetWedensday": {
-          "shape": "",
-          "locationName": "setWedensday"
+        "SetWednesday": {
+          "shape": "String",
+          "locationName": "setWednesday"
         }
       }
     },
