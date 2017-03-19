@@ -13493,13 +13493,13 @@
     "UsagerouterType": {
       "type": "structure",
       "members": {
-        "RouterMeasuredRate": {
-          "shape": "",
-          "locationName": "routerMeasuredRate"
+        "RouterMeasuredRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "routerMeasuredRateSet"
         },
-        "RouterMonthryRate": {
-          "shape": "",
-          "locationName": "routerMonthryRate"
+        "RouterMonthlyRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "routerMonthlyRateSet"
         }
       }
     },
