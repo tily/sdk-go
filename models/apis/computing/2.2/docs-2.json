@@ -278,8 +278,8 @@
       "base": "AlarmRulesActivitiesEvent",
       "refs": null
     },
-    "AlarmRulesActivitiesEventDatetim": {
-      "base": "AlarmRulesActivitiesEventDatetim",
+    "AlarmRulesActivitiesEventDatetime": {
+      "base": "AlarmRulesActivitiesEventDatetime",
       "refs": null
     },
     "AlarmRulesActivitiesEventItemType": {

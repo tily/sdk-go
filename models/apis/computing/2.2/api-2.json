@@ -2390,7 +2390,7 @@
     "AlarmRulesActivitiesEvent": {
       "type": "string"
     },
-    "AlarmRulesActivitiesEventDatetim": {
+    "AlarmRulesActivitiesEventDatetime": {
       "type": "timestamp"
     },
     "AlarmRulesActivitiesEventItemType": {
@@ -2401,7 +2401,7 @@
           "locationName": "alarmRulesActivitiesEvent"
         },
         "AlarmRulesActivitiesEventDatetime": {
-          "shape": "",
+          "shape": "TStamp",
           "locationName": "alarmRulesActivitiesEventDatetime"
         },
         "ResourceName": {
