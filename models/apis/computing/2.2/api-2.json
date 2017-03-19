@@ -8876,7 +8876,7 @@
           "locationName": "requestId"
         },
         "VpnGatewaySet": {
-          "shape": "",
+          "shape": "VpnGatewayIdSetType",
           "locationName": "vpnGatewaySet"
         }
       }
