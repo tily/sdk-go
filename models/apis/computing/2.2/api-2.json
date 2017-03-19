@@ -9056,9 +9056,9 @@
     "NiftyDescribeDhcpStatusResult": {
       "type": "structure",
       "members": {
-        "DhcpOptionsSet": {
-          "shape": "",
-          "locationName": "dhcpOptionsSet"
+        "DhcpStatusInformationSet": {
+          "shape": "DhcpStatusInformationSetType",
+          "locationName": "dhcpStatusInformationSet"
         },
         "RequestId": {
           "shape": "String",
@@ -9179,9 +9179,9 @@
     "NiftyDescribePrivateLansResult": {
       "type": "structure",
       "members": {
-        "NetworkSet": {
-          "shape": "",
-          "locationName": "networkSet"
+        "PrivateLanSet": {
+          "shape": "PrivateLanSetType",
+          "locationName": "privateLanSet"
         },
         "RequestId": {
           "shape": "String",
@@ -9614,17 +9614,13 @@
     "NiftyModifyInstanceSnapshotAttributeResult": {
       "type": "structure",
       "members": {
-        "InstanceSet": {
-          "shape": "",
-          "locationName": "instanceSet"
-        },
         "RequestId": {
           "shape": "String",
           "locationName": "requestId"
         },
-        "SnapshotName": {
-          "shape": "",
-          "locationName": "snapshotName"
+        "Return": {
+          "shape": "Boolean",
+          "locationName": "return"
         }
       }
     },
