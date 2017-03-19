@@ -5769,7 +5769,7 @@
       "type": "structure",
       "members": {
         "DhcpIpAddressInformationSet": {
-          "shape": "",
+          "shape": "DhcpIpAddressInformationType",
           "locationName": "dhcpIpAddressInformationSet"
         },
         "NetworkId": {
