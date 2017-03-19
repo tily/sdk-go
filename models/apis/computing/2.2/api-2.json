@@ -5513,9 +5513,9 @@
           "shape": "String",
           "locationName": "requestId"
         },
-        "Return": {
-          "shape": "",
-          "locationName": "return"
+        "VpnGatewaySet": {
+          "shape": "VpnGatewaySetType",
+          "locationName": "vpnGatewaySet"
         }
       }
     },
