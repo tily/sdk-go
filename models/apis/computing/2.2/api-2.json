@@ -12600,7 +12600,7 @@
           "locationName": "Enabled"
         },
         "StatusCode": {
-          "shape": "",
+          "shape": "Integer",
           "locationName": "StatusCode"
         }
       }
