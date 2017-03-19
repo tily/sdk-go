@@ -9032,9 +9032,9 @@
     "NiftyDescribeDhcpConfigsResult": {
       "type": "structure",
       "members": {
-        "DhcpConfigSet": {
-          "shape": "",
-          "locationName": "dhcpConfigSet"
+        "DhcpConfigsSet": {
+          "shape": "DhcpConfigsSetType",
+          "locationName": "dhcpConfigsSet"
         },
         "RequestId": {
           "shape": "String",
