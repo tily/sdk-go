@@ -321,6 +321,9 @@ func (g *Generator) getResultShapeChildren(s *goquery.Selection) []string {
 }
 
 func capitalize(s string) string {
+	if s == "" {
+		return s
+	}
 	a := []rune(s)
 	a[0] = unicode.ToUpper(a[0])
 	return string(a)
@@ -351,10 +354,8 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 			shapes = append(shapes, shape)
 		} else {
 			if len(children) == 0 {
-				if shapeName != "" {
-					shape := Shape{ShapeName: capitalize(shapeName), Type: shapeType}
-					shapes = append(shapes, shape)
-				}
+				shape := Shape{ShapeName: capitalize(shapeName), Type: shapeType}
+				shapes = append(shapes, shape)
 			} else if regexp.MustCompile(`(item|member)`).MatchString(children[0]) {
 				shape := Shape{ShapeName: shapeType, Type: "list"}
 				nextShapeHTML := goquery.NewDocumentFromNode(resultShapeHTMLs.Get(i + 1))
