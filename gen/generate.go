@@ -343,7 +343,7 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 		if i == 0 {
 			shape := Shape{ShapeName: fmt.Sprintf("%sResult", operationName), Type: "structure", Members: map[string]ShapeRef{}}
 			for _, shapeName := range children {
-				shape.Members[capitalize(shapeName)] = ShapeRef{LocationName: shapeName}
+				shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
 			}
 			shapes = append(shapes, shape)
 		} else if regexp.MustCompile(`(item|member)`).MatchString(shapeName) {
@@ -378,7 +378,7 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 			for locationName, shapeRef := range shape.Members {
 				shapeName := locToShapeMap[locationName]
 				shapeRef.ShapeName = shapeName
-				newMembers[shapeName] = shapeRef
+				newMembers[capitalize(locationName)] = shapeRef
 			}
 			shapes[i].Members = newMembers
 		}
