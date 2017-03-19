@@ -4020,9 +4020,9 @@
           "shape": "String",
           "locationName": "bgpAsn"
         },
-        "CreateTime": {
-          "shape": "",
-          "locationName": "createTime"
+        "CreatedTime": {
+          "shape": "TStamp",
+          "locationName": "createdTime"
         },
         "CustomerGatewayId": {
           "shape": "String",
