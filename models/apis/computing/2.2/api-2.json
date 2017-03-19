@@ -12277,9 +12277,9 @@
           "shape": "String",
           "locationName": "endingTimeZone"
         },
-        "StartTimeZone": {
-          "shape": "",
-          "locationName": "startTimeZone"
+        "StartingTimeZone": {
+          "shape": "String",
+          "locationName": "startingTimeZone"
         }
       }
     },
