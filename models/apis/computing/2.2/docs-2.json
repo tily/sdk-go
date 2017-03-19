@@ -2062,6 +2062,10 @@
       "base": "Key",
       "refs": null
     },
+    "KeyFingerPrint": {
+      "base": "KeyFingerPrint",
+      "refs": null
+    },
     "KeyFingerprint": {
       "base": "KeyFingerprint",
       "refs": null

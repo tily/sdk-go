@@ -7146,6 +7146,9 @@
     "Key": {
       "type": "string"
     },
+    "KeyFingerPrint": {
+      "type": "string"
+    },
     "KeyFingerprint": {
       "type": "string"
     },
@@ -13141,7 +13144,7 @@
           "locationName": "fqdnId"
         },
         "KeyFingerPrint": {
-          "shape": "",
+          "shape": "String",
           "locationName": "keyFingerPrint"
         },
         "RequestId": {
