@@ -13473,7 +13473,7 @@
       "type": "structure",
       "members": {
         "ImportInstanceDiskMeasuredRate": {
-          "shape": "",
+          "shape": "UsageDetailInfoType",
           "locationName": "importInstanceDiskMeasuredRate"
         },
         "ImportInstanceDiskMonthlyRate": {
