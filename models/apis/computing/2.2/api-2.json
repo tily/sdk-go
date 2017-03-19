@@ -2919,9 +2919,9 @@
           "shape": "String",
           "locationName": "autoScalingGroupName"
         },
-        "ChagneInCapacity": {
-          "shape": "",
-          "locationName": "chagneInCapacity"
+        "ChangeInCapacity": {
+          "shape": "Integer",
+          "locationName": "changeInCapacity"
         },
         "CreatedTime": {
           "shape": "TStamp",
