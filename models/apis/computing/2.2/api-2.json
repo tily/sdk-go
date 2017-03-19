@@ -2352,9 +2352,9 @@
           "shape": "String",
           "locationName": "ruleName"
         },
-        "Ruleset": {
-          "shape": "",
-          "locationName": "ruleset"
+        "RuleSet": {
+          "shape": "RuleSetType",
+          "locationName": "ruleSet"
         },
         "Zone": {
           "shape": "String",
