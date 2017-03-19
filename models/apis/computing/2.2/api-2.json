@@ -13406,9 +13406,9 @@
           "shape": "UsageDetailInfoType",
           "locationName": "privateNetworkMeasuredRate"
         },
-        "PrivateNetworkMonthryRate": {
-          "shape": "",
-          "locationName": "privateNetworkMonthryRate"
+        "PrivateNetworkMonthlyRate": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "privateNetworkMonthlyRate"
         }
       }
     },
@@ -13506,13 +13506,13 @@
     "UsagevpnGatewayType": {
       "type": "structure",
       "members": {
-        "VpnGatewayMeasuredRate": {
-          "shape": "",
-          "locationName": "vpnGatewayMeasuredRate"
+        "VpnGatewayMeasuredRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "vpnGatewayMeasuredRateSet"
         },
-        "VpnGatewayMonthryRate": {
-          "shape": "",
-          "locationName": "vpnGatewayMonthryRate"
+        "VpnGatewayMonthlyRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "vpnGatewayMonthlyRateSet"
         }
       }
     },
