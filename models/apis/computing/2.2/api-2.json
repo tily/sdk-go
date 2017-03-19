@@ -8955,13 +8955,13 @@
     "NiftyDescribeAlarmsResult": {
       "type": "structure",
       "members": {
-        "AlarmSetType": {
-          "shape": "",
-          "locationName": "alarmSetType"
-        },
         "RequestId": {
           "shape": "String",
           "locationName": "requestId"
+        },
+        "ReservationSet": {
+          "shape": "AlarmReservationSetType",
+          "locationName": "reservationSet"
         }
       }
     },
