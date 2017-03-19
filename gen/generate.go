@@ -351,8 +351,10 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 			shapes = append(shapes, shape)
 		} else {
 			if len(children) == 0 {
-				shape := Shape{ShapeName: shapeName, Type: shapeType}
-				shapes = append(shapes, shape)
+				if shapeName != "" {
+					shape := Shape{ShapeName: capitalize(shapeName), Type: shapeType}
+					shapes = append(shapes, shape)
+				}
 			} else if regexp.MustCompile(`(item|member)`).MatchString(children[0]) {
 				shape := Shape{ShapeName: shapeType, Type: "list"}
 				nextShapeHTML := goquery.NewDocumentFromNode(resultShapeHTMLs.Get(i + 1))
