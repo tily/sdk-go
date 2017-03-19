@@ -13714,9 +13714,9 @@
           "shape": "String",
           "locationName": "niftyVpnGatewayName"
         },
-        "VpnGateweyId": {
-          "shape": "",
-          "locationName": "vpnGateweyId"
+        "VpnGatewayId": {
+          "shape": "String",
+          "locationName": "vpnGatewayId"
         }
       }
     },
