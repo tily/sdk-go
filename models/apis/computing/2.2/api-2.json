@@ -7259,9 +7259,9 @@
     "ListenerDescription": {
       "type": "structure",
       "members": {
-        "Linstener": {
-          "shape": "",
-          "locationName": "Linstener"
+        "Listener": {
+          "shape": "Listener",
+          "locationName": "Listener"
         },
         "PolicyNames": {
           "shape": "PolicyNames",
