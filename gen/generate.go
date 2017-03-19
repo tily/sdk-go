@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"unicode"
 )
 
 var generateCommand = &cobra.Command{
@@ -39,6 +40,11 @@ type Generator struct {
 	ResultShapeTypeSelector      string
 	ResultShapeTypeRegexp        string
 	ResultExampleSelector        string
+	ResultShapeAncestorSelector  string
+	ResultShapeAncestorRegexp    string
+	ResultShapeChildrenSelector  string
+	ResultShapeChildrenRegexp    string
+	ResultShapeChildRegexp       string
 }
 
 func init() {
@@ -128,8 +134,14 @@ func (g *Generator) processOperationList() {
 			g.APIModel.Shapes[shape.ShapeName] = shape
 		}
 
-		for _, shape := range g.generateResultShapes(opHTML.OpName, doc) {
-			g.APIModel.Shapes[shape.ShapeName] = shape
+		if g.ResultShapeAncestorSelector != "" {
+			for _, shape := range g.generateResultShapesComputing(opHTML.OpName, doc) {
+				g.APIModel.Shapes[shape.ShapeName] = shape
+			}
+		} else {
+			for _, shape := range g.generateResultShapes(opHTML.OpName, doc) {
+				g.APIModel.Shapes[shape.ShapeName] = shape
+			}
 		}
 
 		g.APIModel.Operations[opHTML.OpName] = g.generateOperation(opHTML.OpName)
@@ -243,6 +255,136 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		shape.Required = required
 	})
 	shapes = append(shapes, shape)
+	return shapes
+}
+
+func (g *Generator) getShapeTypeForText(text string) string {
+	switch {
+	case regexp.MustCompile(`^(数値|Long|xsd?:\s?(Integer|integer|integer |int|intger|int\(A 16-bit unsigned\)|long|short))$`).MatchString(text):
+		return "integer"
+	case regexp.MustCompile(`^xsd?:(Double|double)$`).MatchString(text):
+		return "double"
+	case regexp.MustCompile(`^(文字列|xsd?::?\s?(string|String|stringint))$`).MatchString(text):
+		return "string"
+	case regexp.MustCompile(`^(真偽値|boolean|xsd?:(xs:)?\s?(boolean|Boolean))$`).MatchString(text):
+		return "boolean"
+	case regexp.MustCompile(`^(日時|xsd?:\s?(dateTime|DateTime|datetime|calendar|Calendar)(　?\(yyyy-mm-ddThh:mm:ssZ\))?)$`).MatchString(text):
+		return "timestamp"
+	default:
+		return text
+	}
+}
+
+func (g *Generator) getResultShapeName(s *goquery.Selection) string {
+	shapeName := s.Find(g.ResultShapeNameSelector).First().Text()
+	shapeName = regexp.MustCompile(`(\s|\t|\n)`).ReplaceAllString(shapeName, "")
+	return shapeName
+}
+
+func (g *Generator) getResultShapeType(s *goquery.Selection) string {
+	typeText := s.Find(g.ResultShapeTypeSelector).First().Text()
+	if g.ResultShapeTypeRegexp != "" {
+		r := regexp.MustCompile(g.ResultShapeTypeRegexp)
+		m := r.FindStringSubmatch(typeText)
+		result := make(map[string]string)
+		for i, name := range r.SubexpNames() {
+			if i != 0 && i <= len(m) {
+				result[name] = m[i]
+			}
+		}
+		if result["type"] == "" {
+			return ""
+			//panic("error")
+		}
+		typeText = result["type"]
+	}
+	typeText = regexp.MustCompile(`(\s|\t|\n)`).ReplaceAllString(typeText, "")
+	return g.getShapeTypeForText(typeText)
+}
+
+func (g *Generator) getResultShapeAncestor(s *goquery.Selection) string {
+	ancestorText := s.Find(g.ResultShapeAncestorSelector).First().Text()
+	ancestorMatch := regexp.MustCompile(g.ResultShapeAncestorRegexp).FindStringSubmatch(ancestorText)
+	if len(ancestorMatch) != 0 {
+		return ancestorMatch[1]
+	}
+	return ""
+}
+
+func (g *Generator) getResultShapeChildren(s *goquery.Selection) []string {
+	childrenText := s.Find(g.ResultShapeChildrenSelector).First().Text()
+	childrenMatch := regexp.MustCompile(g.ResultShapeChildrenRegexp).FindStringSubmatch(childrenText)
+	if len(childrenMatch) != 0 {
+		return regexp.MustCompile(g.ResultShapeChildRegexp).FindAllString(childrenMatch[1], -1)
+	}
+	return []string{}
+}
+
+func capitalize(s string) string {
+	a := []rune(s)
+	a[0] = unicode.ToUpper(a[0])
+	return string(a)
+}
+
+func (g *Generator) generateResultShapesComputing(operationName string, doc *goquery.Document) (shapes Shapes) {
+	locToShapeMap := map[string]string{}
+	resultShapeHTMLs := doc.Find(g.ResultShapeSelector)
+	resultShapeHTMLs.Each(func(i int, s *goquery.Selection) {
+		shapeName := g.getResultShapeName(s)
+		shapeType := g.getResultShapeType(s)
+		//ancestor := g.getResultShapeAncestor(s)
+		children := g.getResultShapeChildren(s)
+
+		locToShapeMap[shapeName] = shapeType
+
+		if i == 0 {
+			shape := Shape{ShapeName: fmt.Sprintf("%sResult", operationName), Type: "structure", Members: map[string]ShapeRef{}}
+			for _, shapeName := range children {
+				shape.Members[capitalize(shapeName)] = ShapeRef{LocationName: shapeName}
+			}
+			shapes = append(shapes, shape)
+		} else if regexp.MustCompile(`(item|member)`).MatchString(shapeName) {
+			shape := Shape{ShapeName: shapeType, Type: "structure", Members: map[string]ShapeRef{}}
+			for _, shapeName := range children {
+				shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
+			}
+			shapes = append(shapes, shape)
+		} else {
+			if len(children) == 0 {
+				shape := Shape{ShapeName: shapeName, Type: shapeType}
+				shapes = append(shapes, shape)
+			} else if regexp.MustCompile(`(item|member)`).MatchString(children[0]) {
+				shape := Shape{ShapeName: shapeType, Type: "list"}
+				nextShapeHTML := goquery.NewDocumentFromNode(resultShapeHTMLs.Get(i + 1))
+				//nextShapeName := g.getResultShapeName(nextShapeHTML.Selection)
+				nextShapeType := g.getResultShapeType(nextShapeHTML.Selection)
+				shape.Member = &ShapeRef{ShapeName: nextShapeType}
+				shapes = append(shapes, shape)
+			} else {
+				shape := Shape{ShapeName: shapeType, Type: "structure", Members: map[string]ShapeRef{}}
+				for _, shapeName := range children {
+					shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
+				}
+				shapes = append(shapes, shape)
+			}
+		}
+	})
+	for i, shape := range shapes {
+		if shape.Type == "structure" {
+			newMembers := map[string]ShapeRef{}
+			for locationName, shapeRef := range shape.Members {
+				shapeName := locToShapeMap[locationName]
+				shapeRef.ShapeName = shapeName
+				newMembers[shapeName] = shapeRef
+			}
+			shapes[i].Members = newMembers
+		}
+	}
+	shapes = append(shapes, Shape{ShapeName: "Integer", Type: "integer"})
+	shapes = append(shapes, Shape{ShapeName: "String", Type: "string"})
+	shapes = append(shapes, Shape{ShapeName: "Boolean", Type: "boolean"})
+	shapes = append(shapes, Shape{ShapeName: "Double", Type: "double"})
+	shapes = append(shapes, Shape{ShapeName: "TStamp", Type: "timestamp"})
 	return shapes
 }
 

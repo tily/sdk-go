@@ -174,6 +174,10 @@
     "UploadSslCertificate": "UploadSslCertificate"
   },
   "shapes": {
+    "": {
+      "base": "",
+      "refs": null
+    },
     "AccountName": {
       "base": "AccountName",
       "refs": null
@@ -202,6 +206,74 @@
       "base": "Agreement",
       "refs": null
     },
+    "AlarmDateHistoryItemType": {
+      "base": "AlarmDateHistoryItemType",
+      "refs": null
+    },
+    "AlarmDateHistorySetType": {
+      "base": "AlarmDateHistorySetType",
+      "refs": null
+    },
+    "AlarmEventHistoryItemType": {
+      "base": "AlarmEventHistoryItemType",
+      "refs": null
+    },
+    "AlarmEventHistorySetType": {
+      "base": "AlarmEventHistorySetType",
+      "refs": null
+    },
+    "AlarmReservationItemType": {
+      "base": "AlarmReservationItemType",
+      "refs": null
+    },
+    "AlarmReservationSetType": {
+      "base": "AlarmReservationSetType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesDateItemType": {
+      "base": "AlarmRulesActivitiesDateItemType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesDateSetType": {
+      "base": "AlarmRulesActivitiesDateSetType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesEventItemType": {
+      "base": "AlarmRulesActivitiesEventItemType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesEventSetType": {
+      "base": "AlarmRulesActivitiesEventSetType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesItemType": {
+      "base": "AlarmRulesActivitiesItemType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesReservationItemType": {
+      "base": "AlarmRulesActivitiesReservationItemType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesReservationSetType": {
+      "base": "AlarmRulesActivitiesReservationSetType",
+      "refs": null
+    },
+    "AlarmRulesActivitiesSetType": {
+      "base": "AlarmRulesActivitiesSetType",
+      "refs": null
+    },
+    "AlarmTargetItemType": {
+      "base": "AlarmTargetItemType",
+      "refs": null
+    },
+    "AlarmTargetSetType": {
+      "base": "AlarmTargetSetType",
+      "refs": null
+    },
+    "AlarmTargetsSetType": {
+      "base": "AlarmTargetsSetType",
+      "refs": null
+    },
     "All": {
       "base": "All",
       "refs": null
@@ -210,44 +282,152 @@
       "base": "AllocateAddressRequest",
       "refs": null
     },
+    "AllocateAddressResult": {
+      "base": "AllocateAddressResult",
+      "refs": null
+    },
+    "AnalyzeResultSetItemType": {
+      "base": "AnalyzeResultSetItemType",
+      "refs": null
+    },
+    "AnalyzeResultSetType": {
+      "base": "AnalyzeResultSetType",
+      "refs": null
+    },
+    "AppCookieStickinessPolicies": {
+      "base": "AppCookieStickinessPolicies",
+      "refs": null
+    },
+    "AppCookieStickinessPolicy": {
+      "base": "AppCookieStickinessPolicy",
+      "refs": null
+    },
     "AssociateAddressRequest": {
       "base": "AssociateAddressRequest",
+      "refs": null
+    },
+    "AssociateAddressResult": {
+      "base": "AssociateAddressResult",
       "refs": null
     },
     "AssociateRouteTableRequest": {
       "base": "AssociateRouteTableRequest",
       "refs": null
     },
+    "AssociateRouteTableResult": {
+      "base": "AssociateRouteTableResult",
+      "refs": null
+    },
+    "AssociateUserResult": {
+      "base": "AssociateUserResult",
+      "refs": null
+    },
     "AssociateUsersRequest": {
       "base": "AssociateUsersRequest",
+      "refs": null
+    },
+    "AssociateUsersResult": {
+      "base": "AssociateUsersResult",
       "refs": null
     },
     "AttachVolumeRequest": {
       "base": "AttachVolumeRequest",
       "refs": null
     },
+    "AttachVolumeResult": {
+      "base": "AttachVolumeResult",
+      "refs": null
+    },
+    "AttachmentItemType": {
+      "base": "AttachmentItemType",
+      "refs": null
+    },
+    "AttachmentSetItemResponseType": {
+      "base": "AttachmentSetItemResponseType",
+      "refs": null
+    },
+    "AttachmentSetResponseType": {
+      "base": "AttachmentSetResponseType",
+      "refs": null
+    },
+    "AttachmentType": {
+      "base": "AttachmentType",
+      "refs": null
+    },
     "AuthorizeSecurityGroupIngressRequest": {
       "base": "AuthorizeSecurityGroupIngressRequest",
+      "refs": null
+    },
+    "AuthorizeSecurityGroupIngressResult": {
+      "base": "AuthorizeSecurityGroupIngressResult",
       "refs": null
     },
     "AutoScalingGroupNameList": {
       "base": "AutoScalingGroupNameList",
       "refs": null
     },
+    "AutoScalingInstancesItemType": {
+      "base": "AutoScalingInstancesItemType",
+      "refs": null
+    },
+    "AutoScalingInstancesSetType": {
+      "base": "AutoScalingInstancesSetType",
+      "refs": null
+    },
+    "AutoScalingReservationInfoType": {
+      "base": "AutoScalingReservationInfoType",
+      "refs": null
+    },
+    "AutoScalingReservationSetType": {
+      "base": "AutoScalingReservationSetType",
+      "refs": null
+    },
     "AvailabilityZone": {
       "base": "AvailabilityZone",
+      "refs": null
+    },
+    "AvailabilityZoneItemType": {
+      "base": "AvailabilityZoneItemType",
+      "refs": null
+    },
+    "AvailabilityZoneMessageSetType": {
+      "base": "AvailabilityZoneMessageSetType",
+      "refs": null
+    },
+    "AvailabilityZoneMessageType": {
+      "base": "AvailabilityZoneMessageType",
+      "refs": null
+    },
+    "AvailabilityZoneSetType": {
+      "base": "AvailabilityZoneSetType",
+      "refs": null
+    },
+    "AvailabilityZones": {
+      "base": "AvailabilityZones",
       "refs": null
     },
     "AvailabilityZonesList": {
       "base": "AvailabilityZonesList",
       "refs": null
     },
+    "BackupInformationType": {
+      "base": "BackupInformationType",
+      "refs": null
+    },
     "BalancingType": {
       "base": "BalancingType",
       "refs": null
     },
+    "BlockDeviceMappingItemType": {
+      "base": "BlockDeviceMappingItemType",
+      "refs": null
+    },
     "BlockDeviceMappingList": {
       "base": "BlockDeviceMappingList",
+      "refs": null
+    },
+    "BlockDeviceMappingType": {
+      "base": "BlockDeviceMappingType",
       "refs": null
     },
     "Boolean": {
@@ -270,8 +450,16 @@
       "base": "CancelCopyInstancesRequest",
       "refs": null
     },
+    "CancelCopyInstancesResult": {
+      "base": "CancelCopyInstancesResult",
+      "refs": null
+    },
     "CancelUploadRequest": {
       "base": "CancelUploadRequest",
+      "refs": null
+    },
+    "CancelUploadResult": {
+      "base": "CancelUploadResult",
       "refs": null
     },
     "CertInfoStruct": {
@@ -286,12 +474,24 @@
       "base": "ClearLoadBalancerSessionRequest",
       "refs": null
     },
+    "ClearLoadBalancerSessionResult": {
+      "base": "ClearLoadBalancerSessionResult",
+      "refs": null
+    },
     "ConfigureHealthCheckRequest": {
       "base": "ConfigureHealthCheckRequest",
       "refs": null
     },
+    "ConfigureHealthCheckResult": {
+      "base": "ConfigureHealthCheckResult",
+      "refs": null
+    },
     "ConversionTaskIdList": {
       "base": "ConversionTaskIdList",
+      "refs": null
+    },
+    "ConversionTaskType": {
+      "base": "ConversionTaskType",
       "refs": null
     },
     "CookieExpirationPeriod": {
@@ -310,6 +510,10 @@
       "base": "CopyInstancesRequest",
       "refs": null
     },
+    "CopyInstancesResult": {
+      "base": "CopyInstancesResult",
+      "refs": null
+    },
     "CountryName": {
       "base": "CountryName",
       "refs": null
@@ -322,48 +526,96 @@
       "base": "CreateCustomerGatewayRequest",
       "refs": null
     },
+    "CreateCustomerGatewayResult": {
+      "base": "CreateCustomerGatewayResult",
+      "refs": null
+    },
     "CreateDhcpOptionsRequest": {
       "base": "CreateDhcpOptionsRequest",
+      "refs": null
+    },
+    "CreateDhcpOptionsResult": {
+      "base": "CreateDhcpOptionsResult",
       "refs": null
     },
     "CreateImageRequest": {
       "base": "CreateImageRequest",
       "refs": null
     },
+    "CreateImageResult": {
+      "base": "CreateImageResult",
+      "refs": null
+    },
     "CreateKeyPairRequest": {
       "base": "CreateKeyPairRequest",
+      "refs": null
+    },
+    "CreateKeyPairResult": {
+      "base": "CreateKeyPairResult",
       "refs": null
     },
     "CreateLoadBalancerRequest": {
       "base": "CreateLoadBalancerRequest",
       "refs": null
     },
+    "CreateLoadBalancerResult": {
+      "base": "CreateLoadBalancerResult",
+      "refs": null
+    },
     "CreateRouteRequest": {
       "base": "CreateRouteRequest",
+      "refs": null
+    },
+    "CreateRouteResult": {
+      "base": "CreateRouteResult",
       "refs": null
     },
     "CreateRouteTableRequest": {
       "base": "CreateRouteTableRequest",
       "refs": null
     },
+    "CreateRouteTableResult": {
+      "base": "CreateRouteTableResult",
+      "refs": null
+    },
     "CreateSecurityGroupRequest": {
       "base": "CreateSecurityGroupRequest",
+      "refs": null
+    },
+    "CreateSecurityGroupResult": {
+      "base": "CreateSecurityGroupResult",
       "refs": null
     },
     "CreateSslCertificateRequest": {
       "base": "CreateSslCertificateRequest",
       "refs": null
     },
+    "CreateSslCertificateResult": {
+      "base": "CreateSslCertificateResult",
+      "refs": null
+    },
     "CreateVolumeRequest": {
       "base": "CreateVolumeRequest",
+      "refs": null
+    },
+    "CreateVolumeResult": {
+      "base": "CreateVolumeResult",
       "refs": null
     },
     "CreateVpnConnectionRequest": {
       "base": "CreateVpnConnectionRequest",
       "refs": null
     },
+    "CreateVpnConnectionResult": {
+      "base": "CreateVpnConnectionResult",
+      "refs": null
+    },
     "CreateVpnGatewayRequest": {
       "base": "CreateVpnGatewayRequest",
+      "refs": null
+    },
+    "CreateVpnGatewayResult": {
+      "base": "CreateVpnGatewayResult",
       "refs": null
     },
     "CreatedTime": {
@@ -374,12 +626,32 @@
       "base": "CustomerGatewayIdList",
       "refs": null
     },
+    "CustomerGatewayItemType": {
+      "base": "CustomerGatewayItemType",
+      "refs": null
+    },
+    "CustomerGatewaySetType": {
+      "base": "CustomerGatewaySetType",
+      "refs": null
+    },
+    "CustomerGatewayType": {
+      "base": "CustomerGatewayType",
+      "refs": null
+    },
     "DDayStruct": {
       "base": "DDayStruct",
       "refs": null
     },
     "DNSName": {
       "base": "DNSName",
+      "refs": null
+    },
+    "DataItemType": {
+      "base": "DataItemType",
+      "refs": null
+    },
+    "DataSetType": {
+      "base": "DataSetType",
       "refs": null
     },
     "DataType": {
@@ -398,20 +670,40 @@
       "base": "DeleteCustomerGatewayRequest",
       "refs": null
     },
+    "DeleteCustomerGatewayResult": {
+      "base": "DeleteCustomerGatewayResult",
+      "refs": null
+    },
     "DeleteDhcpOptionsRequest": {
       "base": "DeleteDhcpOptionsRequest",
+      "refs": null
+    },
+    "DeleteDhcpOptionsResult": {
+      "base": "DeleteDhcpOptionsResult",
       "refs": null
     },
     "DeleteImageRequest": {
       "base": "DeleteImageRequest",
       "refs": null
     },
+    "DeleteImageResult": {
+      "base": "DeleteImageResult",
+      "refs": null
+    },
     "DeleteKeyPairRequest": {
       "base": "DeleteKeyPairRequest",
       "refs": null
     },
+    "DeleteKeyPairResult": {
+      "base": "DeleteKeyPairResult",
+      "refs": null
+    },
     "DeleteLoadBalancerRequest": {
       "base": "DeleteLoadBalancerRequest",
+      "refs": null
+    },
+    "DeleteLoadBalancerResult": {
+      "base": "DeleteLoadBalancerResult",
       "refs": null
     },
     "DeleteOnTermination": {
@@ -422,140 +714,336 @@
       "base": "DeleteRouteRequest",
       "refs": null
     },
+    "DeleteRouteResult": {
+      "base": "DeleteRouteResult",
+      "refs": null
+    },
     "DeleteRouteTableRequest": {
       "base": "DeleteRouteTableRequest",
+      "refs": null
+    },
+    "DeleteRouteTableResult": {
+      "base": "DeleteRouteTableResult",
       "refs": null
     },
     "DeleteSecurityGroupRequest": {
       "base": "DeleteSecurityGroupRequest",
       "refs": null
     },
+    "DeleteSecurityGroupResult": {
+      "base": "DeleteSecurityGroupResult",
+      "refs": null
+    },
     "DeleteSslCertificateRequest": {
       "base": "DeleteSslCertificateRequest",
+      "refs": null
+    },
+    "DeleteSslCertificateResult": {
+      "base": "DeleteSslCertificateResult",
       "refs": null
     },
     "DeleteVolumeRequest": {
       "base": "DeleteVolumeRequest",
       "refs": null
     },
+    "DeleteVolumeResult": {
+      "base": "DeleteVolumeResult",
+      "refs": null
+    },
     "DeleteVpnConnectionRequest": {
       "base": "DeleteVpnConnectionRequest",
+      "refs": null
+    },
+    "DeleteVpnConnectionResult": {
+      "base": "DeleteVpnConnectionResult",
       "refs": null
     },
     "DeleteVpnGatewayRequest": {
       "base": "DeleteVpnGatewayRequest",
       "refs": null
     },
+    "DeleteVpnGatewayResult": {
+      "base": "DeleteVpnGatewayResult",
+      "refs": null
+    },
     "DeregisterInstancesFromLoadBalancerRequest": {
       "base": "DeregisterInstancesFromLoadBalancerRequest",
+      "refs": null
+    },
+    "DeregisterInstancesFromLoadBalancerResult": {
+      "base": "DeregisterInstancesFromLoadBalancerResult",
       "refs": null
     },
     "DeregisterInstancesFromSecurityGroupRequest": {
       "base": "DeregisterInstancesFromSecurityGroupRequest",
       "refs": null
     },
+    "DeregisterInstancesFromSecurityGroupResult": {
+      "base": "DeregisterInstancesFromSecurityGroupResult",
+      "refs": null
+    },
     "DescribeAddressesRequest": {
       "base": "DescribeAddressesRequest",
+      "refs": null
+    },
+    "DescribeAddressesResponseInfoType": {
+      "base": "DescribeAddressesResponseInfoType",
+      "refs": null
+    },
+    "DescribeAddressesResponseItemType": {
+      "base": "DescribeAddressesResponseItemType",
+      "refs": null
+    },
+    "DescribeAddressesResult": {
+      "base": "DescribeAddressesResult",
+      "refs": null
+    },
+    "DescribeAssociatedUserResult": {
+      "base": "DescribeAssociatedUserResult",
       "refs": null
     },
     "DescribeAssociatedUsersRequest": {
       "base": "DescribeAssociatedUsersRequest",
       "refs": null
     },
+    "DescribeAssociatedUsersResult": {
+      "base": "DescribeAssociatedUsersResult",
+      "refs": null
+    },
     "DescribeAvailabilityZonesRequest": {
       "base": "DescribeAvailabilityZonesRequest",
+      "refs": null
+    },
+    "DescribeAvailabilityZonesResult": {
+      "base": "DescribeAvailabilityZonesResult",
       "refs": null
     },
     "DescribeCustomerGatewaysRequest": {
       "base": "DescribeCustomerGatewaysRequest",
       "refs": null
     },
+    "DescribeCustomerGatewaysResult": {
+      "base": "DescribeCustomerGatewaysResult",
+      "refs": null
+    },
     "DescribeDhcpOptionsRequest": {
       "base": "DescribeDhcpOptionsRequest",
+      "refs": null
+    },
+    "DescribeDhcpOptionsResult": {
+      "base": "DescribeDhcpOptionsResult",
       "refs": null
     },
     "DescribeImagesRequest": {
       "base": "DescribeImagesRequest",
       "refs": null
     },
+    "DescribeImagesResponseInfoType": {
+      "base": "DescribeImagesResponseInfoType",
+      "refs": null
+    },
+    "DescribeImagesResponseItemType": {
+      "base": "DescribeImagesResponseItemType",
+      "refs": null
+    },
+    "DescribeImagesResult": {
+      "base": "DescribeImagesResult",
+      "refs": null
+    },
     "DescribeInstanceAttributeRequest": {
       "base": "DescribeInstanceAttributeRequest",
+      "refs": null
+    },
+    "DescribeInstanceAttributeResult": {
+      "base": "DescribeInstanceAttributeResult",
       "refs": null
     },
     "DescribeInstanceHealthRequest": {
       "base": "DescribeInstanceHealthRequest",
       "refs": null
     },
+    "DescribeInstanceHealthResult": {
+      "base": "DescribeInstanceHealthResult",
+      "refs": null
+    },
     "DescribeInstancesRequest": {
       "base": "DescribeInstancesRequest",
+      "refs": null
+    },
+    "DescribeInstancesResult": {
+      "base": "DescribeInstancesResult",
       "refs": null
     },
     "DescribeKeyPairsRequest": {
       "base": "DescribeKeyPairsRequest",
       "refs": null
     },
+    "DescribeKeyPairsResponseInfoType": {
+      "base": "DescribeKeyPairsResponseInfoType",
+      "refs": null
+    },
+    "DescribeKeyPairsResponseItemType": {
+      "base": "DescribeKeyPairsResponseItemType",
+      "refs": null
+    },
+    "DescribeKeyPairsResult": {
+      "base": "DescribeKeyPairsResult",
+      "refs": null
+    },
     "DescribeLoadBalancersRequest": {
       "base": "DescribeLoadBalancersRequest",
+      "refs": null
+    },
+    "DescribeLoadBalancersResult": {
+      "base": "DescribeLoadBalancersResult",
       "refs": null
     },
     "DescribeRegionsRequest": {
       "base": "DescribeRegionsRequest",
       "refs": null
     },
+    "DescribeRegionsResult": {
+      "base": "DescribeRegionsResult",
+      "refs": null
+    },
+    "DescribeResourceInfoType": {
+      "base": "DescribeResourceInfoType",
+      "refs": null
+    },
     "DescribeResourcesRequest": {
       "base": "DescribeResourcesRequest",
+      "refs": null
+    },
+    "DescribeResourcesResult": {
+      "base": "DescribeResourcesResult",
       "refs": null
     },
     "DescribeRouteTablesRequest": {
       "base": "DescribeRouteTablesRequest",
       "refs": null
     },
+    "DescribeRouteTablesResult": {
+      "base": "DescribeRouteTablesResult",
+      "refs": null
+    },
     "DescribeSecurityActivitiesRequest": {
       "base": "DescribeSecurityActivitiesRequest",
+      "refs": null
+    },
+    "DescribeSecurityActivitiesResult": {
+      "base": "DescribeSecurityActivitiesResult",
       "refs": null
     },
     "DescribeSecurityGroupOptionRequest": {
       "base": "DescribeSecurityGroupOptionRequest",
       "refs": null
     },
+    "DescribeSecurityGroupOptionResult": {
+      "base": "DescribeSecurityGroupOptionResult",
+      "refs": null
+    },
     "DescribeSecurityGroupsRequest": {
       "base": "DescribeSecurityGroupsRequest",
+      "refs": null
+    },
+    "DescribeSecurityGroupsResult": {
+      "base": "DescribeSecurityGroupsResult",
+      "refs": null
+    },
+    "DescribeServiceStatusItemType": {
+      "base": "DescribeServiceStatusItemType",
       "refs": null
     },
     "DescribeServiceStatusRequest": {
       "base": "DescribeServiceStatusRequest",
       "refs": null
     },
+    "DescribeServiceStatusResult": {
+      "base": "DescribeServiceStatusResult",
+      "refs": null
+    },
+    "DescribeServiceStatusSetType": {
+      "base": "DescribeServiceStatusSetType",
+      "refs": null
+    },
     "DescribeSslCertificateAttributeRequest": {
       "base": "DescribeSslCertificateAttributeRequest",
+      "refs": null
+    },
+    "DescribeSslCertificateAttributeResult": {
+      "base": "DescribeSslCertificateAttributeResult",
       "refs": null
     },
     "DescribeSslCertificatesRequest": {
       "base": "DescribeSslCertificatesRequest",
       "refs": null
     },
+    "DescribeSslCertificatesResult": {
+      "base": "DescribeSslCertificatesResult",
+      "refs": null
+    },
     "DescribeUploadsRequest": {
       "base": "DescribeUploadsRequest",
+      "refs": null
+    },
+    "DescribeUploadsResult": {
+      "base": "DescribeUploadsResult",
       "refs": null
     },
     "DescribeUsageRequest": {
       "base": "DescribeUsageRequest",
       "refs": null
     },
+    "DescribeUsageResult": {
+      "base": "DescribeUsageResult",
+      "refs": null
+    },
+    "DescribeUserActivitiesItemType": {
+      "base": "DescribeUserActivitiesItemType",
+      "refs": null
+    },
     "DescribeUserActivitiesRequest": {
       "base": "DescribeUserActivitiesRequest",
+      "refs": null
+    },
+    "DescribeUserActivitiesResult": {
+      "base": "DescribeUserActivitiesResult",
+      "refs": null
+    },
+    "DescribeUserActivitiesSetType": {
+      "base": "DescribeUserActivitiesSetType",
       "refs": null
     },
     "DescribeVolumesRequest": {
       "base": "DescribeVolumesRequest",
       "refs": null
     },
+    "DescribeVolumesResult": {
+      "base": "DescribeVolumesResult",
+      "refs": null
+    },
+    "DescribeVolumesSetItemResponseType": {
+      "base": "DescribeVolumesSetItemResponseType",
+      "refs": null
+    },
+    "DescribeVolumesSetResponseType": {
+      "base": "DescribeVolumesSetResponseType",
+      "refs": null
+    },
     "DescribeVpnConnectionsRequest": {
       "base": "DescribeVpnConnectionsRequest",
       "refs": null
     },
+    "DescribeVpnConnectionsResult": {
+      "base": "DescribeVpnConnectionsResult",
+      "refs": null
+    },
     "DescribeVpnGatewaysRequest": {
       "base": "DescribeVpnGatewaysRequest",
+      "refs": null
+    },
+    "DescribeVpnGatewaysResult": {
+      "base": "DescribeVpnGatewaysResult",
       "refs": null
     },
     "Description": {
@@ -574,8 +1062,16 @@
       "base": "DestinationStruct",
       "refs": null
     },
+    "DestinationType": {
+      "base": "DestinationType",
+      "refs": null
+    },
     "DetachVolumeRequest": {
       "base": "DetachVolumeRequest",
+      "refs": null
+    },
+    "DetachVolumeResult": {
+      "base": "DetachVolumeResult",
       "refs": null
     },
     "DeviceIndex": {
@@ -594,28 +1090,100 @@
       "base": "DhcpConfigId",
       "refs": null
     },
+    "DhcpConfigSetItemType": {
+      "base": "DhcpConfigSetItemType",
+      "refs": null
+    },
+    "DhcpConfigType": {
+      "base": "DhcpConfigType",
+      "refs": null
+    },
+    "DhcpConfigsSetType": {
+      "base": "DhcpConfigsSetType",
+      "refs": null
+    },
     "DhcpConfigurationList": {
       "base": "DhcpConfigurationList",
+      "refs": null
+    },
+    "DhcpConfigurationSetItemType": {
+      "base": "DhcpConfigurationSetItemType",
+      "refs": null
+    },
+    "DhcpConfigurationSetType": {
+      "base": "DhcpConfigurationSetType",
+      "refs": null
+    },
+    "DhcpIpAddressInformationType": {
+      "base": "DhcpIpAddressInformationType",
+      "refs": null
+    },
+    "DhcpIpAddressPoolInformationSetItemType": {
+      "base": "DhcpIpAddressPoolInformationSetItemType",
+      "refs": null
+    },
+    "DhcpIpAddressSetItemType": {
+      "base": "DhcpIpAddressSetItemType",
+      "refs": null
+    },
+    "DhcpIpAddressSetType": {
+      "base": "DhcpIpAddressSetType",
       "refs": null
     },
     "DhcpOptionsId": {
       "base": "DhcpOptionsId",
       "refs": null
     },
+    "DhcpOptionsType": {
+      "base": "DhcpOptionsType",
+      "refs": null
+    },
+    "DhcpStatusInformationSetItemType": {
+      "base": "DhcpStatusInformationSetItemType",
+      "refs": null
+    },
+    "DhcpStatusInformationSetType": {
+      "base": "DhcpStatusInformationSetType",
+      "refs": null
+    },
     "DisassociateAddressRequest": {
       "base": "DisassociateAddressRequest",
+      "refs": null
+    },
+    "DisassociateAddressResult": {
+      "base": "DisassociateAddressResult",
       "refs": null
     },
     "DisassociateRouteTableRequest": {
       "base": "DisassociateRouteTableRequest",
       "refs": null
     },
+    "DisassociateRouteTableResult": {
+      "base": "DisassociateRouteTableResult",
+      "refs": null
+    },
+    "DiskImageDescriptionType": {
+      "base": "DiskImageDescriptionType",
+      "refs": null
+    },
     "DiskImageList": {
       "base": "DiskImageList",
       "refs": null
     },
+    "DiskImageVolumeDescriptionType": {
+      "base": "DiskImageVolumeDescriptionType",
+      "refs": null
+    },
+    "DissociateUserResult": {
+      "base": "DissociateUserResult",
+      "refs": null
+    },
     "DissociateUsersRequest": {
       "base": "DissociateUsersRequest",
+      "refs": null
+    },
+    "DissociateUsersResult": {
+      "base": "DissociateUsersResult",
       "refs": null
     },
     "DistributionIdList": {
@@ -630,6 +1198,18 @@
       "base": "DownloadSslCertificateRequest",
       "refs": null
     },
+    "DownloadSslCertificateResult": {
+      "base": "DownloadSslCertificateResult",
+      "refs": null
+    },
+    "EbsBlockDeviceType": {
+      "base": "EbsBlockDeviceType",
+      "refs": null
+    },
+    "EbsInstanceBlockDeviceMappingResponseType": {
+      "base": "EbsInstanceBlockDeviceMappingResponseType",
+      "refs": null
+    },
     "EbsStruct": {
       "base": "EbsStruct",
       "refs": null
@@ -638,8 +1218,16 @@
       "base": "EmailAddress",
       "refs": null
     },
+    "EmailAddressItemType": {
+      "base": "EmailAddressItemType",
+      "refs": null
+    },
     "EmailAddressList": {
       "base": "EmailAddressList",
+      "refs": null
+    },
+    "EmailAddressSetType": {
+      "base": "EmailAddressSetType",
       "refs": null
     },
     "Enable": {
@@ -686,6 +1274,18 @@
       "base": "ExpirationPeriod",
       "refs": null
     },
+    "Filter": {
+      "base": "Filter",
+      "refs": null
+    },
+    "FilterIPAddress": {
+      "base": "FilterIPAddress",
+      "refs": null
+    },
+    "FilterIPAddresses": {
+      "base": "FilterIPAddresses",
+      "refs": null
+    },
     "FilterList": {
       "base": "FilterList",
       "refs": null
@@ -718,8 +1318,16 @@
       "base": "FunctionName",
       "refs": null
     },
+    "GlobalPlacementType": {
+      "base": "GlobalPlacementType",
+      "refs": null
+    },
     "Group": {
       "base": "Group",
+      "refs": null
+    },
+    "GroupItemType": {
+      "base": "GroupItemType",
       "refs": null
     },
     "GroupName": {
@@ -730,12 +1338,20 @@
       "base": "GroupNameList",
       "refs": null
     },
+    "GroupSetType": {
+      "base": "GroupSetType",
+      "refs": null
+    },
     "GroupsList": {
       "base": "GroupsList",
       "refs": null
     },
     "HashAlgorithm": {
       "base": "HashAlgorithm",
+      "refs": null
+    },
+    "HealthCheck": {
+      "base": "HealthCheck",
       "refs": null
     },
     "HealthCheckStruct": {
@@ -770,8 +1386,28 @@
       "base": "ImportInstanceRequest",
       "refs": null
     },
+    "ImportInstanceResult": {
+      "base": "ImportInstanceResult",
+      "refs": null
+    },
+    "ImportInstanceTaskDetailsType": {
+      "base": "ImportInstanceTaskDetailsType",
+      "refs": null
+    },
+    "ImportInstanceVolumeDetailItemType": {
+      "base": "ImportInstanceVolumeDetailItemType",
+      "refs": null
+    },
+    "ImportInstanceVolumeDetailSetType": {
+      "base": "ImportInstanceVolumeDetailSetType",
+      "refs": null
+    },
     "ImportKeyPairRequest": {
       "base": "ImportKeyPairRequest",
+      "refs": null
+    },
+    "ImportKeyPairResult": {
+      "base": "ImportKeyPairResult",
       "refs": null
     },
     "ImportManifestUrl": {
@@ -786,6 +1422,18 @@
       "base": "InboundInterfaceStruct",
       "refs": null
     },
+    "InstanceAutoScaleMappingResponseType": {
+      "base": "InstanceAutoScaleMappingResponseType",
+      "refs": null
+    },
+    "InstanceBlockDeviceMappingResponseItemType": {
+      "base": "InstanceBlockDeviceMappingResponseItemType",
+      "refs": null
+    },
+    "InstanceBlockDeviceMappingResponseType": {
+      "base": "InstanceBlockDeviceMappingResponseType",
+      "refs": null
+    },
     "InstanceId": {
       "base": "InstanceId",
       "refs": null
@@ -794,8 +1442,44 @@
       "base": "InstanceIdList",
       "refs": null
     },
+    "InstanceIdSetType": {
+      "base": "InstanceIdSetType",
+      "refs": null
+    },
+    "InstanceIdType": {
+      "base": "InstanceIdType",
+      "refs": null
+    },
+    "InstanceLoadBalancerMappingResponseItemType": {
+      "base": "InstanceLoadBalancerMappingResponseItemType",
+      "refs": null
+    },
+    "InstanceLoadBalancerMappingResponseType": {
+      "base": "InstanceLoadBalancerMappingResponseType",
+      "refs": null
+    },
+    "InstanceMonitoringStateType": {
+      "base": "InstanceMonitoringStateType",
+      "refs": null
+    },
     "InstanceName": {
       "base": "InstanceName",
+      "refs": null
+    },
+    "InstanceNetworkInterfaceAssociation": {
+      "base": "InstanceNetworkInterfaceAssociation",
+      "refs": null
+    },
+    "InstanceNetworkInterfaceAssociationType": {
+      "base": "InstanceNetworkInterfaceAssociationType",
+      "refs": null
+    },
+    "InstanceNetworkInterfaceAttachmentType": {
+      "base": "InstanceNetworkInterfaceAttachmentType",
+      "refs": null
+    },
+    "InstanceNetworkInterfaceSetItemType": {
+      "base": "InstanceNetworkInterfaceSetItemType",
       "refs": null
     },
     "InstancePort": {
@@ -806,8 +1490,40 @@
       "base": "InstancePortList",
       "refs": null
     },
+    "InstancePrivateIpAddressesSetItemType": {
+      "base": "InstancePrivateIpAddressesSetItemType",
+      "refs": null
+    },
+    "InstancePrivateIpAddressesSetType": {
+      "base": "InstancePrivateIpAddressesSetType",
+      "refs": null
+    },
+    "InstanceSetType": {
+      "base": "InstanceSetType",
+      "refs": null
+    },
     "InstanceSnapshotIdList": {
       "base": "InstanceSnapshotIdList",
+      "refs": null
+    },
+    "InstanceState": {
+      "base": "InstanceState",
+      "refs": null
+    },
+    "InstanceStateChangeSetType": {
+      "base": "InstanceStateChangeSetType",
+      "refs": null
+    },
+    "InstanceStateChangeType": {
+      "base": "InstanceStateChangeType",
+      "refs": null
+    },
+    "InstanceStateType": {
+      "base": "InstanceStateType",
+      "refs": null
+    },
+    "InstanceStates": {
+      "base": "InstanceStates",
       "refs": null
     },
     "InstanceType": {
@@ -818,12 +1534,36 @@
       "base": "InstanceTypeList",
       "refs": null
     },
+    "InstanceUnique": {
+      "base": "InstanceUnique",
+      "refs": null
+    },
     "InstanceUniqueId": {
       "base": "InstanceUniqueId",
       "refs": null
     },
+    "InstanceUniqueIdSetType": {
+      "base": "InstanceUniqueIdSetType",
+      "refs": null
+    },
+    "InstanceUniqueIdType": {
+      "base": "InstanceUniqueIdType",
+      "refs": null
+    },
+    "InstanceUniqueIds": {
+      "base": "InstanceUniqueIds",
+      "refs": null
+    },
     "InstancesList": {
       "base": "InstancesList",
+      "refs": null
+    },
+    "InstancesNetworkInterfaceSetType": {
+      "base": "InstancesNetworkInterfaceSetType",
+      "refs": null
+    },
+    "InstancesNetworkInterfaceType": {
+      "base": "InstancesNetworkInterfaceType",
       "refs": null
     },
     "Integer": {
@@ -842,12 +1582,40 @@
       "base": "IpAddress",
       "refs": null
     },
+    "IpAddressPoolSetType": {
+      "base": "IpAddressPoolSetType",
+      "refs": null
+    },
+    "IpAddressPoolsSetItemType": {
+      "base": "IpAddressPoolsSetItemType",
+      "refs": null
+    },
+    "IpAddressPoolsSetType": {
+      "base": "IpAddressPoolsSetType",
+      "refs": null
+    },
+    "IpPermissionSetType": {
+      "base": "IpPermissionSetType",
+      "refs": null
+    },
+    "IpPermissionType": {
+      "base": "IpPermissionType",
+      "refs": null
+    },
     "IpPermissionsList": {
       "base": "IpPermissionsList",
       "refs": null
     },
     "IpProtocol": {
       "base": "IpProtocol",
+      "refs": null
+    },
+    "IpRangeItemType": {
+      "base": "IpRangeItemType",
+      "refs": null
+    },
+    "IpRangeSetType": {
+      "base": "IpRangeSetType",
       "refs": null
     },
     "IpRangesList": {
@@ -864,6 +1632,14 @@
     },
     "KeyNameList": {
       "base": "KeyNameList",
+      "refs": null
+    },
+    "LBCookieStickinessPolicies": {
+      "base": "LBCookieStickinessPolicies",
+      "refs": null
+    },
+    "LBCookieStickinessPolicy": {
+      "base": "LBCookieStickinessPolicy",
       "refs": null
     },
     "LaunchPermissionStruct": {
@@ -886,6 +1662,18 @@
       "base": "ListenInterfaceStruct",
       "refs": null
     },
+    "Listener": {
+      "base": "Listener",
+      "refs": null
+    },
+    "ListenerDescription": {
+      "base": "ListenerDescription",
+      "refs": null
+    },
+    "ListenerDescriptions": {
+      "base": "ListenerDescriptions",
+      "refs": null
+    },
     "ListenerStruct": {
       "base": "ListenerStruct",
       "refs": null
@@ -894,8 +1682,20 @@
       "base": "ListenerUpdateStruct",
       "refs": null
     },
+    "Listeners": {
+      "base": "Listeners",
+      "refs": null
+    },
     "ListenersList": {
       "base": "ListenersList",
+      "refs": null
+    },
+    "LoadBalancerDescription": {
+      "base": "LoadBalancerDescription",
+      "refs": null
+    },
+    "LoadBalancerDescriptions": {
+      "base": "LoadBalancerDescriptions",
       "refs": null
     },
     "LoadBalancerName": {
@@ -914,6 +1714,10 @@
       "base": "LoadBalancerNamesStruct",
       "refs": null
     },
+    "LoadBalancerOption": {
+      "base": "LoadBalancerOption",
+      "refs": null
+    },
     "LoadBalancerPort": {
       "base": "LoadBalancerPort",
       "refs": null
@@ -926,12 +1730,28 @@
       "base": "LoadBalancersList",
       "refs": null
     },
+    "LoadBalancingItemType": {
+      "base": "LoadBalancingItemType",
+      "refs": null
+    },
+    "LoadBalancingSetType": {
+      "base": "LoadBalancingSetType",
+      "refs": null
+    },
     "LocationName": {
       "base": "LocationName",
       "refs": null
     },
+    "LogSetType": {
+      "base": "LogSetType",
+      "refs": null
+    },
     "Memo": {
       "base": "Memo",
+      "refs": null
+    },
+    "MobileFilterOption": {
+      "base": "MobileFilterOption",
       "refs": null
     },
     "Mode": {
@@ -942,16 +1762,32 @@
       "base": "ModifyImageAttributeRequest",
       "refs": null
     },
+    "ModifyImageAttributeResult": {
+      "base": "ModifyImageAttributeResult",
+      "refs": null
+    },
     "ModifyInstanceAttributeRequest": {
       "base": "ModifyInstanceAttributeRequest",
+      "refs": null
+    },
+    "ModifyInstanceAttributeResult": {
+      "base": "ModifyInstanceAttributeResult",
       "refs": null
     },
     "ModifySslCertificateAttributeRequest": {
       "base": "ModifySslCertificateAttributeRequest",
       "refs": null
     },
+    "ModifySslCertificateAttributeResult": {
+      "base": "ModifySslCertificateAttributeResult",
+      "refs": null
+    },
     "ModifyVolumeAttributeRequest": {
       "base": "ModifyVolumeAttributeRequest",
+      "refs": null
+    },
+    "ModifyVolumeAttributeResult": {
+      "base": "ModifyVolumeAttributeResult",
       "refs": null
     },
     "MonitoringStruct": {
@@ -970,8 +1806,32 @@
       "base": "NameServer",
       "refs": null
     },
+    "NatRuleSetType": {
+      "base": "NatRuleSetType",
+      "refs": null
+    },
+    "NatRuleType": {
+      "base": "NatRuleType",
+      "refs": null
+    },
+    "NatTableAssociationSetType": {
+      "base": "NatTableAssociationSetType",
+      "refs": null
+    },
+    "NatTableAssociationType": {
+      "base": "NatTableAssociationType",
+      "refs": null
+    },
     "NatTableIdList": {
       "base": "NatTableIdList",
+      "refs": null
+    },
+    "NatTableSetType": {
+      "base": "NatTableSetType",
+      "refs": null
+    },
+    "NatTableType": {
+      "base": "NatTableType",
       "refs": null
     },
     "NetworkId": {
@@ -986,12 +1846,28 @@
       "base": "NetworkInterfaceList",
       "refs": null
     },
+    "NetworkInterfaceSetItemType": {
+      "base": "NetworkInterfaceSetItemType",
+      "refs": null
+    },
+    "NetworkInterfaceSetType": {
+      "base": "NetworkInterfaceSetType",
+      "refs": null
+    },
     "NetworkInterfaceStruct": {
       "base": "NetworkInterfaceStruct",
       "refs": null
     },
+    "NetworkInterfaceType": {
+      "base": "NetworkInterfaceType",
+      "refs": null
+    },
     "NetworkName": {
       "base": "NetworkName",
+      "refs": null
+    },
+    "NetworkType": {
+      "base": "NetworkType",
       "refs": null
     },
     "NetworkVolume": {
@@ -1006,56 +1882,116 @@
       "base": "NiftyAssociateImageRequest",
       "refs": null
     },
+    "NiftyAssociateImageResult": {
+      "base": "NiftyAssociateImageResult",
+      "refs": null
+    },
     "NiftyAssociateNatTableRequest": {
       "base": "NiftyAssociateNatTableRequest",
+      "refs": null
+    },
+    "NiftyAssociateNatTableResult": {
+      "base": "NiftyAssociateNatTableResult",
       "refs": null
     },
     "NiftyAssociateRouteTableWithVpnGatewayRequest": {
       "base": "NiftyAssociateRouteTableWithVpnGatewayRequest",
       "refs": null
     },
+    "NiftyAssociateRouteTableWithVpnGatewayResult": {
+      "base": "NiftyAssociateRouteTableWithVpnGatewayResult",
+      "refs": null
+    },
     "NiftyCreateAlarmRequest": {
       "base": "NiftyCreateAlarmRequest",
+      "refs": null
+    },
+    "NiftyCreateAlarmResult": {
+      "base": "NiftyCreateAlarmResult",
       "refs": null
     },
     "NiftyCreateAutoScalingGroupRequest": {
       "base": "NiftyCreateAutoScalingGroupRequest",
       "refs": null
     },
+    "NiftyCreateAutoScalingGroupResult": {
+      "base": "NiftyCreateAutoScalingGroupResult",
+      "refs": null
+    },
     "NiftyCreateDhcpConfigRequest": {
       "base": "NiftyCreateDhcpConfigRequest",
+      "refs": null
+    },
+    "NiftyCreateDhcpConfigResult": {
+      "base": "NiftyCreateDhcpConfigResult",
       "refs": null
     },
     "NiftyCreateDhcpIpAddressPoolRequest": {
       "base": "NiftyCreateDhcpIpAddressPoolRequest",
       "refs": null
     },
+    "NiftyCreateDhcpIpAddressPoolResult": {
+      "base": "NiftyCreateDhcpIpAddressPoolResult",
+      "refs": null
+    },
     "NiftyCreateDhcpStaticMappingRequest": {
       "base": "NiftyCreateDhcpStaticMappingRequest",
+      "refs": null
+    },
+    "NiftyCreateDhcpStaticMappingResult": {
+      "base": "NiftyCreateDhcpStaticMappingResult",
       "refs": null
     },
     "NiftyCreateInstanceSnapshotRequest": {
       "base": "NiftyCreateInstanceSnapshotRequest",
       "refs": null
     },
+    "NiftyCreateInstanceSnapshotResponseItemType": {
+      "base": "NiftyCreateInstanceSnapshotResponseItemType",
+      "refs": null
+    },
+    "NiftyCreateInstanceSnapshotResult": {
+      "base": "NiftyCreateInstanceSnapshotResult",
+      "refs": null
+    },
     "NiftyCreateNatRuleRequest": {
       "base": "NiftyCreateNatRuleRequest",
+      "refs": null
+    },
+    "NiftyCreateNatRuleResult": {
+      "base": "NiftyCreateNatRuleResult",
       "refs": null
     },
     "NiftyCreateNatTableRequest": {
       "base": "NiftyCreateNatTableRequest",
       "refs": null
     },
+    "NiftyCreateNatTableResult": {
+      "base": "NiftyCreateNatTableResult",
+      "refs": null
+    },
     "NiftyCreatePrivateLanRequest": {
       "base": "NiftyCreatePrivateLanRequest",
+      "refs": null
+    },
+    "NiftyCreatePrivateLanResult": {
+      "base": "NiftyCreatePrivateLanResult",
       "refs": null
     },
     "NiftyCreateRouterRequest": {
       "base": "NiftyCreateRouterRequest",
       "refs": null
     },
+    "NiftyCreateRouterResult": {
+      "base": "NiftyCreateRouterResult",
+      "refs": null
+    },
     "NiftyCreateWebProxyRequest": {
       "base": "NiftyCreateWebProxyRequest",
+      "refs": null
+    },
+    "NiftyCreateWebProxyResult": {
+      "base": "NiftyCreateWebProxyResult",
       "refs": null
     },
     "NiftyCustomerGatewayNameList": {
@@ -1066,132 +2002,272 @@
       "base": "NiftyDeleteAlarmRequest",
       "refs": null
     },
+    "NiftyDeleteAlarmResult": {
+      "base": "NiftyDeleteAlarmResult",
+      "refs": null
+    },
     "NiftyDeleteAutoScalingGroupRequest": {
       "base": "NiftyDeleteAutoScalingGroupRequest",
+      "refs": null
+    },
+    "NiftyDeleteAutoScalingGroupResult": {
+      "base": "NiftyDeleteAutoScalingGroupResult",
       "refs": null
     },
     "NiftyDeleteDhcpConfigRequest": {
       "base": "NiftyDeleteDhcpConfigRequest",
       "refs": null
     },
+    "NiftyDeleteDhcpConfigResult": {
+      "base": "NiftyDeleteDhcpConfigResult",
+      "refs": null
+    },
     "NiftyDeleteDhcpIpAddressPoolRequest": {
       "base": "NiftyDeleteDhcpIpAddressPoolRequest",
+      "refs": null
+    },
+    "NiftyDeleteDhcpIpAddressPoolResult": {
+      "base": "NiftyDeleteDhcpIpAddressPoolResult",
       "refs": null
     },
     "NiftyDeleteDhcpStaticMappingRequest": {
       "base": "NiftyDeleteDhcpStaticMappingRequest",
       "refs": null
     },
+    "NiftyDeleteDhcpStaticMappingResult": {
+      "base": "NiftyDeleteDhcpStaticMappingResult",
+      "refs": null
+    },
     "NiftyDeleteInstanceSnapshotRequest": {
       "base": "NiftyDeleteInstanceSnapshotRequest",
+      "refs": null
+    },
+    "NiftyDeleteInstanceSnapshotResult": {
+      "base": "NiftyDeleteInstanceSnapshotResult",
       "refs": null
     },
     "NiftyDeleteNatRuleRequest": {
       "base": "NiftyDeleteNatRuleRequest",
       "refs": null
     },
+    "NiftyDeleteNatRuleResult": {
+      "base": "NiftyDeleteNatRuleResult",
+      "refs": null
+    },
     "NiftyDeleteNatTableRequest": {
       "base": "NiftyDeleteNatTableRequest",
+      "refs": null
+    },
+    "NiftyDeleteNatTableResult": {
+      "base": "NiftyDeleteNatTableResult",
       "refs": null
     },
     "NiftyDeletePrivateLanRequest": {
       "base": "NiftyDeletePrivateLanRequest",
       "refs": null
     },
+    "NiftyDeletePrivateLanResult": {
+      "base": "NiftyDeletePrivateLanResult",
+      "refs": null
+    },
     "NiftyDeleteRouterRequest": {
       "base": "NiftyDeleteRouterRequest",
+      "refs": null
+    },
+    "NiftyDeleteRouterResult": {
+      "base": "NiftyDeleteRouterResult",
       "refs": null
     },
     "NiftyDeleteWebProxyRequest": {
       "base": "NiftyDeleteWebProxyRequest",
       "refs": null
     },
+    "NiftyDeleteWebProxyResult": {
+      "base": "NiftyDeleteWebProxyResult",
+      "refs": null
+    },
     "NiftyDeregisterRoutersFromSecurityGroupRequest": {
       "base": "NiftyDeregisterRoutersFromSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyDeregisterRoutersFromSecurityGroupResult": {
+      "base": "NiftyDeregisterRoutersFromSecurityGroupResult",
       "refs": null
     },
     "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest": {
       "base": "NiftyDeregisterVpnGatewaysFromSecurityGroupRequest",
       "refs": null
     },
+    "NiftyDeregisterVpnGatewaysFromSecurityGroupResult": {
+      "base": "NiftyDeregisterVpnGatewaysFromSecurityGroupResult",
+      "refs": null
+    },
     "NiftyDescribeAlarmHistoryRequest": {
       "base": "NiftyDescribeAlarmHistoryRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmHistoryResult": {
+      "base": "NiftyDescribeAlarmHistoryResult",
       "refs": null
     },
     "NiftyDescribeAlarmRulesActivitiesRequest": {
       "base": "NiftyDescribeAlarmRulesActivitiesRequest",
       "refs": null
     },
+    "NiftyDescribeAlarmRulesActivitiesResult": {
+      "base": "NiftyDescribeAlarmRulesActivitiesResult",
+      "refs": null
+    },
     "NiftyDescribeAlarmsPartitionsRequest": {
       "base": "NiftyDescribeAlarmsPartitionsRequest",
+      "refs": null
+    },
+    "NiftyDescribeAlarmsPartitionsResult": {
+      "base": "NiftyDescribeAlarmsPartitionsResult",
       "refs": null
     },
     "NiftyDescribeAlarmsRequest": {
       "base": "NiftyDescribeAlarmsRequest",
       "refs": null
     },
+    "NiftyDescribeAlarmsResult": {
+      "base": "NiftyDescribeAlarmsResult",
+      "refs": null
+    },
     "NiftyDescribeAutoScalingGroupsRequest": {
       "base": "NiftyDescribeAutoScalingGroupsRequest",
+      "refs": null
+    },
+    "NiftyDescribeAutoScalingGroupsResult": {
+      "base": "NiftyDescribeAutoScalingGroupsResult",
       "refs": null
     },
     "NiftyDescribeCorporateInfoForCertificateRequest": {
       "base": "NiftyDescribeCorporateInfoForCertificateRequest",
       "refs": null
     },
+    "NiftyDescribeCorporateInfoForCertificateResult": {
+      "base": "NiftyDescribeCorporateInfoForCertificateResult",
+      "refs": null
+    },
     "NiftyDescribeDhcpConfigsRequest": {
       "base": "NiftyDescribeDhcpConfigsRequest",
+      "refs": null
+    },
+    "NiftyDescribeDhcpConfigsResult": {
+      "base": "NiftyDescribeDhcpConfigsResult",
       "refs": null
     },
     "NiftyDescribeDhcpStatusRequest": {
       "base": "NiftyDescribeDhcpStatusRequest",
       "refs": null
     },
+    "NiftyDescribeDhcpStatusResult": {
+      "base": "NiftyDescribeDhcpStatusResult",
+      "refs": null
+    },
     "NiftyDescribeInstanceSnapshotsRequest": {
       "base": "NiftyDescribeInstanceSnapshotsRequest",
+      "refs": null
+    },
+    "NiftyDescribeInstanceSnapshotsResult": {
+      "base": "NiftyDescribeInstanceSnapshotsResult",
       "refs": null
     },
     "NiftyDescribeNatTablesRequest": {
       "base": "NiftyDescribeNatTablesRequest",
       "refs": null
     },
+    "NiftyDescribeNatTablesResult": {
+      "base": "NiftyDescribeNatTablesResult",
+      "refs": null
+    },
     "NiftyDescribePerformanceChartRequest": {
       "base": "NiftyDescribePerformanceChartRequest",
+      "refs": null
+    },
+    "NiftyDescribePerformanceChartResult": {
+      "base": "NiftyDescribePerformanceChartResult",
       "refs": null
     },
     "NiftyDescribePrivateLansRequest": {
       "base": "NiftyDescribePrivateLansRequest",
       "refs": null
     },
+    "NiftyDescribePrivateLansResult": {
+      "base": "NiftyDescribePrivateLansResult",
+      "refs": null
+    },
     "NiftyDescribeRoutersRequest": {
       "base": "NiftyDescribeRoutersRequest",
+      "refs": null
+    },
+    "NiftyDescribeRoutersResult": {
+      "base": "NiftyDescribeRoutersResult",
       "refs": null
     },
     "NiftyDescribeScalingActivitiesRequest": {
       "base": "NiftyDescribeScalingActivitiesRequest",
       "refs": null
     },
+    "NiftyDescribeScalingActivitiesResult": {
+      "base": "NiftyDescribeScalingActivitiesResult",
+      "refs": null
+    },
     "NiftyDescribeVpnGatewayActivitiesRequest": {
       "base": "NiftyDescribeVpnGatewayActivitiesRequest",
+      "refs": null
+    },
+    "NiftyDescribeVpnGatewayActivitiesResult": {
+      "base": "NiftyDescribeVpnGatewayActivitiesResult",
       "refs": null
     },
     "NiftyDescribeWebProxiesRequest": {
       "base": "NiftyDescribeWebProxiesRequest",
       "refs": null
     },
+    "NiftyDescribeWebProxiesResult": {
+      "base": "NiftyDescribeWebProxiesResult",
+      "refs": null
+    },
     "NiftyDisableDhcpRequest": {
       "base": "NiftyDisableDhcpRequest",
+      "refs": null
+    },
+    "NiftyDisableDhcpResult": {
+      "base": "NiftyDisableDhcpResult",
       "refs": null
     },
     "NiftyDisassociateNatTableRequest": {
       "base": "NiftyDisassociateNatTableRequest",
       "refs": null
     },
+    "NiftyDisassociateNatTableResult": {
+      "base": "NiftyDisassociateNatTableResult",
+      "refs": null
+    },
     "NiftyDisassociateRouteTableFromVpnGatewayRequest": {
       "base": "NiftyDisassociateRouteTableFromVpnGatewayRequest",
       "refs": null
     },
+    "NiftyDisassociateRouteTableFromVpnGatewayResult": {
+      "base": "NiftyDisassociateRouteTableFromVpnGatewayResult",
+      "refs": null
+    },
+    "NiftyDistributionIdItemType": {
+      "base": "NiftyDistributionIdItemType",
+      "refs": null
+    },
+    "NiftyDistributionIdType": {
+      "base": "NiftyDistributionIdType",
+      "refs": null
+    },
     "NiftyEnableDhcpRequest": {
       "base": "NiftyEnableDhcpRequest",
+      "refs": null
+    },
+    "NiftyEnableDhcpResult": {
+      "base": "NiftyEnableDhcpResult",
       "refs": null
     },
     "NiftyIPsecConfigurationStruct": {
@@ -1206,36 +2282,72 @@
       "base": "NiftyIpsecConfigurationStruct",
       "refs": null
     },
+    "NiftyIpsecConfigurationType": {
+      "base": "NiftyIpsecConfigurationType",
+      "refs": null
+    },
     "NiftyModifyAddressAttributeRequest": {
       "base": "NiftyModifyAddressAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyAddressAttributeResult": {
+      "base": "NiftyModifyAddressAttributeResult",
       "refs": null
     },
     "NiftyModifyCustomerGatewayAttributeRequest": {
       "base": "NiftyModifyCustomerGatewayAttributeRequest",
       "refs": null
     },
+    "NiftyModifyCustomerGatewayAttributeResult": {
+      "base": "NiftyModifyCustomerGatewayAttributeResult",
+      "refs": null
+    },
     "NiftyModifyInstanceSnapshotAttributeRequest": {
       "base": "NiftyModifyInstanceSnapshotAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyInstanceSnapshotAttributeResult": {
+      "base": "NiftyModifyInstanceSnapshotAttributeResult",
       "refs": null
     },
     "NiftyModifyKeyPairAttributeRequest": {
       "base": "NiftyModifyKeyPairAttributeRequest",
       "refs": null
     },
+    "NiftyModifyKeyPairAttributeResult": {
+      "base": "NiftyModifyKeyPairAttributeResult",
+      "refs": null
+    },
     "NiftyModifyPrivateLanAttributeRequest": {
       "base": "NiftyModifyPrivateLanAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyPrivateLanAttributeResult": {
+      "base": "NiftyModifyPrivateLanAttributeResult",
       "refs": null
     },
     "NiftyModifyRouterAttributeRequest": {
       "base": "NiftyModifyRouterAttributeRequest",
       "refs": null
     },
+    "NiftyModifyRouterAttributeResult": {
+      "base": "NiftyModifyRouterAttributeResult",
+      "refs": null
+    },
     "NiftyModifyVpnGatewayAttributeRequest": {
       "base": "NiftyModifyVpnGatewayAttributeRequest",
       "refs": null
     },
+    "NiftyModifyVpnGatewayAttributeResult": {
+      "base": "NiftyModifyVpnGatewayAttributeResult",
+      "refs": null
+    },
     "NiftyModifyWebProxyAttributeRequest": {
       "base": "NiftyModifyWebProxyAttributeRequest",
+      "refs": null
+    },
+    "NiftyModifyWebProxyAttributeResult": {
+      "base": "NiftyModifyWebProxyAttributeResult",
       "refs": null
     },
     "NiftyNetworkStruct": {
@@ -1250,24 +2362,48 @@
       "base": "NiftyRebootRoutersRequest",
       "refs": null
     },
+    "NiftyRebootRoutersResult": {
+      "base": "NiftyRebootRoutersResult",
+      "refs": null
+    },
     "NiftyRebootVpnGatewaysRequest": {
       "base": "NiftyRebootVpnGatewaysRequest",
+      "refs": null
+    },
+    "NiftyRebootVpnGatewaysResult": {
+      "base": "NiftyRebootVpnGatewaysResult",
       "refs": null
     },
     "NiftyRegisterRoutersWithSecurityGroupRequest": {
       "base": "NiftyRegisterRoutersWithSecurityGroupRequest",
       "refs": null
     },
+    "NiftyRegisterRoutersWithSecurityGroupResult": {
+      "base": "NiftyRegisterRoutersWithSecurityGroupResult",
+      "refs": null
+    },
     "NiftyRegisterVpnGatewaysWithSecurityGroupRequest": {
       "base": "NiftyRegisterVpnGatewaysWithSecurityGroupRequest",
+      "refs": null
+    },
+    "NiftyRegisterVpnGatewaysWithSecurityGroupResult": {
+      "base": "NiftyRegisterVpnGatewaysWithSecurityGroupResult",
       "refs": null
     },
     "NiftyReleaseRouterBackupStateRequest": {
       "base": "NiftyReleaseRouterBackupStateRequest",
       "refs": null
     },
+    "NiftyReleaseRouterBackupStateResult": {
+      "base": "NiftyReleaseRouterBackupStateResult",
+      "refs": null
+    },
     "NiftyReleaseVpnGatewayBackupStateRequest": {
       "base": "NiftyReleaseVpnGatewayBackupStateRequest",
+      "refs": null
+    },
+    "NiftyReleaseVpnGatewayBackupStateResult": {
+      "base": "NiftyReleaseVpnGatewayBackupStateResult",
       "refs": null
     },
     "NiftyRemoteVpnStruct": {
@@ -1278,68 +2414,144 @@
       "base": "NiftyReplaceDhcpConfigRequest",
       "refs": null
     },
+    "NiftyReplaceDhcpConfigResult": {
+      "base": "NiftyReplaceDhcpConfigResult",
+      "refs": null
+    },
     "NiftyReplaceDhcpOptionRequest": {
       "base": "NiftyReplaceDhcpOptionRequest",
+      "refs": null
+    },
+    "NiftyReplaceDhcpOptionResult": {
+      "base": "NiftyReplaceDhcpOptionResult",
       "refs": null
     },
     "NiftyReplaceNatRuleRequest": {
       "base": "NiftyReplaceNatRuleRequest",
       "refs": null
     },
+    "NiftyReplaceNatRuleResult": {
+      "base": "NiftyReplaceNatRuleResult",
+      "refs": null
+    },
     "NiftyReplaceNatTableAssociationRequest": {
       "base": "NiftyReplaceNatTableAssociationRequest",
+      "refs": null
+    },
+    "NiftyReplaceNatTableAssociationResult": {
+      "base": "NiftyReplaceNatTableAssociationResult",
       "refs": null
     },
     "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest": {
       "base": "NiftyReplaceRouteTableAssociationWithVpnGatewayRequest",
       "refs": null
     },
+    "NiftyReplaceRouteTableAssociationWithVpnGatewayResult": {
+      "base": "NiftyReplaceRouteTableAssociationWithVpnGatewayResult",
+      "refs": null
+    },
     "NiftyReplaceRouterLatestVersionRequest": {
       "base": "NiftyReplaceRouterLatestVersionRequest",
+      "refs": null
+    },
+    "NiftyReplaceRouterLatestVersionResult": {
+      "base": "NiftyReplaceRouterLatestVersionResult",
       "refs": null
     },
     "NiftyReplaceVpnGatewayLatestVersionRequest": {
       "base": "NiftyReplaceVpnGatewayLatestVersionRequest",
       "refs": null
     },
+    "NiftyReplaceVpnGatewayLatestVersionResult": {
+      "base": "NiftyReplaceVpnGatewayLatestVersionResult",
+      "refs": null
+    },
     "NiftyRestoreInstanceSnapshotRequest": {
       "base": "NiftyRestoreInstanceSnapshotRequest",
+      "refs": null
+    },
+    "NiftyRestoreInstanceSnapshotResult": {
+      "base": "NiftyRestoreInstanceSnapshotResult",
       "refs": null
     },
     "NiftyRestoreRouterPreviousVersionRequest": {
       "base": "NiftyRestoreRouterPreviousVersionRequest",
       "refs": null
     },
+    "NiftyRestoreRouterPreviousVersionResult": {
+      "base": "NiftyRestoreRouterPreviousVersionResult",
+      "refs": null
+    },
     "NiftyRestoreVpnGatewayPreviousVersionRequest": {
       "base": "NiftyRestoreVpnGatewayPreviousVersionRequest",
+      "refs": null
+    },
+    "NiftyRestoreVpnGatewayPreviousVersionResult": {
+      "base": "NiftyRestoreVpnGatewayPreviousVersionResult",
       "refs": null
     },
     "NiftyRetryImportInstanceRequest": {
       "base": "NiftyRetryImportInstanceRequest",
       "refs": null
     },
+    "NiftyRetryImportInstanceResult": {
+      "base": "NiftyRetryImportInstanceResult",
+      "refs": null
+    },
+    "NiftySnapshottingItemType": {
+      "base": "NiftySnapshottingItemType",
+      "refs": null
+    },
+    "NiftySnapshottingType": {
+      "base": "NiftySnapshottingType",
+      "refs": null
+    },
     "NiftyTunnelStruct": {
       "base": "NiftyTunnelStruct",
+      "refs": null
+    },
+    "NiftyTunnelType": {
+      "base": "NiftyTunnelType",
       "refs": null
     },
     "NiftyUpdateAlarmRequest": {
       "base": "NiftyUpdateAlarmRequest",
       "refs": null
     },
+    "NiftyUpdateAlarmResult": {
+      "base": "NiftyUpdateAlarmResult",
+      "refs": null
+    },
     "NiftyUpdateAutoScalingGroupRequest": {
       "base": "NiftyUpdateAutoScalingGroupRequest",
+      "refs": null
+    },
+    "NiftyUpdateAutoScalingGroupResult": {
+      "base": "NiftyUpdateAutoScalingGroupResult",
       "refs": null
     },
     "NiftyUpdateInstanceNetworkInterfacesRequest": {
       "base": "NiftyUpdateInstanceNetworkInterfacesRequest",
       "refs": null
     },
+    "NiftyUpdateInstanceNetworkInterfacesResult": {
+      "base": "NiftyUpdateInstanceNetworkInterfacesResult",
+      "refs": null
+    },
     "NiftyUpdateRouterNetworkInterfacesRequest": {
       "base": "NiftyUpdateRouterNetworkInterfacesRequest",
       "refs": null
     },
+    "NiftyUpdateRouterNetworkInterfacesResult": {
+      "base": "NiftyUpdateRouterNetworkInterfacesResult",
+      "refs": null
+    },
     "NiftyUpdateVpnGatewayNetworkInterfacesRequest": {
       "base": "NiftyUpdateVpnGatewayNetworkInterfacesRequest",
+      "refs": null
+    },
+    "NiftyUpdateVpnGatewayNetworkInterfacesResult": {
+      "base": "NiftyUpdateVpnGatewayNetworkInterfacesResult",
       "refs": null
     },
     "NiftyVpnGatewayName": {
@@ -1352,6 +2564,14 @@
     },
     "NoDevice": {
       "base": "NoDevice",
+      "refs": null
+    },
+    "NullableAttribute": {
+      "base": "NullableAttribute",
+      "refs": null
+    },
+    "NullableAttributeBoolean": {
+      "base": "NullableAttributeBoolean",
       "refs": null
     },
     "OptionStruct": {
@@ -1378,8 +2598,16 @@
       "base": "OwnerList",
       "refs": null
     },
+    "PartitionItemType": {
+      "base": "PartitionItemType",
+      "refs": null
+    },
     "PartitionList": {
       "base": "PartitionList",
+      "refs": null
+    },
+    "PartitionsSetType": {
+      "base": "PartitionsSetType",
       "refs": null
     },
     "Password": {
@@ -1394,12 +2622,36 @@
       "base": "PeerTunnelId",
       "refs": null
     },
+    "PerformanceChartItemType": {
+      "base": "PerformanceChartItemType",
+      "refs": null
+    },
+    "PerformanceChartSetType": {
+      "base": "PerformanceChartSetType",
+      "refs": null
+    },
+    "PlacementResponseType": {
+      "base": "PlacementResponseType",
+      "refs": null
+    },
+    "PlacementSetType": {
+      "base": "PlacementSetType",
+      "refs": null
+    },
     "PlacementStruct": {
       "base": "PlacementStruct",
       "refs": null
     },
+    "Policies": {
+      "base": "Policies",
+      "refs": null
+    },
     "PolicyName": {
       "base": "PolicyName",
+      "refs": null
+    },
+    "PolicyNames": {
+      "base": "PolicyNames",
       "refs": null
     },
     "Port": {
@@ -1418,8 +2670,32 @@
       "base": "PrivateLanNameList",
       "refs": null
     },
+    "PrivateLanSetType": {
+      "base": "PrivateLanSetType",
+      "refs": null
+    },
+    "PrivateLanType": {
+      "base": "PrivateLanType",
+      "refs": null
+    },
     "ProductCodeList": {
       "base": "ProductCodeList",
+      "refs": null
+    },
+    "ProductCodesSetItemType": {
+      "base": "ProductCodesSetItemType",
+      "refs": null
+    },
+    "ProductCodesSetType": {
+      "base": "ProductCodesSetType",
+      "refs": null
+    },
+    "PropagatingVgwSetType": {
+      "base": "PropagatingVgwSetType",
+      "refs": null
+    },
+    "PropagatingVgwType": {
+      "base": "PropagatingVgwType",
       "refs": null
     },
     "Protocol": {
@@ -1442,6 +2718,22 @@
       "base": "RebootInstancesRequest",
       "refs": null
     },
+    "RebootInstancesResult": {
+      "base": "RebootInstancesResult",
+      "refs": null
+    },
+    "RegionItemType": {
+      "base": "RegionItemType",
+      "refs": null
+    },
+    "RegionMessageSetType": {
+      "base": "RegionMessageSetType",
+      "refs": null
+    },
+    "RegionMessageType": {
+      "base": "RegionMessageType",
+      "refs": null
+    },
     "RegionName": {
       "base": "RegionName",
       "refs": null
@@ -1450,24 +2742,48 @@
       "base": "RegionNameList",
       "refs": null
     },
+    "RegionSetType": {
+      "base": "RegionSetType",
+      "refs": null
+    },
     "RegisterCorporateInfoForCertificateRequest": {
       "base": "RegisterCorporateInfoForCertificateRequest",
+      "refs": null
+    },
+    "RegisterCorporateInfoForCertificateResult": {
+      "base": "RegisterCorporateInfoForCertificateResult",
       "refs": null
     },
     "RegisterInstancesWithLoadBalancerRequest": {
       "base": "RegisterInstancesWithLoadBalancerRequest",
       "refs": null
     },
+    "RegisterInstancesWithLoadBalancerResult": {
+      "base": "RegisterInstancesWithLoadBalancerResult",
+      "refs": null
+    },
     "RegisterInstancesWithSecurityGroupRequest": {
       "base": "RegisterInstancesWithSecurityGroupRequest",
+      "refs": null
+    },
+    "RegisterInstancesWithSecurityGroupResult": {
+      "base": "RegisterInstancesWithSecurityGroupResult",
       "refs": null
     },
     "RegisterPortWithLoadBalancerRequest": {
       "base": "RegisterPortWithLoadBalancerRequest",
       "refs": null
     },
+    "RegisterPortWithLoadBalancerResult": {
+      "base": "RegisterPortWithLoadBalancerResult",
+      "refs": null
+    },
     "ReleaseAddressRequest": {
       "base": "ReleaseAddressRequest",
+      "refs": null
+    },
+    "ReleaseAddressResult": {
+      "base": "ReleaseAddressResult",
       "refs": null
     },
     "RemoveList": {
@@ -1478,28 +2794,132 @@
       "base": "ReplaceRouteRequest",
       "refs": null
     },
+    "ReplaceRouteResult": {
+      "base": "ReplaceRouteResult",
+      "refs": null
+    },
     "ReplaceRouteTableAssociationRequest": {
       "base": "ReplaceRouteTableAssociationRequest",
+      "refs": null
+    },
+    "ReplaceRouteTableAssociationResult": {
+      "base": "ReplaceRouteTableAssociationResult",
       "refs": null
     },
     "RequestId": {
       "base": "RequestId",
       "refs": null
     },
+    "ReservationInfoType": {
+      "base": "ReservationInfoType",
+      "refs": null
+    },
+    "ReservationSetType": {
+      "base": "ReservationSetType",
+      "refs": null
+    },
     "Resource": {
       "base": "Resource",
+      "refs": null
+    },
+    "ResourceAddressItemType": {
+      "base": "ResourceAddressItemType",
+      "refs": null
+    },
+    "ResourceAddressSetType": {
+      "base": "ResourceAddressSetType",
+      "refs": null
+    },
+    "ResourceInstanceItemType": {
+      "base": "ResourceInstanceItemType",
+      "refs": null
+    },
+    "ResourceInstanceSetType": {
+      "base": "ResourceInstanceSetType",
+      "refs": null
+    },
+    "ResourceNameItemType": {
+      "base": "ResourceNameItemType",
       "refs": null
     },
     "ResourceNameList": {
       "base": "ResourceNameList",
       "refs": null
     },
+    "ResourceRouterItemType": {
+      "base": "ResourceRouterItemType",
+      "refs": null
+    },
+    "ResourceRouterSetType": {
+      "base": "ResourceRouterSetType",
+      "refs": null
+    },
+    "ResourceSupportItemType": {
+      "base": "ResourceSupportItemType",
+      "refs": null
+    },
+    "ResourceSupportSetType": {
+      "base": "ResourceSupportSetType",
+      "refs": null
+    },
+    "ResourceTagSetItemType": {
+      "base": "ResourceTagSetItemType",
+      "refs": null
+    },
+    "ResourceTagSetType": {
+      "base": "ResourceTagSetType",
+      "refs": null
+    },
+    "ResourceVpnGatewayItemType": {
+      "base": "ResourceVpnGatewayItemType",
+      "refs": null
+    },
+    "ResourceVpnGatewaySetType": {
+      "base": "ResourceVpnGatewaySetType",
+      "refs": null
+    },
+    "ResponseMetadata": {
+      "base": "ResponseMetadata",
+      "refs": null
+    },
     "RevokeSecurityGroupIngressRequest": {
       "base": "RevokeSecurityGroupIngressRequest",
       "refs": null
     },
+    "RevokeSecurityGroupIngressResult": {
+      "base": "RevokeSecurityGroupIngressResult",
+      "refs": null
+    },
+    "RouteSetItemType": {
+      "base": "RouteSetItemType",
+      "refs": null
+    },
+    "RouteSetType": {
+      "base": "RouteSetType",
+      "refs": null
+    },
+    "RouteTableAssociationSetType": {
+      "base": "RouteTableAssociationSetType",
+      "refs": null
+    },
+    "RouteTableAssociationType": {
+      "base": "RouteTableAssociationType",
+      "refs": null
+    },
     "RouteTableIdList": {
       "base": "RouteTableIdList",
+      "refs": null
+    },
+    "RouteTableSetItemType": {
+      "base": "RouteTableSetItemType",
+      "refs": null
+    },
+    "RouteTableSetType": {
+      "base": "RouteTableSetType",
+      "refs": null
+    },
+    "RouteTableType": {
+      "base": "RouteTableType",
       "refs": null
     },
     "RouterId": {
@@ -1508,6 +2928,18 @@
     },
     "RouterIdList": {
       "base": "RouterIdList",
+      "refs": null
+    },
+    "RouterIdSetItemType": {
+      "base": "RouterIdSetItemType",
+      "refs": null
+    },
+    "RouterIdSetType": {
+      "base": "RouterIdSetType",
+      "refs": null
+    },
+    "RouterIdType": {
+      "base": "RouterIdType",
       "refs": null
     },
     "RouterList": {
@@ -1522,8 +2954,28 @@
       "base": "RouterNameList",
       "refs": null
     },
+    "RouterNetworkInterfaceSetType": {
+      "base": "RouterNetworkInterfaceSetType",
+      "refs": null
+    },
+    "RouterNetworkInterfaceType": {
+      "base": "RouterNetworkInterfaceType",
+      "refs": null
+    },
     "RouterSetList": {
       "base": "RouterSetList",
+      "refs": null
+    },
+    "RouterSetType": {
+      "base": "RouterSetType",
+      "refs": null
+    },
+    "RouterType": {
+      "base": "RouterType",
+      "refs": null
+    },
+    "RuleItemType": {
+      "base": "RuleItemType",
       "refs": null
     },
     "RuleList": {
@@ -1534,32 +2986,92 @@
       "base": "RuleName",
       "refs": null
     },
+    "RuleSetType": {
+      "base": "RuleSetType",
+      "refs": null
+    },
     "RunInstancesRequest": {
       "base": "RunInstancesRequest",
+      "refs": null
+    },
+    "RunInstancesResult": {
+      "base": "RunInstancesResult",
+      "refs": null
+    },
+    "RunningInstancesItemType": {
+      "base": "RunningInstancesItemType",
+      "refs": null
+    },
+    "RunningInstancesSetType": {
+      "base": "RunningInstancesSetType",
       "refs": null
     },
     "SSLCertificateId": {
       "base": "SSLCertificateId",
       "refs": null
     },
+    "ScalingLogType": {
+      "base": "ScalingLogType",
+      "refs": null
+    },
+    "ScalingScheduleDDayType": {
+      "base": "ScalingScheduleDDayType",
+      "refs": null
+    },
+    "ScalingScheduleDayType": {
+      "base": "ScalingScheduleDayType",
+      "refs": null
+    },
     "ScalingScheduleList": {
       "base": "ScalingScheduleList",
+      "refs": null
+    },
+    "ScalingScheduleMonthType": {
+      "base": "ScalingScheduleMonthType",
+      "refs": null
+    },
+    "ScalingScheduleTimeZoneType": {
+      "base": "ScalingScheduleTimeZoneType",
       "refs": null
     },
     "ScalingTriggerList": {
       "base": "ScalingTriggerList",
       "refs": null
     },
+    "ScallingLogDetailsType": {
+      "base": "ScallingLogDetailsType",
+      "refs": null
+    },
+    "ScheduleItemType": {
+      "base": "ScheduleItemType",
+      "refs": null
+    },
+    "ScheduleSetType": {
+      "base": "ScheduleSetType",
+      "refs": null
+    },
     "SecurityGroupIdList": {
       "base": "SecurityGroupIdList",
+      "refs": null
+    },
+    "SecurityGroupItemType": {
+      "base": "SecurityGroupItemType",
       "refs": null
     },
     "SecurityGroupList": {
       "base": "SecurityGroupList",
       "refs": null
     },
+    "SecurityGroupSetType": {
+      "base": "SecurityGroupSetType",
+      "refs": null
+    },
     "SessionId": {
       "base": "SessionId",
+      "refs": null
+    },
+    "SessionStickinessPolicyOption": {
+      "base": "SessionStickinessPolicyOption",
       "refs": null
     },
     "SessionStickinessPolicyUpdateStruct": {
@@ -1568,6 +3080,10 @@
     },
     "SetFilterForLoadBalancerRequest": {
       "base": "SetFilterForLoadBalancerRequest",
+      "refs": null
+    },
+    "SetFilterForLoadBalancerResult": {
+      "base": "SetFilterForLoadBalancerResult",
       "refs": null
     },
     "SetFriday": {
@@ -1606,8 +3122,20 @@
       "base": "SnapshotId",
       "refs": null
     },
+    "SnapshotInfoSetItemType": {
+      "base": "SnapshotInfoSetItemType",
+      "refs": null
+    },
+    "SnapshotInfoSetType": {
+      "base": "SnapshotInfoSetType",
+      "refs": null
+    },
     "SnapshotNameList": {
       "base": "SnapshotNameList",
+      "refs": null
+    },
+    "SorryPageOption": {
+      "base": "SorryPageOption",
       "refs": null
     },
     "SorryPageUpdateStruct": {
@@ -1622,8 +3150,16 @@
       "base": "SourceStruct",
       "refs": null
     },
+    "SourceType": {
+      "base": "SourceType",
+      "refs": null
+    },
     "StartInstancesRequest": {
       "base": "StartInstancesRequest",
+      "refs": null
+    },
+    "StartInstancesResult": {
+      "base": "StartInstancesResult",
       "refs": null
     },
     "StartNumber": {
@@ -1650,6 +3186,18 @@
       "base": "StateName",
       "refs": null
     },
+    "StateReasonType": {
+      "base": "StateReasonType",
+      "refs": null
+    },
+    "StaticMappingsSetItemType": {
+      "base": "StaticMappingsSetItemType",
+      "refs": null
+    },
+    "StaticMappingsSetType": {
+      "base": "StaticMappingsSetType",
+      "refs": null
+    },
     "StaticRoutesOnly": {
       "base": "StaticRoutesOnly",
       "refs": null
@@ -1660,6 +3208,10 @@
     },
     "StopInstancesRequest": {
       "base": "StopInstancesRequest",
+      "refs": null
+    },
+    "StopInstancesResult": {
+      "base": "StopInstancesResult",
       "refs": null
     },
     "String": {
@@ -1680,6 +3232,10 @@
     },
     "TerminateInstancesRequest": {
       "base": "TerminateInstancesRequest",
+      "refs": null
+    },
+    "TerminateInstancesResult": {
+      "base": "TerminateInstancesResult",
       "refs": null
     },
     "Threshold": {
@@ -1706,6 +3262,18 @@
       "base": "TranslationStruct",
       "refs": null
     },
+    "TranslationType": {
+      "base": "TranslationType",
+      "refs": null
+    },
+    "TriggerItemType": {
+      "base": "TriggerItemType",
+      "refs": null
+    },
+    "TriggerSetType": {
+      "base": "TriggerSetType",
+      "refs": null
+    },
     "TunnelId": {
       "base": "TunnelId",
       "refs": null
@@ -1722,20 +3290,52 @@
       "base": "UpdateLoadBalancerOptionRequest",
       "refs": null
     },
+    "UpdateLoadBalancerOptionResult": {
+      "base": "UpdateLoadBalancerOptionResult",
+      "refs": null
+    },
     "UpdateLoadBalancerRequest": {
       "base": "UpdateLoadBalancerRequest",
+      "refs": null
+    },
+    "UpdateLoadBalancerResult": {
+      "base": "UpdateLoadBalancerResult",
       "refs": null
     },
     "UpdateSecurityGroupOptionRequest": {
       "base": "UpdateSecurityGroupOptionRequest",
       "refs": null
     },
+    "UpdateSecurityGroupOptionResult": {
+      "base": "UpdateSecurityGroupOptionResult",
+      "refs": null
+    },
     "UpdateSecurityGroupRequest": {
       "base": "UpdateSecurityGroupRequest",
       "refs": null
     },
+    "UpdateSecurityGroupResult": {
+      "base": "UpdateSecurityGroupResult",
+      "refs": null
+    },
+    "UploadDetailType": {
+      "base": "UploadDetailType",
+      "refs": null
+    },
+    "UploadItemType": {
+      "base": "UploadItemType",
+      "refs": null
+    },
+    "UploadSetType": {
+      "base": "UploadSetType",
+      "refs": null
+    },
     "UploadSslCertificateRequest": {
       "base": "UploadSslCertificateRequest",
+      "refs": null
+    },
+    "UploadSslCertificateResult": {
+      "base": "UploadSslCertificateResult",
       "refs": null
     },
     "UpperLowerCondition": {
@@ -1746,12 +3346,140 @@
       "base": "UpperThreshold",
       "refs": null
     },
+    "UsageAutoScaleInfoType": {
+      "base": "UsageAutoScaleInfoType",
+      "refs": null
+    },
+    "UsageChargeDetailInfoType": {
+      "base": "UsageChargeDetailInfoType",
+      "refs": null
+    },
+    "UsageCopyInfoType": {
+      "base": "UsageCopyInfoType",
+      "refs": null
+    },
+    "UsageDetailInfoType": {
+      "base": "UsageDetailInfoType",
+      "refs": null
+    },
+    "UsageDetailSetType": {
+      "base": "UsageDetailSetType",
+      "refs": null
+    },
+    "UsageElasticIpInfoType": {
+      "base": "UsageElasticIpInfoType",
+      "refs": null
+    },
+    "UsageExtraChargeInfoType": {
+      "base": "UsageExtraChargeInfoType",
+      "refs": null
+    },
+    "UsageImageInfoType": {
+      "base": "UsageImageInfoType",
+      "refs": null
+    },
+    "UsageInternetVpnInfoType": {
+      "base": "UsageInternetVpnInfoType",
+      "refs": null
+    },
+    "UsageLicenseInfoType": {
+      "base": "UsageLicenseInfoType",
+      "refs": null
+    },
+    "UsageLoadBalancerInfoType": {
+      "base": "UsageLoadBalancerInfoType",
+      "refs": null
+    },
+    "UsageMailSendInfoType": {
+      "base": "UsageMailSendInfoType",
+      "refs": null
+    },
+    "UsageMultiAccoutlInfoType": {
+      "base": "UsageMultiAccoutlInfoType",
+      "refs": null
+    },
+    "UsageNetworkInfoType": {
+      "base": "UsageNetworkInfoType",
+      "refs": null
+    },
+    "UsageOptionDetailSetType": {
+      "base": "UsageOptionDetailSetType",
+      "refs": null
+    },
+    "UsageOptionInfoType": {
+      "base": "UsageOptionInfoType",
+      "refs": null
+    },
+    "UsageOsOptionChargeInfoType": {
+      "base": "UsageOsOptionChargeInfoType",
+      "refs": null
+    },
+    "UsagePatternAuthInfoType": {
+      "base": "UsagePatternAuthInfoType",
+      "refs": null
+    },
+    "UsagePremiumSupportInfoType": {
+      "base": "UsagePremiumSupportInfoType",
+      "refs": null
+    },
+    "UsagePrivateLanInfoType": {
+      "base": "UsagePrivateLanInfoType",
+      "refs": null
+    },
+    "UsagePrivateLanType": {
+      "base": "UsagePrivateLanType",
+      "refs": null
+    },
+    "UsageSecureNetInfoType": {
+      "base": "UsageSecureNetInfoType",
+      "refs": null
+    },
+    "UsageSecurityGroupInfoType": {
+      "base": "UsageSecurityGroupInfoType",
+      "refs": null
+    },
+    "UsageSnapshotInfoType": {
+      "base": "UsageSnapshotInfoType",
+      "refs": null
+    },
+    "UsageSslCertInfoType": {
+      "base": "UsageSslCertInfoType",
+      "refs": null
+    },
+    "UsageStorageInfoType": {
+      "base": "UsageStorageInfoType",
+      "refs": null
+    },
+    "UsageVolumeInfoType": {
+      "base": "UsageVolumeInfoType",
+      "refs": null
+    },
+    "UsagerouterType": {
+      "base": "UsagerouterType",
+      "refs": null
+    },
+    "UsagevpnGatewayType": {
+      "base": "UsagevpnGatewayType",
+      "refs": null
+    },
     "UserDataStruct": {
       "base": "UserDataStruct",
       "refs": null
     },
     "UserId": {
       "base": "UserId",
+      "refs": null
+    },
+    "UserIdGroupPairSetType": {
+      "base": "UserIdGroupPairSetType",
+      "refs": null
+    },
+    "UserIdGroupPairType": {
+      "base": "UserIdGroupPairType",
+      "refs": null
+    },
+    "Users": {
+      "base": "Users",
       "refs": null
     },
     "UsersList": {
@@ -1764,6 +3492,18 @@
     },
     "ValueList": {
       "base": "ValueList",
+      "refs": null
+    },
+    "ValueSetItemType": {
+      "base": "ValueSetItemType",
+      "refs": null
+    },
+    "ValueSetType": {
+      "base": "ValueSetType",
+      "refs": null
+    },
+    "VersionInformationType": {
+      "base": "VersionInformationType",
       "refs": null
     },
     "VirtualName": {
@@ -1786,6 +3526,18 @@
       "base": "VpnConnectionIdList",
       "refs": null
     },
+    "VpnConnectionOptionsResponseType": {
+      "base": "VpnConnectionOptionsResponseType",
+      "refs": null
+    },
+    "VpnConnectionSetType": {
+      "base": "VpnConnectionSetType",
+      "refs": null
+    },
+    "VpnConnectionType": {
+      "base": "VpnConnectionType",
+      "refs": null
+    },
     "VpnGatewayId": {
       "base": "VpnGatewayId",
       "refs": null
@@ -1794,12 +3546,64 @@
       "base": "VpnGatewayIdList",
       "refs": null
     },
+    "VpnGatewayIdSetItemType": {
+      "base": "VpnGatewayIdSetItemType",
+      "refs": null
+    },
+    "VpnGatewayIdSetType": {
+      "base": "VpnGatewayIdSetType",
+      "refs": null
+    },
+    "VpnGatewayIdType": {
+      "base": "VpnGatewayIdType",
+      "refs": null
+    },
     "VpnGatewayList": {
       "base": "VpnGatewayList",
       "refs": null
     },
+    "VpnGatewayNetworkInterfaceSetType": {
+      "base": "VpnGatewayNetworkInterfaceSetType",
+      "refs": null
+    },
+    "VpnGatewayNetworkInterfaceType": {
+      "base": "VpnGatewayNetworkInterfaceType",
+      "refs": null
+    },
     "VpnGatewaySetList": {
       "base": "VpnGatewaySetList",
+      "refs": null
+    },
+    "VpnGatewaySetType": {
+      "base": "VpnGatewaySetType",
+      "refs": null
+    },
+    "VpnGatewayType": {
+      "base": "VpnGatewayType",
+      "refs": null
+    },
+    "VpnStaticRouteType": {
+      "base": "VpnStaticRouteType",
+      "refs": null
+    },
+    "VpnTunnelTelemetryItemType": {
+      "base": "VpnTunnelTelemetryItemType",
+      "refs": null
+    },
+    "VpnTunnelTelemetryType": {
+      "base": "VpnTunnelTelemetryType",
+      "refs": null
+    },
+    "WebProxyOptionType": {
+      "base": "WebProxyOptionType",
+      "refs": null
+    },
+    "WebProxySetType": {
+      "base": "WebProxySetType",
+      "refs": null
+    },
+    "WebProxyType": {
+      "base": "WebProxyType",
       "refs": null
     },
     "ZoneNameList": {
@@ -1938,8 +3742,20 @@
       "base": "certAuthority",
       "refs": null
     },
+    "certInfoType": {
+      "base": "certInfoType",
+      "refs": null
+    },
     "certState": {
       "base": "certState",
+      "refs": null
+    },
+    "certsSetItemType": {
+      "base": "certsSetItemType",
+      "refs": null
+    },
+    "certsSetType": {
+      "base": "certsSetType",
       "refs": null
     },
     "changeInCapacity": {
@@ -1984,6 +3800,14 @@
     },
     "copyInfo": {
       "base": "copyInfo",
+      "refs": null
+    },
+    "copyInstanceSet": {
+      "base": "copyInstanceSet",
+      "refs": null
+    },
+    "copyInstanceSets": {
+      "base": "copyInstanceSets",
       "refs": null
     },
     "corpGrade": {
@@ -2306,10 +4130,6 @@
       "base": "instanceLifecycle",
       "refs": null
     },
-    "instanceLifecycleLimit": {
-      "base": "instanceLifecycleLimit",
-      "refs": null
-    },
     "instanceOwnerId": {
       "base": "instanceOwnerId",
       "refs": null
@@ -2336,6 +4156,18 @@
     },
     "instanceUniqueId": {
       "base": "instanceUniqueId",
+      "refs": null
+    },
+    "instances": {
+      "base": "instances",
+      "refs": null
+    },
+    "instancesSet": {
+      "base": "instancesSet",
+      "refs": null
+    },
+    "integer": {
+      "base": "integer",
       "refs": null
     },
     "internetKeyExchange": {
@@ -2380,10 +4212,6 @@
     },
     "isPublic": {
       "base": "isPublic",
-      "refs": null
-    },
-    "item": {
-      "base": "item",
       "refs": null
     },
     "kanaName1": {
@@ -2638,16 +4466,16 @@
       "base": "niftyVpnGatewayType",
       "refs": null
     },
+    "noDevice": {
+      "base": "noDevice",
+      "refs": null
+    },
     "operation": {
       "base": "operation",
       "refs": null
     },
     "operator": {
       "base": "operator",
-      "refs": null
-    },
-    "option": {
-      "base": "option",
       "refs": null
     },
     "optionName": {
@@ -2854,6 +4682,14 @@
       "base": "routerName",
       "refs": null
     },
+    "routerSetType": {
+      "base": "routerSetType",
+      "refs": null
+    },
+    "routerType": {
+      "base": "routerType",
+      "refs": null
+    },
     "ruleName": {
       "base": "ruleName",
       "refs": null
@@ -2998,6 +4834,10 @@
       "base": "storageStatus",
       "refs": null
     },
+    "string": {
+      "base": "string",
+      "refs": null
+    },
     "subnetId": {
       "base": "subnetId",
       "refs": null
@@ -3062,6 +4902,10 @@
       "base": "userId",
       "refs": null
     },
+    "validDateType": {
+      "base": "validDateType",
+      "refs": null
+    },
     "validityTerm": {
       "base": "validityTerm",
       "refs": null
@@ -3076,6 +4920,10 @@
     },
     "version": {
       "base": "version",
+      "refs": null
+    },
+    "versionInformationType": {
+      "base": "versionInformationType",
       "refs": null
     },
     "virtualName": {

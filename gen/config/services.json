@@ -32,7 +32,12 @@
       "resultShapeNameSelector": "td:nth-child(1)",
       "resultShapeTypeSelector": "td:nth-child(2)",
       "resultShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|Ancestor|Value|Valid Values|単位|$)",
-      "resultExampleSelector": "code.cd-01:last-child"
+      "resultExampleSelector": "code.cd-01:last-child",
+      "resultShapeAncestorSelector": "td:nth-child(2)",
+      "resultShapeAncestorRegexp": "Ancestor *: *(.+?)( |\t|\n|Children|$)",
+      "resultShapeChildrenSelector": "td:nth-child(2)",
+      "resultShapeChildrenRegexp": "Children *: *\n?(.+?)(\t|\n|$)",
+      "resultShapeChildRegexp": "([a-zA-Z0-9]+)"
     }
   },
   {
