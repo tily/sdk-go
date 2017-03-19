@@ -2082,10 +2082,6 @@
       "base": "KeyNameList",
       "refs": null
     },
-    "Keyname": {
-      "base": "Keyname",
-      "refs": null
-    },
     "LBCookieStickinessPolicies": {
       "base": "LBCookieStickinessPolicies",
       "refs": null

@@ -6548,7 +6548,7 @@
           "locationName": "keyFingerprint"
         },
         "KeyName": {
-          "shape": "",
+          "shape": "String",
           "locationName": "keyName"
         },
         "RequestId": {
@@ -7163,9 +7163,6 @@
       "member": {
         "shape": "String"
       }
-    },
-    "Keyname": {
-      "type": "string"
     },
     "LBCookieStickinessPolicies": {
       "type": "list",
