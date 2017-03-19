@@ -8976,9 +8976,9 @@
     "NiftyDescribeAutoScalingGroupsResult": {
       "type": "structure",
       "members": {
-        "AutoScalingreservationSet": {
-          "shape": "",
-          "locationName": "autoScalingreservationSet"
+        "AutoScalingReservationSet": {
+          "shape": "AutoScalingReservationSetType",
+          "locationName": "autoScalingReservationSet"
         },
         "RequestId": {
           "shape": "String",
