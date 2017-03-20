@@ -65,6 +65,7 @@ func generate(cmd *cobra.Command, args []string) {
 		}
 
 		generator := service.Generator
+		generator.APIModel.Version = "2"
 		generator.APIModel.Metadata = generator.Metadata
 		generator.APIModel.Operations = make(map[string]Operation)
 		generator.APIModel.Shapes = make(map[string]Shape)
