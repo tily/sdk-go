@@ -269,7 +269,7 @@ func (g *Generator) getShapeTypeForText(text string) string {
 		return "string"
 	case regexp.MustCompile(`^(真偽値|boolean|xsd?:(xs:)?\s?(boolean|Boolean))$`).MatchString(text):
 		return "boolean"
-	case regexp.MustCompile(`^(日時|xsd?:\s?(dateTime|DateTime|datetime|calendar|Calendar)(　?\(yyyy-mm-ddThh:mm:ssZ\))?)$`).MatchString(text):
+	case regexp.MustCompile(`^(日時|Datetime|xsd?:\s?(dateTime|DateTime|datetime|calendar|Calendar)(　?\(yyyy-mm-ddThh:mm:ssZ\))?)$`).MatchString(text):
 		return "timestamp"
 	default:
 		return text

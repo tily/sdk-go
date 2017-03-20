@@ -2330,7 +2330,7 @@
           "locationName": "alarmTargetsSet"
         },
         "CreatedTime": {
-          "shape": "Datetime",
+          "shape": "TStamp",
           "locationName": "createdTime"
         },
         "Description": {
