@@ -12542,7 +12542,7 @@
           "locationName": "instanceSnapshotId"
         },
         "Memo": {
-          "shape": "",
+          "shape": "String",
           "locationName": "memo"
         },
         "PowerStatus": {
