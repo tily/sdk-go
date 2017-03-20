@@ -11761,9 +11761,9 @@
           "shape": "String",
           "locationName": "networkName"
         },
-        "Stat": {
-          "shape": "",
-          "locationName": "stat"
+        "State": {
+          "shape": "String",
+          "locationName": "state"
         }
       }
     },
