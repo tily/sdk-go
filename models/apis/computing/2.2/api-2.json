@@ -3068,7 +3068,7 @@
           "locationName": "ebs"
         },
         "NoDevice": {
-          "shape": "EmptyElementType",
+          "shape": "String",
           "locationName": "noDevice"
         },
         "VirtualName": {
