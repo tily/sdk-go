@@ -1830,6 +1830,10 @@
       "base": "InstanceLifecycle",
       "refs": null
     },
+    "InstanceLifecycleLimit": {
+      "base": "InstanceLifecycleLimit",
+      "refs": null
+    },
     "InstanceLoadBalancerMappingResponseItemType": {
       "base": "InstanceLoadBalancerMappingResponseItemType",
       "refs": null
@@ -4552,10 +4556,6 @@
     },
     "ZoneState": {
       "base": "ZoneState",
-      "refs": null
-    },
-    "integer": {
-      "base": "integer",
       "refs": null
     },
     "string": {

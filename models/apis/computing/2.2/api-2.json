@@ -6691,6 +6691,9 @@
     "InstanceLifecycle": {
       "type": "string"
     },
+    "InstanceLifecycleLimit": {
+      "type": "integer"
+    },
     "InstanceLoadBalancerMappingResponseItemType": {
       "type": "structure",
       "members": {
@@ -14104,15 +14107,6 @@
     },
     "ZoneState": {
       "type": "string"
-    },
-    "integer": {
-      "type": "structure",
-      "members": {
-        "A": {
-          "shape": "",
-          "locationName": "a"
-        }
-      }
     },
     "string": {
       "type": "structure"
