@@ -331,7 +331,7 @@ func capitalize(s string) string {
 }
 
 func (g *Generator) generateResultShapesComputing(operationName string, doc *goquery.Document) (shapes Shapes) {
-	if operationName == "DeleteLoadBalancer" {
+	if operationName == "DeleteLoadBalancer" || operationName == "ClearLoadBalancerSession" {
 		return shapes
 	}
 	locToShapeMap := map[string]string{}
