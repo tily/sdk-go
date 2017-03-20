@@ -12297,10 +12297,6 @@
           "shape": "String",
           "locationName": "resource"
         },
-        "ResourceValue": {
-          "shape": "",
-          "locationName": "resourceValue"
-        },
         "UpperThreshold": {
           "shape": "Double",
           "locationName": "upperThreshold"
