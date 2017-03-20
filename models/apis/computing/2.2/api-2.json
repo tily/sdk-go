@@ -7014,6 +7014,15 @@
         "shape": "InstanceUnique"
       }
     },
+    "Instances": {
+      "type": "structure",
+      "members": {
+        "Item": {
+          "shape": "Instances",
+          "locationName": "item"
+        }
+      }
+    },
     "InstancesList": {
       "type": "list",
       "member": {
@@ -7049,6 +7058,12 @@
           "shape": "String",
           "locationName": "networkId"
         }
+      }
+    },
+    "InstancesSet": {
+      "type": "list",
+      "member": {
+        "shape": "Instances"
       }
     },
     "Integer": {
@@ -14089,21 +14104,6 @@
     },
     "ZoneState": {
       "type": "string"
-    },
-    "instances": {
-      "type": "structure",
-      "members": {
-        "Item": {
-          "shape": "Instances",
-          "locationName": "item"
-        }
-      }
-    },
-    "instancesSet": {
-      "type": "list",
-      "member": {
-        "shape": "instances"
-      }
     },
     "integer": {
       "type": "structure",

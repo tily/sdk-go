@@ -1946,6 +1946,10 @@
       "base": "InstanceUniqueIds",
       "refs": null
     },
+    "Instances": {
+      "base": "Instances",
+      "refs": null
+    },
     "InstancesList": {
       "base": "InstancesList",
       "refs": null
@@ -1956,6 +1960,10 @@
     },
     "InstancesNetworkInterfaceType": {
       "base": "InstancesNetworkInterfaceType",
+      "refs": null
+    },
+    "InstancesSet": {
+      "base": "InstancesSet",
       "refs": null
     },
     "Integer": {
@@ -4544,14 +4552,6 @@
     },
     "ZoneState": {
       "base": "ZoneState",
-      "refs": null
-    },
-    "instances": {
-      "base": "instances",
-      "refs": null
-    },
-    "instancesSet": {
-      "base": "instancesSet",
       "refs": null
     },
     "integer": {
