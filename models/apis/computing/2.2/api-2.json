@@ -3184,6 +3184,35 @@
         }
       }
     },
+    "CertInfoType": {
+      "type": "structure",
+      "members": {
+        "CountryName": {
+          "shape": "String",
+          "locationName": "countryName"
+        },
+        "EmailAddress": {
+          "shape": "String",
+          "locationName": "emailAddress"
+        },
+        "LocationName": {
+          "shape": "String",
+          "locationName": "locationName"
+        },
+        "OrganizationName": {
+          "shape": "String",
+          "locationName": "organizationName"
+        },
+        "OrganizationUnitName": {
+          "shape": "String",
+          "locationName": "organizationUnitName"
+        },
+        "StateName": {
+          "shape": "String",
+          "locationName": "stateName"
+        }
+      }
+    },
     "CertState": {
       "type": "string"
     },
@@ -14060,35 +14089,6 @@
     },
     "ZoneState": {
       "type": "string"
-    },
-    "certInfoType": {
-      "type": "structure",
-      "members": {
-        "CountryName": {
-          "shape": "String",
-          "locationName": "countryName"
-        },
-        "EmailAddress": {
-          "shape": "String",
-          "locationName": "emailAddress"
-        },
-        "LocationName": {
-          "shape": "String",
-          "locationName": "locationName"
-        },
-        "OrganizationName": {
-          "shape": "String",
-          "locationName": "organizationName"
-        },
-        "OrganizationUnitName": {
-          "shape": "String",
-          "locationName": "organizationUnitName"
-        },
-        "StateName": {
-          "shape": "String",
-          "locationName": "stateName"
-        }
-      }
     },
     "instances": {
       "type": "structure",

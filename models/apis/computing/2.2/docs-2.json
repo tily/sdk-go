@@ -582,6 +582,10 @@
       "base": "CertInfoStruct",
       "refs": null
     },
+    "CertInfoType": {
+      "base": "CertInfoType",
+      "refs": null
+    },
     "CertState": {
       "base": "CertState",
       "refs": null
@@ -4540,10 +4544,6 @@
     },
     "ZoneState": {
       "base": "ZoneState",
-      "refs": null
-    },
-    "certInfoType": {
-      "base": "certInfoType",
       "refs": null
     },
     "instances": {
