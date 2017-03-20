@@ -13629,6 +13629,23 @@
         "shape": "UserId"
       }
     },
+    "ValidDateType": {
+      "type": "structure",
+      "members": {
+        "EndDate": {
+          "shape": "TStamp",
+          "locationName": "endDate"
+        },
+        "StartDate": {
+          "shape": "TStamp",
+          "locationName": "startDate"
+        },
+        "ValidityTerm": {
+          "shape": "Integer",
+          "locationName": "validityTerm"
+        }
+      }
+    },
     "ValidityTerm": {
       "type": "integer"
     },
@@ -14107,23 +14124,6 @@
         "Value": {
           "shape": "String",
           "locationName": "value"
-        }
-      }
-    },
-    "validDateType": {
-      "type": "structure",
-      "members": {
-        "EndDate": {
-          "shape": "TStamp",
-          "locationName": "endDate"
-        },
-        "StartDate": {
-          "shape": "TStamp",
-          "locationName": "startDate"
-        },
-        "ValidityTerm": {
-          "shape": "Integer",
-          "locationName": "validityTerm"
         }
       }
     }

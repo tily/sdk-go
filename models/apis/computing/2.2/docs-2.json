@@ -4362,6 +4362,10 @@
       "base": "UsersList",
       "refs": null
     },
+    "ValidDateType": {
+      "base": "ValidDateType",
+      "refs": null
+    },
     "ValidityTerm": {
       "base": "ValidityTerm",
       "refs": null
@@ -4556,10 +4560,6 @@
     },
     "string": {
       "base": "string",
-      "refs": null
-    },
-    "validDateType": {
-      "base": "validDateType",
       "refs": null
     }
   }
