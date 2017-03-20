@@ -1,0 +1,184 @@
+{
+  "version": "2",
+  "metadata": {
+    "apiVersion": "2012-12-12N2013-12-16",
+    "endpointPrefix": "dns",
+    "globalEndpoint": "dns.api.cloud.nifty.com",
+    "serviceAbbreviation": "dns",
+    "serviceFullName": "dns",
+    "signatureVersion": "s3",
+    "xmlNamespace": "http://dummy",
+    "protocol": "rest-xml"
+  },
+  "operations": {
+    "ChangeResourceRecordSets": {
+      "name": "ChangeResourceRecordSets",
+      "http": {
+        "method": "POST",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{Id}/rrset"
+      },
+      "input": {
+        "shape": "ChangeResourceRecordSetsRequest"
+      }
+    },
+    "CreateHostedZone": {
+      "name": "CreateHostedZone",
+      "http": {
+        "method": "POST",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone"
+      },
+      "input": {
+        "shape": "CreateHostedZoneRequest"
+      }
+    },
+    "DeleteHostedZone": {
+      "name": "DeleteHostedZone",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{Id}"
+      },
+      "input": {
+        "shape": "DeleteHostedZoneRequest"
+      }
+    },
+    "GetChange": {
+      "name": "GetChange",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/change/{Id}"
+      },
+      "input": {
+        "shape": "GetChangeRequest"
+      }
+    },
+    "GetHostedZone": {
+      "name": "GetHostedZone",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{Id}"
+      },
+      "input": {
+        "shape": "GetHostedZoneRequest"
+      }
+    },
+    "ListHostedZones": {
+      "name": "ListHostedZones",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone"
+      },
+      "input": {
+        "shape": "ListHostedZonesRequest"
+      }
+    },
+    "ListResourceRecordSets": {
+      "name": "ListResourceRecordSets",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2012-12-12N2013-12-16/hostedzone/{Id}/rrset"
+      },
+      "input": {
+        "shape": "ListResourceRecordSetsRequest"
+      }
+    }
+  },
+  "shapes": {
+    "Boolean": {
+      "type": "boolean"
+    },
+    "ChangeInfo": {
+      "type": "structure"
+    },
+    "ChangeResourceRecordSetsRequest": {
+      "type": "structure"
+    },
+    "CreateHostedZoneRequest": {
+      "type": "structure"
+    },
+    "DelegationSet": {
+      "type": "structure"
+    },
+    "DeleteHostedZoneRequest": {
+      "type": "structure"
+    },
+    "Double": {
+      "type": "double"
+    },
+    "GetChangeRequest": {
+      "type": "structure"
+    },
+    "GetHostedZoneRequest": {
+      "type": "structure"
+    },
+    "HostedZone": {
+      "type": "structure"
+    },
+    "HostedZones": {
+      "type": "structure"
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "IsTruncated": {
+      "type": "boolean"
+    },
+    "ListHostedZonesRequest": {
+      "type": "structure",
+      "members": {
+        "marker": {
+          "shape": "String"
+        },
+        "maxitems": {
+          "shape": "Integer"
+        }
+      }
+    },
+    "ListResourceRecordSetsRequest": {
+      "type": "structure",
+      "members": {
+        "identifier": {
+          "shape": "String"
+        },
+        "maxitems": {
+          "shape": "Integer"
+        },
+        "name": {
+          "shape": "String"
+        },
+        "type": {
+          "shape": "String"
+        }
+      }
+    },
+    "Marker": {
+      "type": "string"
+    },
+    "MaxItems": {
+      "type": "integer"
+    },
+    "NextMarker": {
+      "type": "string"
+    },
+    "NextRecordIdentifier": {
+      "type": "string"
+    },
+    "NextRecordName": {
+      "type": "string"
+    },
+    "NextRecordType": {
+      "type": "string"
+    },
+    "ResourceRecordSet": {
+      "type": "structure"
+    },
+    "ResourceRecordSets": {
+      "type": "structure"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TStamp": {
+      "type": "timestamp"
+    }
+  }
+}

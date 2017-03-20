@@ -84,7 +84,13 @@
     "generator": {
       "metadata": {
         "apiVersion": "2012-12-12N2013-12-16",
-        "globalEndpoint": "dns.api.cloud.nifty.com"
+        "globalEndpoint": "dns.api.cloud.nifty.com",
+        "endpointPrefix": "dns",
+        "serviceAbbreviation": "dns",
+        "serviceFullName": "dns",
+        "signatureVersion": "s3",
+        "xmlNamespace": "http://dummy",
+        "protocol": "rest-xml"
       },
       "operationURLSelector": "h4:nth-child(4) + div p",
       "operationMethodSelector": "h4:nth-child(6) + div p",

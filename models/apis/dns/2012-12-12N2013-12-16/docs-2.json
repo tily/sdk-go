@@ -1,0 +1,115 @@
+{
+  "version": "2",
+  "service": "dns",
+  "operations": {
+    "ChangeResourceRecordSets": "ChangeResourceRecordSets",
+    "CreateHostedZone": "CreateHostedZone",
+    "DeleteHostedZone": "DeleteHostedZone",
+    "GetChange": "GetChange",
+    "GetHostedZone": "GetHostedZone",
+    "ListHostedZones": "ListHostedZones",
+    "ListResourceRecordSets": "ListResourceRecordSets"
+  },
+  "shapes": {
+    "Boolean": {
+      "base": "Boolean",
+      "refs": null
+    },
+    "ChangeInfo": {
+      "base": "ChangeInfo",
+      "refs": null
+    },
+    "ChangeResourceRecordSetsRequest": {
+      "base": "ChangeResourceRecordSetsRequest",
+      "refs": null
+    },
+    "CreateHostedZoneRequest": {
+      "base": "CreateHostedZoneRequest",
+      "refs": null
+    },
+    "DelegationSet": {
+      "base": "DelegationSet",
+      "refs": null
+    },
+    "DeleteHostedZoneRequest": {
+      "base": "DeleteHostedZoneRequest",
+      "refs": null
+    },
+    "Double": {
+      "base": "Double",
+      "refs": null
+    },
+    "GetChangeRequest": {
+      "base": "GetChangeRequest",
+      "refs": null
+    },
+    "GetHostedZoneRequest": {
+      "base": "GetHostedZoneRequest",
+      "refs": null
+    },
+    "HostedZone": {
+      "base": "HostedZone",
+      "refs": null
+    },
+    "HostedZones": {
+      "base": "HostedZones",
+      "refs": null
+    },
+    "Integer": {
+      "base": "Integer",
+      "refs": null
+    },
+    "IsTruncated": {
+      "base": "IsTruncated",
+      "refs": null
+    },
+    "ListHostedZonesRequest": {
+      "base": "ListHostedZonesRequest",
+      "refs": null
+    },
+    "ListResourceRecordSetsRequest": {
+      "base": "ListResourceRecordSetsRequest",
+      "refs": null
+    },
+    "Marker": {
+      "base": "Marker",
+      "refs": null
+    },
+    "MaxItems": {
+      "base": "MaxItems",
+      "refs": null
+    },
+    "NextMarker": {
+      "base": "NextMarker",
+      "refs": null
+    },
+    "NextRecordIdentifier": {
+      "base": "NextRecordIdentifier",
+      "refs": null
+    },
+    "NextRecordName": {
+      "base": "NextRecordName",
+      "refs": null
+    },
+    "NextRecordType": {
+      "base": "NextRecordType",
+      "refs": null
+    },
+    "ResourceRecordSet": {
+      "base": "ResourceRecordSet",
+      "refs": null
+    },
+    "ResourceRecordSets": {
+      "base": "ResourceRecordSets",
+      "refs": null
+    },
+    "String": {
+      "base": "String",
+      "refs": null
+    },
+    "TStamp": {
+      "base": "TStamp",
+      "refs": null
+    }
+  }
+}
