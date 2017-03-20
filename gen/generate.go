@@ -264,7 +264,7 @@ func (g *Generator) getShapeTypeForText(text string) string {
 		return "integer"
 	case regexp.MustCompile(`^xsd?:(Double|double)$`).MatchString(text):
 		return "double"
-	case regexp.MustCompile(`^(文字列|xsd?::?\s?(string|String|stringint))$`).MatchString(text):
+	case regexp.MustCompile(`^(文字列|x?sd?::?\s?(string|String|stringint))$`).MatchString(text):
 		return "string"
 	case regexp.MustCompile(`^(真偽値|boolean|xsd?:(xs:)?\s?(boolean|Boolean))$`).MatchString(text):
 		return "boolean"

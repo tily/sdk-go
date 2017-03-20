@@ -12852,7 +12852,7 @@
           "locationName": "breachDuration"
         },
         "Resource": {
-          "shape": "Sd:string",
+          "shape": "String",
           "locationName": "resource"
         },
         "UpperThreshold": {
