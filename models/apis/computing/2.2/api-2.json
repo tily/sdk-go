@@ -3027,7 +3027,8 @@
     "AvailabilityZones": {
       "type": "list",
       "member": {
-        "shape": "string"
+        "shape": "String",
+        "locationName": "member"
       }
     },
     "AvailabilityZonesList": {
@@ -10943,7 +10944,8 @@
     "PolicyNames": {
       "type": "list",
       "member": {
-        "shape": "string"
+        "shape": "String",
+        "locationName": "member"
       }
     },
     "Port": {
@@ -14107,9 +14109,6 @@
     },
     "ZoneState": {
       "type": "string"
-    },
-    "string": {
-      "type": "structure"
     }
   }
 }

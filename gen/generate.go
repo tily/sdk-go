@@ -354,6 +354,9 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 			}
 			shapes = append(shapes, shape)
 		} else if regexp.MustCompile(`(item|member)`).MatchString(shapeName) {
+			if len(children) == 0 {
+				return
+			}
 			shape := Shape{ShapeName: shapeType, Type: "structure", Members: map[string]ShapeRef{}}
 			for _, shapeName := range children {
 				shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
@@ -364,11 +367,17 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 				shape := Shape{ShapeName: capitalize(shapeName), Type: shapeType}
 				shapes = append(shapes, shape)
 			} else if regexp.MustCompile(`(item|member)`).MatchString(children[0]) {
-				shape := Shape{ShapeName: shapeType, Type: "list"}
 				nextShapeHTML := goquery.NewDocumentFromNode(resultShapeHTMLs.Get(i + 1))
-				//nextShapeName := g.getResultShapeName(nextShapeHTML.Selection)
+				nextShapeName := g.getResultShapeName(nextShapeHTML.Selection)
 				nextShapeType := g.getResultShapeType(nextShapeHTML.Selection)
-				shape.Member = &ShapeRef{ShapeName: nextShapeType}
+				nextShapeChildren := g.getResultShapeChildren(nextShapeHTML.Selection)
+				shape := Shape{ShapeName: shapeType, Type: "list"}
+				if len(nextShapeChildren) > 0 {
+					shape.Member = &ShapeRef{ShapeName: nextShapeType}
+				} else {
+					shape.ShapeName = shapeType
+					shape.Member = &ShapeRef{ShapeName: capitalize(nextShapeType), LocationName: nextShapeName}
+				}
 				shapes = append(shapes, shape)
 			} else {
 				shape := Shape{ShapeName: shapeType, Type: "structure", Members: map[string]ShapeRef{}}
