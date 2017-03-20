@@ -7922,9 +7922,9 @@
           "shape": "InstanceIdSetType",
           "locationName": "instancesSet"
         },
-        "PrivateLanId": {
-          "shape": "",
-          "locationName": "privateLanId"
+        "NetworkId": {
+          "shape": "String",
+          "locationName": "networkId"
         },
         "PrivateLanName": {
           "shape": "String",
