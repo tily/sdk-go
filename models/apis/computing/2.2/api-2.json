@@ -6625,8 +6625,8 @@
       "type": "structure",
       "members": {
         "InstanceId": {
-          "shape": "",
-          "locationName": "InstanceId"
+          "shape": "String",
+          "locationName": "instanceId"
         }
       }
     },
