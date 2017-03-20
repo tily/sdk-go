@@ -13434,9 +13434,9 @@
     "UsageSnapshotInfoType": {
       "type": "structure",
       "members": {
-        "Snapshot": {
-          "shape": "",
-          "locationName": "snapshot"
+        "SnapShot": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "snapShot"
         }
       }
     },
