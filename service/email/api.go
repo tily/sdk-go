@@ -1200,31 +1200,6 @@ func (s *HtmlStruct) SetData(v string) *HtmlStruct {
 	return s
 }
 
-// Identities
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//Identities
-type Identities struct {
-	_ struct{} `type:"structure"`
-
-	// member
-	Member *string `locationName:"member" type:"string"`
-}
-
-// String returns the string representation
-func (s Identities) String() string {
-	return awsutil.Prettify(s)
-}
-
-// GoString returns the string representation
-func (s Identities) GoString() string {
-	return s.String()
-}
-
-// SetMember sets the Member field's value.
-func (s *Identities) SetMember(v string) *Identities {
-	s.Member = &v
-	return s
-}
-
 // ListIdentitiesRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//ListIdentitiesRequest
 type ListIdentitiesInput struct {
@@ -1247,7 +1222,7 @@ type ListIdentitiesOutput struct {
 	_ struct{} `type:"structure"`
 
 	// Identities
-	Identities *Identities `type:"structure"`
+	Identities []*string `locationNameList:"member" type:"list"`
 
 	// NextToken
 	NextToken *string `type:"string"`
@@ -1264,7 +1239,7 @@ func (s ListIdentitiesOutput) GoString() string {
 }
 
 // SetIdentities sets the Identities field's value.
-func (s *ListIdentitiesOutput) SetIdentities(v *Identities) *ListIdentitiesOutput {
+func (s *ListIdentitiesOutput) SetIdentities(v []*string) *ListIdentitiesOutput {
 	s.Identities = v
 	return s
 }
