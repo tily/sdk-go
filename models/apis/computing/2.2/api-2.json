@@ -7844,9 +7844,9 @@
           "shape": "Boolean",
           "locationName": "dhcp"
         },
-        "DhcpOptionId": {
-          "shape": "",
-          "locationName": "dhcpOptionId"
+        "DhcpOptionsId": {
+          "shape": "String",
+          "locationName": "dhcpOptionsId"
         },
         "IpAddress": {
           "shape": "String",
