@@ -12381,8 +12381,8 @@
           "locationName": "instancesNetworkInterfaceSet"
         },
         "InstancesSet": {
-          "shape": "",
-          "locationName": "InstancesSet"
+          "shape": "InstanceIdSetType",
+          "locationName": "instancesSet"
         },
         "IpPermissions": {
           "shape": "IpPermissionSetType",
