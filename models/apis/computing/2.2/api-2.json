@@ -10343,7 +10343,7 @@
           "locationName": "instanceUniqueId"
         },
         "RequestId": {
-          "shape": "",
+          "shape": "String",
           "locationName": "requestId"
         }
       }
@@ -11509,9 +11509,6 @@
       }
     },
     "RequestId": {
-      "type": "string"
-    },
-    "Requested": {
       "type": "string"
     },
     "RequesterId": {
