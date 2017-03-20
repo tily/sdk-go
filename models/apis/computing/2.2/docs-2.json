@@ -626,10 +626,6 @@
       "base": "ClearLoadBalancerSessionRequest",
       "refs": null
     },
-    "ClearLoadBalancerSessionResult": {
-      "base": "ClearLoadBalancerSessionResult",
-      "refs": null
-    },
     "ClientName": {
       "base": "ClientName",
       "refs": null

@@ -373,7 +373,7 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 				nextShapeChildren := g.getResultShapeChildren(nextShapeHTML.Selection)
 				shape := Shape{ShapeName: shapeType, Type: "list"}
 				if len(nextShapeChildren) > 0 {
-					shape.Member = &ShapeRef{ShapeName: nextShapeType}
+					shape.Member = &ShapeRef{ShapeName: nextShapeType, LocationName: nextShapeName}
 				} else {
 					shape.ShapeName = shapeType
 					shape.Member = &ShapeRef{ShapeName: capitalize(nextShapeType), LocationName: nextShapeName}

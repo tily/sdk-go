@@ -2283,7 +2283,8 @@
     "AlarmDateHistorySetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmDateHistoryItemType"
+        "shape": "AlarmDateHistoryItemType",
+        "locationName": "item"
       }
     },
     "AlarmEvent": {
@@ -2308,7 +2309,8 @@
     "AlarmEventHistorySetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmEventHistoryItemType"
+        "shape": "AlarmEventHistoryItemType",
+        "locationName": "item"
       }
     },
     "AlarmReservationItemType": {
@@ -2359,7 +2361,8 @@
     "AlarmReservationSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmReservationItemType"
+        "shape": "AlarmReservationItemType",
+        "locationName": "item"
       }
     },
     "AlarmRulesActivitiesDateItemType": {
@@ -2378,7 +2381,8 @@
     "AlarmRulesActivitiesDateSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmRulesActivitiesDateItemType"
+        "shape": "AlarmRulesActivitiesDateItemType",
+        "locationName": "item"
       }
     },
     "AlarmRulesActivitiesEvent": {
@@ -2411,7 +2415,8 @@
     "AlarmRulesActivitiesEventSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmRulesActivitiesEventItemType"
+        "shape": "AlarmRulesActivitiesEventItemType",
+        "locationName": "item"
       }
     },
     "AlarmRulesActivitiesItemType": {
@@ -2447,13 +2452,15 @@
     "AlarmRulesActivitiesReservationSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmRulesActivitiesReservationItemType"
+        "shape": "AlarmRulesActivitiesReservationItemType",
+        "locationName": "item"
       }
     },
     "AlarmRulesActivitiesSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmRulesActivitiesItemType"
+        "shape": "AlarmRulesActivitiesItemType",
+        "locationName": "Item"
       }
     },
     "AlarmState": {
@@ -2475,13 +2482,15 @@
     "AlarmTargetSetType": {
       "type": "list",
       "member": {
-        "shape": "AlarmTargetItemType"
+        "shape": "AlarmTargetItemType",
+        "locationName": "item"
       }
     },
     "AlarmTargetsSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceNameItemType"
+        "shape": "ResourceNameItemType",
+        "locationName": "item"
       }
     },
     "All": {
@@ -2564,13 +2573,15 @@
     "AnalyzeResultSetType": {
       "type": "list",
       "member": {
-        "shape": "AnalyzeResultSetItemType"
+        "shape": "AnalyzeResultSetItemType",
+        "locationName": "item"
       }
     },
     "AppCookieStickinessPolicies": {
       "type": "list",
       "member": {
-        "shape": "AppCookieStickinessPolicy"
+        "shape": "AppCookieStickinessPolicy",
+        "locationName": "member"
       }
     },
     "AppCookieStickinessPolicy": {
@@ -2803,13 +2814,15 @@
     "AttachmentSetResponseType": {
       "type": "list",
       "member": {
-        "shape": "AttachmentSetItemResponseType"
+        "shape": "AttachmentSetItemResponseType",
+        "locationName": "item"
       }
     },
     "AttachmentType": {
       "type": "list",
       "member": {
-        "shape": "AttachmentItemType"
+        "shape": "AttachmentItemType",
+        "locationName": "item"
       }
     },
     "Attribute": {
@@ -2886,7 +2899,8 @@
     "AutoScalingInstancesSetType": {
       "type": "list",
       "member": {
-        "shape": "AutoScalingInstancesItemType"
+        "shape": "AutoScalingInstancesItemType",
+        "locationName": "item"
       }
     },
     "AutoScalingReservationInfoType": {
@@ -2973,7 +2987,8 @@
     "AutoScalingReservationSetType": {
       "type": "list",
       "member": {
-        "shape": "AutoScalingReservationInfoType"
+        "shape": "AutoScalingReservationInfoType",
+        "locationName": "item"
       }
     },
     "AvailabilityZone": {
@@ -3003,7 +3018,8 @@
     "AvailabilityZoneMessageSetType": {
       "type": "list",
       "member": {
-        "shape": "AvailabilityZoneMessageType"
+        "shape": "AvailabilityZoneMessageType",
+        "locationName": "item"
       }
     },
     "AvailabilityZoneMessageType": {
@@ -3018,7 +3034,8 @@
     "AvailabilityZoneSetType": {
       "type": "list",
       "member": {
-        "shape": "AvailabilityZoneItemType"
+        "shape": "AvailabilityZoneItemType",
+        "locationName": "item"
       }
     },
     "AvailabilityZones": {
@@ -3083,7 +3100,8 @@
     "BlockDeviceMappingType": {
       "type": "list",
       "member": {
-        "shape": "BlockDeviceMappingItemType"
+        "shape": "BlockDeviceMappingItemType",
+        "locationName": "item"
       }
     },
     "Boolean": {
@@ -3262,7 +3280,8 @@
     "CertsSetType": {
       "type": "list",
       "member": {
-        "shape": "CertsSetItemType"
+        "shape": "CertsSetItemType",
+        "locationName": "item"
       }
     },
     "ChangeInCapacity": {
@@ -3301,9 +3320,6 @@
         "LoadBalancerPort",
         "InstancePort"
       ]
-    },
-    "ClearLoadBalancerSessionResult": {
-      "type": "ClearLoadBalancerSessionResult"
     },
     "ClientName": {
       "type": "string"
@@ -3419,7 +3435,8 @@
     "CopyInstanceSets": {
       "type": "list",
       "member": {
-        "shape": "CopyInstanceSet"
+        "shape": "CopyInstanceSet",
+        "locationName": "item"
       }
     },
     "CopyInstanceStruct": {
@@ -4098,7 +4115,8 @@
     "CustomerGatewaySetType": {
       "type": "list",
       "member": {
-        "shape": "CustomerGatewayItemType"
+        "shape": "CustomerGatewayItemType",
+        "locationName": "item"
       }
     },
     "CustomerGatewayType": {
@@ -4183,7 +4201,8 @@
     "DataSetType": {
       "type": "list",
       "member": {
-        "shape": "DataItemType"
+        "shape": "DataItemType",
+        "locationName": "item"
       }
     },
     "DataType": {
@@ -4580,7 +4599,8 @@
     "DescribeAddressesResponseInfoType": {
       "type": "list",
       "member": {
-        "shape": "DescribeAddressesResponseItemType"
+        "shape": "DescribeAddressesResponseItemType",
+        "locationName": "item"
       }
     },
     "DescribeAddressesResponseItemType": {
@@ -4737,7 +4757,8 @@
     "DescribeImagesResponseInfoType": {
       "type": "list",
       "member": {
-        "shape": "DescribeImagesResponseItemType"
+        "shape": "DescribeImagesResponseItemType",
+        "locationName": "item"
       }
     },
     "DescribeImagesResponseItemType": {
@@ -4956,7 +4977,8 @@
     "DescribeKeyPairsResponseInfoType": {
       "type": "list",
       "member": {
-        "shape": "DescribeKeyPairsResponseItemType"
+        "shape": "DescribeKeyPairsResponseItemType",
+        "locationName": "item"
       }
     },
     "DescribeKeyPairsResponseItemType": {
@@ -5237,7 +5259,8 @@
     "DescribeServiceStatusSetType": {
       "type": "list",
       "member": {
-        "shape": "DescribeServiceStatusItemType"
+        "shape": "DescribeServiceStatusItemType",
+        "locationName": "item"
       }
     },
     "DescribeSslCertificateAttributeRequest": {
@@ -5459,7 +5482,8 @@
     "DescribeUserActivitiesSetType": {
       "type": "list",
       "member": {
-        "shape": "DescribeUserActivitiesItemType"
+        "shape": "DescribeUserActivitiesItemType",
+        "locationName": "item"
       }
     },
     "DescribeVolumesRequest": {
@@ -5531,7 +5555,8 @@
     "DescribeVolumesSetResponseType": {
       "type": "list",
       "member": {
-        "shape": "DescribeVolumesSetItemResponseType"
+        "shape": "DescribeVolumesSetItemResponseType",
+        "locationName": "item"
       }
     },
     "DescribeVpnConnectionsRequest": {
@@ -5737,7 +5762,8 @@
     "DhcpConfigsSetType": {
       "type": "list",
       "member": {
-        "shape": "DhcpConfigSetItemType"
+        "shape": "DhcpConfigSetItemType",
+        "locationName": "item"
       }
     },
     "DhcpConfigurationList": {
@@ -5762,7 +5788,8 @@
     "DhcpConfigurationSetType": {
       "type": "list",
       "member": {
-        "shape": "DhcpConfigurationSetItemType"
+        "shape": "DhcpConfigurationSetItemType",
+        "locationName": "item"
       }
     },
     "DhcpIpAddressInformationType": {
@@ -5815,7 +5842,8 @@
     "DhcpIpAddressSetType": {
       "type": "list",
       "member": {
-        "shape": "DhcpIpAddressSetItemType"
+        "shape": "DhcpIpAddressSetItemType",
+        "locationName": "item"
       }
     },
     "DhcpOptionsId": {
@@ -5854,7 +5882,8 @@
     "DhcpStatusInformationSetType": {
       "type": "list",
       "member": {
-        "shape": "DhcpStatusInformationSetItemType"
+        "shape": "DhcpStatusInformationSetItemType",
+        "locationName": "item"
       }
     },
     "Difference": {
@@ -6123,7 +6152,8 @@
     "EmailAddressSetType": {
       "type": "list",
       "member": {
-        "shape": "EmailAddressItemType"
+        "shape": "EmailAddressItemType",
+        "locationName": "item"
       }
     },
     "Enable": {
@@ -6205,7 +6235,8 @@
     "FilterIPAddresses": {
       "type": "list",
       "member": {
-        "shape": "FilterIPAddress"
+        "shape": "FilterIPAddress",
+        "locationName": "member"
       }
     },
     "FilterList": {
@@ -6305,7 +6336,8 @@
     "GroupSetType": {
       "type": "list",
       "member": {
-        "shape": "GroupItemType"
+        "shape": "GroupItemType",
+        "locationName": "item"
       }
     },
     "GroupStatus": {
@@ -6572,7 +6604,8 @@
     "ImportInstanceVolumeDetailSetType": {
       "type": "list",
       "member": {
-        "shape": "ImportInstanceVolumeDetailItemType"
+        "shape": "ImportInstanceVolumeDetailItemType",
+        "locationName": "item"
       }
     },
     "ImportKeyPairRequest": {
@@ -6659,7 +6692,8 @@
     "InstanceBlockDeviceMappingResponseType": {
       "type": "list",
       "member": {
-        "shape": "InstanceBlockDeviceMappingResponseItemType"
+        "shape": "InstanceBlockDeviceMappingResponseItemType",
+        "locationName": "item"
       }
     },
     "InstanceId": {
@@ -6674,7 +6708,8 @@
     "InstanceIdSetType": {
       "type": "list",
       "member": {
-        "shape": "InstanceIdType"
+        "shape": "InstanceIdType",
+        "locationName": "item"
       }
     },
     "InstanceIdType": {
@@ -6712,7 +6747,8 @@
     "InstanceLoadBalancerMappingResponseType": {
       "type": "list",
       "member": {
-        "shape": "InstanceLoadBalancerMappingResponseItemType"
+        "shape": "InstanceLoadBalancerMappingResponseItemType",
+        "locationName": "item"
       }
     },
     "InstanceMonitoringStateType": {
@@ -6899,13 +6935,15 @@
     "InstancePrivateIpAddressesSetType": {
       "type": "list",
       "member": {
-        "shape": "InstancePrivateIpAddressesSetItemType"
+        "shape": "InstancePrivateIpAddressesSetItemType",
+        "locationName": "item"
       }
     },
     "InstanceSetType": {
       "type": "list",
       "member": {
-        "shape": "NiftyCreateInstanceSnapshotResponseItemType"
+        "shape": "NiftyCreateInstanceSnapshotResponseItemType",
+        "locationName": "item"
       }
     },
     "InstanceSnapshotId": {
@@ -6923,7 +6961,8 @@
     "InstanceStateChangeSetType": {
       "type": "list",
       "member": {
-        "shape": "InstanceStateChangeType"
+        "shape": "InstanceStateChangeType",
+        "locationName": "item"
       }
     },
     "InstanceStateChangeType": {
@@ -6963,7 +7002,8 @@
     "InstanceStates": {
       "type": "list",
       "member": {
-        "shape": "InstanceState"
+        "shape": "InstanceState",
+        "locationName": "member"
       }
     },
     "InstanceStatus": {
@@ -6997,7 +7037,8 @@
     "InstanceUniqueIdSetType": {
       "type": "list",
       "member": {
-        "shape": "InstanceUniqueIdType"
+        "shape": "InstanceUniqueIdType",
+        "locationName": "item"
       }
     },
     "InstanceUniqueIdType": {
@@ -7012,7 +7053,8 @@
     "InstanceUniqueIds": {
       "type": "list",
       "member": {
-        "shape": "InstanceUnique"
+        "shape": "InstanceUnique",
+        "locationName": "member"
       }
     },
     "Instances": {
@@ -7033,7 +7075,8 @@
     "InstancesNetworkInterfaceSetType": {
       "type": "list",
       "member": {
-        "shape": "InstancesNetworkInterfaceType"
+        "shape": "InstancesNetworkInterfaceType",
+        "locationName": "item"
       }
     },
     "InstancesNetworkInterfaceType": {
@@ -7064,7 +7107,8 @@
     "InstancesSet": {
       "type": "list",
       "member": {
-        "shape": "Instances"
+        "shape": "Instances",
+        "locationName": "item"
       }
     },
     "Integer": {
@@ -7082,7 +7126,8 @@
     "IpAddressPoolSetType": {
       "type": "list",
       "member": {
-        "shape": "DhcpIpAddressPoolInformationSetItemType"
+        "shape": "DhcpIpAddressPoolInformationSetItemType",
+        "locationName": "item"
       }
     },
     "IpAddressPoolsSetItemType": {
@@ -7105,7 +7150,8 @@
     "IpAddressPoolsSetType": {
       "type": "list",
       "member": {
-        "shape": "IpAddressPoolsSetItemType"
+        "shape": "IpAddressPoolsSetItemType",
+        "locationName": "item"
       }
     },
     "IpAddressV6": {
@@ -7117,7 +7163,8 @@
     "IpPermissionSetType": {
       "type": "list",
       "member": {
-        "shape": "IpPermissionType"
+        "shape": "IpPermissionType",
+        "locationName": "item"
       }
     },
     "IpPermissionType": {
@@ -7178,7 +7225,8 @@
     "IpRangeSetType": {
       "type": "list",
       "member": {
-        "shape": "IpRangeItemType"
+        "shape": "IpRangeItemType",
+        "locationName": "item"
       }
     },
     "IpRangesList": {
@@ -7238,7 +7286,8 @@
     "LBCookieStickinessPolicies": {
       "type": "list",
       "member": {
-        "shape": "LBCookieStickinessPolicy"
+        "shape": "LBCookieStickinessPolicy",
+        "locationName": "member"
       }
     },
     "LBCookieStickinessPolicy": {
@@ -7343,7 +7392,8 @@
     "ListenerDescriptions": {
       "type": "list",
       "member": {
-        "shape": "ListenerDescription"
+        "shape": "ListenerDescription",
+        "locationName": "member"
       }
     },
     "ListenerStruct": {
@@ -7380,7 +7430,8 @@
     "Listeners": {
       "type": "list",
       "member": {
-        "shape": "Listener"
+        "shape": "Listener",
+        "locationName": "member"
       }
     },
     "ListenersList": {
@@ -7456,7 +7507,8 @@
     "LoadBalancerDescriptions": {
       "type": "list",
       "member": {
-        "shape": "LoadBalancerDescription"
+        "shape": "LoadBalancerDescription",
+        "locationName": "member"
       }
     },
     "LoadBalancerName": {
@@ -7537,7 +7589,8 @@
     "LoadBalancingSetType": {
       "type": "list",
       "member": {
-        "shape": "LoadBalancingItemType"
+        "shape": "LoadBalancingItemType",
+        "locationName": "item"
       }
     },
     "LocationName": {
@@ -7549,7 +7602,8 @@
     "LogSetType": {
       "type": "list",
       "member": {
-        "shape": "ScalingLogType"
+        "shape": "ScalingLogType",
+        "locationName": "item"
       }
     },
     "MacAddress": {
@@ -7752,7 +7806,8 @@
     "NatRuleSetType": {
       "type": "list",
       "member": {
-        "shape": "NatRuleType"
+        "shape": "NatRuleType",
+        "locationName": "item"
       }
     },
     "NatRuleType": {
@@ -7802,7 +7857,8 @@
     "NatTableAssociationSetType": {
       "type": "list",
       "member": {
-        "shape": "NatTableAssociationType"
+        "shape": "NatTableAssociationType",
+        "locationName": "item"
       }
     },
     "NatTableAssociationType": {
@@ -7936,7 +7992,8 @@
     "NetworkInterfaceSetType": {
       "type": "list",
       "member": {
-        "shape": "InstanceNetworkInterfaceSetItemType"
+        "shape": "InstanceNetworkInterfaceSetItemType",
+        "locationName": "item"
       }
     },
     "NetworkInterfaceStruct": {
@@ -9483,7 +9540,8 @@
     "NiftyDistributionIdType": {
       "type": "list",
       "member": {
-        "shape": "NiftyDistributionIdItemType"
+        "shape": "NiftyDistributionIdItemType",
+        "locationName": "item"
       }
     },
     "NiftyEnableDhcpRequest": {
@@ -10434,7 +10492,8 @@
     "NiftySnapshottingType": {
       "type": "list",
       "member": {
-        "shape": "NiftySnapshottingItemType"
+        "shape": "NiftySnapshottingItemType",
+        "locationName": "item"
       }
     },
     "NiftyTunnelStruct": {
@@ -10852,7 +10911,8 @@
     "PartitionsSetType": {
       "type": "list",
       "member": {
-        "shape": "PartitionItemType"
+        "shape": "PartitionItemType",
+        "locationName": "item"
       }
     },
     "Password": {
@@ -10884,7 +10944,8 @@
     "PerformanceChartSetType": {
       "type": "list",
       "member": {
-        "shape": "PerformanceChartItemType"
+        "shape": "PerformanceChartItemType",
+        "locationName": "item"
       }
     },
     "PhoneNumber": {
@@ -10999,7 +11060,8 @@
     "PrivateLanSetType": {
       "type": "list",
       "member": {
-        "shape": "PrivateLanType"
+        "shape": "PrivateLanType",
+        "locationName": "item"
       }
     },
     "PrivateLanType": {
@@ -11079,13 +11141,15 @@
     "ProductCodesSetType": {
       "type": "list",
       "member": {
-        "shape": "ProductCodesSetItemType"
+        "shape": "ProductCodesSetItemType",
+        "locationName": "item"
       }
     },
     "PropagatingVgwSetType": {
       "type": "list",
       "member": {
-        "shape": "PropagatingVgwType"
+        "shape": "PropagatingVgwType",
+        "locationName": "item"
       }
     },
     "PropagatingVgwType": {
@@ -11209,7 +11273,8 @@
     "RegionMessageSetType": {
       "type": "list",
       "member": {
-        "shape": "RegionMessageType"
+        "shape": "RegionMessageType",
+        "locationName": "item"
       }
     },
     "RegionMessageType": {
@@ -11233,7 +11298,8 @@
     "RegionSetType": {
       "type": "list",
       "member": {
-        "shape": "RegionItemType"
+        "shape": "RegionItemType",
+        "locationName": "item"
       }
     },
     "RegisterCorporateInfoForCertificateRequest": {
@@ -11616,7 +11682,8 @@
     "ReservationSetType": {
       "type": "list",
       "member": {
-        "shape": "ReservationInfoType"
+        "shape": "ReservationInfoType",
+        "locationName": "item"
       }
     },
     "Resource": {
@@ -11638,7 +11705,8 @@
     "ResourceAddressSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceAddressItemType"
+        "shape": "ResourceAddressItemType",
+        "locationName": "item"
       }
     },
     "ResourceInstanceItemType": {
@@ -11657,7 +11725,8 @@
     "ResourceInstanceSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceInstanceItemType"
+        "shape": "ResourceInstanceItemType",
+        "locationName": "item"
       }
     },
     "ResourceName": {
@@ -11694,7 +11763,8 @@
     "ResourceRouterSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceRouterItemType"
+        "shape": "ResourceRouterItemType",
+        "locationName": "item"
       }
     },
     "ResourceSupportItemType": {
@@ -11709,7 +11779,8 @@
     "ResourceSupportSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceSupportItemType"
+        "shape": "ResourceSupportItemType",
+        "locationName": "item"
       }
     },
     "ResourceTagSetItemType": {
@@ -11728,7 +11799,8 @@
     "ResourceTagSetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceTagSetItemType"
+        "shape": "ResourceTagSetItemType",
+        "locationName": "item"
       }
     },
     "ResourceVpnGatewayItemType": {
@@ -11747,7 +11819,8 @@
     "ResourceVpnGatewaySetType": {
       "type": "list",
       "member": {
-        "shape": "ResourceVpnGatewayItemType"
+        "shape": "ResourceVpnGatewayItemType",
+        "locationName": "item"
       }
     },
     "ResponseMetadata": {
@@ -11845,7 +11918,8 @@
     "RouteSetType": {
       "type": "list",
       "member": {
-        "shape": "RouteSetItemType"
+        "shape": "RouteSetItemType",
+        "locationName": "item"
       }
     },
     "RouteTableAssociationId": {
@@ -11854,7 +11928,8 @@
     "RouteTableAssociationSetType": {
       "type": "list",
       "member": {
-        "shape": "RouteTableAssociationType"
+        "shape": "RouteTableAssociationType",
+        "locationName": "item"
       }
     },
     "RouteTableAssociationType": {
@@ -11927,7 +12002,8 @@
     "RouteTableSetType": {
       "type": "list",
       "member": {
-        "shape": "RouteTableSetItemType"
+        "shape": "RouteTableSetItemType",
+        "locationName": "item"
       }
     },
     "RouteTableType": {
@@ -11968,7 +12044,8 @@
     "RouterIdSetType": {
       "type": "list",
       "member": {
-        "shape": "RouterIdSetItemType"
+        "shape": "RouterIdSetItemType",
+        "locationName": "item"
       }
     },
     "RouterIdType": {
@@ -12010,7 +12087,8 @@
     "RouterNetworkInterfaceSetType": {
       "type": "list",
       "member": {
-        "shape": "RouterNetworkInterfaceType"
+        "shape": "RouterNetworkInterfaceType",
+        "locationName": "item"
       }
     },
     "RouterNetworkInterfaceType": {
@@ -12047,7 +12125,8 @@
     "RouterSetType": {
       "type": "list",
       "member": {
-        "shape": "RouterType"
+        "shape": "RouterType",
+        "locationName": "item"
       }
     },
     "RouterType": {
@@ -12155,7 +12234,8 @@
     "RuleSetType": {
       "type": "list",
       "member": {
-        "shape": "RuleItemType"
+        "shape": "RuleItemType",
+        "locationName": "item"
       }
     },
     "RunInstancesRequest": {
@@ -12294,7 +12374,8 @@
     "RunningInstancesSetType": {
       "type": "list",
       "member": {
-        "shape": "RunningInstancesItemType"
+        "shape": "RunningInstancesItemType",
+        "locationName": "item"
       }
     },
     "SSLCertificateId": {
@@ -12452,7 +12533,8 @@
     "ScheduleSetType": {
       "type": "list",
       "member": {
-        "shape": "ScheduleItemType"
+        "shape": "ScheduleItemType",
+        "locationName": "item"
       }
     },
     "SecurityGroupCount": {
@@ -12553,7 +12635,8 @@
     "SecurityGroupSetType": {
       "type": "list",
       "member": {
-        "shape": "SecurityGroupItemType"
+        "shape": "SecurityGroupItemType",
+        "locationName": "item"
       }
     },
     "SecurityGroupSupported": {
@@ -12694,7 +12777,8 @@
     "SnapshotInfoSetType": {
       "type": "list",
       "member": {
-        "shape": "SnapshotInfoSetItemType"
+        "shape": "SnapshotInfoSetItemType",
+        "locationName": "item"
       }
     },
     "SnapshotName": {
@@ -12865,7 +12949,8 @@
     "StaticMappingsSetType": {
       "type": "list",
       "member": {
-        "shape": "StaticMappingsSetItemType"
+        "shape": "StaticMappingsSetItemType",
+        "locationName": "item"
       }
     },
     "StaticRoutesOnly": {
@@ -13034,7 +13119,8 @@
     "TriggerSetType": {
       "type": "list",
       "member": {
-        "shape": "TriggerItemType"
+        "shape": "TriggerItemType",
+        "locationName": "item"
       }
     },
     "TunnelId": {
@@ -13218,7 +13304,8 @@
     "UploadSetType": {
       "type": "list",
       "member": {
-        "shape": "UploadItemType"
+        "shape": "UploadItemType",
+        "locationName": "item"
       }
     },
     "UploadSslCertificateRequest": {
@@ -13336,7 +13423,8 @@
     "UsageDetailSetType": {
       "type": "list",
       "member": {
-        "shape": "UsageDetailInfoType"
+        "shape": "UsageDetailInfoType",
+        "locationName": "item"
       }
     },
     "UsageElasticIpInfoType": {
@@ -13468,7 +13556,8 @@
     "UsageOptionInfoType": {
       "type": "list",
       "member": {
-        "shape": "UsageOptionDetailSetType"
+        "shape": "UsageOptionDetailSetType",
+        "locationName": "item"
       }
     },
     "UsageOsOptionChargeInfoType": {
@@ -13647,7 +13736,8 @@
     "UserIdGroupPairSetType": {
       "type": "list",
       "member": {
-        "shape": "UserIdGroupPairType"
+        "shape": "UserIdGroupPairType",
+        "locationName": "item"
       }
     },
     "UserIdGroupPairType": {
@@ -13666,7 +13756,8 @@
     "Users": {
       "type": "list",
       "member": {
-        "shape": "User"
+        "shape": "User",
+        "locationName": "member"
       }
     },
     "UsersList": {
@@ -13716,7 +13807,8 @@
     "ValueSetType": {
       "type": "list",
       "member": {
-        "shape": "ValueSetItemType"
+        "shape": "ValueSetItemType",
+        "locationName": "item"
       }
     },
     "ValueType": {
@@ -13788,7 +13880,8 @@
     "VpnConnectionSetType": {
       "type": "list",
       "member": {
-        "shape": "VpnConnectionType"
+        "shape": "VpnConnectionType",
+        "locationName": "item"
       }
     },
     "VpnConnectionType": {
@@ -13837,7 +13930,8 @@
     "VpnGatewayIdSetType": {
       "type": "list",
       "member": {
-        "shape": "VpnGatewayIdSetItemType"
+        "shape": "VpnGatewayIdSetItemType",
+        "locationName": "item"
       }
     },
     "VpnGatewayIdType": {
@@ -13870,7 +13964,8 @@
     "VpnGatewayNetworkInterfaceSetType": {
       "type": "list",
       "member": {
-        "shape": "VpnGatewayNetworkInterfaceType"
+        "shape": "VpnGatewayNetworkInterfaceType",
+        "locationName": "item"
       }
     },
     "VpnGatewayNetworkInterfaceType": {
@@ -13907,7 +14002,8 @@
     "VpnGatewaySetType": {
       "type": "list",
       "member": {
-        "shape": "VpnGatewayType"
+        "shape": "VpnGatewayType",
+        "locationName": "item"
       }
     },
     "VpnGatewayType": {
@@ -14032,7 +14128,8 @@
     "VpnTunnelTelemetryType": {
       "type": "list",
       "member": {
-        "shape": "VpnTunnelTelemetryItemType"
+        "shape": "VpnTunnelTelemetryItemType",
+        "locationName": "item"
       }
     },
     "WebProxyOptionType": {
@@ -14047,7 +14144,8 @@
     "WebProxySetType": {
       "type": "list",
       "member": {
-        "shape": "WebProxyType"
+        "shape": "WebProxyType",
+        "locationName": "item"
       }
     },
     "WebProxyType": {
