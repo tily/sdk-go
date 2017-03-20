@@ -11726,7 +11726,7 @@
     "ResourceTagSetType": {
       "type": "list",
       "member": {
-        "shape": "string"
+        "shape": "ResourceTagSetItemType"
       }
     },
     "ResourceVpnGatewayItemType": {
@@ -14115,17 +14115,7 @@
       }
     },
     "string": {
-      "type": "structure",
-      "members": {
-        "Key": {
-          "shape": "String",
-          "locationName": "key"
-        },
-        "Value": {
-          "shape": "String",
-          "locationName": "value"
-        }
-      }
+      "type": "structure"
     }
   }
 }
