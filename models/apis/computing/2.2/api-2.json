@@ -11538,10 +11538,6 @@
           "shape": "String",
           "locationName": "ownerId"
         },
-        "RequesterId": {
-          "shape": "",
-          "locationName": "requesterId"
-        },
         "ReservationId": {
           "shape": "String",
           "locationName": "reservationId"
