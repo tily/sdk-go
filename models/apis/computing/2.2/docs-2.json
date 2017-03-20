@@ -4561,10 +4561,6 @@
     "validDateType": {
       "base": "validDateType",
       "refs": null
-    },
-    "versionInformationType": {
-      "base": "versionInformationType",
-      "refs": null
     }
   }
 }
