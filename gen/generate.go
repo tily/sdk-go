@@ -341,6 +341,9 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 		locToShapeMap[shapeName] = shapeType
 
 		if i == 0 {
+			if regexp.MustCompile(`^(AssociateUsers|DissociateUsers|DescribeAssociatedUsers)$`).MatchString(operationName) {
+				return
+			}
 			shape := Shape{ShapeName: fmt.Sprintf("%sResult", operationName), Type: "structure", Members: map[string]ShapeRef{}}
 			for _, shapeName := range children {
 				shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
