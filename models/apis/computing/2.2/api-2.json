@@ -13877,7 +13877,7 @@
           "locationName": "listenPort"
         },
         "Option": {
-          "shape": "String",
+          "shape": "WebProxyOptionType",
           "locationName": "option"
         },
         "RouterId": {
@@ -14119,9 +14119,13 @@
     "string": {
       "type": "structure",
       "members": {
-        "NameServer": {
+        "Key": {
           "shape": "String",
-          "locationName": "nameServer"
+          "locationName": "key"
+        },
+        "Value": {
+          "shape": "String",
+          "locationName": "value"
         }
       }
     },
