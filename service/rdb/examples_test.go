@@ -98,7 +98,7 @@ func Examplerdb_CreateDBInstance() {
 		BackupRetentionPeriod: aws.Int64(1),
 		DBName:                aws.String("String"),
 		DBParameterGroupName:  aws.String("String"),
-		DBSecurityGroups: []*string{
+		DBSecurityGroupsList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -229,19 +229,19 @@ func Examplerdb_CreateEventSubscription() {
 	svc := rdb.New(sess)
 
 	params := &rdb.CreateEventSubscriptionInput{
-		NiftyEmailAddresses: []*string{ // Required
-			aws.String("String"), // Required
+		NiftyEmailAddressesList: []*string{ // Required
+			aws.String("NiftyEmailAddress"), // Required
 			// More values...
 		},
 		SubscriptionName: aws.String("String"), // Required
 		Enabled:          aws.Bool(true),
-		EventCategories: []*string{
+		EventCategoriesList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
 		NiftyDescription: aws.String("String"),
-		SourceIds: []*string{
-			aws.String("String"), // Required
+		SourceIdsList: []*string{
+			aws.String("SourceId"), // Required
 			// More values...
 		},
 		SourceType: aws.String("String"),
@@ -611,7 +611,7 @@ func Examplerdb_DescribeEvents() {
 	params := &rdb.DescribeEventsInput{
 		Duration: aws.Int64(1),
 		EndTime:  aws.Time(time.Now()),
-		EventCategories: []*string{
+		EventCategoriesList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -696,7 +696,7 @@ func Examplerdb_ModifyDBInstance() {
 		BackupRetentionPeriod: aws.Int64(1),
 		DBInstanceClass:       aws.String("String"),
 		DBParameterGroupName:  aws.String("String"),
-		DBSecurityGroups: []*string{
+		DBSecurityGroupsList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -730,28 +730,16 @@ func Examplerdb_ModifyDBParameterGroup() {
 
 	params := &rdb.ModifyDBParameterGroupInput{
 		DBParameterGroupName: aws.String("String"), // Required
-		Parameters: []*rdb.ParametersStruct{ // Required
-			{ // Required
-				ApplyMethod:    aws.String("String"),
-				ParameterName:  aws.String("String"),
-				ParameterValue: aws.String("String"),
-			},
+		ParametersList: []*string{ // Required
+			aws.String("String"), // Required
 			// More values...
 		},
-		Parameters: []*rdb.ParametersStruct{ // Required
-			{ // Required
-				ApplyMethod:    aws.String("String"),
-				ParameterName:  aws.String("String"),
-				ParameterValue: aws.String("String"),
-			},
+		ParametersList: []*string{ // Required
+			aws.String("String"), // Required
 			// More values...
 		},
-		Parameters: []*rdb.ParametersStruct{ // Required
-			{ // Required
-				ApplyMethod:    aws.String("String"),
-				ParameterName:  aws.String("String"),
-				ParameterValue: aws.String("String"),
-			},
+		ParametersList: []*string{ // Required
+			aws.String("String"), // Required
 			// More values...
 		},
 	}
@@ -774,13 +762,13 @@ func Examplerdb_ModifyEventSubscription() {
 	svc := rdb.New(sess)
 
 	params := &rdb.ModifyEventSubscriptionInput{
-		NiftyEmailAddresses: []*string{ // Required
-			aws.String("String"), // Required
+		NiftyEmailAddressesList: []*string{ // Required
+			aws.String("NiftyEmailAddress"), // Required
 			// More values...
 		},
 		SubscriptionName: aws.String("String"), // Required
 		Enabled:          aws.Bool(true),
-		EventCategories: []*string{
+		EventCategoriesList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -827,17 +815,21 @@ func Examplerdb_NiftyGetMetricStatistics() {
 	svc := rdb.New(sess)
 
 	params := &rdb.NiftyGetMetricStatisticsInput{
-		Dimensions: []*rdb.DimensionsStruct{ // Required
+		DimensionsList: []*rdb.EmberStruct{ // Required
 			{ // Required
-				Name:  aws.String("String"),
-				Value: aws.String("String"),
+				NStruct: &rdb.NStruct{
+					Name:  aws.String("Name"),
+					Value: aws.String("Value"),
+				},
 			},
 			// More values...
 		},
-		Dimensions: []*rdb.DimensionsStruct{ // Required
+		DimensionsList: []*rdb.EmberStruct{ // Required
 			{ // Required
-				Name:  aws.String("String"),
-				Value: aws.String("String"),
+				NStruct: &rdb.NStruct{
+					Name:  aws.String("Name"),
+					Value: aws.String("Value"),
+				},
 			},
 			// More values...
 		},
@@ -912,7 +904,7 @@ func Examplerdb_ResetDBParameterGroup() {
 		ApplyMethod:          aws.String("String"), // Required
 		DBParameterGroupName: aws.String("String"), // Required
 		ParameterName:        aws.String("String"), // Required
-		Parameters: []*string{
+		ParametersList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -946,7 +938,7 @@ func Examplerdb_RestoreDBInstanceFromDBSnapshot() {
 		LicenseModel:              aws.String("String"),
 		MultiAZ:                   aws.Bool(true),
 		NiftyDBParameterGroupName: aws.String("String"),
-		NiftyDBSecurityGroups: []*string{
+		NiftyDBSecurityGroupsList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},
@@ -988,7 +980,7 @@ func Examplerdb_RestoreDBInstanceToPointInTime() {
 		LicenseModel:               aws.String("String"),
 		MultiAZ:                    aws.Bool(true),
 		NiftyDBParameterGroupName:  aws.String("String"),
-		NiftyDBSecurityGroups: []*string{
+		NiftyDBSecurityGroupsList: []*string{
 			aws.String("String"), // Required
 			// More values...
 		},

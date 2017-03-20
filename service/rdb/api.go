@@ -2569,8 +2569,8 @@ type CreateDBInstanceInput struct {
 	// String
 	DBParameterGroupName *string `type:"string"`
 
-	// DBSecurityGroupsStringList
-	DBSecurityGroups []*string `type:"list"`
+	// DBSecurityGroupsList
+	DBSecurityGroupsList []*string `type:"list"`
 
 	// String
 	//
@@ -2710,9 +2710,9 @@ func (s *CreateDBInstanceInput) SetDBParameterGroupName(v string) *CreateDBInsta
 	return s
 }
 
-// SetDBSecurityGroups sets the DBSecurityGroups field's value.
-func (s *CreateDBInstanceInput) SetDBSecurityGroups(v []*string) *CreateDBInstanceInput {
-	s.DBSecurityGroups = v
+// SetDBSecurityGroupsList sets the DBSecurityGroupsList field's value.
+func (s *CreateDBInstanceInput) SetDBSecurityGroupsList(v []*string) *CreateDBInstanceInput {
+	s.DBSecurityGroupsList = v
 	return s
 }
 
@@ -3222,19 +3222,19 @@ type CreateEventSubscriptionInput struct {
 	// Boolean
 	Enabled *bool `type:"boolean"`
 
-	// EventCategoriesStringList
-	EventCategories []*string `type:"list"`
+	// EventCategoriesList
+	EventCategoriesList []*string `type:"list"`
 
 	// String
 	NiftyDescription *string `type:"string"`
 
-	// NiftyEmailAddressesStringList
+	// NiftyEmailAddressesList
 	//
-	// NiftyEmailAddresses is a required field
-	NiftyEmailAddresses []*string `type:"list" required:"true"`
+	// NiftyEmailAddressesList is a required field
+	NiftyEmailAddressesList []*string `locationNameList:"NiftyEmailAddress" type:"list" required:"true"`
 
-	// SourceIdsStringList
-	SourceIds []*string `type:"list"`
+	// SourceIdsList
+	SourceIdsList []*string `locationNameList:"SourceId" type:"list"`
 
 	// String
 	SourceType *string `type:"string"`
@@ -3258,8 +3258,8 @@ func (s CreateEventSubscriptionInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *CreateEventSubscriptionInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "CreateEventSubscriptionInput"}
-	if s.NiftyEmailAddresses == nil {
-		invalidParams.Add(request.NewErrParamRequired("NiftyEmailAddresses"))
+	if s.NiftyEmailAddressesList == nil {
+		invalidParams.Add(request.NewErrParamRequired("NiftyEmailAddressesList"))
 	}
 	if s.SubscriptionName == nil {
 		invalidParams.Add(request.NewErrParamRequired("SubscriptionName"))
@@ -3277,9 +3277,9 @@ func (s *CreateEventSubscriptionInput) SetEnabled(v bool) *CreateEventSubscripti
 	return s
 }
 
-// SetEventCategories sets the EventCategories field's value.
-func (s *CreateEventSubscriptionInput) SetEventCategories(v []*string) *CreateEventSubscriptionInput {
-	s.EventCategories = v
+// SetEventCategoriesList sets the EventCategoriesList field's value.
+func (s *CreateEventSubscriptionInput) SetEventCategoriesList(v []*string) *CreateEventSubscriptionInput {
+	s.EventCategoriesList = v
 	return s
 }
 
@@ -3289,15 +3289,15 @@ func (s *CreateEventSubscriptionInput) SetNiftyDescription(v string) *CreateEven
 	return s
 }
 
-// SetNiftyEmailAddresses sets the NiftyEmailAddresses field's value.
-func (s *CreateEventSubscriptionInput) SetNiftyEmailAddresses(v []*string) *CreateEventSubscriptionInput {
-	s.NiftyEmailAddresses = v
+// SetNiftyEmailAddressesList sets the NiftyEmailAddressesList field's value.
+func (s *CreateEventSubscriptionInput) SetNiftyEmailAddressesList(v []*string) *CreateEventSubscriptionInput {
+	s.NiftyEmailAddressesList = v
 	return s
 }
 
-// SetSourceIds sets the SourceIds field's value.
-func (s *CreateEventSubscriptionInput) SetSourceIds(v []*string) *CreateEventSubscriptionInput {
-	s.SourceIds = v
+// SetSourceIdsList sets the SourceIdsList field's value.
+func (s *CreateEventSubscriptionInput) SetSourceIdsList(v []*string) *CreateEventSubscriptionInput {
+	s.SourceIdsList = v
 	return s
 }
 
@@ -4826,8 +4826,8 @@ type DescribeEventsInput struct {
 	// TStamp
 	EndTime *time.Time `type:"timestamp" timestampFormat:"iso8601"`
 
-	// EventCategoriesStringList
-	EventCategories []*string `type:"list"`
+	// EventCategoriesList
+	EventCategoriesList []*string `type:"list"`
 
 	// String
 	Marker *string `type:"string"`
@@ -4867,9 +4867,9 @@ func (s *DescribeEventsInput) SetEndTime(v time.Time) *DescribeEventsInput {
 	return s
 }
 
-// SetEventCategories sets the EventCategories field's value.
-func (s *DescribeEventsInput) SetEventCategories(v []*string) *DescribeEventsInput {
-	s.EventCategories = v
+// SetEventCategoriesList sets the EventCategoriesList field's value.
+func (s *DescribeEventsInput) SetEventCategoriesList(v []*string) *DescribeEventsInput {
+	s.EventCategoriesList = v
 	return s
 }
 
@@ -5023,40 +5023,6 @@ func (s *DescribeOrderableDBInstanceOptionsOutput) SetOrderableDBInstanceOptions
 	return s
 }
 
-// DimensionsStruct
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DimensionsStruct
-type DimensionsStruct struct {
-	_ struct{} `type:"structure"`
-
-	// String
-	Name *string `type:"string"`
-
-	// String
-	Value *string `type:"string"`
-}
-
-// String returns the string representation
-func (s DimensionsStruct) String() string {
-	return awsutil.Prettify(s)
-}
-
-// GoString returns the string representation
-func (s DimensionsStruct) GoString() string {
-	return s.String()
-}
-
-// SetName sets the Name field's value.
-func (s *DimensionsStruct) SetName(v string) *DimensionsStruct {
-	s.Name = &v
-	return s
-}
-
-// SetValue sets the Value field's value.
-func (s *DimensionsStruct) SetValue(v string) *DimensionsStruct {
-	s.Value = &v
-	return s
-}
-
 // DownloadDBLogFilePortionRequest
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//DownloadDBLogFilePortionRequest
 type DownloadDBLogFilePortionInput struct {
@@ -5155,6 +5121,31 @@ func (s *DownloadDBLogFilePortionOutput) SetAdditionalDataPending(v bool) *Downl
 // SetLogFileData sets the LogFileData field's value.
 func (s *DownloadDBLogFilePortionOutput) SetLogFileData(v string) *DownloadDBLogFilePortionOutput {
 	s.LogFileData = &v
+	return s
+}
+
+// emberStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//emberStruct
+type EmberStruct struct {
+	_ struct{} `type:"structure"`
+
+	// NStruct
+	NStruct *NStruct `type:"structure"`
+}
+
+// String returns the string representation
+func (s EmberStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s EmberStruct) GoString() string {
+	return s.String()
+}
+
+// SetNStruct sets the NStruct field's value.
+func (s *EmberStruct) SetNStruct(v *NStruct) *EmberStruct {
+	s.NStruct = v
 	return s
 }
 
@@ -5477,8 +5468,8 @@ type ModifyDBInstanceInput struct {
 	// String
 	DBParameterGroupName *string `type:"string"`
 
-	// DBSecurityGroupsStringList
-	DBSecurityGroups []*string `type:"list"`
+	// DBSecurityGroupsList
+	DBSecurityGroupsList []*string `type:"list"`
 
 	// String
 	MasterUserPassword *string `type:"string"`
@@ -5567,9 +5558,9 @@ func (s *ModifyDBInstanceInput) SetDBParameterGroupName(v string) *ModifyDBInsta
 	return s
 }
 
-// SetDBSecurityGroups sets the DBSecurityGroups field's value.
-func (s *ModifyDBInstanceInput) SetDBSecurityGroups(v []*string) *ModifyDBInstanceInput {
-	s.DBSecurityGroups = v
+// SetDBSecurityGroupsList sets the DBSecurityGroupsList field's value.
+func (s *ModifyDBInstanceInput) SetDBSecurityGroupsList(v []*string) *ModifyDBInstanceInput {
+	s.DBSecurityGroupsList = v
 	return s
 }
 
@@ -5662,10 +5653,10 @@ type ModifyDBParameterGroupInput struct {
 	// DBParameterGroupName is a required field
 	DBParameterGroupName *string `type:"string" required:"true"`
 
-	// ParametersStructList
+	// ParametersList
 	//
-	// Parameters is a required field
-	Parameters []*ParametersStruct `type:"list" required:"true"`
+	// ParametersList is a required field
+	ParametersList []*string `type:"list" required:"true"`
 }
 
 // String returns the string representation
@@ -5684,8 +5675,8 @@ func (s *ModifyDBParameterGroupInput) Validate() error {
 	if s.DBParameterGroupName == nil {
 		invalidParams.Add(request.NewErrParamRequired("DBParameterGroupName"))
 	}
-	if s.Parameters == nil {
-		invalidParams.Add(request.NewErrParamRequired("Parameters"))
+	if s.ParametersList == nil {
+		invalidParams.Add(request.NewErrParamRequired("ParametersList"))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -5700,9 +5691,9 @@ func (s *ModifyDBParameterGroupInput) SetDBParameterGroupName(v string) *ModifyD
 	return s
 }
 
-// SetParameters sets the Parameters field's value.
-func (s *ModifyDBParameterGroupInput) SetParameters(v []*ParametersStruct) *ModifyDBParameterGroupInput {
-	s.Parameters = v
+// SetParametersList sets the ParametersList field's value.
+func (s *ModifyDBParameterGroupInput) SetParametersList(v []*string) *ModifyDBParameterGroupInput {
+	s.ParametersList = v
 	return s
 }
 
@@ -5739,16 +5730,16 @@ type ModifyEventSubscriptionInput struct {
 	// Boolean
 	Enabled *bool `type:"boolean"`
 
-	// EventCategoriesStringList
-	EventCategories []*string `type:"list"`
+	// EventCategoriesList
+	EventCategoriesList []*string `type:"list"`
 
 	// String
 	NiftyDescription *string `type:"string"`
 
-	// NiftyEmailAddressesStringList
+	// NiftyEmailAddressesList
 	//
-	// NiftyEmailAddresses is a required field
-	NiftyEmailAddresses []*string `type:"list" required:"true"`
+	// NiftyEmailAddressesList is a required field
+	NiftyEmailAddressesList []*string `locationNameList:"NiftyEmailAddress" type:"list" required:"true"`
 
 	// String
 	SourceType *string `type:"string"`
@@ -5772,8 +5763,8 @@ func (s ModifyEventSubscriptionInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *ModifyEventSubscriptionInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "ModifyEventSubscriptionInput"}
-	if s.NiftyEmailAddresses == nil {
-		invalidParams.Add(request.NewErrParamRequired("NiftyEmailAddresses"))
+	if s.NiftyEmailAddressesList == nil {
+		invalidParams.Add(request.NewErrParamRequired("NiftyEmailAddressesList"))
 	}
 	if s.SubscriptionName == nil {
 		invalidParams.Add(request.NewErrParamRequired("SubscriptionName"))
@@ -5791,9 +5782,9 @@ func (s *ModifyEventSubscriptionInput) SetEnabled(v bool) *ModifyEventSubscripti
 	return s
 }
 
-// SetEventCategories sets the EventCategories field's value.
-func (s *ModifyEventSubscriptionInput) SetEventCategories(v []*string) *ModifyEventSubscriptionInput {
-	s.EventCategories = v
+// SetEventCategoriesList sets the EventCategoriesList field's value.
+func (s *ModifyEventSubscriptionInput) SetEventCategoriesList(v []*string) *ModifyEventSubscriptionInput {
+	s.EventCategoriesList = v
 	return s
 }
 
@@ -5803,9 +5794,9 @@ func (s *ModifyEventSubscriptionInput) SetNiftyDescription(v string) *ModifyEven
 	return s
 }
 
-// SetNiftyEmailAddresses sets the NiftyEmailAddresses field's value.
-func (s *ModifyEventSubscriptionInput) SetNiftyEmailAddresses(v []*string) *ModifyEventSubscriptionInput {
-	s.NiftyEmailAddresses = v
+// SetNiftyEmailAddressesList sets the NiftyEmailAddressesList field's value.
+func (s *ModifyEventSubscriptionInput) SetNiftyEmailAddressesList(v []*string) *ModifyEventSubscriptionInput {
+	s.NiftyEmailAddressesList = v
 	return s
 }
 
@@ -5843,6 +5834,40 @@ func (s ModifyEventSubscriptionOutput) GoString() string {
 // SetEventSubscription sets the EventSubscription field's value.
 func (s *ModifyEventSubscriptionOutput) SetEventSubscription(v *EventSubscription) *ModifyEventSubscriptionOutput {
 	s.EventSubscription = v
+	return s
+}
+
+// NStruct
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NStruct
+type NStruct struct {
+	_ struct{} `type:"structure"`
+
+	// Name
+	Name *string `type:"string"`
+
+	// Value
+	Value *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NStruct) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NStruct) GoString() string {
+	return s.String()
+}
+
+// SetName sets the Name field's value.
+func (s *NStruct) SetName(v string) *NStruct {
+	s.Name = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NStruct) SetValue(v string) *NStruct {
+	s.Value = &v
 	return s
 }
 
@@ -5916,10 +5941,10 @@ func (s *NiftyFailoverDBInstanceOutput) SetDBInstance(v *DBInstance) *NiftyFailo
 type NiftyGetMetricStatisticsInput struct {
 	_ struct{} `type:"structure"`
 
-	// DimensionsStructList
+	// DimensionsList
 	//
-	// Dimensions is a required field
-	Dimensions []*DimensionsStruct `type:"list" required:"true"`
+	// DimensionsList is a required field
+	DimensionsList []*EmberStruct `type:"list" required:"true"`
 
 	// TStamp
 	EndTime *time.Time `type:"timestamp" timestampFormat:"iso8601"`
@@ -5946,8 +5971,8 @@ func (s NiftyGetMetricStatisticsInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *NiftyGetMetricStatisticsInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "NiftyGetMetricStatisticsInput"}
-	if s.Dimensions == nil {
-		invalidParams.Add(request.NewErrParamRequired("Dimensions"))
+	if s.DimensionsList == nil {
+		invalidParams.Add(request.NewErrParamRequired("DimensionsList"))
 	}
 	if s.MetricName == nil {
 		invalidParams.Add(request.NewErrParamRequired("MetricName"))
@@ -5959,9 +5984,9 @@ func (s *NiftyGetMetricStatisticsInput) Validate() error {
 	return nil
 }
 
-// SetDimensions sets the Dimensions field's value.
-func (s *NiftyGetMetricStatisticsInput) SetDimensions(v []*DimensionsStruct) *NiftyGetMetricStatisticsInput {
-	s.Dimensions = v
+// SetDimensionsList sets the DimensionsList field's value.
+func (s *NiftyGetMetricStatisticsInput) SetDimensionsList(v []*EmberStruct) *NiftyGetMetricStatisticsInput {
+	s.DimensionsList = v
 	return s
 }
 
@@ -6227,49 +6252,6 @@ func (s *Parameter) SetSource(v string) *Parameter {
 	return s
 }
 
-// ParametersStruct
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ParametersStruct
-type ParametersStruct struct {
-	_ struct{} `type:"structure"`
-
-	// String
-	ApplyMethod *string `type:"string"`
-
-	// String
-	ParameterName *string `type:"string"`
-
-	// String
-	ParameterValue *string `type:"string"`
-}
-
-// String returns the string representation
-func (s ParametersStruct) String() string {
-	return awsutil.Prettify(s)
-}
-
-// GoString returns the string representation
-func (s ParametersStruct) GoString() string {
-	return s.String()
-}
-
-// SetApplyMethod sets the ApplyMethod field's value.
-func (s *ParametersStruct) SetApplyMethod(v string) *ParametersStruct {
-	s.ApplyMethod = &v
-	return s
-}
-
-// SetParameterName sets the ParameterName field's value.
-func (s *ParametersStruct) SetParameterName(v string) *ParametersStruct {
-	s.ParameterName = &v
-	return s
-}
-
-// SetParameterValue sets the ParameterValue field's value.
-func (s *ParametersStruct) SetParameterValue(v string) *ParametersStruct {
-	s.ParameterValue = &v
-	return s
-}
-
 // PendingModifiedValues
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//PendingModifiedValues
 type PendingModifiedValues struct {
@@ -6520,8 +6502,8 @@ type ResetDBParameterGroupInput struct {
 	// ParameterName is a required field
 	ParameterName *string `type:"string" required:"true"`
 
-	// ParametersStringList
-	Parameters []*string `type:"list"`
+	// ParametersList
+	ParametersList []*string `type:"list"`
 
 	// Boolean
 	ResetAllParameters *bool `type:"boolean"`
@@ -6574,9 +6556,9 @@ func (s *ResetDBParameterGroupInput) SetParameterName(v string) *ResetDBParamete
 	return s
 }
 
-// SetParameters sets the Parameters field's value.
-func (s *ResetDBParameterGroupInput) SetParameters(v []*string) *ResetDBParameterGroupInput {
-	s.Parameters = v
+// SetParametersList sets the ParametersList field's value.
+func (s *ResetDBParameterGroupInput) SetParametersList(v []*string) *ResetDBParameterGroupInput {
+	s.ParametersList = v
 	return s
 }
 
@@ -6649,8 +6631,8 @@ type RestoreDBInstanceFromDBSnapshotInput struct {
 	// String
 	NiftyDBParameterGroupName *string `type:"string"`
 
-	// NiftyDBSecurityGroupsStringList
-	NiftyDBSecurityGroups []*string `type:"list"`
+	// NiftyDBSecurityGroupsList
+	NiftyDBSecurityGroupsList []*string `type:"list"`
 
 	// String
 	NiftyMasterPrivateAddress *string `type:"string"`
@@ -6763,9 +6745,9 @@ func (s *RestoreDBInstanceFromDBSnapshotInput) SetNiftyDBParameterGroupName(v st
 	return s
 }
 
-// SetNiftyDBSecurityGroups sets the NiftyDBSecurityGroups field's value.
-func (s *RestoreDBInstanceFromDBSnapshotInput) SetNiftyDBSecurityGroups(v []*string) *RestoreDBInstanceFromDBSnapshotInput {
-	s.NiftyDBSecurityGroups = v
+// SetNiftyDBSecurityGroupsList sets the NiftyDBSecurityGroupsList field's value.
+func (s *RestoreDBInstanceFromDBSnapshotInput) SetNiftyDBSecurityGroupsList(v []*string) *RestoreDBInstanceFromDBSnapshotInput {
+	s.NiftyDBSecurityGroupsList = v
 	return s
 }
 
@@ -6874,8 +6856,8 @@ type RestoreDBInstanceToPointInTimeInput struct {
 	// String
 	NiftyDBParameterGroupName *string `type:"string"`
 
-	// NiftyDBSecurityGroupsStringList
-	NiftyDBSecurityGroups []*string `type:"list"`
+	// NiftyDBSecurityGroupsList
+	NiftyDBSecurityGroupsList []*string `type:"list"`
 
 	// String
 	NiftyMasterPrivateAddress *string `type:"string"`
@@ -6989,9 +6971,9 @@ func (s *RestoreDBInstanceToPointInTimeInput) SetNiftyDBParameterGroupName(v str
 	return s
 }
 
-// SetNiftyDBSecurityGroups sets the NiftyDBSecurityGroups field's value.
-func (s *RestoreDBInstanceToPointInTimeInput) SetNiftyDBSecurityGroups(v []*string) *RestoreDBInstanceToPointInTimeInput {
-	s.NiftyDBSecurityGroups = v
+// SetNiftyDBSecurityGroupsList sets the NiftyDBSecurityGroupsList field's value.
+func (s *RestoreDBInstanceToPointInTimeInput) SetNiftyDBSecurityGroupsList(v []*string) *RestoreDBInstanceToPointInTimeInput {
+	s.NiftyDBSecurityGroupsList = v
 	return s
 }
 
