@@ -7040,9 +7040,6 @@
     "IpAddressV6": {
       "type": "string"
     },
-    "IpAddressx": {
-      "type": "string"
-    },
     "IpOwnerId": {
       "type": "string"
     },
@@ -12739,7 +12736,7 @@
           "locationName": "description"
         },
         "IpAddress": {
-          "shape": "",
+          "shape": "String",
           "locationName": "ipAddress"
         },
         "MacAddress": {

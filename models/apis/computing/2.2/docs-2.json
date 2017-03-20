@@ -1990,10 +1990,6 @@
       "base": "IpAddressV6",
       "refs": null
     },
-    "IpAddressx": {
-      "base": "IpAddressx",
-      "refs": null
-    },
     "IpOwnerId": {
       "base": "IpOwnerId",
       "refs": null
