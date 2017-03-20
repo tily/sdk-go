@@ -11933,6 +11933,50 @@
     "RouterType": {
       "type": "structure",
       "members": {
+        "AccountingType": {
+          "shape": "String",
+          "locationName": "accountingType"
+        },
+        "AvailabilityZone": {
+          "shape": "String",
+          "locationName": "availabilityZone"
+        },
+        "CreatedTime": {
+          "shape": "TStamp",
+          "locationName": "createdTime"
+        },
+        "Description": {
+          "shape": "String",
+          "locationName": "description"
+        },
+        "GroupSet": {
+          "shape": "GroupSetType",
+          "locationName": "groupSet"
+        },
+        "NatTableAssociationId": {
+          "shape": "String",
+          "locationName": "natTableAssociationId"
+        },
+        "NatTableId": {
+          "shape": "String",
+          "locationName": "natTableId"
+        },
+        "NetworkInterfaceSet": {
+          "shape": "NetworkInterfaceSetType",
+          "locationName": "networkInterfaceSet"
+        },
+        "NextMonthAccountingType": {
+          "shape": "String",
+          "locationName": "nextMonthAccountingType"
+        },
+        "RouteTableAssociationId": {
+          "shape": "String",
+          "locationName": "routeTableAssociationId"
+        },
+        "RouteTableId": {
+          "shape": "String",
+          "locationName": "routeTableId"
+        },
         "RouterId": {
           "shape": "String",
           "locationName": "routerId"
@@ -11940,6 +11984,18 @@
         "RouterName": {
           "shape": "String",
           "locationName": "routerName"
+        },
+        "State": {
+          "shape": "String",
+          "locationName": "state"
+        },
+        "TagSet": {
+          "shape": "ResourceTagSetType",
+          "locationName": "tagSet"
+        },
+        "Type": {
+          "shape": "String",
+          "locationName": "type"
         }
       }
     },
@@ -14038,81 +14094,6 @@
         "A": {
           "shape": "",
           "locationName": "a"
-        }
-      }
-    },
-    "routerSetType": {
-      "type": "list",
-      "member": {
-        "shape": "routerType"
-      }
-    },
-    "routerType": {
-      "type": "structure",
-      "members": {
-        "AccountingType": {
-          "shape": "String",
-          "locationName": "accountingType"
-        },
-        "AvailabilityZone": {
-          "shape": "String",
-          "locationName": "availabilityZone"
-        },
-        "CreatedTime": {
-          "shape": "TStamp",
-          "locationName": "createdTime"
-        },
-        "Description": {
-          "shape": "String",
-          "locationName": "description"
-        },
-        "GroupSet": {
-          "shape": "GroupSetType",
-          "locationName": "groupSet"
-        },
-        "NatTableAssociationId": {
-          "shape": "String",
-          "locationName": "natTableAssociationId"
-        },
-        "NatTableId": {
-          "shape": "String",
-          "locationName": "natTableId"
-        },
-        "NetworkInterfaceSet": {
-          "shape": "NetworkInterfaceSetType",
-          "locationName": "networkInterfaceSet"
-        },
-        "NextMonthAccountingType": {
-          "shape": "String",
-          "locationName": "nextMonthAccountingType"
-        },
-        "RouteTableAssociationId": {
-          "shape": "String",
-          "locationName": "routeTableAssociationId"
-        },
-        "RouteTableId": {
-          "shape": "String",
-          "locationName": "routeTableId"
-        },
-        "RouterId": {
-          "shape": "String",
-          "locationName": "routerId"
-        },
-        "RouterName": {
-          "shape": "String",
-          "locationName": "routerName"
-        },
-        "State": {
-          "shape": "String",
-          "locationName": "state"
-        },
-        "TagSet": {
-          "shape": "ResourceTagSetType",
-          "locationName": "tagSet"
-        },
-        "Type": {
-          "shape": "String",
-          "locationName": "type"
         }
       }
     },

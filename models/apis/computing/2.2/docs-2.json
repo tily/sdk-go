@@ -4554,14 +4554,6 @@
       "base": "integer",
       "refs": null
     },
-    "routerSetType": {
-      "base": "routerSetType",
-      "refs": null
-    },
-    "routerType": {
-      "base": "routerType",
-      "refs": null
-    },
     "string": {
       "base": "string",
       "refs": null
