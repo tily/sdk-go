@@ -6927,8 +6927,8 @@
           "locationName": "InstanceId"
         },
         "InstanceUniqueId": {
-          "shape": "",
-          "locationName": "InstanceUniqueId"
+          "shape": "String",
+          "locationName": "instanceUniqueId"
         }
       }
     },
