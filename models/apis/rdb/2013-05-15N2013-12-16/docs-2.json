@@ -42,14 +42,6 @@
     "RevokeDBSecurityGroupIngress": "RevokeDBSecurityGroupIngress"
   },
   "shapes": {
-    " Status": {
-      "base": " Status",
-      "refs": null
-    },
-    " StatusType": {
-      "base": " StatusType",
-      "refs": null
-    },
     "AddSourceIdentifierToSubscriptionRequest": {
       "base": "AddSourceIdentifierToSubscriptionRequest",
       "refs": null
@@ -250,8 +242,8 @@
       "base": "DBSecurityGroups",
       "refs": null
     },
-    "DBSecurityGroupsStringList": {
-      "base": "DBSecurityGroupsStringList",
+    "DBSecurityGroupsList": {
+      "base": "DBSecurityGroupsList",
       "refs": null
     },
     "DBSnapshot": {
@@ -418,12 +410,12 @@
       "base": "Description",
       "refs": null
     },
-    "DimensionsStruct": {
-      "base": "DimensionsStruct",
+    "DimensionsList": {
+      "base": "DimensionsList",
       "refs": null
     },
-    "DimensionsStructList": {
-      "base": "DimensionsStructList",
+    "Double": {
+      "base": "Double",
       "refs": null
     },
     "DownloadDBLogFilePortionRequest": {
@@ -488,10 +480,6 @@
     },
     "EventCategoriesMapList": {
       "base": "EventCategoriesMapList",
-      "refs": null
-    },
-    "EventCategoriesStringList": {
-      "base": "EventCategoriesStringList",
       "refs": null
     },
     "EventCategory": {
@@ -606,6 +594,10 @@
       "base": "MultiAZCapable",
       "refs": null
     },
+    "NStruct": {
+      "base": "NStruct",
+      "refs": null
+    },
     "Name": {
       "base": "Name",
       "refs": null
@@ -614,8 +606,8 @@
       "base": "NiftyAvailabilityZone",
       "refs": null
     },
-    "NiftyDBSecurityGroupsStringList": {
-      "base": "NiftyDBSecurityGroupsStringList",
+    "NiftyDBSecurityGroupsList": {
+      "base": "NiftyDBSecurityGroupsList",
       "refs": null
     },
     "NiftyDescription": {
@@ -628,10 +620,6 @@
     },
     "NiftyEmailAddressesList": {
       "base": "NiftyEmailAddressesList",
-      "refs": null
-    },
-    "NiftyEmailAddressesStringList": {
-      "base": "NiftyEmailAddressesStringList",
       "refs": null
     },
     "NiftyFailoverDBInstanceRequest": {
@@ -730,16 +718,8 @@
       "base": "Parameters",
       "refs": null
     },
-    "ParametersStringList": {
-      "base": "ParametersStringList",
-      "refs": null
-    },
-    "ParametersStruct": {
-      "base": "ParametersStruct",
-      "refs": null
-    },
-    "ParametersStructList": {
-      "base": "ParametersStructList",
+    "ParametersList": {
+      "base": "ParametersList",
       "refs": null
     },
     "PendingModifiedValues": {
@@ -862,10 +842,6 @@
       "base": "SourceIdsList",
       "refs": null
     },
-    "SourceIdsStringList": {
-      "base": "SourceIdsStringList",
-      "refs": null
-    },
     "SourceType": {
       "base": "SourceType",
       "refs": null
@@ -902,12 +878,20 @@
       "base": "Timestamp",
       "refs": null
     },
+    "Value": {
+      "base": "Value",
+      "refs": null
+    },
     "Vpc": {
       "base": "Vpc",
       "refs": null
     },
     "VpcSecurityGroups": {
       "base": "VpcSecurityGroups",
+      "refs": null
+    },
+    "emberStruct": {
+      "base": "emberStruct",
       "refs": null
     },
     "member": {
