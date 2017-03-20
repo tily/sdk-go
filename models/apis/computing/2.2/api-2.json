@@ -6827,7 +6827,7 @@
           "locationName": "association"
         },
         "Primary": {
-          "shape": "",
+          "shape": "Boolean",
           "locationName": "primary"
         },
         "PrivateDnsName": {
