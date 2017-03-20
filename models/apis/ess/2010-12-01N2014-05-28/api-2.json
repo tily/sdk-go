@@ -172,7 +172,7 @@
     "BccAddressesList": {
       "type": "list",
       "member": {
-        "shape": ""
+        "shape": "String"
       }
     },
     "BodyStruct": {
@@ -195,11 +195,11 @@
     "CcAddressesList": {
       "type": "list",
       "member": {
-        "shape": ""
+        "shape": "String"
       }
     },
     "Charset": {
-      "type": ""
+      "type": "string"
     },
     "Complaints": {
       "type": "integer"
@@ -443,6 +443,13 @@
       },
       "required": [
         "Destination",
+        "Destination",
+        "Destination",
+        "Message",
+        "Message",
+        "Message",
+        "Message",
+        "Message",
         "Message",
         "Source"
       ]
