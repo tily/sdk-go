@@ -109,7 +109,13 @@
     "generator": {
       "metadata": {
         "apiVersion": "2010-12-01N2014-05-28",
-        "globalEndpoint": "ess.api.cloud.nifty.com"
+        "globalEndpoint": "ess.api.cloud.nifty.com",
+        "endpointPrefix": "ess",
+        "serviceAbbreviation": "ess",
+        "serviceFullName": "ess",
+        "signatureVersion": "v2",
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
       },
       "http": {
         "method": "POST",
