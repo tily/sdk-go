@@ -20,6 +20,7 @@ const (
 
 // Service identifiers
 const (
+	ComputingServiceID     = "computing"     // Computing.
 	Ec2metadataServiceID   = "ec2metadata"   // Ec2metadata.
 	ObjectstorageServiceID = "objectstorage" // Objectstorage.
 	RdbServiceID           = "rdb"           // Rdb.
@@ -64,7 +65,7 @@ var niftycloudPartition = partition{
 	Defaults: endpoint{
 		Hostname:          "{service}.{region}.{dnsSuffix}",
 		Protocols:         []string{"https"},
-		SignatureVersions: []string{"v4", "s3"},
+		SignatureVersions: []string{"v4", "s3", "n2"},
 	},
 	Regions: regions{
 		"jp-east-1": region{
@@ -78,6 +79,22 @@ var niftycloudPartition = partition{
 		},
 	},
 	Services: services{
+		"computing": service{
+			Defaults: endpoint{
+				Protocols:         []string{"https"},
+				SignatureVersions: []string{"n2"},
+			},
+			Endpoints: endpoints{
+				"jp-east-1": endpoint{
+					Hostname:          "east-1.cp.cloud.nifty.com",
+					SignatureVersions: []string{"n2"},
+				},
+				"jp-east-2": endpoint{
+					Hostname:          "east-2.cp.cloud.nifty.com",
+					SignatureVersions: []string{"n2"},
+				},
+			},
+		},
 		"ec2metadata": service{
 			PartitionEndpoint: "aws-global",
 			IsRegionalized:    boxedFalse,

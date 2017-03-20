@@ -22,7 +22,7 @@ type Operation struct {
 	OpName string    `json:"name"`
 	HTTP   HTTP      `json:"http"`
 	Input  *ShapeRef `json:"input"`
-	Output *ShapeRef `json:"output"`
+	Output *ShapeRef `json:"output,omitempty"`
 }
 
 type HTTP struct {
@@ -57,4 +57,16 @@ type DocsModel struct {
 type DocsShape struct {
 	Base string            `json:"base"`
 	Refs map[string]string `json:"refs"`
+}
+
+type Shapes []Shape
+
+// get position in strint slice case-insensitively
+func (shapes Shapes) findShapeByName(shapeName string) *Shape {
+	for _, shape := range shapes {
+		if shape.ShapeName == shapeName {
+			return &shape
+		}
+	}
+	return &Shape{}
 }

@@ -205,7 +205,7 @@
               <td class="col3-2">プライベートLAN情報<br/>
                 Type : NetworkType<br/>
                 Ancestor : NiftyCreatePrivateLanResponse<br/>
-                Children : privateLanId,privateLanName,state,cidrBlock,availabilityZone,tagSet,accountingType,description,instancesSet,routerSet,vpnGatewaySet,createdTime</td>
+                Children : networkId,privateLanName,state,cidrBlock,availabilityZone,tagSet,accountingType,description,instancesSet,routerSet,vpnGatewaySet,createdTime</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -260,9 +260,9 @@
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">リソースに設定されているタグ情報<br/>
-                Type : xsd:string<br/>
+                Type : ResourceTagSetItemType<br/>
                 Ancestor : tagSet<br/>
-                Children : なし</td>
+                Children : key,value</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -407,7 +407,7 @@
               <td class="col3-2">プライベートLANに接続しているVPNゲートウェイ情報<br/>
                 Type : VpnGatewayIdType<br/>
                 Ancestor : vpnGatewaySet<br/>
-                Children : vpnGateweyId,niftyVpnGatewayName,deviceIndex,ipAddress</td>
+                Children : vpnGatewayId,niftyVpnGatewayName,deviceIndex,ipAddress</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>

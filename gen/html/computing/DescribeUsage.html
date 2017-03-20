@@ -881,7 +881,7 @@
               <td class="col3-3"> </td>
             </tr>
             <tr>
-              <td class="col3-1">++++++importInstanceDiskMeasuredRate</td>
+              <td class="col3-1">importInstanceDiskMeasuredRate</td>
               <td class="col3-2">インポートサーバーのディスク超過分従量<br/>
                 Type : UsageDetailInfoType<br/>
                 Ancestor : volumeInfo<br/>
@@ -1965,7 +1965,7 @@
               <td class="col3-2">メール配信利用情報（共通情報）<br/>
                 Type: UsageMailSendInfoType<br/>
                 Ancestor: DescribeUsageResponse<br/>
-                Children: mailSendInitial, mailSendMonthlyRate, mailSendMeasuredRate, OptionSet</td>
+                Children: mailSendInitial, mailSendMonthlyRate, mailSendMeasuredRate, mailSendMonthlyExceedRate, optionSet</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -2504,7 +2504,7 @@
               <td class="col3-2">インターネットVPN<br/>
                 Type : UsageInternetVpnInfoType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : ineternetVpnInitial, internetVpnMonthlyRate</td>
+                Children : internetVpnInitial, internetVpnMonthlyRateSet</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -2550,7 +2550,7 @@
             <tr>
               <td class="col3-1">internetVpnMonthlyRateSet</td>
               <td class="col3-2">インターネットVPN月額利用料セット<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : internetVpnInfo<br/>
                 Children : item</td>
               <td class="col3-3"> </td>
@@ -2558,7 +2558,7 @@
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">インターネットVPN月額利用料<br/>
-                Type : xsd:string<br/>
+                Type : UsageDetailInfoType<br/>
                 Ancestor : internetVpnMonthlyRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
@@ -2601,14 +2601,14 @@
               <td class="col3-2">スナップショット<br/>
                 Type : UsageSnapshotInfoType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : snapshot</td>
+                Children : snapShot</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">snapShot</td>
               <td class="col3-2">スナップショット利用量<br/>
                 Type : UsageDetailInfoType<br/>
-                Ancestor : snapShot<br/>
+                Ancestor : snapshotInfo<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
             </tr>
@@ -2649,7 +2649,7 @@
               <td class="col3-2">セキュアネットワーク<br/>
                 Type : UsageSecureNetInfoType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : secureNetMonthlyRate, vpnConnectMeasuredRate</td>
+                Children : secureNetMonthlyRate, vpnConnectionMeasuredRateSet</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -2693,9 +2693,9 @@
               <td class="col3-3"> </td>
             </tr>
             <tr>
-              <td class="col3-1">vpnConnectMeasuredRateSet</td>
+              <td class="col3-1">vpnConnectionMeasuredRateSet</td>
               <td class="col3-2">VPN接続料金セット<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : secureNetInfo<br/>
                 Children : item</td>
               <td class="col3-3"> </td>
@@ -2703,8 +2703,8 @@
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">VPN接続料金<br/>
-                Type : xsd:string<br/>
-                Ancestor : vpnConnectMeasuredRateSet<br/>
+                Type : UsageDetailInfoType<br/>
+                Ancestor : vpnConnectionMeasuredRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
             </tr>
@@ -2746,7 +2746,7 @@
               <td class="col3-2">プライベートネットワーク<br/>
                 Type : UsagePrivateLanType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : privateNetworkMonthryRate privateNetworkMeasuredRate</td>
+                Children : privateNetworkMonthlyRate privateNetworkMeasuredRate</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
@@ -2777,7 +2777,7 @@
               <td class="col3-1">value</td>
               <td class="col3-2">利用数<br/>
                 Type : xsd:int<br/>
-                Ancestor : privateNetworkMonthryRate<br/>
+                Ancestor : privateNetworkMonthlyRate<br/>
                 Children : なし</td>
               <td class="col3-3"> </td>
             </tr>
@@ -2785,7 +2785,7 @@
               <td class="col3-1">charge</td>
               <td class="col3-2">利用料金<br/>
                 Type : xsd:int<br/>
-                Ancestor : privateNetworkMonthryRate<br/>
+                Ancestor : privateNetworkMonthlyRate<br/>
                 Children : なし</td>
               <td class="col3-3"> </td>
             </tr>
@@ -2834,21 +2834,21 @@
               <td class="col3-2">ルーター<br/>
                 Type : UsagerouterType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : routerMonthryRate routerMeasuredRate</td>
+                Children : routerMonthlyRateSet routerMeasuredRateSet</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">routerMonthlyRateSet</td>
               <td class="col3-2">ルーター(月額)<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : routerInfo<br/>
-                Children : type, unit, value, charge</td>
+                Children : item</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">ルーター料金<br/>
-                Type : xsd:string<br/>
+                Type : UsageDetailInfoType<br/>
                 Ancestor : routerMonthlyRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
@@ -2888,15 +2888,15 @@
             <tr>
               <td class="col3-1">routerMeasuredRateSet</td>
               <td class="col3-2">ルーター(従量)<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : routerInfo<br/>
-                Children : type, unit, value, charge</td>
+                Children : item</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">ルーター料金<br/>
-                Type : xsd:string<br/>
+                Type : UsageDetailInfoType<br/>
                 Ancestor : routerMeasuredRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
@@ -2938,21 +2938,21 @@
               <td class="col3-2">VPNゲートウェイ<br/>
                 Type : UsagevpnGatewayType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : vpnGatewayMonthryRate vpnGatewayMeasuredRate</td>
+                Children : vpnGatewayMonthlyRate vpnGatewayMeasuredRate</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">vpnGatewayMonthlyRateSet</td>
               <td class="col3-2">VPNゲートウェイ(月額)<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : vpnGatewayInfo<br/>
-                Children : type, unit, value, charge</td>
+                Children : item</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">ルーター料金<br/>
-                Type : xsd:string<br/>
+                Type : UsageDetailInfoType<br/>
                 Ancestor : vpnGatewayMonthlyRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>
@@ -2995,21 +2995,21 @@
               <td class="col3-2">VPNゲートウェイ<br/>
                 Type : UsagevpnGatewayType<br/>
                 Ancestor : DescribeUsageResponse<br/>
-                Children : vpnGatewayMonthryRate vpnGatewayMeasuredRate</td>
+                Children : vpnGatewayMonthlyRateSet vpnGatewayMeasuredRateSet</td>
               <td class="col3-3"> </td>
             </tr>
             
               <tr><td class="col3-1">vpnGatewayMeasuredRateSet</td>
               <td class="col3-2">VPNゲートウェイ(月額)<br/>
-                Type : UsageDetailInfoType<br/>
+                Type : UsageDetailSetType<br/>
                 Ancestor : vpnGatewayInfo<br/>
-                Children : type, unit, value, charge</td>
+                Children : item</td>
               <td class="col3-3"> </td>
             </tr>
             <tr>
               <td class="col3-1">item</td>
               <td class="col3-2">VPNゲートウェイ料金<br/>
-                Type : xsd:string<br/>
+                Type : UsageDetailInfoType<br/>
                 Ancestor : vpnGatewayMeasuredRateSet<br/>
                 Children : type, unit, value, charge</td>
               <td class="col3-3"> </td>

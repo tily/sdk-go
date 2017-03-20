@@ -8,23 +8,36 @@
     },
     "generator": {
       "metadata": {
-        "apiVersion": "2.2"
+        "apiVersion": "2.2",
+        "endpointPrefix": "computing",
+        "serviceAbbreviation": "computing",
+        "serviceFullName": "computing",
+        "signatureVersion": "n2",
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
       },
       "http": {
         "method": "POST",
         "requestUri": "/api/2.2/"
       },
-      "requestShapeSelector": "",
+      "requestShapeSelector": "table[summary='指定するパラメーター'] tr:nth-child(n+2)",
       "requestShapeNameSelector": "td:nth-child(1)",
-      "requestShapeTypeSelector": "td:nth-child(4)",
+      "requestShapeTypeSelector": "td:nth-child(2)",
+      "requestShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|$)",
       "requestShapeRequiredSelector": "td:nth-child(3)",
       "requestShapeRequiredRegexp": "^\u25CB$",
       "requestShapeIgnoreSelector": "td:nth-child(2)",
       "requestShapeIgnoreRegexp": "^※指定不可$",
-      "resultShapeSelector": "",
+      "resultShapeSelector": "table[summary='応答フィールド'] tr:nth-child(n+2)",
       "resultShapeNameSelector": "td:nth-child(1)",
-      "resultShapeTypeSelector": "td:nth-child(3)",
-      "resultExampleSelector": "code.cd-01:last-child"
+      "resultShapeTypeSelector": "td:nth-child(2)",
+      "resultShapeTypeRegexp": "Type *: *(?P<type>.+?)(\n|形式|使用可能な|値|Default|Ancestor|Value|Valid Values|単位|$)",
+      "resultExampleSelector": "code.cd-01:last-child",
+      "resultShapeAncestorSelector": "td:nth-child(2)",
+      "resultShapeAncestorRegexp": "Ancestor *: *(.+?)( |\t|\n|Children|$)",
+      "resultShapeChildrenSelector": "td:nth-child(2)",
+      "resultShapeChildrenRegexp": "Children *: *\n?(.+?)(\t|\n|$)",
+      "resultShapeChildRegexp": "([a-zA-Z0-9]+)"
     }
   },
   {
