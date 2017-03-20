@@ -6118,9 +6118,6 @@
     "ExpireTime": {
       "type": "timestamp"
     },
-    "ExpiredDate": {
-      "type": "string"
-    },
     "ExpiredTime": {
       "type": "string"
     },
@@ -12528,9 +12525,13 @@
     "SnapshotInfoSetItemType": {
       "type": "structure",
       "members": {
-        "ExpiredDate": {
-          "shape": "",
-          "locationName": "expiredDate"
+        "CreatedTime": {
+          "shape": "String",
+          "locationName": "createdTime"
+        },
+        "ExpiredTime": {
+          "shape": "String",
+          "locationName": "expiredTime"
         },
         "InstanceId": {
           "shape": "String",
@@ -12548,10 +12549,6 @@
           "shape": "String",
           "locationName": "powerStatus"
         },
-        "RegistDate": {
-          "shape": "",
-          "locationName": "registDate"
-        },
         "SnapshotName": {
           "shape": "String",
           "locationName": "snapshotName"
@@ -12560,9 +12557,9 @@
           "shape": "String",
           "locationName": "status"
         },
-        "UpdateDate": {
-          "shape": "",
-          "locationName": "updateDate"
+        "UpdatedTime": {
+          "shape": "String",
+          "locationName": "updatedTime"
         }
       }
     },
@@ -12922,9 +12919,6 @@
       "type": "integer"
     },
     "Unit": {
-      "type": "string"
-    },
-    "UpdateDate": {
       "type": "string"
     },
     "UpdateLoadBalancerOptionRequest": {

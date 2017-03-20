@@ -1550,10 +1550,6 @@
       "base": "ExpireTime",
       "refs": null
     },
-    "ExpiredDate": {
-      "base": "ExpiredDate",
-      "refs": null
-    },
     "ExpiredTime": {
       "base": "ExpiredTime",
       "refs": null
@@ -4156,10 +4152,6 @@
     },
     "Unit": {
       "base": "Unit",
-      "refs": null
-    },
-    "UpdateDate": {
-      "base": "UpdateDate",
       "refs": null
     },
     "UpdateLoadBalancerOptionRequest": {
