@@ -394,10 +394,6 @@
       "base": "AssociateRouteTableResult",
       "refs": null
     },
-    "AssociateUserResult": {
-      "base": "AssociateUserResult",
-      "refs": null
-    },
     "AssociateUsersRequest": {
       "base": "AssociateUsersRequest",
       "refs": null
@@ -1010,10 +1006,6 @@
       "base": "DescribeAddressesResult",
       "refs": null
     },
-    "DescribeAssociatedUserResult": {
-      "base": "DescribeAssociatedUserResult",
-      "refs": null
-    },
     "DescribeAssociatedUsersRequest": {
       "base": "DescribeAssociatedUsersRequest",
       "refs": null
@@ -1412,10 +1404,6 @@
     },
     "DiskType": {
       "base": "DiskType",
-      "refs": null
-    },
-    "DissociateUserResult": {
-      "base": "DissociateUserResult",
       "refs": null
     },
     "DissociateUsersRequest": {

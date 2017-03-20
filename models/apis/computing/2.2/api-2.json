@@ -2680,15 +2680,6 @@
         }
       }
     },
-    "AssociateUserResult": {
-      "type": "structure",
-      "members": {
-        "Users": {
-          "shape": "Users",
-          "locationName": "Users"
-        }
-      }
-    },
     "AssociateUsersRequest": {
       "type": "structure",
       "members": {
@@ -2707,13 +2698,9 @@
     "AssociateUsersResult": {
       "type": "structure",
       "members": {
-        "AssociateUsersResult": {
-          "shape": "",
-          "locationName": "AssociateUsersResult"
-        },
-        "ResponseMetadata": {
-          "shape": "ResponseMetadata",
-          "locationName": "ResponseMetadata"
+        "Users": {
+          "shape": "Users",
+          "locationName": "Users"
         }
       }
     },
@@ -4543,15 +4530,6 @@
         }
       }
     },
-    "DescribeAssociatedUserResult": {
-      "type": "structure",
-      "members": {
-        "Users": {
-          "shape": "Users",
-          "locationName": "Users"
-        }
-      }
-    },
     "DescribeAssociatedUsersRequest": {
       "type": "structure",
       "members": {
@@ -4566,13 +4544,9 @@
     "DescribeAssociatedUsersResult": {
       "type": "structure",
       "members": {
-        "DescribeAssociatedUsersResult": {
-          "shape": "",
-          "locationName": "DescribeAssociatedUsersResult"
-        },
-        "ResponseMetadata": {
-          "shape": "ResponseMetadata",
-          "locationName": "ResponseMetadata"
+        "Users": {
+          "shape": "Users",
+          "locationName": "Users"
         }
       }
     },
@@ -5894,15 +5868,6 @@
     "DiskType": {
       "type": "string"
     },
-    "DissociateUserResult": {
-      "type": "structure",
-      "members": {
-        "Users": {
-          "shape": "Users",
-          "locationName": "Users"
-        }
-      }
-    },
     "DissociateUsersRequest": {
       "type": "structure",
       "members": {
@@ -5921,13 +5886,9 @@
     "DissociateUsersResult": {
       "type": "structure",
       "members": {
-        "DissociateUsersResult": {
-          "shape": "",
-          "locationName": "DissociateUsersResult"
-        },
-        "ResponseMetadata": {
-          "shape": "ResponseMetadata",
-          "locationName": "ResponseMetadata"
+        "Users": {
+          "shape": "Users",
+          "locationName": "Users"
         }
       }
     },
