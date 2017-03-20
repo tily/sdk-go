@@ -4334,6 +4334,10 @@
       "base": "UsagevpnGatewayType",
       "refs": null
     },
+    "User": {
+      "base": "User",
+      "refs": null
+    },
     "UserDataStruct": {
       "base": "UserDataStruct",
       "refs": null
@@ -4564,10 +4568,6 @@
     },
     "integer": {
       "base": "integer",
-      "refs": null
-    },
-    "member": {
-      "base": "member",
       "refs": null
     },
     "routerSetType": {

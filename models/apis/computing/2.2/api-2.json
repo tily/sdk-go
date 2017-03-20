@@ -13493,6 +13493,15 @@
         }
       }
     },
+    "User": {
+      "type": "structure",
+      "members": {
+        "UserId": {
+          "shape": "String",
+          "locationName": "UserId"
+        }
+      }
+    },
     "UserDataStruct": {
       "type": "structure",
       "members": {
@@ -13526,7 +13535,7 @@
     "Users": {
       "type": "list",
       "member": {
-        "shape": "member"
+        "shape": "User"
       }
     },
     "UsersList": {
@@ -14074,15 +14083,6 @@
         "A": {
           "shape": "",
           "locationName": "a"
-        }
-      }
-    },
-    "member": {
-      "type": "structure",
-      "members": {
-        "UsersId": {
-          "shape": "",
-          "locationName": "UsersId"
         }
       }
     },
