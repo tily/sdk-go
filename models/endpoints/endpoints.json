@@ -101,6 +101,21 @@
               ]
             }
           }
+        },
+        "email": {
+          "endpoints": {
+            "aws-global": {
+              "credentialScope": {
+                "region": "east-1"
+              },
+              "hostname": "ess.api.cloud.nifty.com",
+              "signatureVersions": [
+                "v4"
+              ]
+            }
+          },
+          "isRegionalized": false,
+          "partitionEndpoint": "aws-global"
         }
       }
     }

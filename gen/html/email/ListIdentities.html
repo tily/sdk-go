@@ -6,11 +6,11 @@
 <meta name="robots" content="noydir,noodp,index,follow"/>
 <meta http-equiv="X-UA-Compatible" content="chrome=1;"/>
 <!-- InstanceBeginEditable name="meta" -->
-<meta name="Description" content="クラウドAPI（ESS：SendEmail）：ニフティの国産クラウドコンピューティングサービス。"/>
+<meta name="Description" content="クラウドAPI（ESS：ListIdentities）：ニフティの国産クラウドコンピューティングサービス。"/>
 <meta name="Keywords" content="クラウド,API,ESS,ニフティ,cloud,nifty"/>
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>クラウドAPI（ESS：SendEmail） | ニフティクラウド</title>
+<title>クラウドAPI（ESS：ListIdentities） | ニフティクラウド</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" href="../../css/import2.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="../../css2/api.css" type="text/css" media="all"/>
@@ -37,7 +37,7 @@
         <div id="headLogo" class="pkg">
             <p class="cloudLogo"><a href="http://cloud.nifty.com/"><img src="../../images/cloud_logo.gif" width="145" height="41" alt="NIFTY Cloud ニフティクラウド"/></a></p>
             <!-- InstanceBeginEditable name="h1" -->
-			<h1 id="tagline">クラウドAPI（ESS：SendEmail）</h1>
+			<h1 id="tagline">クラウドAPI（ESS：ListIdentities）</h1>
 			<!-- InstanceEndEditable -->
         </div><!-- /#headLogo -->
         <div id="headInfo">
@@ -108,24 +108,21 @@
         <div class="inner pkg">
             <h2><span>ニフティクラウド APIリファレンス</span></h2>
             <div class="footpath">
-           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/ess/">ESS</a>&gt;<strong>SendEmail</strong><!-- InstanceEndEditable -->
+           	  <a href="http://cloud.nifty.com/">クラウド トップ</a>&gt;<!-- InstanceBeginEditable name="footpath" --><a href="/api/">API</a>&gt;<a href="/api/ess/">ESS</a>&gt;<strong>ListIdentities</strong><!-- InstanceEndEditable -->
             </div><!-- /.footpath -->
         </div><!-- /.inner -->
     </div><!-- /#lower-main -->
     
     <div id="contents"><div class="contentsInner png_bg pkg"><!-- InstanceBeginEditable name="contents" -->
 			<div id="mainContents">
-				<h3 id="GetBucket" class="ttl-01"><span><span>ESS：SendEmail</span></span></h3>
+				<h3 id="GetBucket" class="ttl-01"><span><span>ESS：ListIdentities</span></span></h3>
 				<h4 id="outline" class="ttl-02"><span><span>概要</span></span></h4>
 				<div class="section">
-					<p class="pgh-01">入力データを基にしてメールメッセージを組み立てて、即時に作成したメッセージを送信します。
-</p>
-				<p class="pgh-01 cap">送信元のメールアドレスは、検証済みのメールアドレスもしくは検証済みのドメインのメールアドレスとしてください。</p>
-                <p class="pgh-01">メッセージの合計サイズ(Message.Body.Text.DataとMessage.Body.Html.Dataのデータ合計)は2MBを超えることはできない。<br/>1通のメッセージにおける TO：、CC：、BCC：のメールアドレス合計数は 50 を超えることはできません。<br/>より多くの人にメールメッセージを送信したい場合には、50個以下のグループに受信者リストを分割し、グループごとにそれぞれリクエストを出してメッセージを送信すれば可能です。</p>
+					<p class="pgh-01">お客様のアカウントに登録してある送信元ID(メールアドレスおよびドメイン)を返します。IDの検証状況は問いません。</p>
 				<!-- /.section --></div>
-				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーター</span></span></h4>
+				<h4 id="request" class="ttl-02"><span><span>リクエストパラメーターー</span></span></h4>
 				<div class="section">
-					<table class="tbl-01" summary="リクエストパラメーター">
+					<table class="tbl-01" summary="リクエストパラメーターー">
 						<tbody><tr>
 							<th class="col7-1">要素名</th>
 							<th class="col7-2">説明</th>
@@ -136,83 +133,35 @@
 							<th class="col7-7">備考</th>
 						</tr>
 						<tr>
-							<td class="col7-1">Destination.ToAddresses.member.N</td>
-                            <td class="col7-2">メールの送信先：宛先TOの指定</td>
-                            <td rowspan="3" class="col7-3 tx_c">○</td>
-                            <td rowspan="3" class="col7-4">文字列</td>
-                            <td rowspan="3" class="tx_c">－</td>
-                            <td rowspan="3" class="tx_c">－</td>
-                            <td rowspan="3" class="col7-7"> MIME encodeされた (RFC 2047) で指定。合計 50件まで。</td>
-                            </tr>
-                        <tr>
-							<td class="col7-1">Destination.CcAddresses.member.N</td>
-							<td class="col7-2">メールの送信先：同報CCの設定</td>
-						</tr>
-                        <tr>
-                        	<td class="col7-1">Destination.BccAddresses.member.N</td>
-                        	<td class="col7-2">メールの送信先：隠された同報 BCCの設定</td>
-                        </tr>
-                        <tr>
-							<td class="col7-1">Message.Subject.Data</td>
-                            <td class="col7-2">送信するメッセージ内容：subjectデータ</td>
-                            <td rowspan="6" class="col7-3 tx_c">○</td>
-                            <td rowspan="6" class="col7-4">文字列</td>
-                            <td rowspan="6" class="tx_c">－</td>
-                            <td rowspan="6" class="tx_c">－</td>
-                            <td rowspan="6" class="col7-7"> </td>
-                            </tr>
-                        <tr>
-							<td class="col7-1">Message.Subject.Charset</td>
-							<td class="col7-2">送信するメッセージ内容：subjectの文字コード</td>
-						</tr>
-                        <tr>
-                        	<td class="col7-1">Message.Body.Text.Data</td>
-                        	<td class="col7-2">送信するメッセージ内容：メール本文txtデータ</td>
-                        </tr>
-                        <tr>
-                        	<td class="col7-1">Message.Body.Text.Charset</td>
-                        	<td class="col7-2">送信するメッセージ内容：メール本文txtデータの文字コード</td>
-                        </tr>
-                        <tr>
-                        	<td class="col7-1">Message.Body.Html.Data</td>
-                        	<td class="col7-2">送信するメッセージ内容：メール本文htmlデータ</td>
-                        </tr>
-                        <tr>
-                        	<td class="col7-1">Message.Body.Html.Charset</td>
-                        	<td class="col7-2">送信するメッセージ内容：メール本文htmlデータの文字コード</td>
-                        </tr>
-                        <tr>
-							<td class="col7-1">ReplyToAddresses.member.N</td>
-							<td class="col7-2">メールの返信先のリスト<br/>
-受信者がメッセージに返信した場合、それぞれの返信先アドレスに返信が届く。<br/>
-10件まで設定可能</td>
+							<td class="col7-1">IdentityType</td>
+							<td class="col7-2">取得するIDの種類<br/>
+有効な値 :  EmailAddress | Domain</td>
 							<td class="col7-3"> </td>
 							<td class="col7-4">文字列</td>
 							<td class="tx_c">－</td>
 							<td class="tx_c">－</td>
 							<td class="col7-7"> </td>
-                      </tr>
-                            <tr>
-							<td class="col7-1">ReturnPath</td>
-							<td class="col7-2">送信不達の際の通知(バウンスメール)を転送するアドレス<br/>
-ReturnPathを指定した場合このアドレスにメッセージを転送する。</td>
+						</tr>
+                        <tr>
+							<td class="col7-1">MaxItems</td>
+							<td class="col7-2">1ページごとの最大ID数</td>
+							<td class="col7-3"> </td>
+							<td class="col7-4">数値</td>
+							<td class="col7-5">100</td>
+							<td class="tx_c">－</td>
+							<td class="col7-7"> </td>
+						</tr>
+                        <tr>
+							<td class="col7-1">nextToken</td>
+							<td class="col7-2">ページ分けに使用するトークン
+</td>
 							<td class="col7-3"> </td>
 							<td class="col7-4">文字列</td>
 							<td class="tx_c">－</td>
 							<td class="tx_c">－</td>
 							<td class="col7-7"> </td>
-						   </tr>
-                           <tr>
-							<td class="col7-1">Source</td>
-							<td class="col7-2">メールの送信元<br/>
-デフォルトでは、文字列は7ビットASCIIでなければならない。他の文字が含まれている場合には、MIME形式でエンコードする必要がある。MIME形式でエンコードすると次の形式になる =? charset?エンコーディング?エンコードされたテキスト?= 。詳細については、RFC 2047参照。</td>
-							<td class="col7-3 tx_c">○</td>
-							<td class="col7-4">文字列</td>
-							<td class="tx_c">－</td>
-							<td class="tx_c">－</td>
-							<td class="col7-7"> </td>
-                            </tr>
-                        </tbody></table>
+						</tr>
+					</tbody></table>
 				<!-- /.section --></div>
 				<h4 id="response" class="ttl-02"><span><span>レスポンス</span></span></h4>
 				<div class="section">
@@ -220,26 +169,44 @@ ReturnPathを指定した場合このアドレスにメッセージを転送す�
 						<tbody><tr>
 							<th width="20%" class="col4-1">要素名</th>
 							<th width="52%" class="col4-2">説明</th>
-							<th width="8%" class="col4-3 tx_c">値</th>
-							<th width="20%" class="col4-4">備考</th>
+							<th width="8%" class="tx_c">値</th>
+							<th width="20%" class="col4-3">備考</th>
 						</tr>
 						<tr>
-							<td class="col4-1">SendEmailResponse</td>
+							<td class="col4-1">ListIdentitiesResponse</td>
 							<td class="col4-2">ルート</td>
 							<td class="tx_c">－</td>
-							<td class="col4-4"> </td>
+							<td class="col4-3"> </td>
 						</tr>
 						<tr>
-							<td class="col4-1">SendEmailResult</td>
+							<td class="col4-1">ListIdentitiesResult</td>
 							<td class="col4-2">結果</td>
-							<td class="tx_c">文字列</td>
-							<td class="col4-4"> </td>
+							<td class="tx_c">－</td>
+							<td class="col4-3"> </td>
 						</tr>
                         <tr>
-							<td class="col4-1">MessageId</td>
-							<td class="col4-2">メッセージを一意に特定するために生成されたメッセージID</td>
+							<td class="col4-1">Identities</td>
+							<td class="col4-2">IDのリスト</td>
+							<td class="tx_c">リスト</td>
+							<td class="col4-3"> </td>
+						</tr>
+                        <tr>
+							<td class="col4-1">member</td>
+							<td class="col4-2">ID (ドメインもしくはメールアドレス)</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+                        <tr>
+							<td class="col4-1">NextToken</td>
+							<td class="col4-2">改ページに使用するトークン</td>
+							<td class="tx_c">文字列</td>
+							<td class="col4-3"> </td>
+						</tr>
+                        <tr>
+							<td class="col4-1">ResponseMetadata</td>
+							<td class="col4-2">共通メタ情報</td>
 							<td class="tx_c">－</td>
-							<td class="col4-4"> </td>
+							<td class="col4-3"> </td>
 						</tr>
 					</tbody></table>
 				</div>
@@ -249,29 +216,25 @@ ReturnPathを指定した場合このアドレスにメッセージを転送す�
 					<table class="tbl-01" summary="エラー">
 						<tbody><tr>
 							<th class="col2-1">エラー種別</th>
-							<th class="col2-2">HTTPステータスコード</th>
-                            <th class="col2-2">説明</th>
+                            <th class="col2-2">HTTPステータスコード</th>
+							<th class="col2-2">説明</th>
+						</tr>
+						<tr>
+							<td class="col2-1">MalformedInput</td>
+							<td class="col2-2">400</td>
+                            <td class="col2-3">クエリ文字列に構文エラーが含まれています。</td>
+						</tr>
+						<tr>
+							<td class="col2-1">InvalidParameterValue</td>
+						  <td class="col2-2">400</td>
+                          <td class="col2-3">無効な値または範囲外の値を入力パラメーターに指定しています。</td>
 						</tr>
 						<tr>
 							<td class="col2-1">ValidationError</td>
 							<td class="col2-2">400</td>
-                            <td class="col2-3">パラメーターが不足です。</td>
-						</tr>
-                        <tr>
-							<td class="col2-1">InvalidParameterValue</td>
-							<td class="col2-2">400</td>
-                            <td class="col2-3">無効な値または範囲外の値を入力パラメーターに指定しています。</td>
-						</tr>
-                        <tr>
-							<td class="col2-1">MalformedInput</td>
-							<td class="col2-2">400</td>
                             <td class="col2-3">パラメーターが不正です。</td>
 						</tr>
-                        <tr>
-							<td class="col2-1">MessageRejected</td>
-							<td class="col2-2">400</td>
-                            <td class="col2-3">アクションに失敗しメッセージは送信できませんでした。付帯するエラー情報を見て原因を確認してください。</td>
-						</tr>
+						
 					</tbody></table>
 				</div>
 				<!-- /.section -->
@@ -280,30 +243,37 @@ ReturnPathを指定した場合このアドレスにメッセージを転送す�
 					<h5 class="ttl-03">リクエストサンプル</h5>
 					<code class="cd-01">
 						POST / HTTP/1.1<br/>
-Authorization: NIFTY4-HMAC-SHA256 Credential=&lt;Credential&gt;/20140320/east-1/email/nifty4_request, SignedHeaders=host;x-nifty-date, Signature=&lt;Signature&gt;<br/>
-Host: ess.api.cloud.nifty.com<br/>
-X-Nifty-Date: 20140320T124420Z<br/>
-Content-Length: 196<br/><br/>
-
-Source=localpart1%40example.com&amp;Destination.ToAddresses.member.1=localpart%40example.com&amp;Action=SendEmail&amp;Message.Body.Text.Data=hello&amp;Version=2010-12-01&amp;Message.Subject.Data=test
-						</code>
+						Authorization: NIFTY4-HMAC-SHA256 Credential=&lt;Credential&gt;/20140320/east-1/email/nifty4_request, SignedHeaders=content-type;host;x-nifty-date, Signature=&lt;Signature&gt;<br/>
+						Host: ess.api.cloud.nifty.com<br/>
+						Content-type: application/x-www-form-urlencoded; charset=utf-8<br/>
+						X-Nifty-Date: 20140320T080418Z<br/>
+						Content-Length: 40<br/><br/>
+						Action=ListIdentities&amp;Version=2010-12-01</code>
 					<h5 class="ttl-03">レスポンスサンプル</h5>
 					<code class="cd-01">
-HTTP/1.1 200 OK<br/>
-Date: Thu, 20 Mar 2014 12:44:20 GMT<br/>
-x-amzn-RequestId: cd719149-4a57-4fddP-af69-b7bc3b653b0d<br/>
-X-Nifty-RequestId: cd719149-4a57-4fdd-af69-b7bc3b653b0d<br/>
-Content-Type:text/xml<br/>
-Content-Length: 266<br/>
-Connection: close<br/><br/>&lt;SendEmailResponse&gt;<br/>
-
-   &lt;SendEmailResult&gt;<br/>
-      &lt;MessageId&gt;000001fc4e1329-7ed7-4880-a35b-0ee09cc35776-000000&lt;/MessageId&gt;<br/>
-   &lt;/SendEmailResult&gt;<br/>
-   &lt;ResponseMetadata&gt;<br/>
-      &lt;RequestId&gt;cd719149-4a57-4fdd-af69-b7bc3b653b0d&lt;/RequestId&gt;<br/>
-   &lt;/ResponseMetadata&gt;<br/>
-&lt;SendEmailResult&gt;
+						&lt;ListIdentitiesResponse&gt;<br/>
+   &lt;ListIdentitiesResult&gt;<br/>
+      &lt;Identities&gt;<br/>
+          &lt;member&gt;localpart001@example.com&lt;/member&gt;<br/>
+          &lt;member&gt;localpart002@example.com&lt;/member&gt;<br/>
+          &lt;member&gt;localpart003@example.com&lt;/member&gt;<br/>
+          &lt;member&gt;localpart004@example.com&lt;/member&gt;<br/>
+          &lt;member&gt;localpart005@example.com&lt;/member&gt;<br/>
+          &lt;member&gt;example1.com&lt;/member&gt;<br/>
+          &lt;member&gt;example2.com&lt;/member&gt;<br/>
+          &lt;member&gt;example3.com&lt;/member&gt;<br/>
+          &lt;member&gt;example4.com&lt;/member&gt;<br/>
+          &lt;member&gt;example5.com&lt;/member&gt;<br/>
+           ： 中略<br/>
+       &lt;/Identities&gt;<br/>
+       &lt;NextToken&gt;rO0ABXNyAC5jb20ubmlmdHkuY2xvdWQuZXNzLmFwaS5hY3Rpb24ucGFyYW0uTmV4dFRva2VuZDyD
+RUHljdkCAANJAAxsYXN0SGFzaENvZGVKAAhsYXN0VGltZUwADGlkZW50aXR5VHlwZXQAEkxqYXZh
+L2xhbmcvU3RyaW5nO3hwazOcmAAAAUTY8UNwcA==&lt;/NextToken&gt;<br/>
+    &lt;/ListIdentitiesResult&gt;<br/>
+    &lt;ResponseMetadata&gt;<br/>
+       &lt;RequestId&gt;f0a5c871-6014-4e2d-9a9f-45af934d8e19&lt;/RequestId&gt;<br/>
+    &lt;/ResponseMetadata&gt;<br/>
+&lt;/ListIdentitiesResponse&gt;
 					</code>
 				</div>
 				<!-- /.section -->

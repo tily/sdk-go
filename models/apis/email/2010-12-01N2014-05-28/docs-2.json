@@ -1,0 +1,284 @@
+{
+  "version": "2",
+  "service": "email",
+  "operations": {
+    "DeleteIdentity": "DeleteIdentity",
+    "GetIdentityDkimAttributes": "GetIdentityDkimAttributes",
+    "GetIdentityVerificationAttributes": "GetIdentityVerificationAttributes",
+    "GetSendQuota": "GetSendQuota",
+    "GetSendStatistics": "GetSendStatistics",
+    "ListIdentities": "ListIdentities",
+    "SendEmail": "SendEmail",
+    "SendRawEmail": "SendRawEmail",
+    "SetIdentityDkimEnabled": "SetIdentityDkimEnabled",
+    "VerifyDomainDkim": "VerifyDomainDkim",
+    "VerifyDomainIdentity": "VerifyDomainIdentity",
+    "VerifyEmailIdentity": "VerifyEmailIdentity"
+  },
+  "shapes": {
+    "BccAddressesList": {
+      "base": "BccAddressesList",
+      "refs": null
+    },
+    "BodyStruct": {
+      "base": "BodyStruct",
+      "refs": null
+    },
+    "Boolean": {
+      "base": "Boolean",
+      "refs": null
+    },
+    "Bounces": {
+      "base": "Bounces",
+      "refs": null
+    },
+    "CcAddressesList": {
+      "base": "CcAddressesList",
+      "refs": null
+    },
+    "Charset": {
+      "base": "Charset",
+      "refs": null
+    },
+    "Complaints": {
+      "base": "Complaints",
+      "refs": null
+    },
+    "Data": {
+      "base": "Data",
+      "refs": null
+    },
+    "DeleteIdentityRequest": {
+      "base": "DeleteIdentityRequest",
+      "refs": null
+    },
+    "DeleteIdentityResult": {
+      "base": "DeleteIdentityResult",
+      "refs": null
+    },
+    "DeliveryAttempts": {
+      "base": "DeliveryAttempts",
+      "refs": null
+    },
+    "DestinationStruct": {
+      "base": "DestinationStruct",
+      "refs": null
+    },
+    "DestinationsList": {
+      "base": "DestinationsList",
+      "refs": null
+    },
+    "DkimAttributes": {
+      "base": "DkimAttributes",
+      "refs": null
+    },
+    "DkimEnabled": {
+      "base": "DkimEnabled",
+      "refs": null
+    },
+    "DkimTokens": {
+      "base": "DkimTokens",
+      "refs": null
+    },
+    "DkimVerificationStatus": {
+      "base": "DkimVerificationStatus",
+      "refs": null
+    },
+    "Double": {
+      "base": "Double",
+      "refs": null
+    },
+    "GetIdentityDkimAttributesRequest": {
+      "base": "GetIdentityDkimAttributesRequest",
+      "refs": null
+    },
+    "GetIdentityDkimAttributesResult": {
+      "base": "GetIdentityDkimAttributesResult",
+      "refs": null
+    },
+    "GetIdentityVerificationAttributesRequest": {
+      "base": "GetIdentityVerificationAttributesRequest",
+      "refs": null
+    },
+    "GetIdentityVerificationAttributesResult": {
+      "base": "GetIdentityVerificationAttributesResult",
+      "refs": null
+    },
+    "GetSendQuotaRequest": {
+      "base": "GetSendQuotaRequest",
+      "refs": null
+    },
+    "GetSendQuotaResult": {
+      "base": "GetSendQuotaResult",
+      "refs": null
+    },
+    "GetSendStatisticsRequest": {
+      "base": "GetSendStatisticsRequest",
+      "refs": null
+    },
+    "GetSendStatisticsResult": {
+      "base": "GetSendStatisticsResult",
+      "refs": null
+    },
+    "HtmlStruct": {
+      "base": "HtmlStruct",
+      "refs": null
+    },
+    "Identities": {
+      "base": "Identities",
+      "refs": null
+    },
+    "IdentitiesList": {
+      "base": "IdentitiesList",
+      "refs": null
+    },
+    "Integer": {
+      "base": "Integer",
+      "refs": null
+    },
+    "ListIdentitiesRequest": {
+      "base": "ListIdentitiesRequest",
+      "refs": null
+    },
+    "ListIdentitiesResult": {
+      "base": "ListIdentitiesResult",
+      "refs": null
+    },
+    "Max24HourSend": {
+      "base": "Max24HourSend",
+      "refs": null
+    },
+    "MaxSendRate": {
+      "base": "MaxSendRate",
+      "refs": null
+    },
+    "MessageId": {
+      "base": "MessageId",
+      "refs": null
+    },
+    "MessageStruct": {
+      "base": "MessageStruct",
+      "refs": null
+    },
+    "NextToken": {
+      "base": "NextToken",
+      "refs": null
+    },
+    "RawMessageStruct": {
+      "base": "RawMessageStruct",
+      "refs": null
+    },
+    "Rejects": {
+      "base": "Rejects",
+      "refs": null
+    },
+    "ReplyToAddressesList": {
+      "base": "ReplyToAddressesList",
+      "refs": null
+    },
+    "SendDataPoints": {
+      "base": "SendDataPoints",
+      "refs": null
+    },
+    "SendEmailRequest": {
+      "base": "SendEmailRequest",
+      "refs": null
+    },
+    "SendEmailResult": {
+      "base": "SendEmailResult",
+      "refs": null
+    },
+    "SendRawEmailRequest": {
+      "base": "SendRawEmailRequest",
+      "refs": null
+    },
+    "SendRawEmailResult": {
+      "base": "SendRawEmailResult",
+      "refs": null
+    },
+    "SentLast24Hours": {
+      "base": "SentLast24Hours",
+      "refs": null
+    },
+    "SetIdentityDkimEnabledRequest": {
+      "base": "SetIdentityDkimEnabledRequest",
+      "refs": null
+    },
+    "SetIdentityDkimEnabledResult": {
+      "base": "SetIdentityDkimEnabledResult",
+      "refs": null
+    },
+    "String": {
+      "base": "String",
+      "refs": null
+    },
+    "SubjectStruct": {
+      "base": "SubjectStruct",
+      "refs": null
+    },
+    "TStamp": {
+      "base": "TStamp",
+      "refs": null
+    },
+    "TextStruct": {
+      "base": "TextStruct",
+      "refs": null
+    },
+    "ToAddressesList": {
+      "base": "ToAddressesList",
+      "refs": null
+    },
+    "VerificationAttributes": {
+      "base": "VerificationAttributes",
+      "refs": null
+    },
+    "VerificationStatus": {
+      "base": "VerificationStatus",
+      "refs": null
+    },
+    "VerificationToken": {
+      "base": "VerificationToken",
+      "refs": null
+    },
+    "VerifyDomainDkimRequest": {
+      "base": "VerifyDomainDkimRequest",
+      "refs": null
+    },
+    "VerifyDomainDkimResult": {
+      "base": "VerifyDomainDkimResult",
+      "refs": null
+    },
+    "VerifyDomainIdentityRequest": {
+      "base": "VerifyDomainIdentityRequest",
+      "refs": null
+    },
+    "VerifyDomainIdentityResult": {
+      "base": "VerifyDomainIdentityResult",
+      "refs": null
+    },
+    "VerifyEmailIdentityRequest": {
+      "base": "VerifyEmailIdentityRequest",
+      "refs": null
+    },
+    "VerifyEmailIdentityResult": {
+      "base": "VerifyEmailIdentityResult",
+      "refs": null
+    },
+    "entry": {
+      "base": "entry",
+      "refs": null
+    },
+    "key": {
+      "base": "key",
+      "refs": null
+    },
+    "member": {
+      "base": "member",
+      "refs": null
+    },
+    "value": {
+      "base": "value",
+      "refs": null
+    }
+  }
+}

@@ -100,7 +100,7 @@
     }
   },
   {
-    "id": "ess",
+    "id": "email",
     "downloader": {
       "operationListURL": "http://cloud.nifty.com/api/ess/",
       "operationListRegexp": "^/api/ess/(([A-Z][a-z]+){2,}).htm$",
@@ -109,7 +109,13 @@
     "generator": {
       "metadata": {
         "apiVersion": "2010-12-01N2014-05-28",
-        "globalEndpoint": "ess.api.cloud.nifty.com"
+        "globalEndpoint": "ess.api.cloud.nifty.com",
+        "endpointPrefix": "email",
+        "serviceAbbreviation": "email",
+        "serviceFullName": "ess",
+        "signatureVersion": "v4",
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
       },
       "http": {
         "method": "POST",
