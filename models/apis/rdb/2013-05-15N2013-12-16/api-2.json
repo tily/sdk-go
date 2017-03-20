@@ -1,5 +1,5 @@
 {
-  "version": "",
+  "version": "2",
   "metadata": {
     "apiVersion": "2013-05-15N2013-12-16",
     "endpointPrefix": "rdb",
@@ -148,8 +148,7 @@
       },
       "input": {
         "shape": "DeleteDBParameterGroupRequest"
-      },
-      "output": null
+      }
     },
     "DeleteDBSecurityGroup": {
       "name": "DeleteDBSecurityGroup",
@@ -159,8 +158,7 @@
       },
       "input": {
         "shape": "DeleteDBSecurityGroupRequest"
-      },
-      "output": null
+      }
     },
     "DeleteDBSnapshot": {
       "name": "DeleteDBSnapshot",
@@ -502,12 +500,6 @@
     }
   },
   "shapes": {
-    " Status": {
-      "type": "string"
-    },
-    " StatusType": {
-      "type": "string"
-    },
     "AddSourceIdentifierToSubscriptionRequest": {
       "type": "structure",
       "members": {
@@ -675,8 +667,8 @@
         "DBParameterGroupName": {
           "shape": "String"
         },
-        "DBSecurityGroups": {
-          "shape": "DBSecurityGroupsStringList"
+        "DBSecurityGroupsList": {
+          "shape": "DBSecurityGroupsList"
         },
         "Engine": {
           "shape": "String"
@@ -830,17 +822,17 @@
         "Enabled": {
           "shape": "Boolean"
         },
-        "EventCategories": {
-          "shape": "EventCategoriesStringList"
+        "EventCategoriesList": {
+          "shape": "EventCategoriesList"
         },
         "NiftyDescription": {
           "shape": "String"
         },
-        "NiftyEmailAddresses": {
-          "shape": "NiftyEmailAddressesStringList"
+        "NiftyEmailAddressesList": {
+          "shape": "NiftyEmailAddressesList"
         },
-        "SourceIds": {
-          "shape": "SourceIdsStringList"
+        "SourceIdsList": {
+          "shape": "SourceIdsList"
         },
         "SourceType": {
           "shape": "String"
@@ -851,7 +843,7 @@
       },
       "required": [
         "SubscriptionName",
-        "NiftyEmailAddresses"
+        "NiftyEmailAddressesList"
       ]
     },
     "CreateEventSubscriptionResult": {
@@ -1018,7 +1010,7 @@
     "DBSecurityGroups": {
       "type": "structure"
     },
-    "DBSecurityGroupsStringList": {
+    "DBSecurityGroupsList": {
       "type": "list",
       "member": {
         "shape": "String"
@@ -1418,8 +1410,8 @@
         "EndTime": {
           "shape": "TStamp"
         },
-        "EventCategories": {
-          "shape": "EventCategoriesStringList"
+        "EventCategoriesList": {
+          "shape": "EventCategoriesList"
         },
         "Marker": {
           "shape": "String"
@@ -1480,22 +1472,14 @@
     "Description": {
       "type": "string"
     },
-    "DimensionsStruct": {
-      "type": "structure",
-      "members": {
-        "Name": {
-          "shape": "String"
-        },
-        "Value": {
-          "shape": "String"
-        }
-      }
-    },
-    "DimensionsStructList": {
+    "DimensionsList": {
       "type": "list",
       "member": {
-        "shape": "DimensionsStruct"
+        "shape": "emberStruct"
       }
+    },
+    "Double": {
+      "type": "double"
     },
     "DownloadDBLogFilePortionRequest": {
       "type": "structure",
@@ -1598,7 +1582,10 @@
       }
     },
     "EventCategoriesList": {
-      "type": "structure"
+      "type": "list",
+      "member": {
+        "shape": "String"
+      }
     },
     "EventCategoriesMap": {
       "type": "list",
@@ -1613,12 +1600,6 @@
         "EventCategoriesMap": {
           "shape": "EventCategoriesMap"
         }
-      }
-    },
-    "EventCategoriesStringList": {
-      "type": "list",
-      "member": {
-        "shape": "String"
       }
     },
     "EventCategory": {
@@ -1745,8 +1726,8 @@
         "DBParameterGroupName": {
           "shape": "String"
         },
-        "DBSecurityGroups": {
-          "shape": "DBSecurityGroupsStringList"
+        "DBSecurityGroupsList": {
+          "shape": "DBSecurityGroupsList"
         },
         "MasterUserPassword": {
           "shape": "String"
@@ -1794,15 +1775,15 @@
         "DBParameterGroupName": {
           "shape": "String"
         },
-        "Parameters": {
-          "shape": "ParametersStructList"
+        "ParametersList": {
+          "shape": "ParametersList"
         }
       },
       "required": [
         "DBParameterGroupName",
-        "Parameters",
-        "Parameters",
-        "Parameters"
+        "ParametersList",
+        "ParametersList",
+        "ParametersList"
       ]
     },
     "ModifyDBParameterGroupResult": {
@@ -1819,14 +1800,14 @@
         "Enabled": {
           "shape": "Boolean"
         },
-        "EventCategories": {
-          "shape": "EventCategoriesStringList"
+        "EventCategoriesList": {
+          "shape": "EventCategoriesList"
         },
         "NiftyDescription": {
           "shape": "String"
         },
-        "NiftyEmailAddresses": {
-          "shape": "NiftyEmailAddressesStringList"
+        "NiftyEmailAddressesList": {
+          "shape": "NiftyEmailAddressesList"
         },
         "SourceType": {
           "shape": "String"
@@ -1837,7 +1818,7 @@
       },
       "required": [
         "SubscriptionName",
-        "NiftyEmailAddresses"
+        "NiftyEmailAddressesList"
       ]
     },
     "ModifyEventSubscriptionResult": {
@@ -1854,13 +1835,24 @@
     "MultiAZCapable": {
       "type": "boolean"
     },
+    "NStruct": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "Name"
+        },
+        "Value": {
+          "shape": "Value"
+        }
+      }
+    },
     "Name": {
       "type": "string"
     },
     "NiftyAvailabilityZone": {
       "type": "string"
     },
-    "NiftyDBSecurityGroupsStringList": {
+    "NiftyDBSecurityGroupsList": {
       "type": "list",
       "member": {
         "shape": "String"
@@ -1877,12 +1869,6 @@
       "member": {
         "shape": "NiftyEmailAddress",
         "locationName": "NiftyEmailAddress"
-      }
-    },
-    "NiftyEmailAddressesStringList": {
-      "type": "list",
-      "member": {
-        "shape": "String"
       }
     },
     "NiftyFailoverDBInstanceRequest": {
@@ -1907,8 +1893,8 @@
     "NiftyGetMetricStatisticsRequest": {
       "type": "structure",
       "members": {
-        "Dimensions": {
-          "shape": "DimensionsStructList"
+        "DimensionsList": {
+          "shape": "DimensionsList"
         },
         "EndTime": {
           "shape": "TStamp"
@@ -1921,8 +1907,8 @@
         }
       },
       "required": [
-        "Dimensions",
-        "Dimensions",
+        "DimensionsList",
+        "DimensionsList",
         "MetricName"
       ]
     },
@@ -2073,30 +2059,10 @@
         "locationName": "Parameter"
       }
     },
-    "ParametersStringList": {
+    "ParametersList": {
       "type": "list",
       "member": {
         "shape": "String"
-      }
-    },
-    "ParametersStruct": {
-      "type": "structure",
-      "members": {
-        "ApplyMethod": {
-          "shape": "String"
-        },
-        "ParameterName": {
-          "shape": "String"
-        },
-        "ParameterValue": {
-          "shape": "String"
-        }
-      }
-    },
-    "ParametersStructList": {
-      "type": "list",
-      "member": {
-        "shape": "ParametersStruct"
       }
     },
     "PendingModifiedValues": {
@@ -2200,8 +2166,8 @@
         "ParameterName": {
           "shape": "String"
         },
-        "Parameters": {
-          "shape": "ParametersStringList"
+        "ParametersList": {
+          "shape": "ParametersList"
         },
         "ResetAllParameters": {
           "shape": "Boolean"
@@ -2251,8 +2217,8 @@
         "NiftyDBParameterGroupName": {
           "shape": "String"
         },
-        "NiftyDBSecurityGroups": {
-          "shape": "NiftyDBSecurityGroupsStringList"
+        "NiftyDBSecurityGroupsList": {
+          "shape": "NiftyDBSecurityGroupsList"
         },
         "NiftyMasterPrivateAddress": {
           "shape": "String"
@@ -2320,8 +2286,8 @@
         "NiftyDBParameterGroupName": {
           "shape": "String"
         },
-        "NiftyDBSecurityGroups": {
-          "shape": "NiftyDBSecurityGroupsStringList"
+        "NiftyDBSecurityGroupsList": {
+          "shape": "NiftyDBSecurityGroupsList"
         },
         "NiftyMasterPrivateAddress": {
           "shape": "String"
@@ -2432,12 +2398,6 @@
         "locationName": "SourceId"
       }
     },
-    "SourceIdsStringList": {
-      "type": "list",
-      "member": {
-        "shape": "String"
-      }
-    },
     "SourceType": {
       "type": "string"
     },
@@ -2465,6 +2425,9 @@
     "Timestamp": {
       "type": "timestamp"
     },
+    "Value": {
+      "type": "string"
+    },
     "Vpc": {
       "type": "boolean"
     },
@@ -2473,6 +2436,14 @@
       "member": {
         "shape": "NiftyStorageType",
         "locationName": "NiftyStorageType"
+      }
+    },
+    "emberStruct": {
+      "type": "structure",
+      "members": {
+        "NStruct": {
+          "shape": "NStruct"
+        }
       }
     },
     "member": {
