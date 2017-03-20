@@ -1,6 +1,6 @@
 {
   "version": "2",
-  "service": "ess",
+  "service": "email",
   "operations": {
     "DeleteIdentity": "DeleteIdentity",
     "GetIdentityDkimAttributes": "GetIdentityDkimAttributes",

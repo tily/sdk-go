@@ -102,13 +102,16 @@
             }
           }
         },
-        "ess": {
+        "email": {
           "endpoints": {
             "aws-global": {
               "credentialScope": {
-                "region": "jp-east-1"
+                "region": "east-1"
               },
-              "hostname": "ess.api.cloud.nifty.com"
+              "hostname": "ess.api.cloud.nifty.com",
+              "signatureVersions": [
+                "v4"
+              ]
             }
           },
           "isRegionalized": false,

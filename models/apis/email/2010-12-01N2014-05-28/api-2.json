@@ -2,11 +2,11 @@
   "version": "2",
   "metadata": {
     "apiVersion": "2010-12-01N2014-05-28",
-    "endpointPrefix": "ess",
+    "endpointPrefix": "email",
     "globalEndpoint": "ess.api.cloud.nifty.com",
-    "serviceAbbreviation": "ess",
+    "serviceAbbreviation": "email",
     "serviceFullName": "ess",
-    "signatureVersion": "v2",
+    "signatureVersion": "v4",
     "xmlNamespace": "http://dummy",
     "protocol": "query"
   },
