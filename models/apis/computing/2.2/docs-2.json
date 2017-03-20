@@ -586,6 +586,14 @@
       "base": "CertState",
       "refs": null
     },
+    "CertsSetItemType": {
+      "base": "CertsSetItemType",
+      "refs": null
+    },
+    "CertsSetType": {
+      "base": "CertsSetType",
+      "refs": null
+    },
     "ChangeInCapacity": {
       "base": "ChangeInCapacity",
       "refs": null
@@ -4524,14 +4532,6 @@
     },
     "certInfoType": {
       "base": "certInfoType",
-      "refs": null
-    },
-    "certsSetItemType": {
-      "base": "certsSetItemType",
-      "refs": null
-    },
-    "certsSetType": {
-      "base": "certsSetType",
       "refs": null
     },
     "copyInstanceSet": {

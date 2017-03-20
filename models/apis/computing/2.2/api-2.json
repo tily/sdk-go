@@ -3187,6 +3187,57 @@
     "CertState": {
       "type": "string"
     },
+    "CertsSetItemType": {
+      "type": "structure",
+      "members": {
+        "CertAuthority": {
+          "shape": "String",
+          "locationName": "certAuthority"
+        },
+        "CertInfo": {
+          "shape": "CertInfoType",
+          "locationName": "certInfo"
+        },
+        "CertState": {
+          "shape": "String",
+          "locationName": "certState"
+        },
+        "Count": {
+          "shape": "Integer",
+          "locationName": "count"
+        },
+        "Description": {
+          "shape": "String",
+          "locationName": "description"
+        },
+        "Fqdn": {
+          "shape": "String",
+          "locationName": "fqdn"
+        },
+        "FqdnId": {
+          "shape": "String",
+          "locationName": "fqdnId"
+        },
+        "KeyLength": {
+          "shape": "Integer",
+          "locationName": "keyLength"
+        },
+        "Period": {
+          "shape": "ValidDateType",
+          "locationName": "period"
+        },
+        "UploadState": {
+          "shape": "Boolean",
+          "locationName": "uploadState"
+        }
+      }
+    },
+    "CertsSetType": {
+      "type": "list",
+      "member": {
+        "shape": "CertsSetItemType"
+      }
+    },
     "ChangeInCapacity": {
       "type": "integer"
     },
@@ -13997,57 +14048,6 @@
           "shape": "String",
           "locationName": "stateName"
         }
-      }
-    },
-    "certsSetItemType": {
-      "type": "structure",
-      "members": {
-        "CertAuthority": {
-          "shape": "String",
-          "locationName": "certAuthority"
-        },
-        "CertInfo": {
-          "shape": "CertInfoType",
-          "locationName": "certInfo"
-        },
-        "CertState": {
-          "shape": "String",
-          "locationName": "certState"
-        },
-        "Count": {
-          "shape": "Integer",
-          "locationName": "count"
-        },
-        "Description": {
-          "shape": "String",
-          "locationName": "description"
-        },
-        "Fqdn": {
-          "shape": "String",
-          "locationName": "fqdn"
-        },
-        "FqdnId": {
-          "shape": "String",
-          "locationName": "fqdnId"
-        },
-        "KeyLength": {
-          "shape": "Integer",
-          "locationName": "keyLength"
-        },
-        "Period": {
-          "shape": "ValidDateType",
-          "locationName": "period"
-        },
-        "UploadState": {
-          "shape": "Boolean",
-          "locationName": "uploadState"
-        }
-      }
-    },
-    "certsSetType": {
-      "type": "list",
-      "member": {
-        "shape": "certsSetItemType"
       }
     },
     "copyInstanceSet": {
