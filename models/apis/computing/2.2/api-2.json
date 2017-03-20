@@ -13292,13 +13292,17 @@
           "shape": "UsageDetailInfoType",
           "locationName": "mailSendMeasuredRate"
         },
+        "MailSendMonthlyExceedRate": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "mailSendMonthlyExceedRate"
+        },
         "MailSendMonthlyRate": {
           "shape": "UsageDetailInfoType",
           "locationName": "mailSendMonthlyRate"
         },
         "OptionSet": {
-          "shape": "",
-          "locationName": "OptionSet"
+          "shape": "UsageDetailSetType",
+          "locationName": "optionSet"
         }
       }
     },
