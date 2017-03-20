@@ -7,6 +7,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/spf13/cobra"
 	"io/ioutil"
+	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -27,6 +28,8 @@ type Generator struct {
 	OperationList                []OperationHTML
 	APIModel                     APIModel
 	DocsModel                    DocsModel
+	OperationURLSelector         string
+	OperationMethodSelector      string
 	RequestShapeSelector         string
 	RequestShapeNameSelector     string
 	RequestShapeTypeSelector     string
@@ -145,7 +148,7 @@ func (g *Generator) processOperationList() {
 			}
 		}
 
-		g.APIModel.Operations[opHTML.OpName] = g.generateOperation(opHTML.OpName)
+		g.APIModel.Operations[opHTML.OpName] = g.generateOperation(opHTML.OpName, doc)
 
 		for opName, _ := range g.APIModel.Operations {
 			g.DocsModel.Operations[opName] = opName
@@ -157,7 +160,7 @@ func (g *Generator) processOperationList() {
 	}
 }
 
-func (g *Generator) generateOperation(opName string) (operation Operation) {
+func (g *Generator) generateOperation(opName string, doc *goquery.Document) (operation Operation) {
 	operation.OpName = opName
 	operation.Input = &ShapeRef{ShapeName: fmt.Sprintf("%sRequest", operation.OpName)}
 
@@ -170,6 +173,16 @@ func (g *Generator) generateOperation(opName string) (operation Operation) {
 	if g.HTTP.Method != "" && g.HTTP.RequestURI != "" {
 		operation.HTTP = g.HTTP
 	}
+
+	if g.OperationURLSelector != "" && g.OperationMethodSelector != "" {
+		urlText := doc.Find(g.OperationURLSelector).Text()
+		urlText = regexp.MustCompile(`\[.+\]`).ReplaceAllString(urlText, "{Id}")
+		uri, err := url.Parse(urlText)
+		panicIfErr(err)
+		method := doc.Find(g.OperationMethodSelector).Text()
+		operation.HTTP = HTTP{RequestURI: uri.Path, Method: method}
+	}
+
 	return operation
 }
 

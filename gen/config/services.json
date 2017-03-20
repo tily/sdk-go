@@ -86,6 +86,8 @@
         "apiVersion": "2012-12-12N2013-12-16",
         "globalEndpoint": "dns.api.cloud.nifty.com"
       },
+      "operationURLSelector": "h4:nth-child(4) + div p",
+      "operationMethodSelector": "h4:nth-child(6) + div p",
       "requestShapeSelector": "table[summary='リクエストパラメーター'] tr:nth-child(n+2)",
       "requestShapeNameSelector": "td:nth-child(1)",
       "requestShapeTypeSelector": "td:nth-child(4)",
