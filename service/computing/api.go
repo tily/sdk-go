@@ -4,6 +4,8 @@
 package computing
 
 import (
+	"time"
+
 	"github.com/tily/sdk-go/aws/awsutil"
 	"github.com/tily/sdk-go/aws/request"
 	"github.com/tily/sdk-go/private/protocol"
@@ -50,8 +52,6 @@ func (c *computing) AllocateAddressRequest(input *AllocateAddressInput) (req *re
 
 	output = &AllocateAddressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -112,8 +112,6 @@ func (c *computing) AssociateAddressRequest(input *AssociateAddressInput) (req *
 
 	output = &AssociateAddressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -174,8 +172,6 @@ func (c *computing) AssociateRouteTableRequest(input *AssociateRouteTableInput) 
 
 	output = &AssociateRouteTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -236,8 +232,6 @@ func (c *computing) AssociateUsersRequest(input *AssociateUsersInput) (req *requ
 
 	output = &AssociateUsersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -298,8 +292,6 @@ func (c *computing) AttachVolumeRequest(input *AttachVolumeInput) (req *request.
 
 	output = &AttachVolumeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -360,8 +352,6 @@ func (c *computing) AuthorizeSecurityGroupIngressRequest(input *AuthorizeSecurit
 
 	output = &AuthorizeSecurityGroupIngressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -422,8 +412,6 @@ func (c *computing) CancelCopyInstancesRequest(input *CancelCopyInstancesInput) 
 
 	output = &CancelCopyInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -484,8 +472,6 @@ func (c *computing) CancelUploadRequest(input *CancelUploadInput) (req *request.
 
 	output = &CancelUploadOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -608,8 +594,6 @@ func (c *computing) ConfigureHealthCheckRequest(input *ConfigureHealthCheckInput
 
 	output = &ConfigureHealthCheckOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -670,8 +654,6 @@ func (c *computing) CopyInstancesRequest(input *CopyInstancesInput) (req *reques
 
 	output = &CopyInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -732,8 +714,6 @@ func (c *computing) CreateCustomerGatewayRequest(input *CreateCustomerGatewayInp
 
 	output = &CreateCustomerGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -794,8 +774,6 @@ func (c *computing) CreateDhcpOptionsRequest(input *CreateDhcpOptionsInput) (req
 
 	output = &CreateDhcpOptionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -856,8 +834,6 @@ func (c *computing) CreateImageRequest(input *CreateImageInput) (req *request.Re
 
 	output = &CreateImageOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -918,8 +894,6 @@ func (c *computing) CreateKeyPairRequest(input *CreateKeyPairInput) (req *reques
 
 	output = &CreateKeyPairOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -980,8 +954,6 @@ func (c *computing) CreateLoadBalancerRequest(input *CreateLoadBalancerInput) (r
 
 	output = &CreateLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1042,8 +1014,6 @@ func (c *computing) CreateRouteRequest(input *CreateRouteInput) (req *request.Re
 
 	output = &CreateRouteOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1104,8 +1074,6 @@ func (c *computing) CreateRouteTableRequest(input *CreateRouteTableInput) (req *
 
 	output = &CreateRouteTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1166,8 +1134,6 @@ func (c *computing) CreateSecurityGroupRequest(input *CreateSecurityGroupInput) 
 
 	output = &CreateSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1228,8 +1194,6 @@ func (c *computing) CreateSslCertificateRequest(input *CreateSslCertificateInput
 
 	output = &CreateSslCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1290,8 +1254,6 @@ func (c *computing) CreateVolumeRequest(input *CreateVolumeInput) (req *request.
 
 	output = &CreateVolumeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1352,8 +1314,6 @@ func (c *computing) CreateVpnConnectionRequest(input *CreateVpnConnectionInput) 
 
 	output = &CreateVpnConnectionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1414,8 +1374,6 @@ func (c *computing) CreateVpnGatewayRequest(input *CreateVpnGatewayInput) (req *
 
 	output = &CreateVpnGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1476,8 +1434,6 @@ func (c *computing) DeleteCustomerGatewayRequest(input *DeleteCustomerGatewayInp
 
 	output = &DeleteCustomerGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1538,8 +1494,6 @@ func (c *computing) DeleteDhcpOptionsRequest(input *DeleteDhcpOptionsInput) (req
 
 	output = &DeleteDhcpOptionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1600,8 +1554,6 @@ func (c *computing) DeleteImageRequest(input *DeleteImageInput) (req *request.Re
 
 	output = &DeleteImageOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1662,8 +1614,6 @@ func (c *computing) DeleteKeyPairRequest(input *DeleteKeyPairInput) (req *reques
 
 	output = &DeleteKeyPairOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1786,8 +1736,6 @@ func (c *computing) DeleteRouteRequest(input *DeleteRouteInput) (req *request.Re
 
 	output = &DeleteRouteOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1848,8 +1796,6 @@ func (c *computing) DeleteRouteTableRequest(input *DeleteRouteTableInput) (req *
 
 	output = &DeleteRouteTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1910,8 +1856,6 @@ func (c *computing) DeleteSecurityGroupRequest(input *DeleteSecurityGroupInput) 
 
 	output = &DeleteSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -1972,8 +1916,6 @@ func (c *computing) DeleteSslCertificateRequest(input *DeleteSslCertificateInput
 
 	output = &DeleteSslCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2034,8 +1976,6 @@ func (c *computing) DeleteVolumeRequest(input *DeleteVolumeInput) (req *request.
 
 	output = &DeleteVolumeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2096,8 +2036,6 @@ func (c *computing) DeleteVpnConnectionRequest(input *DeleteVpnConnectionInput) 
 
 	output = &DeleteVpnConnectionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2158,8 +2096,6 @@ func (c *computing) DeleteVpnGatewayRequest(input *DeleteVpnGatewayInput) (req *
 
 	output = &DeleteVpnGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2220,8 +2156,6 @@ func (c *computing) DeregisterInstancesFromLoadBalancerRequest(input *Deregister
 
 	output = &DeregisterInstancesFromLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2282,8 +2216,6 @@ func (c *computing) DeregisterInstancesFromSecurityGroupRequest(input *Deregiste
 
 	output = &DeregisterInstancesFromSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2344,8 +2276,6 @@ func (c *computing) DescribeAddressesRequest(input *DescribeAddressesInput) (req
 
 	output = &DescribeAddressesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2406,8 +2336,6 @@ func (c *computing) DescribeAssociatedUsersRequest(input *DescribeAssociatedUser
 
 	output = &DescribeAssociatedUsersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2468,8 +2396,6 @@ func (c *computing) DescribeAvailabilityZonesRequest(input *DescribeAvailability
 
 	output = &DescribeAvailabilityZonesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2530,8 +2456,6 @@ func (c *computing) DescribeCustomerGatewaysRequest(input *DescribeCustomerGatew
 
 	output = &DescribeCustomerGatewaysOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2592,8 +2516,6 @@ func (c *computing) DescribeDhcpOptionsRequest(input *DescribeDhcpOptionsInput) 
 
 	output = &DescribeDhcpOptionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2654,8 +2576,6 @@ func (c *computing) DescribeImagesRequest(input *DescribeImagesInput) (req *requ
 
 	output = &DescribeImagesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2716,8 +2636,6 @@ func (c *computing) DescribeInstanceAttributeRequest(input *DescribeInstanceAttr
 
 	output = &DescribeInstanceAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2778,8 +2696,6 @@ func (c *computing) DescribeInstanceHealthRequest(input *DescribeInstanceHealthI
 
 	output = &DescribeInstanceHealthOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2840,8 +2756,6 @@ func (c *computing) DescribeInstancesRequest(input *DescribeInstancesInput) (req
 
 	output = &DescribeInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2902,8 +2816,6 @@ func (c *computing) DescribeKeyPairsRequest(input *DescribeKeyPairsInput) (req *
 
 	output = &DescribeKeyPairsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -2964,8 +2876,6 @@ func (c *computing) DescribeLoadBalancersRequest(input *DescribeLoadBalancersInp
 
 	output = &DescribeLoadBalancersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3026,8 +2936,6 @@ func (c *computing) DescribeRegionsRequest(input *DescribeRegionsInput) (req *re
 
 	output = &DescribeRegionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3088,8 +2996,6 @@ func (c *computing) DescribeResourcesRequest(input *DescribeResourcesInput) (req
 
 	output = &DescribeResourcesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3150,8 +3056,6 @@ func (c *computing) DescribeRouteTablesRequest(input *DescribeRouteTablesInput) 
 
 	output = &DescribeRouteTablesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3212,8 +3116,6 @@ func (c *computing) DescribeSecurityActivitiesRequest(input *DescribeSecurityAct
 
 	output = &DescribeSecurityActivitiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3274,8 +3176,6 @@ func (c *computing) DescribeSecurityGroupOptionRequest(input *DescribeSecurityGr
 
 	output = &DescribeSecurityGroupOptionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3336,8 +3236,6 @@ func (c *computing) DescribeSecurityGroupsRequest(input *DescribeSecurityGroupsI
 
 	output = &DescribeSecurityGroupsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3398,8 +3296,6 @@ func (c *computing) DescribeServiceStatusRequest(input *DescribeServiceStatusInp
 
 	output = &DescribeServiceStatusOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3460,8 +3356,6 @@ func (c *computing) DescribeSslCertificateAttributeRequest(input *DescribeSslCer
 
 	output = &DescribeSslCertificateAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3522,8 +3416,6 @@ func (c *computing) DescribeSslCertificatesRequest(input *DescribeSslCertificate
 
 	output = &DescribeSslCertificatesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3584,8 +3476,6 @@ func (c *computing) DescribeUploadsRequest(input *DescribeUploadsInput) (req *re
 
 	output = &DescribeUploadsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3646,8 +3536,6 @@ func (c *computing) DescribeUsageRequest(input *DescribeUsageInput) (req *reques
 
 	output = &DescribeUsageOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3708,8 +3596,6 @@ func (c *computing) DescribeUserActivitiesRequest(input *DescribeUserActivitiesI
 
 	output = &DescribeUserActivitiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3770,8 +3656,6 @@ func (c *computing) DescribeVolumesRequest(input *DescribeVolumesInput) (req *re
 
 	output = &DescribeVolumesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3832,8 +3716,6 @@ func (c *computing) DescribeVpnConnectionsRequest(input *DescribeVpnConnectionsI
 
 	output = &DescribeVpnConnectionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3894,8 +3776,6 @@ func (c *computing) DescribeVpnGatewaysRequest(input *DescribeVpnGatewaysInput) 
 
 	output = &DescribeVpnGatewaysOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -3956,8 +3836,6 @@ func (c *computing) DetachVolumeRequest(input *DetachVolumeInput) (req *request.
 
 	output = &DetachVolumeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4018,8 +3896,6 @@ func (c *computing) DisassociateAddressRequest(input *DisassociateAddressInput) 
 
 	output = &DisassociateAddressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4080,8 +3956,6 @@ func (c *computing) DisassociateRouteTableRequest(input *DisassociateRouteTableI
 
 	output = &DisassociateRouteTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4142,8 +4016,6 @@ func (c *computing) DissociateUsersRequest(input *DissociateUsersInput) (req *re
 
 	output = &DissociateUsersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4204,8 +4076,6 @@ func (c *computing) DownloadSslCertificateRequest(input *DownloadSslCertificateI
 
 	output = &DownloadSslCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4266,8 +4136,6 @@ func (c *computing) ImportInstanceRequest(input *ImportInstanceInput) (req *requ
 
 	output = &ImportInstanceOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4328,8 +4196,6 @@ func (c *computing) ImportKeyPairRequest(input *ImportKeyPairInput) (req *reques
 
 	output = &ImportKeyPairOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4390,8 +4256,6 @@ func (c *computing) ModifyImageAttributeRequest(input *ModifyImageAttributeInput
 
 	output = &ModifyImageAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4452,8 +4316,6 @@ func (c *computing) ModifyInstanceAttributeRequest(input *ModifyInstanceAttribut
 
 	output = &ModifyInstanceAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4514,8 +4376,6 @@ func (c *computing) ModifySslCertificateAttributeRequest(input *ModifySslCertifi
 
 	output = &ModifySslCertificateAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4576,8 +4436,6 @@ func (c *computing) ModifyVolumeAttributeRequest(input *ModifyVolumeAttributeInp
 
 	output = &ModifyVolumeAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4638,8 +4496,6 @@ func (c *computing) NiftyAssociateImageRequest(input *NiftyAssociateImageInput) 
 
 	output = &NiftyAssociateImageOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4700,8 +4556,6 @@ func (c *computing) NiftyAssociateNatTableRequest(input *NiftyAssociateNatTableI
 
 	output = &NiftyAssociateNatTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4762,8 +4616,6 @@ func (c *computing) NiftyAssociateRouteTableWithVpnGatewayRequest(input *NiftyAs
 
 	output = &NiftyAssociateRouteTableWithVpnGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4824,8 +4676,6 @@ func (c *computing) NiftyCreateAlarmRequest(input *NiftyCreateAlarmInput) (req *
 
 	output = &NiftyCreateAlarmOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4886,8 +4736,6 @@ func (c *computing) NiftyCreateAutoScalingGroupRequest(input *NiftyCreateAutoSca
 
 	output = &NiftyCreateAutoScalingGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -4948,8 +4796,6 @@ func (c *computing) NiftyCreateDhcpConfigRequest(input *NiftyCreateDhcpConfigInp
 
 	output = &NiftyCreateDhcpConfigOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5010,8 +4856,6 @@ func (c *computing) NiftyCreateDhcpIpAddressPoolRequest(input *NiftyCreateDhcpIp
 
 	output = &NiftyCreateDhcpIpAddressPoolOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5072,8 +4916,6 @@ func (c *computing) NiftyCreateDhcpStaticMappingRequest(input *NiftyCreateDhcpSt
 
 	output = &NiftyCreateDhcpStaticMappingOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5134,8 +4976,6 @@ func (c *computing) NiftyCreateInstanceSnapshotRequest(input *NiftyCreateInstanc
 
 	output = &NiftyCreateInstanceSnapshotOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5196,8 +5036,6 @@ func (c *computing) NiftyCreateNatRuleRequest(input *NiftyCreateNatRuleInput) (r
 
 	output = &NiftyCreateNatRuleOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5258,8 +5096,6 @@ func (c *computing) NiftyCreateNatTableRequest(input *NiftyCreateNatTableInput) 
 
 	output = &NiftyCreateNatTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5320,8 +5156,6 @@ func (c *computing) NiftyCreatePrivateLanRequest(input *NiftyCreatePrivateLanInp
 
 	output = &NiftyCreatePrivateLanOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5382,8 +5216,6 @@ func (c *computing) NiftyCreateRouterRequest(input *NiftyCreateRouterInput) (req
 
 	output = &NiftyCreateRouterOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5444,8 +5276,6 @@ func (c *computing) NiftyCreateWebProxyRequest(input *NiftyCreateWebProxyInput) 
 
 	output = &NiftyCreateWebProxyOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5506,8 +5336,6 @@ func (c *computing) NiftyDeleteAlarmRequest(input *NiftyDeleteAlarmInput) (req *
 
 	output = &NiftyDeleteAlarmOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5568,8 +5396,6 @@ func (c *computing) NiftyDeleteAutoScalingGroupRequest(input *NiftyDeleteAutoSca
 
 	output = &NiftyDeleteAutoScalingGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5630,8 +5456,6 @@ func (c *computing) NiftyDeleteDhcpConfigRequest(input *NiftyDeleteDhcpConfigInp
 
 	output = &NiftyDeleteDhcpConfigOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5692,8 +5516,6 @@ func (c *computing) NiftyDeleteDhcpIpAddressPoolRequest(input *NiftyDeleteDhcpIp
 
 	output = &NiftyDeleteDhcpIpAddressPoolOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5754,8 +5576,6 @@ func (c *computing) NiftyDeleteDhcpStaticMappingRequest(input *NiftyDeleteDhcpSt
 
 	output = &NiftyDeleteDhcpStaticMappingOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5816,8 +5636,6 @@ func (c *computing) NiftyDeleteInstanceSnapshotRequest(input *NiftyDeleteInstanc
 
 	output = &NiftyDeleteInstanceSnapshotOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5878,8 +5696,6 @@ func (c *computing) NiftyDeleteNatRuleRequest(input *NiftyDeleteNatRuleInput) (r
 
 	output = &NiftyDeleteNatRuleOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -5940,8 +5756,6 @@ func (c *computing) NiftyDeleteNatTableRequest(input *NiftyDeleteNatTableInput) 
 
 	output = &NiftyDeleteNatTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6002,8 +5816,6 @@ func (c *computing) NiftyDeletePrivateLanRequest(input *NiftyDeletePrivateLanInp
 
 	output = &NiftyDeletePrivateLanOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6064,8 +5876,6 @@ func (c *computing) NiftyDeleteRouterRequest(input *NiftyDeleteRouterInput) (req
 
 	output = &NiftyDeleteRouterOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6126,8 +5936,6 @@ func (c *computing) NiftyDeleteWebProxyRequest(input *NiftyDeleteWebProxyInput) 
 
 	output = &NiftyDeleteWebProxyOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6188,8 +5996,6 @@ func (c *computing) NiftyDeregisterRoutersFromSecurityGroupRequest(input *NiftyD
 
 	output = &NiftyDeregisterRoutersFromSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6250,8 +6056,6 @@ func (c *computing) NiftyDeregisterVpnGatewaysFromSecurityGroupRequest(input *Ni
 
 	output = &NiftyDeregisterVpnGatewaysFromSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6312,8 +6116,6 @@ func (c *computing) NiftyDescribeAlarmHistoryRequest(input *NiftyDescribeAlarmHi
 
 	output = &NiftyDescribeAlarmHistoryOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6374,8 +6176,6 @@ func (c *computing) NiftyDescribeAlarmRulesActivitiesRequest(input *NiftyDescrib
 
 	output = &NiftyDescribeAlarmRulesActivitiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6436,8 +6236,6 @@ func (c *computing) NiftyDescribeAlarmsRequest(input *NiftyDescribeAlarmsInput) 
 
 	output = &NiftyDescribeAlarmsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6498,8 +6296,6 @@ func (c *computing) NiftyDescribeAlarmsPartitionsRequest(input *NiftyDescribeAla
 
 	output = &NiftyDescribeAlarmsPartitionsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6560,8 +6356,6 @@ func (c *computing) NiftyDescribeAutoScalingGroupsRequest(input *NiftyDescribeAu
 
 	output = &NiftyDescribeAutoScalingGroupsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6622,8 +6416,6 @@ func (c *computing) NiftyDescribeCorporateInfoForCertificateRequest(input *Nifty
 
 	output = &NiftyDescribeCorporateInfoForCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6684,8 +6476,6 @@ func (c *computing) NiftyDescribeDhcpConfigsRequest(input *NiftyDescribeDhcpConf
 
 	output = &NiftyDescribeDhcpConfigsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6746,8 +6536,6 @@ func (c *computing) NiftyDescribeDhcpStatusRequest(input *NiftyDescribeDhcpStatu
 
 	output = &NiftyDescribeDhcpStatusOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6808,8 +6596,6 @@ func (c *computing) NiftyDescribeInstanceSnapshotsRequest(input *NiftyDescribeIn
 
 	output = &NiftyDescribeInstanceSnapshotsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6870,8 +6656,6 @@ func (c *computing) NiftyDescribeNatTablesRequest(input *NiftyDescribeNatTablesI
 
 	output = &NiftyDescribeNatTablesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6932,8 +6716,6 @@ func (c *computing) NiftyDescribePerformanceChartRequest(input *NiftyDescribePer
 
 	output = &NiftyDescribePerformanceChartOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -6994,8 +6776,6 @@ func (c *computing) NiftyDescribePrivateLansRequest(input *NiftyDescribePrivateL
 
 	output = &NiftyDescribePrivateLansOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7056,8 +6836,6 @@ func (c *computing) NiftyDescribeRoutersRequest(input *NiftyDescribeRoutersInput
 
 	output = &NiftyDescribeRoutersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7118,8 +6896,6 @@ func (c *computing) NiftyDescribeScalingActivitiesRequest(input *NiftyDescribeSc
 
 	output = &NiftyDescribeScalingActivitiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7180,8 +6956,6 @@ func (c *computing) NiftyDescribeVpnGatewayActivitiesRequest(input *NiftyDescrib
 
 	output = &NiftyDescribeVpnGatewayActivitiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7242,8 +7016,6 @@ func (c *computing) NiftyDescribeWebProxiesRequest(input *NiftyDescribeWebProxie
 
 	output = &NiftyDescribeWebProxiesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7304,8 +7076,6 @@ func (c *computing) NiftyDisableDhcpRequest(input *NiftyDisableDhcpInput) (req *
 
 	output = &NiftyDisableDhcpOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7366,8 +7136,6 @@ func (c *computing) NiftyDisassociateNatTableRequest(input *NiftyDisassociateNat
 
 	output = &NiftyDisassociateNatTableOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7428,8 +7196,6 @@ func (c *computing) NiftyDisassociateRouteTableFromVpnGatewayRequest(input *Nift
 
 	output = &NiftyDisassociateRouteTableFromVpnGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7490,8 +7256,6 @@ func (c *computing) NiftyEnableDhcpRequest(input *NiftyEnableDhcpInput) (req *re
 
 	output = &NiftyEnableDhcpOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7552,8 +7316,6 @@ func (c *computing) NiftyModifyAddressAttributeRequest(input *NiftyModifyAddress
 
 	output = &NiftyModifyAddressAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7614,8 +7376,6 @@ func (c *computing) NiftyModifyCustomerGatewayAttributeRequest(input *NiftyModif
 
 	output = &NiftyModifyCustomerGatewayAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7676,8 +7436,6 @@ func (c *computing) NiftyModifyInstanceSnapshotAttributeRequest(input *NiftyModi
 
 	output = &NiftyModifyInstanceSnapshotAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7738,8 +7496,6 @@ func (c *computing) NiftyModifyKeyPairAttributeRequest(input *NiftyModifyKeyPair
 
 	output = &NiftyModifyKeyPairAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7800,8 +7556,6 @@ func (c *computing) NiftyModifyPrivateLanAttributeRequest(input *NiftyModifyPriv
 
 	output = &NiftyModifyPrivateLanAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7862,8 +7616,6 @@ func (c *computing) NiftyModifyRouterAttributeRequest(input *NiftyModifyRouterAt
 
 	output = &NiftyModifyRouterAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7924,8 +7676,6 @@ func (c *computing) NiftyModifyVpnGatewayAttributeRequest(input *NiftyModifyVpnG
 
 	output = &NiftyModifyVpnGatewayAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -7986,8 +7736,6 @@ func (c *computing) NiftyModifyWebProxyAttributeRequest(input *NiftyModifyWebPro
 
 	output = &NiftyModifyWebProxyAttributeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8048,8 +7796,6 @@ func (c *computing) NiftyRebootRoutersRequest(input *NiftyRebootRoutersInput) (r
 
 	output = &NiftyRebootRoutersOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8110,8 +7856,6 @@ func (c *computing) NiftyRebootVpnGatewaysRequest(input *NiftyRebootVpnGatewaysI
 
 	output = &NiftyRebootVpnGatewaysOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8172,8 +7916,6 @@ func (c *computing) NiftyRegisterRoutersWithSecurityGroupRequest(input *NiftyReg
 
 	output = &NiftyRegisterRoutersWithSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8234,8 +7976,6 @@ func (c *computing) NiftyRegisterVpnGatewaysWithSecurityGroupRequest(input *Nift
 
 	output = &NiftyRegisterVpnGatewaysWithSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8296,8 +8036,6 @@ func (c *computing) NiftyReleaseRouterBackupStateRequest(input *NiftyReleaseRout
 
 	output = &NiftyReleaseRouterBackupStateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8358,8 +8096,6 @@ func (c *computing) NiftyReleaseVpnGatewayBackupStateRequest(input *NiftyRelease
 
 	output = &NiftyReleaseVpnGatewayBackupStateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8420,8 +8156,6 @@ func (c *computing) NiftyReplaceDhcpConfigRequest(input *NiftyReplaceDhcpConfigI
 
 	output = &NiftyReplaceDhcpConfigOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8482,8 +8216,6 @@ func (c *computing) NiftyReplaceDhcpOptionRequest(input *NiftyReplaceDhcpOptionI
 
 	output = &NiftyReplaceDhcpOptionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8544,8 +8276,6 @@ func (c *computing) NiftyReplaceNatRuleRequest(input *NiftyReplaceNatRuleInput) 
 
 	output = &NiftyReplaceNatRuleOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8606,8 +8336,6 @@ func (c *computing) NiftyReplaceNatTableAssociationRequest(input *NiftyReplaceNa
 
 	output = &NiftyReplaceNatTableAssociationOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8668,8 +8396,6 @@ func (c *computing) NiftyReplaceRouteTableAssociationWithVpnGatewayRequest(input
 
 	output = &NiftyReplaceRouteTableAssociationWithVpnGatewayOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8730,8 +8456,6 @@ func (c *computing) NiftyReplaceRouterLatestVersionRequest(input *NiftyReplaceRo
 
 	output = &NiftyReplaceRouterLatestVersionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8792,8 +8516,6 @@ func (c *computing) NiftyReplaceVpnGatewayLatestVersionRequest(input *NiftyRepla
 
 	output = &NiftyReplaceVpnGatewayLatestVersionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8854,8 +8576,6 @@ func (c *computing) NiftyRestoreInstanceSnapshotRequest(input *NiftyRestoreInsta
 
 	output = &NiftyRestoreInstanceSnapshotOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8916,8 +8636,6 @@ func (c *computing) NiftyRestoreRouterPreviousVersionRequest(input *NiftyRestore
 
 	output = &NiftyRestoreRouterPreviousVersionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -8978,8 +8696,6 @@ func (c *computing) NiftyRestoreVpnGatewayPreviousVersionRequest(input *NiftyRes
 
 	output = &NiftyRestoreVpnGatewayPreviousVersionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9040,8 +8756,6 @@ func (c *computing) NiftyRetryImportInstanceRequest(input *NiftyRetryImportInsta
 
 	output = &NiftyRetryImportInstanceOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9102,8 +8816,6 @@ func (c *computing) NiftyUpdateAlarmRequest(input *NiftyUpdateAlarmInput) (req *
 
 	output = &NiftyUpdateAlarmOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9164,8 +8876,6 @@ func (c *computing) NiftyUpdateAutoScalingGroupRequest(input *NiftyUpdateAutoSca
 
 	output = &NiftyUpdateAutoScalingGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9226,8 +8936,6 @@ func (c *computing) NiftyUpdateInstanceNetworkInterfacesRequest(input *NiftyUpda
 
 	output = &NiftyUpdateInstanceNetworkInterfacesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9288,8 +8996,6 @@ func (c *computing) NiftyUpdateRouterNetworkInterfacesRequest(input *NiftyUpdate
 
 	output = &NiftyUpdateRouterNetworkInterfacesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9350,8 +9056,6 @@ func (c *computing) NiftyUpdateVpnGatewayNetworkInterfacesRequest(input *NiftyUp
 
 	output = &NiftyUpdateVpnGatewayNetworkInterfacesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9412,8 +9116,6 @@ func (c *computing) RebootInstancesRequest(input *RebootInstancesInput) (req *re
 
 	output = &RebootInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9474,8 +9176,6 @@ func (c *computing) RegisterCorporateInfoForCertificateRequest(input *RegisterCo
 
 	output = &RegisterCorporateInfoForCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9536,8 +9236,6 @@ func (c *computing) RegisterInstancesWithLoadBalancerRequest(input *RegisterInst
 
 	output = &RegisterInstancesWithLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9598,8 +9296,6 @@ func (c *computing) RegisterInstancesWithSecurityGroupRequest(input *RegisterIns
 
 	output = &RegisterInstancesWithSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9660,8 +9356,6 @@ func (c *computing) RegisterPortWithLoadBalancerRequest(input *RegisterPortWithL
 
 	output = &RegisterPortWithLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9722,8 +9416,6 @@ func (c *computing) ReleaseAddressRequest(input *ReleaseAddressInput) (req *requ
 
 	output = &ReleaseAddressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9784,8 +9476,6 @@ func (c *computing) ReplaceRouteRequest(input *ReplaceRouteInput) (req *request.
 
 	output = &ReplaceRouteOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9846,8 +9536,6 @@ func (c *computing) ReplaceRouteTableAssociationRequest(input *ReplaceRouteTable
 
 	output = &ReplaceRouteTableAssociationOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9908,8 +9596,6 @@ func (c *computing) RevokeSecurityGroupIngressRequest(input *RevokeSecurityGroup
 
 	output = &RevokeSecurityGroupIngressOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -9970,8 +9656,6 @@ func (c *computing) RunInstancesRequest(input *RunInstancesInput) (req *request.
 
 	output = &RunInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10032,8 +9716,6 @@ func (c *computing) SetFilterForLoadBalancerRequest(input *SetFilterForLoadBalan
 
 	output = &SetFilterForLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10094,8 +9776,6 @@ func (c *computing) StartInstancesRequest(input *StartInstancesInput) (req *requ
 
 	output = &StartInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10156,8 +9836,6 @@ func (c *computing) StopInstancesRequest(input *StopInstancesInput) (req *reques
 
 	output = &StopInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10218,8 +9896,6 @@ func (c *computing) TerminateInstancesRequest(input *TerminateInstancesInput) (r
 
 	output = &TerminateInstancesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10280,8 +9956,6 @@ func (c *computing) UpdateLoadBalancerRequest(input *UpdateLoadBalancerInput) (r
 
 	output = &UpdateLoadBalancerOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10342,8 +10016,6 @@ func (c *computing) UpdateLoadBalancerOptionRequest(input *UpdateLoadBalancerOpt
 
 	output = &UpdateLoadBalancerOptionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10404,8 +10076,6 @@ func (c *computing) UpdateSecurityGroupRequest(input *UpdateSecurityGroupInput) 
 
 	output = &UpdateSecurityGroupOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10466,8 +10136,6 @@ func (c *computing) UpdateSecurityGroupOptionRequest(input *UpdateSecurityGroupO
 
 	output = &UpdateSecurityGroupOptionOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10528,8 +10196,6 @@ func (c *computing) UploadSslCertificateRequest(input *UploadSslCertificateInput
 
 	output = &UploadSslCertificateOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(query.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -10548,6 +10214,377 @@ func (c *computing) UploadSslCertificate(input *UploadSslCertificateInput) (*Upl
 	req, out := c.UploadSslCertificateRequest(input)
 	err := req.Send()
 	return out, err
+}
+
+// AlarmDateHistoryItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmDateHistoryItemType
+type AlarmDateHistoryItemType struct {
+	_ struct{} `type:"structure"`
+
+	// AlarmEventHistorySetType
+	AlarmEventHistorySet []*AlarmEventHistoryItemType `locationName:"alarmEventHistorySet" locationNameList:"item" type:"list"`
+
+	// String
+	Date *string `locationName:"date" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmDateHistoryItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmDateHistoryItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmEventHistorySet sets the AlarmEventHistorySet field's value.
+func (s *AlarmDateHistoryItemType) SetAlarmEventHistorySet(v []*AlarmEventHistoryItemType) *AlarmDateHistoryItemType {
+	s.AlarmEventHistorySet = v
+	return s
+}
+
+// SetDate sets the Date field's value.
+func (s *AlarmDateHistoryItemType) SetDate(v string) *AlarmDateHistoryItemType {
+	s.Date = &v
+	return s
+}
+
+// AlarmEventHistoryItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmEventHistoryItemType
+type AlarmEventHistoryItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AlarmEvent *string `locationName:"alarmEvent" type:"string"`
+
+	// TStamp
+	AlarmEventDatetime *time.Time `locationName:"alarmEventDatetime" type:"timestamp" timestampFormat:"iso8601"`
+}
+
+// String returns the string representation
+func (s AlarmEventHistoryItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmEventHistoryItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmEvent sets the AlarmEvent field's value.
+func (s *AlarmEventHistoryItemType) SetAlarmEvent(v string) *AlarmEventHistoryItemType {
+	s.AlarmEvent = &v
+	return s
+}
+
+// SetAlarmEventDatetime sets the AlarmEventDatetime field's value.
+func (s *AlarmEventHistoryItemType) SetAlarmEventDatetime(v time.Time) *AlarmEventHistoryItemType {
+	s.AlarmEventDatetime = &v
+	return s
+}
+
+// AlarmReservationItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmReservationItemType
+type AlarmReservationItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AlarmCondition *string `locationName:"alarmCondition" type:"string"`
+
+	// String
+	AlarmState *string `locationName:"alarmState" type:"string"`
+
+	// AlarmTargetsSetType
+	AlarmTargetsSet []*ResourceNameItemType `locationName:"alarmTargetsSet" locationNameList:"item" type:"list"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// EmailAddressSetType
+	EmailAddressSet []*EmailAddressItemType `locationName:"emailAddressSet" locationNameList:"item" type:"list"`
+
+	// String
+	FunctionName *string `locationName:"functionName" type:"string"`
+
+	// String
+	RuleName *string `locationName:"ruleName" type:"string"`
+
+	// RuleSetType
+	RuleSet []*RuleItemType `locationName:"ruleSet" locationNameList:"item" type:"list"`
+
+	// String
+	Zone *string `locationName:"zone" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmReservationItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmReservationItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmCondition sets the AlarmCondition field's value.
+func (s *AlarmReservationItemType) SetAlarmCondition(v string) *AlarmReservationItemType {
+	s.AlarmCondition = &v
+	return s
+}
+
+// SetAlarmState sets the AlarmState field's value.
+func (s *AlarmReservationItemType) SetAlarmState(v string) *AlarmReservationItemType {
+	s.AlarmState = &v
+	return s
+}
+
+// SetAlarmTargetsSet sets the AlarmTargetsSet field's value.
+func (s *AlarmReservationItemType) SetAlarmTargetsSet(v []*ResourceNameItemType) *AlarmReservationItemType {
+	s.AlarmTargetsSet = v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *AlarmReservationItemType) SetCreatedTime(v time.Time) *AlarmReservationItemType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *AlarmReservationItemType) SetDescription(v string) *AlarmReservationItemType {
+	s.Description = &v
+	return s
+}
+
+// SetEmailAddressSet sets the EmailAddressSet field's value.
+func (s *AlarmReservationItemType) SetEmailAddressSet(v []*EmailAddressItemType) *AlarmReservationItemType {
+	s.EmailAddressSet = v
+	return s
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *AlarmReservationItemType) SetFunctionName(v string) *AlarmReservationItemType {
+	s.FunctionName = &v
+	return s
+}
+
+// SetRuleName sets the RuleName field's value.
+func (s *AlarmReservationItemType) SetRuleName(v string) *AlarmReservationItemType {
+	s.RuleName = &v
+	return s
+}
+
+// SetRuleSet sets the RuleSet field's value.
+func (s *AlarmReservationItemType) SetRuleSet(v []*RuleItemType) *AlarmReservationItemType {
+	s.RuleSet = v
+	return s
+}
+
+// SetZone sets the Zone field's value.
+func (s *AlarmReservationItemType) SetZone(v string) *AlarmReservationItemType {
+	s.Zone = &v
+	return s
+}
+
+// AlarmRulesActivitiesDateItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmRulesActivitiesDateItemType
+type AlarmRulesActivitiesDateItemType struct {
+	_ struct{} `type:"structure"`
+
+	// AlarmRulesActivitiesEventSetType
+	AlarmRulesActivitiesEventSet []*AlarmRulesActivitiesEventItemType `locationName:"alarmRulesActivitiesEventSet" locationNameList:"item" type:"list"`
+
+	// String
+	Date *string `locationName:"date" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmRulesActivitiesDateItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmRulesActivitiesDateItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmRulesActivitiesEventSet sets the AlarmRulesActivitiesEventSet field's value.
+func (s *AlarmRulesActivitiesDateItemType) SetAlarmRulesActivitiesEventSet(v []*AlarmRulesActivitiesEventItemType) *AlarmRulesActivitiesDateItemType {
+	s.AlarmRulesActivitiesEventSet = v
+	return s
+}
+
+// SetDate sets the Date field's value.
+func (s *AlarmRulesActivitiesDateItemType) SetDate(v string) *AlarmRulesActivitiesDateItemType {
+	s.Date = &v
+	return s
+}
+
+// AlarmRulesActivitiesEventItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmRulesActivitiesEventItemType
+type AlarmRulesActivitiesEventItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AlarmRulesActivitiesEvent *string `locationName:"alarmRulesActivitiesEvent" type:"string"`
+
+	// TStamp
+	AlarmRulesActivitiesEventDatetime *time.Time `locationName:"alarmRulesActivitiesEventDatetime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	ResourceName *string `locationName:"resourceName" type:"string"`
+
+	// String
+	Value *string `locationName:"value" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmRulesActivitiesEventItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmRulesActivitiesEventItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmRulesActivitiesEvent sets the AlarmRulesActivitiesEvent field's value.
+func (s *AlarmRulesActivitiesEventItemType) SetAlarmRulesActivitiesEvent(v string) *AlarmRulesActivitiesEventItemType {
+	s.AlarmRulesActivitiesEvent = &v
+	return s
+}
+
+// SetAlarmRulesActivitiesEventDatetime sets the AlarmRulesActivitiesEventDatetime field's value.
+func (s *AlarmRulesActivitiesEventItemType) SetAlarmRulesActivitiesEventDatetime(v time.Time) *AlarmRulesActivitiesEventItemType {
+	s.AlarmRulesActivitiesEventDatetime = &v
+	return s
+}
+
+// SetResourceName sets the ResourceName field's value.
+func (s *AlarmRulesActivitiesEventItemType) SetResourceName(v string) *AlarmRulesActivitiesEventItemType {
+	s.ResourceName = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *AlarmRulesActivitiesEventItemType) SetValue(v string) *AlarmRulesActivitiesEventItemType {
+	s.Value = &v
+	return s
+}
+
+// AlarmRulesActivitiesItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmRulesActivitiesItemType
+type AlarmRulesActivitiesItemType struct {
+	_ struct{} `type:"structure"`
+
+	// AlarmRulesActivitiesDateSetType
+	AlarmRulesActivitiesDateSet []*AlarmRulesActivitiesDateItemType `locationName:"alarmRulesActivitiesDateSet" locationNameList:"item" type:"list"`
+
+	// String
+	DataType *string `locationName:"dataType" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmRulesActivitiesItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmRulesActivitiesItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmRulesActivitiesDateSet sets the AlarmRulesActivitiesDateSet field's value.
+func (s *AlarmRulesActivitiesItemType) SetAlarmRulesActivitiesDateSet(v []*AlarmRulesActivitiesDateItemType) *AlarmRulesActivitiesItemType {
+	s.AlarmRulesActivitiesDateSet = v
+	return s
+}
+
+// SetDataType sets the DataType field's value.
+func (s *AlarmRulesActivitiesItemType) SetDataType(v string) *AlarmRulesActivitiesItemType {
+	s.DataType = &v
+	return s
+}
+
+// AlarmRulesActivitiesReservationItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmRulesActivitiesReservationItemType
+type AlarmRulesActivitiesReservationItemType struct {
+	_ struct{} `type:"structure"`
+
+	// AlarmRulesActivitiesSetType
+	AlarmRulesActivitiesSet []*AlarmRulesActivitiesItemType `locationName:"alarmRulesActivitiesSet" locationNameList:"Item" type:"list"`
+
+	// String
+	FunctionName *string `locationName:"functionName" type:"string"`
+
+	// String
+	RuleName *string `locationName:"ruleName" type:"string"`
+}
+
+// String returns the string representation
+func (s AlarmRulesActivitiesReservationItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmRulesActivitiesReservationItemType) GoString() string {
+	return s.String()
+}
+
+// SetAlarmRulesActivitiesSet sets the AlarmRulesActivitiesSet field's value.
+func (s *AlarmRulesActivitiesReservationItemType) SetAlarmRulesActivitiesSet(v []*AlarmRulesActivitiesItemType) *AlarmRulesActivitiesReservationItemType {
+	s.AlarmRulesActivitiesSet = v
+	return s
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *AlarmRulesActivitiesReservationItemType) SetFunctionName(v string) *AlarmRulesActivitiesReservationItemType {
+	s.FunctionName = &v
+	return s
+}
+
+// SetRuleName sets the RuleName field's value.
+func (s *AlarmRulesActivitiesReservationItemType) SetRuleName(v string) *AlarmRulesActivitiesReservationItemType {
+	s.RuleName = &v
+	return s
+}
+
+// AlarmTargetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AlarmTargetItemType
+type AlarmTargetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// PartitionsSetType
+	PartitionsSet []*PartitionItemType `locationName:"partitionsSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s AlarmTargetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AlarmTargetItemType) GoString() string {
+	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AlarmTargetItemType) SetInstanceId(v string) *AlarmTargetItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetPartitionsSet sets the PartitionsSet field's value.
+func (s *AlarmTargetItemType) SetPartitionsSet(v []*PartitionItemType) *AlarmTargetItemType {
+	s.PartitionsSet = v
+	return s
 }
 
 // AllocateAddressRequest
@@ -10602,9 +10639,28 @@ func (s *AllocateAddressInput) SetPlacement(v *PlacementStruct) *AllocateAddress
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AllocateAddressOutput
+// AllocateAddressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AllocateAddressResult
 type AllocateAddressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AllocationId *string `locationName:"allocationId" type:"string"`
+
+	// String
+	Domain *string `locationName:"domain" type:"string"`
+
+	// PlacementResponseType
+	Placement *PlacementResponseType `locationName:"placement" type:"structure"`
+
+	// String
+	PrivateIpAddress *string `locationName:"privateIpAddress" type:"string"`
+
+	// String
+	PublicIp *string `locationName:"publicIp" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -10615,6 +10671,110 @@ func (s AllocateAddressOutput) String() string {
 // GoString returns the string representation
 func (s AllocateAddressOutput) GoString() string {
 	return s.String()
+}
+
+// SetAllocationId sets the AllocationId field's value.
+func (s *AllocateAddressOutput) SetAllocationId(v string) *AllocateAddressOutput {
+	s.AllocationId = &v
+	return s
+}
+
+// SetDomain sets the Domain field's value.
+func (s *AllocateAddressOutput) SetDomain(v string) *AllocateAddressOutput {
+	s.Domain = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *AllocateAddressOutput) SetPlacement(v *PlacementResponseType) *AllocateAddressOutput {
+	s.Placement = v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *AllocateAddressOutput) SetPrivateIpAddress(v string) *AllocateAddressOutput {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *AllocateAddressOutput) SetPublicIp(v string) *AllocateAddressOutput {
+	s.PublicIp = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *AllocateAddressOutput) SetRequestId(v string) *AllocateAddressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// AnalyzeResultSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AnalyzeResultSetItemType
+type AnalyzeResultSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AnalyzeCode *string `locationName:"analyzeCode" type:"string"`
+
+	// String
+	Line *string `locationName:"line" type:"string"`
+}
+
+// String returns the string representation
+func (s AnalyzeResultSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AnalyzeResultSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetAnalyzeCode sets the AnalyzeCode field's value.
+func (s *AnalyzeResultSetItemType) SetAnalyzeCode(v string) *AnalyzeResultSetItemType {
+	s.AnalyzeCode = &v
+	return s
+}
+
+// SetLine sets the Line field's value.
+func (s *AnalyzeResultSetItemType) SetLine(v string) *AnalyzeResultSetItemType {
+	s.Line = &v
+	return s
+}
+
+// AppCookieStickinessPolicy
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AppCookieStickinessPolicy
+type AppCookieStickinessPolicy struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CookieName *string `locationName:"CookieName" type:"string"`
+
+	// String
+	PolicyName *string `locationName:"PolicyName" type:"string"`
+}
+
+// String returns the string representation
+func (s AppCookieStickinessPolicy) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AppCookieStickinessPolicy) GoString() string {
+	return s.String()
+}
+
+// SetCookieName sets the CookieName field's value.
+func (s *AppCookieStickinessPolicy) SetCookieName(v string) *AppCookieStickinessPolicy {
+	s.CookieName = &v
+	return s
+}
+
+// SetPolicyName sets the PolicyName field's value.
+func (s *AppCookieStickinessPolicy) SetPolicyName(v string) *AppCookieStickinessPolicy {
+	s.PolicyName = &v
+	return s
 }
 
 // AssociateAddressRequest
@@ -10711,9 +10871,19 @@ func (s *AssociateAddressInput) SetPublicIp(v string) *AssociateAddressInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateAddressOutput
+// AssociateAddressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateAddressResult
 type AssociateAddressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `locationName:"associationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -10724,6 +10894,24 @@ func (s AssociateAddressOutput) String() string {
 // GoString returns the string representation
 func (s AssociateAddressOutput) GoString() string {
 	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *AssociateAddressOutput) SetAssociationId(v string) *AssociateAddressOutput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *AssociateAddressOutput) SetRequestId(v string) *AssociateAddressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *AssociateAddressOutput) SetReturn(v bool) *AssociateAddressOutput {
+	s.Return = &v
+	return s
 }
 
 // AssociateRouteTableRequest
@@ -10802,9 +10990,16 @@ func (s *AssociateRouteTableInput) SetSubnetId(v string) *AssociateRouteTableInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateRouteTableOutput
+// AssociateRouteTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateRouteTableResult
 type AssociateRouteTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `locationName:"associationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -10815,6 +11010,18 @@ func (s AssociateRouteTableOutput) String() string {
 // GoString returns the string representation
 func (s AssociateRouteTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *AssociateRouteTableOutput) SetAssociationId(v string) *AssociateRouteTableOutput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *AssociateRouteTableOutput) SetRequestId(v string) *AssociateRouteTableOutput {
+	s.RequestId = &v
+	return s
 }
 
 // AssociateUsersRequest
@@ -10871,9 +11078,13 @@ func (s *AssociateUsersInput) SetUsersList(v []*string) *AssociateUsersInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateUsersOutput
+// AssociateUsersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AssociateUsersResult
 type AssociateUsersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Users
+	Users []*User `locationName:"Users" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -10884,6 +11095,12 @@ func (s AssociateUsersOutput) String() string {
 // GoString returns the string representation
 func (s AssociateUsersOutput) GoString() string {
 	return s.String()
+}
+
+// SetUsers sets the Users field's value.
+func (s *AssociateUsersOutput) SetUsers(v []*User) *AssociateUsersOutput {
+	s.Users = v
+	return s
 }
 
 // AttachVolumeRequest
@@ -10929,9 +11146,31 @@ func (s *AttachVolumeInput) SetVolumeId(v string) *AttachVolumeInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachVolumeOutput
+// AttachVolumeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachVolumeResult
 type AttachVolumeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// TStamp
+	AttachTime *time.Time `locationName:"attachTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Device *string `locationName:"device" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
 }
 
 // String returns the string representation
@@ -10942,6 +11181,161 @@ func (s AttachVolumeOutput) String() string {
 // GoString returns the string representation
 func (s AttachVolumeOutput) GoString() string {
 	return s.String()
+}
+
+// SetAttachTime sets the AttachTime field's value.
+func (s *AttachVolumeOutput) SetAttachTime(v time.Time) *AttachVolumeOutput {
+	s.AttachTime = &v
+	return s
+}
+
+// SetDevice sets the Device field's value.
+func (s *AttachVolumeOutput) SetDevice(v string) *AttachVolumeOutput {
+	s.Device = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AttachVolumeOutput) SetInstanceId(v string) *AttachVolumeOutput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *AttachVolumeOutput) SetInstanceUniqueId(v string) *AttachVolumeOutput {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *AttachVolumeOutput) SetRequestId(v string) *AttachVolumeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *AttachVolumeOutput) SetStatus(v string) *AttachVolumeOutput {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *AttachVolumeOutput) SetVolumeId(v string) *AttachVolumeOutput {
+	s.VolumeId = &v
+	return s
+}
+
+// AttachmentItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachmentItemType
+type AttachmentItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// String
+	VpcId *string `locationName:"vpcId" type:"string"`
+}
+
+// String returns the string representation
+func (s AttachmentItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AttachmentItemType) GoString() string {
+	return s.String()
+}
+
+// SetState sets the State field's value.
+func (s *AttachmentItemType) SetState(v string) *AttachmentItemType {
+	s.State = &v
+	return s
+}
+
+// SetVpcId sets the VpcId field's value.
+func (s *AttachmentItemType) SetVpcId(v string) *AttachmentItemType {
+	s.VpcId = &v
+	return s
+}
+
+// AttachmentSetItemResponseType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AttachmentSetItemResponseType
+type AttachmentSetItemResponseType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	AttachTime *time.Time `locationName:"attachTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// Boolean
+	DeleteOnTermination *bool `locationName:"deleteOnTermination" type:"boolean"`
+
+	// String
+	Device *string `locationName:"device" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
+}
+
+// String returns the string representation
+func (s AttachmentSetItemResponseType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AttachmentSetItemResponseType) GoString() string {
+	return s.String()
+}
+
+// SetAttachTime sets the AttachTime field's value.
+func (s *AttachmentSetItemResponseType) SetAttachTime(v time.Time) *AttachmentSetItemResponseType {
+	s.AttachTime = &v
+	return s
+}
+
+// SetDeleteOnTermination sets the DeleteOnTermination field's value.
+func (s *AttachmentSetItemResponseType) SetDeleteOnTermination(v bool) *AttachmentSetItemResponseType {
+	s.DeleteOnTermination = &v
+	return s
+}
+
+// SetDevice sets the Device field's value.
+func (s *AttachmentSetItemResponseType) SetDevice(v string) *AttachmentSetItemResponseType {
+	s.Device = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AttachmentSetItemResponseType) SetInstanceId(v string) *AttachmentSetItemResponseType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *AttachmentSetItemResponseType) SetInstanceUniqueId(v string) *AttachmentSetItemResponseType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *AttachmentSetItemResponseType) SetStatus(v string) *AttachmentSetItemResponseType {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *AttachmentSetItemResponseType) SetVolumeId(v string) *AttachmentSetItemResponseType {
+	s.VolumeId = &v
+	return s
 }
 
 // AuthorizeSecurityGroupIngressRequest
@@ -10987,9 +11381,16 @@ func (s *AuthorizeSecurityGroupIngressInput) SetUserId(v string) *AuthorizeSecur
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//AuthorizeSecurityGroupIngressOutput
+// AuthorizeSecurityGroupIngressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AuthorizeSecurityGroupIngressResult
 type AuthorizeSecurityGroupIngressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -11000,6 +11401,438 @@ func (s AuthorizeSecurityGroupIngressOutput) String() string {
 // GoString returns the string representation
 func (s AuthorizeSecurityGroupIngressOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *AuthorizeSecurityGroupIngressOutput) SetRequestId(v string) *AuthorizeSecurityGroupIngressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *AuthorizeSecurityGroupIngressOutput) SetReturn(v bool) *AuthorizeSecurityGroupIngressOutput {
+	s.Return = &v
+	return s
+}
+
+// AutoScalingInstancesItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AutoScalingInstancesItemType
+type AutoScalingInstancesItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DnsName *string `locationName:"dnsName" type:"string"`
+
+	// TStamp
+	ExpireTime *time.Time `locationName:"expireTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// InstanceStateType
+	InstanceState *InstanceStateType `locationName:"instanceState" type:"structure"`
+
+	// String
+	InstanceType *string `locationName:"instanceType" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+}
+
+// String returns the string representation
+func (s AutoScalingInstancesItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AutoScalingInstancesItemType) GoString() string {
+	return s.String()
+}
+
+// SetDnsName sets the DnsName field's value.
+func (s *AutoScalingInstancesItemType) SetDnsName(v string) *AutoScalingInstancesItemType {
+	s.DnsName = &v
+	return s
+}
+
+// SetExpireTime sets the ExpireTime field's value.
+func (s *AutoScalingInstancesItemType) SetExpireTime(v time.Time) *AutoScalingInstancesItemType {
+	s.ExpireTime = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *AutoScalingInstancesItemType) SetInstanceId(v string) *AutoScalingInstancesItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceState sets the InstanceState field's value.
+func (s *AutoScalingInstancesItemType) SetInstanceState(v *InstanceStateType) *AutoScalingInstancesItemType {
+	s.InstanceState = v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *AutoScalingInstancesItemType) SetInstanceType(v string) *AutoScalingInstancesItemType {
+	s.InstanceType = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *AutoScalingInstancesItemType) SetInstanceUniqueId(v string) *AutoScalingInstancesItemType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// AutoScalingReservationInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AutoScalingReservationInfoType
+type AutoScalingReservationInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Alarm *string `locationName:"alarm" type:"string"`
+
+	// String
+	AutoScalingGroupName *string `locationName:"autoScalingGroupName" type:"string"`
+
+	// Integer
+	ChangeInCapacity *int64 `locationName:"changeInCapacity" type:"integer"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// Integer
+	DefaultCooldown *int64 `locationName:"defaultCooldown" type:"integer"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// String
+	ImageId *string `locationName:"imageId" type:"string"`
+
+	// Integer
+	InstanceLifecycleLimit *int64 `locationName:"instanceLifecycleLimit" type:"integer"`
+
+	// String
+	InstanceType *string `locationName:"instanceType" type:"string"`
+
+	// AutoScalingInstancesSetType
+	InstancesSet []*AutoScalingInstancesItemType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// LoadBalancingSetType
+	LoadBalancing []*LoadBalancingItemType `locationName:"loadBalancing" locationNameList:"item" type:"list"`
+
+	// Integer
+	MaxSize *int64 `locationName:"maxSize" type:"integer"`
+
+	// Integer
+	MinSize *int64 `locationName:"minSize" type:"integer"`
+
+	// PlacementSetType
+	Placement *PlacementSetType `locationName:"placement" type:"structure"`
+
+	// Integer
+	Scaleout *int64 `locationName:"scaleout" type:"integer"`
+
+	// String
+	ScaleoutCondition *string `locationName:"scaleoutCondition" type:"string"`
+
+	// ScheduleSetType
+	ScheduleSet []*ScheduleItemType `locationName:"scheduleSet" locationNameList:"item" type:"list"`
+
+	// TriggerSetType
+	TriggerSet []*TriggerItemType `locationName:"triggerSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s AutoScalingReservationInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AutoScalingReservationInfoType) GoString() string {
+	return s.String()
+}
+
+// SetAlarm sets the Alarm field's value.
+func (s *AutoScalingReservationInfoType) SetAlarm(v string) *AutoScalingReservationInfoType {
+	s.Alarm = &v
+	return s
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *AutoScalingReservationInfoType) SetAutoScalingGroupName(v string) *AutoScalingReservationInfoType {
+	s.AutoScalingGroupName = &v
+	return s
+}
+
+// SetChangeInCapacity sets the ChangeInCapacity field's value.
+func (s *AutoScalingReservationInfoType) SetChangeInCapacity(v int64) *AutoScalingReservationInfoType {
+	s.ChangeInCapacity = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *AutoScalingReservationInfoType) SetCreatedTime(v time.Time) *AutoScalingReservationInfoType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDefaultCooldown sets the DefaultCooldown field's value.
+func (s *AutoScalingReservationInfoType) SetDefaultCooldown(v int64) *AutoScalingReservationInfoType {
+	s.DefaultCooldown = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *AutoScalingReservationInfoType) SetDescription(v string) *AutoScalingReservationInfoType {
+	s.Description = &v
+	return s
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *AutoScalingReservationInfoType) SetGroupSet(v []*GroupItemType) *AutoScalingReservationInfoType {
+	s.GroupSet = v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *AutoScalingReservationInfoType) SetImageId(v string) *AutoScalingReservationInfoType {
+	s.ImageId = &v
+	return s
+}
+
+// SetInstanceLifecycleLimit sets the InstanceLifecycleLimit field's value.
+func (s *AutoScalingReservationInfoType) SetInstanceLifecycleLimit(v int64) *AutoScalingReservationInfoType {
+	s.InstanceLifecycleLimit = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *AutoScalingReservationInfoType) SetInstanceType(v string) *AutoScalingReservationInfoType {
+	s.InstanceType = &v
+	return s
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *AutoScalingReservationInfoType) SetInstancesSet(v []*AutoScalingInstancesItemType) *AutoScalingReservationInfoType {
+	s.InstancesSet = v
+	return s
+}
+
+// SetLoadBalancing sets the LoadBalancing field's value.
+func (s *AutoScalingReservationInfoType) SetLoadBalancing(v []*LoadBalancingItemType) *AutoScalingReservationInfoType {
+	s.LoadBalancing = v
+	return s
+}
+
+// SetMaxSize sets the MaxSize field's value.
+func (s *AutoScalingReservationInfoType) SetMaxSize(v int64) *AutoScalingReservationInfoType {
+	s.MaxSize = &v
+	return s
+}
+
+// SetMinSize sets the MinSize field's value.
+func (s *AutoScalingReservationInfoType) SetMinSize(v int64) *AutoScalingReservationInfoType {
+	s.MinSize = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *AutoScalingReservationInfoType) SetPlacement(v *PlacementSetType) *AutoScalingReservationInfoType {
+	s.Placement = v
+	return s
+}
+
+// SetScaleout sets the Scaleout field's value.
+func (s *AutoScalingReservationInfoType) SetScaleout(v int64) *AutoScalingReservationInfoType {
+	s.Scaleout = &v
+	return s
+}
+
+// SetScaleoutCondition sets the ScaleoutCondition field's value.
+func (s *AutoScalingReservationInfoType) SetScaleoutCondition(v string) *AutoScalingReservationInfoType {
+	s.ScaleoutCondition = &v
+	return s
+}
+
+// SetScheduleSet sets the ScheduleSet field's value.
+func (s *AutoScalingReservationInfoType) SetScheduleSet(v []*ScheduleItemType) *AutoScalingReservationInfoType {
+	s.ScheduleSet = v
+	return s
+}
+
+// SetTriggerSet sets the TriggerSet field's value.
+func (s *AutoScalingReservationInfoType) SetTriggerSet(v []*TriggerItemType) *AutoScalingReservationInfoType {
+	s.TriggerSet = v
+	return s
+}
+
+// AvailabilityZoneItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AvailabilityZoneItemType
+type AvailabilityZoneItemType struct {
+	_ struct{} `type:"structure"`
+
+	// AvailabilityZoneMessageSetType
+	MessageSet []*AvailabilityZoneMessageType `locationName:"messageSet" locationNameList:"item" type:"list"`
+
+	// String
+	RegionName *string `locationName:"regionName" type:"string"`
+
+	// String
+	ZoneName *string `locationName:"zoneName" type:"string"`
+
+	// String
+	ZoneState *string `locationName:"zoneState" type:"string"`
+}
+
+// String returns the string representation
+func (s AvailabilityZoneItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AvailabilityZoneItemType) GoString() string {
+	return s.String()
+}
+
+// SetMessageSet sets the MessageSet field's value.
+func (s *AvailabilityZoneItemType) SetMessageSet(v []*AvailabilityZoneMessageType) *AvailabilityZoneItemType {
+	s.MessageSet = v
+	return s
+}
+
+// SetRegionName sets the RegionName field's value.
+func (s *AvailabilityZoneItemType) SetRegionName(v string) *AvailabilityZoneItemType {
+	s.RegionName = &v
+	return s
+}
+
+// SetZoneName sets the ZoneName field's value.
+func (s *AvailabilityZoneItemType) SetZoneName(v string) *AvailabilityZoneItemType {
+	s.ZoneName = &v
+	return s
+}
+
+// SetZoneState sets the ZoneState field's value.
+func (s *AvailabilityZoneItemType) SetZoneState(v string) *AvailabilityZoneItemType {
+	s.ZoneState = &v
+	return s
+}
+
+// AvailabilityZoneMessageType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//AvailabilityZoneMessageType
+type AvailabilityZoneMessageType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Message *string `locationName:"message" type:"string"`
+}
+
+// String returns the string representation
+func (s AvailabilityZoneMessageType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s AvailabilityZoneMessageType) GoString() string {
+	return s.String()
+}
+
+// SetMessage sets the Message field's value.
+func (s *AvailabilityZoneMessageType) SetMessage(v string) *AvailabilityZoneMessageType {
+	s.Message = &v
+	return s
+}
+
+// BackupInformationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//BackupInformationType
+type BackupInformationType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	ExpirationDate *time.Time `locationName:"expirationDate" type:"timestamp" timestampFormat:"iso8601"`
+
+	// Boolean
+	IsBackup *bool `locationName:"isBackup" type:"boolean"`
+}
+
+// String returns the string representation
+func (s BackupInformationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s BackupInformationType) GoString() string {
+	return s.String()
+}
+
+// SetExpirationDate sets the ExpirationDate field's value.
+func (s *BackupInformationType) SetExpirationDate(v time.Time) *BackupInformationType {
+	s.ExpirationDate = &v
+	return s
+}
+
+// SetIsBackup sets the IsBackup field's value.
+func (s *BackupInformationType) SetIsBackup(v bool) *BackupInformationType {
+	s.IsBackup = &v
+	return s
+}
+
+// BlockDeviceMappingItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//BlockDeviceMappingItemType
+type BlockDeviceMappingItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DeviceName *string `locationName:"deviceName" type:"string"`
+
+	// EbsBlockDeviceType
+	Ebs *EbsBlockDeviceType `locationName:"ebs" type:"structure"`
+
+	// String
+	NoDevice *string `locationName:"noDevice" type:"string"`
+
+	// String
+	VirtualName *string `locationName:"virtualName" type:"string"`
+}
+
+// String returns the string representation
+func (s BlockDeviceMappingItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s BlockDeviceMappingItemType) GoString() string {
+	return s.String()
+}
+
+// SetDeviceName sets the DeviceName field's value.
+func (s *BlockDeviceMappingItemType) SetDeviceName(v string) *BlockDeviceMappingItemType {
+	s.DeviceName = &v
+	return s
+}
+
+// SetEbs sets the Ebs field's value.
+func (s *BlockDeviceMappingItemType) SetEbs(v *EbsBlockDeviceType) *BlockDeviceMappingItemType {
+	s.Ebs = v
+	return s
+}
+
+// SetNoDevice sets the NoDevice field's value.
+func (s *BlockDeviceMappingItemType) SetNoDevice(v string) *BlockDeviceMappingItemType {
+	s.NoDevice = &v
+	return s
+}
+
+// SetVirtualName sets the VirtualName field's value.
+func (s *BlockDeviceMappingItemType) SetVirtualName(v string) *BlockDeviceMappingItemType {
+	s.VirtualName = &v
+	return s
 }
 
 // BypassInterfaceStruct
@@ -11061,9 +11894,13 @@ func (s *CancelCopyInstancesInput) SetInstanceId(v string) *CancelCopyInstancesI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelCopyInstancesOutput
+// CancelCopyInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelCopyInstancesResult
 type CancelCopyInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11074,6 +11911,12 @@ func (s CancelCopyInstancesOutput) String() string {
 // GoString returns the string representation
 func (s CancelCopyInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CancelCopyInstancesOutput) SetRequestId(v string) *CancelCopyInstancesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CancelUploadRequest
@@ -11116,9 +11959,16 @@ func (s *CancelUploadInput) SetConversionTaskId(v string) *CancelUploadInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelUploadOutput
+// CancelUploadResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CancelUploadResult
 type CancelUploadOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -11129,6 +11979,18 @@ func (s CancelUploadOutput) String() string {
 // GoString returns the string representation
 func (s CancelUploadOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CancelUploadOutput) SetRequestId(v string) *CancelUploadOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *CancelUploadOutput) SetReturn(v bool) *CancelUploadOutput {
+	s.Return = &v
+	return s
 }
 
 // CertInfoStruct
@@ -11198,6 +12060,182 @@ func (s *CertInfoStruct) SetOrganizationUnitName(v string) *CertInfoStruct {
 // SetStateName sets the StateName field's value.
 func (s *CertInfoStruct) SetStateName(v string) *CertInfoStruct {
 	s.StateName = &v
+	return s
+}
+
+// CertInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CertInfoType
+type CertInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CountryName *string `locationName:"countryName" type:"string"`
+
+	// String
+	EmailAddress *string `locationName:"emailAddress" type:"string"`
+
+	// String
+	LocationName *string `locationName:"locationName" type:"string"`
+
+	// String
+	OrganizationName *string `locationName:"organizationName" type:"string"`
+
+	// String
+	OrganizationUnitName *string `locationName:"organizationUnitName" type:"string"`
+
+	// String
+	StateName *string `locationName:"stateName" type:"string"`
+}
+
+// String returns the string representation
+func (s CertInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CertInfoType) GoString() string {
+	return s.String()
+}
+
+// SetCountryName sets the CountryName field's value.
+func (s *CertInfoType) SetCountryName(v string) *CertInfoType {
+	s.CountryName = &v
+	return s
+}
+
+// SetEmailAddress sets the EmailAddress field's value.
+func (s *CertInfoType) SetEmailAddress(v string) *CertInfoType {
+	s.EmailAddress = &v
+	return s
+}
+
+// SetLocationName sets the LocationName field's value.
+func (s *CertInfoType) SetLocationName(v string) *CertInfoType {
+	s.LocationName = &v
+	return s
+}
+
+// SetOrganizationName sets the OrganizationName field's value.
+func (s *CertInfoType) SetOrganizationName(v string) *CertInfoType {
+	s.OrganizationName = &v
+	return s
+}
+
+// SetOrganizationUnitName sets the OrganizationUnitName field's value.
+func (s *CertInfoType) SetOrganizationUnitName(v string) *CertInfoType {
+	s.OrganizationUnitName = &v
+	return s
+}
+
+// SetStateName sets the StateName field's value.
+func (s *CertInfoType) SetStateName(v string) *CertInfoType {
+	s.StateName = &v
+	return s
+}
+
+// CertsSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CertsSetItemType
+type CertsSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CertAuthority *string `locationName:"certAuthority" type:"string"`
+
+	// CertInfoType
+	CertInfo *CertInfoType `locationName:"certInfo" type:"structure"`
+
+	// String
+	CertState *string `locationName:"certState" type:"string"`
+
+	// Integer
+	Count *int64 `locationName:"count" type:"integer"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	Fqdn *string `locationName:"fqdn" type:"string"`
+
+	// String
+	FqdnId *string `locationName:"fqdnId" type:"string"`
+
+	// Integer
+	KeyLength *int64 `locationName:"keyLength" type:"integer"`
+
+	// ValidDateType
+	Period *ValidDateType `locationName:"period" type:"structure"`
+
+	// Boolean
+	UploadState *bool `locationName:"uploadState" type:"boolean"`
+}
+
+// String returns the string representation
+func (s CertsSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CertsSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetCertAuthority sets the CertAuthority field's value.
+func (s *CertsSetItemType) SetCertAuthority(v string) *CertsSetItemType {
+	s.CertAuthority = &v
+	return s
+}
+
+// SetCertInfo sets the CertInfo field's value.
+func (s *CertsSetItemType) SetCertInfo(v *CertInfoType) *CertsSetItemType {
+	s.CertInfo = v
+	return s
+}
+
+// SetCertState sets the CertState field's value.
+func (s *CertsSetItemType) SetCertState(v string) *CertsSetItemType {
+	s.CertState = &v
+	return s
+}
+
+// SetCount sets the Count field's value.
+func (s *CertsSetItemType) SetCount(v int64) *CertsSetItemType {
+	s.Count = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *CertsSetItemType) SetDescription(v string) *CertsSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *CertsSetItemType) SetFqdn(v string) *CertsSetItemType {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *CertsSetItemType) SetFqdnId(v string) *CertsSetItemType {
+	s.FqdnId = &v
+	return s
+}
+
+// SetKeyLength sets the KeyLength field's value.
+func (s *CertsSetItemType) SetKeyLength(v int64) *CertsSetItemType {
+	s.KeyLength = &v
+	return s
+}
+
+// SetPeriod sets the Period field's value.
+func (s *CertsSetItemType) SetPeriod(v *ValidDateType) *CertsSetItemType {
+	s.Period = v
+	return s
+}
+
+// SetUploadState sets the UploadState field's value.
+func (s *CertsSetItemType) SetUploadState(v bool) *CertsSetItemType {
+	s.UploadState = &v
 	return s
 }
 
@@ -11366,9 +12404,13 @@ func (s *ConfigureHealthCheckInput) SetLoadBalancerPort(v int64) *ConfigureHealt
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ConfigureHealthCheckOutput
+// ConfigureHealthCheckResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ConfigureHealthCheckResult
 type ConfigureHealthCheckOutput struct {
 	_ struct{} `type:"structure"`
+
+	// HealthCheck
+	HealthCheck *HealthCheck `locationName:"HealthCheck" type:"structure"`
 }
 
 // String returns the string representation
@@ -11379,6 +12421,134 @@ func (s ConfigureHealthCheckOutput) String() string {
 // GoString returns the string representation
 func (s ConfigureHealthCheckOutput) GoString() string {
 	return s.String()
+}
+
+// SetHealthCheck sets the HealthCheck field's value.
+func (s *ConfigureHealthCheckOutput) SetHealthCheck(v *HealthCheck) *ConfigureHealthCheckOutput {
+	s.HealthCheck = v
+	return s
+}
+
+// ConversionTaskType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ConversionTaskType
+type ConversionTaskType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	ConversionTaskId *string `locationName:"conversionTaskId" type:"string"`
+
+	// String
+	ExpirationTime *string `locationName:"expirationTime" type:"string"`
+
+	// ImportInstanceTaskDetailsType
+	ImportInstance *ImportInstanceTaskDetailsType `locationName:"importInstance" type:"structure"`
+
+	// NetworkInterfaceSetType
+	NetworkInterfaceSet []*InstanceNetworkInterfaceSetItemType `locationName:"networkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// String
+	StatusMessage *string `locationName:"statusMessage" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s ConversionTaskType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ConversionTaskType) GoString() string {
+	return s.String()
+}
+
+// SetConversionTaskId sets the ConversionTaskId field's value.
+func (s *ConversionTaskType) SetConversionTaskId(v string) *ConversionTaskType {
+	s.ConversionTaskId = &v
+	return s
+}
+
+// SetExpirationTime sets the ExpirationTime field's value.
+func (s *ConversionTaskType) SetExpirationTime(v string) *ConversionTaskType {
+	s.ExpirationTime = &v
+	return s
+}
+
+// SetImportInstance sets the ImportInstance field's value.
+func (s *ConversionTaskType) SetImportInstance(v *ImportInstanceTaskDetailsType) *ConversionTaskType {
+	s.ImportInstance = v
+	return s
+}
+
+// SetNetworkInterfaceSet sets the NetworkInterfaceSet field's value.
+func (s *ConversionTaskType) SetNetworkInterfaceSet(v []*InstanceNetworkInterfaceSetItemType) *ConversionTaskType {
+	s.NetworkInterfaceSet = v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *ConversionTaskType) SetState(v string) *ConversionTaskType {
+	s.State = &v
+	return s
+}
+
+// SetStatusMessage sets the StatusMessage field's value.
+func (s *ConversionTaskType) SetStatusMessage(v string) *ConversionTaskType {
+	s.StatusMessage = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *ConversionTaskType) SetTagSet(v []*ResourceTagSetItemType) *ConversionTaskType {
+	s.TagSet = v
+	return s
+}
+
+// CopyInstanceSet
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstanceSet
+type CopyInstanceSet struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceState *string `locationName:"instanceState" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+}
+
+// String returns the string representation
+func (s CopyInstanceSet) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CopyInstanceSet) GoString() string {
+	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *CopyInstanceSet) SetInstanceId(v string) *CopyInstanceSet {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceState sets the InstanceState field's value.
+func (s *CopyInstanceSet) SetInstanceState(v string) *CopyInstanceSet {
+	s.InstanceState = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *CopyInstanceSet) SetInstanceUniqueId(v string) *CopyInstanceSet {
+	s.InstanceUniqueId = &v
+	return s
 }
 
 // CopyInstanceStruct
@@ -11532,9 +12702,16 @@ func (s *CopyInstancesInput) SetNetworkInterfaceList(v []*string) *CopyInstances
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstancesOutput
+// CopyInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CopyInstancesResult
 type CopyInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// CopyInstanceSets
+	CopyInstanceSet []*CopyInstanceSet `locationName:"copyInstanceSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11545,6 +12722,18 @@ func (s CopyInstancesOutput) String() string {
 // GoString returns the string representation
 func (s CopyInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetCopyInstanceSet sets the CopyInstanceSet field's value.
+func (s *CopyInstancesOutput) SetCopyInstanceSet(v []*CopyInstanceSet) *CopyInstancesOutput {
+	s.CopyInstanceSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CopyInstancesOutput) SetRequestId(v string) *CopyInstancesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CourseUpdateStruct
@@ -11666,9 +12855,16 @@ func (s *CreateCustomerGatewayInput) SetType(v string) *CreateCustomerGatewayInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateCustomerGatewayOutput
+// CreateCustomerGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateCustomerGatewayResult
 type CreateCustomerGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// CustomerGatewayType
+	CustomerGateway *CustomerGatewayType `locationName:"customerGateway" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11679,6 +12875,18 @@ func (s CreateCustomerGatewayOutput) String() string {
 // GoString returns the string representation
 func (s CreateCustomerGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetCustomerGateway sets the CustomerGateway field's value.
+func (s *CreateCustomerGatewayOutput) SetCustomerGateway(v *CustomerGatewayType) *CreateCustomerGatewayOutput {
+	s.CustomerGateway = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateCustomerGatewayOutput) SetRequestId(v string) *CreateCustomerGatewayOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CreateDhcpOptionsRequest
@@ -11721,9 +12929,16 @@ func (s *CreateDhcpOptionsInput) SetDhcpConfigurationList(v [][]*string) *Create
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateDhcpOptionsOutput
+// CreateDhcpOptionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateDhcpOptionsResult
 type CreateDhcpOptionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpOptionsType
+	DhcpOptions *DhcpOptionsType `locationName:"dhcpOptions" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11734,6 +12949,18 @@ func (s CreateDhcpOptionsOutput) String() string {
 // GoString returns the string representation
 func (s CreateDhcpOptionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpOptions sets the DhcpOptions field's value.
+func (s *CreateDhcpOptionsOutput) SetDhcpOptions(v *DhcpOptionsType) *CreateDhcpOptionsOutput {
+	s.DhcpOptions = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateDhcpOptionsOutput) SetRequestId(v string) *CreateDhcpOptionsOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CreateImageRequest
@@ -11826,9 +13053,19 @@ func (s *CreateImageInput) SetPlacement(v *PlacementStruct) *CreateImageInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateImageOutput
+// CreateImageResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateImageResult
 type CreateImageOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	ImageId *string `locationName:"imageId" type:"string"`
+
+	// String
+	ImageState *string `locationName:"imageState" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11839,6 +13076,24 @@ func (s CreateImageOutput) String() string {
 // GoString returns the string representation
 func (s CreateImageOutput) GoString() string {
 	return s.String()
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *CreateImageOutput) SetImageId(v string) *CreateImageOutput {
+	s.ImageId = &v
+	return s
+}
+
+// SetImageState sets the ImageState field's value.
+func (s *CreateImageOutput) SetImageState(v string) *CreateImageOutput {
+	s.ImageState = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateImageOutput) SetRequestId(v string) *CreateImageOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CreateKeyPairRequest
@@ -11904,9 +13159,22 @@ func (s *CreateKeyPairInput) SetPassword(v string) *CreateKeyPairInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateKeyPairOutput
+// CreateKeyPairResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateKeyPairResult
 type CreateKeyPairOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	KeyFingerprint *string `locationName:"keyFingerprint" type:"string"`
+
+	// String
+	KeyMaterial *string `locationName:"keyMaterial" type:"string"`
+
+	// String
+	KeyName *string `locationName:"keyName" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -11917,6 +13185,30 @@ func (s CreateKeyPairOutput) String() string {
 // GoString returns the string representation
 func (s CreateKeyPairOutput) GoString() string {
 	return s.String()
+}
+
+// SetKeyFingerprint sets the KeyFingerprint field's value.
+func (s *CreateKeyPairOutput) SetKeyFingerprint(v string) *CreateKeyPairOutput {
+	s.KeyFingerprint = &v
+	return s
+}
+
+// SetKeyMaterial sets the KeyMaterial field's value.
+func (s *CreateKeyPairOutput) SetKeyMaterial(v string) *CreateKeyPairOutput {
+	s.KeyMaterial = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *CreateKeyPairOutput) SetKeyName(v string) *CreateKeyPairOutput {
+	s.KeyName = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateKeyPairOutput) SetRequestId(v string) *CreateKeyPairOutput {
+	s.RequestId = &v
+	return s
 }
 
 // CreateLoadBalancerRequest
@@ -12004,9 +13296,13 @@ func (s *CreateLoadBalancerInput) SetNetworkVolume(v int64) *CreateLoadBalancerI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateLoadBalancerOutput
+// CreateLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateLoadBalancerResult
 type CreateLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	DNSName *string `locationName:"DNSName" type:"string"`
 }
 
 // String returns the string representation
@@ -12017,6 +13313,12 @@ func (s CreateLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s CreateLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetDNSName sets the DNSName field's value.
+func (s *CreateLoadBalancerOutput) SetDNSName(v string) *CreateLoadBalancerOutput {
+	s.DNSName = &v
+	return s
 }
 
 // CreateRouteRequest
@@ -12136,9 +13438,16 @@ func (s *CreateRouteInput) SetVpcPeeringConnectionId(v string) *CreateRouteInput
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteOutput
+// CreateRouteResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteResult
 type CreateRouteOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -12149,6 +13458,18 @@ func (s CreateRouteOutput) String() string {
 // GoString returns the string representation
 func (s CreateRouteOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateRouteOutput) SetRequestId(v string) *CreateRouteOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *CreateRouteOutput) SetReturn(v bool) *CreateRouteOutput {
+	s.Return = &v
+	return s
 }
 
 // CreateRouteTableRequest
@@ -12176,9 +13497,16 @@ func (s *CreateRouteTableInput) SetVpcId(v string) *CreateRouteTableInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteTableOutput
+// CreateRouteTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateRouteTableResult
 type CreateRouteTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouteTableType
+	RouteTable *RouteTableType `locationName:"routeTable" type:"structure"`
 }
 
 // String returns the string representation
@@ -12189,6 +13517,18 @@ func (s CreateRouteTableOutput) String() string {
 // GoString returns the string representation
 func (s CreateRouteTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateRouteTableOutput) SetRequestId(v string) *CreateRouteTableOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouteTable sets the RouteTable field's value.
+func (s *CreateRouteTableOutput) SetRouteTable(v *RouteTableType) *CreateRouteTableOutput {
+	s.RouteTable = v
+	return s
 }
 
 // CreateSecurityGroupRequest
@@ -12234,9 +13574,16 @@ func (s *CreateSecurityGroupInput) SetPlacement(v *PlacementStruct) *CreateSecur
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSecurityGroupOutput
+// CreateSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSecurityGroupResult
 type CreateSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -12247,6 +13594,18 @@ func (s CreateSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s CreateSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateSecurityGroupOutput) SetRequestId(v string) *CreateSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *CreateSecurityGroupOutput) SetReturn(v bool) *CreateSecurityGroupOutput {
+	s.Return = &v
+	return s
 }
 
 // CreateSslCertificateRequest
@@ -12337,9 +13696,31 @@ func (s *CreateSslCertificateInput) SetValidityTerm(v int64) *CreateSslCertifica
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSslCertificateOutput
+// CreateSslCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateSslCertificateResult
 type CreateSslCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Integer
+	ApproverEmailAddress *int64 `locationName:"approverEmailAddress" type:"integer"`
+
+	// String
+	CertAuthority *string `locationName:"certAuthority" type:"string"`
+
+	// String
+	CertState *string `locationName:"certState" type:"string"`
+
+	// String
+	Fqdn *string `locationName:"fqdn" type:"string"`
+
+	// String
+	FqdnId *string `locationName:"fqdnId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Integer
+	ValidityTerm *int64 `locationName:"validityTerm" type:"integer"`
 }
 
 // String returns the string representation
@@ -12350,6 +13731,48 @@ func (s CreateSslCertificateOutput) String() string {
 // GoString returns the string representation
 func (s CreateSslCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// SetApproverEmailAddress sets the ApproverEmailAddress field's value.
+func (s *CreateSslCertificateOutput) SetApproverEmailAddress(v int64) *CreateSslCertificateOutput {
+	s.ApproverEmailAddress = &v
+	return s
+}
+
+// SetCertAuthority sets the CertAuthority field's value.
+func (s *CreateSslCertificateOutput) SetCertAuthority(v string) *CreateSslCertificateOutput {
+	s.CertAuthority = &v
+	return s
+}
+
+// SetCertState sets the CertState field's value.
+func (s *CreateSslCertificateOutput) SetCertState(v string) *CreateSslCertificateOutput {
+	s.CertState = &v
+	return s
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *CreateSslCertificateOutput) SetFqdn(v string) *CreateSslCertificateOutput {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *CreateSslCertificateOutput) SetFqdnId(v string) *CreateSslCertificateOutput {
+	s.FqdnId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateSslCertificateOutput) SetRequestId(v string) *CreateSslCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetValidityTerm sets the ValidityTerm field's value.
+func (s *CreateSslCertificateOutput) SetValidityTerm(v int64) *CreateSslCertificateOutput {
+	s.ValidityTerm = &v
+	return s
 }
 
 // CreateVolumeRequest
@@ -12440,9 +13863,37 @@ func (s *CreateVolumeInput) SetVolumeId(v string) *CreateVolumeInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVolumeOutput
+// CreateVolumeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVolumeResult
 type CreateVolumeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// TStamp
+	CreateTime *time.Time `locationName:"createTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	DiskType *string `locationName:"diskType" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	Size *string `locationName:"size" type:"string"`
+
+	// String
+	SnapshotId *string `locationName:"snapshotId" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
 }
 
 // String returns the string representation
@@ -12453,6 +13904,60 @@ func (s CreateVolumeOutput) String() string {
 // GoString returns the string representation
 func (s CreateVolumeOutput) GoString() string {
 	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *CreateVolumeOutput) SetAccountingType(v string) *CreateVolumeOutput {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *CreateVolumeOutput) SetAvailabilityZone(v string) *CreateVolumeOutput {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCreateTime sets the CreateTime field's value.
+func (s *CreateVolumeOutput) SetCreateTime(v time.Time) *CreateVolumeOutput {
+	s.CreateTime = &v
+	return s
+}
+
+// SetDiskType sets the DiskType field's value.
+func (s *CreateVolumeOutput) SetDiskType(v string) *CreateVolumeOutput {
+	s.DiskType = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateVolumeOutput) SetRequestId(v string) *CreateVolumeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSize sets the Size field's value.
+func (s *CreateVolumeOutput) SetSize(v string) *CreateVolumeOutput {
+	s.Size = &v
+	return s
+}
+
+// SetSnapshotId sets the SnapshotId field's value.
+func (s *CreateVolumeOutput) SetSnapshotId(v string) *CreateVolumeOutput {
+	s.SnapshotId = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *CreateVolumeOutput) SetStatus(v string) *CreateVolumeOutput {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *CreateVolumeOutput) SetVolumeId(v string) *CreateVolumeOutput {
+	s.VolumeId = &v
+	return s
 }
 
 // CreateVpnConnectionRequest
@@ -12608,9 +14113,16 @@ func (s *CreateVpnConnectionInput) SetVpnGatewayId(v string) *CreateVpnConnectio
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnConnectionOutput
+// CreateVpnConnectionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnConnectionResult
 type CreateVpnConnectionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnConnectionType
+	VpnConnection *VpnConnectionType `locationName:"vpnConnection" type:"structure"`
 }
 
 // String returns the string representation
@@ -12621,6 +14133,18 @@ func (s CreateVpnConnectionOutput) String() string {
 // GoString returns the string representation
 func (s CreateVpnConnectionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateVpnConnectionOutput) SetRequestId(v string) *CreateVpnConnectionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnConnection sets the VpnConnection field's value.
+func (s *CreateVpnConnectionOutput) SetVpnConnection(v *VpnConnectionType) *CreateVpnConnectionOutput {
+	s.VpnConnection = v
+	return s
 }
 
 // CreateVpnGatewayRequest
@@ -12720,9 +14244,16 @@ func (s *CreateVpnGatewayInput) SetType(v string) *CreateVpnGatewayInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnGatewayOutput
+// CreateVpnGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateVpnGatewayResult
 type CreateVpnGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnGatewayType
+	VpnGateway *VpnGatewayType `locationName:"vpnGateway" type:"structure"`
 }
 
 // String returns the string representation
@@ -12733,6 +14264,282 @@ func (s CreateVpnGatewayOutput) String() string {
 // GoString returns the string representation
 func (s CreateVpnGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *CreateVpnGatewayOutput) SetRequestId(v string) *CreateVpnGatewayOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnGateway sets the VpnGateway field's value.
+func (s *CreateVpnGatewayOutput) SetVpnGateway(v *VpnGatewayType) *CreateVpnGatewayOutput {
+	s.VpnGateway = v
+	return s
+}
+
+// CustomerGatewayItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CustomerGatewayItemType
+type CustomerGatewayItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	BgpAsn *string `locationName:"bgpAsn" type:"string"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	CustomerGatewayId *string `locationName:"customerGatewayId" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NiftyCustomerGatewayDescription *string `locationName:"niftyCustomerGatewayDescription" type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `locationName:"niftyCustomerGatewayName" type:"string"`
+
+	// String
+	NiftyLanSideCidrBlock *string `locationName:"niftyLanSideCidrBlock" type:"string"`
+
+	// String
+	NiftyLanSideIpAddress *string `locationName:"niftyLanSideIpAddress" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s CustomerGatewayItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CustomerGatewayItemType) GoString() string {
+	return s.String()
+}
+
+// SetBgpAsn sets the BgpAsn field's value.
+func (s *CustomerGatewayItemType) SetBgpAsn(v string) *CustomerGatewayItemType {
+	s.BgpAsn = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *CustomerGatewayItemType) SetCreatedTime(v time.Time) *CustomerGatewayItemType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetCustomerGatewayId sets the CustomerGatewayId field's value.
+func (s *CustomerGatewayItemType) SetCustomerGatewayId(v string) *CustomerGatewayItemType {
+	s.CustomerGatewayId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *CustomerGatewayItemType) SetIpAddress(v string) *CustomerGatewayItemType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayDescription sets the NiftyCustomerGatewayDescription field's value.
+func (s *CustomerGatewayItemType) SetNiftyCustomerGatewayDescription(v string) *CustomerGatewayItemType {
+	s.NiftyCustomerGatewayDescription = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *CustomerGatewayItemType) SetNiftyCustomerGatewayName(v string) *CustomerGatewayItemType {
+	s.NiftyCustomerGatewayName = &v
+	return s
+}
+
+// SetNiftyLanSideCidrBlock sets the NiftyLanSideCidrBlock field's value.
+func (s *CustomerGatewayItemType) SetNiftyLanSideCidrBlock(v string) *CustomerGatewayItemType {
+	s.NiftyLanSideCidrBlock = &v
+	return s
+}
+
+// SetNiftyLanSideIpAddress sets the NiftyLanSideIpAddress field's value.
+func (s *CustomerGatewayItemType) SetNiftyLanSideIpAddress(v string) *CustomerGatewayItemType {
+	s.NiftyLanSideIpAddress = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *CustomerGatewayItemType) SetState(v string) *CustomerGatewayItemType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *CustomerGatewayItemType) SetTagSet(v []*ResourceTagSetItemType) *CustomerGatewayItemType {
+	s.TagSet = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *CustomerGatewayItemType) SetType(v string) *CustomerGatewayItemType {
+	s.Type = &v
+	return s
+}
+
+// CustomerGatewayType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CustomerGatewayType
+type CustomerGatewayType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	BgpAsn *string `locationName:"bgpAsn" type:"string"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	CustomerGatewayId *string `locationName:"customerGatewayId" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NiftyCustomerGatewayDescription *string `locationName:"niftyCustomerGatewayDescription" type:"string"`
+
+	// String
+	NiftyCustomerGatewayName *string `locationName:"niftyCustomerGatewayName" type:"string"`
+
+	// String
+	NiftyLanSideCidrBlock *string `locationName:"niftyLanSideCidrBlock" type:"string"`
+
+	// String
+	NiftyLanSideIpAddress *string `locationName:"niftyLanSideIpAddress" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s CustomerGatewayType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s CustomerGatewayType) GoString() string {
+	return s.String()
+}
+
+// SetBgpAsn sets the BgpAsn field's value.
+func (s *CustomerGatewayType) SetBgpAsn(v string) *CustomerGatewayType {
+	s.BgpAsn = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *CustomerGatewayType) SetCreatedTime(v time.Time) *CustomerGatewayType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetCustomerGatewayId sets the CustomerGatewayId field's value.
+func (s *CustomerGatewayType) SetCustomerGatewayId(v string) *CustomerGatewayType {
+	s.CustomerGatewayId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *CustomerGatewayType) SetIpAddress(v string) *CustomerGatewayType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayDescription sets the NiftyCustomerGatewayDescription field's value.
+func (s *CustomerGatewayType) SetNiftyCustomerGatewayDescription(v string) *CustomerGatewayType {
+	s.NiftyCustomerGatewayDescription = &v
+	return s
+}
+
+// SetNiftyCustomerGatewayName sets the NiftyCustomerGatewayName field's value.
+func (s *CustomerGatewayType) SetNiftyCustomerGatewayName(v string) *CustomerGatewayType {
+	s.NiftyCustomerGatewayName = &v
+	return s
+}
+
+// SetNiftyLanSideCidrBlock sets the NiftyLanSideCidrBlock field's value.
+func (s *CustomerGatewayType) SetNiftyLanSideCidrBlock(v string) *CustomerGatewayType {
+	s.NiftyLanSideCidrBlock = &v
+	return s
+}
+
+// SetNiftyLanSideIpAddress sets the NiftyLanSideIpAddress field's value.
+func (s *CustomerGatewayType) SetNiftyLanSideIpAddress(v string) *CustomerGatewayType {
+	s.NiftyLanSideIpAddress = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *CustomerGatewayType) SetState(v string) *CustomerGatewayType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *CustomerGatewayType) SetTagSet(v []*ResourceTagSetItemType) *CustomerGatewayType {
+	s.TagSet = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *CustomerGatewayType) SetType(v string) *CustomerGatewayType {
+	s.Type = &v
+	return s
+}
+
+// DataItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DataItemType
+type DataItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DateTime *string `locationName:"dateTime" type:"string"`
+
+	// String
+	Value *string `locationName:"value" type:"string"`
+}
+
+// String returns the string representation
+func (s DataItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DataItemType) GoString() string {
+	return s.String()
+}
+
+// SetDateTime sets the DateTime field's value.
+func (s *DataItemType) SetDateTime(v string) *DataItemType {
+	s.DateTime = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *DataItemType) SetValue(v string) *DataItemType {
+	s.Value = &v
+	return s
 }
 
 // DeleteCustomerGatewayRequest
@@ -12769,9 +14576,16 @@ func (s *DeleteCustomerGatewayInput) SetNiftyCustomerGatewayName(v string) *Dele
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteCustomerGatewayOutput
+// DeleteCustomerGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteCustomerGatewayResult
 type DeleteCustomerGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -12782,6 +14596,18 @@ func (s DeleteCustomerGatewayOutput) String() string {
 // GoString returns the string representation
 func (s DeleteCustomerGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteCustomerGatewayOutput) SetRequestId(v string) *DeleteCustomerGatewayOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteCustomerGatewayOutput) SetReturn(v bool) *DeleteCustomerGatewayOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteDhcpOptionsRequest
@@ -12824,9 +14650,16 @@ func (s *DeleteDhcpOptionsInput) SetDhcpOptionsId(v string) *DeleteDhcpOptionsIn
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteDhcpOptionsOutput
+// DeleteDhcpOptionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteDhcpOptionsResult
 type DeleteDhcpOptionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -12837,6 +14670,18 @@ func (s DeleteDhcpOptionsOutput) String() string {
 // GoString returns the string representation
 func (s DeleteDhcpOptionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteDhcpOptionsOutput) SetRequestId(v string) *DeleteDhcpOptionsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteDhcpOptionsOutput) SetReturn(v bool) *DeleteDhcpOptionsOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteImageRequest
@@ -12879,9 +14724,13 @@ func (s *DeleteImageInput) SetImageId(v string) *DeleteImageInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteImageOutput
+// DeleteImageResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteImageResult
 type DeleteImageOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -12892,6 +14741,12 @@ func (s DeleteImageOutput) String() string {
 // GoString returns the string representation
 func (s DeleteImageOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteImageOutput) SetRequestId(v string) *DeleteImageOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DeleteKeyPairRequest
@@ -12934,9 +14789,16 @@ func (s *DeleteKeyPairInput) SetKeyName(v string) *DeleteKeyPairInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteKeyPairOutput
+// DeleteKeyPairResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteKeyPairResult
 type DeleteKeyPairOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -12947,6 +14809,18 @@ func (s DeleteKeyPairOutput) String() string {
 // GoString returns the string representation
 func (s DeleteKeyPairOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteKeyPairOutput) SetRequestId(v string) *DeleteKeyPairOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteKeyPairOutput) SetReturn(v bool) *DeleteKeyPairOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteLoadBalancerRequest
@@ -13086,9 +14960,16 @@ func (s *DeleteRouteInput) SetRouteTableId(v string) *DeleteRouteInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteOutput
+// DeleteRouteResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteResult
 type DeleteRouteOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13099,6 +14980,18 @@ func (s DeleteRouteOutput) String() string {
 // GoString returns the string representation
 func (s DeleteRouteOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteRouteOutput) SetRequestId(v string) *DeleteRouteOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteRouteOutput) SetReturn(v bool) *DeleteRouteOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteRouteTableRequest
@@ -13141,9 +15034,16 @@ func (s *DeleteRouteTableInput) SetRouteTableId(v string) *DeleteRouteTableInput
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteTableOutput
+// DeleteRouteTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteRouteTableResult
 type DeleteRouteTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13154,6 +15054,18 @@ func (s DeleteRouteTableOutput) String() string {
 // GoString returns the string representation
 func (s DeleteRouteTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteRouteTableOutput) SetRequestId(v string) *DeleteRouteTableOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteRouteTableOutput) SetReturn(v bool) *DeleteRouteTableOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteSecurityGroupRequest
@@ -13181,9 +15093,16 @@ func (s *DeleteSecurityGroupInput) SetGroupName(v string) *DeleteSecurityGroupIn
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSecurityGroupOutput
+// DeleteSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSecurityGroupResult
 type DeleteSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13194,6 +15113,18 @@ func (s DeleteSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s DeleteSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteSecurityGroupOutput) SetRequestId(v string) *DeleteSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteSecurityGroupOutput) SetReturn(v bool) *DeleteSecurityGroupOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteSslCertificateRequest
@@ -13236,9 +15167,16 @@ func (s *DeleteSslCertificateInput) SetFqdnId(v string) *DeleteSslCertificateInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSslCertificateOutput
+// DeleteSslCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteSslCertificateResult
 type DeleteSslCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13249,6 +15187,18 @@ func (s DeleteSslCertificateOutput) String() string {
 // GoString returns the string representation
 func (s DeleteSslCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteSslCertificateOutput) SetRequestId(v string) *DeleteSslCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteSslCertificateOutput) SetReturn(v bool) *DeleteSslCertificateOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteVolumeRequest
@@ -13276,9 +15226,16 @@ func (s *DeleteVolumeInput) SetVolumeId(v string) *DeleteVolumeInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVolumeOutput
+// DeleteVolumeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVolumeResult
 type DeleteVolumeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13289,6 +15246,18 @@ func (s DeleteVolumeOutput) String() string {
 // GoString returns the string representation
 func (s DeleteVolumeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteVolumeOutput) SetRequestId(v string) *DeleteVolumeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteVolumeOutput) SetReturn(v bool) *DeleteVolumeOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteVpnConnectionRequest
@@ -13340,9 +15309,16 @@ func (s *DeleteVpnConnectionInput) SetVpnConnectionId(v string) *DeleteVpnConnec
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnConnectionOutput
+// DeleteVpnConnectionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnConnectionResult
 type DeleteVpnConnectionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13353,6 +15329,18 @@ func (s DeleteVpnConnectionOutput) String() string {
 // GoString returns the string representation
 func (s DeleteVpnConnectionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteVpnConnectionOutput) SetRequestId(v string) *DeleteVpnConnectionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteVpnConnectionOutput) SetReturn(v bool) *DeleteVpnConnectionOutput {
+	s.Return = &v
+	return s
 }
 
 // DeleteVpnGatewayRequest
@@ -13389,9 +15377,16 @@ func (s *DeleteVpnGatewayInput) SetVpnGatewayId(v string) *DeleteVpnGatewayInput
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnGatewayOutput
+// DeleteVpnGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteVpnGatewayResult
 type DeleteVpnGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -13402,6 +15397,18 @@ func (s DeleteVpnGatewayOutput) String() string {
 // GoString returns the string representation
 func (s DeleteVpnGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeleteVpnGatewayOutput) SetRequestId(v string) *DeleteVpnGatewayOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DeleteVpnGatewayOutput) SetReturn(v bool) *DeleteVpnGatewayOutput {
+	s.Return = &v
+	return s
 }
 
 // DeregisterInstancesFromLoadBalancerRequest
@@ -13486,9 +15493,13 @@ func (s *DeregisterInstancesFromLoadBalancerInput) SetLoadBalancerPort(v int64) 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromLoadBalancerOutput
+// DeregisterInstancesFromLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromLoadBalancerResult
 type DeregisterInstancesFromLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceUniqueIds
+	Instances []*InstanceUnique `locationName:"Instances" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -13499,6 +15510,12 @@ func (s DeregisterInstancesFromLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s DeregisterInstancesFromLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstances sets the Instances field's value.
+func (s *DeregisterInstancesFromLoadBalancerOutput) SetInstances(v []*InstanceUnique) *DeregisterInstancesFromLoadBalancerOutput {
+	s.Instances = v
+	return s
 }
 
 // DeregisterInstancesFromSecurityGroupRequest
@@ -13535,9 +15552,16 @@ func (s *DeregisterInstancesFromSecurityGroupInput) SetInstanceIdList(v []*strin
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromSecurityGroupOutput
+// DeregisterInstancesFromSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeregisterInstancesFromSecurityGroupResult
 type DeregisterInstancesFromSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceIdSetType
+	InstancesSet []*InstanceIdType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13548,6 +15572,18 @@ func (s DeregisterInstancesFromSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s DeregisterInstancesFromSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *DeregisterInstancesFromSecurityGroupOutput) SetInstancesSet(v []*InstanceIdType) *DeregisterInstancesFromSecurityGroupOutput {
+	s.InstancesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DeregisterInstancesFromSecurityGroupOutput) SetRequestId(v string) *DeregisterInstancesFromSecurityGroupOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeAddressesRequest
@@ -13575,9 +15611,16 @@ func (s *DescribeAddressesInput) SetPublicIpList(v []*string) *DescribeAddresses
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAddressesOutput
+// DescribeAddressesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAddressesResult
 type DescribeAddressesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DescribeAddressesResponseInfoType
+	AddressesSet []*DescribeAddressesResponseItemType `locationName:"addressesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13588,6 +15631,88 @@ func (s DescribeAddressesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeAddressesOutput) GoString() string {
 	return s.String()
+}
+
+// SetAddressesSet sets the AddressesSet field's value.
+func (s *DescribeAddressesOutput) SetAddressesSet(v []*DescribeAddressesResponseItemType) *DescribeAddressesOutput {
+	s.AddressesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeAddressesOutput) SetRequestId(v string) *DescribeAddressesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// DescribeAddressesResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAddressesResponseItemType
+type DescribeAddressesResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AllocationId *string `locationName:"allocationId" type:"string"`
+
+	// String
+	Domain *string `locationName:"domain" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	PrivateIpAddress *string `locationName:"privateIpAddress" type:"string"`
+
+	// String
+	PublicIp *string `locationName:"publicIp" type:"string"`
+}
+
+// String returns the string representation
+func (s DescribeAddressesResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeAddressesResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetAllocationId sets the AllocationId field's value.
+func (s *DescribeAddressesResponseItemType) SetAllocationId(v string) *DescribeAddressesResponseItemType {
+	s.AllocationId = &v
+	return s
+}
+
+// SetDomain sets the Domain field's value.
+func (s *DescribeAddressesResponseItemType) SetDomain(v string) *DescribeAddressesResponseItemType {
+	s.Domain = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *DescribeAddressesResponseItemType) SetInstanceId(v string) *DescribeAddressesResponseItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *DescribeAddressesResponseItemType) SetInstanceUniqueId(v string) *DescribeAddressesResponseItemType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *DescribeAddressesResponseItemType) SetPrivateIpAddress(v string) *DescribeAddressesResponseItemType {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *DescribeAddressesResponseItemType) SetPublicIp(v string) *DescribeAddressesResponseItemType {
+	s.PublicIp = &v
+	return s
 }
 
 // DescribeAssociatedUsersRequest
@@ -13630,9 +15755,13 @@ func (s *DescribeAssociatedUsersInput) SetFunctionName(v string) *DescribeAssoci
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAssociatedUsersOutput
+// DescribeAssociatedUsersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAssociatedUsersResult
 type DescribeAssociatedUsersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Users
+	Users []*User `locationName:"Users" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -13643,6 +15772,12 @@ func (s DescribeAssociatedUsersOutput) String() string {
 // GoString returns the string representation
 func (s DescribeAssociatedUsersOutput) GoString() string {
 	return s.String()
+}
+
+// SetUsers sets the Users field's value.
+func (s *DescribeAssociatedUsersOutput) SetUsers(v []*User) *DescribeAssociatedUsersOutput {
+	s.Users = v
+	return s
 }
 
 // DescribeAvailabilityZonesRequest
@@ -13670,9 +15805,16 @@ func (s *DescribeAvailabilityZonesInput) SetZoneNameList(v []*string) *DescribeA
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAvailabilityZonesOutput
+// DescribeAvailabilityZonesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeAvailabilityZonesResult
 type DescribeAvailabilityZonesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// AvailabilityZoneSetType
+	AvailabilityZoneInfo []*AvailabilityZoneItemType `locationName:"availabilityZoneInfo" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13683,6 +15825,18 @@ func (s DescribeAvailabilityZonesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeAvailabilityZonesOutput) GoString() string {
 	return s.String()
+}
+
+// SetAvailabilityZoneInfo sets the AvailabilityZoneInfo field's value.
+func (s *DescribeAvailabilityZonesOutput) SetAvailabilityZoneInfo(v []*AvailabilityZoneItemType) *DescribeAvailabilityZonesOutput {
+	s.AvailabilityZoneInfo = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeAvailabilityZonesOutput) SetRequestId(v string) *DescribeAvailabilityZonesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeCustomerGatewaysRequest
@@ -13728,9 +15882,16 @@ func (s *DescribeCustomerGatewaysInput) SetNiftyCustomerGatewayNameList(v []*str
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeCustomerGatewaysOutput
+// DescribeCustomerGatewaysResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeCustomerGatewaysResult
 type DescribeCustomerGatewaysOutput struct {
 	_ struct{} `type:"structure"`
+
+	// CustomerGatewaySetType
+	CustomerGatewaySet []*CustomerGatewayItemType `locationName:"customerGatewaySet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13741,6 +15902,18 @@ func (s DescribeCustomerGatewaysOutput) String() string {
 // GoString returns the string representation
 func (s DescribeCustomerGatewaysOutput) GoString() string {
 	return s.String()
+}
+
+// SetCustomerGatewaySet sets the CustomerGatewaySet field's value.
+func (s *DescribeCustomerGatewaysOutput) SetCustomerGatewaySet(v []*CustomerGatewayItemType) *DescribeCustomerGatewaysOutput {
+	s.CustomerGatewaySet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeCustomerGatewaysOutput) SetRequestId(v string) *DescribeCustomerGatewaysOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeDhcpOptionsRequest
@@ -13777,9 +15950,16 @@ func (s *DescribeDhcpOptionsInput) SetFilterList(v [][]*string) *DescribeDhcpOpt
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeDhcpOptionsOutput
+// DescribeDhcpOptionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeDhcpOptionsResult
 type DescribeDhcpOptionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpOptionsType
+	DhcpOptionsSet *DhcpOptionsType `locationName:"dhcpOptionsSet" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13790,6 +15970,18 @@ func (s DescribeDhcpOptionsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeDhcpOptionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpOptionsSet sets the DhcpOptionsSet field's value.
+func (s *DescribeDhcpOptionsOutput) SetDhcpOptionsSet(v *DhcpOptionsType) *DescribeDhcpOptionsOutput {
+	s.DhcpOptionsSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeDhcpOptionsOutput) SetRequestId(v string) *DescribeDhcpOptionsOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeImagesRequest
@@ -13844,9 +16036,16 @@ func (s *DescribeImagesInput) SetOwnerList(v []*string) *DescribeImagesInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeImagesOutput
+// DescribeImagesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeImagesResult
 type DescribeImagesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DescribeImagesResponseInfoType
+	ImagesSet []*DescribeImagesResponseItemType `locationName:"imagesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -13857,6 +16056,223 @@ func (s DescribeImagesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeImagesOutput) GoString() string {
 	return s.String()
+}
+
+// SetImagesSet sets the ImagesSet field's value.
+func (s *DescribeImagesOutput) SetImagesSet(v []*DescribeImagesResponseItemType) *DescribeImagesOutput {
+	s.ImagesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeImagesOutput) SetRequestId(v string) *DescribeImagesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// DescribeImagesResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeImagesResponseItemType
+type DescribeImagesResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Architecture *string `locationName:"architecture" type:"string"`
+
+	// BlockDeviceMappingType
+	BlockDeviceMapping []*BlockDeviceMappingItemType `locationName:"blockDeviceMapping" locationNameList:"item" type:"list"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	DetailDescription *string `locationName:"detailDescription" type:"string"`
+
+	// String
+	ImageId *string `locationName:"imageId" type:"string"`
+
+	// String
+	ImageLocation *string `locationName:"imageLocation" type:"string"`
+
+	// String
+	ImageOwnerAlias *string `locationName:"imageOwnerAlias" type:"string"`
+
+	// String
+	ImageOwnerId *string `locationName:"imageOwnerId" type:"string"`
+
+	// String
+	ImageState *string `locationName:"imageState" type:"string"`
+
+	// String
+	ImageType *string `locationName:"imageType" type:"string"`
+
+	// Boolean
+	IsPublic *bool `locationName:"isPublic" type:"boolean"`
+
+	// String
+	KernelId *string `locationName:"kernelId" type:"string"`
+
+	// String
+	Name *string `locationName:"name" type:"string"`
+
+	// GlobalPlacementType
+	Placement *GlobalPlacementType `locationName:"placement" type:"structure"`
+
+	// String
+	Platform *string `locationName:"platform" type:"string"`
+
+	// ProductCodesSetType
+	ProductCodes []*ProductCodesSetItemType `locationName:"productCodes" locationNameList:"item" type:"list"`
+
+	// String
+	RamdiskId *string `locationName:"ramdiskId" type:"string"`
+
+	// Boolean
+	Redistributable *bool `locationName:"redistributable" type:"boolean"`
+
+	// String
+	RootDeviceName *string `locationName:"rootDeviceName" type:"string"`
+
+	// String
+	RootDeviceType *string `locationName:"rootDeviceType" type:"string"`
+
+	// StateReasonType
+	StateReason *StateReasonType `locationName:"stateReason" type:"structure"`
+}
+
+// String returns the string representation
+func (s DescribeImagesResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeImagesResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetArchitecture sets the Architecture field's value.
+func (s *DescribeImagesResponseItemType) SetArchitecture(v string) *DescribeImagesResponseItemType {
+	s.Architecture = &v
+	return s
+}
+
+// SetBlockDeviceMapping sets the BlockDeviceMapping field's value.
+func (s *DescribeImagesResponseItemType) SetBlockDeviceMapping(v []*BlockDeviceMappingItemType) *DescribeImagesResponseItemType {
+	s.BlockDeviceMapping = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *DescribeImagesResponseItemType) SetDescription(v string) *DescribeImagesResponseItemType {
+	s.Description = &v
+	return s
+}
+
+// SetDetailDescription sets the DetailDescription field's value.
+func (s *DescribeImagesResponseItemType) SetDetailDescription(v string) *DescribeImagesResponseItemType {
+	s.DetailDescription = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *DescribeImagesResponseItemType) SetImageId(v string) *DescribeImagesResponseItemType {
+	s.ImageId = &v
+	return s
+}
+
+// SetImageLocation sets the ImageLocation field's value.
+func (s *DescribeImagesResponseItemType) SetImageLocation(v string) *DescribeImagesResponseItemType {
+	s.ImageLocation = &v
+	return s
+}
+
+// SetImageOwnerAlias sets the ImageOwnerAlias field's value.
+func (s *DescribeImagesResponseItemType) SetImageOwnerAlias(v string) *DescribeImagesResponseItemType {
+	s.ImageOwnerAlias = &v
+	return s
+}
+
+// SetImageOwnerId sets the ImageOwnerId field's value.
+func (s *DescribeImagesResponseItemType) SetImageOwnerId(v string) *DescribeImagesResponseItemType {
+	s.ImageOwnerId = &v
+	return s
+}
+
+// SetImageState sets the ImageState field's value.
+func (s *DescribeImagesResponseItemType) SetImageState(v string) *DescribeImagesResponseItemType {
+	s.ImageState = &v
+	return s
+}
+
+// SetImageType sets the ImageType field's value.
+func (s *DescribeImagesResponseItemType) SetImageType(v string) *DescribeImagesResponseItemType {
+	s.ImageType = &v
+	return s
+}
+
+// SetIsPublic sets the IsPublic field's value.
+func (s *DescribeImagesResponseItemType) SetIsPublic(v bool) *DescribeImagesResponseItemType {
+	s.IsPublic = &v
+	return s
+}
+
+// SetKernelId sets the KernelId field's value.
+func (s *DescribeImagesResponseItemType) SetKernelId(v string) *DescribeImagesResponseItemType {
+	s.KernelId = &v
+	return s
+}
+
+// SetName sets the Name field's value.
+func (s *DescribeImagesResponseItemType) SetName(v string) *DescribeImagesResponseItemType {
+	s.Name = &v
+	return s
+}
+
+// SetPlacement sets the Placement field's value.
+func (s *DescribeImagesResponseItemType) SetPlacement(v *GlobalPlacementType) *DescribeImagesResponseItemType {
+	s.Placement = v
+	return s
+}
+
+// SetPlatform sets the Platform field's value.
+func (s *DescribeImagesResponseItemType) SetPlatform(v string) *DescribeImagesResponseItemType {
+	s.Platform = &v
+	return s
+}
+
+// SetProductCodes sets the ProductCodes field's value.
+func (s *DescribeImagesResponseItemType) SetProductCodes(v []*ProductCodesSetItemType) *DescribeImagesResponseItemType {
+	s.ProductCodes = v
+	return s
+}
+
+// SetRamdiskId sets the RamdiskId field's value.
+func (s *DescribeImagesResponseItemType) SetRamdiskId(v string) *DescribeImagesResponseItemType {
+	s.RamdiskId = &v
+	return s
+}
+
+// SetRedistributable sets the Redistributable field's value.
+func (s *DescribeImagesResponseItemType) SetRedistributable(v bool) *DescribeImagesResponseItemType {
+	s.Redistributable = &v
+	return s
+}
+
+// SetRootDeviceName sets the RootDeviceName field's value.
+func (s *DescribeImagesResponseItemType) SetRootDeviceName(v string) *DescribeImagesResponseItemType {
+	s.RootDeviceName = &v
+	return s
+}
+
+// SetRootDeviceType sets the RootDeviceType field's value.
+func (s *DescribeImagesResponseItemType) SetRootDeviceType(v string) *DescribeImagesResponseItemType {
+	s.RootDeviceType = &v
+	return s
+}
+
+// SetStateReason sets the StateReason field's value.
+func (s *DescribeImagesResponseItemType) SetStateReason(v *StateReasonType) *DescribeImagesResponseItemType {
+	s.StateReason = v
+	return s
 }
 
 // DescribeInstanceAttributeRequest
@@ -13893,9 +16309,34 @@ func (s *DescribeInstanceAttributeInput) SetInstanceId(v string) *DescribeInstan
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceAttributeOutput
+// DescribeInstanceAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceAttributeResult
 type DescribeInstanceAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NullableAttribute
+	DisableApiTermination *NullableAttribute `locationName:"disableApiTermination" type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// NullableAttribute
+	InstanceType *NullableAttribute `locationName:"instanceType" type:"structure"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// NullableAttribute
+	Kernel *NullableAttribute `locationName:"kernel" type:"structure"`
+
+	// NullableAttribute
+	Ramdisk *NullableAttribute `locationName:"ramdisk" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// NullableAttribute
+	UserData *NullableAttribute `locationName:"userData" type:"structure"`
 }
 
 // String returns the string representation
@@ -13906,6 +16347,54 @@ func (s DescribeInstanceAttributeOutput) String() string {
 // GoString returns the string representation
 func (s DescribeInstanceAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetDisableApiTermination sets the DisableApiTermination field's value.
+func (s *DescribeInstanceAttributeOutput) SetDisableApiTermination(v *NullableAttribute) *DescribeInstanceAttributeOutput {
+	s.DisableApiTermination = v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *DescribeInstanceAttributeOutput) SetInstanceId(v string) *DescribeInstanceAttributeOutput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceType sets the InstanceType field's value.
+func (s *DescribeInstanceAttributeOutput) SetInstanceType(v *NullableAttribute) *DescribeInstanceAttributeOutput {
+	s.InstanceType = v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *DescribeInstanceAttributeOutput) SetInstanceUniqueId(v string) *DescribeInstanceAttributeOutput {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetKernel sets the Kernel field's value.
+func (s *DescribeInstanceAttributeOutput) SetKernel(v *NullableAttribute) *DescribeInstanceAttributeOutput {
+	s.Kernel = v
+	return s
+}
+
+// SetRamdisk sets the Ramdisk field's value.
+func (s *DescribeInstanceAttributeOutput) SetRamdisk(v *NullableAttribute) *DescribeInstanceAttributeOutput {
+	s.Ramdisk = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeInstanceAttributeOutput) SetRequestId(v string) *DescribeInstanceAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetUserData sets the UserData field's value.
+func (s *DescribeInstanceAttributeOutput) SetUserData(v *NullableAttribute) *DescribeInstanceAttributeOutput {
+	s.UserData = v
+	return s
 }
 
 // DescribeInstanceHealthRequest
@@ -13985,9 +16474,13 @@ func (s *DescribeInstanceHealthInput) SetLoadBalancerPort(v int64) *DescribeInst
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceHealthOutput
+// DescribeInstanceHealthResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstanceHealthResult
 type DescribeInstanceHealthOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceStates
+	InstanceStates []*string `locationName:"InstanceStates" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -13998,6 +16491,12 @@ func (s DescribeInstanceHealthOutput) String() string {
 // GoString returns the string representation
 func (s DescribeInstanceHealthOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceStates sets the InstanceStates field's value.
+func (s *DescribeInstanceHealthOutput) SetInstanceStates(v []*string) *DescribeInstanceHealthOutput {
+	s.InstanceStates = v
+	return s
 }
 
 // DescribeInstancesRequest
@@ -14034,9 +16533,16 @@ func (s *DescribeInstancesInput) SetTenancyList(v []*string) *DescribeInstancesI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstancesOutput
+// DescribeInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeInstancesResult
 type DescribeInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// ReservationSetType
+	ReservationSet []*ReservationInfoType `locationName:"reservationSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14047,6 +16553,18 @@ func (s DescribeInstancesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeInstancesOutput) SetRequestId(v string) *DescribeInstancesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReservationSet sets the ReservationSet field's value.
+func (s *DescribeInstancesOutput) SetReservationSet(v []*ReservationInfoType) *DescribeInstancesOutput {
+	s.ReservationSet = v
+	return s
 }
 
 // DescribeKeyPairsRequest
@@ -14074,9 +16592,16 @@ func (s *DescribeKeyPairsInput) SetKeyNameList(v []*string) *DescribeKeyPairsInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeKeyPairsOutput
+// DescribeKeyPairsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeKeyPairsResult
 type DescribeKeyPairsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DescribeKeyPairsResponseInfoType
+	KeySet []*DescribeKeyPairsResponseItemType `locationName:"keySet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -14087,6 +16612,52 @@ func (s DescribeKeyPairsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeKeyPairsOutput) GoString() string {
 	return s.String()
+}
+
+// SetKeySet sets the KeySet field's value.
+func (s *DescribeKeyPairsOutput) SetKeySet(v []*DescribeKeyPairsResponseItemType) *DescribeKeyPairsOutput {
+	s.KeySet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeKeyPairsOutput) SetRequestId(v string) *DescribeKeyPairsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// DescribeKeyPairsResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeKeyPairsResponseItemType
+type DescribeKeyPairsResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	KeyFingerprint *string `locationName:"keyFingerprint" type:"string"`
+
+	// String
+	KeyName *string `locationName:"keyName" type:"string"`
+}
+
+// String returns the string representation
+func (s DescribeKeyPairsResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeKeyPairsResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetKeyFingerprint sets the KeyFingerprint field's value.
+func (s *DescribeKeyPairsResponseItemType) SetKeyFingerprint(v string) *DescribeKeyPairsResponseItemType {
+	s.KeyFingerprint = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *DescribeKeyPairsResponseItemType) SetKeyName(v string) *DescribeKeyPairsResponseItemType {
+	s.KeyName = &v
+	return s
 }
 
 // DescribeLoadBalancersRequest
@@ -14123,9 +16694,13 @@ func (s *DescribeLoadBalancersInput) SetLoadBalancerNamesList(v []*string) *Desc
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeLoadBalancersOutput
+// DescribeLoadBalancersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeLoadBalancersResult
 type DescribeLoadBalancersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// LoadBalancerDescriptions
+	LoadBalancerDescriptions []*LoadBalancerDescription `locationName:"LoadBalancerDescriptions" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -14136,6 +16711,12 @@ func (s DescribeLoadBalancersOutput) String() string {
 // GoString returns the string representation
 func (s DescribeLoadBalancersOutput) GoString() string {
 	return s.String()
+}
+
+// SetLoadBalancerDescriptions sets the LoadBalancerDescriptions field's value.
+func (s *DescribeLoadBalancersOutput) SetLoadBalancerDescriptions(v []*LoadBalancerDescription) *DescribeLoadBalancersOutput {
+	s.LoadBalancerDescriptions = v
+	return s
 }
 
 // DescribeRegionsRequest
@@ -14172,9 +16753,16 @@ func (s *DescribeRegionsInput) SetRegionNameList(v []*string) *DescribeRegionsIn
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRegionsOutput
+// DescribeRegionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRegionsResult
 type DescribeRegionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// RegionSetType
+	RegionInfo []*RegionItemType `locationName:"regionInfo" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -14185,6 +16773,106 @@ func (s DescribeRegionsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeRegionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRegionInfo sets the RegionInfo field's value.
+func (s *DescribeRegionsOutput) SetRegionInfo(v []*RegionItemType) *DescribeRegionsOutput {
+	s.RegionInfo = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeRegionsOutput) SetRequestId(v string) *DescribeRegionsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// DescribeResourceInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeResourceInfoType
+type DescribeResourceInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	AddDiskCount *int64 `locationName:"addDiskCount" type:"integer"`
+
+	// Integer
+	AddDiskTotalSize *int64 `locationName:"addDiskTotalSize" type:"integer"`
+
+	// Integer
+	CustomizeImageCount *int64 `locationName:"customizeImageCount" type:"integer"`
+
+	// Integer
+	DynamicIpCount *int64 `locationName:"dynamicIpCount" type:"integer"`
+
+	// ResourceInstanceSetType
+	InstanceItemSet []*ResourceInstanceItemType `locationName:"instanceItemSet" locationNameList:"item" type:"list"`
+
+	// Integer
+	NetworkFlowAmount *int64 `locationName:"networkFlowAmount" type:"integer"`
+
+	// ResourceRouterSetType
+	RouterItemSet []*ResourceRouterItemType `locationName:"routerItemSet" locationNameList:"item" type:"list"`
+
+	// ResourceVpnGatewaySetType
+	VpnGatewayItemSet []*ResourceVpnGatewayItemType `locationName:"vpnGatewayItemSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s DescribeResourceInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeResourceInfoType) GoString() string {
+	return s.String()
+}
+
+// SetAddDiskCount sets the AddDiskCount field's value.
+func (s *DescribeResourceInfoType) SetAddDiskCount(v int64) *DescribeResourceInfoType {
+	s.AddDiskCount = &v
+	return s
+}
+
+// SetAddDiskTotalSize sets the AddDiskTotalSize field's value.
+func (s *DescribeResourceInfoType) SetAddDiskTotalSize(v int64) *DescribeResourceInfoType {
+	s.AddDiskTotalSize = &v
+	return s
+}
+
+// SetCustomizeImageCount sets the CustomizeImageCount field's value.
+func (s *DescribeResourceInfoType) SetCustomizeImageCount(v int64) *DescribeResourceInfoType {
+	s.CustomizeImageCount = &v
+	return s
+}
+
+// SetDynamicIpCount sets the DynamicIpCount field's value.
+func (s *DescribeResourceInfoType) SetDynamicIpCount(v int64) *DescribeResourceInfoType {
+	s.DynamicIpCount = &v
+	return s
+}
+
+// SetInstanceItemSet sets the InstanceItemSet field's value.
+func (s *DescribeResourceInfoType) SetInstanceItemSet(v []*ResourceInstanceItemType) *DescribeResourceInfoType {
+	s.InstanceItemSet = v
+	return s
+}
+
+// SetNetworkFlowAmount sets the NetworkFlowAmount field's value.
+func (s *DescribeResourceInfoType) SetNetworkFlowAmount(v int64) *DescribeResourceInfoType {
+	s.NetworkFlowAmount = &v
+	return s
+}
+
+// SetRouterItemSet sets the RouterItemSet field's value.
+func (s *DescribeResourceInfoType) SetRouterItemSet(v []*ResourceRouterItemType) *DescribeResourceInfoType {
+	s.RouterItemSet = v
+	return s
+}
+
+// SetVpnGatewayItemSet sets the VpnGatewayItemSet field's value.
+func (s *DescribeResourceInfoType) SetVpnGatewayItemSet(v []*ResourceVpnGatewayItemType) *DescribeResourceInfoType {
+	s.VpnGatewayItemSet = v
+	return s
 }
 
 // DescribeResourcesRequest
@@ -14203,9 +16891,16 @@ func (s DescribeResourcesInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeResourcesOutput
+// DescribeResourcesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeResourcesResult
 type DescribeResourcesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// DescribeResourceInfoType
+	ResourceInfo *DescribeResourceInfoType `locationName:"resourceInfo" type:"structure"`
 }
 
 // String returns the string representation
@@ -14216,6 +16911,18 @@ func (s DescribeResourcesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeResourcesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeResourcesOutput) SetRequestId(v string) *DescribeResourcesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetResourceInfo sets the ResourceInfo field's value.
+func (s *DescribeResourcesOutput) SetResourceInfo(v *DescribeResourceInfoType) *DescribeResourcesOutput {
+	s.ResourceInfo = v
+	return s
 }
 
 // DescribeRouteTablesRequest
@@ -14252,9 +16959,16 @@ func (s *DescribeRouteTablesInput) SetRouteTableIdList(v []*string) *DescribeRou
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRouteTablesOutput
+// DescribeRouteTablesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeRouteTablesResult
 type DescribeRouteTablesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouteTableSetType
+	RouteTableSet []*RouteTableSetItemType `locationName:"routeTableSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14265,6 +16979,18 @@ func (s DescribeRouteTablesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeRouteTablesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeRouteTablesOutput) SetRequestId(v string) *DescribeRouteTablesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouteTableSet sets the RouteTableSet field's value.
+func (s *DescribeRouteTablesOutput) SetRouteTableSet(v []*RouteTableSetItemType) *DescribeRouteTablesOutput {
+	s.RouteTableSet = v
+	return s
 }
 
 // DescribeSecurityActivitiesRequest
@@ -14310,9 +17036,19 @@ func (s *DescribeSecurityActivitiesInput) SetRange(v *RangeStruct) *DescribeSecu
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityActivitiesOutput
+// DescribeSecurityActivitiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityActivitiesResult
 type DescribeSecurityActivitiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `locationName:"groupName" type:"string"`
+
+	// String
+	Log *string `locationName:"log" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -14323,6 +17059,24 @@ func (s DescribeSecurityActivitiesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeSecurityActivitiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *DescribeSecurityActivitiesOutput) SetGroupName(v string) *DescribeSecurityActivitiesOutput {
+	s.GroupName = &v
+	return s
+}
+
+// SetLog sets the Log field's value.
+func (s *DescribeSecurityActivitiesOutput) SetLog(v string) *DescribeSecurityActivitiesOutput {
+	s.Log = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeSecurityActivitiesOutput) SetRequestId(v string) *DescribeSecurityActivitiesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeSecurityGroupOptionRequest
@@ -14341,9 +17095,19 @@ func (s DescribeSecurityGroupOptionInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupOptionOutput
+// DescribeSecurityGroupOptionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupOptionResult
 type DescribeSecurityGroupOptionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Course *string `locationName:"course" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Integer
+	SecurityGroupLimit *int64 `locationName:"securityGroupLimit" type:"integer"`
 }
 
 // String returns the string representation
@@ -14354,6 +17118,24 @@ func (s DescribeSecurityGroupOptionOutput) String() string {
 // GoString returns the string representation
 func (s DescribeSecurityGroupOptionOutput) GoString() string {
 	return s.String()
+}
+
+// SetCourse sets the Course field's value.
+func (s *DescribeSecurityGroupOptionOutput) SetCourse(v string) *DescribeSecurityGroupOptionOutput {
+	s.Course = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeSecurityGroupOptionOutput) SetRequestId(v string) *DescribeSecurityGroupOptionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSecurityGroupLimit sets the SecurityGroupLimit field's value.
+func (s *DescribeSecurityGroupOptionOutput) SetSecurityGroupLimit(v int64) *DescribeSecurityGroupOptionOutput {
+	s.SecurityGroupLimit = &v
+	return s
 }
 
 // DescribeSecurityGroupsRequest
@@ -14390,9 +17172,16 @@ func (s *DescribeSecurityGroupsInput) SetGroupNameList(v []*string) *DescribeSec
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupsOutput
+// DescribeSecurityGroupsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSecurityGroupsResult
 type DescribeSecurityGroupsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// SecurityGroupSetType
+	SecurityGroupInfo []*SecurityGroupItemType `locationName:"securityGroupInfo" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14403,6 +17192,18 @@ func (s DescribeSecurityGroupsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeSecurityGroupsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeSecurityGroupsOutput) SetRequestId(v string) *DescribeSecurityGroupsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSecurityGroupInfo sets the SecurityGroupInfo field's value.
+func (s *DescribeSecurityGroupsOutput) SetSecurityGroupInfo(v []*SecurityGroupItemType) *DescribeSecurityGroupsOutput {
+	s.SecurityGroupInfo = v
+	return s
 }
 
 // DescribeServiceStatusRequest
@@ -14439,9 +17240,86 @@ func (s *DescribeServiceStatusInput) SetToDate(v string) *DescribeServiceStatusI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeServiceStatusOutput
+// DescribeServiceStatusItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeServiceStatusItemType
+type DescribeServiceStatusItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	ControlPanelStatus *string `locationName:"controlPanelStatus" type:"string"`
+
+	// String
+	Date *string `locationName:"date" type:"string"`
+
+	// String
+	DiskStatus *string `locationName:"diskStatus" type:"string"`
+
+	// String
+	InstanceStatus *string `locationName:"instanceStatus" type:"string"`
+
+	// String
+	NetworkStatus *string `locationName:"networkStatus" type:"string"`
+
+	// String
+	StorageStatus *string `locationName:"storageStatus" type:"string"`
+}
+
+// String returns the string representation
+func (s DescribeServiceStatusItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeServiceStatusItemType) GoString() string {
+	return s.String()
+}
+
+// SetControlPanelStatus sets the ControlPanelStatus field's value.
+func (s *DescribeServiceStatusItemType) SetControlPanelStatus(v string) *DescribeServiceStatusItemType {
+	s.ControlPanelStatus = &v
+	return s
+}
+
+// SetDate sets the Date field's value.
+func (s *DescribeServiceStatusItemType) SetDate(v string) *DescribeServiceStatusItemType {
+	s.Date = &v
+	return s
+}
+
+// SetDiskStatus sets the DiskStatus field's value.
+func (s *DescribeServiceStatusItemType) SetDiskStatus(v string) *DescribeServiceStatusItemType {
+	s.DiskStatus = &v
+	return s
+}
+
+// SetInstanceStatus sets the InstanceStatus field's value.
+func (s *DescribeServiceStatusItemType) SetInstanceStatus(v string) *DescribeServiceStatusItemType {
+	s.InstanceStatus = &v
+	return s
+}
+
+// SetNetworkStatus sets the NetworkStatus field's value.
+func (s *DescribeServiceStatusItemType) SetNetworkStatus(v string) *DescribeServiceStatusItemType {
+	s.NetworkStatus = &v
+	return s
+}
+
+// SetStorageStatus sets the StorageStatus field's value.
+func (s *DescribeServiceStatusItemType) SetStorageStatus(v string) *DescribeServiceStatusItemType {
+	s.StorageStatus = &v
+	return s
+}
+
+// DescribeServiceStatusResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeServiceStatusResult
 type DescribeServiceStatusOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// DescribeServiceStatusSetType
+	ServiceStatusSet []*DescribeServiceStatusItemType `locationName:"serviceStatusSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14452,6 +17330,18 @@ func (s DescribeServiceStatusOutput) String() string {
 // GoString returns the string representation
 func (s DescribeServiceStatusOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeServiceStatusOutput) SetRequestId(v string) *DescribeServiceStatusOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetServiceStatusSet sets the ServiceStatusSet field's value.
+func (s *DescribeServiceStatusOutput) SetServiceStatusSet(v []*DescribeServiceStatusItemType) *DescribeServiceStatusOutput {
+	s.ServiceStatusSet = v
+	return s
 }
 
 // DescribeSslCertificateAttributeRequest
@@ -14503,9 +17393,43 @@ func (s *DescribeSslCertificateAttributeInput) SetFqdnId(v string) *DescribeSslC
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificateAttributeOutput
+// DescribeSslCertificateAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificateAttributeResult
 type DescribeSslCertificateAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NullableAttribute
+	CertAuthority *NullableAttribute `locationName:"certAuthority" type:"structure"`
+
+	// CertInfoType
+	CertInfo *CertInfoType `locationName:"certInfo" type:"structure"`
+
+	// NullableAttribute
+	CertState *NullableAttribute `locationName:"certState" type:"structure"`
+
+	// NullableAttribute
+	Count *NullableAttribute `locationName:"count" type:"structure"`
+
+	// NullableAttribute
+	Description *NullableAttribute `locationName:"description" type:"structure"`
+
+	// String
+	Fqdn *string `locationName:"fqdn" type:"string"`
+
+	// String
+	FqdnId *string `locationName:"fqdnId" type:"string"`
+
+	// NullableAttribute
+	KeyLength *NullableAttribute `locationName:"keyLength" type:"structure"`
+
+	// ValidDateType
+	Period *ValidDateType `locationName:"period" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// NullableAttribute
+	UploadState *NullableAttribute `locationName:"uploadState" type:"structure"`
 }
 
 // String returns the string representation
@@ -14516,6 +17440,72 @@ func (s DescribeSslCertificateAttributeOutput) String() string {
 // GoString returns the string representation
 func (s DescribeSslCertificateAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetCertAuthority sets the CertAuthority field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetCertAuthority(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.CertAuthority = v
+	return s
+}
+
+// SetCertInfo sets the CertInfo field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetCertInfo(v *CertInfoType) *DescribeSslCertificateAttributeOutput {
+	s.CertInfo = v
+	return s
+}
+
+// SetCertState sets the CertState field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetCertState(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.CertState = v
+	return s
+}
+
+// SetCount sets the Count field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetCount(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.Count = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetDescription(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.Description = v
+	return s
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetFqdn(v string) *DescribeSslCertificateAttributeOutput {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetFqdnId(v string) *DescribeSslCertificateAttributeOutput {
+	s.FqdnId = &v
+	return s
+}
+
+// SetKeyLength sets the KeyLength field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetKeyLength(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.KeyLength = v
+	return s
+}
+
+// SetPeriod sets the Period field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetPeriod(v *ValidDateType) *DescribeSslCertificateAttributeOutput {
+	s.Period = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetRequestId(v string) *DescribeSslCertificateAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetUploadState sets the UploadState field's value.
+func (s *DescribeSslCertificateAttributeOutput) SetUploadState(v *NullableAttribute) *DescribeSslCertificateAttributeOutput {
+	s.UploadState = v
+	return s
 }
 
 // DescribeSslCertificatesRequest
@@ -14552,9 +17542,16 @@ func (s *DescribeSslCertificatesInput) SetFqdnList(v []*string) *DescribeSslCert
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificatesOutput
+// DescribeSslCertificatesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeSslCertificatesResult
 type DescribeSslCertificatesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// CertsSetType
+	CertsSet []*CertsSetItemType `locationName:"certsSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -14565,6 +17562,18 @@ func (s DescribeSslCertificatesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeSslCertificatesOutput) GoString() string {
 	return s.String()
+}
+
+// SetCertsSet sets the CertsSet field's value.
+func (s *DescribeSslCertificatesOutput) SetCertsSet(v []*CertsSetItemType) *DescribeSslCertificatesOutput {
+	s.CertsSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeSslCertificatesOutput) SetRequestId(v string) *DescribeSslCertificatesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // DescribeUploadsRequest
@@ -14592,9 +17601,13 @@ func (s *DescribeUploadsInput) SetConversionTaskIdList(v []*string) *DescribeUpl
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUploadsOutput
+// DescribeUploadsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUploadsResult
 type DescribeUploadsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// UploadSetType
+	Uploads []*UploadItemType `locationName:"uploads" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14605,6 +17618,12 @@ func (s DescribeUploadsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeUploadsOutput) GoString() string {
 	return s.String()
+}
+
+// SetUploads sets the Uploads field's value.
+func (s *DescribeUploadsOutput) SetUploads(v []*UploadItemType) *DescribeUploadsOutput {
+	s.Uploads = v
+	return s
 }
 
 // DescribeUsageRequest
@@ -14650,9 +17669,40 @@ func (s *DescribeUsageInput) SetYearMonth(v string) *DescribeUsageInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUsageOutput
+// DescribeUsageResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUsageResult
 type DescribeUsageOutput struct {
 	_ struct{} `type:"structure"`
+
+	// UsageCopyInfoType
+	CopyInfo *UsageCopyInfoType `locationName:"copyInfo" type:"structure"`
+
+	// UsageElasticIpInfoType
+	ElasticIpInfo *UsageElasticIpInfoType `locationName:"elasticIpInfo" type:"structure"`
+
+	// UsageImageInfoType
+	ImageInfo *UsageImageInfoType `locationName:"imageInfo" type:"structure"`
+
+	// UsageDetailInfoType
+	InstanceInfo *UsageDetailInfoType `locationName:"instanceInfo" type:"structure"`
+
+	// UsageLoadBalancerInfoType
+	LoadBalancerInfo *UsageLoadBalancerInfoType `locationName:"loadBalancerInfo" type:"structure"`
+
+	// UsageNetworkInfoType
+	NetworkInfo *UsageNetworkInfoType `locationName:"networkInfo" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// UsageSecurityGroupInfoType
+	SecurityGroupInfo *UsageSecurityGroupInfoType `locationName:"securityGroupInfo" type:"structure"`
+
+	// UsageVolumeInfoType
+	VolumeInfo *UsageVolumeInfoType `locationName:"volumeInfo" type:"structure"`
+
+	// String
+	YearMonth *string `locationName:"yearMonth" type:"string"`
 }
 
 // String returns the string representation
@@ -14663,6 +17713,66 @@ func (s DescribeUsageOutput) String() string {
 // GoString returns the string representation
 func (s DescribeUsageOutput) GoString() string {
 	return s.String()
+}
+
+// SetCopyInfo sets the CopyInfo field's value.
+func (s *DescribeUsageOutput) SetCopyInfo(v *UsageCopyInfoType) *DescribeUsageOutput {
+	s.CopyInfo = v
+	return s
+}
+
+// SetElasticIpInfo sets the ElasticIpInfo field's value.
+func (s *DescribeUsageOutput) SetElasticIpInfo(v *UsageElasticIpInfoType) *DescribeUsageOutput {
+	s.ElasticIpInfo = v
+	return s
+}
+
+// SetImageInfo sets the ImageInfo field's value.
+func (s *DescribeUsageOutput) SetImageInfo(v *UsageImageInfoType) *DescribeUsageOutput {
+	s.ImageInfo = v
+	return s
+}
+
+// SetInstanceInfo sets the InstanceInfo field's value.
+func (s *DescribeUsageOutput) SetInstanceInfo(v *UsageDetailInfoType) *DescribeUsageOutput {
+	s.InstanceInfo = v
+	return s
+}
+
+// SetLoadBalancerInfo sets the LoadBalancerInfo field's value.
+func (s *DescribeUsageOutput) SetLoadBalancerInfo(v *UsageLoadBalancerInfoType) *DescribeUsageOutput {
+	s.LoadBalancerInfo = v
+	return s
+}
+
+// SetNetworkInfo sets the NetworkInfo field's value.
+func (s *DescribeUsageOutput) SetNetworkInfo(v *UsageNetworkInfoType) *DescribeUsageOutput {
+	s.NetworkInfo = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeUsageOutput) SetRequestId(v string) *DescribeUsageOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSecurityGroupInfo sets the SecurityGroupInfo field's value.
+func (s *DescribeUsageOutput) SetSecurityGroupInfo(v *UsageSecurityGroupInfoType) *DescribeUsageOutput {
+	s.SecurityGroupInfo = v
+	return s
+}
+
+// SetVolumeInfo sets the VolumeInfo field's value.
+func (s *DescribeUsageOutput) SetVolumeInfo(v *UsageVolumeInfoType) *DescribeUsageOutput {
+	s.VolumeInfo = v
+	return s
+}
+
+// SetYearMonth sets the YearMonth field's value.
+func (s *DescribeUsageOutput) SetYearMonth(v string) *DescribeUsageOutput {
+	s.YearMonth = &v
+	return s
 }
 
 // DescribeUserActivitiesRequest
@@ -14699,9 +17809,86 @@ func (s *DescribeUserActivitiesInput) SetYearMonth(v string) *DescribeUserActivi
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUserActivitiesOutput
+// DescribeUserActivitiesItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUserActivitiesItemType
+type DescribeUserActivitiesItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CategoryName *string `locationName:"categoryName" type:"string"`
+
+	// TStamp
+	DateTime *time.Time `locationName:"dateTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	Operation *string `locationName:"operation" type:"string"`
+
+	// String
+	Operator *string `locationName:"operator" type:"string"`
+
+	// Boolean
+	Result *bool `locationName:"result" type:"boolean"`
+}
+
+// String returns the string representation
+func (s DescribeUserActivitiesItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeUserActivitiesItemType) GoString() string {
+	return s.String()
+}
+
+// SetCategoryName sets the CategoryName field's value.
+func (s *DescribeUserActivitiesItemType) SetCategoryName(v string) *DescribeUserActivitiesItemType {
+	s.CategoryName = &v
+	return s
+}
+
+// SetDateTime sets the DateTime field's value.
+func (s *DescribeUserActivitiesItemType) SetDateTime(v time.Time) *DescribeUserActivitiesItemType {
+	s.DateTime = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *DescribeUserActivitiesItemType) SetIpAddress(v string) *DescribeUserActivitiesItemType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetOperation sets the Operation field's value.
+func (s *DescribeUserActivitiesItemType) SetOperation(v string) *DescribeUserActivitiesItemType {
+	s.Operation = &v
+	return s
+}
+
+// SetOperator sets the Operator field's value.
+func (s *DescribeUserActivitiesItemType) SetOperator(v string) *DescribeUserActivitiesItemType {
+	s.Operator = &v
+	return s
+}
+
+// SetResult sets the Result field's value.
+func (s *DescribeUserActivitiesItemType) SetResult(v bool) *DescribeUserActivitiesItemType {
+	s.Result = &v
+	return s
+}
+
+// DescribeUserActivitiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeUserActivitiesResult
 type DescribeUserActivitiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// DescribeUserActivitiesSetType
+	UserActivitiesSet []*DescribeUserActivitiesItemType `locationName:"userActivitiesSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14712,6 +17899,18 @@ func (s DescribeUserActivitiesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeUserActivitiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeUserActivitiesOutput) SetRequestId(v string) *DescribeUserActivitiesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetUserActivitiesSet sets the UserActivitiesSet field's value.
+func (s *DescribeUserActivitiesOutput) SetUserActivitiesSet(v []*DescribeUserActivitiesItemType) *DescribeUserActivitiesOutput {
+	s.UserActivitiesSet = v
+	return s
 }
 
 // DescribeVolumesRequest
@@ -14739,9 +17938,16 @@ func (s *DescribeVolumesInput) SetVolumeIdList(v []*string) *DescribeVolumesInpu
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVolumesOutput
+// DescribeVolumesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVolumesResult
 type DescribeVolumesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// DescribeVolumesSetResponseType
+	VolumeSet []*DescribeVolumesSetItemResponseType `locationName:"volumeSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14752,6 +17958,124 @@ func (s DescribeVolumesOutput) String() string {
 // GoString returns the string representation
 func (s DescribeVolumesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeVolumesOutput) SetRequestId(v string) *DescribeVolumesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVolumeSet sets the VolumeSet field's value.
+func (s *DescribeVolumesOutput) SetVolumeSet(v []*DescribeVolumesSetItemResponseType) *DescribeVolumesOutput {
+	s.VolumeSet = v
+	return s
+}
+
+// DescribeVolumesSetItemResponseType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVolumesSetItemResponseType
+type DescribeVolumesSetItemResponseType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// AttachmentSetResponseType
+	AttachmentSet []*AttachmentSetItemResponseType `locationName:"attachmentSet" locationNameList:"item" type:"list"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// TStamp
+	CreateTime *time.Time `locationName:"createTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	DiskType *string `locationName:"diskType" type:"string"`
+
+	// String
+	NextMonthAccountingType *string `locationName:"nextMonthAccountingType" type:"string"`
+
+	// String
+	Size *string `locationName:"size" type:"string"`
+
+	// String
+	SnapshotId *string `locationName:"snapshotId" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
+}
+
+// String returns the string representation
+func (s DescribeVolumesSetItemResponseType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DescribeVolumesSetItemResponseType) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *DescribeVolumesSetItemResponseType) SetAccountingType(v string) *DescribeVolumesSetItemResponseType {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAttachmentSet sets the AttachmentSet field's value.
+func (s *DescribeVolumesSetItemResponseType) SetAttachmentSet(v []*AttachmentSetItemResponseType) *DescribeVolumesSetItemResponseType {
+	s.AttachmentSet = v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *DescribeVolumesSetItemResponseType) SetAvailabilityZone(v string) *DescribeVolumesSetItemResponseType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCreateTime sets the CreateTime field's value.
+func (s *DescribeVolumesSetItemResponseType) SetCreateTime(v time.Time) *DescribeVolumesSetItemResponseType {
+	s.CreateTime = &v
+	return s
+}
+
+// SetDiskType sets the DiskType field's value.
+func (s *DescribeVolumesSetItemResponseType) SetDiskType(v string) *DescribeVolumesSetItemResponseType {
+	s.DiskType = &v
+	return s
+}
+
+// SetNextMonthAccountingType sets the NextMonthAccountingType field's value.
+func (s *DescribeVolumesSetItemResponseType) SetNextMonthAccountingType(v string) *DescribeVolumesSetItemResponseType {
+	s.NextMonthAccountingType = &v
+	return s
+}
+
+// SetSize sets the Size field's value.
+func (s *DescribeVolumesSetItemResponseType) SetSize(v string) *DescribeVolumesSetItemResponseType {
+	s.Size = &v
+	return s
+}
+
+// SetSnapshotId sets the SnapshotId field's value.
+func (s *DescribeVolumesSetItemResponseType) SetSnapshotId(v string) *DescribeVolumesSetItemResponseType {
+	s.SnapshotId = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *DescribeVolumesSetItemResponseType) SetStatus(v string) *DescribeVolumesSetItemResponseType {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *DescribeVolumesSetItemResponseType) SetVolumeId(v string) *DescribeVolumesSetItemResponseType {
+	s.VolumeId = &v
+	return s
 }
 
 // DescribeVpnConnectionsRequest
@@ -14788,9 +18112,16 @@ func (s *DescribeVpnConnectionsInput) SetVpnConnectionIdList(v []*string) *Descr
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnConnectionsOutput
+// DescribeVpnConnectionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnConnectionsResult
 type DescribeVpnConnectionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnConnectionSetType
+	VpnConnectionSet []*VpnConnectionType `locationName:"vpnConnectionSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14801,6 +18132,18 @@ func (s DescribeVpnConnectionsOutput) String() string {
 // GoString returns the string representation
 func (s DescribeVpnConnectionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeVpnConnectionsOutput) SetRequestId(v string) *DescribeVpnConnectionsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnConnectionSet sets the VpnConnectionSet field's value.
+func (s *DescribeVpnConnectionsOutput) SetVpnConnectionSet(v []*VpnConnectionType) *DescribeVpnConnectionsOutput {
+	s.VpnConnectionSet = v
+	return s
 }
 
 // DescribeVpnGatewaysRequest
@@ -14846,9 +18189,16 @@ func (s *DescribeVpnGatewaysInput) SetVpnGatewayIdList(v []*string) *DescribeVpn
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnGatewaysOutput
+// DescribeVpnGatewaysResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DescribeVpnGatewaysResult
 type DescribeVpnGatewaysOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnGatewaySetType
+	VpnGatewaySet []*VpnGatewayType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -14859,6 +18209,18 @@ func (s DescribeVpnGatewaysOutput) String() string {
 // GoString returns the string representation
 func (s DescribeVpnGatewaysOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DescribeVpnGatewaysOutput) SetRequestId(v string) *DescribeVpnGatewaysOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *DescribeVpnGatewaysOutput) SetVpnGatewaySet(v []*VpnGatewayType) *DescribeVpnGatewaysOutput {
+	s.VpnGatewaySet = v
+	return s
 }
 
 // DescriptionStruct
@@ -14907,6 +18269,40 @@ func (s DestinationStruct) GoString() string {
 
 // SetPort sets the Port field's value.
 func (s *DestinationStruct) SetPort(v int64) *DestinationStruct {
+	s.Port = &v
+	return s
+}
+
+// DestinationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DestinationType
+type DestinationType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Address *string `locationName:"address" type:"string"`
+
+	// Integer
+	Port *int64 `locationName:"port" type:"integer"`
+}
+
+// String returns the string representation
+func (s DestinationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DestinationType) GoString() string {
+	return s.String()
+}
+
+// SetAddress sets the Address field's value.
+func (s *DestinationType) SetAddress(v string) *DestinationType {
+	s.Address = &v
+	return s
+}
+
+// SetPort sets the Port field's value.
+func (s *DestinationType) SetPort(v int64) *DestinationType {
 	s.Port = &v
 	return s
 }
@@ -14987,9 +18383,31 @@ func (s *DetachVolumeInput) SetVolumeId(v string) *DetachVolumeInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DetachVolumeOutput
+// DetachVolumeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DetachVolumeResult
 type DetachVolumeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// TStamp
+	AttachTime *time.Time `locationName:"attachTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Device *string `locationName:"device" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
 }
 
 // String returns the string representation
@@ -15000,6 +18418,365 @@ func (s DetachVolumeOutput) String() string {
 // GoString returns the string representation
 func (s DetachVolumeOutput) GoString() string {
 	return s.String()
+}
+
+// SetAttachTime sets the AttachTime field's value.
+func (s *DetachVolumeOutput) SetAttachTime(v time.Time) *DetachVolumeOutput {
+	s.AttachTime = &v
+	return s
+}
+
+// SetDevice sets the Device field's value.
+func (s *DetachVolumeOutput) SetDevice(v string) *DetachVolumeOutput {
+	s.Device = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *DetachVolumeOutput) SetInstanceId(v string) *DetachVolumeOutput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *DetachVolumeOutput) SetInstanceUniqueId(v string) *DetachVolumeOutput {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DetachVolumeOutput) SetRequestId(v string) *DetachVolumeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *DetachVolumeOutput) SetStatus(v string) *DetachVolumeOutput {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *DetachVolumeOutput) SetVolumeId(v string) *DetachVolumeOutput {
+	s.VolumeId = &v
+	return s
+}
+
+// DhcpConfigSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpConfigSetItemType
+type DhcpConfigSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DhcpConfigId *string `locationName:"dhcpConfigId" type:"string"`
+
+	// IpAddressPoolsSetType
+	IpAddressPoolsSet []*IpAddressPoolsSetItemType `locationName:"ipAddressPoolsSet" locationNameList:"item" type:"list"`
+
+	// StaticMappingsSetType
+	StaticMappingsSet []*StaticMappingsSetItemType `locationName:"staticMappingsSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s DhcpConfigSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpConfigSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *DhcpConfigSetItemType) SetDhcpConfigId(v string) *DhcpConfigSetItemType {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetIpAddressPoolsSet sets the IpAddressPoolsSet field's value.
+func (s *DhcpConfigSetItemType) SetIpAddressPoolsSet(v []*IpAddressPoolsSetItemType) *DhcpConfigSetItemType {
+	s.IpAddressPoolsSet = v
+	return s
+}
+
+// SetStaticMappingsSet sets the StaticMappingsSet field's value.
+func (s *DhcpConfigSetItemType) SetStaticMappingsSet(v []*StaticMappingsSetItemType) *DhcpConfigSetItemType {
+	s.StaticMappingsSet = v
+	return s
+}
+
+// DhcpConfigType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpConfigType
+type DhcpConfigType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DhcpConfigId *string `locationName:"dhcpConfigId" type:"string"`
+
+	// IpAddressPoolsSetType
+	IpAddressPoolsSet []*IpAddressPoolsSetItemType `locationName:"ipAddressPoolsSet" locationNameList:"item" type:"list"`
+
+	// StaticMappingsSetType
+	StaticMappingsSet []*StaticMappingsSetItemType `locationName:"staticMappingsSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s DhcpConfigType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpConfigType) GoString() string {
+	return s.String()
+}
+
+// SetDhcpConfigId sets the DhcpConfigId field's value.
+func (s *DhcpConfigType) SetDhcpConfigId(v string) *DhcpConfigType {
+	s.DhcpConfigId = &v
+	return s
+}
+
+// SetIpAddressPoolsSet sets the IpAddressPoolsSet field's value.
+func (s *DhcpConfigType) SetIpAddressPoolsSet(v []*IpAddressPoolsSetItemType) *DhcpConfigType {
+	s.IpAddressPoolsSet = v
+	return s
+}
+
+// SetStaticMappingsSet sets the StaticMappingsSet field's value.
+func (s *DhcpConfigType) SetStaticMappingsSet(v []*StaticMappingsSetItemType) *DhcpConfigType {
+	s.StaticMappingsSet = v
+	return s
+}
+
+// DhcpConfigurationSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpConfigurationSetItemType
+type DhcpConfigurationSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Key *string `locationName:"key" type:"string"`
+
+	// ValueSetType
+	ValueSet []*ValueSetItemType `locationName:"valueSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s DhcpConfigurationSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpConfigurationSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetKey sets the Key field's value.
+func (s *DhcpConfigurationSetItemType) SetKey(v string) *DhcpConfigurationSetItemType {
+	s.Key = &v
+	return s
+}
+
+// SetValueSet sets the ValueSet field's value.
+func (s *DhcpConfigurationSetItemType) SetValueSet(v []*ValueSetItemType) *DhcpConfigurationSetItemType {
+	s.ValueSet = v
+	return s
+}
+
+// DhcpIpAddressInformationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpIpAddressInformationType
+type DhcpIpAddressInformationType struct {
+	_ struct{} `type:"structure"`
+
+	// DhcpIpAddressSetType
+	DhcpIpAddressSet []*DhcpIpAddressSetItemType `locationName:"dhcpIpAddressSet" locationNameList:"item" type:"list"`
+
+	// IpAddressPoolSetType
+	IpAddressPoolSet []*DhcpIpAddressPoolInformationSetItemType `locationName:"ipAddressPoolSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s DhcpIpAddressInformationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpIpAddressInformationType) GoString() string {
+	return s.String()
+}
+
+// SetDhcpIpAddressSet sets the DhcpIpAddressSet field's value.
+func (s *DhcpIpAddressInformationType) SetDhcpIpAddressSet(v []*DhcpIpAddressSetItemType) *DhcpIpAddressInformationType {
+	s.DhcpIpAddressSet = v
+	return s
+}
+
+// SetIpAddressPoolSet sets the IpAddressPoolSet field's value.
+func (s *DhcpIpAddressInformationType) SetIpAddressPoolSet(v []*DhcpIpAddressPoolInformationSetItemType) *DhcpIpAddressInformationType {
+	s.IpAddressPoolSet = v
+	return s
+}
+
+// DhcpIpAddressPoolInformationSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpIpAddressPoolInformationSetItemType
+type DhcpIpAddressPoolInformationSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	StartIpAddress *string `locationName:"startIpAddress" type:"string"`
+
+	// String
+	StopIpAddress *string `locationName:"stopIpAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s DhcpIpAddressPoolInformationSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpIpAddressPoolInformationSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *DhcpIpAddressPoolInformationSetItemType) SetDescription(v string) *DhcpIpAddressPoolInformationSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetStartIpAddress sets the StartIpAddress field's value.
+func (s *DhcpIpAddressPoolInformationSetItemType) SetStartIpAddress(v string) *DhcpIpAddressPoolInformationSetItemType {
+	s.StartIpAddress = &v
+	return s
+}
+
+// SetStopIpAddress sets the StopIpAddress field's value.
+func (s *DhcpIpAddressPoolInformationSetItemType) SetStopIpAddress(v string) *DhcpIpAddressPoolInformationSetItemType {
+	s.StopIpAddress = &v
+	return s
+}
+
+// DhcpIpAddressSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpIpAddressSetItemType
+type DhcpIpAddressSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	StartIpAddress *string `locationName:"startIpAddress" type:"string"`
+
+	// String
+	StopIpAddress *string `locationName:"stopIpAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s DhcpIpAddressSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpIpAddressSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *DhcpIpAddressSetItemType) SetDescription(v string) *DhcpIpAddressSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetStartIpAddress sets the StartIpAddress field's value.
+func (s *DhcpIpAddressSetItemType) SetStartIpAddress(v string) *DhcpIpAddressSetItemType {
+	s.StartIpAddress = &v
+	return s
+}
+
+// SetStopIpAddress sets the StopIpAddress field's value.
+func (s *DhcpIpAddressSetItemType) SetStopIpAddress(v string) *DhcpIpAddressSetItemType {
+	s.StopIpAddress = &v
+	return s
+}
+
+// DhcpOptionsType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpOptionsType
+type DhcpOptionsType struct {
+	_ struct{} `type:"structure"`
+
+	// DhcpConfigurationSetType
+	DhcpConfigurationSet []*DhcpConfigurationSetItemType `locationName:"dhcpConfigurationSet" locationNameList:"item" type:"list"`
+
+	// String
+	DhcpOptionsId *string `locationName:"dhcpOptionsId" type:"string"`
+}
+
+// String returns the string representation
+func (s DhcpOptionsType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpOptionsType) GoString() string {
+	return s.String()
+}
+
+// SetDhcpConfigurationSet sets the DhcpConfigurationSet field's value.
+func (s *DhcpOptionsType) SetDhcpConfigurationSet(v []*DhcpConfigurationSetItemType) *DhcpOptionsType {
+	s.DhcpConfigurationSet = v
+	return s
+}
+
+// SetDhcpOptionsId sets the DhcpOptionsId field's value.
+func (s *DhcpOptionsType) SetDhcpOptionsId(v string) *DhcpOptionsType {
+	s.DhcpOptionsId = &v
+	return s
+}
+
+// DhcpStatusInformationSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DhcpStatusInformationSetItemType
+type DhcpStatusInformationSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// DhcpIpAddressInformationType
+	DhcpIpAddressInformationSet *DhcpIpAddressInformationType `locationName:"dhcpIpAddressInformationSet" type:"structure"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	PrivateLanName *string `locationName:"privateLanName" type:"string"`
+}
+
+// String returns the string representation
+func (s DhcpStatusInformationSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DhcpStatusInformationSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDhcpIpAddressInformationSet sets the DhcpIpAddressInformationSet field's value.
+func (s *DhcpStatusInformationSetItemType) SetDhcpIpAddressInformationSet(v *DhcpIpAddressInformationType) *DhcpStatusInformationSetItemType {
+	s.DhcpIpAddressInformationSet = v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *DhcpStatusInformationSetItemType) SetNetworkId(v string) *DhcpStatusInformationSetItemType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *DhcpStatusInformationSetItemType) SetPrivateLanName(v string) *DhcpStatusInformationSetItemType {
+	s.PrivateLanName = &v
+	return s
 }
 
 // DisassociateAddressRequest
@@ -15054,9 +18831,16 @@ func (s *DisassociateAddressInput) SetPublicIp(v string) *DisassociateAddressInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateAddressOutput
+// DisassociateAddressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateAddressResult
 type DisassociateAddressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -15067,6 +18851,18 @@ func (s DisassociateAddressOutput) String() string {
 // GoString returns the string representation
 func (s DisassociateAddressOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DisassociateAddressOutput) SetRequestId(v string) *DisassociateAddressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DisassociateAddressOutput) SetReturn(v bool) *DisassociateAddressOutput {
+	s.Return = &v
+	return s
 }
 
 // DisassociateRouteTableRequest
@@ -15118,9 +18914,16 @@ func (s *DisassociateRouteTableInput) SetAssociationId(v string) *DisassociateRo
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateRouteTableOutput
+// DisassociateRouteTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DisassociateRouteTableResult
 type DisassociateRouteTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -15131,6 +18934,104 @@ func (s DisassociateRouteTableOutput) String() string {
 // GoString returns the string representation
 func (s DisassociateRouteTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DisassociateRouteTableOutput) SetRequestId(v string) *DisassociateRouteTableOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *DisassociateRouteTableOutput) SetReturn(v bool) *DisassociateRouteTableOutput {
+	s.Return = &v
+	return s
+}
+
+// DiskImageDescriptionType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DiskImageDescriptionType
+type DiskImageDescriptionType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Checksum *int64 `locationName:"checksum" type:"integer"`
+
+	// String
+	Format *string `locationName:"format" type:"string"`
+
+	// String
+	ImportManifestUrl *string `locationName:"importManifestUrl" type:"string"`
+
+	// Integer
+	Size *int64 `locationName:"size" type:"integer"`
+}
+
+// String returns the string representation
+func (s DiskImageDescriptionType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DiskImageDescriptionType) GoString() string {
+	return s.String()
+}
+
+// SetChecksum sets the Checksum field's value.
+func (s *DiskImageDescriptionType) SetChecksum(v int64) *DiskImageDescriptionType {
+	s.Checksum = &v
+	return s
+}
+
+// SetFormat sets the Format field's value.
+func (s *DiskImageDescriptionType) SetFormat(v string) *DiskImageDescriptionType {
+	s.Format = &v
+	return s
+}
+
+// SetImportManifestUrl sets the ImportManifestUrl field's value.
+func (s *DiskImageDescriptionType) SetImportManifestUrl(v string) *DiskImageDescriptionType {
+	s.ImportManifestUrl = &v
+	return s
+}
+
+// SetSize sets the Size field's value.
+func (s *DiskImageDescriptionType) SetSize(v int64) *DiskImageDescriptionType {
+	s.Size = &v
+	return s
+}
+
+// DiskImageVolumeDescriptionType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DiskImageVolumeDescriptionType
+type DiskImageVolumeDescriptionType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Id *string `locationName:"id" type:"string"`
+
+	// Integer
+	Size *int64 `locationName:"size" type:"integer"`
+}
+
+// String returns the string representation
+func (s DiskImageVolumeDescriptionType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s DiskImageVolumeDescriptionType) GoString() string {
+	return s.String()
+}
+
+// SetId sets the Id field's value.
+func (s *DiskImageVolumeDescriptionType) SetId(v string) *DiskImageVolumeDescriptionType {
+	s.Id = &v
+	return s
+}
+
+// SetSize sets the Size field's value.
+func (s *DiskImageVolumeDescriptionType) SetSize(v int64) *DiskImageVolumeDescriptionType {
+	s.Size = &v
+	return s
 }
 
 // DissociateUsersRequest
@@ -15187,9 +19088,13 @@ func (s *DissociateUsersInput) SetUsersList(v []*string) *DissociateUsersInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DissociateUsersOutput
+// DissociateUsersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DissociateUsersResult
 type DissociateUsersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Users
+	Users []*User `locationName:"Users" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -15200,6 +19105,12 @@ func (s DissociateUsersOutput) String() string {
 // GoString returns the string representation
 func (s DissociateUsersOutput) GoString() string {
 	return s.String()
+}
+
+// SetUsers sets the Users field's value.
+func (s *DissociateUsersOutput) SetUsers(v []*User) *DissociateUsersOutput {
+	s.Users = v
+	return s
 }
 
 // DownloadSslCertificateRequest
@@ -15256,9 +19167,22 @@ func (s *DownloadSslCertificateInput) SetFqdnId(v string) *DownloadSslCertificat
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DownloadSslCertificateOutput
+// DownloadSslCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DownloadSslCertificateResult
 type DownloadSslCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	FileData *string `locationName:"fileData" type:"string"`
+
+	// String
+	Fqdn *string `locationName:"fqdn" type:"string"`
+
+	// String
+	FqdnId *string `locationName:"fqdnId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -15271,13 +19195,132 @@ func (s DownloadSslCertificateOutput) GoString() string {
 	return s.String()
 }
 
+// SetFileData sets the FileData field's value.
+func (s *DownloadSslCertificateOutput) SetFileData(v string) *DownloadSslCertificateOutput {
+	s.FileData = &v
+	return s
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *DownloadSslCertificateOutput) SetFqdn(v string) *DownloadSslCertificateOutput {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *DownloadSslCertificateOutput) SetFqdnId(v string) *DownloadSslCertificateOutput {
+	s.FqdnId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *DownloadSslCertificateOutput) SetRequestId(v string) *DownloadSslCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// EbsBlockDeviceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//EbsBlockDeviceType
+type EbsBlockDeviceType struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	DeleteOnTermination *bool `locationName:"deleteOnTermination" type:"boolean"`
+
+	// String
+	SnapshotId *string `locationName:"snapshotId" type:"string"`
+
+	// Integer
+	VolumeSize *int64 `locationName:"volumeSize" type:"integer"`
+}
+
+// String returns the string representation
+func (s EbsBlockDeviceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s EbsBlockDeviceType) GoString() string {
+	return s.String()
+}
+
+// SetDeleteOnTermination sets the DeleteOnTermination field's value.
+func (s *EbsBlockDeviceType) SetDeleteOnTermination(v bool) *EbsBlockDeviceType {
+	s.DeleteOnTermination = &v
+	return s
+}
+
+// SetSnapshotId sets the SnapshotId field's value.
+func (s *EbsBlockDeviceType) SetSnapshotId(v string) *EbsBlockDeviceType {
+	s.SnapshotId = &v
+	return s
+}
+
+// SetVolumeSize sets the VolumeSize field's value.
+func (s *EbsBlockDeviceType) SetVolumeSize(v int64) *EbsBlockDeviceType {
+	s.VolumeSize = &v
+	return s
+}
+
+// EbsInstanceBlockDeviceMappingResponseType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//EbsInstanceBlockDeviceMappingResponseType
+type EbsInstanceBlockDeviceMappingResponseType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	AttachTime *time.Time `locationName:"attachTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	DeleteOnTermination *string `locationName:"deleteOnTermination" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	VolumeId *string `locationName:"volumeId" type:"string"`
+}
+
+// String returns the string representation
+func (s EbsInstanceBlockDeviceMappingResponseType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s EbsInstanceBlockDeviceMappingResponseType) GoString() string {
+	return s.String()
+}
+
+// SetAttachTime sets the AttachTime field's value.
+func (s *EbsInstanceBlockDeviceMappingResponseType) SetAttachTime(v time.Time) *EbsInstanceBlockDeviceMappingResponseType {
+	s.AttachTime = &v
+	return s
+}
+
+// SetDeleteOnTermination sets the DeleteOnTermination field's value.
+func (s *EbsInstanceBlockDeviceMappingResponseType) SetDeleteOnTermination(v string) *EbsInstanceBlockDeviceMappingResponseType {
+	s.DeleteOnTermination = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *EbsInstanceBlockDeviceMappingResponseType) SetStatus(v string) *EbsInstanceBlockDeviceMappingResponseType {
+	s.Status = &v
+	return s
+}
+
+// SetVolumeId sets the VolumeId field's value.
+func (s *EbsInstanceBlockDeviceMappingResponseType) SetVolumeId(v string) *EbsInstanceBlockDeviceMappingResponseType {
+	s.VolumeId = &v
+	return s
+}
+
 // EbsStruct
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//EbsStruct
 type EbsStruct struct {
 	_ struct{} `type:"structure"`
 
 	// DeleteOnTermination
-	DeleteOnTermination *bool `type:"boolean"`
+	DeleteOnTermination *string `type:"string"`
 
 	// NoDevice
 	NoDevice *bool `type:"boolean"`
@@ -15300,7 +19343,7 @@ func (s EbsStruct) GoString() string {
 }
 
 // SetDeleteOnTermination sets the DeleteOnTermination field's value.
-func (s *EbsStruct) SetDeleteOnTermination(v bool) *EbsStruct {
+func (s *EbsStruct) SetDeleteOnTermination(v string) *EbsStruct {
 	s.DeleteOnTermination = &v
 	return s
 }
@@ -15320,6 +19363,219 @@ func (s *EbsStruct) SetSnapshotId(v string) *EbsStruct {
 // SetVolumeSize sets the VolumeSize field's value.
 func (s *EbsStruct) SetVolumeSize(v int64) *EbsStruct {
 	s.VolumeSize = &v
+	return s
+}
+
+// EmailAddressItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//EmailAddressItemType
+type EmailAddressItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	EmailAddress *string `locationName:"emailAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s EmailAddressItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s EmailAddressItemType) GoString() string {
+	return s.String()
+}
+
+// SetEmailAddress sets the EmailAddress field's value.
+func (s *EmailAddressItemType) SetEmailAddress(v string) *EmailAddressItemType {
+	s.EmailAddress = &v
+	return s
+}
+
+// Filter
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//Filter
+type Filter struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	FilterType *string `locationName:"FilterType" type:"string"`
+
+	// FilterIPAddresses
+	IPAddresses []*FilterIPAddress `locationName:"IPAddresses" locationNameList:"member" type:"list"`
+}
+
+// String returns the string representation
+func (s Filter) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s Filter) GoString() string {
+	return s.String()
+}
+
+// SetFilterType sets the FilterType field's value.
+func (s *Filter) SetFilterType(v string) *Filter {
+	s.FilterType = &v
+	return s
+}
+
+// SetIPAddresses sets the IPAddresses field's value.
+func (s *Filter) SetIPAddresses(v []*FilterIPAddress) *Filter {
+	s.IPAddresses = v
+	return s
+}
+
+// FilterIPAddress
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//FilterIPAddress
+type FilterIPAddress struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	IPAddress *string `locationName:"IPAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s FilterIPAddress) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s FilterIPAddress) GoString() string {
+	return s.String()
+}
+
+// SetIPAddress sets the IPAddress field's value.
+func (s *FilterIPAddress) SetIPAddress(v string) *FilterIPAddress {
+	s.IPAddress = &v
+	return s
+}
+
+// GlobalPlacementType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//GlobalPlacementType
+type GlobalPlacementType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// String
+	RegionName *string `locationName:"regionName" type:"string"`
+}
+
+// String returns the string representation
+func (s GlobalPlacementType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s GlobalPlacementType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *GlobalPlacementType) SetAvailabilityZone(v string) *GlobalPlacementType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetRegionName sets the RegionName field's value.
+func (s *GlobalPlacementType) SetRegionName(v string) *GlobalPlacementType {
+	s.RegionName = &v
+	return s
+}
+
+// GroupItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//GroupItemType
+type GroupItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	GroupId *string `locationName:"groupId" type:"string"`
+}
+
+// String returns the string representation
+func (s GroupItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s GroupItemType) GoString() string {
+	return s.String()
+}
+
+// SetGroupId sets the GroupId field's value.
+func (s *GroupItemType) SetGroupId(v string) *GroupItemType {
+	s.GroupId = &v
+	return s
+}
+
+// HealthCheck
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//HealthCheck
+type HealthCheck struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	HealthyThreshold *int64 `locationName:"HealthyThreshold" type:"integer"`
+
+	// InstanceStates
+	InstanceStates []*string `locationName:"InstanceStates" locationNameList:"member" type:"list"`
+
+	// Integer
+	Interval *int64 `locationName:"Interval" type:"integer"`
+
+	// String
+	Target *string `locationName:"Target" type:"string"`
+
+	// Integer
+	Timeout *int64 `locationName:"Timeout" type:"integer"`
+
+	// Integer
+	UnhealthyThreshold *int64 `locationName:"UnhealthyThreshold" type:"integer"`
+}
+
+// String returns the string representation
+func (s HealthCheck) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s HealthCheck) GoString() string {
+	return s.String()
+}
+
+// SetHealthyThreshold sets the HealthyThreshold field's value.
+func (s *HealthCheck) SetHealthyThreshold(v int64) *HealthCheck {
+	s.HealthyThreshold = &v
+	return s
+}
+
+// SetInstanceStates sets the InstanceStates field's value.
+func (s *HealthCheck) SetInstanceStates(v []*string) *HealthCheck {
+	s.InstanceStates = v
+	return s
+}
+
+// SetInterval sets the Interval field's value.
+func (s *HealthCheck) SetInterval(v int64) *HealthCheck {
+	s.Interval = &v
+	return s
+}
+
+// SetTarget sets the Target field's value.
+func (s *HealthCheck) SetTarget(v string) *HealthCheck {
+	s.Target = &v
+	return s
+}
+
+// SetTimeout sets the Timeout field's value.
+func (s *HealthCheck) SetTimeout(v int64) *HealthCheck {
+	s.Timeout = &v
+	return s
+}
+
+// SetUnhealthyThreshold sets the UnhealthyThreshold field's value.
+func (s *HealthCheck) SetUnhealthyThreshold(v int64) *HealthCheck {
+	s.UnhealthyThreshold = &v
 	return s
 }
 
@@ -15577,9 +19833,13 @@ func (s *ImportInstanceInput) SetUserData(v string) *ImportInstanceInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceOutput
+// ImportInstanceResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceResult
 type ImportInstanceOutput struct {
 	_ struct{} `type:"structure"`
+
+	// ConversionTaskType
+	ConversionTask *ConversionTaskType `locationName:"conversionTask" type:"structure"`
 }
 
 // String returns the string representation
@@ -15590,6 +19850,152 @@ func (s ImportInstanceOutput) String() string {
 // GoString returns the string representation
 func (s ImportInstanceOutput) GoString() string {
 	return s.String()
+}
+
+// SetConversionTask sets the ConversionTask field's value.
+func (s *ImportInstanceOutput) SetConversionTask(v *ConversionTaskType) *ImportInstanceOutput {
+	s.ConversionTask = v
+	return s
+}
+
+// ImportInstanceTaskDetailsType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceTaskDetailsType
+type ImportInstanceTaskDetailsType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	Platform *string `locationName:"platform" type:"string"`
+
+	// ImportInstanceVolumeDetailSetType
+	Volumes []*ImportInstanceVolumeDetailItemType `locationName:"volumes" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s ImportInstanceTaskDetailsType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ImportInstanceTaskDetailsType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *ImportInstanceTaskDetailsType) SetDescription(v string) *ImportInstanceTaskDetailsType {
+	s.Description = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *ImportInstanceTaskDetailsType) SetInstanceId(v string) *ImportInstanceTaskDetailsType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *ImportInstanceTaskDetailsType) SetInstanceUniqueId(v string) *ImportInstanceTaskDetailsType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetPlatform sets the Platform field's value.
+func (s *ImportInstanceTaskDetailsType) SetPlatform(v string) *ImportInstanceTaskDetailsType {
+	s.Platform = &v
+	return s
+}
+
+// SetVolumes sets the Volumes field's value.
+func (s *ImportInstanceTaskDetailsType) SetVolumes(v []*ImportInstanceVolumeDetailItemType) *ImportInstanceTaskDetailsType {
+	s.Volumes = v
+	return s
+}
+
+// ImportInstanceVolumeDetailItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportInstanceVolumeDetailItemType
+type ImportInstanceVolumeDetailItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// Integer
+	BytesConverted *int64 `locationName:"bytesConverted" type:"integer"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// DiskImageDescriptionType
+	Image *DiskImageDescriptionType `locationName:"image" type:"structure"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	StatusMessage *string `locationName:"statusMessage" type:"string"`
+
+	// DiskImageVolumeDescriptionType
+	Volume *DiskImageVolumeDescriptionType `locationName:"volume" type:"structure"`
+}
+
+// String returns the string representation
+func (s ImportInstanceVolumeDetailItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ImportInstanceVolumeDetailItemType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetAvailabilityZone(v string) *ImportInstanceVolumeDetailItemType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetBytesConverted sets the BytesConverted field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetBytesConverted(v int64) *ImportInstanceVolumeDetailItemType {
+	s.BytesConverted = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetDescription(v string) *ImportInstanceVolumeDetailItemType {
+	s.Description = &v
+	return s
+}
+
+// SetImage sets the Image field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetImage(v *DiskImageDescriptionType) *ImportInstanceVolumeDetailItemType {
+	s.Image = v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetStatus(v string) *ImportInstanceVolumeDetailItemType {
+	s.Status = &v
+	return s
+}
+
+// SetStatusMessage sets the StatusMessage field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetStatusMessage(v string) *ImportInstanceVolumeDetailItemType {
+	s.StatusMessage = &v
+	return s
+}
+
+// SetVolume sets the Volume field's value.
+func (s *ImportInstanceVolumeDetailItemType) SetVolume(v *DiskImageVolumeDescriptionType) *ImportInstanceVolumeDetailItemType {
+	s.Volume = v
+	return s
 }
 
 // ImportKeyPairRequest
@@ -15655,9 +20061,19 @@ func (s *ImportKeyPairInput) SetPublicKeyMaterial(v string) *ImportKeyPairInput 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportKeyPairOutput
+// ImportKeyPairResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ImportKeyPairResult
 type ImportKeyPairOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	KeyFingerprint *string `locationName:"keyFingerprint" type:"string"`
+
+	// String
+	KeyName *string `locationName:"keyName" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -15668,6 +20084,24 @@ func (s ImportKeyPairOutput) String() string {
 // GoString returns the string representation
 func (s ImportKeyPairOutput) GoString() string {
 	return s.String()
+}
+
+// SetKeyFingerprint sets the KeyFingerprint field's value.
+func (s *ImportKeyPairOutput) SetKeyFingerprint(v string) *ImportKeyPairOutput {
+	s.KeyFingerprint = &v
+	return s
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *ImportKeyPairOutput) SetKeyName(v string) *ImportKeyPairOutput {
+	s.KeyName = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ImportKeyPairOutput) SetRequestId(v string) *ImportKeyPairOutput {
+	s.RequestId = &v
+	return s
 }
 
 // InboundInterfaceStruct
@@ -15701,6 +20135,854 @@ func (s *InboundInterfaceStruct) SetNetworkId(v string) *InboundInterfaceStruct 
 // SetNetworkName sets the NetworkName field's value.
 func (s *InboundInterfaceStruct) SetNetworkName(v string) *InboundInterfaceStruct {
 	s.NetworkName = &v
+	return s
+}
+
+// InstanceBlockDeviceMappingResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceBlockDeviceMappingResponseItemType
+type InstanceBlockDeviceMappingResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DeviceName *string `locationName:"deviceName" type:"string"`
+
+	// EbsInstanceBlockDeviceMappingResponseType
+	Ebs *EbsInstanceBlockDeviceMappingResponseType `locationName:"ebs" type:"structure"`
+}
+
+// String returns the string representation
+func (s InstanceBlockDeviceMappingResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceBlockDeviceMappingResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetDeviceName sets the DeviceName field's value.
+func (s *InstanceBlockDeviceMappingResponseItemType) SetDeviceName(v string) *InstanceBlockDeviceMappingResponseItemType {
+	s.DeviceName = &v
+	return s
+}
+
+// SetEbs sets the Ebs field's value.
+func (s *InstanceBlockDeviceMappingResponseItemType) SetEbs(v *EbsInstanceBlockDeviceMappingResponseType) *InstanceBlockDeviceMappingResponseItemType {
+	s.Ebs = v
+	return s
+}
+
+// InstanceIdType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceIdType
+type InstanceIdType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceIdType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceIdType) GoString() string {
+	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *InstanceIdType) SetInstanceId(v string) *InstanceIdType {
+	s.InstanceId = &v
+	return s
+}
+
+// InstanceLoadBalancerMappingResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceLoadBalancerMappingResponseItemType
+type InstanceLoadBalancerMappingResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	InstancePort *int64 `locationName:"instancePort" type:"integer"`
+
+	// String
+	LoadBalancerName *string `locationName:"loadBalancerName" type:"string"`
+
+	// Integer
+	LoadBalancerPort *int64 `locationName:"loadBalancerPort" type:"integer"`
+}
+
+// String returns the string representation
+func (s InstanceLoadBalancerMappingResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceLoadBalancerMappingResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *InstanceLoadBalancerMappingResponseItemType) SetInstancePort(v int64) *InstanceLoadBalancerMappingResponseItemType {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *InstanceLoadBalancerMappingResponseItemType) SetLoadBalancerName(v string) *InstanceLoadBalancerMappingResponseItemType {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *InstanceLoadBalancerMappingResponseItemType) SetLoadBalancerPort(v int64) *InstanceLoadBalancerMappingResponseItemType {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// InstanceNetworkInterfaceAssociation
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceNetworkInterfaceAssociation
+type InstanceNetworkInterfaceAssociation struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	IpOwnerId *string `locationName:"ipOwnerId" type:"string"`
+
+	// String
+	PublicDnsName *string `locationName:"publicDnsName" type:"string"`
+
+	// String
+	PublicIp *string `locationName:"publicIp" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceNetworkInterfaceAssociation) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceNetworkInterfaceAssociation) GoString() string {
+	return s.String()
+}
+
+// SetIpOwnerId sets the IpOwnerId field's value.
+func (s *InstanceNetworkInterfaceAssociation) SetIpOwnerId(v string) *InstanceNetworkInterfaceAssociation {
+	s.IpOwnerId = &v
+	return s
+}
+
+// SetPublicDnsName sets the PublicDnsName field's value.
+func (s *InstanceNetworkInterfaceAssociation) SetPublicDnsName(v string) *InstanceNetworkInterfaceAssociation {
+	s.PublicDnsName = &v
+	return s
+}
+
+// SetPublicIp sets the PublicIp field's value.
+func (s *InstanceNetworkInterfaceAssociation) SetPublicIp(v string) *InstanceNetworkInterfaceAssociation {
+	s.PublicIp = &v
+	return s
+}
+
+// InstanceNetworkInterfaceAttachmentType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceNetworkInterfaceAttachmentType
+type InstanceNetworkInterfaceAttachmentType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	AttachTime *time.Time `locationName:"attachTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	AttachmentID *string `locationName:"attachmentID" type:"string"`
+
+	// String
+	DeleteOnTermination *string `locationName:"deleteOnTermination" type:"string"`
+
+	// String
+	DeviceIndex *string `locationName:"deviceIndex" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceNetworkInterfaceAttachmentType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceNetworkInterfaceAttachmentType) GoString() string {
+	return s.String()
+}
+
+// SetAttachTime sets the AttachTime field's value.
+func (s *InstanceNetworkInterfaceAttachmentType) SetAttachTime(v time.Time) *InstanceNetworkInterfaceAttachmentType {
+	s.AttachTime = &v
+	return s
+}
+
+// SetAttachmentID sets the AttachmentID field's value.
+func (s *InstanceNetworkInterfaceAttachmentType) SetAttachmentID(v string) *InstanceNetworkInterfaceAttachmentType {
+	s.AttachmentID = &v
+	return s
+}
+
+// SetDeleteOnTermination sets the DeleteOnTermination field's value.
+func (s *InstanceNetworkInterfaceAttachmentType) SetDeleteOnTermination(v string) *InstanceNetworkInterfaceAttachmentType {
+	s.DeleteOnTermination = &v
+	return s
+}
+
+// SetDeviceIndex sets the DeviceIndex field's value.
+func (s *InstanceNetworkInterfaceAttachmentType) SetDeviceIndex(v string) *InstanceNetworkInterfaceAttachmentType {
+	s.DeviceIndex = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *InstanceNetworkInterfaceAttachmentType) SetStatus(v string) *InstanceNetworkInterfaceAttachmentType {
+	s.Status = &v
+	return s
+}
+
+// InstanceNetworkInterfaceSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceNetworkInterfaceSetItemType
+type InstanceNetworkInterfaceSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// InstanceNetworkInterfaceAssociation
+	Association *InstanceNetworkInterfaceAssociation `locationName:"association" type:"structure"`
+
+	// InstanceNetworkInterfaceAttachmentType
+	Attachment *InstanceNetworkInterfaceAttachmentType `locationName:"attachment" type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// String
+	MacAddress *string `locationName:"macAddress" type:"string"`
+
+	// String
+	NetworkInterfaceId *string `locationName:"networkInterfaceId" type:"string"`
+
+	// String
+	NiftyNetworkId *string `locationName:"niftyNetworkId" type:"string"`
+
+	// String
+	NiftyNetworkName *string `locationName:"niftyNetworkName" type:"string"`
+
+	// String
+	OwnerId *string `locationName:"ownerId" type:"string"`
+
+	// String
+	PrivateDnsName *string `locationName:"privateDnsName" type:"string"`
+
+	// String
+	PrivateIpAddress *string `locationName:"privateIpAddress" type:"string"`
+
+	// String
+	PrivateIpAddressV6 *string `locationName:"privateIpAddressV6" type:"string"`
+
+	// InstancePrivateIpAddressesSetType
+	PrivateIpAddressesSet []*InstancePrivateIpAddressesSetItemType `locationName:"privateIpAddressesSet" locationNameList:"item" type:"list"`
+
+	// String
+	SourceDestCheck *string `locationName:"sourceDestCheck" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	SubnetId *string `locationName:"subnetId" type:"string"`
+
+	// String
+	VpcId *string `locationName:"vpcId" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceNetworkInterfaceSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceNetworkInterfaceSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetAssociation sets the Association field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetAssociation(v *InstanceNetworkInterfaceAssociation) *InstanceNetworkInterfaceSetItemType {
+	s.Association = v
+	return s
+}
+
+// SetAttachment sets the Attachment field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetAttachment(v *InstanceNetworkInterfaceAttachmentType) *InstanceNetworkInterfaceSetItemType {
+	s.Attachment = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetDescription(v string) *InstanceNetworkInterfaceSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetGroupSet(v []*GroupItemType) *InstanceNetworkInterfaceSetItemType {
+	s.GroupSet = v
+	return s
+}
+
+// SetMacAddress sets the MacAddress field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetMacAddress(v string) *InstanceNetworkInterfaceSetItemType {
+	s.MacAddress = &v
+	return s
+}
+
+// SetNetworkInterfaceId sets the NetworkInterfaceId field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetNetworkInterfaceId(v string) *InstanceNetworkInterfaceSetItemType {
+	s.NetworkInterfaceId = &v
+	return s
+}
+
+// SetNiftyNetworkId sets the NiftyNetworkId field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetNiftyNetworkId(v string) *InstanceNetworkInterfaceSetItemType {
+	s.NiftyNetworkId = &v
+	return s
+}
+
+// SetNiftyNetworkName sets the NiftyNetworkName field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetNiftyNetworkName(v string) *InstanceNetworkInterfaceSetItemType {
+	s.NiftyNetworkName = &v
+	return s
+}
+
+// SetOwnerId sets the OwnerId field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetOwnerId(v string) *InstanceNetworkInterfaceSetItemType {
+	s.OwnerId = &v
+	return s
+}
+
+// SetPrivateDnsName sets the PrivateDnsName field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetPrivateDnsName(v string) *InstanceNetworkInterfaceSetItemType {
+	s.PrivateDnsName = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetPrivateIpAddress(v string) *InstanceNetworkInterfaceSetItemType {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// SetPrivateIpAddressV6 sets the PrivateIpAddressV6 field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetPrivateIpAddressV6(v string) *InstanceNetworkInterfaceSetItemType {
+	s.PrivateIpAddressV6 = &v
+	return s
+}
+
+// SetPrivateIpAddressesSet sets the PrivateIpAddressesSet field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetPrivateIpAddressesSet(v []*InstancePrivateIpAddressesSetItemType) *InstanceNetworkInterfaceSetItemType {
+	s.PrivateIpAddressesSet = v
+	return s
+}
+
+// SetSourceDestCheck sets the SourceDestCheck field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetSourceDestCheck(v string) *InstanceNetworkInterfaceSetItemType {
+	s.SourceDestCheck = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetStatus(v string) *InstanceNetworkInterfaceSetItemType {
+	s.Status = &v
+	return s
+}
+
+// SetSubnetId sets the SubnetId field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetSubnetId(v string) *InstanceNetworkInterfaceSetItemType {
+	s.SubnetId = &v
+	return s
+}
+
+// SetVpcId sets the VpcId field's value.
+func (s *InstanceNetworkInterfaceSetItemType) SetVpcId(v string) *InstanceNetworkInterfaceSetItemType {
+	s.VpcId = &v
+	return s
+}
+
+// InstancePrivateIpAddressesSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstancePrivateIpAddressesSetItemType
+type InstancePrivateIpAddressesSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// InstanceNetworkInterfaceAssociation
+	Association *InstanceNetworkInterfaceAssociation `locationName:"association" type:"structure"`
+
+	// Boolean
+	Primary *bool `locationName:"primary" type:"boolean"`
+
+	// String
+	PrivateDnsName *string `locationName:"privateDnsName" type:"string"`
+
+	// String
+	PrivateIpAddress *string `locationName:"privateIpAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s InstancePrivateIpAddressesSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstancePrivateIpAddressesSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetAssociation sets the Association field's value.
+func (s *InstancePrivateIpAddressesSetItemType) SetAssociation(v *InstanceNetworkInterfaceAssociation) *InstancePrivateIpAddressesSetItemType {
+	s.Association = v
+	return s
+}
+
+// SetPrimary sets the Primary field's value.
+func (s *InstancePrivateIpAddressesSetItemType) SetPrimary(v bool) *InstancePrivateIpAddressesSetItemType {
+	s.Primary = &v
+	return s
+}
+
+// SetPrivateDnsName sets the PrivateDnsName field's value.
+func (s *InstancePrivateIpAddressesSetItemType) SetPrivateDnsName(v string) *InstancePrivateIpAddressesSetItemType {
+	s.PrivateDnsName = &v
+	return s
+}
+
+// SetPrivateIpAddress sets the PrivateIpAddress field's value.
+func (s *InstancePrivateIpAddressesSetItemType) SetPrivateIpAddress(v string) *InstancePrivateIpAddressesSetItemType {
+	s.PrivateIpAddress = &v
+	return s
+}
+
+// InstanceStateChangeType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceStateChangeType
+type InstanceStateChangeType struct {
+	_ struct{} `type:"structure"`
+
+	// InstanceStateType
+	CurrentState *InstanceStateType `locationName:"currentState" type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// InstanceStateType
+	PreviousState *InstanceStateType `locationName:"previousState" type:"structure"`
+}
+
+// String returns the string representation
+func (s InstanceStateChangeType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceStateChangeType) GoString() string {
+	return s.String()
+}
+
+// SetCurrentState sets the CurrentState field's value.
+func (s *InstanceStateChangeType) SetCurrentState(v *InstanceStateType) *InstanceStateChangeType {
+	s.CurrentState = v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *InstanceStateChangeType) SetInstanceId(v string) *InstanceStateChangeType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *InstanceStateChangeType) SetInstanceUniqueId(v string) *InstanceStateChangeType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetPreviousState sets the PreviousState field's value.
+func (s *InstanceStateChangeType) SetPreviousState(v *InstanceStateType) *InstanceStateChangeType {
+	s.PreviousState = v
+	return s
+}
+
+// InstanceStateType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceStateType
+type InstanceStateType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Code *int64 `locationName:"code" type:"integer"`
+
+	// String
+	Name *string `locationName:"name" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceStateType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceStateType) GoString() string {
+	return s.String()
+}
+
+// SetCode sets the Code field's value.
+func (s *InstanceStateType) SetCode(v int64) *InstanceStateType {
+	s.Code = &v
+	return s
+}
+
+// SetName sets the Name field's value.
+func (s *InstanceStateType) SetName(v string) *InstanceStateType {
+	s.Name = &v
+	return s
+}
+
+// InstanceUnique
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceUnique
+type InstanceUnique struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"InstanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceUnique) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceUnique) GoString() string {
+	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *InstanceUnique) SetInstanceId(v string) *InstanceUnique {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *InstanceUnique) SetInstanceUniqueId(v string) *InstanceUnique {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// InstanceUniqueIdType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstanceUniqueIdType
+type InstanceUniqueIdType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+}
+
+// String returns the string representation
+func (s InstanceUniqueIdType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstanceUniqueIdType) GoString() string {
+	return s.String()
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *InstanceUniqueIdType) SetInstanceUniqueId(v string) *InstanceUniqueIdType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// Instances
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//Instances
+type Instances struct {
+	_ struct{} `type:"structure"`
+
+	// Instances
+	Item *Instances `locationName:"item" type:"structure"`
+}
+
+// String returns the string representation
+func (s Instances) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s Instances) GoString() string {
+	return s.String()
+}
+
+// SetItem sets the Item field's value.
+func (s *Instances) SetItem(v *Instances) *Instances {
+	s.Item = v
+	return s
+}
+
+// InstancesNetworkInterfaceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//InstancesNetworkInterfaceType
+type InstancesNetworkInterfaceType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DeviceIndex *string `locationName:"deviceIndex" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+}
+
+// String returns the string representation
+func (s InstancesNetworkInterfaceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s InstancesNetworkInterfaceType) GoString() string {
+	return s.String()
+}
+
+// SetDeviceIndex sets the DeviceIndex field's value.
+func (s *InstancesNetworkInterfaceType) SetDeviceIndex(v string) *InstancesNetworkInterfaceType {
+	s.DeviceIndex = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *InstancesNetworkInterfaceType) SetInstanceId(v string) *InstancesNetworkInterfaceType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *InstancesNetworkInterfaceType) SetInstanceUniqueId(v string) *InstancesNetworkInterfaceType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *InstancesNetworkInterfaceType) SetIpAddress(v string) *InstancesNetworkInterfaceType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *InstancesNetworkInterfaceType) SetNetworkId(v string) *InstancesNetworkInterfaceType {
+	s.NetworkId = &v
+	return s
+}
+
+// IpAddressPoolsSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//IpAddressPoolsSetItemType
+type IpAddressPoolsSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	StartIpAddress *string `locationName:"startIpAddress" type:"string"`
+
+	// String
+	StopIpAddress *string `locationName:"stopIpAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s IpAddressPoolsSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s IpAddressPoolsSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *IpAddressPoolsSetItemType) SetDescription(v string) *IpAddressPoolsSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetStartIpAddress sets the StartIpAddress field's value.
+func (s *IpAddressPoolsSetItemType) SetStartIpAddress(v string) *IpAddressPoolsSetItemType {
+	s.StartIpAddress = &v
+	return s
+}
+
+// SetStopIpAddress sets the StopIpAddress field's value.
+func (s *IpAddressPoolsSetItemType) SetStopIpAddress(v string) *IpAddressPoolsSetItemType {
+	s.StopIpAddress = &v
+	return s
+}
+
+// IpPermissionType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//IpPermissionType
+type IpPermissionType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	AddDatetime *time.Time `locationName:"addDatetime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// Integer
+	FromPort *int64 `locationName:"fromPort" type:"integer"`
+
+	// UserIdGroupPairSetType
+	Groups []*UserIdGroupPairType `locationName:"groups" locationNameList:"item" type:"list"`
+
+	// String
+	InOut *string `locationName:"inOut" type:"string"`
+
+	// String
+	IpProtocol *string `locationName:"ipProtocol" type:"string"`
+
+	// IpRangeSetType
+	IpRanges []*IpRangeItemType `locationName:"ipRanges" locationNameList:"item" type:"list"`
+
+	// Integer
+	ToPort *int64 `locationName:"toPort" type:"integer"`
+}
+
+// String returns the string representation
+func (s IpPermissionType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s IpPermissionType) GoString() string {
+	return s.String()
+}
+
+// SetAddDatetime sets the AddDatetime field's value.
+func (s *IpPermissionType) SetAddDatetime(v time.Time) *IpPermissionType {
+	s.AddDatetime = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *IpPermissionType) SetDescription(v string) *IpPermissionType {
+	s.Description = &v
+	return s
+}
+
+// SetFromPort sets the FromPort field's value.
+func (s *IpPermissionType) SetFromPort(v int64) *IpPermissionType {
+	s.FromPort = &v
+	return s
+}
+
+// SetGroups sets the Groups field's value.
+func (s *IpPermissionType) SetGroups(v []*UserIdGroupPairType) *IpPermissionType {
+	s.Groups = v
+	return s
+}
+
+// SetInOut sets the InOut field's value.
+func (s *IpPermissionType) SetInOut(v string) *IpPermissionType {
+	s.InOut = &v
+	return s
+}
+
+// SetIpProtocol sets the IpProtocol field's value.
+func (s *IpPermissionType) SetIpProtocol(v string) *IpPermissionType {
+	s.IpProtocol = &v
+	return s
+}
+
+// SetIpRanges sets the IpRanges field's value.
+func (s *IpPermissionType) SetIpRanges(v []*IpRangeItemType) *IpPermissionType {
+	s.IpRanges = v
+	return s
+}
+
+// SetToPort sets the ToPort field's value.
+func (s *IpPermissionType) SetToPort(v int64) *IpPermissionType {
+	s.ToPort = &v
+	return s
+}
+
+// IpRangeItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//IpRangeItemType
+type IpRangeItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CidrIp *string `locationName:"cidrIp" type:"string"`
+}
+
+// String returns the string representation
+func (s IpRangeItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s IpRangeItemType) GoString() string {
+	return s.String()
+}
+
+// SetCidrIp sets the CidrIp field's value.
+func (s *IpRangeItemType) SetCidrIp(v string) *IpRangeItemType {
+	s.CidrIp = &v
+	return s
+}
+
+// LBCookieStickinessPolicy
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LBCookieStickinessPolicy
+type LBCookieStickinessPolicy struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CookieExpirationPeriod *string `locationName:"CookieExpirationPeriod" type:"string"`
+
+	// String
+	PolicyName *string `locationName:"PolicyName" type:"string"`
+}
+
+// String returns the string representation
+func (s LBCookieStickinessPolicy) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LBCookieStickinessPolicy) GoString() string {
+	return s.String()
+}
+
+// SetCookieExpirationPeriod sets the CookieExpirationPeriod field's value.
+func (s *LBCookieStickinessPolicy) SetCookieExpirationPeriod(v string) *LBCookieStickinessPolicy {
+	s.CookieExpirationPeriod = &v
+	return s
+}
+
+// SetPolicyName sets the PolicyName field's value.
+func (s *LBCookieStickinessPolicy) SetPolicyName(v string) *LBCookieStickinessPolicy {
+	s.PolicyName = &v
 	return s
 }
 
@@ -15769,6 +21051,92 @@ func (s *ListenInterfaceStruct) SetNetworkId(v string) *ListenInterfaceStruct {
 // SetNetworkName sets the NetworkName field's value.
 func (s *ListenInterfaceStruct) SetNetworkName(v string) *ListenInterfaceStruct {
 	s.NetworkName = &v
+	return s
+}
+
+// Listener
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//Listener
+type Listener struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	BalancingType *string `locationName:"BalancingType" type:"string"`
+
+	// Integer
+	InstancePort *int64 `locationName:"InstancePort" type:"integer"`
+
+	// Integer
+	LoadBalancerPort *int64 `locationName:"LoadBalancerPort" type:"integer"`
+
+	// String
+	Protocol *string `locationName:"Protocol" type:"string"`
+}
+
+// String returns the string representation
+func (s Listener) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s Listener) GoString() string {
+	return s.String()
+}
+
+// SetBalancingType sets the BalancingType field's value.
+func (s *Listener) SetBalancingType(v string) *Listener {
+	s.BalancingType = &v
+	return s
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *Listener) SetInstancePort(v int64) *Listener {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *Listener) SetLoadBalancerPort(v int64) *Listener {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// SetProtocol sets the Protocol field's value.
+func (s *Listener) SetProtocol(v string) *Listener {
+	s.Protocol = &v
+	return s
+}
+
+// ListenerDescription
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListenerDescription
+type ListenerDescription struct {
+	_ struct{} `type:"structure"`
+
+	// Listener
+	Listener *Listener `locationName:"Listener" type:"structure"`
+
+	// PolicyNames
+	PolicyNames []*string `locationName:"PolicyNames" locationNameList:"member" type:"list"`
+}
+
+// String returns the string representation
+func (s ListenerDescription) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ListenerDescription) GoString() string {
+	return s.String()
+}
+
+// SetListener sets the Listener field's value.
+func (s *ListenerDescription) SetListener(v *Listener) *ListenerDescription {
+	s.Listener = v
+	return s
+}
+
+// SetPolicyNames sets the PolicyNames field's value.
+func (s *ListenerDescription) SetPolicyNames(v []*string) *ListenerDescription {
+	s.PolicyNames = v
 	return s
 }
 
@@ -15867,6 +21235,148 @@ func (s *ListenerUpdateStruct) SetLoadBalancerPort(v int64) *ListenerUpdateStruc
 	return s
 }
 
+// LoadBalancerDescription
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LoadBalancerDescription
+type LoadBalancerDescription struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"AccountingType" type:"string"`
+
+	// AvailabilityZones
+	AvailabilityZones []*string `locationName:"AvailabilityZones" locationNameList:"member" type:"list"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"CreatedTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	DNSName *string `locationName:"DNSName" type:"string"`
+
+	// String
+	Description *string `locationName:"Description" type:"string"`
+
+	// Filter
+	Filter *Filter `locationName:"Filter" type:"structure"`
+
+	// HealthCheck
+	HealthCheck *HealthCheck `locationName:"HealthCheck" type:"structure"`
+
+	// InstanceUniqueIds
+	Instances []*InstanceUnique `locationName:"Instances" locationNameList:"member" type:"list"`
+
+	// ListenerDescriptions
+	ListenerDescriptions []*ListenerDescription `locationName:"ListenerDescriptions" locationNameList:"member" type:"list"`
+
+	// String
+	LoadBalancerName *string `locationName:"LoadBalancerName" type:"string"`
+
+	// Integer
+	NetworkVolume *int64 `locationName:"NetworkVolume" type:"integer"`
+
+	// String
+	NextMonthAccountingType *string `locationName:"NextMonthAccountingType" type:"string"`
+
+	// LoadBalancerOption
+	Option *LoadBalancerOption `locationName:"Option" type:"structure"`
+
+	// Policies
+	Policies *Policies `locationName:"Policies" type:"structure"`
+}
+
+// String returns the string representation
+func (s LoadBalancerDescription) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LoadBalancerDescription) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *LoadBalancerDescription) SetAccountingType(v string) *LoadBalancerDescription {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZones sets the AvailabilityZones field's value.
+func (s *LoadBalancerDescription) SetAvailabilityZones(v []*string) *LoadBalancerDescription {
+	s.AvailabilityZones = v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *LoadBalancerDescription) SetCreatedTime(v time.Time) *LoadBalancerDescription {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDNSName sets the DNSName field's value.
+func (s *LoadBalancerDescription) SetDNSName(v string) *LoadBalancerDescription {
+	s.DNSName = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *LoadBalancerDescription) SetDescription(v string) *LoadBalancerDescription {
+	s.Description = &v
+	return s
+}
+
+// SetFilter sets the Filter field's value.
+func (s *LoadBalancerDescription) SetFilter(v *Filter) *LoadBalancerDescription {
+	s.Filter = v
+	return s
+}
+
+// SetHealthCheck sets the HealthCheck field's value.
+func (s *LoadBalancerDescription) SetHealthCheck(v *HealthCheck) *LoadBalancerDescription {
+	s.HealthCheck = v
+	return s
+}
+
+// SetInstances sets the Instances field's value.
+func (s *LoadBalancerDescription) SetInstances(v []*InstanceUnique) *LoadBalancerDescription {
+	s.Instances = v
+	return s
+}
+
+// SetListenerDescriptions sets the ListenerDescriptions field's value.
+func (s *LoadBalancerDescription) SetListenerDescriptions(v []*ListenerDescription) *LoadBalancerDescription {
+	s.ListenerDescriptions = v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *LoadBalancerDescription) SetLoadBalancerName(v string) *LoadBalancerDescription {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetNetworkVolume sets the NetworkVolume field's value.
+func (s *LoadBalancerDescription) SetNetworkVolume(v int64) *LoadBalancerDescription {
+	s.NetworkVolume = &v
+	return s
+}
+
+// SetNextMonthAccountingType sets the NextMonthAccountingType field's value.
+func (s *LoadBalancerDescription) SetNextMonthAccountingType(v string) *LoadBalancerDescription {
+	s.NextMonthAccountingType = &v
+	return s
+}
+
+// SetOption sets the Option field's value.
+func (s *LoadBalancerDescription) SetOption(v *LoadBalancerOption) *LoadBalancerDescription {
+	s.Option = v
+	return s
+}
+
+// SetPolicies sets the Policies field's value.
+func (s *LoadBalancerDescription) SetPolicies(v *Policies) *LoadBalancerDescription {
+	s.Policies = v
+	return s
+}
+
 // LoadBalancerNamesStruct
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//LoadBalancerNamesStruct
 type LoadBalancerNamesStruct struct {
@@ -15898,6 +21408,117 @@ func (s *LoadBalancerNamesStruct) SetInstancePortList(v []*int64) *LoadBalancerN
 // SetLoadBalancerPortList sets the LoadBalancerPortList field's value.
 func (s *LoadBalancerNamesStruct) SetLoadBalancerPortList(v []*string) *LoadBalancerNamesStruct {
 	s.LoadBalancerPortList = v
+	return s
+}
+
+// LoadBalancerOption
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LoadBalancerOption
+type LoadBalancerOption struct {
+	_ struct{} `type:"structure"`
+
+	// MobileFilterOption
+	MobileFilter *MobileFilterOption `locationName:"MobileFilter" type:"structure"`
+
+	// SessionStickinessPolicyOption
+	SessionStickinessPolicy *SessionStickinessPolicyOption `locationName:"SessionStickinessPolicy" type:"structure"`
+
+	// SorryPageOption
+	SorryPage *SorryPageOption `locationName:"SorryPage" type:"structure"`
+}
+
+// String returns the string representation
+func (s LoadBalancerOption) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LoadBalancerOption) GoString() string {
+	return s.String()
+}
+
+// SetMobileFilter sets the MobileFilter field's value.
+func (s *LoadBalancerOption) SetMobileFilter(v *MobileFilterOption) *LoadBalancerOption {
+	s.MobileFilter = v
+	return s
+}
+
+// SetSessionStickinessPolicy sets the SessionStickinessPolicy field's value.
+func (s *LoadBalancerOption) SetSessionStickinessPolicy(v *SessionStickinessPolicyOption) *LoadBalancerOption {
+	s.SessionStickinessPolicy = v
+	return s
+}
+
+// SetSorryPage sets the SorryPage field's value.
+func (s *LoadBalancerOption) SetSorryPage(v *SorryPageOption) *LoadBalancerOption {
+	s.SorryPage = v
+	return s
+}
+
+// LoadBalancingItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//LoadBalancingItemType
+type LoadBalancingItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	InstancePort *int64 `locationName:"instancePort" type:"integer"`
+
+	// String
+	LoadBalancerName *string `locationName:"loadBalancerName" type:"string"`
+
+	// Integer
+	LoadBalancerPort *int64 `locationName:"loadBalancerPort" type:"integer"`
+}
+
+// String returns the string representation
+func (s LoadBalancingItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s LoadBalancingItemType) GoString() string {
+	return s.String()
+}
+
+// SetInstancePort sets the InstancePort field's value.
+func (s *LoadBalancingItemType) SetInstancePort(v int64) *LoadBalancingItemType {
+	s.InstancePort = &v
+	return s
+}
+
+// SetLoadBalancerName sets the LoadBalancerName field's value.
+func (s *LoadBalancingItemType) SetLoadBalancerName(v string) *LoadBalancingItemType {
+	s.LoadBalancerName = &v
+	return s
+}
+
+// SetLoadBalancerPort sets the LoadBalancerPort field's value.
+func (s *LoadBalancingItemType) SetLoadBalancerPort(v int64) *LoadBalancingItemType {
+	s.LoadBalancerPort = &v
+	return s
+}
+
+// MobileFilterOption
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//MobileFilterOption
+type MobileFilterOption struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	Enabled *bool `locationName:"Enabled" type:"boolean"`
+}
+
+// String returns the string representation
+func (s MobileFilterOption) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s MobileFilterOption) GoString() string {
+	return s.String()
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *MobileFilterOption) SetEnabled(v bool) *MobileFilterOption {
+	s.Enabled = &v
 	return s
 }
 
@@ -15977,9 +21598,13 @@ func (s *ModifyImageAttributeInput) SetValue(v string) *ModifyImageAttributeInpu
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyImageAttributeOutput
+// ModifyImageAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyImageAttributeResult
 type ModifyImageAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -15990,6 +21615,12 @@ func (s ModifyImageAttributeOutput) String() string {
 // GoString returns the string representation
 func (s ModifyImageAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ModifyImageAttributeOutput) SetRequestId(v string) *ModifyImageAttributeOutput {
+	s.RequestId = &v
+	return s
 }
 
 // ModifyInstanceAttributeRequest
@@ -16087,9 +21718,16 @@ func (s *ModifyInstanceAttributeInput) SetValue(v string) *ModifyInstanceAttribu
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyInstanceAttributeOutput
+// ModifyInstanceAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyInstanceAttributeResult
 type ModifyInstanceAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16100,6 +21738,18 @@ func (s ModifyInstanceAttributeOutput) String() string {
 // GoString returns the string representation
 func (s ModifyInstanceAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ModifyInstanceAttributeOutput) SetRequestId(v string) *ModifyInstanceAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *ModifyInstanceAttributeOutput) SetReturn(v bool) *ModifyInstanceAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // ModifySslCertificateAttributeRequest
@@ -16151,9 +21801,16 @@ func (s *ModifySslCertificateAttributeInput) SetFqdnId(v string) *ModifySslCerti
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifySslCertificateAttributeOutput
+// ModifySslCertificateAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifySslCertificateAttributeResult
 type ModifySslCertificateAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16164,6 +21821,18 @@ func (s ModifySslCertificateAttributeOutput) String() string {
 // GoString returns the string representation
 func (s ModifySslCertificateAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ModifySslCertificateAttributeOutput) SetRequestId(v string) *ModifySslCertificateAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *ModifySslCertificateAttributeOutput) SetReturn(v bool) *ModifySslCertificateAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // ModifyVolumeAttributeRequest
@@ -16224,9 +21893,16 @@ func (s *ModifyVolumeAttributeInput) SetVolumeId(v string) *ModifyVolumeAttribut
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyVolumeAttributeOutput
+// ModifyVolumeAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ModifyVolumeAttributeResult
 type ModifyVolumeAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16237,6 +21913,18 @@ func (s ModifyVolumeAttributeOutput) String() string {
 // GoString returns the string representation
 func (s ModifyVolumeAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ModifyVolumeAttributeOutput) SetRequestId(v string) *ModifyVolumeAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *ModifyVolumeAttributeOutput) SetReturn(v bool) *ModifyVolumeAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // MonitoringStruct
@@ -16298,6 +21986,241 @@ func (s *MonthStruct) SetStartingMonth(v string) *MonthStruct {
 	return s
 }
 
+// NatRuleType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NatRuleType
+type NatRuleType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// DestinationType
+	Destination *DestinationType `locationName:"destination" type:"structure"`
+
+	// NetworkInterfaceType
+	InboundInterface *NetworkInterfaceType `locationName:"inboundInterface" type:"structure"`
+
+	// String
+	NatType *string `locationName:"natType" type:"string"`
+
+	// NetworkInterfaceType
+	OutboundInterface *NetworkInterfaceType `locationName:"outboundInterface" type:"structure"`
+
+	// String
+	Protocol *string `locationName:"protocol" type:"string"`
+
+	// String
+	RuleNumber *string `locationName:"ruleNumber" type:"string"`
+
+	// SourceType
+	Source *SourceType `locationName:"source" type:"structure"`
+
+	// TranslationType
+	Translation *TranslationType `locationName:"translation" type:"structure"`
+}
+
+// String returns the string representation
+func (s NatRuleType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NatRuleType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *NatRuleType) SetDescription(v string) *NatRuleType {
+	s.Description = &v
+	return s
+}
+
+// SetDestination sets the Destination field's value.
+func (s *NatRuleType) SetDestination(v *DestinationType) *NatRuleType {
+	s.Destination = v
+	return s
+}
+
+// SetInboundInterface sets the InboundInterface field's value.
+func (s *NatRuleType) SetInboundInterface(v *NetworkInterfaceType) *NatRuleType {
+	s.InboundInterface = v
+	return s
+}
+
+// SetNatType sets the NatType field's value.
+func (s *NatRuleType) SetNatType(v string) *NatRuleType {
+	s.NatType = &v
+	return s
+}
+
+// SetOutboundInterface sets the OutboundInterface field's value.
+func (s *NatRuleType) SetOutboundInterface(v *NetworkInterfaceType) *NatRuleType {
+	s.OutboundInterface = v
+	return s
+}
+
+// SetProtocol sets the Protocol field's value.
+func (s *NatRuleType) SetProtocol(v string) *NatRuleType {
+	s.Protocol = &v
+	return s
+}
+
+// SetRuleNumber sets the RuleNumber field's value.
+func (s *NatRuleType) SetRuleNumber(v string) *NatRuleType {
+	s.RuleNumber = &v
+	return s
+}
+
+// SetSource sets the Source field's value.
+func (s *NatRuleType) SetSource(v *SourceType) *NatRuleType {
+	s.Source = v
+	return s
+}
+
+// SetTranslation sets the Translation field's value.
+func (s *NatRuleType) SetTranslation(v *TranslationType) *NatRuleType {
+	s.Translation = v
+	return s
+}
+
+// NatTableAssociationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NatTableAssociationType
+type NatTableAssociationType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `locationName:"associationId" type:"string"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+}
+
+// String returns the string representation
+func (s NatTableAssociationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NatTableAssociationType) GoString() string {
+	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NatTableAssociationType) SetAssociationId(v string) *NatTableAssociationType {
+	s.AssociationId = &v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NatTableAssociationType) SetNatTableId(v string) *NatTableAssociationType {
+	s.NatTableId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *NatTableAssociationType) SetRouterId(v string) *NatTableAssociationType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *NatTableAssociationType) SetRouterName(v string) *NatTableAssociationType {
+	s.RouterName = &v
+	return s
+}
+
+// NatTableSetType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NatTableSetType
+type NatTableSetType struct {
+	_ struct{} `type:"structure"`
+
+	// NatTableAssociationSetType
+	AssociationSet []*NatTableAssociationType `locationName:"associationSet" locationNameList:"item" type:"list"`
+
+	// NatRuleSetType
+	NatRuleSet []*NatRuleType `locationName:"natRuleSet" locationNameList:"item" type:"list"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s NatTableSetType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NatTableSetType) GoString() string {
+	return s.String()
+}
+
+// SetAssociationSet sets the AssociationSet field's value.
+func (s *NatTableSetType) SetAssociationSet(v []*NatTableAssociationType) *NatTableSetType {
+	s.AssociationSet = v
+	return s
+}
+
+// SetNatRuleSet sets the NatRuleSet field's value.
+func (s *NatTableSetType) SetNatRuleSet(v []*NatRuleType) *NatTableSetType {
+	s.NatRuleSet = v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NatTableSetType) SetNatTableId(v string) *NatTableSetType {
+	s.NatTableId = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *NatTableSetType) SetTagSet(v []*ResourceTagSetItemType) *NatTableSetType {
+	s.TagSet = v
+	return s
+}
+
+// NatTableType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NatTableType
+type NatTableType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s NatTableType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NatTableType) GoString() string {
+	return s.String()
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NatTableType) SetNatTableId(v string) *NatTableType {
+	s.NatTableId = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *NatTableType) SetTagSet(v []*ResourceTagSetItemType) *NatTableType {
+	s.TagSet = v
+	return s
+}
+
 // NetworkInterfaceStruct
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//NetworkInterfaceStruct
 type NetworkInterfaceStruct struct {
@@ -16320,6 +22243,164 @@ func (s NetworkInterfaceStruct) GoString() string {
 // SetIpAddress sets the IpAddress field's value.
 func (s *NetworkInterfaceStruct) SetIpAddress(v string) *NetworkInterfaceStruct {
 	s.IpAddress = &v
+	return s
+}
+
+// NetworkInterfaceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NetworkInterfaceType
+type NetworkInterfaceType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	NetworkName *string `locationName:"networkName" type:"string"`
+}
+
+// String returns the string representation
+func (s NetworkInterfaceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NetworkInterfaceType) GoString() string {
+	return s.String()
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NetworkInterfaceType) SetNetworkId(v string) *NetworkInterfaceType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *NetworkInterfaceType) SetNetworkName(v string) *NetworkInterfaceType {
+	s.NetworkName = &v
+	return s
+}
+
+// NetworkType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NetworkType
+type NetworkType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// String
+	CidrBlock *string `locationName:"cidrBlock" type:"string"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// InstanceIdSetType
+	InstancesSet []*InstanceIdType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	PrivateLanName *string `locationName:"privateLanName" type:"string"`
+
+	// RouterIdSetType
+	RouterSet []*RouterIdSetItemType `locationName:"routerSet" locationNameList:"item" type:"list"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// VpnGatewayIdSetType
+	VpnGatewaySet []*VpnGatewayIdSetItemType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s NetworkType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NetworkType) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *NetworkType) SetAccountingType(v string) *NetworkType {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *NetworkType) SetAvailabilityZone(v string) *NetworkType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCidrBlock sets the CidrBlock field's value.
+func (s *NetworkType) SetCidrBlock(v string) *NetworkType {
+	s.CidrBlock = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *NetworkType) SetCreatedTime(v time.Time) *NetworkType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *NetworkType) SetDescription(v string) *NetworkType {
+	s.Description = &v
+	return s
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *NetworkType) SetInstancesSet(v []*InstanceIdType) *NetworkType {
+	s.InstancesSet = v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *NetworkType) SetNetworkId(v string) *NetworkType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *NetworkType) SetPrivateLanName(v string) *NetworkType {
+	s.PrivateLanName = &v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *NetworkType) SetRouterSet(v []*RouterIdSetItemType) *NetworkType {
+	s.RouterSet = v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *NetworkType) SetState(v string) *NetworkType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *NetworkType) SetTagSet(v []*ResourceTagSetItemType) *NetworkType {
+	s.TagSet = v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *NetworkType) SetVpnGatewaySet(v []*VpnGatewayIdSetItemType) *NetworkType {
+	s.VpnGatewaySet = v
 	return s
 }
 
@@ -16390,9 +22471,16 @@ func (s *NiftyAssociateImageInput) SetIsRedistribute(v bool) *NiftyAssociateImag
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateImageOutput
+// NiftyAssociateImageResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateImageResult
 type NiftyAssociateImageOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16403,6 +22491,18 @@ func (s NiftyAssociateImageOutput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateImageOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyAssociateImageOutput) SetRequestId(v string) *NiftyAssociateImageOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyAssociateImageOutput) SetReturn(v bool) *NiftyAssociateImageOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyAssociateNatTableRequest
@@ -16472,9 +22572,16 @@ func (s *NiftyAssociateNatTableInput) SetRouterName(v string) *NiftyAssociateNat
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateNatTableOutput
+// NiftyAssociateNatTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateNatTableResult
 type NiftyAssociateNatTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `locationName:"associationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -16485,6 +22592,18 @@ func (s NiftyAssociateNatTableOutput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateNatTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyAssociateNatTableOutput) SetAssociationId(v string) *NiftyAssociateNatTableOutput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyAssociateNatTableOutput) SetRequestId(v string) *NiftyAssociateNatTableOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyAssociateRouteTableWithVpnGatewayRequest
@@ -16554,9 +22673,16 @@ func (s *NiftyAssociateRouteTableWithVpnGatewayInput) SetVpnGatewayId(v string) 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateRouteTableWithVpnGatewayOutput
+// NiftyAssociateRouteTableWithVpnGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyAssociateRouteTableWithVpnGatewayResult
 type NiftyAssociateRouteTableWithVpnGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AssociationId *string `locationName:"associationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -16567,6 +22693,18 @@ func (s NiftyAssociateRouteTableWithVpnGatewayOutput) String() string {
 // GoString returns the string representation
 func (s NiftyAssociateRouteTableWithVpnGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetAssociationId sets the AssociationId field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayOutput) SetAssociationId(v string) *NiftyAssociateRouteTableWithVpnGatewayOutput {
+	s.AssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyAssociateRouteTableWithVpnGatewayOutput) SetRequestId(v string) *NiftyAssociateRouteTableWithVpnGatewayOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyCreateAlarmRequest
@@ -16709,9 +22847,16 @@ func (s *NiftyCreateAlarmInput) SetZone(v string) *NiftyCreateAlarmInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAlarmOutput
+// NiftyCreateAlarmResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAlarmResult
 type NiftyCreateAlarmOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16722,6 +22867,18 @@ func (s NiftyCreateAlarmOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateAlarmOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateAlarmOutput) SetRequestId(v string) *NiftyCreateAlarmOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyCreateAlarmOutput) SetReturn(v bool) *NiftyCreateAlarmOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyCreateAutoScalingGroupRequest
@@ -16920,9 +23077,16 @@ func (s *NiftyCreateAutoScalingGroupInput) SetSecurityGroupList(v []*string) *Ni
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAutoScalingGroupOutput
+// NiftyCreateAutoScalingGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateAutoScalingGroupResult
 type NiftyCreateAutoScalingGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -16933,6 +23097,18 @@ func (s NiftyCreateAutoScalingGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateAutoScalingGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateAutoScalingGroupOutput) SetRequestId(v string) *NiftyCreateAutoScalingGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyCreateAutoScalingGroupOutput) SetReturn(v bool) *NiftyCreateAutoScalingGroupOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyCreateDhcpConfigRequest
@@ -16951,9 +23127,16 @@ func (s NiftyCreateDhcpConfigInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpConfigOutput
+// NiftyCreateDhcpConfigResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpConfigResult
 type NiftyCreateDhcpConfigOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpConfigType
+	DhcpConfig *DhcpConfigType `locationName:"dhcpConfig" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -16964,6 +23147,18 @@ func (s NiftyCreateDhcpConfigOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateDhcpConfigOutput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpConfig sets the DhcpConfig field's value.
+func (s *NiftyCreateDhcpConfigOutput) SetDhcpConfig(v *DhcpConfigType) *NiftyCreateDhcpConfigOutput {
+	s.DhcpConfig = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateDhcpConfigOutput) SetRequestId(v string) *NiftyCreateDhcpConfigOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyCreateDhcpIpAddressPoolRequest
@@ -17043,9 +23238,16 @@ func (s *NiftyCreateDhcpIpAddressPoolInput) SetStopIpAddress(v string) *NiftyCre
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpIpAddressPoolOutput
+// NiftyCreateDhcpIpAddressPoolResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpIpAddressPoolResult
 type NiftyCreateDhcpIpAddressPoolOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17056,6 +23258,18 @@ func (s NiftyCreateDhcpIpAddressPoolOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateDhcpIpAddressPoolOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateDhcpIpAddressPoolOutput) SetRequestId(v string) *NiftyCreateDhcpIpAddressPoolOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyCreateDhcpIpAddressPoolOutput) SetReturn(v bool) *NiftyCreateDhcpIpAddressPoolOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyCreateDhcpStaticMappingRequest
@@ -17135,9 +23349,16 @@ func (s *NiftyCreateDhcpStaticMappingInput) SetMacAddress(v string) *NiftyCreate
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpStaticMappingOutput
+// NiftyCreateDhcpStaticMappingResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateDhcpStaticMappingResult
 type NiftyCreateDhcpStaticMappingOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17148,6 +23369,18 @@ func (s NiftyCreateDhcpStaticMappingOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateDhcpStaticMappingOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateDhcpStaticMappingOutput) SetRequestId(v string) *NiftyCreateDhcpStaticMappingOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyCreateDhcpStaticMappingOutput) SetReturn(v bool) *NiftyCreateDhcpStaticMappingOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyCreateInstanceSnapshotRequest
@@ -17213,9 +23446,19 @@ func (s *NiftyCreateInstanceSnapshotInput) SetSnapshotName(v string) *NiftyCreat
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateInstanceSnapshotOutput
+// NiftyCreateInstanceSnapshotResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateInstanceSnapshotResult
 type NiftyCreateInstanceSnapshotOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceSetType
+	InstanceSet []*NiftyCreateInstanceSnapshotResponseItemType `locationName:"instanceSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	SnapshotName *string `locationName:"snapshotName" type:"string"`
 }
 
 // String returns the string representation
@@ -17226,6 +23469,67 @@ func (s NiftyCreateInstanceSnapshotOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateInstanceSnapshotOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceSet sets the InstanceSet field's value.
+func (s *NiftyCreateInstanceSnapshotOutput) SetInstanceSet(v []*NiftyCreateInstanceSnapshotResponseItemType) *NiftyCreateInstanceSnapshotOutput {
+	s.InstanceSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateInstanceSnapshotOutput) SetRequestId(v string) *NiftyCreateInstanceSnapshotOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSnapshotName sets the SnapshotName field's value.
+func (s *NiftyCreateInstanceSnapshotOutput) SetSnapshotName(v string) *NiftyCreateInstanceSnapshotOutput {
+	s.SnapshotName = &v
+	return s
+}
+
+// NiftyCreateInstanceSnapshotResponseItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateInstanceSnapshotResponseItemType
+type NiftyCreateInstanceSnapshotResponseItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceState *string `locationName:"instanceState" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyCreateInstanceSnapshotResponseItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyCreateInstanceSnapshotResponseItemType) GoString() string {
+	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *NiftyCreateInstanceSnapshotResponseItemType) SetInstanceId(v string) *NiftyCreateInstanceSnapshotResponseItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceState sets the InstanceState field's value.
+func (s *NiftyCreateInstanceSnapshotResponseItemType) SetInstanceState(v string) *NiftyCreateInstanceSnapshotResponseItemType {
+	s.InstanceState = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *NiftyCreateInstanceSnapshotResponseItemType) SetInstanceUniqueId(v string) *NiftyCreateInstanceSnapshotResponseItemType {
+	s.InstanceUniqueId = &v
+	return s
 }
 
 // NiftyCreateNatRuleRequest
@@ -17364,9 +23668,19 @@ func (s *NiftyCreateNatRuleInput) SetTranslation(v *TranslationStruct) *NiftyCre
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatRuleOutput
+// NiftyCreateNatRuleResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatRuleResult
 type NiftyCreateNatRuleOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NatRuleType
+	NatRule *NatRuleType `locationName:"natRule" type:"structure"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -17377,6 +23691,24 @@ func (s NiftyCreateNatRuleOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateNatRuleOutput) GoString() string {
 	return s.String()
+}
+
+// SetNatRule sets the NatRule field's value.
+func (s *NiftyCreateNatRuleOutput) SetNatRule(v *NatRuleType) *NiftyCreateNatRuleOutput {
+	s.NatRule = v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyCreateNatRuleOutput) SetNatTableId(v string) *NiftyCreateNatRuleOutput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateNatRuleOutput) SetRequestId(v string) *NiftyCreateNatRuleOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyCreateNatTableRequest
@@ -17395,9 +23727,16 @@ func (s NiftyCreateNatTableInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatTableOutput
+// NiftyCreateNatTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateNatTableResult
 type NiftyCreateNatTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NatTableType
+	NatTable *NatTableType `locationName:"natTable" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -17408,6 +23747,18 @@ func (s NiftyCreateNatTableOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateNatTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetNatTable sets the NatTable field's value.
+func (s *NiftyCreateNatTableOutput) SetNatTable(v *NatTableType) *NiftyCreateNatTableOutput {
+	s.NatTable = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateNatTableOutput) SetRequestId(v string) *NiftyCreateNatTableOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyCreatePrivateLanRequest
@@ -17486,9 +23837,16 @@ func (s *NiftyCreatePrivateLanInput) SetPrivateLanName(v string) *NiftyCreatePri
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreatePrivateLanOutput
+// NiftyCreatePrivateLanResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreatePrivateLanResult
 type NiftyCreatePrivateLanOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NetworkType
+	PrivateLan *NetworkType `locationName:"privateLan" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -17499,6 +23857,18 @@ func (s NiftyCreatePrivateLanOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreatePrivateLanOutput) GoString() string {
 	return s.String()
+}
+
+// SetPrivateLan sets the PrivateLan field's value.
+func (s *NiftyCreatePrivateLanOutput) SetPrivateLan(v *NetworkType) *NiftyCreatePrivateLanOutput {
+	s.PrivateLan = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreatePrivateLanOutput) SetRequestId(v string) *NiftyCreatePrivateLanOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyCreateRouterRequest
@@ -17580,9 +23950,16 @@ func (s *NiftyCreateRouterInput) SetType(v string) *NiftyCreateRouterInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateRouterOutput
+// NiftyCreateRouterResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateRouterResult
 type NiftyCreateRouterOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouterType
+	Router *RouterType `locationName:"router" type:"structure"`
 }
 
 // String returns the string representation
@@ -17593,6 +23970,18 @@ func (s NiftyCreateRouterOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateRouterOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateRouterOutput) SetRequestId(v string) *NiftyCreateRouterOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouter sets the Router field's value.
+func (s *NiftyCreateRouterOutput) SetRouter(v *RouterType) *NiftyCreateRouterOutput {
+	s.Router = v
+	return s
 }
 
 // NiftyCreateWebProxyRequest
@@ -17698,9 +24087,16 @@ func (s *NiftyCreateWebProxyInput) SetRouterName(v string) *NiftyCreateWebProxyI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateWebProxyOutput
+// NiftyCreateWebProxyResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyCreateWebProxyResult
 type NiftyCreateWebProxyOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// WebProxyType
+	WebProxy *WebProxyType `locationName:"webProxy" type:"structure"`
 }
 
 // String returns the string representation
@@ -17711,6 +24107,18 @@ func (s NiftyCreateWebProxyOutput) String() string {
 // GoString returns the string representation
 func (s NiftyCreateWebProxyOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyCreateWebProxyOutput) SetRequestId(v string) *NiftyCreateWebProxyOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetWebProxy sets the WebProxy field's value.
+func (s *NiftyCreateWebProxyOutput) SetWebProxy(v *WebProxyType) *NiftyCreateWebProxyOutput {
+	s.WebProxy = v
+	return s
 }
 
 // NiftyDeleteAlarmRequest
@@ -17747,9 +24155,16 @@ func (s *NiftyDeleteAlarmInput) SetRuleName(v string) *NiftyDeleteAlarmInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAlarmOutput
+// NiftyDeleteAlarmResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAlarmResult
 type NiftyDeleteAlarmOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17760,6 +24175,18 @@ func (s NiftyDeleteAlarmOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteAlarmOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteAlarmOutput) SetRequestId(v string) *NiftyDeleteAlarmOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteAlarmOutput) SetReturn(v bool) *NiftyDeleteAlarmOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteAutoScalingGroupRequest
@@ -17802,9 +24229,16 @@ func (s *NiftyDeleteAutoScalingGroupInput) SetAutoScalingGroupName(v string) *Ni
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAutoScalingGroupOutput
+// NiftyDeleteAutoScalingGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteAutoScalingGroupResult
 type NiftyDeleteAutoScalingGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17815,6 +24249,18 @@ func (s NiftyDeleteAutoScalingGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteAutoScalingGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteAutoScalingGroupOutput) SetRequestId(v string) *NiftyDeleteAutoScalingGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteAutoScalingGroupOutput) SetReturn(v bool) *NiftyDeleteAutoScalingGroupOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteDhcpConfigRequest
@@ -17857,9 +24303,16 @@ func (s *NiftyDeleteDhcpConfigInput) SetDhcpConfigId(v string) *NiftyDeleteDhcpC
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpConfigOutput
+// NiftyDeleteDhcpConfigResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpConfigResult
 type NiftyDeleteDhcpConfigOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17870,6 +24323,18 @@ func (s NiftyDeleteDhcpConfigOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpConfigOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteDhcpConfigOutput) SetRequestId(v string) *NiftyDeleteDhcpConfigOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteDhcpConfigOutput) SetReturn(v bool) *NiftyDeleteDhcpConfigOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteDhcpIpAddressPoolRequest
@@ -17940,9 +24405,16 @@ func (s *NiftyDeleteDhcpIpAddressPoolInput) SetStopIpAddress(v string) *NiftyDel
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpIpAddressPoolOutput
+// NiftyDeleteDhcpIpAddressPoolResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpIpAddressPoolResult
 type NiftyDeleteDhcpIpAddressPoolOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -17953,6 +24425,18 @@ func (s NiftyDeleteDhcpIpAddressPoolOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpIpAddressPoolOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteDhcpIpAddressPoolOutput) SetRequestId(v string) *NiftyDeleteDhcpIpAddressPoolOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteDhcpIpAddressPoolOutput) SetReturn(v bool) *NiftyDeleteDhcpIpAddressPoolOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteDhcpStaticMappingRequest
@@ -18023,9 +24507,16 @@ func (s *NiftyDeleteDhcpStaticMappingInput) SetMacAddress(v string) *NiftyDelete
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpStaticMappingOutput
+// NiftyDeleteDhcpStaticMappingResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteDhcpStaticMappingResult
 type NiftyDeleteDhcpStaticMappingOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18036,6 +24527,18 @@ func (s NiftyDeleteDhcpStaticMappingOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteDhcpStaticMappingOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteDhcpStaticMappingOutput) SetRequestId(v string) *NiftyDeleteDhcpStaticMappingOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteDhcpStaticMappingOutput) SetReturn(v bool) *NiftyDeleteDhcpStaticMappingOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteInstanceSnapshotRequest
@@ -18072,9 +24575,16 @@ func (s *NiftyDeleteInstanceSnapshotInput) SetSnapshotNameList(v []*string) *Nif
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteInstanceSnapshotOutput
+// NiftyDeleteInstanceSnapshotResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteInstanceSnapshotResult
 type NiftyDeleteInstanceSnapshotOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// SnapshotInfoSetType
+	SnapshotInfoSet []*SnapshotInfoSetItemType `locationName:"snapshotInfoSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18085,6 +24595,18 @@ func (s NiftyDeleteInstanceSnapshotOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteInstanceSnapshotOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteInstanceSnapshotOutput) SetRequestId(v string) *NiftyDeleteInstanceSnapshotOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSnapshotInfoSet sets the SnapshotInfoSet field's value.
+func (s *NiftyDeleteInstanceSnapshotOutput) SetSnapshotInfoSet(v []*SnapshotInfoSetItemType) *NiftyDeleteInstanceSnapshotOutput {
+	s.SnapshotInfoSet = v
+	return s
 }
 
 // NiftyDeleteNatRuleRequest
@@ -18155,9 +24677,16 @@ func (s *NiftyDeleteNatRuleInput) SetRuleNumber(v string) *NiftyDeleteNatRuleInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatRuleOutput
+// NiftyDeleteNatRuleResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatRuleResult
 type NiftyDeleteNatRuleOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18168,6 +24697,18 @@ func (s NiftyDeleteNatRuleOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteNatRuleOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteNatRuleOutput) SetRequestId(v string) *NiftyDeleteNatRuleOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteNatRuleOutput) SetReturn(v bool) *NiftyDeleteNatRuleOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteNatTableRequest
@@ -18210,9 +24751,16 @@ func (s *NiftyDeleteNatTableInput) SetNatTableId(v string) *NiftyDeleteNatTableI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatTableOutput
+// NiftyDeleteNatTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteNatTableResult
 type NiftyDeleteNatTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18223,6 +24771,18 @@ func (s NiftyDeleteNatTableOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteNatTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteNatTableOutput) SetRequestId(v string) *NiftyDeleteNatTableOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteNatTableOutput) SetReturn(v bool) *NiftyDeleteNatTableOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeletePrivateLanRequest
@@ -18259,9 +24819,16 @@ func (s *NiftyDeletePrivateLanInput) SetPrivateLanName(v string) *NiftyDeletePri
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeletePrivateLanOutput
+// NiftyDeletePrivateLanResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeletePrivateLanResult
 type NiftyDeletePrivateLanOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18272,6 +24839,18 @@ func (s NiftyDeletePrivateLanOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeletePrivateLanOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeletePrivateLanOutput) SetRequestId(v string) *NiftyDeletePrivateLanOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeletePrivateLanOutput) SetReturn(v bool) *NiftyDeletePrivateLanOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteRouterRequest
@@ -18308,9 +24887,16 @@ func (s *NiftyDeleteRouterInput) SetRouterName(v string) *NiftyDeleteRouterInput
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteRouterOutput
+// NiftyDeleteRouterResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteRouterResult
 type NiftyDeleteRouterOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18321,6 +24907,18 @@ func (s NiftyDeleteRouterOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteRouterOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteRouterOutput) SetRequestId(v string) *NiftyDeleteRouterOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteRouterOutput) SetReturn(v bool) *NiftyDeleteRouterOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeleteWebProxyRequest
@@ -18366,9 +24964,16 @@ func (s *NiftyDeleteWebProxyInput) SetRouterName(v string) *NiftyDeleteWebProxyI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteWebProxyOutput
+// NiftyDeleteWebProxyResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeleteWebProxyResult
 type NiftyDeleteWebProxyOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -18379,6 +24984,18 @@ func (s NiftyDeleteWebProxyOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeleteWebProxyOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeleteWebProxyOutput) SetRequestId(v string) *NiftyDeleteWebProxyOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDeleteWebProxyOutput) SetReturn(v bool) *NiftyDeleteWebProxyOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDeregisterRoutersFromSecurityGroupRequest
@@ -18430,9 +25047,16 @@ func (s *NiftyDeregisterRoutersFromSecurityGroupInput) SetRouterSetList(v []*str
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterRoutersFromSecurityGroupOutput
+// NiftyDeregisterRoutersFromSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterRoutersFromSecurityGroupResult
 type NiftyDeregisterRoutersFromSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouterIdSetType
+	RouterSet []*RouterIdSetItemType `locationName:"routerSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18443,6 +25067,18 @@ func (s NiftyDeregisterRoutersFromSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeregisterRoutersFromSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeregisterRoutersFromSecurityGroupOutput) SetRequestId(v string) *NiftyDeregisterRoutersFromSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *NiftyDeregisterRoutersFromSecurityGroupOutput) SetRouterSet(v []*RouterIdSetItemType) *NiftyDeregisterRoutersFromSecurityGroupOutput {
+	s.RouterSet = v
+	return s
 }
 
 // NiftyDeregisterVpnGatewaysFromSecurityGroupRequest
@@ -18494,9 +25130,16 @@ func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupInput) SetRouterSetList(v []
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterVpnGatewaysFromSecurityGroupOutput
+// NiftyDeregisterVpnGatewaysFromSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDeregisterVpnGatewaysFromSecurityGroupResult
 type NiftyDeregisterVpnGatewaysFromSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnGatewayIdSetType
+	VpnGatewaySet []*VpnGatewayIdSetItemType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18507,6 +25150,18 @@ func (s NiftyDeregisterVpnGatewaysFromSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDeregisterVpnGatewaysFromSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupOutput) SetRequestId(v string) *NiftyDeregisterVpnGatewaysFromSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *NiftyDeregisterVpnGatewaysFromSecurityGroupOutput) SetVpnGatewaySet(v []*VpnGatewayIdSetItemType) *NiftyDeregisterVpnGatewaysFromSecurityGroupOutput {
+	s.VpnGatewaySet = v
+	return s
 }
 
 // NiftyDescribeAlarmHistoryRequest
@@ -18534,9 +25189,16 @@ func (s *NiftyDescribeAlarmHistoryInput) SetRuleList(v []*int64) *NiftyDescribeA
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmHistoryOutput
+// NiftyDescribeAlarmHistoryResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmHistoryResult
 type NiftyDescribeAlarmHistoryOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// AlarmReservationSetType
+	ReservationSet []*AlarmReservationItemType `locationName:"reservationSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18547,6 +25209,18 @@ func (s NiftyDescribeAlarmHistoryOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmHistoryOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeAlarmHistoryOutput) SetRequestId(v string) *NiftyDescribeAlarmHistoryOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReservationSet sets the ReservationSet field's value.
+func (s *NiftyDescribeAlarmHistoryOutput) SetReservationSet(v []*AlarmReservationItemType) *NiftyDescribeAlarmHistoryOutput {
+	s.ReservationSet = v
+	return s
 }
 
 // NiftyDescribeAlarmRulesActivitiesRequest
@@ -18574,9 +25248,16 @@ func (s *NiftyDescribeAlarmRulesActivitiesInput) SetRuleList(v []*int64) *NiftyD
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmRulesActivitiesOutput
+// NiftyDescribeAlarmRulesActivitiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmRulesActivitiesResult
 type NiftyDescribeAlarmRulesActivitiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// AlarmRulesActivitiesReservationSetType
+	ReservationSet []*AlarmRulesActivitiesReservationItemType `locationName:"reservationSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18587,6 +25268,18 @@ func (s NiftyDescribeAlarmRulesActivitiesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmRulesActivitiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeAlarmRulesActivitiesOutput) SetRequestId(v string) *NiftyDescribeAlarmRulesActivitiesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReservationSet sets the ReservationSet field's value.
+func (s *NiftyDescribeAlarmRulesActivitiesOutput) SetReservationSet(v []*AlarmRulesActivitiesReservationItemType) *NiftyDescribeAlarmRulesActivitiesOutput {
+	s.ReservationSet = v
+	return s
 }
 
 // NiftyDescribeAlarmsRequest
@@ -18614,9 +25307,16 @@ func (s *NiftyDescribeAlarmsInput) SetRuleList(v []*int64) *NiftyDescribeAlarmsI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsOutput
+// NiftyDescribeAlarmsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsResult
 type NiftyDescribeAlarmsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// AlarmReservationSetType
+	ReservationSet []*AlarmReservationItemType `locationName:"reservationSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18627,6 +25327,18 @@ func (s NiftyDescribeAlarmsOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeAlarmsOutput) SetRequestId(v string) *NiftyDescribeAlarmsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReservationSet sets the ReservationSet field's value.
+func (s *NiftyDescribeAlarmsOutput) SetReservationSet(v []*AlarmReservationItemType) *NiftyDescribeAlarmsOutput {
+	s.ReservationSet = v
+	return s
 }
 
 // NiftyDescribeAlarmsPartitionsRequest
@@ -18654,9 +25366,16 @@ func (s *NiftyDescribeAlarmsPartitionsInput) SetInstanceIdList(v []*string) *Nif
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsPartitionsOutput
+// NiftyDescribeAlarmsPartitionsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAlarmsPartitionsResult
 type NiftyDescribeAlarmsPartitionsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// AlarmTargetSetType
+	AlarmTargetSet []*AlarmTargetItemType `locationName:"alarmTargetSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -18667,6 +25386,18 @@ func (s NiftyDescribeAlarmsPartitionsOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAlarmsPartitionsOutput) GoString() string {
 	return s.String()
+}
+
+// SetAlarmTargetSet sets the AlarmTargetSet field's value.
+func (s *NiftyDescribeAlarmsPartitionsOutput) SetAlarmTargetSet(v []*AlarmTargetItemType) *NiftyDescribeAlarmsPartitionsOutput {
+	s.AlarmTargetSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeAlarmsPartitionsOutput) SetRequestId(v string) *NiftyDescribeAlarmsPartitionsOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeAutoScalingGroupsRequest
@@ -18694,9 +25425,16 @@ func (s *NiftyDescribeAutoScalingGroupsInput) SetAutoScalingGroupNameList(v []*s
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAutoScalingGroupsOutput
+// NiftyDescribeAutoScalingGroupsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeAutoScalingGroupsResult
 type NiftyDescribeAutoScalingGroupsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// AutoScalingReservationSetType
+	AutoScalingReservationSet []*AutoScalingReservationInfoType `locationName:"autoScalingReservationSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -18707,6 +25445,18 @@ func (s NiftyDescribeAutoScalingGroupsOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeAutoScalingGroupsOutput) GoString() string {
 	return s.String()
+}
+
+// SetAutoScalingReservationSet sets the AutoScalingReservationSet field's value.
+func (s *NiftyDescribeAutoScalingGroupsOutput) SetAutoScalingReservationSet(v []*AutoScalingReservationInfoType) *NiftyDescribeAutoScalingGroupsOutput {
+	s.AutoScalingReservationSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeAutoScalingGroupsOutput) SetRequestId(v string) *NiftyDescribeAutoScalingGroupsOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeCorporateInfoForCertificateRequest
@@ -18725,9 +25475,28 @@ func (s NiftyDescribeCorporateInfoForCertificateInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeCorporateInfoForCertificateOutput
+// NiftyDescribeCorporateInfoForCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeCorporateInfoForCertificateResult
 type NiftyDescribeCorporateInfoForCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	CorpGrade *string `locationName:"corpGrade" type:"string"`
+
+	// String
+	CorpName *string `locationName:"corpName" type:"string"`
+
+	// String
+	PresidentName1 *string `locationName:"presidentName1" type:"string"`
+
+	// String
+	PresidentName2 *string `locationName:"presidentName2" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	TdbCode *string `locationName:"tdbCode" type:"string"`
 }
 
 // String returns the string representation
@@ -18738,6 +25507,42 @@ func (s NiftyDescribeCorporateInfoForCertificateOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeCorporateInfoForCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// SetCorpGrade sets the CorpGrade field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetCorpGrade(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.CorpGrade = &v
+	return s
+}
+
+// SetCorpName sets the CorpName field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetCorpName(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.CorpName = &v
+	return s
+}
+
+// SetPresidentName1 sets the PresidentName1 field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetPresidentName1(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.PresidentName1 = &v
+	return s
+}
+
+// SetPresidentName2 sets the PresidentName2 field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetPresidentName2(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.PresidentName2 = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetRequestId(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetTdbCode sets the TdbCode field's value.
+func (s *NiftyDescribeCorporateInfoForCertificateOutput) SetTdbCode(v string) *NiftyDescribeCorporateInfoForCertificateOutput {
+	s.TdbCode = &v
+	return s
 }
 
 // NiftyDescribeDhcpConfigsRequest
@@ -18774,9 +25579,16 @@ func (s *NiftyDescribeDhcpConfigsInput) SetFilterList(v [][]*string) *NiftyDescr
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpConfigsOutput
+// NiftyDescribeDhcpConfigsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpConfigsResult
 type NiftyDescribeDhcpConfigsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpConfigsSetType
+	DhcpConfigsSet []*DhcpConfigSetItemType `locationName:"dhcpConfigsSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -18787,6 +25599,18 @@ func (s NiftyDescribeDhcpConfigsOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeDhcpConfigsOutput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpConfigsSet sets the DhcpConfigsSet field's value.
+func (s *NiftyDescribeDhcpConfigsOutput) SetDhcpConfigsSet(v []*DhcpConfigSetItemType) *NiftyDescribeDhcpConfigsOutput {
+	s.DhcpConfigsSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeDhcpConfigsOutput) SetRequestId(v string) *NiftyDescribeDhcpConfigsOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeDhcpStatusRequest
@@ -18823,9 +25647,16 @@ func (s *NiftyDescribeDhcpStatusInput) SetRouterName(v string) *NiftyDescribeDhc
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpStatusOutput
+// NiftyDescribeDhcpStatusResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeDhcpStatusResult
 type NiftyDescribeDhcpStatusOutput struct {
 	_ struct{} `type:"structure"`
+
+	// DhcpStatusInformationSetType
+	DhcpStatusInformationSet []*DhcpStatusInformationSetItemType `locationName:"dhcpStatusInformationSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -18836,6 +25667,18 @@ func (s NiftyDescribeDhcpStatusOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeDhcpStatusOutput) GoString() string {
 	return s.String()
+}
+
+// SetDhcpStatusInformationSet sets the DhcpStatusInformationSet field's value.
+func (s *NiftyDescribeDhcpStatusOutput) SetDhcpStatusInformationSet(v []*DhcpStatusInformationSetItemType) *NiftyDescribeDhcpStatusOutput {
+	s.DhcpStatusInformationSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeDhcpStatusOutput) SetRequestId(v string) *NiftyDescribeDhcpStatusOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeInstanceSnapshotsRequest
@@ -18872,9 +25715,16 @@ func (s *NiftyDescribeInstanceSnapshotsInput) SetSnapshotNameList(v []*string) *
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeInstanceSnapshotsOutput
+// NiftyDescribeInstanceSnapshotsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeInstanceSnapshotsResult
 type NiftyDescribeInstanceSnapshotsOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// SnapshotInfoSetType
+	SnapshotSet []*SnapshotInfoSetItemType `locationName:"snapshotSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -18885,6 +25735,18 @@ func (s NiftyDescribeInstanceSnapshotsOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeInstanceSnapshotsOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeInstanceSnapshotsOutput) SetRequestId(v string) *NiftyDescribeInstanceSnapshotsOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetSnapshotSet sets the SnapshotSet field's value.
+func (s *NiftyDescribeInstanceSnapshotsOutput) SetSnapshotSet(v []*SnapshotInfoSetItemType) *NiftyDescribeInstanceSnapshotsOutput {
+	s.SnapshotSet = v
+	return s
 }
 
 // NiftyDescribeNatTablesRequest
@@ -18921,9 +25783,16 @@ func (s *NiftyDescribeNatTablesInput) SetNatTableIdList(v []*string) *NiftyDescr
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeNatTablesOutput
+// NiftyDescribeNatTablesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeNatTablesResult
 type NiftyDescribeNatTablesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NatTableSetType
+	NatTableSet *NatTableSetType `locationName:"natTableSet" type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -18934,6 +25803,18 @@ func (s NiftyDescribeNatTablesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeNatTablesOutput) GoString() string {
 	return s.String()
+}
+
+// SetNatTableSet sets the NatTableSet field's value.
+func (s *NiftyDescribeNatTablesOutput) SetNatTableSet(v *NatTableSetType) *NiftyDescribeNatTablesOutput {
+	s.NatTableSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeNatTablesOutput) SetRequestId(v string) *NiftyDescribeNatTablesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribePerformanceChartRequest
@@ -19026,9 +25907,22 @@ func (s *NiftyDescribePerformanceChartInput) SetValueType(v string) *NiftyDescri
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePerformanceChartOutput
+// NiftyDescribePerformanceChartResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePerformanceChartResult
 type NiftyDescribePerformanceChartOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	FunctionName *string `locationName:"functionName" type:"string"`
+
+	// PerformanceChartSetType
+	PerformanceChartSet []*PerformanceChartItemType `locationName:"performanceChartSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	ValueType *string `locationName:"valueType" type:"string"`
 }
 
 // String returns the string representation
@@ -19039,6 +25933,30 @@ func (s NiftyDescribePerformanceChartOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribePerformanceChartOutput) GoString() string {
 	return s.String()
+}
+
+// SetFunctionName sets the FunctionName field's value.
+func (s *NiftyDescribePerformanceChartOutput) SetFunctionName(v string) *NiftyDescribePerformanceChartOutput {
+	s.FunctionName = &v
+	return s
+}
+
+// SetPerformanceChartSet sets the PerformanceChartSet field's value.
+func (s *NiftyDescribePerformanceChartOutput) SetPerformanceChartSet(v []*PerformanceChartItemType) *NiftyDescribePerformanceChartOutput {
+	s.PerformanceChartSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribePerformanceChartOutput) SetRequestId(v string) *NiftyDescribePerformanceChartOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetValueType sets the ValueType field's value.
+func (s *NiftyDescribePerformanceChartOutput) SetValueType(v string) *NiftyDescribePerformanceChartOutput {
+	s.ValueType = &v
+	return s
 }
 
 // NiftyDescribePrivateLansRequest
@@ -19084,9 +26002,16 @@ func (s *NiftyDescribePrivateLansInput) SetPrivateLanNameList(v []*string) *Nift
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePrivateLansOutput
+// NiftyDescribePrivateLansResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribePrivateLansResult
 type NiftyDescribePrivateLansOutput struct {
 	_ struct{} `type:"structure"`
+
+	// PrivateLanSetType
+	PrivateLanSet []*PrivateLanType `locationName:"privateLanSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -19097,6 +26022,18 @@ func (s NiftyDescribePrivateLansOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribePrivateLansOutput) GoString() string {
 	return s.String()
+}
+
+// SetPrivateLanSet sets the PrivateLanSet field's value.
+func (s *NiftyDescribePrivateLansOutput) SetPrivateLanSet(v []*PrivateLanType) *NiftyDescribePrivateLansOutput {
+	s.PrivateLanSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribePrivateLansOutput) SetRequestId(v string) *NiftyDescribePrivateLansOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeRoutersRequest
@@ -19142,9 +26079,16 @@ func (s *NiftyDescribeRoutersInput) SetRouterNameList(v []*string) *NiftyDescrib
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeRoutersOutput
+// NiftyDescribeRoutersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeRoutersResult
 type NiftyDescribeRoutersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouterSetType
+	RouterSet []*RouterType `locationName:"routerSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -19155,6 +26099,18 @@ func (s NiftyDescribeRoutersOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeRoutersOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeRoutersOutput) SetRequestId(v string) *NiftyDescribeRoutersOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *NiftyDescribeRoutersOutput) SetRouterSet(v []*RouterType) *NiftyDescribeRoutersOutput {
+	s.RouterSet = v
+	return s
 }
 
 // NiftyDescribeScalingActivitiesRequest
@@ -19224,9 +26180,19 @@ func (s *NiftyDescribeScalingActivitiesInput) SetRange(v *RangeStruct) *NiftyDes
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeScalingActivitiesOutput
+// NiftyDescribeScalingActivitiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeScalingActivitiesResult
 type NiftyDescribeScalingActivitiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	AutoScalingGroupName *string `locationName:"autoScalingGroupName" type:"string"`
+
+	// LogSetType
+	LogSet []*ScalingLogType `locationName:"logSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -19237,6 +26203,24 @@ func (s NiftyDescribeScalingActivitiesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeScalingActivitiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetAutoScalingGroupName sets the AutoScalingGroupName field's value.
+func (s *NiftyDescribeScalingActivitiesOutput) SetAutoScalingGroupName(v string) *NiftyDescribeScalingActivitiesOutput {
+	s.AutoScalingGroupName = &v
+	return s
+}
+
+// SetLogSet sets the LogSet field's value.
+func (s *NiftyDescribeScalingActivitiesOutput) SetLogSet(v []*ScalingLogType) *NiftyDescribeScalingActivitiesOutput {
+	s.LogSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeScalingActivitiesOutput) SetRequestId(v string) *NiftyDescribeScalingActivitiesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyDescribeVpnGatewayActivitiesRequest
@@ -19273,9 +26257,25 @@ func (s *NiftyDescribeVpnGatewayActivitiesInput) SetVpnGatewayId(v string) *Nift
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeVpnGatewayActivitiesOutput
+// NiftyDescribeVpnGatewayActivitiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeVpnGatewayActivitiesResult
 type NiftyDescribeVpnGatewayActivitiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// AnalyzeResultSetType
+	AnalyzeResultSet []*AnalyzeResultSetItemType `locationName:"analyzeResultSet" locationNameList:"item" type:"list"`
+
+	// String
+	Log *string `locationName:"log" type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `locationName:"niftyVpnGatewayName" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	VpnGatewayId *string `locationName:"vpnGatewayId" type:"string"`
 }
 
 // String returns the string representation
@@ -19286,6 +26286,36 @@ func (s NiftyDescribeVpnGatewayActivitiesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeVpnGatewayActivitiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetAnalyzeResultSet sets the AnalyzeResultSet field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesOutput) SetAnalyzeResultSet(v []*AnalyzeResultSetItemType) *NiftyDescribeVpnGatewayActivitiesOutput {
+	s.AnalyzeResultSet = v
+	return s
+}
+
+// SetLog sets the Log field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesOutput) SetLog(v string) *NiftyDescribeVpnGatewayActivitiesOutput {
+	s.Log = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesOutput) SetNiftyVpnGatewayName(v string) *NiftyDescribeVpnGatewayActivitiesOutput {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesOutput) SetRequestId(v string) *NiftyDescribeVpnGatewayActivitiesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *NiftyDescribeVpnGatewayActivitiesOutput) SetVpnGatewayId(v string) *NiftyDescribeVpnGatewayActivitiesOutput {
+	s.VpnGatewayId = &v
+	return s
 }
 
 // NiftyDescribeWebProxiesRequest
@@ -19331,9 +26361,16 @@ func (s *NiftyDescribeWebProxiesInput) SetRouterNameList(v []*string) *NiftyDesc
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeWebProxiesOutput
+// NiftyDescribeWebProxiesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDescribeWebProxiesResult
 type NiftyDescribeWebProxiesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// WebProxySetType
+	WebProxy []*WebProxyType `locationName:"webProxy" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -19344,6 +26381,18 @@ func (s NiftyDescribeWebProxiesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDescribeWebProxiesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDescribeWebProxiesOutput) SetRequestId(v string) *NiftyDescribeWebProxiesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetWebProxy sets the WebProxy field's value.
+func (s *NiftyDescribeWebProxiesOutput) SetWebProxy(v []*WebProxyType) *NiftyDescribeWebProxiesOutput {
+	s.WebProxy = v
+	return s
 }
 
 // NiftyDisableDhcpRequest
@@ -19407,9 +26456,16 @@ func (s *NiftyDisableDhcpInput) SetRouterName(v string) *NiftyDisableDhcpInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisableDhcpOutput
+// NiftyDisableDhcpResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisableDhcpResult
 type NiftyDisableDhcpOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19420,6 +26476,18 @@ func (s NiftyDisableDhcpOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDisableDhcpOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDisableDhcpOutput) SetRequestId(v string) *NiftyDisableDhcpOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDisableDhcpOutput) SetReturn(v bool) *NiftyDisableDhcpOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDisassociateNatTableRequest
@@ -19471,9 +26539,16 @@ func (s *NiftyDisassociateNatTableInput) SetAssociationId(v string) *NiftyDisass
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateNatTableOutput
+// NiftyDisassociateNatTableResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateNatTableResult
 type NiftyDisassociateNatTableOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19484,6 +26559,18 @@ func (s NiftyDisassociateNatTableOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDisassociateNatTableOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDisassociateNatTableOutput) SetRequestId(v string) *NiftyDisassociateNatTableOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDisassociateNatTableOutput) SetReturn(v bool) *NiftyDisassociateNatTableOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyDisassociateRouteTableFromVpnGatewayRequest
@@ -19535,9 +26622,16 @@ func (s *NiftyDisassociateRouteTableFromVpnGatewayInput) SetAssociationId(v stri
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateRouteTableFromVpnGatewayOutput
+// NiftyDisassociateRouteTableFromVpnGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDisassociateRouteTableFromVpnGatewayResult
 type NiftyDisassociateRouteTableFromVpnGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19548,6 +26642,43 @@ func (s NiftyDisassociateRouteTableFromVpnGatewayOutput) String() string {
 // GoString returns the string representation
 func (s NiftyDisassociateRouteTableFromVpnGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyDisassociateRouteTableFromVpnGatewayOutput) SetRequestId(v string) *NiftyDisassociateRouteTableFromVpnGatewayOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyDisassociateRouteTableFromVpnGatewayOutput) SetReturn(v bool) *NiftyDisassociateRouteTableFromVpnGatewayOutput {
+	s.Return = &v
+	return s
+}
+
+// NiftyDistributionIdItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyDistributionIdItemType
+type NiftyDistributionIdItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DistributionId *string `locationName:"distributionId" type:"string"`
+}
+
+// String returns the string representation
+func (s NiftyDistributionIdItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftyDistributionIdItemType) GoString() string {
+	return s.String()
+}
+
+// SetDistributionId sets the DistributionId field's value.
+func (s *NiftyDistributionIdItemType) SetDistributionId(v string) *NiftyDistributionIdItemType {
+	s.DistributionId = &v
+	return s
 }
 
 // NiftyEnableDhcpRequest
@@ -19629,9 +26760,16 @@ func (s *NiftyEnableDhcpInput) SetRouterName(v string) *NiftyEnableDhcpInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyEnableDhcpOutput
+// NiftyEnableDhcpResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyEnableDhcpResult
 type NiftyEnableDhcpOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19642,6 +26780,18 @@ func (s NiftyEnableDhcpOutput) String() string {
 // GoString returns the string representation
 func (s NiftyEnableDhcpOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyEnableDhcpOutput) SetRequestId(v string) *NiftyEnableDhcpOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyEnableDhcpOutput) SetReturn(v bool) *NiftyEnableDhcpOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyIPsecConfigurationStruct
@@ -19784,9 +26934,16 @@ func (s *NiftyModifyAddressAttributeInput) SetValue(v string) *NiftyModifyAddres
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyAddressAttributeOutput
+// NiftyModifyAddressAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyAddressAttributeResult
 type NiftyModifyAddressAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19797,6 +26954,18 @@ func (s NiftyModifyAddressAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyAddressAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyAddressAttributeOutput) SetRequestId(v string) *NiftyModifyAddressAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyAddressAttributeOutput) SetReturn(v bool) *NiftyModifyAddressAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyCustomerGatewayAttributeRequest
@@ -19871,9 +27040,16 @@ func (s *NiftyModifyCustomerGatewayAttributeInput) SetValue(v string) *NiftyModi
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyCustomerGatewayAttributeOutput
+// NiftyModifyCustomerGatewayAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyCustomerGatewayAttributeResult
 type NiftyModifyCustomerGatewayAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19884,6 +27060,18 @@ func (s NiftyModifyCustomerGatewayAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyCustomerGatewayAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyCustomerGatewayAttributeOutput) SetRequestId(v string) *NiftyModifyCustomerGatewayAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyCustomerGatewayAttributeOutput) SetReturn(v bool) *NiftyModifyCustomerGatewayAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyInstanceSnapshotAttributeRequest
@@ -19958,9 +27146,16 @@ func (s *NiftyModifyInstanceSnapshotAttributeInput) SetValue(v string) *NiftyMod
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyInstanceSnapshotAttributeOutput
+// NiftyModifyInstanceSnapshotAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyInstanceSnapshotAttributeResult
 type NiftyModifyInstanceSnapshotAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -19971,6 +27166,18 @@ func (s NiftyModifyInstanceSnapshotAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyInstanceSnapshotAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeOutput) SetRequestId(v string) *NiftyModifyInstanceSnapshotAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyInstanceSnapshotAttributeOutput) SetReturn(v bool) *NiftyModifyInstanceSnapshotAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyKeyPairAttributeRequest
@@ -20041,9 +27248,22 @@ func (s *NiftyModifyKeyPairAttributeInput) SetValue(v string) *NiftyModifyKeyPai
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyKeyPairAttributeOutput
+// NiftyModifyKeyPairAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyKeyPairAttributeResult
 type NiftyModifyKeyPairAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Attribute *string `locationName:"attribute" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
+
+	// String
+	Value *string `locationName:"value" type:"string"`
 }
 
 // String returns the string representation
@@ -20054,6 +27274,30 @@ func (s NiftyModifyKeyPairAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyKeyPairAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetAttribute sets the Attribute field's value.
+func (s *NiftyModifyKeyPairAttributeOutput) SetAttribute(v string) *NiftyModifyKeyPairAttributeOutput {
+	s.Attribute = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyKeyPairAttributeOutput) SetRequestId(v string) *NiftyModifyKeyPairAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyKeyPairAttributeOutput) SetReturn(v bool) *NiftyModifyKeyPairAttributeOutput {
+	s.Return = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *NiftyModifyKeyPairAttributeOutput) SetValue(v string) *NiftyModifyKeyPairAttributeOutput {
+	s.Value = &v
+	return s
 }
 
 // NiftyModifyPrivateLanAttributeRequest
@@ -20128,9 +27372,16 @@ func (s *NiftyModifyPrivateLanAttributeInput) SetValue(v string) *NiftyModifyPri
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyPrivateLanAttributeOutput
+// NiftyModifyPrivateLanAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyPrivateLanAttributeResult
 type NiftyModifyPrivateLanAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20141,6 +27392,18 @@ func (s NiftyModifyPrivateLanAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyPrivateLanAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyPrivateLanAttributeOutput) SetRequestId(v string) *NiftyModifyPrivateLanAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyPrivateLanAttributeOutput) SetReturn(v bool) *NiftyModifyPrivateLanAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyRouterAttributeRequest
@@ -20224,9 +27487,16 @@ func (s *NiftyModifyRouterAttributeInput) SetValue(v string) *NiftyModifyRouterA
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyRouterAttributeOutput
+// NiftyModifyRouterAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyRouterAttributeResult
 type NiftyModifyRouterAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20237,6 +27507,18 @@ func (s NiftyModifyRouterAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyRouterAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyRouterAttributeOutput) SetRequestId(v string) *NiftyModifyRouterAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyRouterAttributeOutput) SetReturn(v bool) *NiftyModifyRouterAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyVpnGatewayAttributeRequest
@@ -20320,9 +27602,16 @@ func (s *NiftyModifyVpnGatewayAttributeInput) SetVpnGatewayId(v string) *NiftyMo
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyVpnGatewayAttributeOutput
+// NiftyModifyVpnGatewayAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyVpnGatewayAttributeResult
 type NiftyModifyVpnGatewayAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20333,6 +27622,18 @@ func (s NiftyModifyVpnGatewayAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyVpnGatewayAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyVpnGatewayAttributeOutput) SetRequestId(v string) *NiftyModifyVpnGatewayAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyVpnGatewayAttributeOutput) SetReturn(v bool) *NiftyModifyVpnGatewayAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyModifyWebProxyAttributeRequest
@@ -20411,9 +27712,16 @@ func (s *NiftyModifyWebProxyAttributeInput) SetValue(v string) *NiftyModifyWebPr
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyWebProxyAttributeOutput
+// NiftyModifyWebProxyAttributeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyModifyWebProxyAttributeResult
 type NiftyModifyWebProxyAttributeOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20424,6 +27732,18 @@ func (s NiftyModifyWebProxyAttributeOutput) String() string {
 // GoString returns the string representation
 func (s NiftyModifyWebProxyAttributeOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyModifyWebProxyAttributeOutput) SetRequestId(v string) *NiftyModifyWebProxyAttributeOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyModifyWebProxyAttributeOutput) SetReturn(v bool) *NiftyModifyWebProxyAttributeOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyNetworkStruct
@@ -20494,9 +27814,16 @@ func (s *NiftyRebootRoutersInput) SetRouterList(v []*string) *NiftyRebootRouters
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootRoutersOutput
+// NiftyRebootRoutersResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootRoutersResult
 type NiftyRebootRoutersOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20507,6 +27834,18 @@ func (s NiftyRebootRoutersOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRebootRoutersOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRebootRoutersOutput) SetRequestId(v string) *NiftyRebootRoutersOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyRebootRoutersOutput) SetReturn(v bool) *NiftyRebootRoutersOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRebootVpnGatewaysRequest
@@ -20534,9 +27873,16 @@ func (s *NiftyRebootVpnGatewaysInput) SetVpnGatewayList(v []*string) *NiftyReboo
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootVpnGatewaysOutput
+// NiftyRebootVpnGatewaysResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRebootVpnGatewaysResult
 type NiftyRebootVpnGatewaysOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20547,6 +27893,18 @@ func (s NiftyRebootVpnGatewaysOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRebootVpnGatewaysOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRebootVpnGatewaysOutput) SetRequestId(v string) *NiftyRebootVpnGatewaysOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyRebootVpnGatewaysOutput) SetReturn(v bool) *NiftyRebootVpnGatewaysOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRegisterRoutersWithSecurityGroupRequest
@@ -20598,9 +27956,16 @@ func (s *NiftyRegisterRoutersWithSecurityGroupInput) SetRouterSetList(v []*strin
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterRoutersWithSecurityGroupOutput
+// NiftyRegisterRoutersWithSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterRoutersWithSecurityGroupResult
 type NiftyRegisterRoutersWithSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// RouterIdSetType
+	RouterSet []*RouterIdSetItemType `locationName:"routerSet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -20611,6 +27976,18 @@ func (s NiftyRegisterRoutersWithSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRegisterRoutersWithSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRegisterRoutersWithSecurityGroupOutput) SetRequestId(v string) *NiftyRegisterRoutersWithSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *NiftyRegisterRoutersWithSecurityGroupOutput) SetRouterSet(v []*RouterIdSetItemType) *NiftyRegisterRoutersWithSecurityGroupOutput {
+	s.RouterSet = v
+	return s
 }
 
 // NiftyRegisterVpnGatewaysWithSecurityGroupRequest
@@ -20662,9 +28039,16 @@ func (s *NiftyRegisterVpnGatewaysWithSecurityGroupInput) SetVpnGatewaySetList(v 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterVpnGatewaysWithSecurityGroupOutput
+// NiftyRegisterVpnGatewaysWithSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRegisterVpnGatewaysWithSecurityGroupResult
 type NiftyRegisterVpnGatewaysWithSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// VpnGatewayIdSetType
+	VpnGatewaySet []*VpnGatewayIdSetItemType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
 }
 
 // String returns the string representation
@@ -20675,6 +28059,18 @@ func (s NiftyRegisterVpnGatewaysWithSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRegisterVpnGatewaysWithSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRegisterVpnGatewaysWithSecurityGroupOutput) SetRequestId(v string) *NiftyRegisterVpnGatewaysWithSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *NiftyRegisterVpnGatewaysWithSecurityGroupOutput) SetVpnGatewaySet(v []*VpnGatewayIdSetItemType) *NiftyRegisterVpnGatewaysWithSecurityGroupOutput {
+	s.VpnGatewaySet = v
+	return s
 }
 
 // NiftyReleaseRouterBackupStateRequest
@@ -20711,9 +28107,16 @@ func (s *NiftyReleaseRouterBackupStateInput) SetRouterName(v string) *NiftyRelea
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseRouterBackupStateOutput
+// NiftyReleaseRouterBackupStateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseRouterBackupStateResult
 type NiftyReleaseRouterBackupStateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20724,6 +28127,18 @@ func (s NiftyReleaseRouterBackupStateOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReleaseRouterBackupStateOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReleaseRouterBackupStateOutput) SetRequestId(v string) *NiftyReleaseRouterBackupStateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReleaseRouterBackupStateOutput) SetReturn(v bool) *NiftyReleaseRouterBackupStateOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyReleaseVpnGatewayBackupStateRequest
@@ -20760,9 +28175,16 @@ func (s *NiftyReleaseVpnGatewayBackupStateInput) SetVpnGatewayId(v string) *Nift
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseVpnGatewayBackupStateOutput
+// NiftyReleaseVpnGatewayBackupStateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReleaseVpnGatewayBackupStateResult
 type NiftyReleaseVpnGatewayBackupStateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20773,6 +28195,18 @@ func (s NiftyReleaseVpnGatewayBackupStateOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReleaseVpnGatewayBackupStateOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReleaseVpnGatewayBackupStateOutput) SetRequestId(v string) *NiftyReleaseVpnGatewayBackupStateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReleaseVpnGatewayBackupStateOutput) SetReturn(v bool) *NiftyReleaseVpnGatewayBackupStateOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRemoteVpnStruct
@@ -20894,9 +28328,16 @@ func (s *NiftyReplaceDhcpConfigInput) SetRouterName(v string) *NiftyReplaceDhcpC
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpConfigOutput
+// NiftyReplaceDhcpConfigResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpConfigResult
 type NiftyReplaceDhcpConfigOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -20907,6 +28348,18 @@ func (s NiftyReplaceDhcpConfigOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceDhcpConfigOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceDhcpConfigOutput) SetRequestId(v string) *NiftyReplaceDhcpConfigOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReplaceDhcpConfigOutput) SetReturn(v bool) *NiftyReplaceDhcpConfigOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyReplaceDhcpOptionRequest
@@ -20994,9 +28447,16 @@ func (s *NiftyReplaceDhcpOptionInput) SetRouterName(v string) *NiftyReplaceDhcpO
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpOptionOutput
+// NiftyReplaceDhcpOptionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceDhcpOptionResult
 type NiftyReplaceDhcpOptionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21007,6 +28467,18 @@ func (s NiftyReplaceDhcpOptionOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceDhcpOptionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceDhcpOptionOutput) SetRequestId(v string) *NiftyReplaceDhcpOptionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReplaceDhcpOptionOutput) SetReturn(v bool) *NiftyReplaceDhcpOptionOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyReplaceNatRuleRequest
@@ -21145,9 +28617,19 @@ func (s *NiftyReplaceNatRuleInput) SetTranslation(v *TranslationStruct) *NiftyRe
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatRuleOutput
+// NiftyReplaceNatRuleResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatRuleResult
 type NiftyReplaceNatRuleOutput struct {
 	_ struct{} `type:"structure"`
+
+	// NatRuleType
+	NatRule *NatRuleType `locationName:"natRule" type:"structure"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -21158,6 +28640,24 @@ func (s NiftyReplaceNatRuleOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceNatRuleOutput) GoString() string {
 	return s.String()
+}
+
+// SetNatRule sets the NatRule field's value.
+func (s *NiftyReplaceNatRuleOutput) SetNatRule(v *NatRuleType) *NiftyReplaceNatRuleOutput {
+	s.NatRule = v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *NiftyReplaceNatRuleOutput) SetNatTableId(v string) *NiftyReplaceNatRuleOutput {
+	s.NatTableId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceNatRuleOutput) SetRequestId(v string) *NiftyReplaceNatRuleOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyReplaceNatTableAssociationRequest
@@ -21223,9 +28723,16 @@ func (s *NiftyReplaceNatTableAssociationInput) SetNatTableId(v string) *NiftyRep
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatTableAssociationOutput
+// NiftyReplaceNatTableAssociationResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceNatTableAssociationResult
 type NiftyReplaceNatTableAssociationOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NewAssociationId *string `locationName:"newAssociationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -21236,6 +28743,18 @@ func (s NiftyReplaceNatTableAssociationOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceNatTableAssociationOutput) GoString() string {
 	return s.String()
+}
+
+// SetNewAssociationId sets the NewAssociationId field's value.
+func (s *NiftyReplaceNatTableAssociationOutput) SetNewAssociationId(v string) *NiftyReplaceNatTableAssociationOutput {
+	s.NewAssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceNatTableAssociationOutput) SetRequestId(v string) *NiftyReplaceNatTableAssociationOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyReplaceRouteTableAssociationWithVpnGatewayRequest
@@ -21301,9 +28820,16 @@ func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayInput) SetRouteTableId(v
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouteTableAssociationWithVpnGatewayOutput
+// NiftyReplaceRouteTableAssociationWithVpnGatewayResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouteTableAssociationWithVpnGatewayResult
 type NiftyReplaceRouteTableAssociationWithVpnGatewayOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NewAssociationId *string `locationName:"newAssociationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -21314,6 +28840,18 @@ func (s NiftyReplaceRouteTableAssociationWithVpnGatewayOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceRouteTableAssociationWithVpnGatewayOutput) GoString() string {
 	return s.String()
+}
+
+// SetNewAssociationId sets the NewAssociationId field's value.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayOutput) SetNewAssociationId(v string) *NiftyReplaceRouteTableAssociationWithVpnGatewayOutput {
+	s.NewAssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceRouteTableAssociationWithVpnGatewayOutput) SetRequestId(v string) *NiftyReplaceRouteTableAssociationWithVpnGatewayOutput {
+	s.RequestId = &v
+	return s
 }
 
 // NiftyReplaceRouterLatestVersionRequest
@@ -21359,9 +28897,16 @@ func (s *NiftyReplaceRouterLatestVersionInput) SetRouterName(v string) *NiftyRep
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouterLatestVersionOutput
+// NiftyReplaceRouterLatestVersionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceRouterLatestVersionResult
 type NiftyReplaceRouterLatestVersionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21372,6 +28917,18 @@ func (s NiftyReplaceRouterLatestVersionOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceRouterLatestVersionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceRouterLatestVersionOutput) SetRequestId(v string) *NiftyReplaceRouterLatestVersionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReplaceRouterLatestVersionOutput) SetReturn(v bool) *NiftyReplaceRouterLatestVersionOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyReplaceVpnGatewayLatestVersionRequest
@@ -21417,9 +28974,16 @@ func (s *NiftyReplaceVpnGatewayLatestVersionInput) SetVpnGatewayId(v string) *Ni
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceVpnGatewayLatestVersionOutput
+// NiftyReplaceVpnGatewayLatestVersionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyReplaceVpnGatewayLatestVersionResult
 type NiftyReplaceVpnGatewayLatestVersionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21430,6 +28994,18 @@ func (s NiftyReplaceVpnGatewayLatestVersionOutput) String() string {
 // GoString returns the string representation
 func (s NiftyReplaceVpnGatewayLatestVersionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyReplaceVpnGatewayLatestVersionOutput) SetRequestId(v string) *NiftyReplaceVpnGatewayLatestVersionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyReplaceVpnGatewayLatestVersionOutput) SetReturn(v bool) *NiftyReplaceVpnGatewayLatestVersionOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRestoreInstanceSnapshotRequest
@@ -21466,9 +29042,16 @@ func (s *NiftyRestoreInstanceSnapshotInput) SetSnapshotName(v string) *NiftyRest
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreInstanceSnapshotOutput
+// NiftyRestoreInstanceSnapshotResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreInstanceSnapshotResult
 type NiftyRestoreInstanceSnapshotOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21479,6 +29062,18 @@ func (s NiftyRestoreInstanceSnapshotOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreInstanceSnapshotOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRestoreInstanceSnapshotOutput) SetRequestId(v string) *NiftyRestoreInstanceSnapshotOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyRestoreInstanceSnapshotOutput) SetReturn(v bool) *NiftyRestoreInstanceSnapshotOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRestoreRouterPreviousVersionRequest
@@ -21515,9 +29110,16 @@ func (s *NiftyRestoreRouterPreviousVersionInput) SetRouterName(v string) *NiftyR
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreRouterPreviousVersionOutput
+// NiftyRestoreRouterPreviousVersionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreRouterPreviousVersionResult
 type NiftyRestoreRouterPreviousVersionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21528,6 +29130,18 @@ func (s NiftyRestoreRouterPreviousVersionOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreRouterPreviousVersionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRestoreRouterPreviousVersionOutput) SetRequestId(v string) *NiftyRestoreRouterPreviousVersionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyRestoreRouterPreviousVersionOutput) SetReturn(v bool) *NiftyRestoreRouterPreviousVersionOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRestoreVpnGatewayPreviousVersionRequest
@@ -21564,9 +29178,16 @@ func (s *NiftyRestoreVpnGatewayPreviousVersionInput) SetVpnGatewayId(v string) *
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreVpnGatewayPreviousVersionOutput
+// NiftyRestoreVpnGatewayPreviousVersionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRestoreVpnGatewayPreviousVersionResult
 type NiftyRestoreVpnGatewayPreviousVersionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21577,6 +29198,18 @@ func (s NiftyRestoreVpnGatewayPreviousVersionOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRestoreVpnGatewayPreviousVersionOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRestoreVpnGatewayPreviousVersionOutput) SetRequestId(v string) *NiftyRestoreVpnGatewayPreviousVersionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyRestoreVpnGatewayPreviousVersionOutput) SetReturn(v bool) *NiftyRestoreVpnGatewayPreviousVersionOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyRetryImportInstanceRequest
@@ -21619,9 +29252,22 @@ func (s *NiftyRetryImportInstanceInput) SetInstanceId(v string) *NiftyRetryImpor
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRetryImportInstanceOutput
+// NiftyRetryImportInstanceResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyRetryImportInstanceResult
 type NiftyRetryImportInstanceOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceState *string `locationName:"instanceState" type:"string"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -21632,6 +29278,55 @@ func (s NiftyRetryImportInstanceOutput) String() string {
 // GoString returns the string representation
 func (s NiftyRetryImportInstanceOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *NiftyRetryImportInstanceOutput) SetInstanceId(v string) *NiftyRetryImportInstanceOutput {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceState sets the InstanceState field's value.
+func (s *NiftyRetryImportInstanceOutput) SetInstanceState(v string) *NiftyRetryImportInstanceOutput {
+	s.InstanceState = &v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *NiftyRetryImportInstanceOutput) SetInstanceUniqueId(v string) *NiftyRetryImportInstanceOutput {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyRetryImportInstanceOutput) SetRequestId(v string) *NiftyRetryImportInstanceOutput {
+	s.RequestId = &v
+	return s
+}
+
+// NiftySnapshottingItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftySnapshottingItemType
+type NiftySnapshottingItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+}
+
+// String returns the string representation
+func (s NiftySnapshottingItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NiftySnapshottingItemType) GoString() string {
+	return s.String()
+}
+
+// SetState sets the State field's value.
+func (s *NiftySnapshottingItemType) SetState(v string) *NiftySnapshottingItemType {
+	s.State = &v
+	return s
 }
 
 // NiftyTunnelStruct
@@ -21866,9 +29561,16 @@ func (s *NiftyUpdateAlarmInput) SetRuleNameUpdate(v string) *NiftyUpdateAlarmInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAlarmOutput
+// NiftyUpdateAlarmResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAlarmResult
 type NiftyUpdateAlarmOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -21879,6 +29581,18 @@ func (s NiftyUpdateAlarmOutput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateAlarmOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyUpdateAlarmOutput) SetRequestId(v string) *NiftyUpdateAlarmOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyUpdateAlarmOutput) SetReturn(v bool) *NiftyUpdateAlarmOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyUpdateAutoScalingGroupRequest
@@ -22081,9 +29795,16 @@ func (s *NiftyUpdateAutoScalingGroupInput) SetSecurityGroupList(v []*string) *Ni
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAutoScalingGroupOutput
+// NiftyUpdateAutoScalingGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateAutoScalingGroupResult
 type NiftyUpdateAutoScalingGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -22094,6 +29815,18 @@ func (s NiftyUpdateAutoScalingGroupOutput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateAutoScalingGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyUpdateAutoScalingGroupOutput) SetRequestId(v string) *NiftyUpdateAutoScalingGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyUpdateAutoScalingGroupOutput) SetReturn(v bool) *NiftyUpdateAutoScalingGroupOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyUpdateInstanceNetworkInterfacesRequest
@@ -22154,9 +29887,13 @@ func (s *NiftyUpdateInstanceNetworkInterfacesInput) SetNiftyReboot(v string) *Ni
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateInstanceNetworkInterfacesOutput
+// NiftyUpdateInstanceNetworkInterfacesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateInstanceNetworkInterfacesResult
 type NiftyUpdateInstanceNetworkInterfacesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -22167,6 +29904,12 @@ func (s NiftyUpdateInstanceNetworkInterfacesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateInstanceNetworkInterfacesOutput) GoString() string {
 	return s.String()
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyUpdateInstanceNetworkInterfacesOutput) SetReturn(v bool) *NiftyUpdateInstanceNetworkInterfacesOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyUpdateRouterNetworkInterfacesRequest
@@ -22230,9 +29973,16 @@ func (s *NiftyUpdateRouterNetworkInterfacesInput) SetRouterName(v string) *Nifty
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateRouterNetworkInterfacesOutput
+// NiftyUpdateRouterNetworkInterfacesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateRouterNetworkInterfacesResult
 type NiftyUpdateRouterNetworkInterfacesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -22243,6 +29993,18 @@ func (s NiftyUpdateRouterNetworkInterfacesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateRouterNetworkInterfacesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesOutput) SetRequestId(v string) *NiftyUpdateRouterNetworkInterfacesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyUpdateRouterNetworkInterfacesOutput) SetReturn(v bool) *NiftyUpdateRouterNetworkInterfacesOutput {
+	s.Return = &v
+	return s
 }
 
 // NiftyUpdateVpnGatewayNetworkInterfacesRequest
@@ -22306,9 +30068,16 @@ func (s *NiftyUpdateVpnGatewayNetworkInterfacesInput) SetVpnGatewayId(v string) 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateVpnGatewayNetworkInterfacesOutput
+// NiftyUpdateVpnGatewayNetworkInterfacesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NiftyUpdateVpnGatewayNetworkInterfacesResult
 type NiftyUpdateVpnGatewayNetworkInterfacesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -22319,6 +30088,43 @@ func (s NiftyUpdateVpnGatewayNetworkInterfacesOutput) String() string {
 // GoString returns the string representation
 func (s NiftyUpdateVpnGatewayNetworkInterfacesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesOutput) SetRequestId(v string) *NiftyUpdateVpnGatewayNetworkInterfacesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *NiftyUpdateVpnGatewayNetworkInterfacesOutput) SetReturn(v bool) *NiftyUpdateVpnGatewayNetworkInterfacesOutput {
+	s.Return = &v
+	return s
+}
+
+// NullableAttribute
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//NullableAttribute
+type NullableAttribute struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	Value *bool `locationName:"value" type:"boolean"`
+}
+
+// String returns the string representation
+func (s NullableAttribute) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NullableAttribute) GoString() string {
+	return s.String()
+}
+
+// SetValue sets the Value field's value.
+func (s *NullableAttribute) SetValue(v bool) *NullableAttribute {
+	s.Value = &v
+	return s
 }
 
 // OptionStruct
@@ -22414,6 +30220,124 @@ func (s *OutboundInterfaceStruct) SetNetworkName(v string) *OutboundInterfaceStr
 	return s
 }
 
+// PartitionItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PartitionItemType
+type PartitionItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Partition *string `locationName:"partition" type:"string"`
+}
+
+// String returns the string representation
+func (s PartitionItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PartitionItemType) GoString() string {
+	return s.String()
+}
+
+// SetPartition sets the Partition field's value.
+func (s *PartitionItemType) SetPartition(v string) *PartitionItemType {
+	s.Partition = &v
+	return s
+}
+
+// PerformanceChartItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PerformanceChartItemType
+type PerformanceChartItemType struct {
+	_ struct{} `type:"structure"`
+
+	// DataSetType
+	DataSet []*DataItemType `locationName:"dataSet" locationNameList:"item" type:"list"`
+
+	// String
+	DataType *string `locationName:"dataType" type:"string"`
+
+	// String
+	ResourceName *string `locationName:"resourceName" type:"string"`
+}
+
+// String returns the string representation
+func (s PerformanceChartItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PerformanceChartItemType) GoString() string {
+	return s.String()
+}
+
+// SetDataSet sets the DataSet field's value.
+func (s *PerformanceChartItemType) SetDataSet(v []*DataItemType) *PerformanceChartItemType {
+	s.DataSet = v
+	return s
+}
+
+// SetDataType sets the DataType field's value.
+func (s *PerformanceChartItemType) SetDataType(v string) *PerformanceChartItemType {
+	s.DataType = &v
+	return s
+}
+
+// SetResourceName sets the ResourceName field's value.
+func (s *PerformanceChartItemType) SetResourceName(v string) *PerformanceChartItemType {
+	s.ResourceName = &v
+	return s
+}
+
+// PlacementResponseType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PlacementResponseType
+type PlacementResponseType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+}
+
+// String returns the string representation
+func (s PlacementResponseType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PlacementResponseType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *PlacementResponseType) SetAvailabilityZone(v string) *PlacementResponseType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// PlacementSetType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PlacementSetType
+type PlacementSetType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+}
+
+// String returns the string representation
+func (s PlacementSetType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PlacementSetType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *PlacementSetType) SetAvailabilityZone(v string) *PlacementSetType {
+	s.AvailabilityZone = &v
+	return s
+}
+
 // PlacementStruct
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//PlacementStruct
 type PlacementStruct struct {
@@ -22445,6 +30369,232 @@ func (s *PlacementStruct) SetAvailabilityZone(v string) *PlacementStruct {
 // SetGroupName sets the GroupName field's value.
 func (s *PlacementStruct) SetGroupName(v string) *PlacementStruct {
 	s.GroupName = &v
+	return s
+}
+
+// Policies
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//Policies
+type Policies struct {
+	_ struct{} `type:"structure"`
+
+	// AppCookieStickinessPolicies
+	AppCookieStickinessPolicies []*AppCookieStickinessPolicy `locationName:"AppCookieStickinessPolicies" locationNameList:"member" type:"list"`
+
+	// LBCookieStickinessPolicies
+	LBCookieStickinessPolicies []*LBCookieStickinessPolicy `locationName:"LBCookieStickinessPolicies" locationNameList:"member" type:"list"`
+}
+
+// String returns the string representation
+func (s Policies) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s Policies) GoString() string {
+	return s.String()
+}
+
+// SetAppCookieStickinessPolicies sets the AppCookieStickinessPolicies field's value.
+func (s *Policies) SetAppCookieStickinessPolicies(v []*AppCookieStickinessPolicy) *Policies {
+	s.AppCookieStickinessPolicies = v
+	return s
+}
+
+// SetLBCookieStickinessPolicies sets the LBCookieStickinessPolicies field's value.
+func (s *Policies) SetLBCookieStickinessPolicies(v []*LBCookieStickinessPolicy) *Policies {
+	s.LBCookieStickinessPolicies = v
+	return s
+}
+
+// PrivateLanType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PrivateLanType
+type PrivateLanType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// String
+	CidrBlock *string `locationName:"cidrBlock" type:"string"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// InstanceIdSetType
+	InstancesSet []*InstanceIdType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	PrivateLanName *string `locationName:"privateLanName" type:"string"`
+
+	// RouterIdSetType
+	RouterSet []*RouterIdSetItemType `locationName:"routerSet" locationNameList:"item" type:"list"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// VpnGatewayIdSetType
+	VpnGatewaySet []*VpnGatewayIdSetItemType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s PrivateLanType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PrivateLanType) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *PrivateLanType) SetAccountingType(v string) *PrivateLanType {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *PrivateLanType) SetAvailabilityZone(v string) *PrivateLanType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCidrBlock sets the CidrBlock field's value.
+func (s *PrivateLanType) SetCidrBlock(v string) *PrivateLanType {
+	s.CidrBlock = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *PrivateLanType) SetCreatedTime(v time.Time) *PrivateLanType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *PrivateLanType) SetDescription(v string) *PrivateLanType {
+	s.Description = &v
+	return s
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *PrivateLanType) SetInstancesSet(v []*InstanceIdType) *PrivateLanType {
+	s.InstancesSet = v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *PrivateLanType) SetNetworkId(v string) *PrivateLanType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetPrivateLanName sets the PrivateLanName field's value.
+func (s *PrivateLanType) SetPrivateLanName(v string) *PrivateLanType {
+	s.PrivateLanName = &v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *PrivateLanType) SetRouterSet(v []*RouterIdSetItemType) *PrivateLanType {
+	s.RouterSet = v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *PrivateLanType) SetState(v string) *PrivateLanType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *PrivateLanType) SetTagSet(v []*ResourceTagSetItemType) *PrivateLanType {
+	s.TagSet = v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *PrivateLanType) SetVpnGatewaySet(v []*VpnGatewayIdSetItemType) *PrivateLanType {
+	s.VpnGatewaySet = v
+	return s
+}
+
+// ProductCodesSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ProductCodesSetItemType
+type ProductCodesSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	ProductCode *string `locationName:"productCode" type:"string"`
+}
+
+// String returns the string representation
+func (s ProductCodesSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ProductCodesSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetProductCode sets the ProductCode field's value.
+func (s *ProductCodesSetItemType) SetProductCode(v string) *ProductCodesSetItemType {
+	s.ProductCode = &v
+	return s
+}
+
+// PropagatingVgwType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//PropagatingVgwType
+type PropagatingVgwType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	GatewayId *string `locationName:"gatewayId" type:"string"`
+
+	// String
+	NiftyGatewayName *string `locationName:"niftyGatewayName" type:"string"`
+
+	// String
+	RouteTableAssociationId *string `locationName:"routeTableAssociationId" type:"string"`
+}
+
+// String returns the string representation
+func (s PropagatingVgwType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s PropagatingVgwType) GoString() string {
+	return s.String()
+}
+
+// SetGatewayId sets the GatewayId field's value.
+func (s *PropagatingVgwType) SetGatewayId(v string) *PropagatingVgwType {
+	s.GatewayId = &v
+	return s
+}
+
+// SetNiftyGatewayName sets the NiftyGatewayName field's value.
+func (s *PropagatingVgwType) SetNiftyGatewayName(v string) *PropagatingVgwType {
+	s.NiftyGatewayName = &v
+	return s
+}
+
+// SetRouteTableAssociationId sets the RouteTableAssociationId field's value.
+func (s *PropagatingVgwType) SetRouteTableAssociationId(v string) *PropagatingVgwType {
+	s.RouteTableAssociationId = &v
 	return s
 }
 
@@ -22552,9 +30702,16 @@ func (s *RebootInstancesInput) SetUserData(v *UserDataStruct) *RebootInstancesIn
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RebootInstancesOutput
+// RebootInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RebootInstancesResult
 type RebootInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -22565,6 +30722,95 @@ func (s RebootInstancesOutput) String() string {
 // GoString returns the string representation
 func (s RebootInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *RebootInstancesOutput) SetRequestId(v string) *RebootInstancesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *RebootInstancesOutput) SetReturn(v bool) *RebootInstancesOutput {
+	s.Return = &v
+	return s
+}
+
+// RegionItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegionItemType
+type RegionItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	IsDefault *bool `locationName:"isDefault" type:"boolean"`
+
+	// RegionMessageSetType
+	MessageSet []*RegionMessageType `locationName:"messageSet" locationNameList:"item" type:"list"`
+
+	// String
+	RegionEndpoint *string `locationName:"regionEndpoint" type:"string"`
+
+	// String
+	RegionName *string `locationName:"regionName" type:"string"`
+}
+
+// String returns the string representation
+func (s RegionItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RegionItemType) GoString() string {
+	return s.String()
+}
+
+// SetIsDefault sets the IsDefault field's value.
+func (s *RegionItemType) SetIsDefault(v bool) *RegionItemType {
+	s.IsDefault = &v
+	return s
+}
+
+// SetMessageSet sets the MessageSet field's value.
+func (s *RegionItemType) SetMessageSet(v []*RegionMessageType) *RegionItemType {
+	s.MessageSet = v
+	return s
+}
+
+// SetRegionEndpoint sets the RegionEndpoint field's value.
+func (s *RegionItemType) SetRegionEndpoint(v string) *RegionItemType {
+	s.RegionEndpoint = &v
+	return s
+}
+
+// SetRegionName sets the RegionName field's value.
+func (s *RegionItemType) SetRegionName(v string) *RegionItemType {
+	s.RegionName = &v
+	return s
+}
+
+// RegionMessageType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegionMessageType
+type RegionMessageType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Message *string `locationName:"message" type:"string"`
+}
+
+// String returns the string representation
+func (s RegionMessageType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RegionMessageType) GoString() string {
+	return s.String()
+}
+
+// SetMessage sets the Message field's value.
+func (s *RegionMessageType) SetMessage(v string) *RegionMessageType {
+	s.Message = &v
+	return s
 }
 
 // RegisterCorporateInfoForCertificateRequest
@@ -22868,9 +31114,58 @@ func (s *RegisterCorporateInfoForCertificateInput) SetZip2(v string) *RegisterCo
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterCorporateInfoForCertificateOutput
+// RegisterCorporateInfoForCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterCorporateInfoForCertificateResult
 type RegisterCorporateInfoForCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	City *string `locationName:"city" type:"string"`
+
+	// String
+	CorpGrade *string `locationName:"corpGrade" type:"string"`
+
+	// String
+	CorpName *string `locationName:"corpName" type:"string"`
+
+	// String
+	DivisionName *string `locationName:"divisionName" type:"string"`
+
+	// String
+	KanaName1 *string `locationName:"kanaName1" type:"string"`
+
+	// String
+	KanaName2 *string `locationName:"kanaName2" type:"string"`
+
+	// String
+	Name1 *string `locationName:"name1" type:"string"`
+
+	// String
+	Name2 *string `locationName:"name2" type:"string"`
+
+	// String
+	PostName *string `locationName:"postName" type:"string"`
+
+	// String
+	Pref *string `locationName:"pref" type:"string"`
+
+	// String
+	PresidentName1 *string `locationName:"presidentName1" type:"string"`
+
+	// String
+	PresidentName2 *string `locationName:"presidentName2" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	TdbCode *string `locationName:"tdbCode" type:"string"`
+
+	// String
+	Zip1 *string `locationName:"zip1" type:"string"`
+
+	// String
+	Zip2 *string `locationName:"zip2" type:"string"`
 }
 
 // String returns the string representation
@@ -22881,6 +31176,102 @@ func (s RegisterCorporateInfoForCertificateOutput) String() string {
 // GoString returns the string representation
 func (s RegisterCorporateInfoForCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// SetCity sets the City field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetCity(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.City = &v
+	return s
+}
+
+// SetCorpGrade sets the CorpGrade field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetCorpGrade(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.CorpGrade = &v
+	return s
+}
+
+// SetCorpName sets the CorpName field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetCorpName(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.CorpName = &v
+	return s
+}
+
+// SetDivisionName sets the DivisionName field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetDivisionName(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.DivisionName = &v
+	return s
+}
+
+// SetKanaName1 sets the KanaName1 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetKanaName1(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.KanaName1 = &v
+	return s
+}
+
+// SetKanaName2 sets the KanaName2 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetKanaName2(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.KanaName2 = &v
+	return s
+}
+
+// SetName1 sets the Name1 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetName1(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.Name1 = &v
+	return s
+}
+
+// SetName2 sets the Name2 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetName2(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.Name2 = &v
+	return s
+}
+
+// SetPostName sets the PostName field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetPostName(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.PostName = &v
+	return s
+}
+
+// SetPref sets the Pref field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetPref(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.Pref = &v
+	return s
+}
+
+// SetPresidentName1 sets the PresidentName1 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetPresidentName1(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.PresidentName1 = &v
+	return s
+}
+
+// SetPresidentName2 sets the PresidentName2 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetPresidentName2(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.PresidentName2 = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetRequestId(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetTdbCode sets the TdbCode field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetTdbCode(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.TdbCode = &v
+	return s
+}
+
+// SetZip1 sets the Zip1 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetZip1(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.Zip1 = &v
+	return s
+}
+
+// SetZip2 sets the Zip2 field's value.
+func (s *RegisterCorporateInfoForCertificateOutput) SetZip2(v string) *RegisterCorporateInfoForCertificateOutput {
+	s.Zip2 = &v
+	return s
 }
 
 // RegisterInstancesWithLoadBalancerRequest
@@ -22965,9 +31356,13 @@ func (s *RegisterInstancesWithLoadBalancerInput) SetLoadBalancerPort(v int64) *R
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithLoadBalancerOutput
+// RegisterInstancesWithLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithLoadBalancerResult
 type RegisterInstancesWithLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceUniqueIds
+	Instances []*InstanceUnique `locationName:"Instances" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -22978,6 +31373,12 @@ func (s RegisterInstancesWithLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s RegisterInstancesWithLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstances sets the Instances field's value.
+func (s *RegisterInstancesWithLoadBalancerOutput) SetInstances(v []*InstanceUnique) *RegisterInstancesWithLoadBalancerOutput {
+	s.Instances = v
+	return s
 }
 
 // RegisterInstancesWithSecurityGroupRequest
@@ -23014,9 +31415,16 @@ func (s *RegisterInstancesWithSecurityGroupInput) SetInstanceIdList(v []*string)
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithSecurityGroupOutput
+// RegisterInstancesWithSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterInstancesWithSecurityGroupResult
 type RegisterInstancesWithSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceIdSetType
+	InstancesSet []*InstanceIdType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -23027,6 +31435,18 @@ func (s RegisterInstancesWithSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s RegisterInstancesWithSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *RegisterInstancesWithSecurityGroupOutput) SetInstancesSet(v []*InstanceIdType) *RegisterInstancesWithSecurityGroupOutput {
+	s.InstancesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *RegisterInstancesWithSecurityGroupOutput) SetRequestId(v string) *RegisterInstancesWithSecurityGroupOutput {
+	s.RequestId = &v
+	return s
 }
 
 // RegisterPortWithLoadBalancerRequest
@@ -23078,9 +31498,13 @@ func (s *RegisterPortWithLoadBalancerInput) SetLoadBalancerName(v string) *Regis
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterPortWithLoadBalancerOutput
+// RegisterPortWithLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RegisterPortWithLoadBalancerResult
 type RegisterPortWithLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Listeners
+	Listeners []*Listener `locationName:"Listeners" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -23091,6 +31515,12 @@ func (s RegisterPortWithLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s RegisterPortWithLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetListeners sets the Listeners field's value.
+func (s *RegisterPortWithLoadBalancerOutput) SetListeners(v []*Listener) *RegisterPortWithLoadBalancerOutput {
+	s.Listeners = v
+	return s
 }
 
 // ReleaseAddressRequest
@@ -23136,9 +31566,16 @@ func (s *ReleaseAddressInput) SetPublicIp(v string) *ReleaseAddressInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReleaseAddressOutput
+// ReleaseAddressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReleaseAddressResult
 type ReleaseAddressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -23149,6 +31586,18 @@ func (s ReleaseAddressOutput) String() string {
 // GoString returns the string representation
 func (s ReleaseAddressOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ReleaseAddressOutput) SetRequestId(v string) *ReleaseAddressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *ReleaseAddressOutput) SetReturn(v bool) *ReleaseAddressOutput {
+	s.Return = &v
+	return s
 }
 
 // ReplaceRouteRequest
@@ -23268,9 +31717,16 @@ func (s *ReplaceRouteInput) SetVpcPeeringConnectionId(v string) *ReplaceRouteInp
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteOutput
+// ReplaceRouteResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteResult
 type ReplaceRouteOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -23281,6 +31737,18 @@ func (s ReplaceRouteOutput) String() string {
 // GoString returns the string representation
 func (s ReplaceRouteOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ReplaceRouteOutput) SetRequestId(v string) *ReplaceRouteOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *ReplaceRouteOutput) SetReturn(v bool) *ReplaceRouteOutput {
+	s.Return = &v
+	return s
 }
 
 // ReplaceRouteTableAssociationRequest
@@ -23346,9 +31814,16 @@ func (s *ReplaceRouteTableAssociationInput) SetRouteTableId(v string) *ReplaceRo
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteTableAssociationOutput
+// ReplaceRouteTableAssociationResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReplaceRouteTableAssociationResult
 type ReplaceRouteTableAssociationOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	NewAssociationId *string `locationName:"newAssociationId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -23359,6 +31834,315 @@ func (s ReplaceRouteTableAssociationOutput) String() string {
 // GoString returns the string representation
 func (s ReplaceRouteTableAssociationOutput) GoString() string {
 	return s.String()
+}
+
+// SetNewAssociationId sets the NewAssociationId field's value.
+func (s *ReplaceRouteTableAssociationOutput) SetNewAssociationId(v string) *ReplaceRouteTableAssociationOutput {
+	s.NewAssociationId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ReplaceRouteTableAssociationOutput) SetRequestId(v string) *ReplaceRouteTableAssociationOutput {
+	s.RequestId = &v
+	return s
+}
+
+// ReservationInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ReservationInfoType
+type ReservationInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// RunningInstancesSetType
+	InstancesSet []*RunningInstancesItemType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	OwnerId *string `locationName:"ownerId" type:"string"`
+
+	// String
+	ReservationId *string `locationName:"reservationId" type:"string"`
+}
+
+// String returns the string representation
+func (s ReservationInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ReservationInfoType) GoString() string {
+	return s.String()
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *ReservationInfoType) SetGroupSet(v []*GroupItemType) *ReservationInfoType {
+	s.GroupSet = v
+	return s
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *ReservationInfoType) SetInstancesSet(v []*RunningInstancesItemType) *ReservationInfoType {
+	s.InstancesSet = v
+	return s
+}
+
+// SetOwnerId sets the OwnerId field's value.
+func (s *ReservationInfoType) SetOwnerId(v string) *ReservationInfoType {
+	s.OwnerId = &v
+	return s
+}
+
+// SetReservationId sets the ReservationId field's value.
+func (s *ReservationInfoType) SetReservationId(v string) *ReservationInfoType {
+	s.ReservationId = &v
+	return s
+}
+
+// ResourceAddressItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceAddressItemType
+type ResourceAddressItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Count *int64 `locationName:"count" type:"integer"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceAddressItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceAddressItemType) GoString() string {
+	return s.String()
+}
+
+// SetCount sets the Count field's value.
+func (s *ResourceAddressItemType) SetCount(v int64) *ResourceAddressItemType {
+	s.Count = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *ResourceAddressItemType) SetType(v string) *ResourceAddressItemType {
+	s.Type = &v
+	return s
+}
+
+// ResourceInstanceItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceInstanceItemType
+type ResourceInstanceItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Count *int64 `locationName:"count" type:"integer"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceInstanceItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceInstanceItemType) GoString() string {
+	return s.String()
+}
+
+// SetCount sets the Count field's value.
+func (s *ResourceInstanceItemType) SetCount(v int64) *ResourceInstanceItemType {
+	s.Count = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *ResourceInstanceItemType) SetType(v string) *ResourceInstanceItemType {
+	s.Type = &v
+	return s
+}
+
+// ResourceNameItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceNameItemType
+type ResourceNameItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	ResourceName *string `locationName:"resourceName" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceNameItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceNameItemType) GoString() string {
+	return s.String()
+}
+
+// SetResourceName sets the ResourceName field's value.
+func (s *ResourceNameItemType) SetResourceName(v string) *ResourceNameItemType {
+	s.ResourceName = &v
+	return s
+}
+
+// ResourceRouterItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceRouterItemType
+type ResourceRouterItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Count *int64 `locationName:"count" type:"integer"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceRouterItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceRouterItemType) GoString() string {
+	return s.String()
+}
+
+// SetCount sets the Count field's value.
+func (s *ResourceRouterItemType) SetCount(v int64) *ResourceRouterItemType {
+	s.Count = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *ResourceRouterItemType) SetType(v string) *ResourceRouterItemType {
+	s.Type = &v
+	return s
+}
+
+// ResourceSupportItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceSupportItemType
+type ResourceSupportItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	SupportName *string `locationName:"supportName" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceSupportItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceSupportItemType) GoString() string {
+	return s.String()
+}
+
+// SetSupportName sets the SupportName field's value.
+func (s *ResourceSupportItemType) SetSupportName(v string) *ResourceSupportItemType {
+	s.SupportName = &v
+	return s
+}
+
+// ResourceTagSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceTagSetItemType
+type ResourceTagSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Key *string `locationName:"key" type:"string"`
+
+	// String
+	Value *string `locationName:"value" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceTagSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceTagSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetKey sets the Key field's value.
+func (s *ResourceTagSetItemType) SetKey(v string) *ResourceTagSetItemType {
+	s.Key = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *ResourceTagSetItemType) SetValue(v string) *ResourceTagSetItemType {
+	s.Value = &v
+	return s
+}
+
+// ResourceVpnGatewayItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResourceVpnGatewayItemType
+type ResourceVpnGatewayItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Count *int64 `locationName:"count" type:"integer"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s ResourceVpnGatewayItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResourceVpnGatewayItemType) GoString() string {
+	return s.String()
+}
+
+// SetCount sets the Count field's value.
+func (s *ResourceVpnGatewayItemType) SetCount(v int64) *ResourceVpnGatewayItemType {
+	s.Count = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *ResourceVpnGatewayItemType) SetType(v string) *ResourceVpnGatewayItemType {
+	s.Type = &v
+	return s
+}
+
+// ResponseMetadata
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ResponseMetadata
+type ResponseMetadata struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"RequestId" type:"string"`
+}
+
+// String returns the string representation
+func (s ResponseMetadata) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ResponseMetadata) GoString() string {
+	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *ResponseMetadata) SetRequestId(v string) *ResponseMetadata {
+	s.RequestId = &v
+	return s
 }
 
 // RevokeSecurityGroupIngressRequest
@@ -23419,9 +32203,16 @@ func (s *RevokeSecurityGroupIngressInput) SetUserId(v string) *RevokeSecurityGro
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RevokeSecurityGroupIngressOutput
+// RevokeSecurityGroupIngressResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RevokeSecurityGroupIngressResult
 type RevokeSecurityGroupIngressOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -23432,6 +32223,596 @@ func (s RevokeSecurityGroupIngressOutput) String() string {
 // GoString returns the string representation
 func (s RevokeSecurityGroupIngressOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *RevokeSecurityGroupIngressOutput) SetRequestId(v string) *RevokeSecurityGroupIngressOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *RevokeSecurityGroupIngressOutput) SetReturn(v bool) *RevokeSecurityGroupIngressOutput {
+	s.Return = &v
+	return s
+}
+
+// RouteSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouteSetItemType
+type RouteSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DestinationCidrBlock *string `locationName:"destinationCidrBlock" type:"string"`
+
+	// String
+	GatewayId *string `locationName:"gatewayId" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceOwnerId *string `locationName:"instanceOwnerId" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	NetworkInterfaceId *string `locationName:"networkInterfaceId" type:"string"`
+
+	// String
+	NetworkName *string `locationName:"networkName" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+}
+
+// String returns the string representation
+func (s RouteSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouteSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDestinationCidrBlock sets the DestinationCidrBlock field's value.
+func (s *RouteSetItemType) SetDestinationCidrBlock(v string) *RouteSetItemType {
+	s.DestinationCidrBlock = &v
+	return s
+}
+
+// SetGatewayId sets the GatewayId field's value.
+func (s *RouteSetItemType) SetGatewayId(v string) *RouteSetItemType {
+	s.GatewayId = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *RouteSetItemType) SetInstanceId(v string) *RouteSetItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceOwnerId sets the InstanceOwnerId field's value.
+func (s *RouteSetItemType) SetInstanceOwnerId(v string) *RouteSetItemType {
+	s.InstanceOwnerId = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *RouteSetItemType) SetIpAddress(v string) *RouteSetItemType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *RouteSetItemType) SetNetworkId(v string) *RouteSetItemType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNetworkInterfaceId sets the NetworkInterfaceId field's value.
+func (s *RouteSetItemType) SetNetworkInterfaceId(v string) *RouteSetItemType {
+	s.NetworkInterfaceId = &v
+	return s
+}
+
+// SetNetworkName sets the NetworkName field's value.
+func (s *RouteSetItemType) SetNetworkName(v string) *RouteSetItemType {
+	s.NetworkName = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *RouteSetItemType) SetState(v string) *RouteSetItemType {
+	s.State = &v
+	return s
+}
+
+// RouteTableAssociationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouteTableAssociationType
+type RouteTableAssociationType struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	Main *bool `locationName:"main" type:"boolean"`
+
+	// String
+	RouteTableAssociationId *string `locationName:"routeTableAssociationId" type:"string"`
+
+	// String
+	RouteTableId *string `locationName:"routeTableId" type:"string"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+
+	// String
+	SubnetId *string `locationName:"subnetId" type:"string"`
+}
+
+// String returns the string representation
+func (s RouteTableAssociationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouteTableAssociationType) GoString() string {
+	return s.String()
+}
+
+// SetMain sets the Main field's value.
+func (s *RouteTableAssociationType) SetMain(v bool) *RouteTableAssociationType {
+	s.Main = &v
+	return s
+}
+
+// SetRouteTableAssociationId sets the RouteTableAssociationId field's value.
+func (s *RouteTableAssociationType) SetRouteTableAssociationId(v string) *RouteTableAssociationType {
+	s.RouteTableAssociationId = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *RouteTableAssociationType) SetRouteTableId(v string) *RouteTableAssociationType {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *RouteTableAssociationType) SetRouterId(v string) *RouteTableAssociationType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *RouteTableAssociationType) SetRouterName(v string) *RouteTableAssociationType {
+	s.RouterName = &v
+	return s
+}
+
+// SetSubnetId sets the SubnetId field's value.
+func (s *RouteTableAssociationType) SetSubnetId(v string) *RouteTableAssociationType {
+	s.SubnetId = &v
+	return s
+}
+
+// RouteTableSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouteTableSetItemType
+type RouteTableSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// RouteTableAssociationSetType
+	AssociationSet []*RouteTableAssociationType `locationName:"associationSet" locationNameList:"item" type:"list"`
+
+	// PropagatingVgwSetType
+	PropagatingVgwSet []*PropagatingVgwType `locationName:"propagatingVgwSet" locationNameList:"item" type:"list"`
+
+	// RouteSetType
+	RouteSet []*RouteSetItemType `locationName:"routeSet" locationNameList:"item" type:"list"`
+
+	// String
+	RouteTableId *string `locationName:"routeTableId" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// String
+	VpcId *string `locationName:"vpcId" type:"string"`
+}
+
+// String returns the string representation
+func (s RouteTableSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouteTableSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetAssociationSet sets the AssociationSet field's value.
+func (s *RouteTableSetItemType) SetAssociationSet(v []*RouteTableAssociationType) *RouteTableSetItemType {
+	s.AssociationSet = v
+	return s
+}
+
+// SetPropagatingVgwSet sets the PropagatingVgwSet field's value.
+func (s *RouteTableSetItemType) SetPropagatingVgwSet(v []*PropagatingVgwType) *RouteTableSetItemType {
+	s.PropagatingVgwSet = v
+	return s
+}
+
+// SetRouteSet sets the RouteSet field's value.
+func (s *RouteTableSetItemType) SetRouteSet(v []*RouteSetItemType) *RouteTableSetItemType {
+	s.RouteSet = v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *RouteTableSetItemType) SetRouteTableId(v string) *RouteTableSetItemType {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *RouteTableSetItemType) SetTagSet(v []*ResourceTagSetItemType) *RouteTableSetItemType {
+	s.TagSet = v
+	return s
+}
+
+// SetVpcId sets the VpcId field's value.
+func (s *RouteTableSetItemType) SetVpcId(v string) *RouteTableSetItemType {
+	s.VpcId = &v
+	return s
+}
+
+// RouteTableType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouteTableType
+type RouteTableType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	RouteTableId *string `locationName:"routeTableId" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s RouteTableType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouteTableType) GoString() string {
+	return s.String()
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *RouteTableType) SetRouteTableId(v string) *RouteTableType {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *RouteTableType) SetTagSet(v []*ResourceTagSetItemType) *RouteTableType {
+	s.TagSet = v
+	return s
+}
+
+// RouterIdSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouterIdSetItemType
+type RouterIdSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+}
+
+// String returns the string representation
+func (s RouterIdSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouterIdSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *RouterIdSetItemType) SetRouterId(v string) *RouterIdSetItemType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *RouterIdSetItemType) SetRouterName(v string) *RouterIdSetItemType {
+	s.RouterName = &v
+	return s
+}
+
+// RouterNetworkInterfaceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouterNetworkInterfaceType
+type RouterNetworkInterfaceType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DeviceIndex *string `locationName:"deviceIndex" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+}
+
+// String returns the string representation
+func (s RouterNetworkInterfaceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouterNetworkInterfaceType) GoString() string {
+	return s.String()
+}
+
+// SetDeviceIndex sets the DeviceIndex field's value.
+func (s *RouterNetworkInterfaceType) SetDeviceIndex(v string) *RouterNetworkInterfaceType {
+	s.DeviceIndex = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *RouterNetworkInterfaceType) SetIpAddress(v string) *RouterNetworkInterfaceType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *RouterNetworkInterfaceType) SetNetworkId(v string) *RouterNetworkInterfaceType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *RouterNetworkInterfaceType) SetRouterId(v string) *RouterNetworkInterfaceType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *RouterNetworkInterfaceType) SetRouterName(v string) *RouterNetworkInterfaceType {
+	s.RouterName = &v
+	return s
+}
+
+// RouterType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RouterType
+type RouterType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// String
+	NatTableAssociationId *string `locationName:"natTableAssociationId" type:"string"`
+
+	// String
+	NatTableId *string `locationName:"natTableId" type:"string"`
+
+	// NetworkInterfaceSetType
+	NetworkInterfaceSet []*InstanceNetworkInterfaceSetItemType `locationName:"networkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// String
+	NextMonthAccountingType *string `locationName:"nextMonthAccountingType" type:"string"`
+
+	// String
+	RouteTableAssociationId *string `locationName:"routeTableAssociationId" type:"string"`
+
+	// String
+	RouteTableId *string `locationName:"routeTableId" type:"string"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+}
+
+// String returns the string representation
+func (s RouterType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RouterType) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *RouterType) SetAccountingType(v string) *RouterType {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *RouterType) SetAvailabilityZone(v string) *RouterType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *RouterType) SetCreatedTime(v time.Time) *RouterType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *RouterType) SetDescription(v string) *RouterType {
+	s.Description = &v
+	return s
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *RouterType) SetGroupSet(v []*GroupItemType) *RouterType {
+	s.GroupSet = v
+	return s
+}
+
+// SetNatTableAssociationId sets the NatTableAssociationId field's value.
+func (s *RouterType) SetNatTableAssociationId(v string) *RouterType {
+	s.NatTableAssociationId = &v
+	return s
+}
+
+// SetNatTableId sets the NatTableId field's value.
+func (s *RouterType) SetNatTableId(v string) *RouterType {
+	s.NatTableId = &v
+	return s
+}
+
+// SetNetworkInterfaceSet sets the NetworkInterfaceSet field's value.
+func (s *RouterType) SetNetworkInterfaceSet(v []*InstanceNetworkInterfaceSetItemType) *RouterType {
+	s.NetworkInterfaceSet = v
+	return s
+}
+
+// SetNextMonthAccountingType sets the NextMonthAccountingType field's value.
+func (s *RouterType) SetNextMonthAccountingType(v string) *RouterType {
+	s.NextMonthAccountingType = &v
+	return s
+}
+
+// SetRouteTableAssociationId sets the RouteTableAssociationId field's value.
+func (s *RouterType) SetRouteTableAssociationId(v string) *RouterType {
+	s.RouteTableAssociationId = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *RouterType) SetRouteTableId(v string) *RouterType {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *RouterType) SetRouterId(v string) *RouterType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *RouterType) SetRouterName(v string) *RouterType {
+	s.RouterName = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *RouterType) SetState(v string) *RouterType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *RouterType) SetTagSet(v []*ResourceTagSetItemType) *RouterType {
+	s.TagSet = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *RouterType) SetType(v string) *RouterType {
+	s.Type = &v
+	return s
+}
+
+// RuleItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RuleItemType
+type RuleItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	BreachDuration *int64 `locationName:"breachDuration" type:"integer"`
+
+	// String
+	DataType *string `locationName:"dataType" type:"string"`
+
+	// Double
+	Threshold *float64 `locationName:"threshold" type:"double"`
+
+	// String
+	UpperLowerCondition *string `locationName:"upperLowerCondition" type:"string"`
+}
+
+// String returns the string representation
+func (s RuleItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RuleItemType) GoString() string {
+	return s.String()
+}
+
+// SetBreachDuration sets the BreachDuration field's value.
+func (s *RuleItemType) SetBreachDuration(v int64) *RuleItemType {
+	s.BreachDuration = &v
+	return s
+}
+
+// SetDataType sets the DataType field's value.
+func (s *RuleItemType) SetDataType(v string) *RuleItemType {
+	s.DataType = &v
+	return s
+}
+
+// SetThreshold sets the Threshold field's value.
+func (s *RuleItemType) SetThreshold(v float64) *RuleItemType {
+	s.Threshold = &v
+	return s
+}
+
+// SetUpperLowerCondition sets the UpperLowerCondition field's value.
+func (s *RuleItemType) SetUpperLowerCondition(v string) *RuleItemType {
+	s.UpperLowerCondition = &v
+	return s
 }
 
 // RunInstancesRequest
@@ -23684,9 +33065,22 @@ func (s *RunInstancesInput) SetUserData(v *UserDataStruct) *RunInstancesInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//RunInstancesOutput
+// RunInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RunInstancesResult
 type RunInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// String
+	OwnerId *string `locationName:"ownerId" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// String
+	ReservationId *string `locationName:"reservationId" type:"string"`
 }
 
 // String returns the string representation
@@ -23697,6 +33091,640 @@ func (s RunInstancesOutput) String() string {
 // GoString returns the string representation
 func (s RunInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *RunInstancesOutput) SetGroupSet(v []*GroupItemType) *RunInstancesOutput {
+	s.GroupSet = v
+	return s
+}
+
+// SetOwnerId sets the OwnerId field's value.
+func (s *RunInstancesOutput) SetOwnerId(v string) *RunInstancesOutput {
+	s.OwnerId = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *RunInstancesOutput) SetRequestId(v string) *RunInstancesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReservationId sets the ReservationId field's value.
+func (s *RunInstancesOutput) SetReservationId(v string) *RunInstancesOutput {
+	s.ReservationId = &v
+	return s
+}
+
+// RunningInstancesItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//RunningInstancesItemType
+type RunningInstancesItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DnsName *string `locationName:"dnsName" type:"string"`
+
+	// String
+	ImageId *string `locationName:"imageId" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// InstanceStateType
+	InstanceState *InstanceStateType `locationName:"instanceState" type:"structure"`
+
+	// String
+	InstanceUniqueId *string `locationName:"instanceUniqueId" type:"string"`
+
+	// String
+	PrivateDnsName *string `locationName:"privateDnsName" type:"string"`
+}
+
+// String returns the string representation
+func (s RunningInstancesItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s RunningInstancesItemType) GoString() string {
+	return s.String()
+}
+
+// SetDnsName sets the DnsName field's value.
+func (s *RunningInstancesItemType) SetDnsName(v string) *RunningInstancesItemType {
+	s.DnsName = &v
+	return s
+}
+
+// SetImageId sets the ImageId field's value.
+func (s *RunningInstancesItemType) SetImageId(v string) *RunningInstancesItemType {
+	s.ImageId = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *RunningInstancesItemType) SetInstanceId(v string) *RunningInstancesItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceState sets the InstanceState field's value.
+func (s *RunningInstancesItemType) SetInstanceState(v *InstanceStateType) *RunningInstancesItemType {
+	s.InstanceState = v
+	return s
+}
+
+// SetInstanceUniqueId sets the InstanceUniqueId field's value.
+func (s *RunningInstancesItemType) SetInstanceUniqueId(v string) *RunningInstancesItemType {
+	s.InstanceUniqueId = &v
+	return s
+}
+
+// SetPrivateDnsName sets the PrivateDnsName field's value.
+func (s *RunningInstancesItemType) SetPrivateDnsName(v string) *RunningInstancesItemType {
+	s.PrivateDnsName = &v
+	return s
+}
+
+// ScalingLogType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScalingLogType
+type ScalingLogType struct {
+	_ struct{} `type:"structure"`
+
+	// ScallingLogDetailsType
+	Details *ScallingLogDetailsType `locationName:"details" type:"structure"`
+
+	// String
+	Process *string `locationName:"process" type:"string"`
+
+	// TStamp
+	Time *time.Time `locationName:"time" type:"timestamp" timestampFormat:"iso8601"`
+}
+
+// String returns the string representation
+func (s ScalingLogType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScalingLogType) GoString() string {
+	return s.String()
+}
+
+// SetDetails sets the Details field's value.
+func (s *ScalingLogType) SetDetails(v *ScallingLogDetailsType) *ScalingLogType {
+	s.Details = v
+	return s
+}
+
+// SetProcess sets the Process field's value.
+func (s *ScalingLogType) SetProcess(v string) *ScalingLogType {
+	s.Process = &v
+	return s
+}
+
+// SetTime sets the Time field's value.
+func (s *ScalingLogType) SetTime(v time.Time) *ScalingLogType {
+	s.Time = &v
+	return s
+}
+
+// ScalingScheduleDDayType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScalingScheduleDDayType
+type ScalingScheduleDDayType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	EndingDDay *string `locationName:"endingDDay" type:"string"`
+
+	// String
+	StartingDDay *string `locationName:"startingDDay" type:"string"`
+}
+
+// String returns the string representation
+func (s ScalingScheduleDDayType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScalingScheduleDDayType) GoString() string {
+	return s.String()
+}
+
+// SetEndingDDay sets the EndingDDay field's value.
+func (s *ScalingScheduleDDayType) SetEndingDDay(v string) *ScalingScheduleDDayType {
+	s.EndingDDay = &v
+	return s
+}
+
+// SetStartingDDay sets the StartingDDay field's value.
+func (s *ScalingScheduleDDayType) SetStartingDDay(v string) *ScalingScheduleDDayType {
+	s.StartingDDay = &v
+	return s
+}
+
+// ScalingScheduleDayType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScalingScheduleDayType
+type ScalingScheduleDayType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	SetFriday *string `locationName:"setFriday" type:"string"`
+
+	// String
+	SetMonday *string `locationName:"setMonday" type:"string"`
+
+	// String
+	SetSaturday *string `locationName:"setSaturday" type:"string"`
+
+	// String
+	SetSunday *string `locationName:"setSunday" type:"string"`
+
+	// String
+	SetThursday *string `locationName:"setThursday" type:"string"`
+
+	// String
+	SetTuesday *string `locationName:"setTuesday" type:"string"`
+
+	// String
+	SetWednesday *string `locationName:"setWednesday" type:"string"`
+}
+
+// String returns the string representation
+func (s ScalingScheduleDayType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScalingScheduleDayType) GoString() string {
+	return s.String()
+}
+
+// SetSetFriday sets the SetFriday field's value.
+func (s *ScalingScheduleDayType) SetSetFriday(v string) *ScalingScheduleDayType {
+	s.SetFriday = &v
+	return s
+}
+
+// SetSetMonday sets the SetMonday field's value.
+func (s *ScalingScheduleDayType) SetSetMonday(v string) *ScalingScheduleDayType {
+	s.SetMonday = &v
+	return s
+}
+
+// SetSetSaturday sets the SetSaturday field's value.
+func (s *ScalingScheduleDayType) SetSetSaturday(v string) *ScalingScheduleDayType {
+	s.SetSaturday = &v
+	return s
+}
+
+// SetSetSunday sets the SetSunday field's value.
+func (s *ScalingScheduleDayType) SetSetSunday(v string) *ScalingScheduleDayType {
+	s.SetSunday = &v
+	return s
+}
+
+// SetSetThursday sets the SetThursday field's value.
+func (s *ScalingScheduleDayType) SetSetThursday(v string) *ScalingScheduleDayType {
+	s.SetThursday = &v
+	return s
+}
+
+// SetSetTuesday sets the SetTuesday field's value.
+func (s *ScalingScheduleDayType) SetSetTuesday(v string) *ScalingScheduleDayType {
+	s.SetTuesday = &v
+	return s
+}
+
+// SetSetWednesday sets the SetWednesday field's value.
+func (s *ScalingScheduleDayType) SetSetWednesday(v string) *ScalingScheduleDayType {
+	s.SetWednesday = &v
+	return s
+}
+
+// ScalingScheduleMonthType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScalingScheduleMonthType
+type ScalingScheduleMonthType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	EndingMonth *string `locationName:"endingMonth" type:"string"`
+
+	// String
+	StartingMonth *string `locationName:"startingMonth" type:"string"`
+}
+
+// String returns the string representation
+func (s ScalingScheduleMonthType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScalingScheduleMonthType) GoString() string {
+	return s.String()
+}
+
+// SetEndingMonth sets the EndingMonth field's value.
+func (s *ScalingScheduleMonthType) SetEndingMonth(v string) *ScalingScheduleMonthType {
+	s.EndingMonth = &v
+	return s
+}
+
+// SetStartingMonth sets the StartingMonth field's value.
+func (s *ScalingScheduleMonthType) SetStartingMonth(v string) *ScalingScheduleMonthType {
+	s.StartingMonth = &v
+	return s
+}
+
+// ScalingScheduleTimeZoneType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScalingScheduleTimeZoneType
+type ScalingScheduleTimeZoneType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	EndingTimeZone *string `locationName:"endingTimeZone" type:"string"`
+
+	// String
+	StartingTimeZone *string `locationName:"startingTimeZone" type:"string"`
+}
+
+// String returns the string representation
+func (s ScalingScheduleTimeZoneType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScalingScheduleTimeZoneType) GoString() string {
+	return s.String()
+}
+
+// SetEndingTimeZone sets the EndingTimeZone field's value.
+func (s *ScalingScheduleTimeZoneType) SetEndingTimeZone(v string) *ScalingScheduleTimeZoneType {
+	s.EndingTimeZone = &v
+	return s
+}
+
+// SetStartingTimeZone sets the StartingTimeZone field's value.
+func (s *ScalingScheduleTimeZoneType) SetStartingTimeZone(v string) *ScalingScheduleTimeZoneType {
+	s.StartingTimeZone = &v
+	return s
+}
+
+// ScallingLogDetailsType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScallingLogDetailsType
+type ScallingLogDetailsType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	ChangeInCapacity *int64 `locationName:"changeInCapacity" type:"integer"`
+
+	// Integer
+	CurrentServersCount *int64 `locationName:"currentServersCount" type:"integer"`
+
+	// String
+	Resource *string `locationName:"resource" type:"string"`
+
+	// Double
+	UpperThreshold *float64 `locationName:"upperThreshold" type:"double"`
+}
+
+// String returns the string representation
+func (s ScallingLogDetailsType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScallingLogDetailsType) GoString() string {
+	return s.String()
+}
+
+// SetChangeInCapacity sets the ChangeInCapacity field's value.
+func (s *ScallingLogDetailsType) SetChangeInCapacity(v int64) *ScallingLogDetailsType {
+	s.ChangeInCapacity = &v
+	return s
+}
+
+// SetCurrentServersCount sets the CurrentServersCount field's value.
+func (s *ScallingLogDetailsType) SetCurrentServersCount(v int64) *ScallingLogDetailsType {
+	s.CurrentServersCount = &v
+	return s
+}
+
+// SetResource sets the Resource field's value.
+func (s *ScallingLogDetailsType) SetResource(v string) *ScallingLogDetailsType {
+	s.Resource = &v
+	return s
+}
+
+// SetUpperThreshold sets the UpperThreshold field's value.
+func (s *ScallingLogDetailsType) SetUpperThreshold(v float64) *ScallingLogDetailsType {
+	s.UpperThreshold = &v
+	return s
+}
+
+// ScheduleItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ScheduleItemType
+type ScheduleItemType struct {
+	_ struct{} `type:"structure"`
+
+	// ScalingScheduleDDayType
+	DDay *ScalingScheduleDDayType `locationName:"dDay" type:"structure"`
+
+	// ScalingScheduleDayType
+	Day *ScalingScheduleDayType `locationName:"day" type:"structure"`
+
+	// ScalingScheduleMonthType
+	Month *ScalingScheduleMonthType `locationName:"month" type:"structure"`
+
+	// ScalingScheduleTimeZoneType
+	TimeZone *ScalingScheduleTimeZoneType `locationName:"timeZone" type:"structure"`
+}
+
+// String returns the string representation
+func (s ScheduleItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ScheduleItemType) GoString() string {
+	return s.String()
+}
+
+// SetDDay sets the DDay field's value.
+func (s *ScheduleItemType) SetDDay(v *ScalingScheduleDDayType) *ScheduleItemType {
+	s.DDay = v
+	return s
+}
+
+// SetDay sets the Day field's value.
+func (s *ScheduleItemType) SetDay(v *ScalingScheduleDayType) *ScheduleItemType {
+	s.Day = v
+	return s
+}
+
+// SetMonth sets the Month field's value.
+func (s *ScheduleItemType) SetMonth(v *ScalingScheduleMonthType) *ScheduleItemType {
+	s.Month = v
+	return s
+}
+
+// SetTimeZone sets the TimeZone field's value.
+func (s *ScheduleItemType) SetTimeZone(v *ScalingScheduleTimeZoneType) *ScheduleItemType {
+	s.TimeZone = v
+	return s
+}
+
+// SecurityGroupItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SecurityGroupItemType
+type SecurityGroupItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	GroupDescription *string `locationName:"groupDescription" type:"string"`
+
+	// Boolean
+	GroupLogFilterBroadcast *bool `locationName:"groupLogFilterBroadcast" type:"boolean"`
+
+	// Boolean
+	GroupLogFilterNetBios *bool `locationName:"groupLogFilterNetBios" type:"boolean"`
+
+	// Integer
+	GroupLogLimit *int64 `locationName:"groupLogLimit" type:"integer"`
+
+	// String
+	GroupName *string `locationName:"groupName" type:"string"`
+
+	// Integer
+	GroupRuleLimit *int64 `locationName:"groupRuleLimit" type:"integer"`
+
+	// String
+	GroupStatus *string `locationName:"groupStatus" type:"string"`
+
+	// InstanceUniqueIdSetType
+	InstanceUniqueIdsSet []*InstanceUniqueIdType `locationName:"instanceUniqueIdsSet" locationNameList:"item" type:"list"`
+
+	// InstancesNetworkInterfaceSetType
+	InstancesNetworkInterfaceSet []*InstancesNetworkInterfaceType `locationName:"instancesNetworkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// InstanceIdSetType
+	InstancesSet []*InstanceIdType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// IpPermissionSetType
+	IpPermissions []*IpPermissionType `locationName:"ipPermissions" locationNameList:"item" type:"list"`
+
+	// String
+	OwnerId *string `locationName:"ownerId" type:"string"`
+
+	// RouterNetworkInterfaceSetType
+	RouterNetworkInterfaceSet []*RouterNetworkInterfaceType `locationName:"routerNetworkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// RouterSetType
+	RouterSet []*RouterType `locationName:"routerSet" locationNameList:"item" type:"list"`
+
+	// VpnGatewayNetworkInterfaceSetType
+	VpnGatewayNetworkInterfaceSet []*VpnGatewayNetworkInterfaceType `locationName:"vpnGatewayNetworkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// VpnGatewaySetType
+	VpnGatewaySet []*VpnGatewayType `locationName:"vpnGatewaySet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s SecurityGroupItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SecurityGroupItemType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *SecurityGroupItemType) SetAvailabilityZone(v string) *SecurityGroupItemType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *SecurityGroupItemType) SetDescription(v string) *SecurityGroupItemType {
+	s.Description = &v
+	return s
+}
+
+// SetGroupDescription sets the GroupDescription field's value.
+func (s *SecurityGroupItemType) SetGroupDescription(v string) *SecurityGroupItemType {
+	s.GroupDescription = &v
+	return s
+}
+
+// SetGroupLogFilterBroadcast sets the GroupLogFilterBroadcast field's value.
+func (s *SecurityGroupItemType) SetGroupLogFilterBroadcast(v bool) *SecurityGroupItemType {
+	s.GroupLogFilterBroadcast = &v
+	return s
+}
+
+// SetGroupLogFilterNetBios sets the GroupLogFilterNetBios field's value.
+func (s *SecurityGroupItemType) SetGroupLogFilterNetBios(v bool) *SecurityGroupItemType {
+	s.GroupLogFilterNetBios = &v
+	return s
+}
+
+// SetGroupLogLimit sets the GroupLogLimit field's value.
+func (s *SecurityGroupItemType) SetGroupLogLimit(v int64) *SecurityGroupItemType {
+	s.GroupLogLimit = &v
+	return s
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *SecurityGroupItemType) SetGroupName(v string) *SecurityGroupItemType {
+	s.GroupName = &v
+	return s
+}
+
+// SetGroupRuleLimit sets the GroupRuleLimit field's value.
+func (s *SecurityGroupItemType) SetGroupRuleLimit(v int64) *SecurityGroupItemType {
+	s.GroupRuleLimit = &v
+	return s
+}
+
+// SetGroupStatus sets the GroupStatus field's value.
+func (s *SecurityGroupItemType) SetGroupStatus(v string) *SecurityGroupItemType {
+	s.GroupStatus = &v
+	return s
+}
+
+// SetInstanceUniqueIdsSet sets the InstanceUniqueIdsSet field's value.
+func (s *SecurityGroupItemType) SetInstanceUniqueIdsSet(v []*InstanceUniqueIdType) *SecurityGroupItemType {
+	s.InstanceUniqueIdsSet = v
+	return s
+}
+
+// SetInstancesNetworkInterfaceSet sets the InstancesNetworkInterfaceSet field's value.
+func (s *SecurityGroupItemType) SetInstancesNetworkInterfaceSet(v []*InstancesNetworkInterfaceType) *SecurityGroupItemType {
+	s.InstancesNetworkInterfaceSet = v
+	return s
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *SecurityGroupItemType) SetInstancesSet(v []*InstanceIdType) *SecurityGroupItemType {
+	s.InstancesSet = v
+	return s
+}
+
+// SetIpPermissions sets the IpPermissions field's value.
+func (s *SecurityGroupItemType) SetIpPermissions(v []*IpPermissionType) *SecurityGroupItemType {
+	s.IpPermissions = v
+	return s
+}
+
+// SetOwnerId sets the OwnerId field's value.
+func (s *SecurityGroupItemType) SetOwnerId(v string) *SecurityGroupItemType {
+	s.OwnerId = &v
+	return s
+}
+
+// SetRouterNetworkInterfaceSet sets the RouterNetworkInterfaceSet field's value.
+func (s *SecurityGroupItemType) SetRouterNetworkInterfaceSet(v []*RouterNetworkInterfaceType) *SecurityGroupItemType {
+	s.RouterNetworkInterfaceSet = v
+	return s
+}
+
+// SetRouterSet sets the RouterSet field's value.
+func (s *SecurityGroupItemType) SetRouterSet(v []*RouterType) *SecurityGroupItemType {
+	s.RouterSet = v
+	return s
+}
+
+// SetVpnGatewayNetworkInterfaceSet sets the VpnGatewayNetworkInterfaceSet field's value.
+func (s *SecurityGroupItemType) SetVpnGatewayNetworkInterfaceSet(v []*VpnGatewayNetworkInterfaceType) *SecurityGroupItemType {
+	s.VpnGatewayNetworkInterfaceSet = v
+	return s
+}
+
+// SetVpnGatewaySet sets the VpnGatewaySet field's value.
+func (s *SecurityGroupItemType) SetVpnGatewaySet(v []*VpnGatewayType) *SecurityGroupItemType {
+	s.VpnGatewaySet = v
+	return s
+}
+
+// SessionStickinessPolicyOption
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SessionStickinessPolicyOption
+type SessionStickinessPolicyOption struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	Enabled *bool `locationName:"Enabled" type:"boolean"`
+
+	// Integer
+	ExpirationPeriod *int64 `locationName:"ExpirationPeriod" type:"integer"`
+}
+
+// String returns the string representation
+func (s SessionStickinessPolicyOption) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SessionStickinessPolicyOption) GoString() string {
+	return s.String()
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *SessionStickinessPolicyOption) SetEnabled(v bool) *SessionStickinessPolicyOption {
+	s.Enabled = &v
+	return s
+}
+
+// SetExpirationPeriod sets the ExpirationPeriod field's value.
+func (s *SessionStickinessPolicyOption) SetExpirationPeriod(v int64) *SessionStickinessPolicyOption {
+	s.ExpirationPeriod = &v
+	return s
 }
 
 // SessionStickinessPolicyUpdateStruct
@@ -23819,9 +33847,13 @@ func (s *SetFilterForLoadBalancerInput) SetLoadBalancerPort(v int64) *SetFilterF
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//SetFilterForLoadBalancerOutput
+// SetFilterForLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SetFilterForLoadBalancerResult
 type SetFilterForLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// Filter
+	Filter *Filter `locationName:"Filter" type:"structure"`
 }
 
 // String returns the string representation
@@ -23832,6 +33864,143 @@ func (s SetFilterForLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s SetFilterForLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetFilter sets the Filter field's value.
+func (s *SetFilterForLoadBalancerOutput) SetFilter(v *Filter) *SetFilterForLoadBalancerOutput {
+	s.Filter = v
+	return s
+}
+
+// SnapshotInfoSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SnapshotInfoSetItemType
+type SnapshotInfoSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CreatedTime *string `locationName:"createdTime" type:"string"`
+
+	// String
+	ExpiredTime *string `locationName:"expiredTime" type:"string"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+
+	// String
+	InstanceSnapshotId *string `locationName:"instanceSnapshotId" type:"string"`
+
+	// String
+	Memo *string `locationName:"memo" type:"string"`
+
+	// String
+	PowerStatus *string `locationName:"powerStatus" type:"string"`
+
+	// String
+	SnapshotName *string `locationName:"snapshotName" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	UpdatedTime *string `locationName:"updatedTime" type:"string"`
+}
+
+// String returns the string representation
+func (s SnapshotInfoSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SnapshotInfoSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *SnapshotInfoSetItemType) SetCreatedTime(v string) *SnapshotInfoSetItemType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetExpiredTime sets the ExpiredTime field's value.
+func (s *SnapshotInfoSetItemType) SetExpiredTime(v string) *SnapshotInfoSetItemType {
+	s.ExpiredTime = &v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *SnapshotInfoSetItemType) SetInstanceId(v string) *SnapshotInfoSetItemType {
+	s.InstanceId = &v
+	return s
+}
+
+// SetInstanceSnapshotId sets the InstanceSnapshotId field's value.
+func (s *SnapshotInfoSetItemType) SetInstanceSnapshotId(v string) *SnapshotInfoSetItemType {
+	s.InstanceSnapshotId = &v
+	return s
+}
+
+// SetMemo sets the Memo field's value.
+func (s *SnapshotInfoSetItemType) SetMemo(v string) *SnapshotInfoSetItemType {
+	s.Memo = &v
+	return s
+}
+
+// SetPowerStatus sets the PowerStatus field's value.
+func (s *SnapshotInfoSetItemType) SetPowerStatus(v string) *SnapshotInfoSetItemType {
+	s.PowerStatus = &v
+	return s
+}
+
+// SetSnapshotName sets the SnapshotName field's value.
+func (s *SnapshotInfoSetItemType) SetSnapshotName(v string) *SnapshotInfoSetItemType {
+	s.SnapshotName = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *SnapshotInfoSetItemType) SetStatus(v string) *SnapshotInfoSetItemType {
+	s.Status = &v
+	return s
+}
+
+// SetUpdatedTime sets the UpdatedTime field's value.
+func (s *SnapshotInfoSetItemType) SetUpdatedTime(v string) *SnapshotInfoSetItemType {
+	s.UpdatedTime = &v
+	return s
+}
+
+// SorryPageOption
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SorryPageOption
+type SorryPageOption struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	Enabled *bool `locationName:"Enabled" type:"boolean"`
+
+	// Integer
+	StatusCode *int64 `locationName:"StatusCode" type:"integer"`
+}
+
+// String returns the string representation
+func (s SorryPageOption) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SorryPageOption) GoString() string {
+	return s.String()
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *SorryPageOption) SetEnabled(v bool) *SorryPageOption {
+	s.Enabled = &v
+	return s
+}
+
+// SetStatusCode sets the StatusCode field's value.
+func (s *SorryPageOption) SetStatusCode(v int64) *SorryPageOption {
+	s.StatusCode = &v
+	return s
 }
 
 // SorryPageUpdateStruct
@@ -23898,6 +34067,40 @@ func (s *SourceStruct) SetAddress(v string) *SourceStruct {
 
 // SetPort sets the Port field's value.
 func (s *SourceStruct) SetPort(v int64) *SourceStruct {
+	s.Port = &v
+	return s
+}
+
+// SourceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//SourceType
+type SourceType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Address *string `locationName:"address" type:"string"`
+
+	// Integer
+	Port *int64 `locationName:"port" type:"integer"`
+}
+
+// String returns the string representation
+func (s SourceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s SourceType) GoString() string {
+	return s.String()
+}
+
+// SetAddress sets the Address field's value.
+func (s *SourceType) SetAddress(v string) *SourceType {
+	s.Address = &v
+	return s
+}
+
+// SetPort sets the Port field's value.
+func (s *SourceType) SetPort(v int64) *SourceType {
 	s.Port = &v
 	return s
 }
@@ -23987,9 +34190,16 @@ func (s *StartInstancesInput) SetUserData(v *UserDataStruct) *StartInstancesInpu
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//StartInstancesOutput
+// StartInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//StartInstancesResult
 type StartInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceStateChangeSetType
+	InstancesSet []*InstanceStateChangeType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -24000,6 +34210,95 @@ func (s StartInstancesOutput) String() string {
 // GoString returns the string representation
 func (s StartInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *StartInstancesOutput) SetInstancesSet(v []*InstanceStateChangeType) *StartInstancesOutput {
+	s.InstancesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *StartInstancesOutput) SetRequestId(v string) *StartInstancesOutput {
+	s.RequestId = &v
+	return s
+}
+
+// StateReasonType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//StateReasonType
+type StateReasonType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Code *string `locationName:"code" type:"string"`
+
+	// String
+	Message *string `locationName:"message" type:"string"`
+}
+
+// String returns the string representation
+func (s StateReasonType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s StateReasonType) GoString() string {
+	return s.String()
+}
+
+// SetCode sets the Code field's value.
+func (s *StateReasonType) SetCode(v string) *StateReasonType {
+	s.Code = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *StateReasonType) SetMessage(v string) *StateReasonType {
+	s.Message = &v
+	return s
+}
+
+// StaticMappingsSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//StaticMappingsSetItemType
+type StaticMappingsSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	MacAddress *string `locationName:"macAddress" type:"string"`
+}
+
+// String returns the string representation
+func (s StaticMappingsSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s StaticMappingsSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetDescription sets the Description field's value.
+func (s *StaticMappingsSetItemType) SetDescription(v string) *StaticMappingsSetItemType {
+	s.Description = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *StaticMappingsSetItemType) SetIpAddress(v string) *StaticMappingsSetItemType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetMacAddress sets the MacAddress field's value.
+func (s *StaticMappingsSetItemType) SetMacAddress(v string) *StaticMappingsSetItemType {
+	s.MacAddress = &v
+	return s
 }
 
 // StopInstancesRequest
@@ -24045,9 +34344,16 @@ func (s *StopInstancesInput) SetTenancyList(v []*string) *StopInstancesInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//StopInstancesOutput
+// StopInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//StopInstancesResult
 type StopInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceStateChangeSetType
+	InstancesSet []*InstanceStateChangeType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -24058,6 +34364,18 @@ func (s StopInstancesOutput) String() string {
 // GoString returns the string representation
 func (s StopInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *StopInstancesOutput) SetInstancesSet(v []*InstanceStateChangeType) *StopInstancesOutput {
+	s.InstancesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *StopInstancesOutput) SetRequestId(v string) *StopInstancesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // TerminateInstancesRequest
@@ -24100,9 +34418,16 @@ func (s *TerminateInstancesInput) SetInstanceIdList(v []*string) *TerminateInsta
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//TerminateInstancesOutput
+// TerminateInstancesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//TerminateInstancesResult
 type TerminateInstancesOutput struct {
 	_ struct{} `type:"structure"`
+
+	// InstanceStateChangeSetType
+	InstancesSet []*InstanceStateChangeType `locationName:"instancesSet" locationNameList:"item" type:"list"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -24113,6 +34438,18 @@ func (s TerminateInstancesOutput) String() string {
 // GoString returns the string representation
 func (s TerminateInstancesOutput) GoString() string {
 	return s.String()
+}
+
+// SetInstancesSet sets the InstancesSet field's value.
+func (s *TerminateInstancesOutput) SetInstancesSet(v []*InstanceStateChangeType) *TerminateInstancesOutput {
+	s.InstancesSet = v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *TerminateInstancesOutput) SetRequestId(v string) *TerminateInstancesOutput {
+	s.RequestId = &v
+	return s
 }
 
 // TranslationStruct
@@ -24146,6 +34483,83 @@ func (s *TranslationStruct) SetAddress(v string) *TranslationStruct {
 // SetPort sets the Port field's value.
 func (s *TranslationStruct) SetPort(v int64) *TranslationStruct {
 	s.Port = &v
+	return s
+}
+
+// TranslationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//TranslationType
+type TranslationType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Address *string `locationName:"address" type:"string"`
+
+	// Integer
+	Port *int64 `locationName:"port" type:"integer"`
+}
+
+// String returns the string representation
+func (s TranslationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s TranslationType) GoString() string {
+	return s.String()
+}
+
+// SetAddress sets the Address field's value.
+func (s *TranslationType) SetAddress(v string) *TranslationType {
+	s.Address = &v
+	return s
+}
+
+// SetPort sets the Port field's value.
+func (s *TranslationType) SetPort(v int64) *TranslationType {
+	s.Port = &v
+	return s
+}
+
+// TriggerItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//TriggerItemType
+type TriggerItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	BreachDuration *int64 `locationName:"breachDuration" type:"integer"`
+
+	// String
+	Resource *string `locationName:"resource" type:"string"`
+
+	// Double
+	UpperThreshold *float64 `locationName:"upperThreshold" type:"double"`
+}
+
+// String returns the string representation
+func (s TriggerItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s TriggerItemType) GoString() string {
+	return s.String()
+}
+
+// SetBreachDuration sets the BreachDuration field's value.
+func (s *TriggerItemType) SetBreachDuration(v int64) *TriggerItemType {
+	s.BreachDuration = &v
+	return s
+}
+
+// SetResource sets the Resource field's value.
+func (s *TriggerItemType) SetResource(v string) *TriggerItemType {
+	s.Resource = &v
+	return s
+}
+
+// SetUpperThreshold sets the UpperThreshold field's value.
+func (s *TriggerItemType) SetUpperThreshold(v float64) *TriggerItemType {
+	s.UpperThreshold = &v
 	return s
 }
 
@@ -24302,9 +34716,13 @@ func (s *UpdateLoadBalancerOptionInput) SetSorryPageUpdate(v *SorryPageUpdateStr
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerOptionOutput
+// UpdateLoadBalancerOptionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerOptionResult
 type UpdateLoadBalancerOptionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// ResponseMetadata
+	ResponseMetadata *ResponseMetadata `locationName:"ResponseMetadata" type:"structure"`
 }
 
 // String returns the string representation
@@ -24317,9 +34735,19 @@ func (s UpdateLoadBalancerOptionOutput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerOutput
+// SetResponseMetadata sets the ResponseMetadata field's value.
+func (s *UpdateLoadBalancerOptionOutput) SetResponseMetadata(v *ResponseMetadata) *UpdateLoadBalancerOptionOutput {
+	s.ResponseMetadata = v
+	return s
+}
+
+// UpdateLoadBalancerResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateLoadBalancerResult
 type UpdateLoadBalancerOutput struct {
 	_ struct{} `type:"structure"`
+
+	// ResponseMetadata
+	ResponseMetadata *ResponseMetadata `locationName:"ResponseMetadata" type:"structure"`
 }
 
 // String returns the string representation
@@ -24330,6 +34758,12 @@ func (s UpdateLoadBalancerOutput) String() string {
 // GoString returns the string representation
 func (s UpdateLoadBalancerOutput) GoString() string {
 	return s.String()
+}
+
+// SetResponseMetadata sets the ResponseMetadata field's value.
+func (s *UpdateLoadBalancerOutput) SetResponseMetadata(v *ResponseMetadata) *UpdateLoadBalancerOutput {
+	s.ResponseMetadata = v
+	return s
 }
 
 // UpdateSecurityGroupRequest
@@ -24460,9 +34894,16 @@ func (s *UpdateSecurityGroupOptionInput) SetSecurityGroupLimitUpdate(v int64) *U
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupOptionOutput
+// UpdateSecurityGroupOptionResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupOptionResult
 type UpdateSecurityGroupOptionOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -24475,9 +34916,28 @@ func (s UpdateSecurityGroupOptionOutput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupOutput
+// SetRequestId sets the RequestId field's value.
+func (s *UpdateSecurityGroupOptionOutput) SetRequestId(v string) *UpdateSecurityGroupOptionOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *UpdateSecurityGroupOptionOutput) SetReturn(v bool) *UpdateSecurityGroupOptionOutput {
+	s.Return = &v
+	return s
+}
+
+// UpdateSecurityGroupResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UpdateSecurityGroupResult
 type UpdateSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
+
+	// Boolean
+	Return *bool `locationName:"return" type:"boolean"`
 }
 
 // String returns the string representation
@@ -24488,6 +34948,104 @@ func (s UpdateSecurityGroupOutput) String() string {
 // GoString returns the string representation
 func (s UpdateSecurityGroupOutput) GoString() string {
 	return s.String()
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *UpdateSecurityGroupOutput) SetRequestId(v string) *UpdateSecurityGroupOutput {
+	s.RequestId = &v
+	return s
+}
+
+// SetReturn sets the Return field's value.
+func (s *UpdateSecurityGroupOutput) SetReturn(v bool) *UpdateSecurityGroupOutput {
+	s.Return = &v
+	return s
+}
+
+// UploadDetailType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadDetailType
+type UploadDetailType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// DiskImageDescriptionType
+	Image *DiskImageDescriptionType `locationName:"image" type:"structure"`
+
+	// String
+	InstanceId *string `locationName:"instanceId" type:"string"`
+}
+
+// String returns the string representation
+func (s UploadDetailType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UploadDetailType) GoString() string {
+	return s.String()
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *UploadDetailType) SetAvailabilityZone(v string) *UploadDetailType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetImage sets the Image field's value.
+func (s *UploadDetailType) SetImage(v *DiskImageDescriptionType) *UploadDetailType {
+	s.Image = v
+	return s
+}
+
+// SetInstanceId sets the InstanceId field's value.
+func (s *UploadDetailType) SetInstanceId(v string) *UploadDetailType {
+	s.InstanceId = &v
+	return s
+}
+
+// UploadItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadItemType
+type UploadItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	ConversionTaskId *int64 `locationName:"conversionTaskId" type:"integer"`
+
+	// String
+	ExpirationTime *string `locationName:"expirationTime" type:"string"`
+
+	// UploadDetailType
+	ImportInstance *UploadDetailType `locationName:"importInstance" type:"structure"`
+}
+
+// String returns the string representation
+func (s UploadItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UploadItemType) GoString() string {
+	return s.String()
+}
+
+// SetConversionTaskId sets the ConversionTaskId field's value.
+func (s *UploadItemType) SetConversionTaskId(v int64) *UploadItemType {
+	s.ConversionTaskId = &v
+	return s
+}
+
+// SetExpirationTime sets the ExpirationTime field's value.
+func (s *UploadItemType) SetExpirationTime(v string) *UploadItemType {
+	s.ExpirationTime = &v
+	return s
+}
+
+// SetImportInstance sets the ImportInstance field's value.
+func (s *UploadItemType) SetImportInstance(v *UploadDetailType) *UploadItemType {
+	s.ImportInstance = v
+	return s
 }
 
 // UploadSslCertificateRequest
@@ -24553,9 +35111,22 @@ func (s *UploadSslCertificateInput) SetKey(v string) *UploadSslCertificateInput 
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadSslCertificateOutput
+// UploadSslCertificateResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UploadSslCertificateResult
 type UploadSslCertificateOutput struct {
 	_ struct{} `type:"structure"`
+
+	// String
+	Fqdn *string `locationName:"fqdn" type:"string"`
+
+	// String
+	FqdnId *string `locationName:"fqdnId" type:"string"`
+
+	// String
+	KeyFingerPrint *string `locationName:"keyFingerPrint" type:"string"`
+
+	// String
+	RequestId *string `locationName:"requestId" type:"string"`
 }
 
 // String returns the string representation
@@ -24566,6 +35137,379 @@ func (s UploadSslCertificateOutput) String() string {
 // GoString returns the string representation
 func (s UploadSslCertificateOutput) GoString() string {
 	return s.String()
+}
+
+// SetFqdn sets the Fqdn field's value.
+func (s *UploadSslCertificateOutput) SetFqdn(v string) *UploadSslCertificateOutput {
+	s.Fqdn = &v
+	return s
+}
+
+// SetFqdnId sets the FqdnId field's value.
+func (s *UploadSslCertificateOutput) SetFqdnId(v string) *UploadSslCertificateOutput {
+	s.FqdnId = &v
+	return s
+}
+
+// SetKeyFingerPrint sets the KeyFingerPrint field's value.
+func (s *UploadSslCertificateOutput) SetKeyFingerPrint(v string) *UploadSslCertificateOutput {
+	s.KeyFingerPrint = &v
+	return s
+}
+
+// SetRequestId sets the RequestId field's value.
+func (s *UploadSslCertificateOutput) SetRequestId(v string) *UploadSslCertificateOutput {
+	s.RequestId = &v
+	return s
+}
+
+// UsageCopyInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageCopyInfoType
+type UsageCopyInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailInfoType
+	InstanceCopy *UsageDetailInfoType `locationName:"instanceCopy" type:"structure"`
+}
+
+// String returns the string representation
+func (s UsageCopyInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageCopyInfoType) GoString() string {
+	return s.String()
+}
+
+// SetInstanceCopy sets the InstanceCopy field's value.
+func (s *UsageCopyInfoType) SetInstanceCopy(v *UsageDetailInfoType) *UsageCopyInfoType {
+	s.InstanceCopy = v
+	return s
+}
+
+// UsageDetailInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageDetailInfoType
+type UsageDetailInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	Charge *int64 `locationName:"charge" type:"integer"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+
+	// String
+	Unit *string `locationName:"unit" type:"string"`
+
+	// Integer
+	Value *int64 `locationName:"value" type:"integer"`
+}
+
+// String returns the string representation
+func (s UsageDetailInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageDetailInfoType) GoString() string {
+	return s.String()
+}
+
+// SetCharge sets the Charge field's value.
+func (s *UsageDetailInfoType) SetCharge(v int64) *UsageDetailInfoType {
+	s.Charge = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *UsageDetailInfoType) SetType(v string) *UsageDetailInfoType {
+	s.Type = &v
+	return s
+}
+
+// SetUnit sets the Unit field's value.
+func (s *UsageDetailInfoType) SetUnit(v string) *UsageDetailInfoType {
+	s.Unit = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *UsageDetailInfoType) SetValue(v int64) *UsageDetailInfoType {
+	s.Value = &v
+	return s
+}
+
+// UsageElasticIpInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageElasticIpInfoType
+type UsageElasticIpInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailSetType
+	ElasticIpSet []*UsageDetailInfoType `locationName:"elasticIpSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageElasticIpInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageElasticIpInfoType) GoString() string {
+	return s.String()
+}
+
+// SetElasticIpSet sets the ElasticIpSet field's value.
+func (s *UsageElasticIpInfoType) SetElasticIpSet(v []*UsageDetailInfoType) *UsageElasticIpInfoType {
+	s.ElasticIpSet = v
+	return s
+}
+
+// UsageImageInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageImageInfoType
+type UsageImageInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailInfoType
+	CreateImage *UsageDetailInfoType `locationName:"createImage" type:"structure"`
+
+	// UsageDetailSetType
+	KeepImageSet []*UsageDetailInfoType `locationName:"keepImageSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageImageInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageImageInfoType) GoString() string {
+	return s.String()
+}
+
+// SetCreateImage sets the CreateImage field's value.
+func (s *UsageImageInfoType) SetCreateImage(v *UsageDetailInfoType) *UsageImageInfoType {
+	s.CreateImage = v
+	return s
+}
+
+// SetKeepImageSet sets the KeepImageSet field's value.
+func (s *UsageImageInfoType) SetKeepImageSet(v []*UsageDetailInfoType) *UsageImageInfoType {
+	s.KeepImageSet = v
+	return s
+}
+
+// UsageLoadBalancerInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageLoadBalancerInfoType
+type UsageLoadBalancerInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailSetType
+	OptionSet []*UsageDetailInfoType `locationName:"optionSet" locationNameList:"item" type:"list"`
+
+	// UsageDetailSetType
+	VipMeasuredRateSet []*UsageDetailInfoType `locationName:"vipMeasuredRateSet" locationNameList:"item" type:"list"`
+
+	// UsageDetailSetType
+	VipSet []*UsageDetailInfoType `locationName:"vipSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageLoadBalancerInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageLoadBalancerInfoType) GoString() string {
+	return s.String()
+}
+
+// SetOptionSet sets the OptionSet field's value.
+func (s *UsageLoadBalancerInfoType) SetOptionSet(v []*UsageDetailInfoType) *UsageLoadBalancerInfoType {
+	s.OptionSet = v
+	return s
+}
+
+// SetVipMeasuredRateSet sets the VipMeasuredRateSet field's value.
+func (s *UsageLoadBalancerInfoType) SetVipMeasuredRateSet(v []*UsageDetailInfoType) *UsageLoadBalancerInfoType {
+	s.VipMeasuredRateSet = v
+	return s
+}
+
+// SetVipSet sets the VipSet field's value.
+func (s *UsageLoadBalancerInfoType) SetVipSet(v []*UsageDetailInfoType) *UsageLoadBalancerInfoType {
+	s.VipSet = v
+	return s
+}
+
+// UsageNetworkInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageNetworkInfoType
+type UsageNetworkInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailSetType
+	NetworkFlowSet []*UsageDetailInfoType `locationName:"networkFlowSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageNetworkInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageNetworkInfoType) GoString() string {
+	return s.String()
+}
+
+// SetNetworkFlowSet sets the NetworkFlowSet field's value.
+func (s *UsageNetworkInfoType) SetNetworkFlowSet(v []*UsageDetailInfoType) *UsageNetworkInfoType {
+	s.NetworkFlowSet = v
+	return s
+}
+
+// UsageOptionDetailSetType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageOptionDetailSetType
+type UsageOptionDetailSetType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	OptionName *string `locationName:"optionName" type:"string"`
+
+	// UsageDetailSetType
+	OptionSet []*UsageDetailInfoType `locationName:"optionSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageOptionDetailSetType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageOptionDetailSetType) GoString() string {
+	return s.String()
+}
+
+// SetOptionName sets the OptionName field's value.
+func (s *UsageOptionDetailSetType) SetOptionName(v string) *UsageOptionDetailSetType {
+	s.OptionName = &v
+	return s
+}
+
+// SetOptionSet sets the OptionSet field's value.
+func (s *UsageOptionDetailSetType) SetOptionSet(v []*UsageDetailInfoType) *UsageOptionDetailSetType {
+	s.OptionSet = v
+	return s
+}
+
+// UsageSecurityGroupInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageSecurityGroupInfoType
+type UsageSecurityGroupInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailSetType
+	OptionSet []*UsageDetailInfoType `locationName:"optionSet" locationNameList:"item" type:"list"`
+
+	// UsageDetailInfoType
+	SecurityGroupApplyTime *UsageDetailInfoType `locationName:"securityGroupApplyTime" type:"structure"`
+}
+
+// String returns the string representation
+func (s UsageSecurityGroupInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageSecurityGroupInfoType) GoString() string {
+	return s.String()
+}
+
+// SetOptionSet sets the OptionSet field's value.
+func (s *UsageSecurityGroupInfoType) SetOptionSet(v []*UsageDetailInfoType) *UsageSecurityGroupInfoType {
+	s.OptionSet = v
+	return s
+}
+
+// SetSecurityGroupApplyTime sets the SecurityGroupApplyTime field's value.
+func (s *UsageSecurityGroupInfoType) SetSecurityGroupApplyTime(v *UsageDetailInfoType) *UsageSecurityGroupInfoType {
+	s.SecurityGroupApplyTime = v
+	return s
+}
+
+// UsageVolumeInfoType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UsageVolumeInfoType
+type UsageVolumeInfoType struct {
+	_ struct{} `type:"structure"`
+
+	// UsageDetailInfoType
+	ImportInstanceDiskMeasuredRate *UsageDetailInfoType `locationName:"importInstanceDiskMeasuredRate" type:"structure"`
+
+	// UsageDetailInfoType
+	ImportInstanceDiskMonthlyRate *UsageDetailInfoType `locationName:"importInstanceDiskMonthlyRate" type:"structure"`
+
+	// UsageDetailSetType
+	VolumeMeasuredRateSet []*UsageDetailInfoType `locationName:"volumeMeasuredRateSet" locationNameList:"item" type:"list"`
+
+	// UsageDetailSetType
+	VolumeSet []*UsageDetailInfoType `locationName:"volumeSet" locationNameList:"item" type:"list"`
+}
+
+// String returns the string representation
+func (s UsageVolumeInfoType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UsageVolumeInfoType) GoString() string {
+	return s.String()
+}
+
+// SetImportInstanceDiskMeasuredRate sets the ImportInstanceDiskMeasuredRate field's value.
+func (s *UsageVolumeInfoType) SetImportInstanceDiskMeasuredRate(v *UsageDetailInfoType) *UsageVolumeInfoType {
+	s.ImportInstanceDiskMeasuredRate = v
+	return s
+}
+
+// SetImportInstanceDiskMonthlyRate sets the ImportInstanceDiskMonthlyRate field's value.
+func (s *UsageVolumeInfoType) SetImportInstanceDiskMonthlyRate(v *UsageDetailInfoType) *UsageVolumeInfoType {
+	s.ImportInstanceDiskMonthlyRate = v
+	return s
+}
+
+// SetVolumeMeasuredRateSet sets the VolumeMeasuredRateSet field's value.
+func (s *UsageVolumeInfoType) SetVolumeMeasuredRateSet(v []*UsageDetailInfoType) *UsageVolumeInfoType {
+	s.VolumeMeasuredRateSet = v
+	return s
+}
+
+// SetVolumeSet sets the VolumeSet field's value.
+func (s *UsageVolumeInfoType) SetVolumeSet(v []*UsageDetailInfoType) *UsageVolumeInfoType {
+	s.VolumeSet = v
+	return s
+}
+
+// User
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//User
+type User struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	UserId *string `locationName:"UserId" type:"string"`
+}
+
+// String returns the string representation
+func (s User) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s User) GoString() string {
+	return s.String()
+}
+
+// SetUserId sets the UserId field's value.
+func (s *User) SetUserId(v string) *User {
+	s.UserId = &v
+	return s
 }
 
 // UserDataStruct
@@ -24593,6 +35537,142 @@ func (s *UserDataStruct) SetEncoding(v string) *UserDataStruct {
 	return s
 }
 
+// UserIdGroupPairType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//UserIdGroupPairType
+type UserIdGroupPairType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	GroupName *string `locationName:"groupName" type:"string"`
+
+	// String
+	UserId *string `locationName:"userId" type:"string"`
+}
+
+// String returns the string representation
+func (s UserIdGroupPairType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s UserIdGroupPairType) GoString() string {
+	return s.String()
+}
+
+// SetGroupName sets the GroupName field's value.
+func (s *UserIdGroupPairType) SetGroupName(v string) *UserIdGroupPairType {
+	s.GroupName = &v
+	return s
+}
+
+// SetUserId sets the UserId field's value.
+func (s *UserIdGroupPairType) SetUserId(v string) *UserIdGroupPairType {
+	s.UserId = &v
+	return s
+}
+
+// ValidDateType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ValidDateType
+type ValidDateType struct {
+	_ struct{} `type:"structure"`
+
+	// TStamp
+	EndDate *time.Time `locationName:"endDate" type:"timestamp" timestampFormat:"iso8601"`
+
+	// TStamp
+	StartDate *time.Time `locationName:"startDate" type:"timestamp" timestampFormat:"iso8601"`
+
+	// Integer
+	ValidityTerm *int64 `locationName:"validityTerm" type:"integer"`
+}
+
+// String returns the string representation
+func (s ValidDateType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ValidDateType) GoString() string {
+	return s.String()
+}
+
+// SetEndDate sets the EndDate field's value.
+func (s *ValidDateType) SetEndDate(v time.Time) *ValidDateType {
+	s.EndDate = &v
+	return s
+}
+
+// SetStartDate sets the StartDate field's value.
+func (s *ValidDateType) SetStartDate(v time.Time) *ValidDateType {
+	s.StartDate = &v
+	return s
+}
+
+// SetValidityTerm sets the ValidityTerm field's value.
+func (s *ValidDateType) SetValidityTerm(v int64) *ValidDateType {
+	s.ValidityTerm = &v
+	return s
+}
+
+// ValueSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ValueSetItemType
+type ValueSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	Value *string `locationName:"value" type:"string"`
+}
+
+// String returns the string representation
+func (s ValueSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s ValueSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetValue sets the Value field's value.
+func (s *ValueSetItemType) SetValue(v string) *ValueSetItemType {
+	s.Value = &v
+	return s
+}
+
+// VersionInformationType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VersionInformationType
+type VersionInformationType struct {
+	_ struct{} `type:"structure"`
+
+	// Boolean
+	IsLatest *bool `locationName:"isLatest" type:"boolean"`
+
+	// String
+	Version *string `locationName:"version" type:"string"`
+}
+
+// String returns the string representation
+func (s VersionInformationType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VersionInformationType) GoString() string {
+	return s.String()
+}
+
+// SetIsLatest sets the IsLatest field's value.
+func (s *VersionInformationType) SetIsLatest(v bool) *VersionInformationType {
+	s.IsLatest = &v
+	return s
+}
+
+// SetVersion sets the Version field's value.
+func (s *VersionInformationType) SetVersion(v string) *VersionInformationType {
+	s.Version = &v
+	return s
+}
+
 // VolumeStruct
 // Please also see https://docs.aws.amazon.com/goto/WebAPI//VolumeStruct
 type VolumeStruct struct {
@@ -24615,5 +35695,495 @@ func (s VolumeStruct) GoString() string {
 // SetSize sets the Size field's value.
 func (s *VolumeStruct) SetSize(v int64) *VolumeStruct {
 	s.Size = &v
+	return s
+}
+
+// VpnConnectionType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VpnConnectionType
+type VpnConnectionType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	CustomerGatewayConfiguration *string `locationName:"customerGatewayConfiguration" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+
+	// String
+	VpnConnectionId *string `locationName:"vpnConnectionId" type:"string"`
+}
+
+// String returns the string representation
+func (s VpnConnectionType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VpnConnectionType) GoString() string {
+	return s.String()
+}
+
+// SetCustomerGatewayConfiguration sets the CustomerGatewayConfiguration field's value.
+func (s *VpnConnectionType) SetCustomerGatewayConfiguration(v string) *VpnConnectionType {
+	s.CustomerGatewayConfiguration = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *VpnConnectionType) SetState(v string) *VpnConnectionType {
+	s.State = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *VpnConnectionType) SetType(v string) *VpnConnectionType {
+	s.Type = &v
+	return s
+}
+
+// SetVpnConnectionId sets the VpnConnectionId field's value.
+func (s *VpnConnectionType) SetVpnConnectionId(v string) *VpnConnectionType {
+	s.VpnConnectionId = &v
+	return s
+}
+
+// VpnGatewayIdSetItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VpnGatewayIdSetItemType
+type VpnGatewayIdSetItemType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	NiftyVpnGatewayName *string `locationName:"niftyVpnGatewayName" type:"string"`
+
+	// String
+	VpnGatewayId *string `locationName:"vpnGatewayId" type:"string"`
+}
+
+// String returns the string representation
+func (s VpnGatewayIdSetItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VpnGatewayIdSetItemType) GoString() string {
+	return s.String()
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *VpnGatewayIdSetItemType) SetNiftyVpnGatewayName(v string) *VpnGatewayIdSetItemType {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *VpnGatewayIdSetItemType) SetVpnGatewayId(v string) *VpnGatewayIdSetItemType {
+	s.VpnGatewayId = &v
+	return s
+}
+
+// VpnGatewayNetworkInterfaceType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VpnGatewayNetworkInterfaceType
+type VpnGatewayNetworkInterfaceType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	DeviceIndex *string `locationName:"deviceIndex" type:"string"`
+
+	// String
+	IpAddress *string `locationName:"ipAddress" type:"string"`
+
+	// String
+	NetworkId *string `locationName:"networkId" type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `locationName:"niftyVpnGatewayName" type:"string"`
+
+	// String
+	VpnGatewayId *string `locationName:"vpnGatewayId" type:"string"`
+}
+
+// String returns the string representation
+func (s VpnGatewayNetworkInterfaceType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VpnGatewayNetworkInterfaceType) GoString() string {
+	return s.String()
+}
+
+// SetDeviceIndex sets the DeviceIndex field's value.
+func (s *VpnGatewayNetworkInterfaceType) SetDeviceIndex(v string) *VpnGatewayNetworkInterfaceType {
+	s.DeviceIndex = &v
+	return s
+}
+
+// SetIpAddress sets the IpAddress field's value.
+func (s *VpnGatewayNetworkInterfaceType) SetIpAddress(v string) *VpnGatewayNetworkInterfaceType {
+	s.IpAddress = &v
+	return s
+}
+
+// SetNetworkId sets the NetworkId field's value.
+func (s *VpnGatewayNetworkInterfaceType) SetNetworkId(v string) *VpnGatewayNetworkInterfaceType {
+	s.NetworkId = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *VpnGatewayNetworkInterfaceType) SetNiftyVpnGatewayName(v string) *VpnGatewayNetworkInterfaceType {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *VpnGatewayNetworkInterfaceType) SetVpnGatewayId(v string) *VpnGatewayNetworkInterfaceType {
+	s.VpnGatewayId = &v
+	return s
+}
+
+// VpnGatewayType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VpnGatewayType
+type VpnGatewayType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	AccountingType *string `locationName:"accountingType" type:"string"`
+
+	// AttachmentType
+	Attachments []*AttachmentItemType `locationName:"attachments" locationNameList:"item" type:"list"`
+
+	// String
+	AvailabilityZone *string `locationName:"availabilityZone" type:"string"`
+
+	// BackupInformationType
+	BackupInformation *BackupInformationType `locationName:"backupInformation" type:"structure"`
+
+	// TStamp
+	CreatedTime *time.Time `locationName:"createdTime" type:"timestamp" timestampFormat:"iso8601"`
+
+	// GroupSetType
+	GroupSet []*GroupItemType `locationName:"groupSet" locationNameList:"item" type:"list"`
+
+	// NetworkInterfaceSetType
+	NetworkInterfaceSet []*InstanceNetworkInterfaceSetItemType `locationName:"networkInterfaceSet" locationNameList:"item" type:"list"`
+
+	// Boolean
+	NiftyRedundancy *bool `locationName:"niftyRedundancy" type:"boolean"`
+
+	// String
+	NiftyVpnGatewayDescription *string `locationName:"niftyVpnGatewayDescription" type:"string"`
+
+	// String
+	NiftyVpnGatewayName *string `locationName:"niftyVpnGatewayName" type:"string"`
+
+	// String
+	NiftyVpnGatewayType *string `locationName:"niftyVpnGatewayType" type:"string"`
+
+	// String
+	RouteTableAssociationId *string `locationName:"routeTableAssociationId" type:"string"`
+
+	// String
+	RouteTableId *string `locationName:"routeTableId" type:"string"`
+
+	// String
+	State *string `locationName:"state" type:"string"`
+
+	// ResourceTagSetType
+	TagSet []*ResourceTagSetItemType `locationName:"tagSet" locationNameList:"item" type:"list"`
+
+	// String
+	Type *string `locationName:"type" type:"string"`
+
+	// VersionInformationType
+	VersionInformation *VersionInformationType `locationName:"versionInformation" type:"structure"`
+
+	// String
+	VpnGatewayId *string `locationName:"vpnGatewayId" type:"string"`
+}
+
+// String returns the string representation
+func (s VpnGatewayType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VpnGatewayType) GoString() string {
+	return s.String()
+}
+
+// SetAccountingType sets the AccountingType field's value.
+func (s *VpnGatewayType) SetAccountingType(v string) *VpnGatewayType {
+	s.AccountingType = &v
+	return s
+}
+
+// SetAttachments sets the Attachments field's value.
+func (s *VpnGatewayType) SetAttachments(v []*AttachmentItemType) *VpnGatewayType {
+	s.Attachments = v
+	return s
+}
+
+// SetAvailabilityZone sets the AvailabilityZone field's value.
+func (s *VpnGatewayType) SetAvailabilityZone(v string) *VpnGatewayType {
+	s.AvailabilityZone = &v
+	return s
+}
+
+// SetBackupInformation sets the BackupInformation field's value.
+func (s *VpnGatewayType) SetBackupInformation(v *BackupInformationType) *VpnGatewayType {
+	s.BackupInformation = v
+	return s
+}
+
+// SetCreatedTime sets the CreatedTime field's value.
+func (s *VpnGatewayType) SetCreatedTime(v time.Time) *VpnGatewayType {
+	s.CreatedTime = &v
+	return s
+}
+
+// SetGroupSet sets the GroupSet field's value.
+func (s *VpnGatewayType) SetGroupSet(v []*GroupItemType) *VpnGatewayType {
+	s.GroupSet = v
+	return s
+}
+
+// SetNetworkInterfaceSet sets the NetworkInterfaceSet field's value.
+func (s *VpnGatewayType) SetNetworkInterfaceSet(v []*InstanceNetworkInterfaceSetItemType) *VpnGatewayType {
+	s.NetworkInterfaceSet = v
+	return s
+}
+
+// SetNiftyRedundancy sets the NiftyRedundancy field's value.
+func (s *VpnGatewayType) SetNiftyRedundancy(v bool) *VpnGatewayType {
+	s.NiftyRedundancy = &v
+	return s
+}
+
+// SetNiftyVpnGatewayDescription sets the NiftyVpnGatewayDescription field's value.
+func (s *VpnGatewayType) SetNiftyVpnGatewayDescription(v string) *VpnGatewayType {
+	s.NiftyVpnGatewayDescription = &v
+	return s
+}
+
+// SetNiftyVpnGatewayName sets the NiftyVpnGatewayName field's value.
+func (s *VpnGatewayType) SetNiftyVpnGatewayName(v string) *VpnGatewayType {
+	s.NiftyVpnGatewayName = &v
+	return s
+}
+
+// SetNiftyVpnGatewayType sets the NiftyVpnGatewayType field's value.
+func (s *VpnGatewayType) SetNiftyVpnGatewayType(v string) *VpnGatewayType {
+	s.NiftyVpnGatewayType = &v
+	return s
+}
+
+// SetRouteTableAssociationId sets the RouteTableAssociationId field's value.
+func (s *VpnGatewayType) SetRouteTableAssociationId(v string) *VpnGatewayType {
+	s.RouteTableAssociationId = &v
+	return s
+}
+
+// SetRouteTableId sets the RouteTableId field's value.
+func (s *VpnGatewayType) SetRouteTableId(v string) *VpnGatewayType {
+	s.RouteTableId = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *VpnGatewayType) SetState(v string) *VpnGatewayType {
+	s.State = &v
+	return s
+}
+
+// SetTagSet sets the TagSet field's value.
+func (s *VpnGatewayType) SetTagSet(v []*ResourceTagSetItemType) *VpnGatewayType {
+	s.TagSet = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *VpnGatewayType) SetType(v string) *VpnGatewayType {
+	s.Type = &v
+	return s
+}
+
+// SetVersionInformation sets the VersionInformation field's value.
+func (s *VpnGatewayType) SetVersionInformation(v *VersionInformationType) *VpnGatewayType {
+	s.VersionInformation = v
+	return s
+}
+
+// SetVpnGatewayId sets the VpnGatewayId field's value.
+func (s *VpnGatewayType) SetVpnGatewayId(v string) *VpnGatewayType {
+	s.VpnGatewayId = &v
+	return s
+}
+
+// VpnTunnelTelemetryItemType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//VpnTunnelTelemetryItemType
+type VpnTunnelTelemetryItemType struct {
+	_ struct{} `type:"structure"`
+
+	// Integer
+	AcceptedRouteCount *int64 `locationName:"acceptedRouteCount" type:"integer"`
+
+	// TStamp
+	LastStatusChange *time.Time `locationName:"lastStatusChange" type:"timestamp" timestampFormat:"iso8601"`
+
+	// String
+	OutsideIpAddress *string `locationName:"outsideIpAddress" type:"string"`
+
+	// String
+	Status *string `locationName:"status" type:"string"`
+
+	// String
+	StatusMessage *string `locationName:"statusMessage" type:"string"`
+}
+
+// String returns the string representation
+func (s VpnTunnelTelemetryItemType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s VpnTunnelTelemetryItemType) GoString() string {
+	return s.String()
+}
+
+// SetAcceptedRouteCount sets the AcceptedRouteCount field's value.
+func (s *VpnTunnelTelemetryItemType) SetAcceptedRouteCount(v int64) *VpnTunnelTelemetryItemType {
+	s.AcceptedRouteCount = &v
+	return s
+}
+
+// SetLastStatusChange sets the LastStatusChange field's value.
+func (s *VpnTunnelTelemetryItemType) SetLastStatusChange(v time.Time) *VpnTunnelTelemetryItemType {
+	s.LastStatusChange = &v
+	return s
+}
+
+// SetOutsideIpAddress sets the OutsideIpAddress field's value.
+func (s *VpnTunnelTelemetryItemType) SetOutsideIpAddress(v string) *VpnTunnelTelemetryItemType {
+	s.OutsideIpAddress = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *VpnTunnelTelemetryItemType) SetStatus(v string) *VpnTunnelTelemetryItemType {
+	s.Status = &v
+	return s
+}
+
+// SetStatusMessage sets the StatusMessage field's value.
+func (s *VpnTunnelTelemetryItemType) SetStatusMessage(v string) *VpnTunnelTelemetryItemType {
+	s.StatusMessage = &v
+	return s
+}
+
+// WebProxyOptionType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//WebProxyOptionType
+type WebProxyOptionType struct {
+	_ struct{} `type:"structure"`
+
+	// String
+	NameServer *string `locationName:"nameServer" type:"string"`
+}
+
+// String returns the string representation
+func (s WebProxyOptionType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s WebProxyOptionType) GoString() string {
+	return s.String()
+}
+
+// SetNameServer sets the NameServer field's value.
+func (s *WebProxyOptionType) SetNameServer(v string) *WebProxyOptionType {
+	s.NameServer = &v
+	return s
+}
+
+// WebProxyType
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//WebProxyType
+type WebProxyType struct {
+	_ struct{} `type:"structure"`
+
+	// NetworkInterfaceType
+	BypassInterface *NetworkInterfaceType `locationName:"bypassInterface" type:"structure"`
+
+	// String
+	Description *string `locationName:"description" type:"string"`
+
+	// NetworkInterfaceType
+	ListenInterface *NetworkInterfaceType `locationName:"listenInterface" type:"structure"`
+
+	// String
+	ListenPort *string `locationName:"listenPort" type:"string"`
+
+	// WebProxyOptionType
+	Option *WebProxyOptionType `locationName:"option" type:"structure"`
+
+	// String
+	RouterId *string `locationName:"routerId" type:"string"`
+
+	// String
+	RouterName *string `locationName:"routerName" type:"string"`
+}
+
+// String returns the string representation
+func (s WebProxyType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s WebProxyType) GoString() string {
+	return s.String()
+}
+
+// SetBypassInterface sets the BypassInterface field's value.
+func (s *WebProxyType) SetBypassInterface(v *NetworkInterfaceType) *WebProxyType {
+	s.BypassInterface = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *WebProxyType) SetDescription(v string) *WebProxyType {
+	s.Description = &v
+	return s
+}
+
+// SetListenInterface sets the ListenInterface field's value.
+func (s *WebProxyType) SetListenInterface(v *NetworkInterfaceType) *WebProxyType {
+	s.ListenInterface = v
+	return s
+}
+
+// SetListenPort sets the ListenPort field's value.
+func (s *WebProxyType) SetListenPort(v string) *WebProxyType {
+	s.ListenPort = &v
+	return s
+}
+
+// SetOption sets the Option field's value.
+func (s *WebProxyType) SetOption(v *WebProxyOptionType) *WebProxyType {
+	s.Option = v
+	return s
+}
+
+// SetRouterId sets the RouterId field's value.
+func (s *WebProxyType) SetRouterId(v string) *WebProxyType {
+	s.RouterId = &v
+	return s
+}
+
+// SetRouterName sets the RouterName field's value.
+func (s *WebProxyType) SetRouterName(v string) *WebProxyType {
+	s.RouterName = &v
 	return s
 }

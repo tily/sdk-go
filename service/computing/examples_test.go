@@ -4334,7 +4334,7 @@ func Examplecomputing_RunInstances() {
 		Agreement:      aws.Bool(true),
 		BlockDeviceMappingList: []*computing.EbsStruct{
 			{ // Required
-				DeleteOnTermination: aws.Bool(true),
+				DeleteOnTermination: aws.String("DeleteOnTermination"),
 				NoDevice:            aws.Bool(true),
 				SnapshotId:          aws.String("SnapshotId"),
 				VolumeSize:          aws.Int64(1),
