@@ -238,7 +238,7 @@ func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Doc
 		case regexp.MustCompile(`^(日付|日時)$`).MatchString(typeText):
 			shapeType = "TStamp"
 		case regexp.MustCompile(`^文字配列$`).MatchString(typeText):
-			shapeType = "List"
+			shapeType = "String"
 		}
 
 		if regexp.MustCompile(`\.`).MatchString(shapeName) {
