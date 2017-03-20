@@ -455,7 +455,12 @@
       ]
     },
     "SendEmailResult": {
-      "type": "string"
+      "type": "structure",
+      "members": {
+        "MessageId": {
+          "shape": "MessageId"
+        }
+      }
     },
     "SendRawEmailRequest": {
       "type": "structure",
