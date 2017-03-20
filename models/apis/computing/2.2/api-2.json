@@ -13409,9 +13409,9 @@
           "shape": "UsageDetailInfoType",
           "locationName": "secureNetMonthlyRate"
         },
-        "VpnConnectMeasuredRate": {
-          "shape": "",
-          "locationName": "vpnConnectMeasuredRate"
+        "VpnConnectionMeasuredRateSet": {
+          "shape": "UsageDetailInfoType",
+          "locationName": "vpnConnectionMeasuredRateSet"
         }
       }
     },
