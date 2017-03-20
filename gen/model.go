@@ -22,7 +22,7 @@ type Operation struct {
 	OpName string    `json:"name"`
 	HTTP   HTTP      `json:"http"`
 	Input  *ShapeRef `json:"input"`
-	Output *ShapeRef `json:"output"`
+	Output *ShapeRef `json:"output,omitempty"`
 }
 
 type HTTP struct {

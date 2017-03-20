@@ -910,10 +910,6 @@
       "base": "DeleteLoadBalancerRequest",
       "refs": null
     },
-    "DeleteLoadBalancerResult": {
-      "base": "DeleteLoadBalancerResult",
-      "refs": null
-    },
     "DeleteOnTermination": {
       "base": "DeleteOnTermination",
       "refs": null

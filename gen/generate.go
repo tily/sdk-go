@@ -331,6 +331,9 @@ func capitalize(s string) string {
 }
 
 func (g *Generator) generateResultShapesComputing(operationName string, doc *goquery.Document) (shapes Shapes) {
+	if operationName == "DeleteLoadBalancer" {
+		return shapes
+	}
 	locToShapeMap := map[string]string{}
 	resultShapeHTMLs := doc.Find(g.ResultShapeSelector)
 	resultShapeHTMLs.Each(func(i int, s *goquery.Selection) {

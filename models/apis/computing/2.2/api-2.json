@@ -369,9 +369,6 @@
       },
       "input": {
         "shape": "DeleteLoadBalancerRequest"
-      },
-      "output": {
-        "shape": "DeleteLoadBalancerResult"
       }
     },
     "DeleteRoute": {
@@ -4242,9 +4239,6 @@
         "LoadBalancerPort",
         "InstancePort"
       ]
-    },
-    "DeleteLoadBalancerResult": {
-      "type": ""
     },
     "DeleteOnTermination": {
       "type": "string"
