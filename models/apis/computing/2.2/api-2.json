@@ -13379,7 +13379,7 @@
           "locationName": "internetVpnInitial"
         },
         "InternetVpnMonthlyRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "internetVpnMonthlyRateSet"
         }
       }
@@ -13529,7 +13529,7 @@
           "locationName": "secureNetMonthlyRate"
         },
         "VpnConnectionMeasuredRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "vpnConnectionMeasuredRateSet"
         }
       }
@@ -13603,11 +13603,11 @@
       "type": "structure",
       "members": {
         "RouterMeasuredRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "routerMeasuredRateSet"
         },
         "RouterMonthlyRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "routerMonthlyRateSet"
         }
       }
@@ -13616,11 +13616,11 @@
       "type": "structure",
       "members": {
         "VpnGatewayMeasuredRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "vpnGatewayMeasuredRateSet"
         },
         "VpnGatewayMonthlyRateSet": {
-          "shape": "UsageDetailInfoType",
+          "shape": "UsageDetailSetType",
           "locationName": "vpnGatewayMonthlyRateSet"
         }
       }
