@@ -22,6 +22,7 @@ const (
 const (
 	ComputingServiceID     = "computing"     // Computing.
 	Ec2metadataServiceID   = "ec2metadata"   // Ec2metadata.
+	EssServiceID           = "ess"           // Ess.
 	ObjectstorageServiceID = "objectstorage" // Objectstorage.
 	RdbServiceID           = "rdb"           // Rdb.
 	StorageServiceID       = "storage"       // Storage.
@@ -103,6 +104,19 @@ var niftycloudPartition = partition{
 				"aws-global": endpoint{
 					Hostname:  "169.254.169.254/latest",
 					Protocols: []string{"http"},
+				},
+			},
+		},
+		"ess": service{
+			PartitionEndpoint: "aws-global",
+			IsRegionalized:    boxedFalse,
+
+			Endpoints: endpoints{
+				"aws-global": endpoint{
+					Hostname: "ess.api.cloud.nifty.com",
+					CredentialScope: credentialScope{
+						Region: "jp-east-1",
+					},
 				},
 			},
 		},

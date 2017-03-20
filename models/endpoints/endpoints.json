@@ -101,6 +101,18 @@
               ]
             }
           }
+        },
+        "ess": {
+          "endpoints": {
+            "aws-global": {
+              "credentialScope": {
+                "region": "jp-east-1"
+              },
+              "hostname": "ess.api.cloud.nifty.com"
+            }
+          },
+          "isRegionalized": false,
+          "partitionEndpoint": "aws-global"
         }
       }
     }
