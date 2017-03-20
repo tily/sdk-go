@@ -3372,6 +3372,29 @@
     "CopyInfo": {
       "type": "string"
     },
+    "CopyInstanceSet": {
+      "type": "structure",
+      "members": {
+        "InstanceId": {
+          "shape": "String",
+          "locationName": "instanceId"
+        },
+        "InstanceState": {
+          "shape": "String",
+          "locationName": "instanceState"
+        },
+        "InstanceUniqueId": {
+          "shape": "String",
+          "locationName": "instanceUniqueId"
+        }
+      }
+    },
+    "CopyInstanceSets": {
+      "type": "list",
+      "member": {
+        "shape": "CopyInstanceSet"
+      }
+    },
     "CopyInstanceStruct": {
       "type": "structure",
       "members": {
@@ -14048,29 +14071,6 @@
           "shape": "String",
           "locationName": "stateName"
         }
-      }
-    },
-    "copyInstanceSet": {
-      "type": "structure",
-      "members": {
-        "InstanceId": {
-          "shape": "String",
-          "locationName": "instanceId"
-        },
-        "InstanceState": {
-          "shape": "String",
-          "locationName": "instanceState"
-        },
-        "InstanceUniqueId": {
-          "shape": "String",
-          "locationName": "instanceUniqueId"
-        }
-      }
-    },
-    "copyInstanceSets": {
-      "type": "list",
-      "member": {
-        "shape": "copyInstanceSet"
       }
     },
     "instances": {

@@ -670,6 +670,14 @@
       "base": "CopyInfo",
       "refs": null
     },
+    "CopyInstanceSet": {
+      "base": "CopyInstanceSet",
+      "refs": null
+    },
+    "CopyInstanceSets": {
+      "base": "CopyInstanceSets",
+      "refs": null
+    },
     "CopyInstanceStruct": {
       "base": "CopyInstanceStruct",
       "refs": null
@@ -4532,14 +4540,6 @@
     },
     "certInfoType": {
       "base": "certInfoType",
-      "refs": null
-    },
-    "copyInstanceSet": {
-      "base": "copyInstanceSet",
-      "refs": null
-    },
-    "copyInstanceSets": {
-      "base": "copyInstanceSets",
       "refs": null
     },
     "instances": {
