@@ -8,7 +8,7 @@ import (
 	"github.com/tily/sdk-go/aws/client/metadata"
 	"github.com/tily/sdk-go/aws/request"
 	"github.com/tily/sdk-go/private/protocol/restxml"
-	"github.com/tily/sdk-go/private/signer/s3"
+	"github.com/tily/sdk-go/private/signer/v3"
 )
 
 // dns
@@ -63,7 +63,7 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 	}
 
 	// Handlers
-	svc.Handlers.Sign.PushBackNamed(s3.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(v3.SignRequestHandler)
 	svc.Handlers.Build.PushBackNamed(restxml.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed(restxml.UnmarshalHandler)
 	svc.Handlers.UnmarshalMeta.PushBackNamed(restxml.UnmarshalMetaHandler)

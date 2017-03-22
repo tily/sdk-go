@@ -6,7 +6,7 @@
     "globalEndpoint": "dns.api.cloud.nifty.com",
     "serviceAbbreviation": "dns",
     "serviceFullName": "dns",
-    "signatureVersion": "s3",
+    "signatureVersion": "v3",
     "xmlNamespace": "http://dummy",
     "protocol": "rest-xml"
   },
@@ -19,6 +19,9 @@
       },
       "input": {
         "shape": "ChangeResourceRecordSetsRequest"
+      },
+      "output": {
+        "shape": "ChangeResourceRecordSetsResult"
       }
     },
     "CreateHostedZone": {
@@ -29,6 +32,9 @@
       },
       "input": {
         "shape": "CreateHostedZoneRequest"
+      },
+      "output": {
+        "shape": "CreateHostedZoneResult"
       }
     },
     "DeleteHostedZone": {
@@ -39,6 +45,9 @@
       },
       "input": {
         "shape": "DeleteHostedZoneRequest"
+      },
+      "output": {
+        "shape": "DeleteHostedZoneResult"
       }
     },
     "GetChange": {
@@ -49,6 +58,9 @@
       },
       "input": {
         "shape": "GetChangeRequest"
+      },
+      "output": {
+        "shape": "GetChangeResult"
       }
     },
     "GetHostedZone": {
@@ -59,6 +71,9 @@
       },
       "input": {
         "shape": "GetHostedZoneRequest"
+      },
+      "output": {
+        "shape": "GetHostedZoneResult"
       }
     },
     "ListHostedZones": {
@@ -69,6 +84,9 @@
       },
       "input": {
         "shape": "ListHostedZonesRequest"
+      },
+      "output": {
+        "shape": "ListHostedZonesResult"
       }
     },
     "ListResourceRecordSets": {
@@ -79,6 +97,9 @@
       },
       "input": {
         "shape": "ListResourceRecordSetsRequest"
+      },
+      "output": {
+        "shape": "ListResourceRecordSetsResult"
       }
     }
   },
@@ -92,7 +113,13 @@
     "ChangeResourceRecordSetsRequest": {
       "type": "structure"
     },
+    "ChangeResourceRecordSetsResult": {
+      "type": "structure"
+    },
     "CreateHostedZoneRequest": {
+      "type": "structure"
+    },
+    "CreateHostedZoneResult": {
       "type": "structure"
     },
     "DelegationSet": {
@@ -101,13 +128,22 @@
     "DeleteHostedZoneRequest": {
       "type": "structure"
     },
+    "DeleteHostedZoneResult": {
+      "type": "structure"
+    },
     "Double": {
       "type": "double"
     },
     "GetChangeRequest": {
       "type": "structure"
     },
+    "GetChangeResult": {
+      "type": "structure"
+    },
     "GetHostedZoneRequest": {
+      "type": "structure"
+    },
+    "GetHostedZoneResult": {
       "type": "structure"
     },
     "HostedZone": {
@@ -133,6 +169,9 @@
         }
       }
     },
+    "ListHostedZonesResult": {
+      "type": "structure"
+    },
     "ListResourceRecordSetsRequest": {
       "type": "structure",
       "members": {
@@ -149,6 +188,9 @@
           "shape": "String"
         }
       }
+    },
+    "ListResourceRecordSetsResult": {
+      "type": "structure"
     },
     "Marker": {
       "type": "string"

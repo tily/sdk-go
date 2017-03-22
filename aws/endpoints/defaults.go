@@ -21,6 +21,7 @@ const (
 // Service identifiers
 const (
 	ComputingServiceID     = "computing"     // Computing.
+	DnsServiceID           = "dns"           // Dns.
 	Ec2metadataServiceID   = "ec2metadata"   // Ec2metadata.
 	EmailServiceID         = "email"         // Email.
 	ObjectstorageServiceID = "objectstorage" // Objectstorage.
@@ -66,7 +67,7 @@ var niftycloudPartition = partition{
 	Defaults: endpoint{
 		Hostname:          "{service}.{region}.{dnsSuffix}",
 		Protocols:         []string{"https"},
-		SignatureVersions: []string{"v4", "s3", "n2"},
+		SignatureVersions: []string{"v4", "s3", "n2", "v3"},
 	},
 	Regions: regions{
 		"jp-east-1": region{
@@ -93,6 +94,20 @@ var niftycloudPartition = partition{
 				"jp-east-2": endpoint{
 					Hostname:          "east-2.cp.cloud.nifty.com",
 					SignatureVersions: []string{"n2"},
+				},
+			},
+		},
+		"dns": service{
+			PartitionEndpoint: "aws-global",
+			IsRegionalized:    boxedFalse,
+
+			Endpoints: endpoints{
+				"aws-global": endpoint{
+					Hostname:          "dns.api.cloud.nifty.com",
+					SignatureVersions: []string{"v3"},
+					CredentialScope: credentialScope{
+						Region: "east-1",
+					},
 				},
 			},
 		},

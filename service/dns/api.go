@@ -6,8 +6,6 @@ package dns
 import (
 	"github.com/tily/sdk-go/aws/awsutil"
 	"github.com/tily/sdk-go/aws/request"
-	"github.com/tily/sdk-go/private/protocol"
-	"github.com/tily/sdk-go/private/protocol/restxml"
 )
 
 const opChangeResourceRecordSets = "ChangeResourceRecordSets"
@@ -50,8 +48,6 @@ func (c *dns) ChangeResourceRecordSetsRequest(input *ChangeResourceRecordSetsInp
 
 	output = &ChangeResourceRecordSetsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -112,8 +108,6 @@ func (c *dns) CreateHostedZoneRequest(input *CreateHostedZoneInput) (req *reques
 
 	output = &CreateHostedZoneOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -174,8 +168,6 @@ func (c *dns) DeleteHostedZoneRequest(input *DeleteHostedZoneInput) (req *reques
 
 	output = &DeleteHostedZoneOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -236,8 +228,6 @@ func (c *dns) GetChangeRequest(input *GetChangeInput) (req *request.Request, out
 
 	output = &GetChangeOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -298,8 +288,6 @@ func (c *dns) GetHostedZoneRequest(input *GetHostedZoneInput) (req *request.Requ
 
 	output = &GetHostedZoneOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -360,8 +348,6 @@ func (c *dns) ListHostedZonesRequest(input *ListHostedZonesInput) (req *request.
 
 	output = &ListHostedZonesOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -422,8 +408,6 @@ func (c *dns) ListResourceRecordSetsRequest(input *ListResourceRecordSetsInput) 
 
 	output = &ListResourceRecordSetsOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Remove(restxml.UnmarshalHandler)
-	req.Handlers.Unmarshal.PushBackNamed(protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
@@ -460,7 +444,8 @@ func (s ChangeResourceRecordSetsInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ChangeResourceRecordSetsOutput
+// ChangeResourceRecordSetsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ChangeResourceRecordSetsResult
 type ChangeResourceRecordSetsOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -491,7 +476,8 @@ func (s CreateHostedZoneInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateHostedZoneOutput
+// CreateHostedZoneResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//CreateHostedZoneResult
 type CreateHostedZoneOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -522,7 +508,8 @@ func (s DeleteHostedZoneInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteHostedZoneOutput
+// DeleteHostedZoneResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//DeleteHostedZoneResult
 type DeleteHostedZoneOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -553,7 +540,8 @@ func (s GetChangeInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//GetChangeOutput
+// GetChangeResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//GetChangeResult
 type GetChangeOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -584,7 +572,8 @@ func (s GetHostedZoneInput) GoString() string {
 	return s.String()
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//GetHostedZoneOutput
+// GetHostedZoneResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//GetHostedZoneResult
 type GetHostedZoneOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -633,7 +622,8 @@ func (s *ListHostedZonesInput) SetMaxitems(v int64) *ListHostedZonesInput {
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListHostedZonesOutput
+// ListHostedZonesResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListHostedZonesResult
 type ListHostedZonesOutput struct {
 	_ struct{} `type:"structure"`
 }
@@ -700,7 +690,8 @@ func (s *ListResourceRecordSetsInput) SetType(v string) *ListResourceRecordSetsI
 	return s
 }
 
-// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListResourceRecordSetsOutput
+// ListResourceRecordSetsResult
+// Please also see https://docs.aws.amazon.com/goto/WebAPI//ListResourceRecordSetsResult
 type ListResourceRecordSetsOutput struct {
 	_ struct{} `type:"structure"`
 }

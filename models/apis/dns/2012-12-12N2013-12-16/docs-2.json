@@ -23,8 +23,16 @@
       "base": "ChangeResourceRecordSetsRequest",
       "refs": null
     },
+    "ChangeResourceRecordSetsResult": {
+      "base": "ChangeResourceRecordSetsResult",
+      "refs": null
+    },
     "CreateHostedZoneRequest": {
       "base": "CreateHostedZoneRequest",
+      "refs": null
+    },
+    "CreateHostedZoneResult": {
+      "base": "CreateHostedZoneResult",
       "refs": null
     },
     "DelegationSet": {
@@ -35,6 +43,10 @@
       "base": "DeleteHostedZoneRequest",
       "refs": null
     },
+    "DeleteHostedZoneResult": {
+      "base": "DeleteHostedZoneResult",
+      "refs": null
+    },
     "Double": {
       "base": "Double",
       "refs": null
@@ -43,8 +55,16 @@
       "base": "GetChangeRequest",
       "refs": null
     },
+    "GetChangeResult": {
+      "base": "GetChangeResult",
+      "refs": null
+    },
     "GetHostedZoneRequest": {
       "base": "GetHostedZoneRequest",
+      "refs": null
+    },
+    "GetHostedZoneResult": {
+      "base": "GetHostedZoneResult",
       "refs": null
     },
     "HostedZone": {
@@ -67,8 +87,16 @@
       "base": "ListHostedZonesRequest",
       "refs": null
     },
+    "ListHostedZonesResult": {
+      "base": "ListHostedZonesResult",
+      "refs": null
+    },
     "ListResourceRecordSetsRequest": {
       "base": "ListResourceRecordSetsRequest",
+      "refs": null
+    },
+    "ListResourceRecordSetsResult": {
+      "base": "ListResourceRecordSetsResult",
       "refs": null
     },
     "Marker": {
