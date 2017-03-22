@@ -88,7 +88,7 @@
         "endpointPrefix": "dns",
         "serviceAbbreviation": "dns",
         "serviceFullName": "dns",
-        "signatureVersion": "s3",
+        "signatureVersion": "v3",
         "xmlNamespace": "http://dummy",
         "protocol": "rest-xml"
       },
