@@ -434,7 +434,11 @@ func (g *Generator) generateResultShapes(operationName string, doc *goquery.Docu
 
 		// skip if it's the xml root tag
 		if i == 0 && regexp.MustCompile(`Response$`).MatchString(shapeName) {
-			return
+			if g.Metadata.ServiceAbbreviation == "dns" {
+				shapeName = fmt.Sprintf("%sResult", operationName)
+			} else {
+				return
+			}
 		}
 		// skip if it's the `ResponseMetadata`
 		if shapeName == "ResponseMetadata" {
