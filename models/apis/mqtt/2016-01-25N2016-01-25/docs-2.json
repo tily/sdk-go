@@ -1,0 +1,149 @@
+{
+  "version": "2",
+  "service": "mqtt",
+  "operations": {
+    "CreateMQTTInstance": "CreateMQTTInstance",
+    "CreateMQTTUser": "CreateMQTTUser",
+    "DeleteMQTTInstance": "DeleteMQTTInstance",
+    "DeleteMQTTUser": "DeleteMQTTUser",
+    "DescribeMQTTInstances": "DescribeMQTTInstances",
+    "DescribeMQTTUsers": "DescribeMQTTUsers",
+    "ModifyMQTTInstance": "ModifyMQTTInstance",
+    "ModifyMQTTUser": "ModifyMQTTUser",
+    "PublishMQTTMessage": "PublishMQTTMessage"
+  },
+  "shapes": {
+    "Boolean": {
+      "base": "Boolean",
+      "refs": null
+    },
+    "CreateMQTTInstanceRequest": {
+      "base": "CreateMQTTInstanceRequest",
+      "refs": null
+    },
+    "CreateMQTTUserRequest": {
+      "base": "CreateMQTTUserRequest",
+      "refs": null
+    },
+    "DeleteMQTTInstanceRequest": {
+      "base": "DeleteMQTTInstanceRequest",
+      "refs": null
+    },
+    "DeleteMQTTUserRequest": {
+      "base": "DeleteMQTTUserRequest",
+      "refs": null
+    },
+    "DescribeMQTTInstancesRequest": {
+      "base": "DescribeMQTTInstancesRequest",
+      "refs": null
+    },
+    "DescribeMQTTUsersRequest": {
+      "base": "DescribeMQTTUsersRequest",
+      "refs": null
+    },
+    "Description": {
+      "base": "Description",
+      "refs": null
+    },
+    "Double": {
+      "base": "Double",
+      "refs": null
+    },
+    "Integer": {
+      "base": "Integer",
+      "refs": null
+    },
+    "MQTTInstanceClass": {
+      "base": "MQTTInstanceClass",
+      "refs": null
+    },
+    "MQTTInstanceIdentifier": {
+      "base": "MQTTInstanceIdentifier",
+      "refs": null
+    },
+    "MQTTUser.Description": {
+      "base": "MQTTUser.Description",
+      "refs": null
+    },
+    "MQTTUser.Parent": {
+      "base": "MQTTUser.Parent",
+      "refs": null
+    },
+    "MQTTUser.Username": {
+      "base": "MQTTUser.Username",
+      "refs": null
+    },
+    "MaxConnection": {
+      "base": "MaxConnection",
+      "refs": null
+    },
+    "MaxThroughput": {
+      "base": "MaxThroughput",
+      "refs": null
+    },
+    "Message": {
+      "base": "Message",
+      "refs": null
+    },
+    "ModifyMQTTInstanceRequest": {
+      "base": "ModifyMQTTInstanceRequest",
+      "refs": null
+    },
+    "ModifyMQTTUserRequest": {
+      "base": "ModifyMQTTUserRequest",
+      "refs": null
+    },
+    "Parent": {
+      "base": "Parent",
+      "refs": null
+    },
+    "Port": {
+      "base": "Port",
+      "refs": null
+    },
+    "PublishMQTTMessageRequest": {
+      "base": "PublishMQTTMessageRequest",
+      "refs": null
+    },
+    "Qos": {
+      "base": "Qos",
+      "refs": null
+    },
+    "Retain": {
+      "base": "Retain",
+      "refs": null
+    },
+    "String": {
+      "base": "String",
+      "refs": null
+    },
+    "TStamp": {
+      "base": "TStamp",
+      "refs": null
+    },
+    "TlsPort": {
+      "base": "TlsPort",
+      "refs": null
+    },
+    "Topic": {
+      "base": "Topic",
+      "refs": null
+    },
+    "Username": {
+      "base": "Username",
+      "refs": null
+    },
+    "WebSocketPort": {
+      "base": "WebSocketPort",
+      "refs": null
+    },
+    "WebSocketSecurePort": {
+      "base": "WebSocketSecurePort",
+      "refs": null
+    },
+    "nifid": {
+      "base": "nifid",
+      "refs": null
+    }
+  }
+}

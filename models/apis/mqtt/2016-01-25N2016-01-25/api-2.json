@@ -1,0 +1,332 @@
+{
+  "version": "2",
+  "metadata": {
+    "apiVersion": "2016-01-25N2016-01-25",
+    "endpointPrefix": "mqtt",
+    "globalEndpoint": "mqtt.api.cloud.nifty.com",
+    "serviceAbbreviation": "mqtt",
+    "serviceFullName": "mqtt",
+    "signatureVersion": "v4",
+    "xmlNamespace": "http://dummy",
+    "protocol": "query"
+  },
+  "operations": {
+    "CreateMQTTInstance": {
+      "name": "CreateMQTTInstance",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "CreateMQTTInstanceRequest"
+      }
+    },
+    "CreateMQTTUser": {
+      "name": "CreateMQTTUser",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "CreateMQTTUserRequest"
+      }
+    },
+    "DeleteMQTTInstance": {
+      "name": "DeleteMQTTInstance",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteMQTTInstanceRequest"
+      }
+    },
+    "DeleteMQTTUser": {
+      "name": "DeleteMQTTUser",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DeleteMQTTUserRequest"
+      }
+    },
+    "DescribeMQTTInstances": {
+      "name": "DescribeMQTTInstances",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DescribeMQTTInstancesRequest"
+      }
+    },
+    "DescribeMQTTUsers": {
+      "name": "DescribeMQTTUsers",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "DescribeMQTTUsersRequest"
+      }
+    },
+    "ModifyMQTTInstance": {
+      "name": "ModifyMQTTInstance",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ModifyMQTTInstanceRequest"
+      }
+    },
+    "ModifyMQTTUser": {
+      "name": "ModifyMQTTUser",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "ModifyMQTTUserRequest"
+      }
+    },
+    "PublishMQTTMessage": {
+      "name": "PublishMQTTMessage",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "PublishMQTTMessageRequest"
+      }
+    }
+  },
+  "shapes": {
+    "Boolean": {
+      "type": "boolean"
+    },
+    "CreateMQTTInstanceRequest": {
+      "type": "structure",
+      "members": {
+        "Description": {
+          "shape": "String"
+        },
+        "MQTTInstanceClass": {
+          "shape": "String"
+        },
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Password": {
+          "shape": "String"
+        },
+        "Username": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier",
+        "Username",
+        "Password"
+      ]
+    },
+    "CreateMQTTUserRequest": {
+      "type": "structure",
+      "members": {
+        "Description": {
+          "shape": "String"
+        },
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Password": {
+          "shape": "String"
+        },
+        "Username": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier",
+        "Username",
+        "Password"
+      ]
+    },
+    "DeleteMQTTInstanceRequest": {
+      "type": "structure",
+      "members": {
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier"
+      ]
+    },
+    "DeleteMQTTUserRequest": {
+      "type": "structure",
+      "members": {
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Username": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier",
+        "Username"
+      ]
+    },
+    "DescribeMQTTInstancesRequest": {
+      "type": "structure",
+      "members": {
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        }
+      }
+    },
+    "DescribeMQTTUsersRequest": {
+      "type": "structure",
+      "members": {
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Username": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier"
+      ]
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Double": {
+      "type": "double"
+    },
+    "Integer": {
+      "type": "integer"
+    },
+    "MQTTInstanceClass": {
+      "type": "string"
+    },
+    "MQTTInstanceIdentifier": {
+      "type": "string"
+    },
+    "MQTTUser.Description": {
+      "type": "string"
+    },
+    "MQTTUser.Parent": {
+      "type": "string"
+    },
+    "MQTTUser.Username": {
+      "type": "string"
+    },
+    "MaxConnection": {
+      "type": "integer"
+    },
+    "MaxThroughput": {
+      "type": "integer"
+    },
+    "Message": {
+      "type": "string"
+    },
+    "ModifyMQTTInstanceRequest": {
+      "type": "structure",
+      "members": {
+        "Description": {
+          "shape": "String"
+        },
+        "MQTTInstanceClass": {
+          "shape": "String"
+        },
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        }
+      }
+    },
+    "ModifyMQTTUserRequest": {
+      "type": "structure",
+      "members": {
+        "Description": {
+          "shape": "String"
+        },
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Password": {
+          "shape": "String"
+        },
+        "Username": {
+          "shape": "String"
+        }
+      },
+      "required": [
+        "MQTTInstanceIdentifier",
+        "Username"
+      ]
+    },
+    "Parent": {
+      "type": "string"
+    },
+    "Port": {
+      "type": "integer"
+    },
+    "PublishMQTTMessageRequest": {
+      "type": "structure",
+      "members": {
+        "MQTTInstanceIdentifier": {
+          "shape": "String"
+        },
+        "Message": {
+          "shape": "String"
+        },
+        "Password": {
+          "shape": "String"
+        },
+        "Qos": {
+          "shape": "Integer"
+        },
+        "Retain": {
+          "shape": "Integer"
+        },
+        "Topic": {
+          "shape": "String"
+        }
+      }
+    },
+    "Qos": {
+      "type": "integer"
+    },
+    "Retain": {
+      "type": "integer"
+    },
+    "String": {
+      "type": "string"
+    },
+    "TStamp": {
+      "type": "timestamp"
+    },
+    "TlsPort": {
+      "type": "integer"
+    },
+    "Topic": {
+      "type": "string"
+    },
+    "Username": {
+      "type": "string"
+    },
+    "WebSocketPort": {
+      "type": "integer"
+    },
+    "WebSocketSecurePort": {
+      "type": "integer"
+    },
+    "nifid": {
+      "type": "string"
+    }
+  }
+}
