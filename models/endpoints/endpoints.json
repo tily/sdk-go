@@ -116,6 +116,21 @@
           },
           "isRegionalized": false,
           "partitionEndpoint": "aws-global"
+        },
+        "mqtt": {
+          "endpoints": {
+            "aws-global": {
+              "credentialScope": {
+                "region": "east-1"
+              },
+              "hostname": "mqtt.api.cloud.nifty.com",
+              "signatureVersions": [
+                "v4"
+              ]
+            }
+          },
+          "isRegionalized": false,
+          "partitionEndpoint": "aws-global"
         }
       }
     }
