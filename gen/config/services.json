@@ -177,8 +177,16 @@
     },
     "generator": {
       "metadata": {
+      },
+      "metadata": {
         "apiVersion": "2016-01-25N2016-01-25",
-        "globalEndpoint": "mqtt.api.cloud.nifty.com"
+        "globalEndpoint": "mqtt.api.cloud.nifty.com",
+        "endpointPrefix": "mqtt",
+        "serviceAbbreviation": "mqtt",
+        "serviceFullName": "mqtt",
+        "signatureVersion": "v4",
+        "xmlNamespace": "http://dummy",
+        "protocol": "query"
       },
       "http": {
         "method": "POST",
