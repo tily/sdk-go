@@ -188,9 +188,9 @@ func (g *Generator) loadOperationHTML(path string) (doc *goquery.Document, err e
 	return doc, nil
 }
 
-func (g *Generator) generateRequestShapes(operationName string, doc *goquery.Document) (shapes Shapes) {
+func (g *Generator) generateRequestShapes(opName string, doc *goquery.Document) (shapes Shapes) {
 	shape := Shape{}
-	shape.ShapeName = fmt.Sprintf("%sRequest", operationName)
+	shape.ShapeName = fmt.Sprintf("%sRequest", opName)
 	shape.Type = "structure"
 	shape.Members = map[string]ShapeRef{}
 
@@ -330,8 +330,8 @@ func capitalize(s string) string {
 	return string(a)
 }
 
-func (g *Generator) generateResultShapesComputing(operationName string, doc *goquery.Document) (shapes Shapes) {
-	if operationName == "DeleteLoadBalancer" || operationName == "ClearLoadBalancerSession" {
+func (g *Generator) generateResultShapesComputing(opName string, doc *goquery.Document) (shapes Shapes) {
+	if opName == "DeleteLoadBalancer" || opName == "ClearLoadBalancerSession" {
 		return shapes
 	}
 	locToShapeMap := map[string]string{}
@@ -345,10 +345,10 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 		locToShapeMap[shapeName] = shapeType
 
 		if i == 0 {
-			if regexp.MustCompile(`^(AssociateUsers|DissociateUsers|DescribeAssociatedUsers)$`).MatchString(operationName) {
+			if regexp.MustCompile(`^(AssociateUsers|DissociateUsers|DescribeAssociatedUsers)$`).MatchString(opName) {
 				return
 			}
-			shape := Shape{ShapeName: fmt.Sprintf("%sResult", operationName), Type: "structure", Members: map[string]ShapeRef{}}
+			shape := Shape{ShapeName: fmt.Sprintf("%sResult", opName), Type: "structure", Members: map[string]ShapeRef{}}
 			for _, shapeName := range children {
 				shape.Members[shapeName] = ShapeRef{LocationName: shapeName}
 			}
@@ -411,7 +411,7 @@ func (g *Generator) generateResultShapesComputing(operationName string, doc *goq
 	return shapes
 }
 
-func (g *Generator) generateResultShapes(operationName string, doc *goquery.Document) (shapes []Shape) {
+func (g *Generator) generateResultShapes(opName string, doc *goquery.Document) (shapes []Shape) {
 	hintXML := g.extractHintXML(doc)
 	shapeNames := g.extractShapeNames(doc)
 
