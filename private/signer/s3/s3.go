@@ -1,7 +1,6 @@
 package s3
 
 import (
-	goaws "github.com/mitchellh/goamz/aws"
 	"github.com/tily/sdk-go/aws/credentials"
 	"github.com/tily/sdk-go/aws/request"
 	"time"
@@ -15,6 +14,12 @@ var SignRequestHandler = request.NamedHandler{
 	Name: "s3.SignRequestHandler", Fn: SignSDKRequest,
 }
 
+type Auth struct {
+	AccessKey string
+	SecretKey string
+	Token     string
+}
+
 func SignSDKRequest(req *request.Request) {
 	if req.Config.Credentials == credentials.AnonymousCredentials {
 		return
@@ -25,7 +30,7 @@ func SignSDKRequest(req *request.Request) {
 		return
 	}
 
-	auth := goaws.Auth{credValue.AccessKeyID, credValue.SecretAccessKey, credValue.SessionToken}
+	auth := Auth{credValue.AccessKeyID, credValue.SecretAccessKey, credValue.SessionToken}
 	method := req.HTTPRequest.Method
 	canonicalPath := req.HTTPRequest.URL.Path
 	params := req.HTTPRequest.URL.Query()
