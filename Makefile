@@ -194,3 +194,6 @@ gen-sdk-services: gen-sandbox
 
 gen-develop: gen-sandbox
 	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash
+
+gen-testall: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go test ./gen/
