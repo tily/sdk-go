@@ -178,13 +178,13 @@ gen-sandbox:
 	docker build -f ./gen/Dockerfile -t "tily/sdk-go:gen" .
 
 gen-download: gen-sandbox
-	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go download ${args}
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash -c "go build -o gen/main gen/*.go && ./gen/main download ${args}"
 
 gen-generate: gen-sandbox
-	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go generate ${args}
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash -c "go build -o gen/main gen/*.go && ./gen/main generate ${args}"
 
 gen-s3compat: gen-sandbox
-	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go run gen/*.go s3compat ${args}
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash -c "go build -o gen/main gen/*.go && ./gen/main s3compat ${args}"
 
 gen-sdk: gen-sandbox
 	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen make generate
@@ -194,3 +194,6 @@ gen-sdk-services: gen-sandbox
 
 gen-develop: gen-sandbox
 	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen bash
+
+gen-testall: gen-sandbox
+	docker run -i -t -v $(PWD):/go/src/github.com/tily/sdk-go tily/sdk-go:gen go test ./gen/
